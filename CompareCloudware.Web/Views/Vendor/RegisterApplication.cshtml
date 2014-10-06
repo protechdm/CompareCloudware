@@ -1,0 +1,1812 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationInputModel
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+@{var displaySocialNetworking = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorSocialNetworkingContainer"]);}
+@{var displayProductReviews = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorProductReviewsContainer"]);}
+@{var displayUserReviews = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorUserReviewsContainer"]);}
+@{var displayDocuments = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorDocumentsContainer"]);}
+@{var displayApplicationLogo = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorApplicationLogoContainer"]);}
+@{var displayVideo = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorVideoContainer"]);}
+@{var displayFeatures = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorFeaturesContainer"]);}
+@{var displayApplicationCosts = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorApplicationCostsContainer"]);}
+@{var displaySupportDays = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorSupportDaysContainer"]);}
+@{var displaySupportHours = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorSupportHoursContainer"]);}
+@{var displayVendorMainDetails = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorMainDetailsContainer"]);}
+@{var displayCategories = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayCategoriesContainer"]);}
+@{var displayServiceOverview = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorServiceOverviewContainer"]);}
+@{var displayOperatingSystems = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorOperatingSystemsContainer"]);}
+@{var displaySupportTypes = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorSupportTypesContainer"]);}
+@{var displaySupportTerritories = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorSupportTerritoriesContainer"]);}
+@{var displayMobilePlatforms = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorMobilePlatformsContainer"]);}
+@{var displayBrowsers = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorBrowsersContainer"]);}
+@{var displayLanguages = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorLanguagesContainer"]);}
+@{var displayUsers = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorUsersContainer"]);}
+@{var displayLicenceTypeMinimum = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorLicenceTypeMinimumContainer"]);}
+@{var displayLicenceTypeMaximum = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorLicenceTypeMaximumContainer"]);}
+@{var displayVideoTraining = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorVideoTrainingContainer"]);}
+@{var displayFreeTrialPeriod = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorFreeTrialPeriodContainer"]);}
+@{var displaySetupFee = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorSetupFeeContainer"]);}
+@{var displayMinimumContract = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorMinimumContractContainer"]);}
+@{var displayPaymentFrequency = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorPaymentFrequencyContainer"]);}
+@{var displayPaymentOptions = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorPaymentOptionsContainer"]);}
+@{var displayApplicationCurrency = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorApplicationCurrencyContainer"]);}
+@{var displayTimezone = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorApplicationTimezoneContainer"]);}
+@{var displayApplications = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorApplicationsContainer"]);}
+@{var displayStatuses = Convert.ToBoolean(ConfigurationManager.AppSettings["DisplayVendorStatusContainer"]);}
+@{var display9 = Convert.ToBoolean(ConfigurationManager.AppSettings[""]);}
+
+
+
+<link href="@Url.Content("~/Content/Modal.css")" rel="stylesheet" />
+
+@section Scripts
+{
+@*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.imgareaselect.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.fancyupload.js")"></script>*@
+
+@*<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>*@
+}
+<script>
+    $(document).ready(function () {
+        RefreshActiveSupport();
+        //        $('.modal_block').click(function (e) {
+        //            alert("script2");
+        //            $('#tn_select').empty();
+        //            $('.modal_part').hide();
+        //        });
+        //        $('#modal_link').click(function (e) {
+        //            alert("script1");
+        //            $('.modal_part').show();
+        //            var context = $('#tn_select').load('/Vendor/UploadImage', function () {
+        //                initSelect(context);
+        //            });
+        //            e.preventDefault();
+        //            //alert("script2");
+        //            return false;
+        //        });
+        $(function () {
+            $("#preview").draggable();
+            //$("#draggable").draggable();
+            //$("#modalblock").draggable();
+            //$("#tn_select").draggable();
+            //alert("draggable");
+            //debugger;
+
+            $("#datepicker").datepicker();
+            $("#datepicker").datepicker("option", "showAnim", "clip");
+        });
+
+        $('body').on('click', '.cloudApplicationReviewEdit', function () {
+            alert("Edit clicked");
+            return false;
+        })
+
+        //        $('.product-reviews-container tr').click(function () {
+        //            var href = $(this).find("a").attr("href");
+        //            if (href) {
+        //                var href2 = $(this).find("a");
+        //                var guid = href2.attr("id");
+        //                alert(guid);
+        //                window.location = href;
+        //            }
+        //        });
+
+        $('body').on('change', '#Categories_ChosenValue', function () {
+            //debugger;
+            //var tagToRefresh = ".select-list-item-collection-features";
+            var tagToRefresh = ".application-features-details";
+            //var chosenCategory = parseInt(this.options[this.selectedIndex].val());
+            var chosenCategory = this.options[this.selectedIndex].value;
+            var cloudApplicationID = $("#CloudApplicationID").val();
+            $.ajax({
+                url: 'RefreshFeatures',
+                type: 'POST',
+                data: "chosenCategory=" + chosenCategory + "&cloudApplicationID=" + cloudApplicationID,
+                success: function (data) {
+                    //debugger;
+                    //setLoading(false);
+                    $(tagToRefresh).empty();
+                    $(data).appendTo(tagToRefresh);
+                },
+                error: function (data) {
+                    //debugger;
+                    //setLoading(false);
+                    alert('Fail on refreshing features');
+                }
+            });
+
+            tagToRefresh = ".application-applications-details";
+            $.ajax({
+                url: 'RefreshApplications',
+                type: 'POST',
+                data: "chosenCategory=" + chosenCategory + "&cloudApplicationID=" + cloudApplicationID,
+                success: function (data) {
+                    //debugger;
+                    //setLoading(false);
+                    $(tagToRefresh).empty();
+                    $(data).appendTo(tagToRefresh);
+                },
+                error: function (data) {
+                    //debugger;
+                    //setLoading(false);
+                    alert('Fail on refreshing applications');
+                }
+            });
+            return false;
+        })
+
+        var applicationFeaturesContext = $('.application-features-container');
+        //$('body').on('click', '.include-extra-cost-checked', function () {
+        $(applicationFeaturesContext).on('click', '.include-extra-cost-checked', function () {
+            RefreshExtraCostChecked(this);
+        });
+        $(applicationFeaturesContext).on('click', '.feature-isunlimited-checked', function () {
+            RefreshFeatureUnlimitedChecked(this);
+        });
+
+        var applicationApplicationsContext = $('.application-applications-container');
+        //$('body').on('click', '.include-extra-cost-checked', function () {
+        $(applicationApplicationsContext).on('click', '.include-extra-cost-checked', function () {
+            RefreshExtraCostChecked(this);
+        });
+
+        function RefreshExtraCostChecked(theObject) {
+            //$('.product-reviews-container tr').click(function () {
+            //var href = $(this).find("a").attr("href");
+            //debugger;
+            var cost = $(theObject).parent().parent().find(".include-extra-cost");
+
+            var theValue = theObject.value;
+            var checked = $(theObject).attr("checked");
+            var value = $(theObject).attr("value");
+            //if ($(this).attr("checked") == "checked") {
+            //if ($(this).attr("value").toUpperCase() == "TRUE") {
+            //if (theValue.toUpperCase == "TRUE") {
+            if (checked != null) {
+                //if (theValue != null) {
+
+                cost.css("visibility", "visible");
+            }
+            else {
+                cost.css("visibility", "hidden");
+            }
+        }
+
+        function RefreshFeatureUnlimitedChecked(theObject) {
+            //$('.product-reviews-container tr').click(function () {
+            //var href = $(this).find("a").attr("href");
+            //debugger;
+            var cost = $(theObject).parent().parent().find(".feature-count");
+
+            var theValue = theObject.value;
+            var checked = $(theObject).attr("checked");
+            var value = $(theObject).attr("value");
+            //if ($(this).attr("checked") == "checked") {
+            //if ($(this).attr("value").toUpperCase() == "TRUE") {
+            //if (theValue.toUpperCase == "TRUE") {
+            if (checked != null) {
+                //if (theValue != null) {
+
+                //cost.css("visibility", "hidden");
+                //cost.attr("type", "hidden");
+                $(cost).val('0');
+                $(cost).hide();
+            }
+            else {
+                //cost.css("visibility", "visible");
+                //cost.removeAttr("type");
+                $(cost).show();
+            }
+        }
+
+        $(applicationFeaturesContext).on('click', '.include-feature', function () {
+            //debugger;
+            RefreshFeature(this);
+        });
+
+        $(applicationApplicationsContext).on('click', '.include-feature', function () {
+            //debugger;
+            RefreshFeature(this);
+        });
+
+        function RefreshFeature(theObject) {
+            //$('.product-reviews-container tr').click(function () {
+            //var href = $(this).find("a").attr("href");
+            //debugger;
+            var cost = $(theObject).parent().parent().find(".include-extra-cost");
+            var optional = $(theObject).parent().parent().find(".feature-optional");
+            var optionalLabel = $(theObject).parent().parent().find(".feature-optional-label");
+            var costChecked = $(theObject).parent().parent().find(".include-extra-cost-checked");
+            var costCheckedLabel = $(theObject).parent().parent().find(".include-extra-cost-checked-label");
+            var count = $(theObject).parent().parent().find(".feature-count");
+            var countSuffix = $(theObject).parent().parent().find(".feature-count-suffix");
+            var isUnlimitedChecked = $(theObject).parent().parent().find(".feature-isunlimited-checked");
+            var isUnlimitedCheckedLabel = $(theObject).parent().parent().find(".feature-isunlimited-checked-label");
+
+
+            var theValue = theObject.value;
+            var checked2 = $(theObject).attr("checked");
+            var checked = $(theObject).val();
+            var value = $(theObject).attr("value");
+            //debugger;
+
+            if (checked2 != null) {
+                //if (theValue != null) {
+
+                cost.css("visibility", "visible");
+                costChecked.css("visibility", "visible");
+                costCheckedLabel.css("visibility", "visible");
+                optional.css("visibility", "visible");
+                optionalLabel.css("visibility", "visible");
+                count.css("visibility", "visible");
+                countSuffix.css("visibility", "visible");
+                RefreshExtraCostChecked(costChecked);
+                isUnlimitedChecked.css("visibility", "visible");
+                isUnlimitedCheckedLabel.css("visibility", "visible");
+                //debugger;
+                RefreshFeatureUnlimitedChecked(isUnlimitedChecked);
+            }
+            else {
+                cost.css("visibility", "hidden");
+                costChecked.css("visibility", "hidden");
+                costCheckedLabel.css("visibility", "hidden");
+                optional.css("visibility", "hidden");
+                optionalLabel.css("visibility", "hidden");
+                count.css("visibility", "hidden");
+                countSuffix.css("visibility", "hidden");
+                isUnlimitedChecked.css("visibility", "hidden");
+                isUnlimitedCheckedLabel.css("visibility", "hidden");
+            }
+
+            //            if (checked != null) {
+            //                if (checked.toUpperCase() == "TRUE") {
+            //                    //if (theValue != null) {
+
+            //                    cost.css("visibility", "visible");
+            //                    costChecked.css("visibility", "visible");
+            //                    costCheckedLabel.css("visibility", "visible");
+            //                    optional.css("visibility", "visible");
+            //                    optionalLabel.css("visibility", "visible");
+            //                }
+            //                else {
+            //                    cost.css("visibility", "hidden");
+            //                    costChecked.css("visibility", "hidden");
+            //                    costCheckedLabel.css("visibility", "hidden");
+            //                    optional.css("visibility", "hidden");
+            //                    optionalLabel.css("visibility", "hidden");
+            //                }
+            //            }
+        }
+
+        var rows = $(".list-collection tr"); // skip the header row
+
+        rows.each(function (index) {
+            //debugger;
+            //var featureRow = $("tr:nth-child(" + index + ")", this);
+            //var feature = $(".include-feature", featureRow);
+            var feature2 = $(this).find(".include-feature");
+            RefreshFeature(feature2);
+            //            var checked = $(feature).attr("checked");
+            //            var rate_input = $("td:nth-child(4) input", this);
+            //            $(this).children("td").each(function () { // calculate amount, vat, subtotal for row
+            //                var qty = qty_input.val();
+            //                var rate = rate_input.val();
+            //                var amount = qty * rate;
+            //                var vat = amount / 100 * 20;
+            //                var subtotal = amount;
+            //                subtotal += vat;
+
+            //                vat = vat.toFixed(2); // limit to two decimal places
+            //                amount = amount.toFixed(2);
+            //                subtotal = subtotal.toFixed(2);
+
+            //                $('#total_amount').val(amount); // output the values
+            //                $('#total_vat').val(vat);
+            //                $('#grand_total').val(subtotal);
+            //            });
+        });
+
+        //debugger;
+        var numberOfSupportDays = $('#NumberOfSupportDays_ChosenValue')[0];
+        var index = numberOfSupportDays.selectedIndex;
+        var text = numberOfSupportDays.options[index].text;
+        //GetContiguousSupportDays(text);
+
+        //fires when support hours number of days filter is changed
+        $('body').on('change', '#NumberOfSupportDays_ChosenValue', function () {
+            var text = this.options[this.selectedIndex].text;
+            GetContiguousSupportDays(text);
+        });
+
+        function GetContiguousSupportDays(theValue) {
+            var text = theValue;
+            tagToRefresh = ".support-days";
+            $.ajax({
+                url: 'GetContiguousSupportDays',
+                type: 'POST',
+                data: "contiguousDaysSpan=" + text,
+                success: function (data) {
+                    $(tagToRefresh).empty();
+                    $(data).appendTo(tagToRefresh);
+                },
+                error: function (data) {
+                    alert('Fail on dropdown');
+                }
+            });
+        }
+
+        var otherCheck;
+        var notOfferedCheck;
+        var unlimitedCheck;
+
+        var minimumUsersDetailsContext = $(".application-minimum-users-details");
+        otherCheck = $(".customcheckboxlist-other-check", minimumUsersDetailsContext);
+        RefreshOther(otherCheck);
+
+        $(minimumUsersDetailsContext).on('click', '.customcheckboxlist-other-check', function () {
+            //debugger;
+            if (!IsReadOnly(this)) {
+                RefreshOther(this);
+                //RefreshUnlimited(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+        var maximumUsersDetailsContext = $(".application-maximum-users-details");
+        otherCheck = $(".customcheckboxlist-other-check", maximumUsersDetailsContext);
+        RefreshOther(otherCheck);
+
+        $(maximumUsersDetailsContext).on('click', '.customcheckboxlist-other-check', function () {
+            //debugger;
+            if (!IsReadOnly(this)) {
+                RefreshOther(this);
+                //RefreshUnlimited(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+        var freeTrialPeriodsContext = $(".application-free-trial-period-details");
+        otherCheck = $(".customcheckboxlist-other-check", freeTrialPeriodsContext);
+        RefreshOther(otherCheck);
+        notOfferedCheck = $(".customcheckboxlist-not-offered", freeTrialPeriodsContext);
+        RefreshWhenNotOfferedClicked(notOfferedCheck);
+
+        $(freeTrialPeriodsContext).on('click', '.customcheckboxlist-other-check', function () {
+            if (!IsReadOnly(this)) {
+                RefreshOther(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+        $(freeTrialPeriodsContext).on('click', '.customcheckboxlist-not-offered', function () {
+            if (!IsReadOnly(this)) {
+                RefreshWhenNotOfferedClicked(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+
+        //debugger;
+        var freeTrialPeriodsContainerContext = $(".application-free-trial-period-container");
+        demoCheck = $("#DemoOffered", freeTrialPeriodsContainerContext);
+        RefreshFreeTrialPeriods(demoCheck);
+        $(freeTrialPeriodsContainerContext).on('click', '#DemoOffered', function () {
+            RefreshFreeTrialPeriods(this);
+        });
+        function RefreshFreeTrialPeriods(theObject) {
+            //debugger;
+            isDemoChecked = $(theObject).prop("checked");
+            if (isDemoChecked) {
+                //Disable(freeTrialPeriodsContext, false);
+                Hide(freeTrialPeriodsContext);
+            }
+            else {
+                //Enable(freeTrialPeriodsContext, false);
+                Show(freeTrialPeriodsContext);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var setupFeeContext = $(".application-setup-fee-details");
+        var POACheck = $(".setup-fee-is-poa", setupFeeContext);
+        var isPOAChecked = $(POACheck).prop("checked");
+        var setupFeeNotOfferedCheck = $(".setup-fee-no", setupFeeContext);
+        var isSetupFeeNotOfferedChecked = $(setupFeeNotOfferedCheck).prop("checked");
+
+        //debugger;
+        if (isPOAChecked || isSetupFeeNotOfferedChecked) {
+            if (isPOAChecked) {
+                RefreshSetupFees(POACheck);
+                RefreshPOASetupFee(POACheck)
+            }
+            if (isSetupFeeNotOfferedChecked) {
+                RefreshSetupFees(setupFeeNotOfferedCheck);
+                RefreshNoSetupFee(setupFeeNotOfferedCheck)
+            }
+        }
+
+        $(setupFeeContext).on('click', '.setup-fee-is-poa', function () {
+            //debugger;
+            //            var readOnly = $(this).attr("readonly");
+            //            if (readOnly != null) {
+            //                return false;
+            //            }
+            //            RefreshPOASetupFee(this);
+            if (!IsReadOnly(this)) {
+                RefreshPOASetupFee(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+        $(setupFeeContext).on('click', '.setup-fee-no', function () {
+            //debugger;
+            //            var readOnly = $(this).attr("readonly");
+            //            if (readOnly != null) {
+            //                return false;
+            //            }
+            if (!IsReadOnly(this)) {
+                RefreshNoSetupFee(this);
+            }
+            else {
+                return false;
+            }
+
+        });
+
+
+
+        var minimumContractPeriodContext = $(".application-minimum-contract-details");
+        otherCheck = $(".customcheckboxlist-other-check", minimumContractPeriodContext);
+        RefreshOther(otherCheck);
+        notOfferedCheck = $(".customcheckboxlist-not-offered", minimumContractPeriodContext);
+        RefreshWhenNotOfferedClicked(notOfferedCheck);
+
+        $(minimumContractPeriodContext).on('click', '.customcheckboxlist-other-check', function () {
+            if (!IsReadOnly(this)) {
+                RefreshOther(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+        $(minimumContractPeriodContext).on('click', '.customcheckboxlist-not-offered', function () {
+            if (!IsReadOnly(this)) {
+                RefreshWhenNotOfferedClicked(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+
+
+        var minimumUsersContext = $(".application-minimum-users-details");
+        unlimitedCheck = $(".customcheckboxlist-unlimited-check", minimumUsersContext);
+        RefreshUnlimited(unlimitedCheck);
+
+        $(minimumUsersContext).on('click', '.customcheckboxlist-unlimited-check', function () {
+            if (!IsReadOnly(this)) {
+                RefreshUnlimited(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+
+        var maximumUsersContext = $(".application-maximum-users-details");
+        unlimitedCheck = $(".customcheckboxlist-unlimited-check", maximumUsersContext);
+        RefreshUnlimited(unlimitedCheck);
+
+        $(maximumUsersContext).on('click', '.customcheckboxlist-unlimited-check', function () {
+            if (!IsReadOnly(this)) {
+                RefreshUnlimited(this);
+            }
+            else {
+                return false;
+            }
+        });
+
+
+        function RefreshOther(theObject) {
+            //debugger;
+            var otherValue = $(theObject).parent().find(".customcheckboxlist-other-value");
+            var choices = $(theObject).parent().parent().find(".customcheckboxlist-choices");
+            var notOfferedCheck = $(theObject).parent().parent().find(".customcheckboxlist-not-offered");
+            var otherCheck = $(theObject).parent().parent().find(".customcheckboxlist-other-check");
+            var unlimitedCheck = $(theObject).parent().parent().find(".customcheckboxlist-unlimited-check");
+            if (otherValue != null) {
+                var isOtherChecked = $(theObject).prop("checked");
+                var isNotOfferedChecked = $(notOfferedCheck).prop("checked");
+                if (isOtherChecked) {
+                    notOfferedCheck.removeAttr('checked');
+                    Enable(otherValue, true);
+                    Disable(notOfferedCheck, false);
+                    unlimitedCheck.removeAttr('checked');
+                    Disable(unlimitedCheck, false);
+                }
+                else {
+                    Disable(otherValue, true);
+                    Enable(notOfferedCheck, false);
+                    Enable(unlimitedCheck, false);
+
+                }
+                if (isOtherChecked || isNotOfferedChecked) {
+                    Disable(choices, false);
+                }
+                else {
+                    Enable(choices, false);
+                }
+            }
+        }
+
+        function RefreshWhenNotOfferedClicked(theObject) {
+            var otherCheck = $(theObject).parent().parent().find(".customcheckboxlist-other-check");
+            var otherValue = $(theObject).parent().parent().find(".customcheckboxlist-other-value");
+            var choices = $(theObject).parent().parent().find(".customcheckboxlist-choices");
+
+            var isOtherChecked = $(otherCheck).prop("checked");
+            var isNotOfferedChecked = $(theObject).prop("checked");
+
+
+            if (isNotOfferedChecked) {
+                otherCheck.removeAttr('checked');
+                Disable(otherCheck, false);
+                Disable(otherValue, true);
+                //Disable(choices, false);
+            }
+            else {
+                Enable(otherCheck, true);
+                Enable(otherValue, true);
+                //Enable(choices, false);
+            }
+            RefreshOther(otherCheck);
+        }
+
+        function RefreshSetupFees(theObject) {
+            var setupFeeWhole = $(".setup-fee-whole", setupFeeContext);
+            var setupFeeFraction = $(".setup-fee-fraction", setupFeeContext);
+            //var setupFeeNo = $(".setup-fee-no", setupFeeContext);
+            var isChecked = $(theObject).prop("checked");
+            if (isChecked) {
+                Disable(setupFeeWhole, true);
+                Disable(setupFeeFraction, true);
+                //Disable(setupFeeNo, false);
+            }
+            else {
+                Enable(setupFeeWhole, true);
+                Enable(setupFeeFraction, true);
+                //Enable(setupFeeNo, false);
+            }
+        }
+
+        function RefreshPOASetupFee(theObject) {
+            RefreshSetupFees(theObject);
+            var noSetupFee = $(".setup-fee-no", setupFeeContext);
+            var isChecked = $(theObject).prop("checked");
+            if (isChecked) {
+                noSetupFee.removeAttr('checked');
+                Disable(noSetupFee, false);
+            }
+            else {
+                Enable(noSetupFee, false);
+            }
+        }
+
+        function RefreshNoSetupFee(theObject) {
+            RefreshSetupFees(theObject);
+            var poaSetupFee = $(".setup-fee-is-poa", setupFeeContext);
+            var isChecked = $(theObject).prop("checked");
+            if (isChecked) {
+                poaSetupFee.removeAttr('checked');
+                Disable(poaSetupFee, false);
+            }
+            else {
+                Enable(poaSetupFee, false);
+            }
+        }
+
+        function RefreshUnlimited(theObject) {
+            //debugger;
+            var otherValue = $(theObject).parent().parent().find(".customcheckboxlist-other-value");
+            var otherCheck = $(theObject).parent().parent().find(".customcheckboxlist-other-check");
+            var choices = $(theObject).parent().parent().find(".customcheckboxlist-choices");
+            var notOfferedCheck = $(theObject).parent().parent().find(".customcheckboxlist-not-offered");
+            //var otherCheck = $(theObject).parent().parent().find(".customcheckboxlist-other-check");
+            var isChecked = $(theObject).prop("checked");
+            if (isChecked) {
+                Disable(notOfferedCheck, false);
+                Disable(otherCheck, false);
+                Disable(otherValue, true);
+                Disable(choices, false);
+            }
+            else {
+                Enable(notOfferedCheck);
+                Enable(otherCheck);
+                if ($(otherCheck).prop("checked")) {
+                    Enable(otherValue);
+                }
+                else {
+                    Enable(choices);
+                }
+            }
+            //RefreshOther(otherCheck);
+        }
+
+
+        var supportTypesContext = $(".application-support-types-details");
+
+        $(supportTypesContext).on('click', 'input[type="checkbox"]', function () {
+            //alert("CLICKED");
+            RefreshActiveSupport();
+        });
+
+        function RefreshActiveSupport() {
+            var supportTypes = $(".application-support-types-details input[type='checkbox']");
+            var enableSupportWidgets = false;
+            supportTypes.each(function (index) {
+                var supportTypeIsSelected = $(this).attr("checked");
+                var supportTypeIsPassive = $(this).next().next().val().toUpperCase();
+                if (supportTypeIsSelected != null) {
+                    if (supportTypeIsPassive != "TRUE") {
+                        enableSupportWidgets = true;
+                        return;
+                    }
+                }
+            });
+            var numberOfSupportDays = $('#NumberOfSupportDays_ChosenValue')
+            var supportDays = $('#SupportDays_ChosenValue')
+            //var supportHours = $('#SupportHours_ChosenValue')
+            var supportHoursFrom = $('#SupportHoursFrom_ChosenValue')
+            var supportHoursTo = $('#SupportHoursTo_ChosenValue')
+            var supportTerritories = $('#SupportTerritories_ChosenValue')
+            var timeZone = $('#Timezone_ChosenValue')
+            if (enableSupportWidgets) {
+                //                //alert("ENABLE");
+                //                Enable(numberOfSupportDays);
+                //                Enable(supportDays);
+                //                //Enable(supportHours);
+                //                Enable(supportHoursFrom);
+                //                Enable(supportHoursTo);
+                //                Enable(supportTerritories);
+                //                Enable(timeZone);
+
+                //alert("ENABLE");
+                Show($('.application-support-days-container'));
+                //Show(supportDays);
+                Show($('.application-support-hours-container'));
+                //Show(supportHoursFrom);
+                //Show(supportHoursTo);
+                Show($('.application-support-territories-container'));
+                Show($('.application-timezones-container'));
+
+            }
+            else {
+                //                //alert("DISABLE");
+                //                Disable(numberOfSupportDays, false);
+                //                Disable(supportDays, false);
+                //                //Disable(supportHours, false);
+                //                Disable(supportHoursFrom, false);
+                //                Disable(supportHoursTo, false);
+                //                Disable(supportTerritories, false);
+                //                Disable(timeZone, false);
+
+                //alert("ENABLE");
+                Hide($('.application-support-days-container'));
+                //Hide(supportDays);
+                Hide($('.application-support-hours-container'));
+                //Hide(supportHoursFrom);
+                //Hide(supportHoursTo);
+                Hide($('.application-support-territories-container'));
+                Hide($('.application-timezones-container'));
+
+            }
+        }
+
+
+
+
+        $("#Description").bind('paste', function (e) {
+            var elem = $(this);
+
+            setTimeout(function () {
+                // gets the copied text after a specified time (100 milliseconds)
+                var text = elem.val();
+                //debugger;
+                //alert($(this).val());
+                //alert(text);
+                text = text.replace(/[^a-zA-Z0-9:\(\/\)\s\.,!~]/g, "");
+                text = text.replace(/(.*(?:endif-->))|([ ]?<[^>]*>[ ]?)|(&nbsp;)|([^}]*})/g, '');
+                text = escape(text);
+                text = text.replace(/%20/g, " ");
+                text = text.replace(/%09/g, " ");
+                text = text.replace(/%0A/g, " ");
+                //alert(text);
+                $("#Description").val(text);
+                //$(this).val($(this).val().replace(/[^a-zA-Z0-9:\(\/\)\s\.,!~]/g, ""));
+                //alert($(this).val());
+            }, 100);
+
+
+        });
+
+        $("#Description").bind('keydown', function (e) {
+            UpdateCharacterCount();
+        });
+
+        function UpdateCharacterCount() {
+            //debugger;
+            var text = $('#Description');
+            var textLength = $(text).val().length;
+            var charsRemaining = 4000 - textLength;
+            var remaining = $(".chars-remaining");
+            $(remaining).text(charsRemaining);
+            // .val(remaining);
+
+        }
+
+        function Disable(theObject, setToZero) {
+            if (setToZero) {
+                theObject.val(0);
+            }
+            //theObject.attr('disabled', 'disabled');
+            theObject.attr('readonly', 'readonly');
+            //$(theObject).prop("readonly", "true");
+            //$(theObject).attr("readonly");
+        }
+
+        function Enable(theObject) {
+            //theObject.removeAttr('disabled');
+            //theObject.removeAttr('readonly');
+            //$(theObject).prop("readonly", "false");
+            $(theObject).removeAttr("readonly");
+        }
+
+        function Hide(theObject) {
+            //            if (setToZero) {
+            //                theObject.val(0);
+            //            }
+            theObject.hide();
+        }
+
+        function Show(theObject) {
+            theObject.show();
+        }
+
+        function IsReadOnly(theObject) {
+            var readOnly = $(theObject).attr("readonly");
+            if (readOnly != null) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+
+
+
+
+
+
+
+    });
+
+
+</script>
+
+
+
+@using (Html.BeginForm("RegisterApplication", "Vendor", FormMethod.Post, new { enctype = "multipart/form-data", @id = "registerApplicationForm" }))
+{
+
+@*<div class="modal_block modal_part ui-widget-content"></div>
+<div class="modal_dialog modal_part ui-widget-content" id="tn_select"></div>
+<p>
+    <a href="#" id="modal_link">Click here to choose vendor logo.</a>
+</p>*@
+
+<br />
+<br />
+    
+
+<div class="register-application">
+
+    <input type="submit" />
+@*    @Html.ValidationSummary()*@
+    <br />
+    <br />
+
+    @Html.HiddenFor(x => x.CloudApplicationID)
+
+    @Html.Partial("Loading")
+
+    @if (displayStatuses)
+    {
+    <div class="application-input-group-header header-vx-status">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Status</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-status-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Status") 
+        <div class="application-status-details">
+            @Html.EditorFor(x => x.Statuses)
+            <div style="float:left;width:55%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.ApplyStatusAtVendorLevel)
+            </div>
+            <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                @Html.CheckBoxFor(x => x.ApplyStatusAtVendorLevel)
+            </div>
+            <div class="clear"></div>
+            <br />
+            <div style="float:left;width:35%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.AddDate)
+            </div>
+            <div style="float:left;width:65%;" class="xeditor-field font-normal-13px-black">
+                @Html.DisplayFor(x => x.AddDate)
+            </div>
+            <div class="clear"></div>
+            <div style="float:left;width:35%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.LastUpdateDate)
+            </div>
+            <div style="float:left;width:65%;" class="xeditor-field font-normal-13px-black">
+                @Html.DisplayFor(x => x.LastUpdateDate)
+            </div>
+
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayApplicationLogo)
+    {
+    <div class="application-input-group-header header-vx-application-logo">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Application Logo</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-logo-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Application Logo") 
+        <div class="application-logo-details">
+            @Html.HiddenFor(x => x.Vendor.VendorLogo)
+            @Html.Partial("DisplayLogo", Model.CloudApplicationID)
+            <div class="site-button" id="uploadImageButton" style="float:right;">
+                <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createReviewButton"/>
+            </div>
+        </div>
+        <br />
+    </div>
+    <br />
+    }
+
+    @if (displayVendorMainDetails)
+    {
+    <div class="application-input-group-header header-vx-vendor-main">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Vendor Details</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="vendor-main-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Vendor Details") 
+        <div class="vendor-main-details">
+            @Html.Partial("VendorMain", Model)   
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayServiceOverview)
+    {
+    <div class="application-input-group-header header-vx-service-overview">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Service Overview</label>
+        <label class="font-bold-11px-purple chars-remaining">@(4000 - (Model.Description != null ? Model.Description.Length : 0))</label>
+        <label class="font-bold-11px-purple"> characters remaining</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="service-name-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Service Overview") 
+        <div class="service-name-details font-normal-13px-black">
+            @Html.TextAreaFor(x => x.Description, 8, 1, new { style = "width:99%;resize:vertical;", @class = "font-normal-13px-black" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayOperatingSystems)
+    {
+    <div class="application-input-group-header header-vx-operating-systems">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Operating Systems</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-operating-systems-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Operating Systems") 
+        <div class="application-operating-systems-details">
+            @Html.EditorFor(x => x.OperatingSystems, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayMobilePlatforms)
+    {
+    <div class="application-input-group-header header-vx-mobile-platforms">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Mobile Platforms</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-mobile-platforms-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Mobile Platforms") 
+        <div class="application-mobile-platforms-details">
+            @Html.EditorFor(x => x.MobilePlatforms, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+    
+    @if (displayBrowsers)
+    {
+    <div class="application-input-group-header header-vx-browsers">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Browsers</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-browsers-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Browsers") 
+        <div class="application-browsers-details">
+            @Html.EditorFor(x => x.Browsers, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+
+    @if (displayUsers)
+    {
+    <div class="application-input-group-header header-vx-users">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Users</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+
+    <div class="application-users-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Users")
+
+        <div class="application-minimum-users-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Minimum Users") 
+            <div class="application-minimum-users-details">
+                @Html.EditorFor(x => x.LicenceTypeMinimum, new { style = "width:100%" })
+            </div>
+        </div>
+        <div class="application-maximum-users-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Maximum Users") 
+            <div class="application-maximum-users-details">
+                @Html.EditorFor(x => x.LicenceTypeMaximum, new { style = "width:100%" })
+            </div>
+        </div>
+    </div>
+
+    <div class="clear"></div>
+    <br />
+    }
+
+
+    @if (displayLanguages)
+    {
+    <div class="application-input-group-header header-vx-languages">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Languages</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-languages-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Languages") 
+        <div class="application-languages-details">
+            @Html.EditorFor(x => x.Languages, new { style = "width:100%" })
+            <div class="apply-languages-across-all-brands">
+                <div style="float:left;width:30%;" class="xeditor-field font-normal-13px-black">
+                    @Html.LabelFor(x => x.ApplyLanguagesAtVendorLevel)
+                </div>
+                <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                    @Html.CheckBoxFor(x => x.ApplyLanguagesAtVendorLevel)
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displaySupportTypes)
+    {
+    <div class="application-input-group-header header-vx-support">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Support</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+
+    <div class="application-support-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Support") 
+
+        <div class="application-support-types-container container-slide">
+        
+            @Html.Partial("GroupBorderCaption", "Support Types") 
+            <div class="application-support-types-details">
+                @Html.EditorFor(x => x.SupportTypes, new { style = "width:100%" })
+            </div>
+        </div>
+        <div class="clear"></div>
+        <br />
+
+        <div class="application-support-days-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Support Days") 
+            <div class="application-support-days-details">
+                <div class="number-of-support-days font-normal-13px-black">
+                    @Html.Label("Number per week:", new { style = "float:left;" })
+                    @Html.EditorFor(x => x.NumberOfSupportDays, new { @style = "width:100%" })
+                </div>
+                <div class="support-days-label font-normal-13px-black">
+                    @Html.Label("Days offered:")
+                </div>
+                <div class="support-days font-normal-13px-black">
+                    @Html.Partial("SupportDays", Model) 
+                </div>
+            </div>
+        </div>
+
+        <div class="application-support-hours-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Support Hours") 
+            <div class="application-support-hours-details font-normal-13px-black">
+@*                @Html.EditorFor(x => x.SupportHours, new { style = "width:100%" })*@
+                <div class="application-support-hours-from-details">
+                    @Html.Label("From:", new { style = "float:left;" })
+                    @Html.EditorFor(x => x.SupportHoursFrom, new { style = "width:100%" })
+                </div>
+                <div class="application-support-hours-to-details">
+                    @Html.Label("To:", new { style = "float:left;" })
+                    @Html.EditorFor(x => x.SupportHoursTo, new { style = "width:100%" })
+                </div>
+            </div>
+        </div>
+
+
+        <div class="application-support-territories-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Support Territories") 
+            <div class="application-support-territories-details">
+                @Html.EditorFor(x => x.SupportTerritories, new { style = "width:100%" })
+            </div>
+        </div>
+
+        <div class="application-timezones-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Time Zone") 
+            <div class="application-timezones-details">
+                @Html.EditorFor(x => x.Timezone, new { style = "width:100%" })
+            </div>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayVideoTraining)
+    {
+    <div class="application-input-group-header header-vx-video-training">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Video Training</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-video-training-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Video Training") 
+        <div class="application-video-training-details">
+            <div style="float:left;width:80%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.VideoTrainingSupport)
+            </div>
+            <div style="float:left;width:20%;" class="xeditor-field font-normal-13px-black">
+                @Html.CheckBoxFor(x => x.VideoTrainingSupport)
+            </div>
+            @*<div style="float:left;width:5%;" class="editor-field font-normal-13px-red"></div>*@
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayCategories)
+    {
+    <div class="application-input-group-header header-vx-categories">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Categories</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-categories-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Categories") 
+        <div class="application-categories-details">
+            @Html.EditorFor(x => x.Categories)
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayFeatures)
+    {
+    <div class="application-input-group-header header-vx-features">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Features</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-features-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Features") 
+        <div class="application-features-details">
+            @Html.EditorFor(x => x.Features, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayApplications)
+    {
+    <div class="application-input-group-header header-vx-applications">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Applications</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-applications-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Applications") 
+        <div class="application-applications-details">
+            @Html.EditorFor(x => x.Applications, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayApplicationCosts)
+    {
+    <div class="application-input-group-header header-vx-costs">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Costs</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-costs-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Costs") 
+        <div class="application-costs-details">
+            @Html.Partial("ApplicationCosts", Model)
+        </div>
+        @Html.Partial("GroupBorderCaption", "Payment Currency") 
+        <div class="application-currencies-details">
+            @Html.EditorFor(x => x.Currency, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displaySetupFee)
+    {
+    <div class="application-input-group-header header-vx-setup-fee">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Setup Fee</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-setup-fee-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Setup Fee") 
+        <div class="application-setup-fee-details">
+            <div style="float:left;width:90%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.SetupFeeWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.SetupFeeWhole, new { @class = "font-normal-13px-black setup-fee-whole", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.SetupFeeFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.SetupFeeFraction, new { @class = "font-normal-13px-black setup-fee-fraction", @style = "width:20px;float:left;" })
+                @Html.LabelFor(x => x.SetupFeeIsPOA, new { @class = "font-normal-13px-black", @style = "float:left;margin-left:10px;" })
+                @Html.CheckBoxFor(x => x.SetupFeeIsPOA, new { @class = "font-normal-13px-black setup-fee-is-poa", @style = "width:20px;float:left;" })
+                @Html.LabelFor(x => x.NoSetupFee, new { @class = "font-normal-13px-black", @style = "float:left;margin-left:10px;" })
+                @Html.CheckBoxFor(x => x.NoSetupFee, new { @class = "font-normal-13px-black setup-fee-no", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayMinimumContract)
+    {
+    <div class="application-input-group-header header-vx-minimum-contract">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Minimum Contract</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-minimum-contract-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Minimum Contract Period") 
+        <div class="application-minimum-contract-details">
+            @Html.EditorFor(x => x.MinimumContracts, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayPaymentFrequency)
+    {
+    <div class="application-input-group-header header-vx-payment">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Payment</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+
+    <div class="application-payment-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Payment")
+
+        <div class="application-payment-frequency-container">
+            @Html.Partial("GroupBorderCaption", "Payment Frequency") 
+            <div class="application-payment-frequency-details">
+                @Html.EditorFor(x => x.PaymentFrequencies, new { style = "width:100%" })
+            </div>
+        </div>
+        <div class="application-payment-options-container">
+            @Html.Partial("GroupBorderCaption", "Payment Options") 
+            <div class="application-payment-options-details">
+                @Html.EditorFor(x => x.PaymentOptions, new { style = "width:100%" })
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayFreeTrialPeriod)
+    {
+    <div class="application-input-group-header header-vx-free-trial-period">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Free Trial Period</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-free-trial-period-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Free Trial Period")
+        <div class="application-demo-offered font-normal-13px-black">
+            @Html.LabelFor(x => x.DemoOffered, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            @Html.CheckBoxFor(x => x.DemoOffered) 
+        </div>
+        <div class="application-free-trial-period-details">
+            @Html.EditorFor(x => x.FreeTrialPeriods, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displaySocialNetworking)
+    {
+    <div class="application-input-group-header header-vx-social-networking">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Social Networking</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="social-networking-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Social Networking") 
+        <div class="social-networking-details">
+            @Html.Partial("SocialNetworking", Model)   
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }
+
+    @if (displayUserReviews)
+    {
+    <div class="application-input-group-header header-vx-user-reviews">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">User Reviews</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="user-reviews-container container-slide">
+@*        @Html.Partial("UserReviewsContainer", Model.CloudApplicationUserReviewsContainerModel)*@   
+        @Html.EditorFor(x => x.CloudApplicationUserReviewsContainerModel)   
+    </div>
+    <br />
+    }
+
+    @if (displayProductReviews)
+    {
+    <div class="application-input-group-header header-vx-product-reviews">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Product Reviews</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="product-reviews-container container-slide">
+@*        @Html.Partial("ProductReviewsContainer", Model)*@   
+        @Html.EditorFor(x => x.CloudApplicationProductReviewsContainerModel)   
+    </div>
+    <br />
+    }
+        
+    
+    @if (displayDocuments)
+    {
+    <div class="application-input-group-header header-vx-documents">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Documents</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="documents-container container-slide">
+@*        @Html.Partial("DocumentsContainer", Model)*@   
+        @Html.EditorFor(x => x.CloudApplicationDocumentsContainerModel)   
+    </div>
+    <br />
+    }
+    
+        
+    @if (displayVideo)
+    {
+    <div class="application-input-group-header header-vx-video">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Video</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="videos-container container-slide">
+@*        @Html.Partial("VideoContainer", Model)*@   
+        @Html.EditorFor(x => x.CloudApplicationVideosContainerModel)   
+    </div>
+    <br />
+    }
+        
+    
+    
+    
+    
+    
+    
+    
+@*    @Html.Partial("UploadImageModal", test)*@
+@*    @Html.Partial("datepicker")*@
+    
+
+@*    @if (displaySupportDays)
+    {
+    <div class="application-input-group-header header-vx-support-days">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Support Days</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-support-days-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Support Days") 
+        <div class="application-support-days-details">
+            <div class="number-of-support-days font-normal-13px-black">
+                @Html.Label("Number per week:", new { style = "float:left;" })
+                @Html.EditorFor(x => x.NumberOfSupportDays, new { @style = "width:100%" })
+            </div>
+            <div class="support-days-label font-normal-13px-black">
+                @Html.Label("Days offered:")
+            </div>
+            <div class="support-days font-normal-13px-black">
+                @Html.Partial("SupportDays", Model) 
+            </div>
+        </div>
+    </div>
+    }
+    
+    @if (displaySupportHours)
+    {
+    <div class="application-input-group-header header-vx-support-hours">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Support Hours</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-support-hours-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Support Hours") 
+        <div class="application-support-hours-details">
+            @Html.EditorFor(x => x.SupportHours, new { style = "width:100%" })
+        </div>
+    </div>
+    }
+    
+    @if (displaySupportTerritories)
+    {
+    <div class="application-input-group-header header-vx-support-territories">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Support Territories</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-support-territories-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Support Territories") 
+        <div class="application-support-territories-details">
+            @Html.EditorFor(x => x.SupportTerritories, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }*@
+    
+    @*<div class="application-devices-container">
+        @Html.Partial("GroupBorderCaption", "Devices") 
+        <div class="application-devices-details">
+            @Html.EditorFor(x => x.Devices, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />*@
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*        @if (displayLicenceTypeMinimum)
+        {
+        <div class="application-input-group-header header-vx-minimum-users">
+            <div class="application-input-group-header-icon">
+                <div class="ui-icon-triangle-1-s ui-icon">
+                </div>
+            </div>
+            <div class="application-input-group-header-label"></div>
+            <label class="font-bold-11px-purple">Minimum Users</label>
+            <div style="height:20px;position:relative;"></div>
+        </div>
+        
+        <div class="application-users-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Minimum Users") 
+            <div class="application-minimum-users-details">
+                @Html.EditorFor(x => x.LicenceTypeMinimum, new { style = "width:100%" })
+            </div>
+        </div>
+        }
+    
+        @if (displayLicenceTypeMaximum)
+        {
+        <div class="application-input-group-header header-vx-maximum-users">
+            <div class="application-input-group-header-icon">
+                <div class="ui-icon-triangle-1-s ui-icon">
+                </div>
+            </div>
+            <div class="application-input-group-header-label"></div>
+            <label class="font-bold-11px-purple">Maximum Users</label>
+            <div style="height:20px;position:relative;"></div>
+        </div>
+        
+        <div class="application-maximum-users-container container-slide">
+            @Html.Partial("GroupBorderCaption", "Maximum Users") 
+            <div class="application-maximum-users-details">
+                @Html.EditorFor(x => x.LicenceTypeMaximum, new { style = "width:100%" })
+            </div>
+        </div>
+        }*@
+
+
+
+
+
+
+
+
+    
+    
+    
+
+    <input type="submit" />
+    
+    
+
+
+
+
+
+
+
+
+
+
+@*    @if (displayPaymentFrequency)
+    {
+    <div class="application-input-group-header header-vx-payment-frequency">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Payment Frequency</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-payment-frequency-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Payment Frequency") 
+        <div class="application-payment-frequency-details">
+            @Html.EditorFor(x => x.PaymentFrequencies, new { style = "width:100%" })
+        </div>
+    </div>
+    }
+    
+    @if (displayPaymentOptions)
+    {
+    <div class="application-input-group-header header-vx-payment-options">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Payment Options</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-payment-options-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Payment Options") 
+        <div class="application-payment-options-details">
+            @Html.EditorFor(x => x.PaymentOptions, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }*@
+
+@*    @if (displayApplicationCurrency)
+    {
+    <div class="application-input-group-header header-vx-currency">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Currency</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-currency-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Payment Currency") 
+        <div class="application-currencies-details">
+            @Html.EditorFor(x => x.Currency, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }*@
+
+@*    @if (displayTimezone)
+    {
+    <div class="application-input-group-header header-vx-timezone">
+        <div class="application-input-group-header-icon">
+            <div class="ui-icon-triangle-1-s ui-icon">
+            </div>
+        </div>
+        <div class="application-input-group-header-label"></div>
+        <label class="font-bold-11px-purple">Time Zone</label>
+        <div style="height:20px;position:relative;"></div>
+    </div>
+        
+    <div class="application-timezone-container container-slide">
+        @Html.Partial("GroupBorderCaption", "Time Zone") 
+        <div class="application-timezones-details">
+            @Html.EditorFor(x => x.Timezone, new { style = "width:100%" })
+        </div>
+    </div>
+    <div class="clear"></div>
+    <br />
+    }*@
+
+</div>
+}
+
+    
+@*@{var dummyProductReview = Model.CloudApplicationProductReviews[Model.CloudApplicationProductReviews.Count - 1];}*@
+@{var dummyProductReview = Model.CloudApplicationProductReviewsContainerModel.CloudApplicationProductReviews[Model.CloudApplicationProductReviewsContainerModel.CloudApplicationProductReviews.Count - 1];}
+@Html.Partial("UploadProductReview", dummyProductReview)
+
+
+@{var dummyImage = new CompareCloudware.Web.Models.UploadImageModel();}
+@{dummyImage.CloudApplicationID = Model.CloudApplicationID;}
+@Html.Partial("UploadImage", dummyImage)
+
+@*@{var test3 = new CompareCloudware.Web.Models.CloudApplicationVideoModel();}
+@{test3.CloudApplicationVideoExtensions = Model.VideoExtensions;}
+@{test3.CloudApplicationVideoDomains = Model.VideoDomains;}
+@Html.Partial("UploadVideo", test3)*@
+
+@*@{var dummyUserReview = Model.CloudApplicationUserReviews[Model.CloudApplicationUserReviews.Count - 1];}*@
+@{var dummyUserReview = Model.CloudApplicationUserReviewsContainerModel.CloudApplicationUserReviews[Model.CloudApplicationUserReviewsContainerModel.CloudApplicationUserReviews.Count - 1];}
+@Html.Partial("UploadUserReview", dummyUserReview)
+
+@*@{var dummyDocument = Model.CloudApplicationDocuments[Model.CloudApplicationDocuments.Count - 1];}*@
+@{var dummyDocument = Model.CloudApplicationDocumentsContainerModel.CloudApplicationDocuments[Model.CloudApplicationDocumentsContainerModel.CloudApplicationDocuments.Count - 1];}
+@Html.Partial("UploadDocument", dummyDocument)
+
+@if (Model.CloudApplicationVideosContainerModel != null)
+{
+    if (Model.CloudApplicationVideosContainerModel.CloudApplicationVideos.Count > 0)
+    //if (Model.Videos[0] != null)
+    {
+        var cloudApplicationVideo = Model.CloudApplicationVideosContainerModel.CloudApplicationVideos[0];
+        @Html.Partial("UploadVideo", cloudApplicationVideo)
+    }
+}
+

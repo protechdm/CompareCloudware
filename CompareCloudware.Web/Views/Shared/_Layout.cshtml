@@ -1,0 +1,20 @@
+﻿@model CompareCloudware.Web.Models.BaseModel
+
+
+@{
+    Layout = "~/Views/Shared/CloudCompareLayout.cshtml";
+}
+
+@section HeaderSection {
+@RenderSection("Styles", false)
+    @{Html.RenderAction("HeaderModel", new { session = Model.CustomSession });}
+}
+
+
+@RenderBody()
+
+    @RenderSection("Scripts", false)
+
+@section FooterSection {
+    @{Html.RenderAction("FooterModel");}
+}

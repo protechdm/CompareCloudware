@@ -1,0 +1,438 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+@using CompareCloudware.Web.Models
+@using System.Web.Mvc;
+@using System.Configuration;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>PrintResult2</title>@*
+    <link href="@Url.Content("http://localhost:3785/Content/jquery-ui.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/EnabledJavaScript/simple-search-input.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/Creature.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/overflow-text-ellipsis.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/jquery-ui.custom.css")" rel="stylesheet" type="text/css" media="all" />    
+*@
+
+@*    @Request.Url.Authority@Request.ApplicationPath*@
+    @{bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);}
+    @{testMode = false;}
+    @{string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"];}
+    @{int columnCount;}
+@*    @{string homePath = "http://" + @Request.Url.Authority + @Request.ApplicationPath;}*@
+    @{string homePath = "http://" + @Request.Url.Authority;}
+    @{string hRef = null;}
+
+    <link href="@Url.Content(homePath + "/Content/Site.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content(homePath + "/Content/fonts.css")" rel="Stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content(homePath + "/Content/overflow-text-ellipsis.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content(homePath + "/Content/search-page.css")" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="@Url.Content(homePath + "/Scripts/jquery-1.8.1.js")" type="text/javascript"></script>
+
+    <style type="text/css" media="all">
+        .xfont-normal-22px-purple
+        {
+            font-size: 13px;
+            font-weight: normal;
+            font-style: normal;
+            color: #800080;
+        }
+        
+        .xfont-bold-22px-purple
+        {
+            font-size: 22px;
+            font-weight: bold;
+            font-style: normal;
+            color: #800080;
+            font-family: Vagabond;
+        }
+        
+        .xfont-normal-22px-purple
+        {
+            font-family: Vagabond;
+        }
+
+    </style>
+</head>
+<body style="width:210mm;">
+
+
+    @{ var searchResultModel = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationSearchResultModel;}
+    @{ int days = -1;}
+    @{ bool isDays = int.TryParse(searchResultModel.FreeTrialPeriod, out days);}
+
+    <table style="width:100%;">
+        <tr>
+            <td style="width:65%;vertical-align:top;">
+                <div class="xsearch-result-page-div font-normal-11px" style="margin-top:0px;width:100%;">
+                    <div class="search-result-div">
+                        <div class="search-header-result-container">
+                            <div class="cloud-application-search-result-table-outer">
+                            <!-- THUMBNAIL DOCUMENTS -->
+                                <table class="box-shadow" style="width:93%;margin-left:3px;border:0px solid">
+                                    <tr>
+                                        <td style="width:100%;text-align:left;" >
+                                            <font class="font-normal-22px-purple" >
+                                                <label class="font-normal-22px-purple search-result-header">Discover more about @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName</label>
+                                            </font>
+                                        </td>                    
+                                    </tr>
+                                    <!-- CASE STUDIES -->
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple" >
+                                                <label class="font-bold-11px-purple search-result-header">Case Studies</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+                                    @{int documentID = 0;}
+                                    <tr>
+                                        <td>
+                                            <div class="thumbnail-documents" style="width:100%;border:0px solid black;">
+                                                @{columnCount = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Where(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("CASE")).ToList().Count;}
+                                                <table style="width:100%;border:0px solid black;">
+                                                    <tr>
+                                                    @for (int td = 1; td <= Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Count; td++)
+                                                    {
+                                                    if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("CASE"))
+                                                    {
+                                                        <td style="float:left;position:relative;width:@((100 / columnCount) - 1)%;border:0px solid black;">
+                                                            <div class="xthumbnail-document" style="width:100%;border:0px solid black;">
+                                                            @{documentID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentID;}
+                                                            @{hRef = homePath + "/Admin/RedirectShowDocument?documentID=" + documentID.ToString();}
+                                                                <a href="@hRef" style="text-decoration:none;">
+                                                                    <label class="font-bold-11px-black">@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentTitle</label>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    }
+                                                    }
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- WHITE PAPERS -->
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple" >
+                                                <label class="font-bold-11px-purple search-result-header">White Papers</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="thumbnail-documents" style="width:100%;border:0px solid black;">
+                                            @{columnCount = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Where(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("WHITE")).ToList().Count;}
+                                                <table style="width:100%;border:0px solid black;">
+                                                    <tr>
+                                                    @for (int td = 1; td <= Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Count; td++)
+                                                    {
+                                                    if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("WHITE"))
+                                                    {
+                                                        <td style="float:left;position:relative;width:@((100 / columnCount) - 1)%;border:0px solid black;">
+                                                            <div class="xthumbnail-document" style="width:100%;border:0px solid black;">
+                                                            @{documentID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentID;}
+                                                                <font class="font-bold-11px-black" >
+                                                                @{hRef = homePath + "/Admin/RedirectShowDocument?documentID=" + documentID.ToString();}
+                                                                    <a href="@hRef" style="text-decoration:none;">
+                                                                        <label class="font-bold-11px-black">@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentTitle</label>
+                                                                    </a>
+                                                                </font>
+                                                            </div>
+                                                        </td>
+                                                    }
+                                                    }
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <!-- VIDEOS -->
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationVideos.Count > 0)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple-arial" >
+                                                <label class="font-bold-11px-purple search-result-header">Videos</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+@*                        @Html.EditorFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationVideos)*@
+                                        </td>
+                                    </tr>
+                                    }
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both;height:10px;"></div>
+
+
+
+                    <div class="search-result-div">
+                        <div class="search-header-result-container">
+                            <div class="cloud-application-search-result-table-outer">
+                                <table class="box-shadow" style="width:93%;margin-left:3px;border:0px solid">
+                                    <tr>
+                                        <td style="width:100%;text-align:left;" >
+                                            <!-- PRODUCT REVIEWS -->
+                                            <font class="font-normal-22px-purple" >
+                                                <label class="font-normal-22px-purple">Product reviews</label>
+                                            </font>
+                                        </td>                    
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:100%;text-align:left;border:1px solid black;">
+                                            <div class="xsearch-result-product-reviews-div" style="border:1px solid black;width:100%;">
+@*                                            @foreach (CloudApplicationProductReviewModel capr in Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews)*@
+                                                <table style="width:100%;">
+                                                @for (int i = 0; i < Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews.Count; i++)
+                                                {
+                                                    CloudApplicationProductReviewModel capr = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews[i];
+                                                    if (i % 2 == 0)
+                                                    {
+                                                    @:<tr>
+                                                    }
+                                                        <td style="width:50%;border:0px solid black;vertical-align:top;">
+                                                        <div class="xproduct-review" style="width:100%;border:0px solid black;display:inline;">
+                                                    <div style="width:100%;border:0px solid black;display:inline;">
+                                                        <div style="width:100%;border:0px solid black;display:inline;">
+                                                            <table style="width:93.5%;border:0px solid black;display:inline;">
+                                                                <tr>
+                                                                    <td>
+                                                                        <font class="font-bold-11px-purple" >
+                                                                            <label class="font-bold-11px-purple">@capr.CloudApplicationProductReviewPublisherName.Trim() - @capr.CloudApplicationProductReviewDate.ToShortDateString()</label>
+                                                                        </font>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="line-height:12px;" class="font-bold-11px-black">
+                        @*                                              <label class="font-bold-11px-black"></label>*@
+                                                                        <div>
+                        @*                                                  @Html.LabelFor(@Model.CloudApplicationReviewHeadline)*@
+                                                                            <span class="viewReviewDialog">@capr.CloudApplicationProductReviewHeadline</span>
+                                                                            <span style="display:none;">@capr.CloudApplicationProductReviewURL</span>
+                                                                            <span style="display:none;">@capr.CloudApplicationProductReviewURLDocumentFormat</span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="padding-top:5px;" class="font-normal-11px-black">
+                                                                        <div class="ellipsify-15px-8-lines">
+@*                                                                            <div class="pre-dots-15px-8-lines"></div>
+                                                                            <div class="dots-15px-8-lines">
+                                                                            &hellip;
+                                                                            </div>*@
+                                                                            <label class="font-normal-11px-black review-text">
+                                                                            @capr.CloudApplicationProductReviewText
+                                                                            </label>
+@*                                                                            <span class="hidedots1-15px-8-lines"></span>
+                                                                            <div class="xhidedots2-15px-8-lines">
+                                                                            </div>*@
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                        
+                                                        </td>
+                                                    if (i % 2 == 1)
+                                                    {
+                                                    @:</tr>
+                                                    }
+                                                }
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both;height:10px;"></div>
+
+                </div>
+            
+            </td>
+
+            <!-- START OF SECOND COLUMN-->
+            <td style="width:35%;vertical-align:top;">
+
+                <div class="xsearch-result-product-ratings-div" style="width:100%;">
+                    <font class="font-normal-22px-purple" >
+                        <label class="font-normal-22px-purple">User reviews</label>
+                    </font>
+
+                    <!-- USER REVIEWS -->
+                    @{bool suppressUserReviewNumberOfStaff = Convert.ToBoolean(ConfigurationManager.AppSettings["SuppressUserReviewNumberOfStaff"]); }
+
+                    @foreach (CloudApplicationUserReviewModel caur in Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationUserReviews)
+                    {
+                    <div style="width:100%;border: 0px solid black;">
+                        <div style="width:100%;border: 0px solid black;">
+                            <div style="width:100%;border: 0px solid black;">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-black" >
+                                                <label class="font-bold-11px-purple">@caur.ChosenIndustry.description</label>
+                                            </font>
+                                        </td>
+                                        <td>
+                                            <div style="float:right;" class="xoverall-rating-container">
+                                            @for (decimal i = 1; i <= 5; i += 1)
+                                            {
+                                            if (caur.CloudApplicationUserReviewOverallRating / 20 >= i)
+                                            {
+                                                <div class="overall-rating-icon-container pdf-purple-cloud-icon"></div>
+                                            }
+                                            else if ((caur.CloudApplicationUserReviewOverallRating / 20) + .5m >= i)
+                                            {
+                                                <div class="overall-rating-icon-container pdf-purple-and-blue-cloud-icon"></div>
+                                            }
+                                            else
+                                            {
+                                                <div class="overall-rating-icon-container pdf-blue-cloud-icon"></div>
+                                            }
+                                            }    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @if (!suppressUserReviewNumberOfStaff)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-black">@caur.CloudApplicationUserReviewEmployeeCount staff</label>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    }
+                                    <tr>
+                                        <td class="font-normal-11px-black" colspan="2">
+                                            <div class="ellipsify-15px-8-lines" style="border: 0px solid black;">
+@*                                              <div class="pre-dots-15px-8-lines">
+                                                </div>
+                                                <div class="dots-15px-8-lines">
+                                                &hellip;
+                                                </div>*@
+                                                <label class="font-normal-11px-black review-text">
+                                                    @caur.CloudApplicationUserReviewText
+                                                </label>
+@*                                              <span class="hidedots1-15px-8-lines"></span>
+                                                <div class="xhidedots2-15px-8-lines">
+                                                </div>*@
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both; height:0px;"></div>    
+                    }
+
+
+
+                    <div style="clear:both; height:0px;"></div>
+                </div>
+            
+            </td>
+        </tr>
+    </table>
+    
+    <BR style="page-break-after: always">
+
+                                <table class="box-shadow" style="width:93%;margin-left:3px;border:0px solid">
+                                    <tr>
+                                        <td style="width:100%;text-align:left;" >
+                                            <!-- PRODUCT REVIEWS -->
+                                            <font class="font-normal-22px-purple" >
+                                                <label class="font-normal-22px-purple">Page break</label>
+                                            </font>
+                                        </td>                    
+                                    </tr>
+                                </table>
+
+<script language="javascript" type="text/javascript">
+//    $(document).ready(function () {
+        function CheckReviewTextHeight() {
+            //alert("IN");
+            var reviewTexts = $('.review-text');
+            CheckTextHeight(reviewTexts);
+        }
+
+        function CheckTextHeight(theReviews) {
+            //debugger;
+
+            $.each(theReviews, function (key, value) {
+                //debugger;
+                var textHeightCSS = $(this).css('height');
+                var ellipsify = $(this).parent();
+                //$(ellipsify).css('height', textHeightCSS);
+
+                var textHeight = $(this).height();
+                if (textHeight == 149) {
+                    textHeight -= 15;
+                    var preDots = $(ellipsify).find('.pre-dots-15px-8-lines');
+                    //$(preDots).css('height', textHeight + 'px');
+                }
+                else {
+                    var dots = $(ellipsify).find('.dots-15px-8-lines');
+                    $(dots).empty();
+                }
+
+                //debugger;
+                //var containingDiv = $(ellipsify).find('.ellipsify-15px-8-lines');
+                //$(ellipsify).css('height', "10px");
+                $(ellipsify).css('max-height', "1000px");
+                var text = $(ellipsify).find('.review-text');
+                var textHeight = parseInt($(text).height());
+                var maxHeight = parseInt('120');
+                if (textHeight > maxHeight) {
+                    //var stringText = $(text).text().trim();
+                    var stringText = $.trim($(text).text());
+                    while (textHeight > maxHeight) {
+                        var stringLength = stringText.length;
+                        stringText = stringText.substr(0, stringLength - 1);
+                        $(text).text(stringText);
+                        textHeight = parseInt($(text).height());
+                        //debugger;
+                    }
+                    //stringText = textHeight.toString() + maxHeight.toString() + stringText.substr(0, stringLength - 5) + "...";
+                    stringText = stringText.substr(0, stringLength - 50) + "...";
+                    $(text).text(stringText);
+                }
+
+            });
+
+        }
+
+        CheckReviewTextHeight();
+
+//    });
+</script>
+
+
+</body>
+</html>

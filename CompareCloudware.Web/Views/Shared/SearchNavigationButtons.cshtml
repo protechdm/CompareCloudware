@@ -1,0 +1,86 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+@{var searchResultsPages = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage;}
+@{var searchResults = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults;}
+@Html.Hidden("currentPageNumber", searchResultsPages.PageNumber, new { @id = "currentPageNumber" })
+@Html.Hidden("pageCount", searchResultsPages.PageCount, new { @id = "pageCount" })
+<table width="100%">
+    <tr>
+@*        <td style="width:80%;margin:auto;">*@
+        <td>
+            <div class="pagination-centred">
+            <div class="pagination">
+                <ul>
+@*                    @if (searchResultsPages.HasPreviousPage)*@
+                    {
+                        <li>
+                            <label class="font-normal-13px-blue navigate-search-results"><< First</label>
+                        </li>
+                        <li>
+                            <label class="font-normal-13px-blue navigate-search-results">< Previous</label>
+@*                            <i class="icon-arrow-left"></i>*@
+                        </li>
+                    }
+@*                    else
+                    {
+                        <li>
+                            <label class="font-normal-13px-white" style="border-width: 0px 0px 0px 0px;"><< First</label>
+                        </li>
+                        <li>
+                            <label class="font-normal-13px-white" style="border-width: 0px 1px 0px 0px;">< Previous</label>
+                            <i class="icon-arrow-left"></i>
+                        </li>
+                    }*@
+                    
+                    
+                    
+                    
+                    @for (int i = searchResultsPages.PageNumber - 3; i < searchResultsPages.PageNumber; i++)
+                    {
+                        if (i > 0 && searchResultsPages.PageCount >= i)
+                        {
+                        <li>
+                            <label class="font-normal-13px-blue navigate-search-results">@i</label>
+                        </li>
+                        }
+                    }
+                    <li class="active">
+                        <label class="font-normal-13px-blue navigate-search-results">@searchResultsPages.PageNumber</label>
+                    </li>
+                    @for (int i = searchResultsPages.PageNumber + 1; i <= searchResultsPages.PageNumber + 3; i++)
+                    {
+                        if (i <= searchResultsPages.PageCount)
+                        {
+                        <li>
+                            <label class="font-normal-13px-blue navigate-search-results">@i</label>
+                        </li>
+                        }
+                    }
+@*                    @if (searchResultsPages.HasNextPage)*@
+                    {
+                        <li>
+                            <label class="font-normal-13px-blue navigate-search-results">Next ></label>
+@*                            <i class="icon-arrow-left"></i>*@
+                        </li>
+                        <li>
+                            <label class="font-normal-13px-blue navigate-search-results">Last >></label>
+                        </li>
+                    }
+@*                    else
+                    {
+                        <li>
+                            <label class="font-normal-13px-white" style="border-width: 0px 0px 0px 1px;">Next ></label>
+                            <i class="icon-arrow-left"></i>
+                        </li>
+                        <li>
+                            <label class="font-normal-13px-white" style="border-width: 0px 0px 0px 0px;">Last >></label>
+                        </li>
+                    }*@
+                </ul>
+            </div>
+            </div>
+        </td>
+        <td style="width:1%;">
+            @Html.Partial("SearchNavigationInfo", @Model)
+        </td>
+    </tr>
+</table>

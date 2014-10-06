@@ -1,0 +1,146 @@
+﻿@model CompareCloudware.Web.Models.SelectListItemCollectionFeatures
+
+<div class="select-list-item-collection-features" style="position:relative;width:100%;">
+@if (Model != null)
+{
+
+    @Html.HiddenFor(m => m.MultiSelect)
+    @Html.HiddenFor(m => m.CollectionTitle)
+    @Html.HiddenFor(m => m.ChosenValue)
+    @Html.HiddenFor(m => m.ColumnCount)
+
+    if (Model.SelectListItems != null)
+    {
+        if (!Model.MultiSelect)
+        {
+            @Html.DropDownListFor(x => x.ChosenValue, new SelectList(@Model.SelectListItems, "Value", "Text", .5M), new { @class = "font-normal-13px-black" })
+        }
+        else
+        {
+
+
+            int currentColumn = 1;
+<table style="width:100%;" class="list-collection">
+    <tr style="">
+        @for (int i = 0; i < Model.SelectListItems.Count; i++)
+        {
+            @Html.HiddenFor(m => m.SelectListItems[i].Text)
+            @Html.HiddenFor(m => m.SelectListItems[i].Value)
+            @Html.HiddenFor(m => m.SelectListItems[i].HasCount)
+            @Html.HiddenFor(m => m.SelectListItems[i].OutputDisplayDescriptor)
+            if (currentColumn > Model.ColumnCount)
+            {
+                currentColumn = 1;
+                @:</tr>
+                @:<tr style="">
+            }
+
+            <td style="width:10px;">
+            @if (!Model.SelectListItems[i].HasCount)
+            {
+@*                @checked = "checked",*@
+                @Html.CheckBoxFor(m => m.SelectListItems[i].Selected, new { @class = "include-feature" })
+                @*&nbsp;*@
+            }
+            else if(Model.SelectListItems[i].HasBooleanAndCount)
+            {
+                @Html.CheckBoxFor(m => m.SelectListItems[i].Selected, new { @class = "include-feature" })
+            }
+            else
+            {
+                @Html.CheckBoxFor(m => m.SelectListItems[i].Selected, new { @class = "include-feature" })
+            }
+            </td>
+            <td style="width:200px;">
+                @Html.LabelFor(m => m.SelectListItems[i].Text, Model.SelectListItems[i].Text, new { @class = "font-normal-13px-black" })
+                @*&nbsp;*@
+            </td>
+
+            if (Model.SelectListItems[i].HasCount)
+            {
+                <td style="width:10px;">
+                @Html.TextBoxFor(m => m.SelectListItems[i].Count, new { @class = "font-normal-13px-black feature-count", @style = "width:50px;" })
+@*                @Html.EditorFor(m => m.SelectListItems[i].CountSuffixes, new { style = "width:100%" })*@
+                </td>
+
+
+                <td style="width:10px;">
+                @if (Model.SelectListItems[i].HasCount && Model.SelectListItems[i].OutputDisplayDescriptor == "BYTES")
+                {
+@*                @Html.Partial("BytesDropdown",Model.SelectListItems[i].CountSuffix)*@
+                @Html.EditorFor(m => m.SelectListItems[i].CountSuffix, "BytesDropdown")
+                }
+                else
+                {
+                }
+                </td>
+
+                <td style="width:10px;">
+                    @Html.CheckBoxFor(m => m.SelectListItems[i].IsUnlimited, new { @checked = "checked", @class = "feature-isunlimited-checked" })
+                </td>
+                <td style="width:50px;">
+                    @Html.LabelFor(m => m.SelectListItems[i].IsUnlimited, new { @class = "font-normal-13px-black feature-isunlimited-checked-label" })
+                </td>
+                
+            }
+            else
+            {
+                <td style="width:10px;">
+                </td>
+                <td style="width:10px;">
+                </td>
+                    
+                <td style="width:10px;">
+                </td>
+                <td style="width:10px;">
+                </td>
+                    
+                    
+            }
+            
+
+
+            <td style="width:10px;">
+                @Html.CheckBoxFor(m => m.SelectListItems[i].IsOptional, new { @checked = "checked", @class = "feature-optional" })
+            </td>
+            <td style="width:50px;">
+                @Html.LabelFor(m => m.SelectListItems[i].IsOptional, new { @class = "font-normal-13px-black feature-optional-label" })
+            </td>
+
+            var visibility = Model.SelectListItems[i].IncludeExtraCost ? "visible" : "hidden";
+                        
+            <td style="width:10px;">
+                @{var extraCostCheckedItem = "include-extra-cost-checked" + i.ToString();}
+                @Html.CheckBoxFor(m => m.SelectListItems[i].IncludeExtraCost, new { @checked = "checked", @class = "include-extra-cost-checked" })
+            </td>
+            <td style="width:100px;">
+                @Html.Label("Include At Extra Cost", "Include At Extra Cost", new { @class = "font-normal-13px-black include-extra-cost-checked-label" })
+            </td>
+
+            <td style="width:100px;">
+                <div style="position:relative;width:100%;visibility:@visibility" class="include-extra-cost">
+                    @Html.LabelFor(m => m.SelectListItems[i].CostWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                    @Html.TextBoxFor(m => m.SelectListItems[i].CostWhole, new { @class = "font-normal-13px-black", @style = "width:50px;float:left;" })
+                    @Html.LabelFor(m => m.SelectListItems[i].CostFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                    @Html.TextBoxFor(m => m.SelectListItems[i].CostFraction, new { @class = "font-normal-13px-black", @style = "width:20px;float:left;" })
+                </div>
+            </td>
+            
+@*            <td style="width:100px;">
+                <div style="position:relative;width:100%;visibility:@visibility" class="include-extra-cost">
+                    @{var extraCostItem = "include-extra-cost" + i.ToString();}
+                    @Html.EditorFor(m => m.SelectListItems[i].Cost)
+                </div>
+            </td>*@
+            
+
+            
+                  currentColumn += 1;
+        }
+    </tr>
+</table>
+        }
+
+    }
+}
+</div>

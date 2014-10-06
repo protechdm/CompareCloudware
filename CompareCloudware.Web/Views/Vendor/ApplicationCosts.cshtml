@@ -1,0 +1,1129 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationInputModel
+
+<script>
+    $(document).ready(function () {
+        //debugger;
+
+        function RefreshAllWidgets() {
+            //debugger;
+            IsCostPerMonthOfferedChanged();
+            IsCostPerAnnumOfferedChanged();
+            IsCostPerMonthAvailableChanged();
+            IsCostPerAnnumAvailableChanged();
+            IsCostPerMonthFreeChanged();
+            IsCostPerAnnumFreeChanged();
+            PAYGChanged();
+            IsOneOffCostChanged();
+            SingleMonthlyPriceChanged(false);
+            FromToMonthlyPriceChanged();
+            SingleAnnualPriceChanged();
+            FromToAnnualPriceChanged();
+        }
+
+        RefreshAllWidgets();
+
+        $('.PAYG').click(function (e) {
+            PAYGChanged();
+        });
+
+        $('.OneOff').click(function (e) {
+            IsOneOffCostChanged();
+        });
+
+        $('.applicationCostPerMonthOfferedValue').click(function (e) {
+            IsCostPerMonthOfferedChanged();
+        });
+
+        $('.applicationCostPerMonthFreeValue').click(function (e) {
+            IsCostPerMonthFreeChanged();
+        });
+
+        $('.applicationCostPerMonthAvailableValue').click(function (e) {
+            IsCostPerMonthAvailableChanged();
+        });
+
+        $('.applicationCostPerAnnumOfferedValue').click(function (e) {
+            IsCostPerAnnumOfferedChanged();
+        });
+
+        $('.applicationCostPerAnnumFreeValue').click(function (e) {
+            IsCostPerAnnumFreeChanged();
+        });
+
+        $('.applicationCostPerAnnumAvailableValue').click(function (e) {
+            IsCostPerAnnumAvailableChanged();
+        });
+
+        function IsOneOffCost() {
+            var isOneOffCost = $('#IsOneOffCost').prop("checked");
+            return isOneOffCost;
+        }
+
+        function IsPAYG() {
+            var PAYG = $('.PAYG').prop("checked");
+            return PAYG;
+        }
+
+        function IsMonthlyPOA() {
+            var monthlyPOA = $('.applicationCostPerMonthPOAValue').prop("checked");
+            return monthlyPOA;
+        }
+
+        function IsMonthlyFree() {
+            var isCostPerMonthFree = $('#ApplicationCostPerMonthFree').prop("checked");
+            return isCostPerMonthFree;
+        }
+
+        function IsMonthlyPriceOffered() {
+            var isCostPerMonthOffered = $('#ApplicationCostPerMonthOffered').prop("checked");
+            return isCostPerMonthOffered;
+        }
+
+        function IsAnnualPOA() {
+            var annualPOA = $('.applicationCostPerAnnumPOAValue').prop("checked");
+            return annualPOA;
+        }
+
+        function IsAnnualFree() {
+            var isCostPerAnnumFree = $('#ApplicationCostPerAnnumFree').prop("checked");
+            return isCostPerAnnumFree;
+        }
+
+        function IsAnnualPriceOffered() {
+            var isCostPerAnnumOffered = $('#ApplicationCostPerAnnumOffered').prop("checked");
+            return isCostPerAnnumOffered;
+        }
+
+        function IsOneOffCostChanged() {
+            //debugger;
+            var IsOneOffCost = $('#IsOneOffCost').prop("checked");
+            if (IsOneOffCost) {
+                Hide($('#monthlyCostDetails'));
+                Hide($('#annualCostDetails'));
+                Show($('#oneoffCostDetails'));
+                Hide($('#offeredFreePOADetails'));
+                Hide($('.applicationPAYG'));
+
+                SetToUnchecked($('.applicationCostPerMonthOfferedValue'));
+                SetToUnchecked($('.applicationCostPerMonthPOAValue'));
+                SetToUnchecked($('.applicationCostPerMonthFreeValue'));
+                SetToUnchecked($('.applicationCostPerAnnumOfferedValue'));
+                SetToUnchecked($('.applicationCostPerAnnumPOAValue'));
+                SetToUnchecked($('.applicationCostPerAnnumFreeValue'));
+                SetToUnchecked($('.PAYG'));
+                PAYGChanged();
+            }
+            else {
+                Show($('.applicationPAYG'));
+                if (!IsPAYG() && !IsMonthlyFree() && IsMonthlyPriceOffered()) {
+                    Show($('#monthlyCostDetails'));
+                }
+                if (!IsPAYG() && !IsAnnualFree() && IsAnnualPriceOffered()) {
+                    Show($('#annualCostDetails'));
+                }
+                Hide($('#oneoffCostDetails'));
+                Show($('#offeredFreePOADetails'));
+            }
+        }
+
+        function PAYGChanged() {
+            //$('#tn_select').empty();
+            //$('.modal_part').hide();
+            var PAYG = $('.PAYG').prop("checked");
+            if (PAYG) {
+                Disable($('.applicationCostPerMonthValue'));
+                Disable($('.applicationCostPerMonthSuffixValue'));
+                Disable($('.applicationCostPerMonthFromValue'));
+                Disable($('.applicationCostPerMonthToValue'));
+                Disable($('.applicationCostPerMonthPOAValue'));
+                Disable($('.applicationCostPerMonthFreeValue'));
+                Disable($('.applicationCostPerMonthOfferedValue'));
+                Disable($('.applicationCostPerAnnumValue'));
+                Disable($('.applicationCostPerAnnumSuffixValue'));
+                Disable($('.applicationCostPerAnnumFromValue'));
+                Disable($('.applicationCostPerAnnumToValue'));
+                Disable($('.applicationCostPerAnnumPOAValue'));
+                Disable($('.applicationCostPerAnnumFreeValue'));
+                Disable($('.applicationCostPerAnnumOfferedValue'));
+
+                Disable($('.radSingleMonthlyPrice'));
+                Disable($('.radFromToMonthlyPrice'));
+                Disable($('.radSingleAnnualPrice'));
+                Disable($('.radFromToAnnualPrice'));
+
+
+
+                SetToZeroValue($('.applicationCostPerMonthValue'));
+                SetToZeroValue($('.applicationCostPerMonthSuffixValue'));
+                SetToZeroValue($('.applicationCostPerMonthFromValue'));
+                SetToZeroValue($('.applicationCostPerMonthToValue'));
+                //SetToZeroValue($('.applicationCostPerMonthPOAValue'));
+                SetToZeroValue($('.applicationCostPerAnnumValue'));
+                SetToZeroValue($('.applicationCostPerAnnumSuffixValue'));
+                SetToZeroValue($('.applicationCostPerAnnumFromValue'));
+                SetToZeroValue($('.applicationCostPerAnnumToValue'));
+                //SetToZeroValue($('.applicationCostPerAnnumPOAValue'));
+
+                SetToUnchecked($('#IsOneOffCost'));
+                IsOneOffCostChanged();
+                SetToUnchecked($('.applicationCostPerMonthOfferedValue'));
+                IsCostPerMonthOfferedChanged();
+                SetToUnchecked($('.applicationCostPerMonthFreeValue'));
+                IsCostPerMonthFreeChanged();
+
+                SetToUnchecked($('.applicationCostPerAnnumOfferedValue'));
+                IsCostPerAnnumOfferedChanged();
+                SetToUnchecked($('.applicationCostPerAnnumFreeValue'));
+                IsCostPerAnnumFreeChanged();
+
+                Hide($('.applicationOneOffCost'));
+
+                DisableMonthlyCostValues();
+                DisableAnnualCostValues();
+
+            }
+            else {
+
+                //Enable($('.applicationCostPerMonthValue'));
+                //Enable($('.applicationCostPerMonthSuffixValue'));
+                //Enable($('.applicationCostPerMonthFromValue'));
+                //Enable($('.applicationCostPerMonthToValue'));
+                Enable($('.applicationCostPerMonthPOAValue'));
+                Enable($('.applicationCostPerMonthFreeValue'));
+                Enable($('.applicationCostPerMonthOfferedValue'));
+                //Enable($('.applicationCostPerAnnumValue'));
+                //Enable($('.applicationCostPerAnnumSuffixValue'));
+                //Enable($('.applicationCostPerAnnumFromValue'));
+                //Enable($('.applicationCostPerAnnumToValue'));
+                Enable($('.applicationCostPerAnnumPOAValue'));
+                Enable($('.applicationCostPerAnnumFreeValue'));
+                Enable($('.applicationCostPerAnnumOfferedValue'));
+
+                Enable($('.radSingleMonthlyPrice'));
+                Enable($('.radFromToMonthlyPrice'));
+                Enable($('.radSingleAnnualPrice'));
+                Enable($('.radFromToAnnualPrice'));
+
+                Show($('.applicationOneOffCost'));
+
+                MonthPOAChanged();
+                AnnumPOAChanged();
+                IsCostPerMonthOfferedChanged();
+                IsCostPerMonthFreeChanged();
+                IsCostPerAnnumOfferedChanged();
+                IsCostPerAnnumFreeChanged();
+
+                EnableMonthlyCostValues();
+                EnableAnnualCostValues();
+            }
+
+        }
+
+        $('.radSingleMonthlyPrice').change(function (e) {
+            //var retVal = AlertToZeroCosts("message",e);
+            var retVal = confirm("All monthly prices will be deleted. Are you sure?")
+            if (retVal) {
+                SingleMonthlyPriceChanged();
+                return true;
+            }
+            else {
+                var x = $('.radFromToMonthlyPrice')[0].checked = true;
+                return false;
+            }
+        });
+
+        function SingleMonthlyPriceChanged(setToZero) {
+            //debugger;
+            var radSingleMonthlyPrice = $('.radSingleMonthlyPrice').prop("checked");
+            if (radSingleMonthlyPrice) {
+                //Show($('.applicationCostPerMonth'));
+                //Show($('.applicationCostPerMonthSuffix'));
+                Show($('.applicationCostPerMonthSingle'));
+                //Hide($('.applicationCostPerMonthFrom'));
+                //Hide($('.applicationCostPerMonthTo'));
+                Hide($('.applicationCostPerMonthFromTo'));
+                SetToZeroValue($('.applicationCostPerMonthFromValue'));
+                SetToZeroValue($('.applicationCostPerMonthToValue'));
+            }
+            else {
+                //Hide($('.applicationCostPerMonth'));
+                //Hide($('.applicationCostPerMonthSuffix'));
+                Hide($('.applicationCostPerMonthSingle'));
+                SetToZeroValue($('.applicationCostPerMonthValue'));
+                SetToZeroValue($('.applicationCostPerMonthSuffixValue'));
+                //Show($('.applicationCostPerMonthFrom'));
+                //Show($('.applicationCostPerMonthTo'));
+                Show($('.applicationCostPerMonthFromTo'));
+            }
+        }
+
+        $('.radFromToMonthlyPrice').change(function (e) {
+            //var retVal = AlertToZeroCosts("message",e);
+            var retVal = confirm("All monthly prices will be deleted. Are you sure?")
+            if (retVal) {
+                FromToMonthlyPriceChanged();
+                return true;
+            }
+            else {
+                var x = $('.radSingleMonthlyPrice')[0].checked = true;
+                return false;
+            }
+        });
+
+        function FromToMonthlyPriceChanged() {
+            var radFromToMonthlyPrice = $('.radFromToMonthlyPrice').prop("checked");
+            if (radFromToMonthlyPrice) {
+                //Hide($('.applicationCostPerMonth'));
+                //Hide($('.applicationCostPerMonthSuffix'));
+                Hide($('.applicationCostPerMonthSingle'));
+                SetToZeroValue($('.applicationCostPerMonthValue'));
+                SetToZeroValue($('.applicationCostPerMonthSuffixValue'));
+                //Show($('.applicationCostPerMonthFrom'));
+                //Show($('.applicationCostPerMonthTo'));
+                Show($('.applicationCostPerMonthFromTo'));
+            }
+            else {
+                //Show($('.applicationCostPerMonth'));
+                //Show($('.applicationCostPerMonthSuffix'));
+                Show($('.applicationCostPerMonthSingle'));
+                //Hide($('.applicationCostPerMonthFrom'));
+                //Hide($('.applicationCostPerMonthTo'));
+                Hide($('.applicationCostPerMonthFromTo'));
+                SetToZeroValue($('.applicationCostPerMonthFromValue'));
+                SetToZeroValue($('.applicationCostPerMonthToValue'));
+            }
+        }
+
+        $('.radSingleAnnualPrice').change(function (e) {
+            //var retVal = AlertToZeroCosts("message",e);
+            var retVal = confirm("All annual prices will be deleted. Are you sure?")
+            if (retVal) {
+                SingleAnnualPriceChanged();
+                return true;
+            }
+            else {
+                var x = $('.radFromToAnnualPrice')[0].checked = true;
+                return false;
+            }
+        });
+
+        function SingleAnnualPriceChanged() {
+            var radSingleAnnualPrice = $('.radSingleAnnualPrice').prop("checked");
+            if (radSingleAnnualPrice) {
+                //Show($('.applicationCostPerAnnum'));
+                //Show($('.applicationCostPerAnnumSuffix'));
+                Show($('.applicationCostPerAnnumSingle'));
+                //Hide($('.applicationCostPerAnnumFrom'));
+                //Hide($('.applicationCostPerAnnumTo'));
+                Hide($('.applicationCostPerAnnumFromTo'));
+                SetToZeroValue($('.applicationCostPerAnnumFromValue'));
+                SetToZeroValue($('.applicationCostPerAnnumToValue'));
+            }
+            else {
+                //Hide($('.applicationCostPerAnnum'));
+                //Hide($('.applicationCostPerAnnumSuffix'));
+                Hide($('.applicationCostPerAnnumSingle'));
+                SetToZeroValue($('.applicationCostPerAnnumValue'));
+                SetToZeroValue($('.applicationCostPerAnnumSuffixValue'));
+                //Show($('.applicationCostPerAnnumFrom'));
+                //Show($('.applicationCostPerAnnumTo'));
+                Show($('.applicationCostPerAnnumFromTo'));
+            }
+        }
+
+        $('.radFromToAnnualPrice').change(function (e) {
+            //var retVal = AlertToZeroCosts("message",e);
+            var retVal = confirm("All annual prices will be deleted. Are you sure?")
+            if (retVal) {
+                FromToAnnualPriceChanged();
+                return true;
+            }
+            else {
+                var x = $('.radSingleAnnualPrice')[0].checked = true;
+                return false;
+            }
+        });
+
+        function FromToAnnualPriceChanged() {
+            var radFromToAnnualPrice = $('.radFromToAnnualPrice').prop("checked");
+            if (radFromToAnnualPrice) {
+                //Hide($('.applicationCostPerAnnum'));
+                //Hide($('.applicationCostPerAnnumSuffix'));
+                Hide($('.applicationCostPerAnnumSingle'));
+                SetToZeroValue($('.applicationCostPerAnnumValue'));
+                SetToZeroValue($('.applicationCostPerAnnumSuffixValue'));
+                //Show($('.applicationCostPerAnnumFrom'));
+                //Show($('.applicationCostPerAnnumTo'));
+                Show($('.applicationCostPerAnnumFromTo'));
+            }
+            else {
+                //Show($('.applicationCostPerAnnum'));
+                //Show($('.applicationCostPerAnnumSuffix'));
+                Show($('.applicationCostPerAnnumSingle'));
+                //Hide($('.applicationCostPerAnnumFrom'));
+                //Hide($('.applicationCostPerAnnumTo'));
+                Hide($('.applicationCostPerAnnumFromTo'));
+                SetToZeroValue($('.applicationCostPerAnnumFromValue'));
+                SetToZeroValue($('.applicationCostPerAnnumToValue'));
+            }
+        }
+
+        $('.applicationCostPerMonthPOAValue').click(function (e) {
+            MonthPOAChanged();
+        });
+
+        function MonthPOAChanged() {
+            //$('#tn_select').empty();
+            //$('.modal_part').hide();
+            var POA = $('.applicationCostPerMonthPOAValue').prop("checked");
+            //debugger;
+            if (POA) {
+                Disable($('.applicationCostPerMonthValue'));
+                Disable($('.applicationCostPerMonthSuffixValue'));
+                Disable($('.applicationCostPerMonthFromValue'));
+                Disable($('.applicationCostPerMonthToValue'));
+                //Disable($('.applicationCostPerMonthPOAValue'));
+                Disable($('.radSingleMonthlyPrice'));
+                Disable($('.radFromToMonthlyPrice'));
+                SetToZeroValue($('.applicationCostPerMonthValue'));
+                SetToZeroValue($('.applicationCostPerMonthSuffixValue'));
+                SetToZeroValue($('.applicationCostPerMonthFromValue'));
+                SetToZeroValue($('.applicationCostPerMonthToValue'));
+                //SetToZeroValue($('.applicationCostPerMonthPOAValue'));
+                SetToUnchecked($('.applicationCostPerMonthFreeValue'));
+            }
+            else {
+
+                Enable($('.applicationCostPerMonthValue'));
+                Enable($('.applicationCostPerMonthSuffixValue'));
+                Enable($('.applicationCostPerMonthFromValue'));
+                Enable($('.applicationCostPerMonthToValue'));
+                //Enable($('.applicationCostPerMonthPOAValue'));
+                Enable($('.radSingleMonthlyPrice'));
+                Enable($('.radFromToMonthlyPrice'));
+                Show($('#monthlyCostDetails'));
+            }
+        }
+
+
+
+
+
+        $('.applicationCostPerAnnumPOAValue').click(function (e) {
+            AnnumPOAChanged();
+        });
+
+        function AnnumPOAChanged() {
+            //$('#tn_select').empty();
+            //$('.modal_part').hide();
+            var POA = $('.applicationCostPerAnnumPOAValue').prop("checked");
+            if (POA) {
+                Disable($('.applicationCostPerAnnumValue'));
+                Disable($('.applicationCostPerAnnumSuffixValue'));
+                Disable($('.applicationCostPerAnnumFromValue'));
+                Disable($('.applicationCostPerAnnumToValue'));
+                //Disable($('.applicationCostPerAnnumPOAValue'));
+                Disable($('.radSingleAnnualPrice'));
+                Disable($('.radFromToAnnualPrice'));
+                SetToZeroValue($('.applicationCostPerAnnumValue'));
+                SetToZeroValue($('.applicationCostPerAnnumSuffixValue'));
+                SetToZeroValue($('.applicationCostPerAnnumFromValue'));
+                SetToZeroValue($('.applicationCostPerAnnumToValue'));
+                //SetToZeroValue($('.applicationCostPerAnnumPOAValue'));
+                SetToUnchecked($('.applicationCostPerAnnumFreeValue'));
+
+            }
+            else {
+
+                Enable($('.applicationCostPerAnnumValue'));
+                Enable($('.applicationCostPerAnnumSuffixValue'));
+                Enable($('.applicationCostPerAnnumFromValue'));
+                Enable($('.applicationCostPerAnnumToValue'));
+                //Enable($('.applicationCostPerAnnumPOAValue'));
+                Enable($('.radSingleAnnualPrice'));
+                Enable($('.radFromToAnnualPrice'));
+                Show($('#annualCostDetails'));
+            }
+        }
+
+
+        function IsCostPerMonthOfferedChanged() {
+
+            var IsCostPerMonthOffered = $('#ApplicationCostPerMonthOffered').prop("checked");
+            var IsCostPerMonthAvailable = $('#ApplicationCostPerMonthAvailable').prop("checked");
+            if (IsCostPerMonthOffered) {
+                if (IsCostPerMonthAvailable) {
+                    Show($('#monthlyCostDetails'));
+                }
+                Show($('.applicationCostPerMonthPOA'));
+                Show($('.applicationCostPerMonthFree'));
+                Show($('.applicationCostPerMonthAvailable'));
+                Show($('.applicationCostPerMonthIsForUnlimitedUsers'));
+                //Show($('#oneoffCostDetails'));
+                //Hide($('#offeredFreePOADetails'));
+                EnableMonthlyCostValues();
+
+            }
+            else {
+                Hide($('#monthlyCostDetails'));
+                Hide($('.applicationCostPerMonthPOA'));
+                Hide($('.applicationCostPerMonthFree'));
+                Hide($('.applicationCostPerMonthAvailable'));
+                Hide($('.applicationCostPerMonthIsForUnlimitedUsers'));
+                //Show($('#annualCostDetails'));
+                //Hide($('#oneoffCostDetails'));
+                //Show($('#offeredFreePOADetails'));
+                SetToUnchecked($('.applicationCostPerMonthPOAValue'));
+                //if (!IsMonthlyFree()) {
+                SetToUnchecked($('.applicationCostPerMonthFreeValue'));
+                //}
+                DisableMonthlyCostValues();
+            }
+        }
+
+        function IsCostPerMonthFreeChanged() {
+
+            //debugger;
+            var IsCostPerMonthFree = $('#ApplicationCostPerMonthFree').prop("checked");
+            if (IsCostPerMonthFree) {
+                Hide($('#monthlyCostDetails'));
+                Hide($('.applicationCostPerMonthPOA'));
+                //Show($('#oneoffCostDetails'));
+                //Hide($('#offeredFreePOADetails'));
+                Hide($('.applicationCostPerMonthAvailable'));
+                SetToUnchecked($('.applicationCostPerMonthPOAValue'));
+                DisableMonthlyCostValues();
+
+            }
+            else {
+                if (!IsPAYG() && !IsMonthlyFree() && IsMonthlyPriceOffered()) {
+                    Show($('#monthlyCostDetails'));
+                    Show($('.applicationCostPerMonthPOA'));
+                    //Show($('#annualCostDetails'));
+                    //Hide($('#oneoffCostDetails'));
+                    //Show($('#offeredFreePOADetails'));
+                    Show($('.applicationCostPerMonthAvailable'));
+                    EnableMonthlyCostValues();
+                }
+            }
+        }
+
+        function IsCostPerMonthAvailableChanged() {
+
+            //debugger;
+            var IsCostPerMonthAvailable = $('#ApplicationCostPerMonthAvailable').prop("checked");
+            if (!IsCostPerMonthAvailable) {
+                Hide($('#monthlyCostDetails'));
+                //Hide($('.applicationCostPerMonthPOA'));
+                //Show($('#oneoffCostDetails'));
+                //Hide($('#offeredFreePOADetails'));
+                SetToUnchecked($('.applicationCostPerMonthPOAValue'));
+                DisableMonthlyCostValues();
+
+            }
+            else {
+                if (!IsPAYG() && !IsMonthlyFree() && IsMonthlyPriceOffered()) {
+                    Show($('#monthlyCostDetails'));
+                    Show($('.applicationCostPerMonthPOA'));
+                    //Show($('#annualCostDetails'));
+                    //Hide($('#oneoffCostDetails'));
+                    //Show($('#offeredFreePOADetails'));
+                    EnableMonthlyCostValues();
+                }
+            }
+        }
+
+        function IsCostPerAnnumOfferedChanged() {
+
+            var IsCostPerAnnumOffered = $('#ApplicationCostPerAnnumOffered').prop("checked");
+            var IsCostPerAnnumAvailable = $('#ApplicationCostPerAnnumAvailable').prop("checked");
+            if (IsCostPerAnnumOffered) {
+                if (IsCostPerAnnumAvailable) {
+                    Show($('#annualCostDetails'));
+                }
+                Show($('.applicationCostPerAnnumPOA'));
+                Show($('.applicationCostPerAnnumFree'));
+                Show($('.applicationCostPerAnnumAvailable'));
+                Show($('.applicationCostPerAnnumIsForUnlimitedUsers'));
+                //Show($('#oneoffCostDetails'));
+                //Hide($('#offeredFreePOADetails'));
+
+                EnableAnnualCostValues();
+            }
+            else {
+                Hide($('#annualCostDetails'));
+                Hide($('.applicationCostPerAnnumPOA'));
+                Hide($('.applicationCostPerAnnumFree'));
+                Hide($('.applicationCostPerAnnumAvailable'));
+                Hide($('.applicationCostPerAnnumIsForUnlimitedUsers'));
+                //Show($('#annualCostDetails'));
+                //Hide($('#oneoffCostDetails'));
+                //Show($('#offeredFreePOADetails'));
+                SetToUnchecked($('.applicationCostPerAnnumPOAValue'));
+                //if (!IsMonthlyFree()) {
+                SetToUnchecked($('.applicationCostPerAnnumFreeValue'));
+                //}
+                DisableAnnualCostValues();
+            }
+        }
+
+        function IsCostPerAnnumFreeChanged() {
+
+            var IsCostPerAnnumFree = $('#ApplicationCostPerAnnumFree').prop("checked");
+            if (IsCostPerAnnumFree) {
+                Hide($('#annualCostDetails'));
+                Hide($('.applicationCostPerAnnumPOA'));
+                //Show($('#oneoffCostDetails'));
+                //Hide($('#offeredFreePOADetails'));
+                Hide($('.applicationCostPerAnnumAvailable'));
+                SetToUnchecked($('.applicationCostPerAnnumPOAValue'));
+                DisableAnnualCostValues();
+
+            }
+            else {
+                if (!IsPAYG() && !IsAnnualFree() && IsAnnualPriceOffered()) {
+                    Show($('#annualCostDetails'));
+                    Show($('.applicationCostPerAnnumPOA'));
+                    //Show($('#annualCostDetails'));
+                    //Hide($('#oneoffCostDetails'));
+                    //Show($('#offeredFreePOADetails'));
+                    Show($('.applicationCostPerAnnumAvailable'));
+                    EnableAnnualCostValues();
+                }
+            }
+        }
+
+
+        function IsCostPerAnnumAvailableChanged() {
+
+            //debugger;
+            var IsCostPerAnnumAvailable = $('#ApplicationCostPerAnnumAvailable').prop("checked");
+            if (!IsCostPerAnnumAvailable) {
+                Hide($('#annualCostDetails'));
+                //Hide($('.applicationCostPerAnnumPOA'));
+                //Show($('#oneoffCostDetails'));
+                //Hide($('#offeredFreePOADetails'));
+                SetToUnchecked($('.applicationCostPerAnnumPOAValue'));
+                DisableAnnualCostValues();
+
+            }
+            else {
+                if (!IsPAYG() && !IsAnnualFree() && IsAnnualPriceOffered()) {
+                    Show($('#annualCostDetails'));
+                    Show($('.applicationCostPerAnnumPOA'));
+                    //Show($('#annualCostDetails'));
+                    //Hide($('#oneoffCostDetails'));
+                    //Show($('#offeredFreePOADetails'));
+                    EnableAnnualCostValues();
+                }
+            }
+        }
+
+        function Disable(theObject, setToZero) {
+            if (setToZero) {
+                theObject.val(0);
+            }
+            theObject.attr('disabled', 'disabled');
+            //theObject.attr('readonly', 'readonly');
+        }
+
+        function Enable(theObject) {
+            theObject.removeAttr('disabled');
+            //$(theObject).removeAttr("readonly");
+        }
+
+        function EnableMonthlyCostValues() {
+            Enable($('.radSingleMonthlyPrice'));
+            Enable($('.radFromToMonthlyPrice'));
+            Enable($('.applicationCostPerMonthValue'));
+            Enable($('.applicationCostPerMonthSuffixValue'));
+            Enable($('.applicationCostPerMonthFromValue'));
+            Enable($('.applicationCostPerMonthToValue'));
+            SingleMonthlyPriceChanged(false);
+            FromToMonthlyPriceChanged();
+        }
+
+        function DisableMonthlyCostValues() {
+            Disable($('.radSingleMonthlyPrice'));
+            Disable($('.radFromToMonthlyPrice'));
+            Disable($('.applicationCostPerMonthValue'));
+            Disable($('.applicationCostPerMonthSuffixValue'));
+            Disable($('.applicationCostPerMonthFromValue'));
+            Disable($('.applicationCostPerMonthToValue'));
+            SingleMonthlyPriceChanged(false);
+            FromToMonthlyPriceChanged();
+        }
+
+        function EnableAnnualCostValues() {
+            Enable($('.radSingleAnnualPrice'));
+            Enable($('.radFromToAnnualPrice'));
+            Enable($('.applicationCostPerAnnumValue'));
+            Enable($('.applicationCostPerAnnumSuffixValue'));
+            Enable($('.applicationCostPerAnnumFromValue'));
+            Enable($('.applicationCostPerAnnumToValue'));
+            SingleAnnualPriceChanged();
+            FromToAnnualPriceChanged();
+        }
+
+        function DisableAnnualCostValues() {
+            Disable($('.radSingleAnnualPrice'));
+            Disable($('.radFromToAnnualPrice'));
+            Disable($('.applicationCostPerAnnumValue'));
+            Disable($('.applicationCostPerAnnumSuffixValue'));
+            Disable($('.applicationCostPerAnnumFromValue'));
+            Disable($('.applicationCostPerAnnumToValue'));
+            SingleAnnualPriceChanged();
+            FromToAnnualPriceChanged();
+        }
+
+        function Hide(theObject) {
+            //            if (setToZero) {
+            //                theObject.val(0);
+            //            }
+            theObject.hide();
+        }
+
+        function Show(theObject) {
+            theObject.show();
+        }
+
+        function SetToZeroValue(theObject) {
+            theObject.val(0);
+        }
+
+        function SetToUnchecked(theObject) {
+            //debugger;
+            theObject.removeAttr('checked');
+        }
+
+        $('#modal_link').click(function (e) {
+            //alert("script1");
+            $('.modal_part').show();
+            var context = $('#tn_select').load('/Vendor/UploadImage', function () {
+                initSelect(context);
+            });
+            e.preventDefault();
+            //alert("script2");
+            return false;
+        });
+        $(function () {
+            $("#preview").draggable();
+            //$("#draggable").draggable();
+            //$("#modalblock").draggable();
+            //$("#tn_select").draggable();
+            //alert("draggable");
+        });
+
+        function AlertToZeroCosts(message) {
+            //alert("Please accept the terms & conditions to proceed");
+            dlgZeroCosts.DoSomething();
+        }
+
+        var dlgZeroCosts = {
+            DoSomething: function (message) {
+                $("#dialog-message-zero-costs").dialog("open");
+            }
+        }
+
+        // Initialize my dialog
+        $("#dialog-message-zero-costs").dialog({
+            autoOpen: false,
+            modal: true,
+            resizable: false,
+            closeText: null,
+            buttons: {
+                //"???": function () {
+                //$(this).dialog("close");
+                //window.location.href = "SearchPage";
+                //$.post("BackToSearchResults");
+                //},
+                //"Cancel": function() { $(this).dialog("close"); }
+                "OK": function (event, ui) {
+                    $(this).dialog("close");
+                    SingleMonthlyPriceChanged(true);
+                },
+                "No": function (event, ui) {
+                    $(this).dialog("close");
+                }
+            }
+        });
+
+
+
+
+
+    });
+
+
+
+
+</script>
+
+@*<label class="font-normal-13px-black">@Model.ApplicationCostPerMonthFree.ToString()</label>*@
+<div style="width:100%;">
+    <div style="width:20%;float:left;" class="applicationOneOffCost">
+        <div style="float:right;width:75%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.IsOneOffCost, new { style="width:100%" })
+        </div>
+        <div style="float:left;width:25%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.IsOneOffCost, new { style = "width:100%", @class = "OneOff" })
+        </div>
+    </div>
+    <div style="width:20%;float:left;" class="applicationPAYG">
+        <div style="float:right;width:75%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.PayAsYouGo, new { style="width:100%" })
+        </div>
+        <div style="float:left;width:25%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.PayAsYouGo, new { style = "width:100%", @class = "PAYG" })
+        </div>
+    </div>
+@*    <div class="clear"></div>*@
+</div>
+<div class="clear"></div>
+
+<div style="width:100%;" id="offeredFreePOADetails">
+    <div style="width:50%;float:left;" class="applicationCostPerMonthOffered">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerMonthOffered, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerMonthOffered, new { style = "width:100%", @class="applicationCostPerMonthOfferedValue" })
+        </div>
+    </div>
+
+    <div style="width:50%;float:right;" class="applicationCostPerAnnumOffered">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerAnnumOffered, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerAnnumOffered, new { style = "width:100%", @class = "applicationCostPerAnnumOfferedValue" })
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <div style="width:50%;float:left;" class="applicationCostPerMonthFree">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerMonthFree, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerMonthFree, new { style = "width:100%", @class="applicationCostPerMonthFreeValue" })
+        </div>
+    </div>
+
+    <div style="width:50%;float:right;" class="applicationCostPerAnnumFree">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerAnnumFree, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerAnnumFree, new { style = "width:100%", @class = "applicationCostPerAnnumFreeValue" })
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <div style="width:50%;float:left;" class="applicationCostPerMonthAvailable">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerMonthAvailable, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerMonthAvailable, new { style = "width:100%", @class="applicationCostPerMonthAvailableValue" })
+        </div>
+    </div>
+
+    <div style="width:50%;float:right;" class="applicationCostPerAnnumAvailable">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerAnnumAvailable, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerAnnumAvailable, new { style = "width:100%", @class = "applicationCostPerAnnumAvailableValue" })
+        </div>
+    </div>
+    <div class="clear"></div>
+
+    <div style="width:50%;float:left;" class="applicationCostPerMonthPOA">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerMonthPOA, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerMonthPOA, new { style = "width:100%", @class="applicationCostPerMonthPOAValue" })
+        </div>
+    </div>
+
+    <div style="width:50%;float:right;" class="applicationCostPerAnnumPOA">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerAnnumPOA, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerAnnumPOA, new { style = "width:100%", @class = "applicationCostPerAnnumPOAValue" })
+        </div>
+    </div>
+    <div class="clear"></div>
+
+
+    <div style="width:50%;float:left;" class="applicationCostPerMonthIsForUnlimitedUsers">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerMonthIsForUnlimitedUsers, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerMonthIsForUnlimitedUsers, new { style = "width:100%", @class = "applicationCostPerMonthIsForUnlimitedUsersValue" })
+        </div>
+    </div>
+
+    <div style="width:50%;float:right;" class="applicationCostPerAnnumIsForUnlimitedUsers">
+        <div style="float:left;width:80%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ApplicationCostPerAnnumIsForUnlimitedUsers, new { style = "width:100%" })
+        </div>
+        <div style="float:left;width:20%;" class="editor-field font-normal-13px-black">
+            @Html.CheckBoxFor(x => x.ApplicationCostPerAnnumIsForUnlimitedUsers, new { style = "width:100%", @class = "applicationCostPerAnnumIsForUnlimitedUsersValue" })
+        </div>
+    </div>
+    <div class="clear"></div>
+
+</div>
+<div class="clear"></div>
+
+<div style="width:100%;" id="monthlyCostDetails">
+    <div style="width:35%;float:left;">
+        @{ bool singleMonthlyPrice = ((Model.ApplicationCostPerMonthWhole + Model.ApplicationCostPerMonthFraction) > 0); }
+        @{ bool fromToMonthlyPrice = 
+               ((Model.ApplicationCostPerMonthFromWhole + Model.ApplicationCostPerMonthFromFraction) > 0)
+               &&
+               ((Model.ApplicationCostPerMonthToWhole + Model.ApplicationCostPerMonthToFraction) >= 0)
+               ; }
+        @{ if (!singleMonthlyPrice && !fromToMonthlyPrice)
+           {
+               singleMonthlyPrice = true;   
+           }
+        }
+        <div style="width:100%;">
+            <div style="float:left;width:15%;" class="editor-field font-normal-13px-black">
+                @if (singleMonthlyPrice)
+                {
+                    @Html.RadioButton("groupMonthly", "Single Monthly Price", new { @class = "radSingleMonthlyPrice", @checked = "checked" })
+                }
+                else
+                {
+                    @Html.RadioButton("groupMonthly", "Single Monthly Price", new { @class = "radSingleMonthlyPrice" })
+                }
+            </div>
+            <div style="float:left;width:85%;" class="editor-field font-normal-13px-black">
+                @Html.Label("Single Monthly Price", new { @class = "font-normal-13px-black" })
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div style="width:100%;">
+            <div style="float:left;width:15%;" class="editor-field font-normal-13px-black">
+                @if (fromToMonthlyPrice)
+                {
+                @Html.RadioButton("groupMonthly", "From/To Price", new { @class = "radFromToMonthlyPrice", @checked = "checked" })
+                }
+                else
+                {
+                @Html.RadioButton("groupMonthly", "From/To Price", new { @class = "radFromToMonthlyPrice" })
+                }
+            </div>
+            <div style="float:left;width:85%;" class="editor-field font-normal-13px-black">
+                @Html.Label("From/To Price", new { @class = "font-normal-13px-black" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    
+    </div>
+
+    <div style="width:65%;float:right;" class="applicationCostPerMonthSingle">
+        <div style="width:100%;" class="applicationCostPerMonth">
+            <div style="float:left;width:30%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerMonth, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.ApplicationCostPerMonthWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:70%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerMonth, new { style = "width:100%", @class="applicationCostPerMonthValue" })*@
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthWhole, new { @class = "font-normal-13px-black applicationCostPerMonthValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.ApplicationCostPerMonthFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthFraction, new { @class = "font-normal-13px-black applicationCostPerMonthValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div style="width:100%;" class="applicationCostPerMonthSuffix">
+            <div style="float:left;width:30%;" class="editor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.ApplicationCostPerMonthSuffix, new { style = "width:100%" })
+            </div>
+            <div style="float:left;width:60%;" class="editor-field font-normal-13px-black">
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthSuffix, new { style = "width:100%", @class = "applicationCostPerMonthSuffixValue" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div style="width:65%;float:right;display:none;" class="applicationCostPerMonthFromTo">
+        <div style="width:100%;" class="applicationCostPerMonthFrom">
+            <div style="float:left;width:10%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerMonthFrom, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.ApplicationCostPerMonthFromWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:90%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerMonthFrom, new { style = "width:100%", @class = "applicationCostPerMonthFromValue" })*@
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthFromWhole, new { @class = "font-normal-13px-black applicationCostPerMonthFromValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.ApplicationCostPerMonthFromFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthFromFraction, new { @class = "font-normal-13px-black applicationCostPerMonthFromValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div style="width:100%;" class="applicationCostPerMonthTo">
+            <div style="float:left;width:10%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerMonthTo, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.ApplicationCostPerMonthToWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:90%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerMonthTo, new { style = "width:100%", @class = "applicationCostPerMonthToValue" })*@
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthToWhole, new { @class = "font-normal-13px-black applicationCostPerMonthToValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.ApplicationCostPerMonthToFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.ApplicationCostPerMonthToFraction, new { @class = "font-normal-13px-black applicationCostPerMonthToValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div style="width:100%;" id="annualCostDetails">
+    <div style="width:35%;float:left;">
+        @{ bool singleAnnualPrice = ((Model.ApplicationCostPerAnnumWhole + Model.ApplicationCostPerAnnumFraction) > 0); }
+        @{ bool fromToAnnualPrice = 
+               ((Model.ApplicationCostPerAnnumFromWhole + Model.ApplicationCostPerAnnumFromFraction) > 0)
+               &&
+               ((Model.ApplicationCostPerAnnumToWhole + Model.ApplicationCostPerAnnumToFraction) >= 0)
+               ; }
+        @{ if (!singleAnnualPrice && !fromToAnnualPrice)
+           {
+               singleAnnualPrice = true;   
+           }
+        }
+        <div style="width:100%;">
+            <div style="float:left;width:15%;" class="editor-field font-normal-13px-black">
+                @if (singleAnnualPrice)
+                {
+                    @Html.RadioButton("groupAnnual", "Single Annual Price", new { @class = "radSingleAnnualPrice", @checked = "checked" })
+                }
+                else
+                {
+                    @Html.RadioButton("groupAnnual", "Single Monthly Price", new { @class = "radSingleAnnualPrice" })
+                }
+            </div>
+            <div style="float:left;width:85%;" class="editor-field font-normal-13px-black">
+                @Html.Label("Single Annual Price", new { @class = "font-normal-13px-black" })
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div style="width:100%;">
+            <div style="float:left;width:15%;" class="editor-field font-normal-13px-black">
+                @if (fromToAnnualPrice)
+                {
+                @Html.RadioButton("groupAnnual", "From/To Price", new { @class = "radFromToAnnualPrice", @checked = "checked" })
+                }
+                else
+                {
+                @Html.RadioButton("groupAnnual", "From/To Price", new { @class = "radFromToAnnualPrice" })
+                }
+            </div>
+            <div style="float:left;width:85%;" class="editor-field font-normal-13px-black">
+                @Html.Label("From/To Price", new { @class = "font-normal-13px-black" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div style="width:65%;float:right;" class="applicationCostPerAnnumSingle">
+        <div style="width:100%;" class="applicationCostPerAnnum">
+            <div style="float:left;width:30%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerAnnum, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:70%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerAnnum, new { style = "width:100%", @class = "applicationCostPerAnnumValue" })*@
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumWhole, new { @class = "font-normal-13px-black applicationCostPerAnnumValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumFraction, new { @class = "font-normal-13px-black applicationCostPerAnnumValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div style="width:100%;" class="applicationCostPerAnnumSuffix">
+            <div style="float:left;width:30%;" class="editor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumSuffix, new { style = "width:100%" })
+            </div>
+            <div style="float:left;width:60%;" class="editor-field font-normal-13px-black">
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumSuffix, new { style = "width:100%", @class = "applicationCostPerAnnumSuffixValue" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div style="width:65%;float:right;display:none;" class="applicationCostPerAnnumFromTo">
+        <div style="width:100%;" class="applicationCostPerAnnumFrom">
+            <div style="float:left;width:10%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerAnnumFrom, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumFromWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:90%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumFrom, new { style = "width:100%", @class = "applicationCostPerAnnumFromValue" })*@
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumFromWhole, new { @class = "font-normal-13px-black applicationCostPerAnnumFromValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumFromFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumFromFraction, new { @class = "font-normal-13px-black applicationCostPerAnnumFromValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+
+        <div style="width:100%;" class="applicationCostPerAnnumTo">
+            <div style="float:left;width:10%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerAnnumTo, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumToWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:90%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumTo, new { style = "width:100%", @class = "applicationCostPerAnnumToValue" })*@
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumToWhole, new { @class = "font-normal-13px-black applicationCostPerAnnumToValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.ApplicationCostPerAnnumToFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumToFraction, new { @class = "font-normal-13px-black applicationCostPerAnnumToValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div style="width:100%;" id="oneoffCostDetails">
+
+    <div style="position:relative;width:100%;float:right;" class="">
+        <div style="position:relative;width:50%;" class="">
+            <div style="float:left;width:30%;" class="editor-field font-normal-13px-black">
+@*                @Html.LabelFor(x => x.ApplicationCostPerAnnumFrom, new { style = "width:100%" })*@
+                @Html.LabelFor(x => x.OneOffCostWhole, new { @class = "font-normal-13px-black", @style = "float:left;" })
+            </div>
+            <div style="float:left;width:70%;" class="editor-field font-normal-13px-black">
+@*                @Html.TextBoxFor(x => x.ApplicationCostPerAnnumFrom, new { style = "width:100%", @class = "applicationCostPerAnnumFromValue" })*@
+                @Html.TextBoxFor(x => x.OneOffCostWhole, new { @class = "font-normal-13px-black applicationCostPerAnnumFromValue", @style = "width:50px;float:left;" })
+                @Html.LabelFor(x => x.OneOffCostFraction, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                @Html.TextBoxFor(x => x.OneOffCostFraction, new { @class = "font-normal-13px-black applicationCostPerAnnumFromValue", @style = "width:20px;float:left;" })
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+</div>
+
+
+@Html.Partial("ZeroCostsDialog")

@@ -1,0 +1,43 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationInputModel
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+
+    $(document).ready(function () {
+
+    });
+</script>
+
+        @Html.Partial("GroupBorderCaption", "Video") 
+        <div class="application-video-details">
+        
+            <div class="application-video">
+            @if (Model.CloudApplicationVideos != null)
+            {
+                if (Model.CloudApplicationVideos.Count > 0)
+                //if (Model.Videos[0] != null)
+                {
+    @*                @Html.HiddenFor(x => x.Videos[0])
+                    @Html.HiddenFor(x => x.Videos[0].CloudApplicationVideoDomains.ChosenValue)
+                    @Html.HiddenFor(x => x.Videos[0].CloudApplicationVideoExtensions.ChosenValue)
+                    @Html.Partial("VideoContainer", Model.Videos[0])*@
+                    @Html.EditorFor(x => x.CloudApplicationVideos)
+                }
+            }
+            </div>
+            <div class="clear" style="height:10px;"></div>
+
+            <div class="site-button" id="uploadVideoButton" style="float:right;">
+                @if (ViewBag.JavaScriptEnabled)
+                {
+                <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createReviewButton"/>
+                }
+                else
+                {
+                <input type="image" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" value="CreateReview" name="@Html.Encode("CREATEREVIEW_BUTTON")"/>
+                }
+            </div>
+        </div>

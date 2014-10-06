@@ -1,0 +1,8 @@
+﻿@model decimal
+@*@Html.TextBoxFor(x => x, new { @class = "input-text-box font-normal-13px-white required", @style = "width:190px;" })*@
+@Html.HiddenFor(x => x)
+
+    <span class="font-normal-13px-black" style="float:left;">£&nbsp;</span>
+    <input type="text" class="monetary-whole font-normal-13px-black" style="float:left;width:50%;" />
+    <span class="font-normal-13px-black" style="float:left;">&nbsp;.&nbsp;</span>
+    <input type="text" class="monetary-decimal font-normal-13px-black" style="float:left;width:20%;" maxlength="2"/>

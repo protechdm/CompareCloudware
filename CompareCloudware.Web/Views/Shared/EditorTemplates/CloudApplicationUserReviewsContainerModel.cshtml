@@ -1,0 +1,111 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationUserReviewsContainerModel
+@*@model CompareCloudware.Web.Models.CloudApplicationInputModel*@
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+    $(document).ready(function () {
+    });
+</script>
+
+@*    <div class="group-border-caption">    
+        <label class="font-normal-13px-black">Product Reviews</label>
+    </div>*@
+
+@Html.Partial("GroupBorderCaption","User Reviews") 
+@*    <input class="group-border-caption font-normal-13px-black" value="Product Reviews" disabled="disabled" />*@
+
+    <div class="user-reviews-container-table">
+        <table class="user-reviews-table">
+            <thead>
+                <tr>
+@*                    <td class="editor-field font-normal-13px-black">
+                        @Html.LabelFor(x => x.UserReviews[0].ChosenEmployeeCount)
+                    </td>*@    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewEaseOfUse)*@
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewEaseOfUse)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewFunctionality)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewValueForMoney)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewOverallRating)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationRatingReviewerForename)*@
+                        @Html.Label("First Name")
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationRatingReviewerSurname)*@
+                        @Html.Label("Surname")
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationRatingReviewerTitle)*@
+                        @Html.Label("Job Title")
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewEmployeeCount)*@
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewEmployeeCount)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationRatingReviewerCompany)*@
+                        @Html.Label("Company Name")
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].ChosenIndustry.description)*@
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].ChosenIndustry.description)
+                    </td>    
+                    
+                    @if (displayDebugFields)
+                    {
+                    <td class="editor-field font-normal-13px-black" style="width:5%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewText)*@
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].CloudApplicationUserReviewText)
+                    </td>    
+                    }
+
+                    @if (displayDebugFields)
+                    {
+                    <td class="editor-field font-normal-13px-black" style="width:5%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].Persisted)*@
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].Persisted)
+                    </td>    
+                    }
+                    
+                    @if (displayDebugFields)
+                    {
+                    <td class="editor-field font-normal-13px-black" style="width:5%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].RowID)*@
+                        @Html.LabelFor(x => x.CloudApplicationUserReviews[0].RowID)
+                    </td>
+                    }
+
+                </tr>
+            </thead>
+            @Html.EditorFor(x => x.CloudApplicationUserReviews)
+        </table>
+        <br />
+
+        <div class="apply-user-reviews-across-all-brands">
+            <div style="float:left;width:30%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.ApplyUserReviewsAtVendorLevel)
+            </div>
+            <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                @Html.CheckBoxFor(x => x.ApplyUserReviewsAtVendorLevel)
+            </div>
+        </div>
+
+        <div class="new-user-review-button">
+            <div class="site-button" id="newUserReviewButton" style="float:right;">
+                <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createUserReviewButton"/>
+            </div>
+        </div>
+        <br />
+    </div>
+

@@ -1,0 +1,84 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+
+<input class="nojavascript-dummy-dialog-checkbox" type="radio" name="onlyone" id="the-OK-checkbox" value="" />
+<input class="nojavascript-dummy-dialog-checkbox" type="radio" name="onlyone2" id="zthe-CLOSE-checkbox" value=""  />
+
+<div style="z-index: 1002; outline: 0px none; position: absolute;
+    height: auto; width: 400px; top: 200px; left: 477px;" class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable nojavascript-dummy-dialog"
+    tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-dialog-message-application-submission-complete">
+    <div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix">
+        <span class="ui-dialog-title" id="ui-dialog-title-dialog-message-application-submission-complete">
+            @Model.ConfirmationDialogTitle</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all"
+                role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div>
+    <div id="dialog-message-application-submission-complete" class="ui-dialog-content ui-widget-content"
+        style="width: auto; min-height: 0px; height: auto;" scrolltop="0" scrollleft="0">
+        <table>
+            <tbody>
+                <tr>
+                    <td valign="top">
+                        <p>
+                            <span style="float: left; margin: 0 7px 50px 0;" class="ui-icon ui-icon-circle-check">
+                            </span>
+                        </p>
+                    </td>
+                    <td valign="top">
+                        <label class="font-normal-13px-black">@Model.ConfirmationDialogMessage1</label>
+                        <label class="font-normal-13px-black">@Model.ConfirmationDialogMessage2</label>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="ui-resizable-handle ui-resizable-n" style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-w" style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se"
+        style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1000;">
+    </div>
+    <div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1000;">
+    </div>
+    <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+@*        <div class="ui-dialog-buttonset">
+            <button type="button" class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-only"
+                role="button" aria-disabled="false">
+                <span class="ui-button-text">OK</span>
+            </button>
+        </div>
+*@
+
+@*            <div class="nojavascript-dummy-dialog-OK-button">
+                <a href="http://www.bbc.co.uk" target="_blank" id="ythe-CLOSE-checkbox" name="test">OK
+                </a>
+            </div>*@
+
+            @if (Model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID == 1)
+            {
+            <div class="nojavascript-dummy-dialog-VisitShop-button">
+                <a href="@Model.ContainerModel.ChosenCloudApplicationModel.TryURL" target="_blank">Visit Shop
+                </a>
+            </div>
+            <div style="padding:5px;float:right;position:relative;"></div>
+            }
+            @if (Model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID == 2)
+            {
+            <div class="nojavascript-dummy-dialog-VisitShop-button">
+                <a href="@Model.ContainerModel.ChosenCloudApplicationModel.BuyURL" target="_blank">Visit Shop
+                </a>
+            </div>
+            <div style="padding:5px;float:right;position:relative;"></div>
+            }
+            <div class="nojavascript-dummy-dialog-Close-button">
+                <label class="nojavascript-dummy-dialog-label font-normal-18px-black" for="the-OK-checkbox">Close</label>
+            </div>
+
+    </div>
+</div>

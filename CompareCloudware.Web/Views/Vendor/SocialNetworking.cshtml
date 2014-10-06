@@ -1,0 +1,251 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationInputModel
+@using CompareCloudware.Web.Helpers;
+
+@{this.ViewContext.FormContext = new FormContext();}
+
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Social Networking";
+}
+@*@section Styles
+{
+}
+*@
+@*@section Scripts
+{
+}
+*@
+<script>
+    $(document).ready(function () {
+
+        //$.validator.unobtrusive.parse($('#uploadUserReviewForm'));
+
+        var socialNetworkingContext = $('.social-networking-container');
+
+        var test = false;
+        var facebookURL = 'www.facebook.com/compare.cloudware?ref=ts&fref=ts';
+        if (test) {
+            $('#FacebookURL').val(facebookURL);
+        }
+        var linkedinURL = 'www.linkedin.com/groups?gid=4017248&trk=group-name';
+        if (test) {
+            $('#LinkedInURL').val(linkedinURL);
+        }
+        var twitterURL = 'www.twitter.com/compcloudware';
+        if (test) {
+            $('#TwitterURL').val(twitterURL);
+        }
+
+
+
+        $(document).on('click', '#pingFacebook', function () {
+            PingFacebook();
+        });
+
+        $(document).on('click', '#pingLinkedIn', function () {
+            PingLinkedIn();
+        });
+
+        $(document).on('click', '#pingTwitter', function () {
+            PingTwitter();
+        });
+
+        function PingFacebook() {
+            var valueToPing = $('#FacebookName').val();
+            $.ajax({
+                url: 'PingFacebook',
+                type: 'POST',
+                data: 'facebookName=' + valueToPing,
+
+                //The request was a success.
+                success: function (data) {
+                    $('#FacebookFollowers').val(data);
+                },
+                error: function (data) {
+                    debugger;
+                }
+            });
+        }
+
+        function PingLinkedIn() {
+            var valueToPing = $('#LinkedInCompanyID').val();
+            $.ajax({
+                url: 'PingLinkedIn',
+                type: 'POST',
+                data: 'linkedInName=' + valueToPing,
+
+                //The request was a success.
+                success: function (data) {
+                    $('#LinkedInFollowers').val(data);
+                },
+                error: function (data) {
+                    debugger;
+                }
+            });
+        }
+
+        function PingTwitter() {
+            var valueToPing = $('#TwitterName').val();
+            $.ajax({
+                url: 'PingTwitter',
+                type: 'POST',
+                data: 'twitterName=' + valueToPing,
+
+                //The request was a success.
+                success: function (data) {
+                    $('#TwitterFollowers').val(data);
+                },
+                error: function (data) {
+                    debugger;
+                }
+            });
+        }
+
+        //var preview = $('#previewSocialNetworkingURL');
+
+        //$('#linkFacebook', socialNetworkingContext).click(function () {
+        //$(document).on('click', '#linkFacebook', function () {
+        $(socialNetworkingContext).on('click', '#linkFacebook', function () {
+            CheckLink(this, $('#FacebookURL'));
+        });
+
+        //$(document).on('click', '#linkLinkedIn', function () {
+        $(socialNetworkingContext).on('click', '#linkLinkedIn', function () {
+            CheckLink(this, $('#LinkedInURL'));
+        });
+
+        //$(document).on('click', '#linkTwitter', function () {
+        $(socialNetworkingContext).on('click', '#linkTwitter', function () {
+            CheckLink(this, $('#TwitterURL'));
+        });
+
+        function CheckLink(theAnchor, theLink) {
+            //debugger;
+            var url = theLink.val();
+            $.ajax({
+                url: 'LinkIsValid',
+                type: 'POST',
+                data: "url=" + "http://" + url,
+
+                //The request was a success.
+                success: function (data) {
+                    //setLoading(false);
+                    if (data.toUpperCase() == "TRUE") {
+                        //alert("Opening window");
+                        //preview.css("visibility", "visible");
+                        //preview.attr('src', "http://" + url);
+                        $(theAnchor).attr('href', "http://" + url);
+                        window.open($(theAnchor).attr('href'));
+                        return true;
+                    }
+                    else {
+                        //preview.css("visibility", "hidden");
+                        //preview.attr('src', "");
+                        theAnchor.attr('href', "");
+                        return false;
+                    }
+                },
+                error: function (data) {
+                    //setLoading(false);
+                    alert('Fail on checking link');
+                    return false;
+                }
+            });
+        }
+
+    });
+</script>
+<div style="width: 100%; float: left; position:relative;">
+    <div class="social-networking-input-container">
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.TwitterURL)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.TwitterURL)
+@*                <input type="button" value="Check" id="linkTwitter" style="float:right;width:50px;" />*@
+                <a id="linkTwitter" href="" target="_blank" onclick="return false;" style="float:right;">Check</a>
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.TwitterFollowers)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.TwitterFollowers)
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.TwitterName)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.TwitterName)
+                <input type="button" value="Ping" id="pingTwitter" style="float:right;width:50px;" />
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.FacebookURL)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.FacebookURL)
+@*                <input type="button" value="Check" id="linkFacebook" style="float:right;width:50px;" />*@
+                <a id="linkFacebook" href="" target="_blank" onclick="return false;" style="float:right;">Check</a>
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.FacebookFollowers)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.FacebookFollowers)
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.FacebookName)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.FacebookName)
+                <input type="button" value="Ping" id="pingFacebook" style="float:right;width:50px;" />
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.LinkedInURL)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.LinkedInURL)
+@*                <input type="button" value="Check" id="linkLinkedIn" style="float:right;width:50px;" />*@
+                <a id="linkLinkedIn" href="" target="_blank" onclick="return false;" style="float:right;">Check</a>
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.LinkedInFollowers)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.LinkedInFollowers)
+            </div>
+        </div>
+        <div class="editor-row-social-networking">
+            <div class="editor-label-social-networking font-normal-13px-black">
+                @Html.LabelFor(model => model.LinkedInCompanyID)
+            </div>
+            <div class="editor-field-social-networking font-normal-13px-black">
+                @Html.TextBoxFor(model => model.LinkedInCompanyID)
+                <input type="button" value="Ping" id="pingLinkedIn" style="float:right;width:50px;" />
+            </div>
+        </div>
+    </div>
+
+@*    <div class="social-networking-preview-container">
+        <IFRAME id="previewSocialNetworkingURL" style="border: 0px;" src="" width="100%" height = "100%"></IFRAME>
+    </div>*@
+
+    <div class="clear">
+    </div>
+</div>

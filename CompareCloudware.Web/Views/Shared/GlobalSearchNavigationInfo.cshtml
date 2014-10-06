@@ -1,0 +1,30 @@
+﻿@model CompareCloudware.Web.Models.GlobalSearchPageModel
+
+<div>
+    @{var searchResultsPages = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage;}
+    @{var searchResults = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults;}
+    @{var searchResultsPerPage = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPerPage;}
+
+    @if (searchResults.Count() > 0)
+    {
+    <label class="font-bold-22px-black">
+        "@( Model.ContainerModel.SearchResultsModel.Term)"
+    </label>
+    <label class="font-bold-22px-black">
+        @( ((searchResultsPages.PageNumber - 1) * searchResultsPerPage) + 1) to @( Math.Min((searchResultsPages.PageNumber * searchResultsPerPage), searchResults.Count()))
+    </label>
+    <label class="font-normal-22px-black">
+        of
+    </label>
+    <label class="font-bold-22px-black">
+        @( (searchResults.Count())) results.
+    </label>
+    }
+    else
+    {
+    <label class="font-bold-22px-black">
+        No results found.
+    </label>
+    }
+</div>
+

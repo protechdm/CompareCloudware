@@ -1,0 +1,17 @@
+﻿<script type="text/javascript">
+    function isJavaScriptEnabled() {
+        return true;
+    }
+</script>
+
+@{ Session["JavaScriptEnabled"] = "true"; }
+<noscript>
+@*@{ Response.Redirect(Url.Action("ActionName","ControllerName"));}
+*@
+@{ Session["JavaScriptEnabled"] = "false"; }
+javascript not enabled!!
+</noscript>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}

@@ -1,0 +1,175 @@
+﻿@model CompareCloudware.Web.Models.SearchModel
+
+<table id="searchFiltersHeader" class="search-header-filters-table" style="width: 100%;">
+    <tr>
+        <td style="width: 50%;">
+            Customise search
+        </td>
+        <td style="width: 10%;">
+            @Html.CheckBoxFor(x => x.DisplayAsSummary, new { @id = "displayAsSummary" })
+        </td>
+        <td style="width: 40%;">
+            @Html.Label("Summary", "Summary")
+        </td>
+    </tr>
+</table>
+@{Html.RenderPartial("CreatureWithTextOnRight", Model);}
+
+
+<div class="search-filter-group-header header-categories">
+    <div style="float: right;">
+        <div class="ui-icon-triangle-1-s ui-icon">
+        </div>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Category</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersCategoriesCollapsed)
+    </div>
+</div>
+<div>
+    @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.PreviouslyChosenCategoryID, new { @id = "previouslyChosenCategoryID" })
+    @Html.DropDownListFor(x => x.SearchFiltersModelOneColumn.ChosenCategoryID,
+                       new SelectList(Model.SearchFiltersModelOneColumn.Categories, "CategoryID", "CategoryName", Model.SearchFiltersModelOneColumn.PreviouslyChosenCategoryID)
+                             , new { @class = "set-combo-width filterParameter", @id = "chosenCategoryID" })
+</div>
+
+
+<div class="search-filter-group-header header-users">
+    <div style="float: right;">
+        <div class="ui-icon-triangle-1-s ui-icon">
+        </div>
+    </div>
+    <div style="width: 100%">
+        <label class="font-bold-11px-purple">
+            Users</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersUsersCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DropDownListFor(x => x.SearchFiltersModelOneColumn.ChosenNumberOfUsers,
+                       new SelectList(Model.SearchFiltersModelOneColumn.NumberOfUsers, "UserValue", "UserValue", Model.SearchFiltersModelOneColumn.ChosenNumberOfUsers)
+             , new { @class = "set-combo-width filterParameter" })
+</div>
+
+
+<div class="search-filter-group-header header-operating-systems">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Operating system</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersOperatingSystemsCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersOperatingSystems)
+</div>
+
+
+<div class="search-filter-group-header header-browsers">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Internet browsers</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersBrowsersCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersBrowsers)
+</div>
+
+
+<div class="search-filter-group-header header-mobile-platforms">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Mobile platforms</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersMobilePlatformsCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersMobilePlatforms)
+</div>
+
+
+<div class="search-filter-group-header header-features">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Features</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersFeaturesCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersFeatures)
+</div>
+
+
+<div class="search-filter-group-header header-support-types">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Support type</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportTypesCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportTypes)
+</div>
+
+
+<div class="search-filter-group-header header-support-days">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Support days</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportDaysCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportDays)
+</div>
+
+
+<div class="search-filter-group-header header-support-hours">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Support hours</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportHoursCollapsed)
+    </div>
+</div>
+<div class="search-filter-group-contents">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportHours)
+</div>
+
+
+<div class="search-filter-group-header header-languages">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+        <label class="font-bold-11px-purple">
+            Language</label>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersLanguagesCollapsed)
+    </div>
+</div>
+<div>
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersLanguages)
+</div>
+@*<div id="clear" style="clear:both;"></div>
+*@

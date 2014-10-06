@@ -1,0 +1,91 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationUserReviewModel
+
+@using CompareCloudware.Web.Models
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+    //alert("Reviews table");
+</script>
+@Html.HiddenFor(x => x.CloudApplicationUserReviewForename)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewSurname)
+@Html.HiddenFor(x => x.ChosenEmployeeCount)
+@*@Html.HiddenFor(x => x.ChosenIndustry)*@
+
+@Html.HiddenFor(x => x.ChosenIndustryID)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewEaseOfUse)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewFunctionality)
+@Html.HiddenFor(x => x.CloudApplicationID)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewOverallRating)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewEmployeeCount)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewCompany)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewTitle)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewText)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewID)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewValueForMoney)
+@Html.HiddenFor(x => x.CloudApplicationUserReviewStatus)
+
+
+@Html.HiddenFor(x => x.RowID)
+@Html.HiddenFor(x => x.AddMode)
+@Html.HiddenFor(x => x.Persisted)
+@Html.HiddenFor(x => x.IsLive)
+@if (Model.Persisted && Model.IsLive)
+{
+<tr>
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewEaseOfUse.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewFunctionality.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewValueForMoney.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewOverallRating.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewForename)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewSurname)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewTitle)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.ChosenEmployeeCount.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewCompany)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.ChosenIndustry.description)
+        </td>    
+        
+        @if (displayDebugFields)
+        {
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationUserReviewText)
+        </td>    
+        }
+        @if (displayDebugFields)
+        {
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.Persisted.ToString())
+        </td>
+        }
+        @if (displayDebugFields)
+        {
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.RowID.ToString())
+        </td>    
+        }
+        <td class="editor-field font-normal-13px-black">
+            @Html.ActionLink("Delete", "", "", new  {@id = Model.RowID, @class="cloudApplicationUserReviewDelete" })
+        </td>    
+</tr>
+}

@@ -1,0 +1,20 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+
+<div class="site-button-short">
+
+
+        @Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary, new { @id = "displayAsSummary" })
+        <img  
+                                            xid="@Html.Encode("TOGGLERESULTS_BUTTON")"
+                                            class="site-button-full"
+                                            id = "xdisplayAsSummary"
+                                            src="@Url.Content("~/Images/Buttons/CCW_Full-View.png")"
+                                            style="@(Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "display:block" : "display:none")"
+                                            />
+        <img 
+                                            class="site-button-summary"
+                                            id = "xdisplayAsSummary"
+                                            src="@Url.Content("~/Images/Buttons/CCW_Summary-view.png")"
+                                            style="@(Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "display:none" : "display:block")"
+                                            />
+</div>

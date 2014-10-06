@@ -1,0 +1,106 @@
+﻿@using CompareCloudware.Web.Helpers
+@model CompareCloudware.Web.Models.SearchFilterModelTwoColumn
+
+
+<div class="search-filter-two-column">
+    @if (ViewBag.JavaScriptEnabled)
+    {
+    <table id="dataTable" style="width:100%;">
+        <tr>
+            <td style="width:10%">
+                @Html.CheckBoxFor(x => x.Col1Selected, new { @class = "filterParameter" })
+            </td>
+            <td style="width:40%">
+                @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col1SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col1SearchFilterType)
+            </td>
+
+            
+            
+            @if (Model.Col2SearchFilterName != null)
+            {            
+            <td style="width:10%">
+                @Html.CheckBoxFor(x => x.Col2Selected, new { @class = "filterParameter" })
+            </td>
+            <td style="width:40%">
+                @Html.LabelFor(x => x.Col2SearchFilterName, Model.Col2SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col2SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col2SearchFilterType)
+            </td>
+            }
+            else
+            {
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            }
+        </tr> 
+    </table>
+    }
+    else
+    {
+    <table id="dataTable" style="width:100%;">
+        <tr>
+            <td style="width:10%">
+            <div style="position:relative;">
+@*                <a href='@Url.Action("SearchPageNoScript", "Home", new { dummyValue = 1 })'>
+*@              
+@*                @Html.CheckBoxFor(x => x.Col1Selected, new { @class = "filterParameter noscript-checkbox", @disabled = "disabled" })
+*@                <input class="anchor-submit" type='submit' value='@Model.Col1SearchFilterName' name="@Html.Encode("FILTER_ID_" + Model.SearchFilterID.ToString())"/>
+                
+            
+            </div>
+            </td>
+            <td style="width:40%">
+                @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col1SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col1SearchFilterType)
+            </td>
+
+            
+            
+            @if (Model.Col2SearchFilterName != null)
+            {            
+            <td style="width:10%">
+                @Html.CheckBoxFor(x => x.Col2Selected, new { @class = "filterParameter" })
+            </td>
+            <td style="width:40%">
+                @Html.LabelFor(x => x.Col2SearchFilterName, Model.Col2SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col2SearchFilterName)
+            </td>
+            <td style="width:0%">
+                @Html.HiddenFor(x => x.Col2SearchFilterType)
+            </td>
+            }
+            else
+            {
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+            }
+        </tr> 
+    </table>
+
+    }
+</div>
+
+            

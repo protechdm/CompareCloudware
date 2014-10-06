@@ -1,0 +1,37 @@
+﻿@model CompareCloudware.Web.CustomSession
+
+@if (Model.HasSearchResults == true)
+{
+<table class="search-header-result-table-inner" style="width: 100%;">
+    <tr>
+        @{if (Model.HasSearchResults == true)
+          {
+            <td style="width: 20px;">
+                <div class="button-bar">
+                    <div class="site-button">
+                        <input type="submit" 
+                                    name="@Html.Encode("BACKRESULTS_BUTTON")"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="BackResults"
+                                    class="cancel" />
+                    </div>
+                </div>
+            </td>
+          }
+        }
+@*        <td style="width: 20px;">
+            <div class="button-bar">
+                <div class="site-button">
+                        <img    src="@Url.Content("~/Images/Buttons/CCW_EmailPage.png")"
+                                    name="@Html.Encode("EMAIL_BUTTON")"
+                                    id = "emailApplicationButton"
+                                    height = "30px"
+                                     />
+                </div>
+            </div>
+        </td>*@
+        <td style="width: 50%;">
+        </td>
+    </tr>
+</table>
+}

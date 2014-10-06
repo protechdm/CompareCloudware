@@ -1,0 +1,10 @@
+﻿@model string
+
+@{
+    List<SelectListItem> list = new List<SelectListItem>();
+    list.Add(new SelectListItem() { Text = "MB", Value = "MB" });
+    list.Add(new SelectListItem() { Text = "GB", Value = "GB" });
+    list.Add(new SelectListItem() { Text = "TB", Value = "TB" });
+}
+@Html.DropDownListFor(x => x, new SelectList(list, "Value", "Text", Model), new { @class = "font-normal-13px-black feature-count-suffix" })
+

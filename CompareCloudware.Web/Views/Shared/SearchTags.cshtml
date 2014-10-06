@@ -1,0 +1,236 @@
+﻿@model CompareCloudware.Web.Models.ReservationViewModel
+@{
+    ViewBag.Title = "Index";
+}
+@*
+<h2>
+    Index
+</h2>
+*@ @*<script src="@Url.Content("~/Scripts/standardcontract.js")" type="text/javascript"></script>
+*@
+<script id="locationsTemplate" type="text/x-jquery-tmpl">
+    <div class="stationName"><strong>${stationName}</strong></div>
+    {{tmpl "#addressTemplate"}}
+    <div class="stationPhone"><img src="/Content/Images/ppiconCar.gif" />&nbsp; ${phoneNumber}</div>
+    <div class="stationOpenClosedDetails">
+        <span class="stationType"><img src="/Content/Images/ppIconBuilding.gif"></span>
+        <span class="stationOpenOrClosed"><img title="Station Open" src="/Content/Images/iconOpen.gif"></span>
+        ${StationOpenOrClosed}
+    </div>     
+    <div class="openingHours">
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${sundayCaption}</td>  
+                        <td>${sundayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>     
+                </tbody>
+            </table>     
+        </div>
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${mondayCaption}</td>  
+                        <td>${mondayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>     
+                </tbody>
+            </table>     
+        </div>
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${tuesdayCaption}</td>  
+                        <td>${tuesdayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>     
+                </tbody>
+             </table>     
+        </div>
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${wednesdayCaption}</td>  
+                        <td>${wednesdayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>     
+                </tbody>
+            </table>     
+        </div>
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${thursdayCaption}</td>  
+                        <td>${thursdayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>     
+                </tbody>
+            </table>     
+        </div>
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${fridayCaption}</td>  
+                        <td>${fridayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>
+                </tbody>
+            </table>     
+        </div>
+        <div id="rentalLocationOpeningTimes">  
+            <table>  
+                <tbody>
+                    <tr>  
+                        <td>${saturdayCaption}</td>  
+                        <td>${saturdayOpeningHours}</td>  
+                        <td>&nbsp;&nbsp;</td>     
+                    </tr>     
+                </tbody>
+            </table>     
+        </div>
+    </div>
+</script>
+<script id="addressTemplate" type="text/x-jquery-tmpl">
+    <div class="stationAddress">
+        <div id="rentalLocationAddressDetails">${Address.Address1}<br>${Address.Address2}<br>${Address.Address3}<br></div>
+    </div>   
+    <div class="stationPhone">
+        <img src="/assets/build/core/ppiconCar.gif">&nbsp; ${PhoneNumber}
+    </div>   
+</script>
+<script type="text/javascript">
+    var Address = null;
+    var reasons = [];
+    var TwoLetterISORegionName;
+    var OriginalForeignCaptionInEnglish;
+    var OriginalDomesticCaptionInEnglish;
+    var OriginalForeignCaption;
+    var OriginalDomesticCaption;
+
+    $(document).ready(function () {
+        //alert("IN");
+
+        function customalert() {
+            //alert("IN");
+            $('#test').valueOf("CHANGED");
+        }
+
+        $('a[autocomplete="true"]').live("mouseover", function () {
+
+            var parentJSON = this.parentElement.dataset.address;
+            var objAddress = JSON.parse(parentJSON);
+            $('#test').text("CHANGED");
+            
+            
+            
+            var locations = objAddress;
+            $("#locationsList").empty();
+            //$.tmpl("locationsTemplate", locations)
+            $("#locationsTemplate").tmpl(locations)
+            .appendTo("#locationsList");
+
+            $("#locationSearchStationDetails").empty();
+            $("#locationsTemplate").tmpl(locations)
+            .appendTo("#locationSearchStationDetails");
+
+            
+//            $('#locationAddress1').text(objAddress.Address.Address1);
+//            $('#locationAddress2').text(objAddress.Address.Address2);
+//            $('#locationAddress3').text(objAddress.Address.Address3);
+//            $('#locationAddress4').text(objAddress.Address.Address4);
+//            $('#locationAddress5').text(objAddress.Address.Address5);
+            
+            
+            var parent = this.parentElement.parentElement;
+            var anchorObject = $(parent).position();
+            var width = $(parent).width();
+            var xpos = anchorObject.left + width + 30;
+            var ypos = anchorObject.top;
+            var locationAddress = $('#locationSearchStationDetails')
+            //locationAddress.position().left = xpos;
+            //locationAddress.position().top = ypos;
+            $(locationAddress).css({
+                left: xpos,
+                top: ypos
+            });
+        });
+
+        $('aa').live("mouseleave", function () {
+            $('#test').text("UNCHANGED");
+        });
+
+
+        function log(message) {
+            $("<div/>").text(message).prependTo("#log");
+            $("#log").scrollTop(0);
+        }
+
+        $("#PickupLocation").autocomplete({
+            source: function (request, response) {
+                $.ajax({
+                    url: "http://ws.geonames.org/searchJSON",
+                    dataType: "jsonp",
+                    data: {
+                        featureClass: "P",
+                        style: "full",
+                        maxRows: 12,
+                        name_startsWith: request.term
+                    },
+                    success: function (data) {
+                        response($.map(data.geonames, function (item) {
+                            return {
+                                label: item.name + (item.adminName1 ? ", " + item.adminName1 : "") + ", " + item.countryName,
+                                value: item.name
+                            }
+                        }));
+                    }
+                });
+            },
+            minLength: 2,
+            select: function (event, ui) {
+                log(ui.item ?
+"Selected: " + ui.item.label :
+"Nothing selected, input was " + this.value);
+            },
+            open: function () {
+                $(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+            },
+            close: function () {
+                $(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+            }
+        });
+
+
+        //$.template("locationsTemplate", markup);
+        //$.template("addressTemplate", markup);
+
+
+
+
+
+
+
+
+    });
+</script>
+@using (Html.BeginForm("AutoComplete", "Home", FormMethod.Post))
+{
+            <div class="ui-widget">
+                @Html.TextBoxFor(m => m.SearchInput)
+            </div>
+            <div class="searchResultsDIV" style="position:relative; color:Black;">
+            
+            </div>
+            <div id="locationSearchStationDetails" style="position: absolute; left: 200px; top: 200px">
+            </div>
+        <p>
+            <input type="submit" value="Send" />
+        </p>
+}

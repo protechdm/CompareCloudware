@@ -1,0 +1,302 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationProductReviewModel
+@using CompareCloudware.Web.Helpers;
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+@{this.ViewContext.FormContext = new FormContext();}
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Product review uploader";
+}
+
+
+@*@section Styles
+{
+}
+*@
+
+<link href="@Url.Content("~/Content/ImageArea.css")" rel="stylesheet" />
+
+@*@section Scripts
+{
+}
+*@
+
+
+
+<script>
+    $(document).ready(function () {
+
+        $.validator.unobtrusive.parse($('#uploadProductReviewForm'));
+
+        //debugger;
+        $(".dateGraphic").datepicker();
+        $(".dateGraphic").datepicker("option", "showAnim", "clip");
+
+        $("#datePicker").datepicker();
+        $("#datePicker").datepicker("option", "showAnim", "clip");
+
+        $("#CloudApplicationProductReviewDate").datepicker({
+            dateFormat: 'dd/mm/yy'
+        });
+        $("#CloudApplicationProductReviewDate").datepicker("option", "showAnim", "clip");
+
+        $('#CloudApplicationProductReviewURL').css("width", "352px");
+        $('#CloudApplicationProductReviewURL').css("float", "left");
+
+        //    $(".dateGraphic").datepicker("option", "showAnim", "blind");
+        //    $("#datepicker").datepicker("option", "showAnim", "blind");
+
+        var reviewContext = $('#dialog-upload-product-review');
+        //initSelect(context);
+        var preview = $('#previewProductReview');
+        var invalidURL = $('#invalidURL');
+        var isBrokenLink = $('#IsBrokenLink');
+
+        DisplayPreview();
+
+        //What happens if the File changes?
+        $('#CloudApplicationProductReviewURL', reviewContext).change(function (evt) {
+            var url = this.value;
+            var cloudApplicationProductReviewURL = $('#CloudApplicationProductReviewURL');
+            $.ajax({
+                url: 'LinkIsValid',
+                type: 'POST',
+                data: "url=" + "http://" + this.value,
+
+                //The request was a success.
+                success: function (data) {
+                    //setLoading(false);
+                    //debugger;
+                    if (data.toUpperCase() == "TRUE") {
+                        preview.attr('src', "http://" + url);
+                        preview.css("visibility", "visible");
+                        invalidURL.css("visibility", "hidden");
+                        isBrokenLink.attr('value', false);
+                        cloudApplicationProductReviewURL.removeClass("font-normal-13px-red").addClass("font-normal-13px-black");
+                    }
+                    else {
+                        //debugger;
+                        preview.css("visibility", "hidden");
+                        //preview.css("display", "none");
+                        //$('#uploadLogoFULLButton').attr('disabled', false);
+                        preview.attr('src', "");
+                        invalidURL.css("visibility", "visible");
+                        isBrokenLink.attr('value', true);
+                        cloudApplicationReviewURL.removeClass("font-normal-13px-black").addClass("font-normal-13px-red");
+                    }
+                },
+                error: function (data) {
+                    setLoading(false);
+                    alert('Fail on uploading product review');
+                }
+            });
+
+        });
+
+        function DisplayPreview() {
+            //debugger;
+            var url = $('#CloudApplicationProductReviewURL', reviewContext)[0].value;
+            preview.attr('src', url);
+            preview.css("visibility", "visible");
+            invalidURL.css("visibility", "hidden");
+            isBrokenLink.attr('value', false);
+        }
+
+        //What happens if the File changes?
+        $('#CloudApplicationProductReviewURLDocumentExtensions_ChosenValue', reviewContext).change(function (evt) {
+            debugger;
+            //alert("URL changed");
+
+            //setBox('#IsFile');
+            //$('.file').val(f);
+            //debugger;
+            $('#CloudApplicationProductReviewURLDocumentExtension').attr('value', this.value);
+            //$('#preview').attr("value", this.value);
+        });
+
+
+    });
+</script>
+
+        @{var sampleImage = "http://classiccarblog.co.uk/wp-content/gallery/saab/saab-96-nbf-298-m.jpg";}
+        @{var samplePDF = "http://www.samplepdf.com/sample.pdf";}
+        @{var sampleURL = "www.bbc.co.uk";}
+
+
+<div class="upload-product-review-input-container" id="dialog-upload-product-review" title="Upload a product review">
+
+        <form id="uploadProductReviewForm" method="post" action="/Home.mvc/RatingReview">
+
+@*        @Html.HiddenFor(model => model.UploadImageModel.X)
+        @Html.HiddenFor(model => model.UploadImageModel.Y)
+        @Html.HiddenFor(model => model.UploadImageModel.Width)
+        @Html.HiddenFor(model => model.UploadImageModel.Height)
+        @Html.HiddenFor(model => model.UploadImageModel.Flickr)*@
+
+
+
+@*        @Html.HiddenFor(model => model.X, new { @class = "LogoX" })
+        @Html.HiddenFor(model => model.Y, new { @class = "LogoY" })
+        @Html.HiddenFor(model => model.Width, new { @class = "LogoWidth" })
+        @Html.HiddenFor(model => model.Height, new { @class = "LogoHeight" })*@
+@*        @Html.HiddenFor(model => model.Flickr, new { @class = "LogoFlickr" })*@
+@*        @Html.HiddenFor(model => model.LocalFile, new { @class = "LogoLocalFile" })*@
+
+    @Html.HiddenFor(x => x.CloudApplicationID)
+    @Html.HiddenFor(x => x.IsBrokenLink)
+    @Html.HiddenFor(x => x.IsLive)
+    @Html.HiddenFor(x => x.RowID)
+    @Html.HiddenFor(x => x.AddMode)
+    @Html.HiddenFor(x => x.CloudApplicationProductReviewURLDocumentFormats.Other)
+    @Html.HiddenFor(x => x.CloudApplicationProductReviewURLDocumentFormats.OtherNumeric)
+    @Html.HiddenFor(x => x.CloudApplicationProductReviewStatus)
+    @Html.HiddenFor(x => x.CloudApplicationProductReviewID)
+
+    @if (!displayDebugFields)
+    {
+        @Html.HiddenFor(x => x.Persisted)
+    }
+    
+    <div id="upload-choices">
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.Label("Sample URL")
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.TextBox("sampleURL", @sampleURL, new { @style = "width:30em;" })
+            </div>
+        </div>
+        }
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationProductReviewHeadline)
+            </div><div class="editor-field-product-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationProductReviewHeadline)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewHeadline)*@
+            </div>
+        </div>
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationProductReviewDate)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationProductReviewDate)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewDate)*@
+            </div>
+        </div>
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationProductReviewPublisherName)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationProductReviewPublisherName)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewPublisherName)*@
+            </div>
+        </div>
+        <div class="editor-row-product-review-multi-line">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationProductReviewText)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.TextAreaFor(model => model.CloudApplicationProductReviewText, 15, 1, null)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewText)*@
+            </div>
+        </div>
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationProductReviewURL)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+@*                    @Html.Label("http://", new { @style = "float:left;" })*@
+                    <span style="float:left;">&nbsp;</span>
+                    @Html.EditorFor(model => model.CloudApplicationProductReviewURL)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURL)*@
+            </div>
+        </div>
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationProductReviewURLDocumentFormats)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.CloudApplicationProductReviewURLDocumentFormat)
+                @Html.EditorFor(model => model.CloudApplicationProductReviewURLDocumentFormats)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+                @Html.LabelFor(model => model.RowID)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.RowID)
+                @Html.EditorFor(model => model.RowID)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        }
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.Persisted)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.Persisted)
+@*                @Html.EditorFor(model => model.Persisted)*@
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        }
+        <div class="editor-row-product-review">
+            <div class="editor-label-product-review font-normal-13px-black">
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                <button id="uploadProductReviewAJAXButton" type="button">Upload AJAX</button>
+@*                <button id="uploadProductReviewFULLButton" type="submit">Upload FULL</button>*@
+            </div>
+        </div>
+        <div class="editor-row-product-review">
+            @Html.ValidationSummary(true)
+        </div>
+    </div>
+
+
+    <div id="upload-cut">
+        <img alt="Invalid URL" id="invalidURL" src="@Url.Content("~/Images/empty.png")"  />
+        <IFRAME id="previewProductReview" style="border: 0px;" src="" width="100%" height = "100%"></IFRAME>
+    </div>
+
+
+
+
+@*    <div id="upload-cut" class="ui-widget-content">
+        <img class="ui-widget-content croppable" alt="Field for image cutting" id="preview" src="@Url.Content("~/Images/empty.png")"  />
+    </div>*@
+    <div class="clear">
+
+    </div>
+
+    </form>
+</div>
+
+    
+    
+    
+    
+    
+
+
+
+@*<div id="dialog-view-review" title="Product Review">
+    <IFRAME id="theReview" style="border: 0px;" src="http://www.samplepdf.com/sample.pdf" width="100%" height = "100%"></IFRAME>
+</div>*@

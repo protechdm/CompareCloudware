@@ -1,0 +1,78 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationDocumentsContainerModel
+@*@model CompareCloudware.Web.Models.CloudApplicationInputModel*@
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+
+    $(document).ready(function () {
+
+    });
+</script>
+
+@*    <div class="group-border-caption">    
+        <label class="font-normal-13px-black">Product Reviews</label>
+    </div>*@
+
+@Html.Partial("GroupBorderCaption","Case Studies & White Papers") 
+@*    <input class="group-border-caption font-normal-13px-black" value="Product Reviews" disabled="disabled" />*@
+
+    <div class="documents-container-table">
+        <table class="documents-table">
+            <thead>
+                <tr>
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].CloudApplicationDocumentTitle)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:30%;">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].CloudApplicationDocumentURL)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:35%;">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].CloudApplicationDocumentPhysicalFilePath)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].CloudApplicationDocumentFileName)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].CloudApplicationDocumentType)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:5%;">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].CloudApplicationDocumentFileFormat)
+                    </td>    
+                    @if (displayDebugFields)
+                    {
+                    <td class="editor-field font-normal-13px-black">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].Persisted)
+                    </td>    
+                    }
+                    @if (displayDebugFields)
+                    {
+                    <td class="editor-field font-normal-13px-black">
+                        @Html.LabelFor(x => x.CloudApplicationDocuments[0].RowID)
+                    </td>
+                    }
+                </tr>
+            </thead>
+            @Html.EditorFor(x => x.CloudApplicationDocuments)
+        </table>
+        <br />
+
+        <div class="apply-documents-across-all-brands">
+            <div style="float:left;width:30%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.ApplyDocumentsAtVendorLevel)
+            </div>
+            <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                @Html.CheckBoxFor(x => x.ApplyDocumentsAtVendorLevel)
+            </div>
+        </div>
+
+        <div class="new-document-button">
+            <div class="site-button" id="newDocumentButton" style="float:right;">
+                <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createDocumentButton"/>
+            </div>
+        </div>
+        <br />
+    </div>
+

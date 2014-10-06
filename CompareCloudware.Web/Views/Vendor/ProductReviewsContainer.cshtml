@@ -1,0 +1,99 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationProductReviewsContainerModel
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+
+    //fires when the new product review button is clicked
+//    $('body').on('click', '#newProductReviewButton', function () {
+//        dlgUploadProductReview.DoSomething();
+//    });
+
+$(document).ready(function () {
+
+
+
+});
+
+
+
+
+</script>
+
+
+
+
+@*    <div class="group-border-caption">    
+        <label class="font-normal-13px-black">Product Reviews</label>
+    </div>*@
+
+@Html.Partial("GroupBorderCaption","Product Reviews") 
+@*    <input class="group-border-caption font-normal-13px-black" value="Product Reviews" disabled="disabled" />*@
+
+    <div class="product-reviews-container-table">
+        <table class="product-reviews-table">
+            <thead>
+                <tr>
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].CloudApplicationProductReviewDate)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:30%;">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].CloudApplicationProductReviewHeadline)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:10%;">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].CloudApplicationProductReviewPublisherName)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:40%;">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].CloudApplicationProductReviewURL)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:5%;">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].CloudApplicationProductReviewURLDocumentFormat)
+                    </td>    
+                    <td class="editor-field font-normal-13px-black" style="width:5%;">
+@*                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].IsBrokenLink)*@
+                    </td>
+
+                    @if (displayDebugFields)
+                    {
+                    <td class="editor-field font-normal-13px-black" style="width:30%;">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].CloudApplicationProductReviewText)
+                    </td>    
+                    }
+                    @if (displayDebugFields)
+                    {    
+                    <td class="editor-field font-normal-13px-black">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].Persisted)
+                    </td>
+                    }
+                    @if (displayDebugFields)
+                    {    
+                    <td class="editor-field font-normal-13px-black">
+                        @Html.LabelFor(x => x.CloudApplicationProductReviews[0].RowID)
+                    </td>
+                    }
+                </tr>
+            </thead>
+            @Html.EditorFor(x => x.CloudApplicationProductReviews)
+        </table>
+        <br />
+
+        <div class="apply-product-reviews-across-all-brands">
+            <div style="float:left;width:30%;" class="xeditor-field font-normal-13px-black">
+                @Html.LabelFor(x => x.ApplyProductReviewsAtVendorLevel)
+            </div>
+            <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                @Html.CheckBoxFor(x => x.ApplyProductReviewsAtVendorLevel)
+            </div>
+        </div>
+
+        <div class="new-product-review-button">
+            <div class="site-button" id="newProductReviewButton" style="float:right;">
+                <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createProductReviewButton"/>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
+

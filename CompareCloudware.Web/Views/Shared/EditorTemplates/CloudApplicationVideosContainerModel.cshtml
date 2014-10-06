@@ -1,0 +1,55 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationVideosContainerModel
+@*@model CompareCloudware.Web.Models.CloudApplicationInputModel*@
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+    $(document).ready(function () {
+    });
+</script>
+
+        @Html.Partial("GroupBorderCaption", "Video") 
+        <div class="application-video-details">
+        
+            <div class="application-video">
+            @if (Model != null)
+            {
+                if (Model.CloudApplicationVideos.Count > 0)
+                //if (Model.Videos[0] != null)
+                {
+    @*                @Html.HiddenFor(x => x.Videos[0])
+                    @Html.HiddenFor(x => x.Videos[0].CloudApplicationVideoDomains.ChosenValue)
+                    @Html.HiddenFor(x => x.Videos[0].CloudApplicationVideoExtensions.ChosenValue)
+                    @Html.Partial("VideoContainer", Model.Videos[0])*@
+                    @Html.EditorFor(x => x.CloudApplicationVideos)
+
+                    <div class="apply-videos-across-all-brands">
+                        <div style="float:left;width:30%;" class="xeditor-field font-normal-13px-black">
+                            @Html.LabelFor(x => x.ApplyVideosAtVendorLevel)
+                        </div>
+                        <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                            @Html.CheckBoxFor(x => x.ApplyVideosAtVendorLevel)
+                        </div>
+                    </div>
+                
+                }
+            }
+            </div>
+
+            <div class="no-video">
+                <div style="float:left;width:30%;" class="xeditor-field font-normal-13px-black">
+                    @Html.LabelFor(x => x.NoVideo)
+                </div>
+                <div style="float:left;width:15%;" class="xeditor-field font-normal-13px-black">
+                    @Html.CheckBoxFor(x => x.NoVideo)
+                </div>
+            </div>
+
+            <div class="site-button" id="uploadVideoButton" style="float:right;">
+                <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createReviewButton"/>
+            </div>
+            <div class="clear" style="height:10px;"></div>
+
+        </div>

@@ -1,0 +1,66 @@
+﻿@model CompareCloudware.Web.Models.HomePageModel
+@*    @{ Html.RenderPartial("Carousel"); }
+*@
+
+@*@using System.Web.WebPages
+@using Microsoft.Web.Mvc.Html*@
+
+@*@using (Html.BeginForm())*@
+@using (Html.BeginForm("HomePage", "Home", FormMethod.Post))
+{
+
+    Model.CustomSession.SelectedCategoryID = 0;
+    Model.CustomSession.ShowSearchTextBox = false;
+    
+        Html.RenderPartial("CarouselModel", @Model.Carousel);
+@*    <div style="clear:both;"></div>
+    <div style="background-color:#EBEBEB;">
+    </div>
+*@    
+    
+    <div class="homepage-container">
+        <div class="search-homepage-container">
+            @Html.DisplayFor(x => x.SearchInputModel)
+        </div>
+
+        <div class="homepage-container-content">
+            <div class="xcategory-page-content" style="width:65%;float:left;">
+                @Html.DisplayFor(x => x.TabbedOnpageOptimisationModel)
+            </div>
+            <div class="homepage-social-container" style="width:35%;float:left">
+                <div class="homepage-whatis-container">
+                    <span class="font-normal-22px-purple">What is cloudware?</span>
+                </div>
+                <div class="homepage-social-carousel-container">
+                 @Html.EditorFor(x => x.Video)
+                @{
+                    Html.RenderPartial("CarouselSocialModel", @Model.CarouselSocial);
+                }
+                </div>
+            </div>
+        </div>
+        <div style="clear:both;height:20px;"></div>
+
+        <div class="home-page-content">
+            @Html.DisplayFor(x => x.TabbedSearchResultsModel)
+        </div>
+
+    </div>
+}
+
+<script>
+//    $(document).ready(function () {
+//        debugger;
+//        var theForm = $(this).closest('form');
+//        $(this).submit(function (evt) {
+
+//            //function CheckShowCompare(theForm) {
+//            //debugger;
+//            ShowCompare(this);
+//            //        if ($(theForm).valid()) {
+//            //            setLoadingSearchResults(true);
+//            //        }
+//            //}
+//        });
+//    });
+</script>

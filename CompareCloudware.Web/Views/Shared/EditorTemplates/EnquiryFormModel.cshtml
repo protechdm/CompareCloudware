@@ -1,0 +1,195 @@
+﻿@model CompareCloudware.Web.Models.FreeTrialBuyNowModel
+@using CompareCloudware.Web.Helpers
+
+
+@using (Html.BeginForm("FreeTrial", "Home", FormMethod.Post))
+{
+
+    <div class="free-trial-input-container">
+        @{ Html.RenderPartial("CreatureWithTextAbove"); }
+
+        <div class="free-trial-input-data-proceed-page">
+            <div class="add-margins">
+                <label class="font-22px-white">
+                    Request free trial</label>
+            </div>
+            <div class="add-margins">
+                <div class="free-trial-first-column">
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.FirstName, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.FirstName, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.Surname, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.Surname, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.Surname)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.EMailAddress, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.EMailAddress, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.EMailAddress)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.Telephone, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.Telephone, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.Telephone)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.Company, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.Company, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.Company)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.NumberOfEmployees, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.NumberOfEmployees, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.NumberOfEmployees)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.FreeTrial, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.FreeTrial, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.FreeTrial)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="free-trial-input-object-container">
+                        <div class="free-trial-input-object-label">
+                            @Html.LabelFor(x => x.BuyNow, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="free-trial-input-object-data">
+                            @Html.EditorFor(x => x.BuyNow, new { @class = "font-13px-white" })
+                            @Html.ValidationMessageFor(model => model.BuyNow)
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+
+                        <div class="site-button">
+@*                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    name="@Html.Encode("APPLICATIONREQUEST_BUTTON")"
+                                    value="Submit"
+                                    id = "applicationRequestButton"
+                                     />
+*@
+                            <img    src="@Url.Content("~/Images/Buttons/CCW_Submit.png")"
+                                    name="@Html.Encode("APPLICATIONREQUEST_BUTTON")"
+                                    id = "applicationRequestButton"
+                                     />
+
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+<div class="free-trial-buy-now" style="display:none;">
+    <div class="free-trial-buy-now-input-data">
+        <div class="free-trial-buy-now-input-data-first-column">
+            <label class="large-white-text">
+                Submit your details below to access the FREE trial or buy now
+            </label>
+                <div class="free-trial-input-text add-margins">
+                    @Html.TextBoxFor(x => x.FirstName, new { @class = "font-13px-white" })
+                    @Html.ValidationMessageFor(model => model.FirstName)
+                </div>
+                <div class="free-trial-input-text add-margins">
+                    @Html.TextBoxFor(x => x.Surname, new { @class = "font-13px-white" })
+                    @Html.ValidationMessageFor(model => model.Surname)
+                </div>
+                <div class="free-trial-input-text add-margins">
+                    @Html.TextBoxFor(x => x.EMailAddress, new { @class = "font-13px-white" })
+                    @Html.ValidationMessageFor(model => model.EMailAddress)
+                </div>
+                <div class="free-trial-input-text add-margins">
+                    @Html.TextBoxFor(x => x.Telephone, new { @class = "font-13px-white" })
+                    @Html.ValidationMessageFor(model => model.Telephone)
+                </div>
+                <div class="free-trial-input-text add-margins">
+                    @Html.TextBoxFor(x => x.Company, new { @class = "font-13px-white" })
+                    @Html.ValidationMessageFor(model => model.Company)
+                </div>
+                <div class="free-trial-input-text add-margins">
+                    @Html.TextBoxFor(x => x.NumberOfEmployees, new { @class = "font-13px-white" })
+                    @Html.ValidationMessageFor(model => model.NumberOfEmployees)
+                </div>
+                <div class="add-margins">
+                    <div style="width:100%;position:relative;height:auto;overflow:hidden;">
+                        <div style="float:left;position:relative">
+                            @Html.CheckBoxFor(x => x.FreeTrial, new { @class = "font-13px-white" })
+                        </div>
+                        <div style="float:left;position:relative">
+                            @Html.LabelFor(x => x.FreeTrial, new { @class = "font-13px-white" })
+                        </div>
+                    </div>
+                </div>
+                <div class="add-margins">
+                    <div style="width:100%;position:relative;height:auto;overflow:hidden;">
+                        <div style="float:left;position:relative">
+                            @Html.CheckBoxFor(x => x.BuyNow, new { @class = "font-13px-white" })
+                        </div>
+                        <div style="float:left;position:relative">
+                            @Html.LabelFor(x => x.BuyNow, new { @class = "font-13px-white" })
+                        </div>
+                    </div>
+                </div>
+                <div class="add-margins">
+                        <div class="site-button">
+                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="Submit" />
+                        </div>
+                </div>
+
+@*    @{Html.RenderPartial("CreatureWithTextOnLeft");}
+        <div id="title" class="add-margins">
+        </div>
+*@
+        </div>
+    </div>
+</div>
+
+
+

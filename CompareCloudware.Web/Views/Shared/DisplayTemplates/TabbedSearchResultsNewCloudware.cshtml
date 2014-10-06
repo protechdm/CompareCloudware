@@ -1,0 +1,21 @@
+﻿@model CompareCloudware.Web.Models.TabbedSearchResultsModel
+@using CompareCloudware.Web.Models;
+
+<table>
+@{int i = 0;}
+@foreach (SearchResultModel sr in @Model.NewCloudware)
+{
+    if (i % 2 == 0)
+    { 
+        @: <tr> 
+        }
+        <td>
+            @{Html.RenderPartial("TabbedSearchResult", sr);}
+        </td>
+              if (i % 2 == 1)
+              { 
+        @: </tr> 
+        }
+    i += 1;
+}
+</table>

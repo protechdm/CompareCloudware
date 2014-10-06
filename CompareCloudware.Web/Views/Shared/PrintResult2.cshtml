@@ -1,0 +1,531 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationModel
+@using CompareCloudware.Web.Models
+@using System.Web.Mvc;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>PrintResult2</title>@*
+    <link href="@Url.Content("http://localhost:3785/Content/jquery-ui.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/EnabledJavaScript/simple-search-input.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/Creature.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/overflow-text-ellipsis.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/jquery-ui.custom.css")" rel="stylesheet" type="text/css" media="all" />    
+*@
+    <link href="@Url.Content("http://localhost:3785/Content/search-page.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/fonts.css")" rel="Stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/Site.css")" rel="stylesheet" type="text/css" media="all" />
+    <style type="text/css" media="all">
+        .xfont-normal-22px-purple
+        {
+            font-size: 22px;
+            font-weight: normal;
+            font-style: normal;
+            color: #800080;
+        }
+        
+        .xfont-bold-22px-purple
+        {
+            font-size: 22px;
+            font-weight: bold;
+            font-style: normal;
+            color: #800080;
+            font-family: Vagabond;
+        }
+    </style>
+</head>
+<body style="width:792px;">
+    <table width="792px">
+        <tr>
+            <td>
+                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_Logo_Top.gif" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_NavBar_Full_Grey.png" />
+            </td>
+        </tr>
+    </table>
+    <table width="792px">
+        <tr>
+            <td width="56%">
+                <table>
+                    <tr>
+                        <td colspan="5">
+                            <img src="http://localhost:3785@(Model.Vendor.VendorLogoFullURL + Model.Vendor.VendorLogoFileName)" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table class="search-results-table-inner box-shadow" style="width: 100%;border:1px;border-style:solid;">
+                                <tr>
+                                    <td class="font-bold-22px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            @if (Model.ApplicationCostPerMonth == 0)
+                    {
+                                                @:£0
+                    }
+                    else
+                    {
+                                                @:£@Model.ApplicationCostPerMonth
+                                                                }
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-22px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            @if (Model.ApplicationCostPerAnnum == 0)
+                    {
+                                                @:£0
+                    }
+                    else
+                    {
+                                                @:£@Model.ApplicationCostPerAnnum
+                                                                }
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-22px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            @if (Model.SetupFee.SetupFeeName.ToUpper().StartsWith("NOT"))
+                    {
+                                                @:£0
+                    }
+                    else
+                    {
+                                                @Model.SetupFee
+                    }
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-12px-purple  search-result-header" style="width:15%;">
+                                        <label>
+                                            @Model.FreeTrialPeriod.FreeTrialPeriodName
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-11px-purple search-result-header" style="width:40%;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold-11px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            @if (Model.ApplicationCostPerMonth == 0)
+                    {
+                                                @:&nbsp;
+                    }
+                    else
+                    {
+                                                @:per month
+                                                                }
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-11px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            @if (Model.ApplicationCostPerAnnum != 0)
+                    {
+                                                @:per year
+                    }
+                    else
+                    {
+                                                @:&nbsp;
+                                                                }
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-11px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            @if (!Model.SetupFee.SetupFeeName.ToUpper().StartsWith("NOT"))
+                    {
+                                                @:&nbsp;
+                    }
+                    else
+                    {
+                                                @:&nbsp;
+                                                                }
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-11px-purple search-result-header" style="width:15%;">
+                                        <label>
+                                            ???
+                                        </label>
+                                    </td>
+                                    <td class="font-bold-11px-purple search-result-header" style="width:40%;"></td>
+                                </tr>
+                                <tr>
+                                    <td class="font-bold-13px-purple" style="border-bottom: 1px solid black;"
+                                        colspan="5">@Model.ServiceName
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-normal-12px-black none-ellipsify" colspan="5">
+                                        @Model.Description
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width: 100%;border:0px;border-style:solid;">
+                                <tr>
+                                    <td>
+                                        <hr />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:left;" class="font-normal-22px-purple search-result-header">
+                                        <label>Summary</label>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:30%">
+                                        <table>
+                                            <!-- OPERATING SYSTEMS -->
+                                            <tr>
+                                                <td style="text-align:left;" class="font-bold-11px-purple search-result-header">
+                                                    <label>Operating system:</label>
+                                                </td>
+                                            </tr>
+                                            @foreach (OperatingSystemModel os in Model.OperatingSystems)
+                            {
+                                                <tr>
+                                                    <td style="text-align:left;" class="font-normal-11px-black search-result-header">
+                                                        <label>@os.OperatingSystemName</label>
+                                                    </td>
+                                                </tr>
+                            }
+                                            <!-- SUPPORT TYPES -->
+                                            <tr>
+                                                <td style="text-align:left;" class="font-bold-11px-purple search-result-header">
+                                                    <label>Support type:</label>
+                                                </td>
+                                            </tr>
+                                            @foreach (SupportTypeModel st in Model.SupportTypes)
+                            {
+                                                <tr>
+                                                    <td style="text-align:left;" class="font-normal-11px-black search-result-header">
+                                                        <label>@st.SupportTypeName</label>
+                                                    </td>
+                                                </tr>
+                            }
+                                            <!-- SUPPORT DAYS -->
+                                            <tr>
+                                                <td style="text-align:left;" class="font-bold-11px-purple search-result-header">
+                                                    <label>
+                                                        Support days:</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;" class="font-normal-11px-black search-result-header">
+                                                    <label>@Model.SupportDays.SupportDaysName</label>
+                                                </td>
+                                            </tr>
+                                            <!-- SUPPORT HOURS -->
+                                            <tr>
+                                                <td style="text-align:left;" class="font-bold-11px-purple search-result-header">
+                                                    <label>
+                                                        Support hours:</label>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="text-align:left;" class="font-normal-11px-black search-result-header">
+                                                    <label>@Model.SupportHours.SupportHoursName</label>
+                                                </td>
+                                            </tr>
+                                            <!-- LANGUAGES -->
+                                            <tr>
+                                                <td style="text-align:left;" class="font-bold-11px-purple search-result-header">
+                                                    <label>Language:</label>
+                                                </td>
+                                            </tr>
+                                            @foreach (LanguageModel l in Model.Languages)
+                            {
+                                                <tr>
+                                                    <td style="text-align:left;" class="font-normal-11px-black search-result-header">
+                                                        <label>@l.LanguageName</label>
+                                                    </td>
+                                                </tr>
+                            }
+                                        </table>
+                                    </td>
+                                    <td style="width:70%">
+                                        <!-- FEATURES -->
+                                        <table>
+                                            <tr>
+                                                <td style="text-align:left;" class="font-bold-11px-purple search-result-header">
+                                                    <label>
+                                                        Features:</label>
+                                                </td>
+                                            </tr>
+                                            @{
+                                            int i = 0;
+                                            do
+                                            { 
+                                                @:<tr>
+                                                    <td style="text-align:left;" class="font-normal-11px-black search-result-header">
+                                                        <label>@Model.CloudApplicationFeatures[i].Feature.FeatureName</label>
+                                                    </td> 
+                                                    i++; 
+                                                    if (i < Model.CloudApplicationFeatures.Count) 
+                                                    { 
+                                                        @:<td style="text-align:left; padding-left:20px;" class="font-normal-11px-black search-result-header">
+                                                            <label>@Model.CloudApplicationFeatures[i].Feature.FeatureName</label>
+                                                        @:</td> 
+                                                    } 
+                                                    i++; 
+                                                    @:</tr>                                 
+                                            } while (i < Model.CloudApplicationFeatures.Count);
+                                            }
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width:100%;">
+                                <tr>
+                                    <td>
+                                        <hr />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="font-normal-22px-purple search-result-header" style="text-align:left;">
+                                        <label>Discover more about @Model.ServiceName</label>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table style="width: 100%;">
+                                <!-- CASE STUDIES -->
+                                <tr>
+                                    <td class="font-bold-11px-purple search-result-header">
+                                        <label>Case Studies</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    @for (int td = 1; td <= Model.ThumbnailDocuments.Count; td++)
+                    {
+                        if (Model.ThumbnailDocuments[td - 1].ThumbnailDocumentType.ThumbnailDocumentTypeName.ToUpperInvariant().StartsWith("CASE"))
+                        {
+                                        <td>
+                                            <img src="http://localhost:3785/Home.mvc/ShowImage?thumbnailDocumentID=@td" class="thumbnail-image" />
+                                        </td>
+                                        <td class="font-bold-11px-purple">
+                                            <label>@Model.ThumbnailDocuments[td - 1].ThumbnailDocumentTitle</label>
+                                        </td>
+                        }
+                    }
+                                </tr>
+                                <!-- WHITE PAPERS -->
+                                <tr>
+                                    <td class="font-bold-11px-purple search-result-header">
+                                        <label>White Papers</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    @for (int td = 1; td <= Model.ThumbnailDocuments.Count; td++)
+                    {
+                        if (Model.ThumbnailDocuments[td - 1].ThumbnailDocumentType.ThumbnailDocumentTypeName.ToUpperInvariant().StartsWith("WHITE"))
+                        {
+                                        <td>
+                                            <img src="http://localhost:3785/Home.mvc/ShowImage?thumbnailDocumentID=@td" class="thumbnail-image" />
+                                        </td>
+                                        <td class="font-bold-11px-purple">
+                                            <label>@Model.ThumbnailDocuments[td - 1].ThumbnailDocumentTitle</label>
+                                        </td>
+                        }
+                    }
+                                </tr>
+                            </table>
+                            <table style="width:100%;">
+                                <tr>
+                                    @foreach (CloudApplicationReviewModel carm in Model.Reviews)
+                {
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td class="product-review-label font-13px-white">
+                                                        <label>Product review</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-bold-11px-purple">
+                                                        <label>@carm.CloudApplicationReviewPublisherName.Trim() - @carm.CloudApplicationReviewDate.ToShortDateString()</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-bold-11px-black">
+                                                        <label>@carm.CloudApplicationReviewHeadline</label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="font-normal-11px-black">
+                                                        <label>@carm.CloudApplicationReviewText</label>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                }
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td width="44%">
+                <table width="100%">
+                    <tr>
+                        <td style="overflow:hidden;" colspan="6">
+                            <img src="http://localhost:3785/Images/SearchResultPDFImages/Compo_Final_TRIAL.gif" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-normal-22px-purple" colspan="6">
+                            <label>Rating and reviews</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold-11px-black">
+                            <label>Overall rating:</label>
+                        </td>
+                        @for (i = 1; i <= 5; i += 1)
+                        {
+                        <td>
+                            @if (Model.AverageOverallRating/20 >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleCloud.png" />
+                            }
+                            else if ((Model.AverageOverallRating/20) + .5m >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleBlueCloud.png" />
+                            }
+                            else
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_BlueCloud.png" />
+                            }
+                        </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="font-bold-11px-black">
+                            <label>Ease of use:</label>
+                        </td>
+                        @for (i = 1; i <= 5; i += 1)
+                        {
+                        <td>
+                            @if (Model.AverageEaseOfUse/20 >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleCloud.png" />
+                            }
+                            else if ((Model.AverageEaseOfUse/20) + .5m >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleBlueCloud.png" />
+                            }
+                            else
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_BlueCloud.png" />
+                            }
+                        </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="font-bold-11px-black">
+                            <label>Value for money:</label>
+                        </td>
+                        @for (i = 1; i <= 5; i += 1)
+                        {
+                        <td>
+                            @if (Model.AverageValueForMoney/20 >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleCloud.png" />
+                            }
+                            else if ((Model.AverageValueForMoney/20) + .5m >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleBlueCloud.png" />
+                            }
+                            else
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_BlueCloud.png" />
+                            }
+                        </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="font-bold-11px-black">
+                            <label>Functionality:</label>
+                        </td>
+                        @for (i = 1; i <= 5; i += 1)
+                        {
+                        <td>
+                            @if (Model.AverageFunctionality/20 >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleCloud.png" />
+                            }
+                            else if ((Model.AverageFunctionality/20) + .5m >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleBlueCloud.png" />
+                            }
+                            else
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_BlueCloud.png" />
+                            }
+                        </td>
+                        }
+                    </tr>
+                    @foreach (CloudApplicationRatingModel carm in Model.Ratings)
+                    {
+                    <tr>
+                        <td class="product-rating-header font-13px-white">
+                            <label class="product-rating-label">Product rating</label>
+                        </td>
+                        @for (i = 1; i <= 5; i += 1)
+                        {
+                        <td>
+                            @if (Model.AverageOverallRating/20 >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleCloud.png" />
+                            }
+                            else if ((Model.AverageOverallRating/20) + .5m >= i)
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_PurpleBlueCloud.png" />
+                            }
+                            else
+                            {
+                                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_BlueCloud.png" />
+                            }
+                        </td>
+                        }
+                    </tr>
+                    <tr>
+                        <td class="font-bold-11px-purple" colspan="6">
+                            <label>@carm.CloudApplicationRatingReviewerName.Trim()</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-bold-11px-black" colspan="6">
+                            <label>@carm.CloudApplicationRatingReviewerTitle</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-normal-11px-black" colspan="6">
+                            <label>@carm.CloudApplicationRatingReviewerCompany</label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-normal-11px-black" colspan="6">
+                            <label>@carm.CloudApplicationRatingText</label>
+                        </td>
+                    </tr>
+                    }
+                </table>
+            </td>
+        </tr>
+    </table>
+    <table width="792px">
+        <tr>
+            <td style="text-align:right;">
+                <img src="http://localhost:3785/Images/SearchResultPDFImages/CCW_Logo_Bottom.png" />
+            </td>
+        </tr>
+        <tr>
+            <td class="font-normal-13px-black" style="text-align:right;">
+                <label>Copyright Compare Cloudware.com 2011. All Rights Reserved</label>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

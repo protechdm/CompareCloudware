@@ -1,0 +1,21 @@
+﻿@model CompareCloudware.Web.Models.GlobalSearchPageModel
+@using CompareCloudware.Web.Models;
+<link href="@Url.Content("~/Content/search-page.css")" rel="stylesheet" type="text/css" />
+@using (Html.BeginForm("SearchPage", "Home", new { buttonID = "" }, FormMethod.Post))
+{
+
+
+    <style>
+        /* IE has layout issues when sorting (see #5413) */
+        .group
+        {
+            zoom: 1;
+        }
+    </style>
+    @Html.Partial("Loading")
+    
+    <div class="global-search-page-container font-normal-11px">
+        @{Html.RenderPartial("GlobalSearchPageContainerModel", Model);}
+    </div>
+
+}

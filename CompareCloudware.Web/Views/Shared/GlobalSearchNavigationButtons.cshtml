@@ -1,0 +1,79 @@
+﻿@model CompareCloudware.Web.Models.GlobalSearchPageModel
+@{var searchResultsPages = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage;}
+@{var searchResults = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults;}
+@{var term = Model.ContainerModel.SearchResultsModel.Term;}
+@Html.Hidden("currentPageNumber", searchResultsPages.PageNumber, new { @id = "currentPageNumber" })
+@Html.Hidden("pageCount", searchResultsPages.PageCount, new { @id = "pageCount" })
+@Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.Term)
+@if (searchResults.Count() > 0)
+{
+    <div class="pagination-centred">
+        <div class="pagination">
+            <ul>
+@*                @if (searchResultsPages.HasPreviousPage)*@
+                {
+                    <li>
+                        <label class="font-normal-13px-blue navigate-global-search-results"><< First</label>
+                    </li>
+                    <li>
+                        <label class="font-normal-13px-blue navigate-global-search-results">< Previous</label>
+@*                        <i class="icon-arrow-left"></i>*@
+                    </li>
+                }
+@*                else
+                {
+                    <li>
+                        <label class="font-normal-13px-white" style="border-width: 0px 0px 0px 0px;">
+                            << First</label>
+                    </li>
+                    <li>
+                        <label class="font-normal-13px-white" style="border-width: 0px 1px 0px 0px;">
+                            < Previous</label>
+                        <i class="icon-arrow-left"></i></li>
+                }*@
+                @for (int i = searchResultsPages.PageNumber - 3; i < searchResultsPages.PageNumber; i++)
+                {
+                    if (i > 0 && searchResultsPages.PageCount >= i)
+                    {
+                    <li>
+                        <label class="font-normal-13px-blue navigate-global-search-results">@i</label>
+                    </li>
+                    }
+                }
+                <li class="active">
+                    <label class="font-normal-13px-blue navigate-global-search-results">@searchResultsPages.PageNumber</label>
+                </li>
+                @for (int i = searchResultsPages.PageNumber + 1; i <= searchResultsPages.PageNumber + 3; i++)
+                {
+                    if (i <= searchResultsPages.PageCount)
+                    {
+                    <li>
+                       <label class="font-normal-13px-blue navigate-global-search-results">@i</label>
+                    </li>
+                    }
+                }
+@*                @if (searchResultsPages.HasNextPage)*@
+                {
+                    <li>
+                        <label class="font-normal-13px-blue navigate-global-search-results">Next ></label>
+@*                        <i class="icon-arrow-left"></i>*@
+                    </li>
+                    <li>
+                        <label class="font-normal-13px-blue navigate-global-search-results">Last >></label>
+                    </li>
+                }
+@*                else
+                {
+                    <li>
+                        <label class="font-normal-13px-white" style="border-width: 0px 0px 0px 1px;">
+                            Next ></label>
+                        <i class="icon-arrow-left"></i></li>
+                    <li>
+                        <label class="font-normal-13px-white" style="border-width: 0px 0px 0px 0px;">
+                            Last >></label>
+                    </li>
+                }*@
+            </ul>
+        </div>
+    </div>    
+}

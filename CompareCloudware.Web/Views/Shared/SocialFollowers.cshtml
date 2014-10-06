@@ -1,0 +1,50 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationModel
+
+    <div style="clear: both;">
+    </div>
+<div class="social-followers-header">
+    <label class="font-normal-22px-purple">Community</label>
+</div>
+<div class="social-followers">
+    <div class="social-follower">
+        <div class="follower-icon-container">
+            <a target="_blank">
+                <img name="ICON_TWITTER_FOLLOWERS" class="cc-ui-follower-icon cc-ui-icon-twitter-followers" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" />
+            </a>
+        </div>
+        <div class="follower-count-container">
+            <label class="font-bold-13px-purple">@String.Format("{0:N0}", Model.TwitterFollowers)</label>
+        </div>
+        <div class="follower-count-suffix-container">
+            <label class="font-bold-11px-black">followers</label>
+        </div>
+    </div>
+    <div class="social-follower">
+        <div class="follower-icon-container">
+            <a target="_blank">
+                <img name="ICON_FACEBOOK_FOLLOWERS" class="cc-ui-follower-icon cc-ui-icon-facebook-followers" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+            </a>
+        </div>
+        <div class="follower-count-container">
+            <label class="font-bold-13px-purple">@String.Format("{0:N0}", Model.FacebookFollowers)</label>
+        </div>
+        <div class="follower-count-suffix-container">
+            <label class="font-bold-11px-black">fans</label>
+        </div>
+    </div>
+    <div class="social-follower">
+        <div class="follower-icon-container">
+            <a target="_blank">
+                <img name="ICON_LINKEDIN_FOLLOWERS" class="cc-ui-follower-icon cc-ui-icon-linkedin-followers" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+            </a>
+        </div>
+        <div class="follower-count-container">
+            <label class="font-bold-13px-purple">@String.Format("{0:N0}", Model.LinkedInFollowers)</label>
+        </div>
+        <div class="follower-count-suffix-container">
+            <label class="font-bold-11px-black">members</label>
+        </div>
+    </div>
+    <div style="clear: both;">
+    </div>
+</div>

@@ -1,0 +1,88 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationProductReviewModel
+
+@using CompareCloudware.Web.Models
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+    //alert("Reviews table");
+</script>
+@Html.HiddenFor(x => x.CloudApplicationID)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewID)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewDate)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewHeadline)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewPublisherName)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewText)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewURL)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewURLDocumentFormat)
+@Html.HiddenFor(x => x.CloudApplicationProductReviewStatus)
+@Html.HiddenFor(x => x.IsBrokenLink)
+@Html.HiddenFor(x => x.IsLive)
+
+@Html.HiddenFor(x => x.RowID)
+@Html.HiddenFor(x => x.AddMode)
+@Html.HiddenFor(x => x.Persisted)
+@if (Model.Persisted && Model.IsLive)
+{
+<tr>
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationProductReviewDate.ToShortDateString())
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:30%;">
+            @Html.Label("", Model.CloudApplicationProductReviewHeadline)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationProductReviewPublisherName)
+        </td>
+        @if (Model.IsBrokenLink)
+        {    
+        <td class="editor-field font-normal-13px-red" style="width:30%;">
+            @Html.Label("", Model.CloudApplicationProductReviewURL)
+        </td>
+        }
+        else
+        {    
+        <td class="editor-field font-normal-13px-black" style="width:40%;">
+            @Html.Label("", Model.CloudApplicationProductReviewURL)
+        </td>
+        }
+        
+        <td class="editor-field font-normal-13px-black" style="width:5%;">
+            @Html.Label("", Model.CloudApplicationProductReviewURLDocumentFormat)
+        </td>    
+@*        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @if (Model.IsBrokenLink)
+            {
+                @Html.Label("", "YES")
+            }
+        </td>*@    
+        <td class="editor-field font-normal-13px-black" style="width:5%;">
+            @Html.ActionLink("Delete", "", "", new { @id = Model.RowID, @class = "cloudApplicationProductReviewDelete" })
+        </td>    
+
+
+
+
+        @if (displayDebugFields)
+        {    
+        <td class="editor-field font-normal-13px-black" style="width:30%;">
+            @Html.Label("", Model.CloudApplicationProductReviewText)
+        </td>    
+        }
+        
+        @if (displayDebugFields)
+        {    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.Persisted.ToString())
+        </td>
+        }
+        
+        @if (displayDebugFields)
+        {    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.RowID.ToString())
+        </td>    
+        }
+</tr>
+}

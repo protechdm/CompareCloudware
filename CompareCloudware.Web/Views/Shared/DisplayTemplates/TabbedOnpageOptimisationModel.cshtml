@@ -1,0 +1,260 @@
+﻿@model CompareCloudware.Web.Models.TabbedOnpageOptimisationModel
+
+    <link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />    
+<style>
+
+    .wrapped {
+    /*white-space: pre-line;*/
+    word-wrap: break-word;
+    /*word-break:break-all;*/
+    display:inline-block;
+    width:100%;
+    /*height:30px;*/
+}
+
+    #onpageoptimisation-tabs div {
+  word-wrap: break-word
+}
+
+    #onpageoptimisation-tabs li {
+list-style-image: none;
+  list-style-type: none;
+  white-space: normal;
+  display: inline;
+  float: left;
+  width: 150px;}
+</style>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var tabsContext = $("#onpageoptimisation-tabs");
+            $('.tabs-container').on('click', tabsContext, function () {
+                debugger;
+                //CallController("FEATURED");
+            });
+
+            var tabs = $("#onpageoptimisation-tabs").tabs({
+                select: function (e, i) {
+                    //debugger;
+                    CallController(i.index);
+                    //selected_tab = i.index;
+                },
+                show: function (e, i) {
+                    //debugger;
+                    //CallController(i.index);
+                    //selected_tab = i.index;
+                },
+                load: function (e, i) {
+                    //debugger;
+                    CallController(i.index);
+                    //selected_tab = i.index;
+                },
+                create: function (e, i) {
+                    //debugger;
+                    CallController(0);
+                    //selected_tab = i.index;
+                }
+            });
+
+            function CallController(whichTab) {
+                var serialize1 = $('form').serialize();
+                serialize1 = $('#onpageoptimisation-tabs :input').serialize();
+                var context = $('.search-homepage-container');
+
+                $.ajax({
+                    //url: '/Home/SearchFiltersPartial',
+                    url: '/Home/SearchResultsTabChanged',
+                    type: 'POST',
+                    //data: JSON.stringify("jsonData"),
+                    //data: $('#main form').serialize() + "&refreshResults=true",
+                    //data: "{ model: " + serialize1 + ", sortColumn: sortColumn, currentSortOrder: currentSortOrder, refreshResults: true }",
+                    //data: "{ model: " + serialize1 + ", refreshResults: " + refresh + " }",
+                    data: serialize1 + "&whichTab=" + whichTab,
+                    //dataType: 'json',
+                    //contentType: 'application/json',
+
+                    //The request was a success. Repopulate the div with new result set.
+                    success: function (data) {
+                        //debugger;
+                        //$(tagToRefresh).empty();
+                        //$(data).appendTo(tagToRefresh);
+                        //setResultsDisplay();
+                        //collapseFilterGroups("true");
+                        //collapseAllFilterGroups();
+                        //setLoadingSearchResults(false);
+                    },
+                    error: function (data) {
+                        //debugger;
+                        //setLoadingSearchResults(false);
+                        //alert('Fail on dropdown');
+                    }
+                });
+
+            }
+
+            $("#onpageoptimisation-tabs").tabs();
+        });    
+	</script>
+
+
+
+
+<div class="tabbed-search-results-container" id="onpageoptimisation-tabs">
+<ul>
+    <li id="onpageoptimisation-tab-1">
+         <div class="wrapped">
+             <a href="#onpageoptimisation-tabs-4" class="font-normal-15px-white">
+                 @Model.Tab1Title
+             </a>
+         </div>
+    </li>
+    <li id="onpageoptimisation-tab-2">
+         <div class="wrapped">
+             <a href="#onpageoptimisation-tabs-5" class="font-normal-15px-white">
+                 @Model.Tab2Title
+             </a>
+         </div>
+    </li>
+    <li id="onpageoptimisation-tab-3">
+         <div class="wrapped">
+             <a href="#onpageoptimisation-tabs-6" class="font-normal-15px-white">
+                 @Model.Tab3Title
+             </a>
+         </div>
+    </li>
+</ul>
+	    <div id="onpageoptimisation-tabs-4" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab1)
+	    </div>
+	    <div id="onpageoptimisation-tabs-5" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab2)
+	    </div>
+	    <div id="onpageoptimisation-tabs-6" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab3)
+	    </div>
+</div>
+
+
+
+@*    <div class="tabbed-search-results-container" id="onpageoptimisation-tabs" style="width:600px;height:300px;">
+        @Html.HiddenFor(x => x.CategoryID)
+	    <ul style="width:600px;height:300px;">
+		    <li id="onpageoptimisation-tab-1" style="height:100px;width:100px;" class="wrapped">
+                <div class="font-normal-12px-black wrapped">@Model.Tab1Title @Model.Tab1Title @Model.Tab1Title</div>
+                <div class="tabs-container">
+                    <a href="#onpageoptimisation-tabs-4" class="font-normal-15px-white">
+                    </a>
+                </div>
+            </li>
+		    <li id="onpageoptimisation-tab-2">
+                <div class="tabs-container">
+                    <a href="#onpageoptimisation-tabs-5">@Model.Tab2Title</a>
+                </div>
+            </li>
+		    <li id="onpageoptimisation-tab-3">
+                <div class="tabs-container">
+                <a href="#onpageoptimisation-tabs-6">
+                    <pre class="wrapped"><label class="font-normal-15px-purple wrapped">@Model.Tab3Title</label></pre>
+                </a>
+                </div>
+            </li>
+	    </ul>
+	    <div id="onpageoptimisation-tabs-4" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab1)
+	    </div>
+	    <div id="onpageoptimisation-tabs-5" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab2)
+	    </div>
+	    <div id="onpageoptimisation-tabs-6" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab3)
+	    </div>
+    </div>    *@
+
+
+@*    <div class="tabs-noscript">
+    <section id="one">
+        <a href="#one">Featured Cloudware</a>
+        <div>
+            @{Html.RenderPartial("SearchResultsFeaturedCloudware", @Model);}
+         </div>
+    </section>
+    <section id="two">
+        <a href="#two">New Cloudware</a>
+        <div>
+            @{Html.RenderPartial("SearchResultsTopTenCloudware", @Model);}
+         </div>
+    </section>
+    </div>
+*@    
+
+
+@*<p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <div id="tabstripmain" style="width:100%;">
+        <div class="nojavascript-tab">
+            <input type="radio" name="onlyone" id="the-checkbox1" value="" style="display:none; float:none;" />         
+            <div class="nojavascript-divforlabel" title="tabtitle">
+                <label class="nojavascript-label" for="the-checkbox1">Featured Cloudware</label>
+            </div>
+            <div class="nojavascript-results" title="results">
+            @{Html.RenderPartial("SearchResultsFeaturedCloudware", @Model);}
+            </div>
+        </div>
+        <div class="nojavascript-tab">
+            <input type="radio" name="onlyone" id="the-checkbox2" value="" style="display:none; float:none;" />         
+            <div class="nojavascript-divforlabel" title="tabtitle">
+                <label class="nojavascript-label" for="the-checkbox2">New Cloudware</label>
+            </div>
+            <div class="nojavascript-results" style="left:-101%; " title="results" >
+            @{Html.RenderPartial("SearchResultsTopTenCloudware", @Model);}
+            </div>
+        </div>
+        <div class="nojavascript-tab">
+            <input type="radio" name="onlyone" id="the-checkbox3" value="" style="display:none; float:none;" />         
+            <div class="nojavascript-divforlabel" title="tabtitle">
+                <label class="nojavascript-label" for="the-checkbox3">Cloudware top ten</label>
+            </div>
+            <div class="nojavascript-results" style="left:-202%; " title="results" >
+            @{Html.RenderPartial("SearchResultsNewCloudware", @Model);}
+            </div>
+        </div>
+    </div>
+*@
+
+
+
+    <script type="text/javascript">
+        // test auto-ready logic - call corner before DOM is ready
+        //$('#readyTest').corner();
+
+        $(function () {
+            //        $('#dynCorner').click(function () {
+            //            $('#dynamic').corner();
+            //        });
+            //        $('#dynUncorner').click(function () {
+            //            $('#dynamic').uncorner();
+            //        });
+
+            //        $('div.inner').wrap('<div class="outer"></div>');
+            //        $('p').wrap("<code></code>");
+
+//            $('div.demo, div.inner, li').each(function () {
+//                var t = $('p', this).text();
+//                //eval(t);
+//                $(this).corner();
+//                alert("Programatically rounding corners");
+//            });
+
+            // fixed/fluid tests
+            //$("div.box, div.plain").corner();
+            //$("#abs").corner("cc:#08e");
+
+            //$('.myCorner').corner();
+        });
+</script>
+
+

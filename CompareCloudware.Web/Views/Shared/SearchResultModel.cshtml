@@ -1,0 +1,376 @@
+﻿@model CompareCloudware.Web.Models.SearchResultModel
+@using CompareCloudware.Web.Helpers;
+@*home display TEST template
+*@
+
+
+<div class="search-header-results-container">
+    <div class="search-header-results-table-outer">
+
+    @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Multiple)
+    {
+    if (Model.SearchResultID == 0)
+    {
+@*        <table id="xheader" class="search-header-results-table-inner" style="width: 100%;">
+            <tr>
+                <td style="width: 27%;">
+                    <label>Cloudware provider</label>
+                </td>
+                <td style="width: 20%;">
+                    <label>Price-per-user</label>
+                </td>
+                <td style="width: 20%;">
+                    <label>Annual price</label>
+                </td>
+                <td style="width: 20%;">
+                    <label>Set-up fee</label>
+                </td>
+                <td style="width: 13%;">
+                    <label>Free trial</label>
+                </td>
+            </tr>
+        </table>
+*@    }
+    }
+    @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Single)
+    {
+        Html.RenderPartial("SearchResultButtons");
+@*
+*@    }    
+    </div>    
+    <div class="search-results-table-outer">
+
+
+    @if (Model.SearchResultID == 0)
+    {
+
+@*        <div class="advertising-images-container">
+            <div class="advertising-image-container">
+                <a href="http://www.adobe.com" target="_blank"> 
+                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 1 })' class="advertising-image" />
+                </a>
+            </div>
+            <div class="advertising-image-container">
+                <a href="http://www.adobe.com" target="_blank"> 
+                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 2 })' class="advertising-image" />
+                </a>
+            </div>
+        </div>
+*@    }
+    
+    <table id="dataTable" class="search-results-table-inner box-shadow" style="width: 100%;">
+        <tr>
+            <td style="width: 27%;">
+                <div class="search-results-table-main-details-logo">
+@*                    <img src="@Model.VendorLogoURL"/>
+*@                    <img src='@Url.Action("ShowLogo", "Home", new { vendorID = Model.VendorID })' class="logo-image" />
+                    qqqqq
+                </div>
+            </td>
+            <td style="width: 20%;" class="font-bold-22px-purple search-result-header">
+                <div class="search-results-table-main-details">
+                    <label class="font-bold-22px-purple search-result-header">
+                    @if (Model.ApplicationCostPerMonth == 0)
+                    {
+                        @:£0
+                    }
+                    else
+                    {
+                        @:£@Model.ApplicationCostPerMonth
+                    }
+                    </label>
+                    <br />
+                    <label class="font-bold-11px-purple search-result-header">
+                    @if (Model.ApplicationCostPerMonth == 0)
+                    {
+                        @:&nbsp;
+                    }
+                    else
+                    {
+                        @:per month
+                    }
+                    </label>
+                </div>
+            </td>
+            <td style="width: 20%;" class="font-bold-22px-purple  search-result-header">
+                <div class="search-results-table-main-details">
+                    <label class="font-bold-22px-purple search-result-header">
+                    @if (Model.ApplicationCostPerAnnum == 0)
+                    {
+                        @:£0
+                    }
+                    else
+                    {
+                        @:£@Model.ApplicationCostPerAnnum
+                    }
+                    </label>
+                    <br />
+                    <label class="font-bold-11px-purple search-result-header">
+                    @if (Model.ApplicationCostPerAnnum != 0)
+                    {
+                        @:per year
+                    }
+                    else
+                    {
+                        @:&nbsp;
+                    }
+                    </label>
+                </div>
+            </td>
+            <td style="width: 20%;" class="font-bold-22px-purple search-result-header">
+                <div class="search-results-table-main-details">
+                   <label class="font-bold-22px-purple search-result-header">
+                    @if (Model.SetupFee.ToUpper().StartsWith("NOT"))
+                    {
+                        @:£0
+                    }
+                    else
+                    {
+                        @Model.SetupFee
+                    }
+                    </label>
+                    <br />
+                    <label class="font-bold-11px-purple search-result-header">
+                    @if (!Model.SetupFee.ToUpper().StartsWith("NOT"))
+                    {
+                        @:&nbsp;
+                    }
+                    else
+                    {
+                        @:&nbsp;
+                    }
+                    </label>
+                </div>
+            </td>
+            <td style="width: 13%;" class="font-bold-22px-purple  search-result-header">
+                <div class="search-results-table-main-details" style="border-right-style: none;border-right-width: 0px;">
+                    <label class="font-bold-22px-purple search-result-header">
+                    @Model.FreeTrialPeriod
+                    </label>
+                    <br />
+                    <label class="font-bold-11px-purple search-result-header">
+                    ???
+                    </label>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="font-bold-13px-purple" style="width: 70%; border-bottom: 1px solid black;"
+                colspan="5">@Model.ServiceName
+            </td>
+        </tr>
+        <tr>
+            <td class="font-normal-12px-black" style="width: 70%" colspan="5">
+                <div style="float: right; height: inherit; width:30%;">
+                    <table width="100%;">
+                        <tr>
+                            <td style="padding: 5px;">
+@*                                <input style="width:90px;" type="submit" class="cloud-compare-button-blue" name=@Html.Encode("PROCEED_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString()) value="More Info &gt;" />
+*@                              
+
+
+    @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Multiple)
+    {
+
+
+                                <div class="site-button">
+@*                                  <input type="image" 
+                                    name="@Html.Encode("MOREINFO_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="MoreInfo" />
+                                    
+*@                                  @if(Model.CustomSession.JavaScriptEnabled)
+                                {
+                                    <img  
+                                    id="@Html.Encode("MOREINFO_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
+                                    src="@Url.Content("~/Images/Buttons/CCW_MoreInfo.png")"
+                                    />
+                                }
+                                else
+                                {
+                                  <input type="submit" 
+                                    name="@Html.Encode("MOREINFO_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="MoreInfo" />
+                                    
+                                }
+                                </div>
+    }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 5px;">
+@*                                <input style="width: 90px;" type="submit" class="cloud-compare-button-red" name="searchresultbutton"
+                                    value="Proceed &gt;" />
+*@
+
+    @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Multiple)
+    {
+
+
+                                <div class="site-button">
+                                  <input type="image" 
+                                    name="@Html.Encode("PROCEED_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="Proceed" />
+                                </div>
+    }
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Multiple)
+                {
+
+                <div class="ellipsify" style="width: 70%;">
+                    <div class="pre-dots">
+                    </div>
+                    <div class="dots">
+                        &hellip;</div>
+                    @Model.Description
+                    <span class="hidedots1"></span>
+                    <div class="hidedots2">
+                    </div>
+                </div>
+                }
+                @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Single)
+                {
+                <div class="none-ellipsify" style="width: 70%;">
+                    @Model.Description
+                </div>
+                }
+            </td>
+        </tr>
+    </table>
+
+    <div class="search-results-table-inner-moreinfo" id="@Html.Encode("MOREINFO_DIV_APPLICATION_ID_" + Model.CloudApplicationID.ToString())">
+        <hr />
+        <label class="font-normal-22px-purple search-result-header">Summary</label>
+        <table>
+            <tr>
+                <td style="width: 60%;">
+                    <div id="main3" style="overflow: hidden; height: auto; width: 100%;">
+                        <div class="search-result-summary-div">
+                            <table>
+                                <!-- OPERATING SYSTEMS -->
+                                <tr>
+                                    <td>
+                                        <label class="font-bold-11px-purple search-result-header">Operating system:</label>
+                                    </td>
+                                </tr>
+                                @foreach (CompareCloudware.Domain.Models.OperatingSystem os in Model.OperatingSystems)
+                                {
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header">@os.OperatingSystemName</label>
+                                    </td>
+                                </tr>
+                                }
+                                <!-- SUPPORT TYPES -->
+                                <tr>
+                                    <td>
+                                        <label class="font-bold-11px-purple search-result-header">Support type:</label>
+                                    </td>
+                                </tr>
+                                @foreach (CompareCloudware.Domain.Models.SupportType st in Model.SupportTypes)
+                                {
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header">@st.SupportTypeName</label>
+                                    </td>
+                                </tr>
+                                }
+                                <!-- SUPPORT DAYS -->
+                                <tr>
+                                    <td>
+                                        <label class="font-bold-11px-purple search-result-header">Support days:</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header">@(Model.SupportDays != null ? Model.SupportDays.SupportDaysName : "")</label>
+                                    </td>
+                                </tr>
+                                <!-- SUPPORT HOURS -->
+                                <tr>
+                                    <td>
+                                        <label class="font-bold-11px-purple search-result-header">Support hours:</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header">@(Model.SupportHours != null ? Model.SupportHours.SupportHoursName : "")</label>
+                                    </td>
+                                </tr>
+                                <!-- LANGUAGES -->
+                                <tr>
+                                    <td>
+                                        <label class="font-bold-11px-purple search-result-header">Language:</label>
+                                    </td>
+                                </tr>
+                                @foreach (CompareCloudware.Domain.Models.Language l in Model.Languages)
+                                {
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header">@l.LanguageName</label>
+                                    </td>
+                                </tr>
+                                }
+                            </table>
+                        </div>
+                        <!-- FEATURES -->
+                        <div class="search-result-summary-div">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <label class="font-bold-11px-purple search-result-header">Features:</label>
+                                    </td>
+                                </tr>
+                                @{
+                                int i = 0;
+                                do
+                                { 
+                                @:<tr> 
+                                    <td style="padding-right:20px;">
+                                        <label class="font-normal-11px-black search-result-header">@Model.CloudApplicationFeatures[i].Feature.FeatureName</label>
+                                    </td> 
+                                    i++;
+                                    if (i < Model.CloudApplicationFeatures.Count)
+                                    { 
+                                        @:<td style="margin-right:0px;">
+                                            <label class="font-normal-11px-black search-result-header">@Model.CloudApplicationFeatures[i].Feature.FeatureName</label>
+                                        @:</td> 
+                                    }
+                                    i++; 
+                                @:</tr>
+                                } while (i < Model.CloudApplicationFeatures.Count);
+                            }
+                            </table>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <hr />
+    </div>
+
+    @if (Model.IsLastInCollection == true)
+    {
+        <div class="advertising-images-container">
+    lastincollection
+            <div class="advertising-image-container">
+                <a href="http://www.adobe.com" target="_blank"> 
+                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 3 })' class="advertising-image" />
+                </a>
+            </div>
+            <div class="advertising-image-container">
+                <a href="http://www.adobe.com" target="_blank"> 
+                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 4 })' class="advertising-image" />
+                </a>
+            </div>
+        </div>
+    }
+
+
+    </div>
+</div>

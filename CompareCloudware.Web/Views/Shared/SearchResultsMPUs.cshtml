@@ -1,0 +1,48 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+
+@{
+    var href1 = "/" + Model.MPUAdvertisingImageCategoryTag1 + "/" + Model.MPUAdvertisingImageShopTag1;
+    var href2 = "/" + Model.MPUAdvertisingImageCategoryTag2 + "/" + Model.MPUAdvertisingImageShopTag2;
+}   
+
+<div class="advertising-images-container">
+    <div class="advertising-image-container-search-results">
+                    @Html.HiddenFor(x=>x.MPUAdvertisingImageID1)
+                @if (Model.MPUCloudApplicationID1 > 0)
+                {
+
+@*        <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">*@
+        <a href='@href1'>
+@*            <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = 3 })' class="advertising-image" />*@
+            <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />
+        </a>
+                }
+            else
+            {
+            <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
+@*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
+            <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />
+            </a>
+            }
+    </div>
+    <div class="advertising-image-container-search-results">
+                    @Html.HiddenFor(x=>x.MPUAdvertisingImageID2)
+
+                @if (Model.MPUCloudApplicationID2 > 0)
+                {
+
+@*        <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">*@
+        <a href='@href2'>
+@*            <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = 4 })' class="advertising-image" />*@
+            <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />
+        </a>
+                }
+                else
+                {
+            <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
+@*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
+            <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />
+            </a>
+            }
+    </div>
+</div>

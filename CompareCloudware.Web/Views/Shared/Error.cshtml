@@ -1,0 +1,43 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Error";
+}
+
+<html>
+<head>
+<style>
+.error-image
+{
+    /*position:fixed;*/
+    width:700px;
+    height:351px;
+    /*background: transparent url(../Images/CCW_CentreField.png) repeat 0 0;*/
+    background-image: url(../images/CCW_Error_HoldingPage.gif); 
+    background-repeat: no-repeat;  
+}
+
+.center
+{
+margin-left:auto;
+margin-right:auto;
+width:700px;
+background-color:#b0e0e6;
+    margin-top:150px;
+}
+</style>
+</head>
+<body>
+@*<h2>
+    Sorry, an error occurred while processing your request.
+</h2>*@
+
+<div class="error-image center"></div>
+
+</body>
+</html>
+

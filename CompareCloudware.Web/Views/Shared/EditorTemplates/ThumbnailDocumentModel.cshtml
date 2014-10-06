@@ -1,0 +1,40 @@
+﻿@model CompareCloudware.Web.Models.DocumentModel
+
+@using CompareCloudware.Web.Models
+
+<script>
+    //alert("Reviews table");
+</script>
+@Html.HiddenFor(x => x.RowID)
+@if (Model.Persisted)
+{
+<tr>
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.DocumentFileName)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.DocumentPhysicalFilePath)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.DocumentTitle)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.DocumentType)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.DocumentFileFormat)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.Persisted.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.RowID.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.DocumentURL)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.ActionLink("Edit", "", "", new  {@id = Model.RowID, @class="cloudApplicationDocumentEdit" })
+        </td>    
+</tr>
+}

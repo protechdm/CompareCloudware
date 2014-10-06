@@ -1,0 +1,241 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationVideoModel
+@using CompareCloudware.Web.Helpers;
+@using System.Configuration;
+@using CompareCloudware.Web.Models;
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Product review uploader";
+}
+
+
+@*@section Styles
+{
+}
+*@
+
+<link href="@Url.Content("~/Content/ImageArea.css")" rel="stylesheet" />
+
+@*@section Scripts
+{
+}
+*@
+
+
+
+<script>
+    $(document).ready(function () {
+
+        var videoDomainContext = $('#uploadVideoFormDomainContext');
+        var videoFormatContext = $('#uploadVideoFormFormatContext');
+        var videoFormContext = $('#uploadVideoForm');
+        RefreshUI($('.radCustomRadioButtonList:checked', videoDomainContext));
+        RefreshFormat($('.radCustomRadioButtonList:checked', videoFormatContext));
+
+        function RefreshUI(theObject) {
+            //debugger;
+            var videoURL = $('#CloudApplicationVideoURL').parent().parent();
+            var videoFileName = $('#CloudApplicationVideoFile').parent().parent();
+            //var videoDomain = $('#CloudApplicationVideoDomains_ChosenValue');
+            //var videoDomainValue = theObject.value;
+            var isLocalDomain = $('#IsLocalDomain');
+            var isYouTubeStream = $('#IsYouTubeStream');
+            var videoDomainValue = $(theObject).val();
+            if (videoDomainValue == "HTTP") {
+                $(videoURL).css("visibility", "visible");
+                $(videoFileName).css("visibility", "hidden");
+                $(videoURL).css("display", "inline");
+                $(videoFileName).css("display", "none");
+
+                $('#uploadVideoAJAXButton').attr('disabled', false);
+                $('#uploadVideoAJAXButton').css("visibility", "visible");
+                $('#uploadVideoFULLButton').attr('disabled', true);
+                $('#uploadVideoFULLButton').css("visibility", "hidden");
+                $('#playVideoButton').attr('disabled', false);
+                $('#playVideoButton').css("visibility", "visible");
+
+                isLocalDomain.val("false");
+
+            }
+            else {
+                $(videoURL).css("visibility", "hidden");
+                $(videoFileName).css("visibility", "visible");
+                $(videoURL).css("display", "none");
+                $(videoFileName).css("display", "inline");
+
+                $('#uploadVideoAJAXButton').attr('disabled', true);
+                $('#uploadVideoAJAXButton').css("visibility", "hidden");
+                $('#uploadVideoFULLButton').attr('disabled', false);
+                $('#uploadVideoFULLButton').css("visibility", "visible");
+                $('#playVideoButton').attr('disabled', true);
+                $('#playVideoButton').css("visibility", "hidden");
+
+                isLocalDomain.val("true");
+
+            }
+        }
+
+        function RefreshFormat(theObject) {
+            //debugger;
+            //var videoURL = $('#CloudApplicationVideoURL').parent().parent();
+            //var videoFileName = $('#CloudApplicationVideoFile').parent().parent();
+            //var videoDomain = $('#CloudApplicationVideoDomains_ChosenValue');
+            //var videoDomainValue = theObject.value.toUpperCase();
+            var videoDomainValue = $(theObject).val().toUpperCase();
+            //var isLocalDomain = $('#IsLocalDomain');
+            var isYouTubeStream = $('#IsYouTubeStream');
+            //var videoDomainValue = $(theObject).val();
+            if (videoDomainValue == "YOUTUBE") {
+                isYouTubeStream.val("true");
+            }
+            else {
+                isYouTubeStream.val("false");
+            }
+        }
+
+        //$('#CloudApplicationVideoDomains_ChosenValue', videoDomainContext).click(function (evt) {
+        $('.radCustomRadioButtonList', videoDomainContext).click(function (evt) {
+            RefreshUI(this);
+        });
+
+        $('.radCustomRadioButtonList', videoFormatContext).click(function (evt) {
+            RefreshFormat(this);
+        });
+
+        $('#CloudApplicationVideoFile', videoFormContext).change(function (evt) {
+            //debugger;
+            var file = this.value;
+            var html = $('#CloudApplicationVideoFile', videoFormContext).html();
+            var theFile = $('#CloudApplicationVideoFileName');
+        });
+
+    });
+</script>
+
+        @{var sampleImage = "http://classiccarblog.co.uk/wp-content/gallery/saab/saab-96-nbf-298-m.jpg";}
+        @{var samplePDF = "http://www.samplepdf.com/sample.pdf";}
+        @{var sampleURL = "diveintohtml5.info/i/pr6.mp4";}
+
+@*@using (Html.BeginForm("UploadVideo", "Vendor", FormMethod.Post, new { id = "uploadVideoForm" }))*@
+
+<div class="upload-video-input-container" id="dialog-upload-video" title="Upload a video">
+
+@using (Html.BeginForm("UploadVideo", "Vendor", FormMethod.Post, new { enctype = "multipart/form-data", id = "uploadVideoForm" }))
+{
+
+@*        @Html.HiddenFor(model => model.UploadImageModel.X)
+        @Html.HiddenFor(model => model.UploadImageModel.Y)
+        @Html.HiddenFor(model => model.UploadImageModel.Width)
+        @Html.HiddenFor(model => model.UploadImageModel.Height)
+        @Html.HiddenFor(model => model.UploadImageModel.Flickr)*@
+
+
+
+@*        @Html.HiddenFor(model => model.X, new { @class = "LogoX" })
+        @Html.HiddenFor(model => model.Y, new { @class = "LogoY" })
+        @Html.HiddenFor(model => model.Width, new { @class = "LogoWidth" })
+        @Html.HiddenFor(model => model.Height, new { @class = "LogoHeight" })*@
+@*        @Html.HiddenFor(model => model.Flickr, new { @class = "LogoFlickr" })*@
+@*        @Html.HiddenFor(model => model.LocalFile, new { @class = "LogoLocalFile" })*@
+
+@*    @Html.HiddenFor(x => x.IsBrokenLink)
+    @Html.HiddenFor(x => x.CloudApplicationVideoDomains.ChosenValue)
+    @Html.HiddenFor(x => x.CloudApplicationVideoExtensions.ChosenValue)*@
+
+    @Html.HiddenFor(x => x.CloudApplicationID)
+    @Html.HiddenFor(x => x.CloudApplicationVideoDomains.OtherNumeric)
+    @Html.HiddenFor(x => x.CloudApplicationVideoExtensions.OtherNumeric)
+    @Html.HiddenFor(x => x.IsLocalDomain)
+    @Html.HiddenFor(x => x.IsYouTubeStream)
+    @Html.HiddenFor(x => x.CloudApplicationVideoStatus)
+    @Html.HiddenFor(x => x.CloudApplicationVideoID)
+
+    <div id="upload-choices">
+        <div class="editor-row-video">
+            <div class="editor-label-video font-normal-13px-black">
+                @Html.Label("Sample URL")
+            </div>
+            <div class="editor-field-video font-normal-13px-black">
+                @Html.TextBox("sampleURL", @sampleURL, new { @style = "width:30em;" })
+            </div>
+        </div>
+        <div class="editor-row-video">
+            <div class="editor-label-video font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationVideoDomains)
+            </div>
+            <div class="editor-field-video font-normal-13px-black" id="uploadVideoFormDomainContext">
+@*                @Html.HiddenFor(model => model.CloudApplicationVideoDomain)*@
+                @Html.EditorFor(model => model.CloudApplicationVideoDomains)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="editor-row-video">
+            <div class="editor-label-video font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationVideoURL)
+            </div>
+            <div class="editor-field-video font-normal-13px-black">
+@*                    @Html.Label("http://", new { @style = "float:left;" })
+                    <span style="float:left;">&nbsp;</span>*@
+                    @Html.EditorFor(model => model.CloudApplicationVideoURL)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURL)*@
+            </div>
+        </div>
+        <div class="editor-row-video">
+            <div class="editor-label-video font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationVideoFileName)
+            </div>
+            <div class="editor-field-video font-normal-13px-black">
+@*                    @Html.Label("http://", new { @style = "float:left;" })*@
+@*                    <span style="float:left;">&nbsp;</span>*@
+@*                    @Html.EditorFor(model => model.CloudApplicationVideoFileName)*@
+                    @Html.FileFor(model => model.CloudApplicationVideoFile)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURL)*@
+            </div>
+        </div>
+        <div class="editor-row-video">
+            <div class="editor-label-video font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationVideoExtensions)
+            </div>
+            <div class="editor-field-video font-normal-13px-black" id="uploadVideoFormFormatContext">
+@*                @Html.HiddenFor(model => model.CloudApplicationVideoExtension)*@
+                @Html.EditorFor(model => model.CloudApplicationVideoExtensions)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="editor-row-video">
+            <div class="editor-label-video font-normal-13px-black">
+            </div>
+            <div class="editor-field-video font-normal-13px-black">
+                <button id="uploadVideoAJAXButton" type="button">Upload AJAX</button>
+                <button id="uploadVideoFULLButton" type="submit">Upload FULL</button>
+                <button id="playVideoButton" type="button">Play Video</button>
+            </div>
+        </div>
+        <div class="editor-row-video">
+            @Html.ValidationSummary(true)
+        </div>
+    </div>
+
+
+    <div id="video-cut">
+            @Html.Partial("VideoTemplate", Model)
+    </div>
+
+
+}
+</div>
+
+    
+    
+    
+    
+    
+
+
+
+@*<div id="dialog-view-review" title="Product Review">
+    <IFRAME id="theReview" style="border: 0px;" src="http://www.samplepdf.com/sample.pdf" width="100%" height = "100%"></IFRAME>
+</div>*@

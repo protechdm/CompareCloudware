@@ -1,0 +1,190 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationUserReviewModel
+@using CompareCloudware.Web.Helpers
+
+
+@*@using (Html.BeginForm("RatingReview", "Home", FormMethod.Post, new { @id = "xmyform" }))
+{*@
+
+    <div class="review-input-container" id="dialog-input-review" title="Create a review">
+@*<form id="xmyform" method="post" action="/Home.mvc/UserReview">*@
+<form id="xmyform" method="post" action="UserReview">
+        @{ Html.RenderPartial("UserReviewContainer", "Please fill in the details below"); }
+
+        <div class="review-input-data">
+            <div class="review-input-data-column">
+                <label class="font-22px-white">Your review</label>
+            </div>
+            <div class="review-input-data-column">
+                <div class="review-input-first-column">
+
+@*                    @Html.ValidationSummary()
+*@
+                    @Html.HiddenFor(x => x.CloudApplicationID)
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewForename, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-object-data">
+                            @Html.EditorFor(x => x.CloudApplicationUserReviewForename, new { @class = "font-13px-white requiredx" })
+@*                            @Html.ValidationMessageFor(model => model.FirstName)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewSurname, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-object-data">
+                            @Html.EditorFor(x => x.CloudApplicationUserReviewSurname, new { @class = "font-13px-white requiredx" })
+@*                            @Html.ValidationMessageFor(model => model.FirstName)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewTitle, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-object-data">
+                            @Html.EditorFor(x => x.CloudApplicationUserReviewTitle, new { @class = "font-13px-white" })
+@*                            @Html.ValidationMessageFor(model => model.Surname)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewCompany, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-object-data">
+                            @Html.EditorFor(x => x.CloudApplicationUserReviewCompany, new { @class = "font-13px-white" })
+@*                            @Html.ValidationMessageFor(model => model.EMailAddress)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.ChosenIndustryID, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-drop-down-list">
+                        @Html.DropDownListFor(x => x.ChosenIndustryID,
+                           new SelectList(Model.Industries, "IndustryID", "description", Model.ChosenIndustryID)
+                                , new { @class = "font-normal-13px-black" })
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewEmployeeCount, new { @class = "font-normal-13px-white" })
+                        </div>
+
+                        <div class="review-input-drop-down-list">
+                            @Html.DropDownListFor(x => x.ChosenEmployeeCount,
+                            new SelectList(Model.EmployeeCount, "UserValue", "UserValue", Model.ChosenEmployeeCount)
+                                , new { @class = "font-normal-13px-black" })
+                        </div>
+
+                    </div>
+                    <div style="clear:both;"></div>
+                    
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewEaseOfUse, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-drop-down-list">
+                            @Html.DisplayFor(x => x.CloudApplicationUserReviewEaseOfUse, new { @class = "font-normal-13px-black" })
+@*                            @Html.ValidationMessageFor(model => model.Telephone)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewValueForMoney, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-drop-down-list">
+                            @Html.DisplayFor(x => x.CloudApplicationUserReviewValueForMoney, new { @class = "font-13px-white" })
+@*                            @Html.ValidationMessageFor(model => model.Company)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewFunctionality, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-drop-down-list">
+                            @Html.DisplayFor(x => x.CloudApplicationUserReviewFunctionality, new { @class = "font-13px-white" })
+@*                            @Html.ValidationMessageFor(model => model.NumberOfEmployees)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewOverallRating, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="review-input-drop-down-list">
+                            @Html.DisplayFor(x => x.CloudApplicationUserReviewOverallRating, new { @class = "font-13px-white" })
+@*                            @Html.ValidationMessageFor(model => model.FreeTrial)*@
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container">
+                        <div class="review-input-object-label">
+                            @Html.LabelFor(x => x.CloudApplicationUserReviewText, new { @class = "font-normal-13px-white" })
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+
+                    <div class="review-input-object-container review-input-object-container-multi-line">
+                        <div class="review-input-object-data-full-width">
+                            @Html.EditorFor(x => x.CloudApplicationUserReviewText, new { @class = "font-13px-white" })
+@*                            @Html.ValidationMessageFor(model => model.BuyNow)*@
+                        </div>
+                    </div>
+@*                    <br />*@
+
+                    <div style="clear:both;"></div>
+
+                    <div class="tc-free-trial-object-container tc-review-input-object-container">
+                        <div class="tc-free-trial-object-label">
+                            @Html.LabelFor(x => x.TermsAndConditions, new { @class = "font-normal-13px-white" })
+                        </div>
+                        <div class="tc-free-trial-object-data">
+                            @Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "font-13px-white rating-review-terms" })
+                            @*                            @Html.ValidationMessageFor(model => model.TermsAndConditions)*@
+                        </div>
+                    </div>
+
+                    <div style="clear:both;height:0px;"></div>
+                        <div class="site-button">
+@*                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    name="@Html.Encode("APPLICATIONREQUEST_BUTTON")"
+                                    value="Submit"
+                                    id = "applicationRequestButton"
+                                     />
+*@
+                                    <img src="@Url.Content("~/Images/Buttons/CCW_Submit.png")" name="@Html.Encode("APPLICATIONREQUEST_BUTTON")" id = "applicationRatingButton" class="rating-review-terms-checked" />
+@*                                  <input type="submit" name="@Html.Encode("APPLICATIONRATING_BUTTON")" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" value="Submit" />*@
+
+                        </div>
+
+                </div>
+
+            </div>
+        </div>
+ </form>
+    </div>
+
+    @if (Model.ShowConfirmationDialog)
+    {
+        @Html.Partial("NoScriptDialogRatingReview", Model)
+    }
+
+@*}*@

@@ -1,0 +1,184 @@
+﻿@model CompareCloudware.Web.Models.SearchModel
+<table id="header" class="search-header-filters-table" style="width: 100%;">
+    <tr>
+        <td style="width: 50%;">
+            Customise search
+        </td>
+        <td style="width: 10%;">
+            @Html.CheckBoxFor(x => x.DisplayAsSummary, new { @id = "displayAsSummary" })
+        </td>
+        <td style="width: 40%;">
+            @Html.Label("Summary", "Summary")
+        </td>
+    </tr>
+</table>
+
+
+@{Html.RenderPartial("CreatureWithTextOnRight", Model);}
+
+
+<div class="search-filter-group-header header-categories">
+    <div style="float: right;">
+        <div class="ui-icon-triangle-1-s ui-icon">
+        </div>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Category</label>
+*@        
+          <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Category' name="@Html.Encode("FILTER_HEADER_CATEGORIES")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersCategoriesCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersCategoriesCollapsed ? "display:block" : "display:none;")">
+    @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.PreviouslyChosenCategoryID)
+    @Html.DropDownListFor(x => x.SearchFiltersModelOneColumn.ChosenCategoryID,
+                       new SelectList(Model.SearchFiltersModelOneColumn.Categories, "CategoryID", "CategoryName", Model.SearchFiltersModelOneColumn.ChosenCategoryID)
+                     , new { @class = "set-combo-width filterParameter" })
+</div>
+
+
+
+
+
+
+
+<div class="search-filter-group-header header-users">
+    <div style="float: right;">
+        <div class="ui-icon-triangle-1-s ui-icon">
+        </div>
+    </div>
+    <div style="width: 100%">
+@*        <label class="font-bold-11px-purple">Users</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Users' name="@Html.Encode("FILTER_HEADER_USERS")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersUsersCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersUsersCollapsed ? "display:block" : "display:none;")">
+    @Html.DropDownListFor(x => x.SearchFiltersModelOneColumn.ChosenNumberOfUsers,
+                       new SelectList(Model.SearchFiltersModelOneColumn.NumberOfUsers, "UserValue", "UserValue", Model.SearchFiltersModelOneColumn.ChosenNumberOfUsers)
+             , new { @class = "set-combo-width filterParameter" })
+</div>
+
+
+<div class="search-filter-group-header header-operating-systems">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Operating system</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Operating system' name="@Html.Encode("FILTER_HEADER_OPERATINGSYSTEMS")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersOperatingSystemsCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersOperatingSystemsCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersOperatingSystems)
+</div>
+
+
+<div class="search-filter-group-header header-browsers">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Internet browsers</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Internet browsers' name="@Html.Encode("FILTER_HEADER_BROWSERS")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersBrowsersCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersBrowsersCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersBrowsers)
+</div>
+
+
+<div class="search-filter-group-header header-mobile-platforms">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Mobile platforms</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Mobile platforms' name="@Html.Encode("FILTER_HEADER_MOBILEPLATFORMS")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersMobilePlatformsCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersMobilePlatformsCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersMobilePlatforms)
+</div>
+
+
+<div class="search-filter-group-header header-features">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Features</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Features' name="@Html.Encode("FILTER_HEADER_FEATURES")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersFeaturesCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersFeaturesCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersFeatures)
+</div>
+
+
+<div class="search-filter-group-header header-support-types">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Support type</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Support type' name="@Html.Encode("FILTER_HEADER_SUPPORTTYPES")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportTypesCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersSupportTypesCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportTypes)
+</div>
+
+
+<div class="search-filter-group-header header-support-days">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Support days</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Support days' name="@Html.Encode("FILTER_HEADER_SUPPORTDAYS")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportDaysCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersSupportDaysCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportDays)
+</div>
+
+
+<div class="search-filter-group-header header-support-hours">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Support hours</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Support hours' name="@Html.Encode("FILTER_HEADER_SUPPORTHOURS")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportHoursCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersSupportHoursCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersSupportHours)
+</div>
+
+
+<div class="search-filter-group-header header-languages">
+    <div style="float: right;">
+        <span class="ui-icon-triangle-1-s ui-icon">&nbsp;</span>
+    </div>
+    <div style="width: 100%;">
+@*        <label class="font-bold-11px-purple">Language</label>
+*@        <input class="anchor-header-filter-group font-bold-11px-purple" type='submit' value='Language' name="@Html.Encode("FILTER_HEADER_LANGUAGES")"/>
+        @Html.HiddenFor(x => x.SearchFiltersModelOneColumn.SearchFiltersLanguagesCollapsed)
+    </div>
+</div>
+<div style="@(Model.SearchFiltersModelOneColumn.SearchFiltersLanguagesCollapsed ? "display:block" : "display:none;")">
+    @Html.DisplayFor(x => x.SearchFiltersModelOneColumn.SearchFiltersLanguages)
+</div>
+
+
+@*<div id="clear" style="clear:both;"></div>
+*@

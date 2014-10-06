@@ -1,0 +1,58 @@
+﻿@using CompareCloudware.Web.Models;
+@using CompareCloudware.Web.Helpers;
+
+@model IEnumerable<SearchFilterModelTwoColumn>
+@*@model EnumerableFeaturesModel
+*@
+
+@*ENUMERABLE FEATURE
+*@
+@*@Html.DisplayFor(x => x.FeatureFilters,"SearchFilterModel2");
+*@
+
+@*@foreach (var sfm in Model.FeatureFilters)
+{
+    //Model.ChosenFeatureFilter = sfm; 
+    //@Html.DisplayFor(m => sfm, "SearchFilterModel2")
+    //@Html.DisplayFor(x => x.ChosenFeatureFilter,"SearchFilterModel2");
+    //@Html.DisplayForExtended(sfm as SearchFilterModel, "SearchFilterModel2")
+    //@Html.DisplayForExtended(m => m.ElementAt(1), "SearchFilterModel2")
+    //@Html.DisplayForExtended(m => (SearchFilterModel)m.ElementAt(1),"SearchFilterModel2")
+    
+    //@Html.DisplayForExtended(m => Convert.ChangeType(m.ElementAt(1),typeof(SearchFilterModel)) , "SearchFilterModel2")
+}
+*@
+
+@*@for (int i = 0; i < Model.FeatureFilters.Count(); i++)
+{
+    //SearchFilterModel sfm = Model.ElementAt(1);
+    //@Html.DisplayFor( new SearchFilterModel(), "SearchFilterModel2")
+}
+*@
+@*@Html.DisplayFor(x => x,"/Views/Home/DisplayTemplates/SearchFilterModel2");
+*@
+
+
+<div>
+    <table id="dataTable" style="width:100%;">
+    @{int i = 0;}
+    @foreach (var sf in @Model)
+    {
+
+
+            if (i % 2 == 0)
+        {    
+            @:<tr>
+       
+        }
+        Html.RenderPartial("SearchFilterModelTwoColumn", sf);
+                }
+
+        @if (i % 2 == 1)
+        { @:</tr> 
+        }
+        @i += 1;
+        
+    }
+    </table>
+</div>

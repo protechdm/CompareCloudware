@@ -1,0 +1,7 @@
+﻿@using System.Configuration
+@{var loadingImage = ConfigurationManager.AppSettings["LoadingImage2"];}
+<div class="loading">
+@*    <img src="@Url.Content("~/Images/loading.gif")" />*@
+    <img src="@Url.Content(loadingImage)" />
+</div>
+

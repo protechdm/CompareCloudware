@@ -1,0 +1,69 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationDocumentModel
+
+@using CompareCloudware.Web.Models
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+<script>
+    //alert("Reviews table");
+</script>
+@Html.HiddenFor(x => x.CloudApplicationID)
+@Html.HiddenFor(x => x.CloudApplicationDocument)
+@Html.HiddenFor(x => x.CloudApplicationDocumentFileFormat)
+@Html.HiddenFor(x => x.CloudApplicationDocumentFileName)
+@Html.HiddenFor(x => x.CloudApplicationDocumentID)
+@Html.HiddenFor(x => x.CloudApplicationDocumentPhysicalFilePath)
+@Html.HiddenFor(x => x.CloudApplicationDocumentTitle)
+@Html.HiddenFor(x => x.CloudApplicationDocumentURL)
+@Html.HiddenFor(x => x.CloudApplicationDocumentReleaseDate)
+@Html.HiddenFor(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName)
+@Html.HiddenFor(x => x.CloudApplicationDocumentStatus)
+@Html.HiddenFor(x => x.IsLive)
+@Html.HiddenFor(x => x.RowID)
+
+@Html.HiddenFor(x => x.AddMode)
+@Html.HiddenFor(x => x.Persisted)
+
+@if (Model.Persisted && Model.IsLive)
+{
+<tr>
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationDocumentTitle)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:30%;">
+            @Html.Label("", Model.CloudApplicationDocumentURL)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:35%;">
+            @Html.Label("", Model.CloudApplicationDocumentPhysicalFilePath)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationDocumentFileName)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.CloudApplicationDocumentType.CloudApplicationDocumentTypeName)
+        </td>    
+        <td class="editor-field font-normal-13px-black" style="width:5%;">
+            @Html.Label("", Model.CloudApplicationDocumentFileFormat)
+        </td>    
+
+
+
+        @if (displayDebugFields)
+        {
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.Persisted)
+        </td>    
+        }
+        
+        @if (displayDebugFields)
+        {
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.Label("", Model.RowID.ToString())
+        </td>    
+        }
+        <td class="editor-field font-normal-13px-black" style="width:10%;">
+            @Html.ActionLink("Delete", "", "", new  {@id = Model.RowID, @class="cloudApplicationDocumentDelete" })
+        </td>    
+</tr>
+}

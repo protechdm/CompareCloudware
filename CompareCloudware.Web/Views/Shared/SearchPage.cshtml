@@ -1,0 +1,45 @@
+﻿@*@model CloudCompare.Web.Models.SearchFiltersModel
+*@
+@model CompareCloudware.Web.Models.SearchPageModel
+@using CompareCloudware.Web.Models;
+@*@using (Html.BeginForm("SearchPage1", "Home", FormMethod.Post, new { id = "InsertCaseForm" }))
+*@
+@*<link href="@Url.Content("~/Content/search-page.css")" rel="stylesheet" type="text/css" />*@
+@using (Html.BeginForm("SearchPage", "Home", new { buttonID = "", categoryID = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.ChosenCategoryID, numberOfUsers=Model.CustomSession.NumberOfUsers, useCachedData=false}, FormMethod.Post))
+{
+
+
+    <style>
+        /* IE has layout issues when sorting (see #5413) */
+        .group
+        {
+            zoom: 1;
+        }
+    </style>
+    
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //$("#tabsfull").tabs();
+            //$("#tabsdemo").tabs();
+        });    
+    </script>
+
+@*    <noscript>
+        <input type="submit" value="Compare Cloudware" id="noScriptFilterRefresh" name="noScriptFilterRefresh" />
+    </noscript>*@
+
+    @Html.Partial("Loading")
+    @Html.Partial("LoadingSearchResults")
+    
+    <div class="search-page-container font-normal-11px">
+@*        @{Html.RenderPartial("SearchPageContainer", Model);}
+*@        
+        @{Html.RenderPartial("SearchPageContainerModel", Model);}
+    </div>
+          if (Model.ShowConfirmationDialog)
+          {
+        @Html.Partial("NoScriptDialog", Model)
+    }
+}

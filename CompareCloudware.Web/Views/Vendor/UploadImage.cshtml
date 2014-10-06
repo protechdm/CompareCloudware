@@ -1,0 +1,253 @@
+﻿@model CompareCloudware.Web.Models.UploadImageModel
+@using CompareCloudware.Web.Helpers;
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Image uploader";
+}
+
+
+@*@section Styles
+{
+}
+*@
+
+<link href="@Url.Content("~/Content/ImageArea.css")" rel="stylesheet" />
+
+@*@section Scripts
+{
+}
+*@
+
+commented 3 lines
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.imgareaselect.js")"></script>
+@*<script src="@Url.Content("~/Scripts/bootstrap-filestyle-0.1.0.js")"></script>*@
+commented 2 lines
+<script src="@Url.Content("~/Scripts/jquery.filestyle.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.fancyupload.js")"></script>
+<script>
+    $(document).ready(function () {
+
+
+
+        var context = $('#dialog-upload-image');
+        //commented!!!!
+        initSelect(context);
+
+
+
+
+        //fires when the upload image button is clicked
+        $('body').on('click', '#uploadImageButton', function () {
+            //PersistMainBeforeOpeningDialog();
+            dlgUploadImage.DoSomething();
+        });
+
+
+        var dlgUploadImage = {
+            DoSomething: function () {
+                $("#dialog-upload-image").dialog("open");
+            }
+        }
+
+        // Initialize my dialog
+        $("#dialog-upload-image").dialog({
+            autoOpen: false,
+            modal: true,
+            width: 950,
+            resizable: false,
+            closeText: null,
+            open: function (event, ui) {
+                // Enable validation for unobtrusive stuffs
+                //$(this).load(options.url, function () {
+                //var theform = $('#uploadImageForm');
+                var theform = $('#registerApplicationForm');
+                //$(this).appendTo($('#myform'));
+                //$(this).parent().appendTo($('#registerApplicationForm'));
+                //$(this).parent.empty();
+                var $jQval = $.validator;
+                $jQval.unobtrusive.parse($(this));
+                var updateTargetId = "";
+                var updateUrl = "";
+                wireUpForm(this, updateTargetId, updateUrl);
+                //});
+
+            }
+        });
+
+
+        //fires when the upload logo button is clicked
+        $('body').on('click', '#uploadLogoAJAXButton', function () {
+
+            //alert("IN");
+            //debugger;
+            //if ($('#dialog-upload-image').valid()) {
+            //var test = $('#dialog-upload-image');
+            //var serialize1 = $('#dialog-upload-image').serialize();
+            //var serialize1 = $('.ui-dialog').serialize();
+            //var serialize1 = $('#registerApplicationForm').serialize();
+            var serialize1 = $('#uploadImageForm').serialize();
+            //var fileName = $('.file').val();
+            //data: serialize1 + "&refreshResults=" + refresh + "&sortColumn=" + sortColumn + "&currentSortOrder=" + currentSortOrder,
+            setLoading(true);
+
+            $.ajax({
+                url: 'UploadImage',
+                type: 'POST',
+                data: serialize1,
+                //contentType:attr("enctype", "multipart/form-data"),
+
+                //The request was a success.
+                success: function (data) {
+                    setLoading(false);
+
+                    $("#dialog-upload-image").dialog('close');
+                    //dlgRatingReviewCreated.DoSomething();
+                },
+                error: function (data) {
+                    setLoading(false);
+                    alert('Fail on uploading logo');
+                }
+            });
+            //}
+        });
+
+        function PersistMainBeforeOpeningDialog() {
+            var serialize1 = $('#registerApplicationForm').serialize();
+            //var fileName = $('.file').val();
+            //data: serialize1 + "&refreshResults=" + refresh + "&sortColumn=" + sortColumn + "&currentSortOrder=" + currentSortOrder,
+            //setLoading(true);
+
+            $.ajax({
+                url: 'RegisterApplicationNoPersist',
+                type: 'POST',
+                data: serialize1,
+                //contentType:attr("enctype", "multipart/form-data"),
+
+                //The request was a success.
+                success: function (data) {
+                    //setLoading(false);
+
+                    //$("#dialog-upload-image").dialog('close');
+                    //dlgRatingReviewCreated.DoSomething();
+                },
+                error: function (data) {
+                    debugger;
+                    //setLoading(false);
+                    alert('Fail on persisting form');
+                }
+            });
+
+        }
+    });
+</script>
+
+<h2>@Model.Title</h2>
+
+@*@using (Html.BeginForm("UploadImage", "Vendor", FormMethod.Post, new { id = "uploadImageForm" }))*@
+
+<div class="upload-image-input-container" id="dialog-upload-image" title="Upload an image">
+
+@using (Html.BeginForm("UploadImage", "Vendor", FormMethod.Post, new { enctype = "multipart/form-data", id = "uploadImageForm" }))
+{
+
+
+
+@*        @Html.HiddenFor(model => model.UploadImageModel.X)
+        @Html.HiddenFor(model => model.UploadImageModel.Y)
+        @Html.HiddenFor(model => model.UploadImageModel.Width)
+        @Html.HiddenFor(model => model.UploadImageModel.Height)
+        @Html.HiddenFor(model => model.UploadImageModel.Flickr)*@
+
+
+
+        @Html.HiddenFor(model => model.X, new { @class = "LogoX" })
+        @Html.HiddenFor(model => model.Y, new { @class = "LogoY" })
+        @Html.HiddenFor(model => model.Width, new { @class = "LogoWidth" })
+        @Html.HiddenFor(model => model.Height, new { @class = "LogoHeight" })
+@*        @Html.HiddenFor(model => model.Flickr, new { @class = "LogoFlickr" })*@
+@*        @Html.HiddenFor(model => model.LocalFile, new { @class = "LogoLocalFile" })*@
+
+
+        @Html.HiddenFor(model => model.CloudApplicationID)
+
+    <div id="upload-choices">
+        <div class="editor-row">
+            <div class="editor-label font-normal-13px-black">
+                @Html.Label("Sample URL")
+            </div>
+            <div class="editor-field font-normal-13px-black">
+                @Html.TextBox("sampleURL", "http://classiccarblog.co.uk/wp-content/gallery/saab/saab-96-nbf-298-m.jpg")
+            </div>
+        </div>
+        <div class="editor-row">
+            <div class="editor-label font-normal-13px-black">
+                @Html.EditorFor(model => model.IsUrl)
+                @Html.LabelFor(model => model.Url)
+            </div>
+            <div class="editor-field font-normal-13px-black">
+                @Html.EditorFor(model => model.Url)
+                @Html.ValidationMessageFor(model => model.Url)
+            </div>
+        </div>
+@*        <div class="editor-row">
+            <div class="editor-label">
+                @Html.EditorFor(model => model.IsFlickr)
+                @Html.LabelFor(model => model.Flickr)
+            </div><div class="editor-field">
+                @Html.Editor("FlickrQuery")
+                @Html.ValidationMessageFor(model => model.Flickr)
+            </div>
+        </div>*@
+        <div class="editor-row">
+            <div class="editor-label font-normal-13px-black">
+                @Html.EditorFor(model => model.IsFile)
+                @Html.LabelFor(model => model.LocalFile)
+            </div>
+            <div class="editor-field font-normal-13px-black">
+                @Html.FileFor(model => model.LocalFile)
+                @Html.ValidationMessageFor(model => model.LocalFile)
+            </div>
+        </div>
+        <div class="editor-row">
+            <div class="editor-label font-normal-13px-black">
+            </div>
+            <div class="editor-field font-normal-13px-black">
+                <button id="uploadLogoAJAXButton" type="button">Upload AJAX</button>
+                <button id="uploadLogoFULLButton" type="submit">Upload FULL</button>
+            </div>
+        </div>
+        <div class="editor-row">
+            @Html.ValidationSummary(true)
+        </div>
+    </div>
+
+
+    <div id="upload-cut">
+        <img alt="Invalid URL" id="preview" src="@Url.Content("~/Images/empty.png")"  />
+    </div>
+
+
+
+
+@*    <div id="upload-cut" class="ui-widget-content">
+        <img class="ui-widget-content croppable" alt="Field for image cutting" id="preview" src="@Url.Content("~/Images/empty.png")"  />
+    </div>*@
+    <div class="clear">
+
+    </div>
+
+}
+    
+    </div>
+
+    
+    
+    
+    
+    

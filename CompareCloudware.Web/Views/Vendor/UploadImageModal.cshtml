@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Modal image uploader";
+}
+@section Styles
+{
+}
+<link href="@Url.Content("~/Content/Modal.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/ImageArea.css")" rel="stylesheet" />
+
+@section Scripts
+{
+}
+@*<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.imgareaselect.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.fancyupload.js")"></script>*@
+<script>
+    $(document).ready(function () {
+        $('.modal_block2').click(function (e) {
+            $('#tn_select2').empty();
+            $('.modal_part2').hide();
+        });
+        $('#modal_link2').click(function (e) {
+            $('.modal_part2').show();
+            var context = $('#tn_select2').load('/Vendor/UploadImage', function () {
+                initSelect(context);
+            });
+            e.preventDefault();
+            return false;
+        });
+    });
+</script>
+
+<div class="modal_block2 modal_part2"></div>
+<div class="modal_dialog2 modal_part2" id="tn_select2"></div>
+<h2>Upload an image by using a modal dialog</h2>
+<p>
+    This is a sample page with basically no content (but there could be one!). Now we will just
+    upload content as on the @Html.ActionLink("Upload Image page", "UploadImage"). The only
+    difference lies in the usage of a modal dialog to upload the actual image.
+</p>
+<p>
+    <a href="#" id="modal_link2">Click here to open modal dialog.</a>
+</p>

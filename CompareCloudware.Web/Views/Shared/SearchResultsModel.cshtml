@@ -1,0 +1,113 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+           
+@using CompareCloudware.POCOQueryRepository.Helpers;
+@using CompareCloudware.Web.Models;
+@using PagedList;
+@using System.Configuration;
+
+@Html.Hidden("searchResultsCountHidden", Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults.Count(), new { @id = "searchResultsCountHidden" })
+@Html.Hidden("currentSortOrder", Model.ContainerModel.SearchResultsModel.CurrentSortOrder, new { @id = "currentSortOrder" })
+@Html.Hidden("monthlyPriceColumnHeader",@Model.MonthlyPriceColumnHeader)
+@Html.Hidden("annualPriceColumnHeader",@Model.AnnualPriceColumnHeader)
+@Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.CurrentSortOrder)
+@Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary)
+<table id="xheader" class="search-header-results-table-inner" style="width: 100%;">
+    <tr>
+        <td style="width: 27%;" class="search-results-sort-column font-normal-11px-white">
+            <label class="search-results-sort-column font-normal-11px-white" id="Vendor">Cloudware provider A-Z</label>
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "VENDOR ASC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-ascending"></div>
+                }
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "VENDOR DESC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
+                }
+        </td>
+        <td style="width: 20%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="MonthlyPrice">@Model.MonthlyPriceColumnHeader</label>
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "MONTHLYPRICE ASC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-ascending"></div>
+                }
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "MONTHLYPRICE DESC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
+                }
+        </td>
+        <td style="width: 20%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="AnnualPrice">@Model.AnnualPriceColumnHeader</label>
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "ANNUALPRICE ASC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-ascending"></div>
+                }
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "ANNUALPRICE DESC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
+                }
+        </td>
+        <td style="width: 16%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="SetupFee">Set-up fee</label>
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "SETUPFEE ASC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-ascending"></div>
+                }
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "SETUPFEE DESC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
+                }
+        </td>
+        <td style="width: 17%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="FreeTrial">Free trial</label>
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "FREETRIAL ASC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-ascending"></div>
+                }
+                @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "FREETRIAL DESC")
+                {
+                <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
+                }
+        </td>
+    </tr>
+</table>
+
+<div class="search-results-container-inner" id="tabsfull">
+    @{var resultsCount = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults.Count;}
+    @{var zeroResults = ConfigurationManager.AppSettings["ZeroResults"];}
+    @if (resultsCount == 0)
+    {
+        <label class="font-bold-15px-purple">@zeroResults</label>
+    }
+    @if (resultsCount > 0)
+    {
+        if (Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary)
+        {
+            <div id="resultsSummary" class="search-results-container-summary box-shadow-none">
+                @Html.DisplayFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsSummary)
+@*                @Html.Partial("SearchNavigationButtons", Model)*@
+                @Html.Partial("SearchResultsMPUs",Model)
+            </div>
+            <div id="resultsFull" class="search-results-container-full box-shadow-none">
+                @Html.DisplayFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage)
+                @Html.Partial("SearchNavigationButtons", Model)
+                @Html.Partial("SearchResultsMPUs", Model)
+            </div>
+        }
+        else
+        {
+            <div id="resultsSummary" class="search-results-container-summary box-shadow-none">
+                @Html.DisplayFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsSummary)
+@*                @Html.Partial("SearchNavigationButtons", Model)*@
+                @Html.Partial("SearchResultsMPUs", Model)
+            </div>
+            <div id="resultsFull" class="search-results-container-full box-shadow-none">
+                @Html.DisplayFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage)
+                @Html.Partial("SearchNavigationButtons", Model)
+                @Html.Partial("SearchResultsMPUs", Model)
+            </div>
+        }
+    }
+</div>
+
+
+

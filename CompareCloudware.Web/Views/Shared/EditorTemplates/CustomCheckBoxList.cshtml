@@ -1,0 +1,107 @@
+﻿@model CompareCloudware.Web.Models.SelectListItemCollection
+
+<script>
+    $(document).ready(function () {
+
+
+    });
+</script>
+@if (Model != null)
+{
+    @Html.HiddenFor(m => m.MultiSelect)
+    @Html.HiddenFor(m => m.CollectionTitle)
+@*    @Html.HiddenFor(m => m.ChosenValue)*@
+    @Html.HiddenFor(m => m.ColumnCount)
+    @Html.HiddenFor(m => m.OtherIsNumeric)
+@*    @Html.HiddenFor(m => m.OtherNumeric)*@
+@*    @Html.HiddenFor(m => m.Other)*@
+    @Html.HiddenFor(m => m.HasNoOption)
+@*    @Html.HiddenFor(m => m.IsNo)*@
+    @Html.HiddenFor(m => m.HasUnlimitedOption)
+
+    if (Model.SelectListItems != null)
+    {
+        if (!Model.MultiSelect)
+        {
+@*            @Html.HiddenFor(m => m.ChosenValue)*@
+            <div class="customcheckboxlist-choices-container">
+
+            @if (@Model.ChosenValue != null)
+            {
+            @Html.DropDownListFor(x => x.ChosenValue, new SelectList(@Model.SelectListItems, "Value", "Text", @Model.ChosenValue), new { @class = "font-normal-13px-black customcheckboxlist-choices chosen" })
+            }
+            else
+            {
+            @Html.DropDownListFor(x => x.ChosenValue, new SelectList(@Model.SelectListItems, "Value", "Text"), new { @class = "font-normal-13px-black customcheckboxlist-choices notchosen" })
+            }
+            </div>
+            if (@Model.CanInputOther)
+            {
+                <div class="customcheckboxlist-other-container">
+                    @Html.CheckBoxFor(x => x.OtherIsSelected, new { @class = "font-normal-13px-black customcheckboxlist-other-check" })
+                    @if (@Model.OtherIsNumeric)
+                    {
+                        @Html.HiddenFor(m => m.Other)
+
+                        @Html.LabelFor(x => x.OtherNumeric, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                        @Html.TextBoxFor(x => x.OtherNumeric, new { @class = "font-normal-13px-black customcheckboxlist-other-value" })
+                    }
+                    else
+                    {
+                        @Html.HiddenFor(m => m.OtherNumeric)
+
+                        @Html.LabelFor(x => x.Other, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                        @Html.TextBoxFor(x => x.Other, new { @class = "font-normal-13px-black customcheckboxlist-other-value" })
+                    }
+                </div>
+            }
+            if (Model.HasNoOption)
+            {
+                <div class="customcheckboxlist-not-offered-container">
+                    @Html.LabelFor(x => x.IsNo, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                    @Html.CheckBoxFor(x => x.IsNo, new { @class = "font-normal-13px-black customcheckboxlist-not-offered" })
+                </div>
+            }
+            if (Model.HasUnlimitedOption)
+            {
+                <div class="customcheckboxlist-unlimited-container">
+                    @Html.LabelFor(x => x.IsUnlimited, new { @class = "font-normal-13px-black", @style = "float:left;" })
+                    @Html.CheckBoxFor(x => x.IsUnlimited, new { @class = "font-normal-13px-black customcheckboxlist-unlimited-check" })
+                </div>
+            }
+
+        }
+        else
+        {
+            int currentColumn = 1;
+<table style="width:100%;" class="list-collection">
+    <tr style="">
+        @for (int i = 0; i < Model.SelectListItems.Count; i++)
+        {
+            @Html.HiddenFor(m => m.SelectListItems[i].Text)
+            @Html.HiddenFor(m => m.SelectListItems[i].Value)
+            if (currentColumn > Model.ColumnCount)
+            {
+                currentColumn = 1;
+                @:</tr>
+                @:<tr style="">
+            }
+                
+            <td style="width:10px;">
+                @Html.CheckBoxFor(m => m.SelectListItems[i].Selected, new { @checked = "checked" })
+@*&nbsp;*@
+
+            </td>
+            <td style="width:90px;">
+                @Html.LabelFor(m => m.SelectListItems[i].Text, Model.SelectListItems[i].Text, new { @class = "font-normal-11px-black" })
+@*&nbsp;*@
+
+            </td>
+            currentColumn += 1;
+        }
+    </tr>
+</table>
+        }
+
+    }
+}

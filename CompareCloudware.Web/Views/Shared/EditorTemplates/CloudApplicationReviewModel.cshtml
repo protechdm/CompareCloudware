@@ -1,0 +1,46 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationReviewModel
+
+@using CompareCloudware.Web.Models
+
+<script>
+    //alert("Reviews table");
+</script>
+@Html.HiddenFor(x => x.RowID)
+@if (Model.Persisted)
+{
+<tr>
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.CloudApplicationReviewDate.ToShortDateString())
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.CloudApplicationReviewHeadline)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.CloudApplicationReviewPublisherName)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.CloudApplicationReviewText)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.CloudApplicationReviewURL)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.CloudApplicationReviewURLDocumentExtension)
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @if (Model.IsBrokenLink)
+            {
+                @Html.Label("", "YES")
+            }
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.Persisted.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.Label("", Model.RowID.ToString())
+        </td>    
+        <td class="editor-field font-normal-13px-black">
+            @Html.ActionLink("Edit", "", "", new  {@id = Model.RowID, @class="cloudApplicationReviewEdit" })
+        </td>    
+</tr>
+}

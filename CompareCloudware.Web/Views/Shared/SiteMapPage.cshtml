@@ -1,0 +1,52 @@
+﻿@model CompareCloudware.Web.Models.SiteMapModel
+@using CompareCloudware.Web.Models;
+@using System.Configuration;
+
+@using (Html.BeginForm("HeaderModel", "Home", new { tab = "1" }))
+{
+    bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+    string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"] ;
+    string href = null;
+    <br />
+    <br />
+    <label class="font-bold-18px-black">Site Map</label>
+    <br />
+    <br />
+    <a href="@homePageURL" class="font-normal-13px-black">HOME</a>
+    <br />
+    <br />
+    <label class="font-bold-15px-black">CATEGORIES</label>
+    <br />
+    <br />
+    <ul>
+    @foreach (SiteMapModelItem smmi in Model.Categories)
+    {
+        <li class="font-normal-13px-black">
+        @{href = smmi.SiteMapModelItemURL ;}
+        <a href="@href" class="font-normal-13px-black">@smmi.SiteMapModelItemText</a>
+        </li>
+@*        <br />*@
+@*    <input type="image" 
+    name="@Url.Encode("CATEGORY_BUTTON_" + Model.Categories.Where(x => x.CategoryID == 9).FirstOrDefault().CategoryID)"
+    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+    value="Security" />*@
+    }
+    </ul>
+    <br />
+    <label class="font-bold-15px-black">SECTIONS</label>
+    <br />
+    <ul>
+    @foreach (SiteMapModelItem smmi in Model.Company)
+    {
+        <li class="font-normal-13px-black">
+        @{href = smmi.SiteMapModelItemURL ;}
+        <a href="@href" class="font-normal-13px-black">@smmi.SiteMapModelItemText</a>
+        </li>
+@*        <br />*@
+@*    <input type="image" 
+    name="@Url.Encode("CATEGORY_BUTTON_" + Model.Categories.Where(x => x.CategoryID == 9).FirstOrDefault().CategoryID)"
+    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+    value="Security" />*@
+    }
+    </ul>
+}

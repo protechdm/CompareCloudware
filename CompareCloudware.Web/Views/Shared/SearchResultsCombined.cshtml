@@ -1,0 +1,76 @@
+﻿@model CompareCloudware.Domain.Models.TabbedSearchResults
+
+
+<h2>Home Page</h2>
+    
+    <script type="text/javascript">
+        $(function () {
+            $("#tabs").tabs();
+        });
+        $(function () {
+            $("#tabs2").tabs();
+        });
+	</script>
+
+    <script type="text/javascript">
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#tabs").tabs();               
+            $("#tabs2").tabs();               
+
+        });    
+	</script>
+
+    
+    <noscript>
+    JAVASCRIPT DISABLED
+    </noscript>
+
+<!-- JAVASCRIPT ENABLED -->
+    <div id="tabs2">
+	    <ul>
+		    <li style="width: 32%"><a href="#tabs-4">Featured Cloudware</a></li>
+		    <li style="width: 32%"><a href="#tabs-5">New Cloudware</a></li>
+		    <li style="width: 32%"><a href="#tabs-6">Cloudware Top Ten</a></li>
+	    </ul>
+	    <div id="tabs-4">
+            @{Html.RenderPartial("SearchResultsFeaturedCloudware", @Model);}
+	    </div>
+	    <div id="tabs-5">
+	        @{Html.RenderPartial("SearchResultsNewCloudware", @Model);}
+	    </div>
+	    <div id="tabs-6">
+	        @{Html.RenderPartial("SearchResultsTopTenCloudware", @Model);}
+	    </div>
+    </div>    
+
+<!-- JAVASCRIPT DISABLED -->
+    <div id="tabstripmain" style="width:100%;">
+        <div class="nojavascript-tab">
+            <input type="radio" name="onlyone" id="the-checkbox1" value="" style="display:none; float:none;" />         
+            <div class="nojavascript-divforlabel" title="tabtitle">
+                <label class="nojavascript-label" for="the-checkbox1">Featured Cloudware</label>
+            </div>
+            <div class="nojavascript-results" title="results">
+            @{Html.RenderPartial("SearchResultsFeaturedCloudware", @Model);}
+            </div>
+        </div>
+        <div class="nojavascript-tab">
+            <input type="radio" name="onlyone" id="the-checkbox2" value="" style="display:none; float:none;" />         
+            <div class="nojavascript-divforlabel" title="tabtitle">
+                <label class="nojavascript-label" for="the-checkbox2">New Cloudware</label>
+            </div>
+            <div class="nojavascript-results" style="left:-101%; " title="results" >
+            @{Html.RenderPartial("SearchResultsTopTenCloudware", @Model);}
+            </div>
+        </div>
+        <div class="nojavascript-tab">
+            <input type="radio" name="onlyone" id="the-checkbox3" value="" style="display:none; float:none;" />         
+            <div class="nojavascript-divforlabel" title="tabtitle">
+                <label class="nojavascript-label" for="the-checkbox3">Cloudware top ten</label>
+            </div>
+            <div class="nojavascript-results" style="left:-202%; " title="results" >
+            @{Html.RenderPartial("SearchResultsNewCloudware", @Model);}
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,47 @@
+﻿@model CompareCloudware.Web.Models.GlobalSearchPageModel
+@using CompareCloudware.Web.Models;
+
+    <div class="global-search-results-container-outer">
+        @{Html.RenderPartial("GlobalSearchResultsModel", Model);}
+    </div>
+    <div class="skyscrapers-container">
+        <div class="skyscraper-image-container">
+
+            @if (Model.SkyscraperCloudApplicationID1 > 0)
+            {
+
+@*            <a href="http://www.adobe.com" target="_blank">*@
+            <a href='@Url.Action("CloudApplication", "Home", new { cloudApplicationID = @Model.SkyscraperCloudApplicationID1 })'>
+@*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = 10 })' class="advertising-image" />*@
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID1 })' class="advertising-image" />
+            </a>
+            }
+            else
+            {
+            <a href='@Url.Action("HomePage", "Home")'>
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID1 })' class="advertising-image" />
+            </a>
+            }
+            
+        </div>
+        <div class="skyscraper-image-container">
+
+                    @if (Model.SkyscraperCloudApplicationID2 > 0)
+                    {
+
+@*            <a href="http://www.adobe.com" target="_blank">*@
+            <a href='@Url.Action("CloudApplication", "Home", new { cloudApplicationID = @Model.SkyscraperCloudApplicationID2 })'>
+@*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = 11 })' class="advertising-image" />*@
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID2 })' class="advertising-image" />
+            </a>
+                    }
+            else
+            {
+            <a href='@Url.Action("HomePage", "Home")'>
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID2 })' class="advertising-image" />
+            </a>
+            }
+                    
+        </div>
+    </div>
+

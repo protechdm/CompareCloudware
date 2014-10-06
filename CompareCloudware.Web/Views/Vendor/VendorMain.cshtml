@@ -1,0 +1,74 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationInputModel
+
+
+<div style="width: 100%; float: left; position:relative;">
+    <div style="width: 100%;" class="editor-row">
+        <div style="float: left; width: 20%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.Vendor.VendorName)
+        </div>
+        <div style="float: left; width: 80%; overflow:hidden;" class="editor-field font-normal-13px-black">
+            @Html.TextBoxFor(x => x.Vendor.VendorName, new { @style = "width:430px;" })
+        </div>
+@*        <div style="float: left; width: 5%;" class="editor-field font-normal-13px-red">
+            <a href="#" id="modal_link_vendorname">Edit</a>
+        </div>*@
+    </div>
+    <div class="clear"></div>
+    <div style="width: 100%;" class="editor-row">
+        <div style="float: left; width: 20%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.CompanyURL)
+        </div>
+        <div style="float: left; width: 80%;" class="editor-field font-normal-13px-black">
+            @Html.TextBoxFor(x => x.CompanyURL, new { @style = "width:430px;" })
+        </div>
+@*        <div style="float: left; width: 5%;" class="editor-field font-normal-13px-red">
+            <a href="#" id="modal_link_vendorlogofullurl">Edit</a>
+        </div>*@
+    </div>
+    <div class="clear"></div>
+    <div style="width: 100%;" class="editor-row">
+        <div style="float: left; width: 20%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.ServiceName)
+        </div>
+        <div style="float: left; width: 80%;" class="editor-field font-normal-13px-black">
+            @Html.TextBoxFor(x => x.ServiceName, new { @style = "width:430px;" })
+        </div>
+@*        <div style="float: left; width: 5%;" class="editor-field font-normal-13px-red">
+            <a href="#" id="modal_link_vendorservicename">Edit</a>
+        </div>*@
+    </div>
+    <div class="clear"></div>
+    <div style="width: 100%;" class="editor-row">
+        <div style="float: left; width: 20%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.Brand)
+        </div>
+        <div style="float: left; width: 80%;" class="editor-field font-normal-13px-black">
+            @Html.TextBoxFor(x => x.Brand, new { @style = "width:730px;" })
+        </div>
+@*        <div style="float: left; width: 5%;" class="editor-field font-normal-13px-red">
+        </div>*@
+    </div>
+    <div class="clear"></div>
+    <div style="width: 100%;" class="editor-row">
+        <div style="float: left; width: 20%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.BuyURL)
+        </div>
+        <div style="float: left; width: 80%;" class="editor-field font-normal-13px-black">
+            @Html.TextBoxFor(x => x.BuyURL, new { @style = "width:730px;" })
+        </div>
+@*        <div style="float: left; width: 5%;" class="editor-field font-normal-13px-red">
+        </div>*@
+    </div>
+    <div class="clear"></div>
+    <div style="width: 100%;" class="editor-row">
+        <div style="float: left; width: 20%;" class="editor-field font-normal-13px-black">
+            @Html.LabelFor(x => x.TryURL)
+        </div>
+        <div style="float: left; width: 80%;" class="editor-field font-normal-13px-black">
+            @Html.TextBoxFor(x => x.TryURL, new { @style = "width:430px;" })
+        </div>
+@*        <div style="float: left; width: 5%;" class="editor-field font-normal-13px-red">
+        </div>*@
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,323 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationDocumentModel
+@using CompareCloudware.Web.Helpers;
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+@{this.ViewContext.FormContext = new FormContext();}
+
+@{
+    Layout = null;
+}
+
+@{
+    ViewBag.Title = "Product review uploader";
+}
+
+
+@*@section Styles
+{
+}
+*@
+
+<link href="@Url.Content("~/Content/ImageArea.css")" rel="stylesheet" />
+
+@*@section Scripts
+{
+}
+*@
+
+<script>
+    $(document).ready(function () {
+
+        $.validator.unobtrusive.parse($('#uploadDocumentForm'));
+
+        $("#CloudApplicationDocumentReleaseDate").datepicker();
+        $("#CloudApplicationDocumentReleaseDate").datepicker("option", "showAnim", "clip");
+
+        var documentContext = $('#dialog-upload-document');
+        //var preview = $('#previewProductReview');
+        var chosenDocumentFileFormat = $('#CloudApplicationDocumentFileFormats_ChosenValue').val();
+        var chosenFile = null;
+        SetUploadButtonState();
+
+        //chosenFile = $('.reviewDocumentName')[0].innerHTML;
+        //PreviewDocument(chosenFile);
+
+        function SetUploadButtonState() {
+            //debugger;
+            var formIsValid = true;
+            if ($('#CloudApplicationDocumentPostedFile')[0].value == "") {
+                //debugger;
+                var persisted = $('#Persisted').val();
+                if (persisted.toUpperCase() == "TRUE") {
+                    formIsValid = true;
+                }
+                else {
+                    if (chosenFile == null) {
+                        formIsValid = false;
+                    }
+                    else {
+                        if (!chosenFile.type.match(chosenDocumentFileFormat)) {
+                            formIsValid = false;
+                        }
+                    }
+                }
+            }
+
+
+            if (formIsValid) {
+                $('#uploadDocumentFULLButton').css("visibility", "visible");
+            }
+            else {
+                $('#uploadDocumentFULLButton').css("visibility", "hidden");
+            }
+        }
+
+        //What happens if the document format changes?
+        $('#CloudApplicationDocumentFileFormats_ChosenValue', documentContext).change(function (evt) {
+            //debugger;
+            //$('#DocumentFileFormat').attr("value",this.value);
+            chosenDocumentFileFormat = this.value;
+            PreviewDocument(chosenFile);
+        });
+
+        //What happens if the File changes?
+        $('#CloudApplicationDocumentPostedFile', documentContext).change(function (evt) {
+            if (evt.target.files === undefined) {
+                var x = "";
+            }
+            chosenFile = evt.target.files[0];
+            PreviewDocument(chosenFile);
+        });
+
+        //What happens if the File changes?
+        $('.reviewDocumentName', documentContext).change(function (evt) {
+            debugger;
+            chosenFile = $(this).innerHTML;
+            PreviewDocument(chosenFile);
+        });
+
+        function PreviewDocument(fileToPreview) {
+            debugger;
+            chosenFile = fileToPreview;
+            if (chosenFile != null) {
+
+                var previewDocument = $('#previewDocument');
+                if (!chosenFile.type.match(chosenDocumentFileFormat)) {
+                    alert("The selected file does not appear to be of the selected document format.");
+                    //return;
+                }
+                else {
+                    if (chosenDocumentFileFormat == "application/pdf") {
+                        var reader = new FileReader();
+                        var data = reader.readAsDataURL(chosenFile);
+                        //alert("TRUE");
+                        previewDocument.attr('src', reader.result);
+                    }
+                    else {
+                        previewDocument.attr('src', "");
+                    }
+
+                }
+            }
+            SetUploadButtonState();
+        }
+
+
+    });
+</script>
+
+<div class="upload-document-input-container" id="dialog-upload-document" title="Upload a document">
+@*    <form id="uploadDocumentForm" method="post" action="/Home.mvc/RatingReview">*@
+
+@using (Html.BeginForm("UploadDocument", "Vendor", FormMethod.Post, new { enctype = "multipart/form-data", id = "uploadDocumentForm" }))
+{
+
+    <script>
+    $(document).ready(function () {
+    });
+
+    </script>
+    @Html.HiddenFor(x => x.CloudApplicationID)
+    @Html.HiddenFor(x => x.CloudApplicationDocumentFileFormats.Other)
+    @Html.HiddenFor(x => x.CloudApplicationDocumentFileFormats.OtherNumeric)
+    @Html.HiddenFor(x => x.CloudApplicationDocumentTypes.Other)
+    @Html.HiddenFor(x => x.CloudApplicationDocumentTypes.OtherNumeric)
+    @Html.HiddenFor(x => x.CloudApplicationDocumentStatus)
+
+    @Html.HiddenFor(x => x.IsLive)
+    @Html.HiddenFor(x => x.Persisted)
+    @Html.HiddenFor(x => x.RowID)
+    @Html.HiddenFor(x => x.AddMode)
+    if (!displayDebugFields)
+    {
+        @Html.HiddenFor(x => x.Persisted)
+        @Html.HiddenFor(x => x.RowID)
+    }
+
+    <div class="upload-document-inputs">
+@*        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.Label("Sample URL")
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                @Html.TextBox("sampleURL", @sampleURL, new { @style = "width:30em;" })
+            </div>
+        </div>*@
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationDocumentFileFormats)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.CloudApplicationDocumentFileFormat)
+                @Html.EditorFor(model => model.CloudApplicationDocumentFileFormats)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewDate)*@
+            </div>
+        </div>
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationDocumentTypes)
+            </div>
+            <div class="editor-field-product-review font-normal-13px-black">
+@*                @Html.HiddenFor(model => model.CloudApplicationDocumentType)*@
+                @Html.EditorFor(model => model.CloudApplicationDocumentTypes)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewDate)*@
+            </div>
+        </div>
+@*        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.DocumentFileName)
+            </div><div class="editor-field-document font-normal-13px-black">
+                @Html.EditorFor(model => model.DocumentFileName)
+                @Html.ValidationMessageFor(model => model.CloudApplicationReviewHeadline)
+            </div>
+        </div>*@
+@*        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.DocumentPhysicalFilePath)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                @Html.EditorFor(model => model.DocumentPhysicalFilePath)
+                @Html.ValidationMessageFor(model => model.CloudApplicationReviewPublisherName)
+            </div>
+        </div>*@
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationDocumentPhysicalFilePath)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+@*                @Html.Label(@Model.CloudApplicationDocumentPhysicalFilePath + @Model.CloudApplicationDocumentFileName, new { @style="width:300px" })*@
+                <label class="reviewDocumentName" style="width:500px;">@Model.CloudApplicationDocumentPhysicalFilePath@Model.CloudApplicationDocumentFileName</label>
+            </div>
+        </div>
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationDocumentPostedFile)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                    @Html.FileFor(model => model.CloudApplicationDocumentPostedFile)
+                @Html.ValidationMessageFor(model => model.CloudApplicationDocumentPostedFile)
+            </div>
+        </div>
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationDocumentTitle)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationDocumentTitle)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewText)*@
+            </div>
+        </div>
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationDocumentReleaseDate)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationDocumentReleaseDate)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewText)*@
+            </div>
+        </div>
+@*        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.DocumentURL)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                    @Html.Label("http://", new { @style = "float:left;" })
+                    <span style="float:left;">&nbsp;</span>
+                    @Html.EditorFor(model => model.DocumentURL)
+                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURL)
+            </div>
+        </div>*@
+        
+        
+        
+        
+        
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+                @Html.LabelFor(model => model.RowID)
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+                @Html.HiddenFor(model => model.RowID)
+                @Html.EditorFor(model => model.RowID)
+@*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        }
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.Persisted)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.Persisted)
+@*                @Html.EditorFor(model => model.Persisted)*@
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        }
+        
+        @if (!Model.Persisted)
+        {
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+@*                <button id="uploadDocumentAJAXButton" type="button">Upload AJAX</button>*@
+                <button id="uploadDocumentFULLButton" type="submit">Upload FULL</button>
+            </div>
+        </div>
+        <div class="editor-row-document">
+            @Html.ValidationSummary(true)
+        </div>
+        }
+        else
+        {
+        <div class="editor-row-document">
+            <div class="editor-label-document font-normal-13px-black">
+            </div>
+            <div class="editor-field-document font-normal-13px-black">
+@*                <button id="uploadDocumentAJAXButton" type="button">Upload AJAX</button>*@
+                <button id="uploadDocumentFULLButton" type="submit">Upload FULL</button>
+            </div>
+        </div>
+        <div class="editor-row-document">
+            @Html.ValidationSummary(true)
+        </div>
+        }
+        
+    </div>
+
+    <div id="upload-document-preview" class="upload-document-preview">
+        <IFRAME id="previewDocument" style="border: 0px;" src="" width="100%" height = "100%"></IFRAME>
+    </div>
+    <div class="clear"></div>
+
+@*</form>*@
+}
+    </div>

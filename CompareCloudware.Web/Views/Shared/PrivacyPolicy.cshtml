@@ -1,0 +1,13 @@
+﻿@using CompareCloudware.Web.Helpers
+@using CompareCloudware.Web.Models
+
+@*@Html.LabelFor(x => x, new { @class = "font-normal-13px-white" })*@
+
+@*<add key="TermsAndConditions" value="I accept Compare Cloudware terms &amp; conditions and data privacy policies"/>*@
+
+@{    
+    <label class = "font-normal-13px-black checkbox-label">Tick here to confirm you have read and understood the data </label>
+    <div class="anchor-label">
+    @Html.ActionLink("privacy policy", "PrivacyPolicyPage", null, new { @class = "font-normal-13px-blue" })
+    </div>
+    }

@@ -1,0 +1,248 @@
+﻿@model CompareCloudware.Web.Models.HeaderModel
+
+<script type="text/javascript">
+//    $("#SearchInput").catcomplete({
+//        delay: 0,
+//        source: data
+//    });
+</script>
+
+<div style="position:relative">
+    <div style="padding-right:0px;right:0px;overflow:hidden;">
+        <input id="search" name="searchInput" type="text" tabindex="2"
+        onkeydown = "return event.keyCode!=13" 
+        style="position :relative; float:right; width:200px;border:1px solid;border-radius: 5px 5px 5px 5px;padding-right:20px;"
+        class="input-text-box font-normal-13px-black"
+        />
+    </div>
+    <div style="z-index:1;position:absolute;top:0px;right:14px;">
+@*        <span class="cc-ui-icon cc-ui-icon-search"></span>
+*@        <input id="searchbutton" tabindex="1" type="image" name="ICON_SEARCH" class="cc-ui-icon cc-ui-icon-search" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" />
+    </div>
+    <div class="searchTagsResults font-normal-11px-black">
+            <input type="hidden" id="selectedAutocompleteRows" name="selectedAutocompleteRows" />
+            <input type="hidden" id="separator" name="separator" />
+            <input type="hidden" id="chosenID" name="chosenID" value="ILLEGAL" />
+            <input type="hidden" id="searchText" name="searchText" />
+            <input type="hidden" name="test" />
+            <input type="hidden" name="test2" value="test" />
+    
+    </div>
+
+</div>
+
+
+@*   <div class="ui-widget">
+            <input type="text" id="search" name="search" size="90" style="font-size:12px;width:250px;padding:3px 3px;" value=""/>
+            <input id="searchbutton" name="searchbutton" type="submit" class="searchbutton" value="Search"/>
+            <input type="hidden" id="selectedAutocompleteRows" name="selectedAutocompleteRows" />
+            <input type="hidden" id="separator" name="separator" />
+    </div>
+*@@*    <div style="z-index:1;position:absolute;top:10px;right:10px;">
+</div>
+*@
+<script type="text/javascript">
+//    $(function () {
+//        var autocompleteRows = $.parseJSON('@(ViewData["autocompleteRows"]??"[]")');
+//        //$.ui.searchboxautocomplete.separator = ": ";
+
+//        $("#search")
+//            .setSearchText(autocompleteRows)
+//            .searchboxautocomplete({
+//                autocompleteRows: autocompleteRows,
+//                source: function (request, response) {
+//                    var term = $.ui.searchboxautocomplete.extractLast(request.term);
+//                    logIt("source: extractLast(request.term): " + term);
+//                    //                    var data = this.options.getCachedData(term);
+//                    //                    if (data != null) {
+//                    //                        response(data);
+//                    //                        return true;
+//                    //                    }
+//                    var that = this;
+//                    this.options.lastXhr =
+//                        $.getJSON("AutoComplete",
+//                            { term: term, acRows: JSON.stringify(this.options.autocompleteRows) },
+//                            function (data, status, xhr) {
+//                                //that.options.setCachedData(term, data);
+//                                if (xhr === that.options.lastXhr) {
+//                                    response(data);
+//                                }
+//                            })
+//                            .error(function (xhr, status, c) {
+//                                alert("error");
+//                            })
+//                },
+//                search: function () {
+//                    // custom minLength
+//                    var term = $.trim($.ui.searchboxautocomplete.extractLast(this.value));
+//                    logIt("search: custom minLength=>" + term + "<=");
+//                    if ($(this).data("searchboxautocomplete").menu.element.is(":visible"))
+//                        $(this).data("searchboxautocomplete").close(null);
+//                    if (term.length < 3) {
+//                        return false;
+//                    }
+//                },
+//                focus: function () {
+//                    // prevent value inserted on focus
+//                    return false;
+//                },
+//                submitBox: function () {
+//                    $('#searchbox').trigger("submit");
+//                }
+
+//            })
+
+//        /*.data("searchboxautocomplete")._renderItem = function (ul, item) {
+//        return $("<li></li>")
+//        .data("item.autocomplete", item)
+//        .append($("<a></a>").text(item.labelShort + " (" + item.value + ")"))
+//        .appendTo(ul);
+//        }*/;
+
+//        // hijack the form submit 
+//        $('#searchbox').submit(function (e) {
+//            var rows = $("#search").data("searchboxautocomplete").options.autocompleteRows;
+//            $('#selectedAutocompleteRows').val(JSON.stringify(rows));
+//            $('#separator').val($.ui.searchboxautocomplete.separator);
+//            //alert($('#selectedAutocompleteRows').val()); e.preventDefault(); return false;
+//            return true;
+//        });
+
+
+//    });
+
+//    function logIt($obj, what) {
+//        // for IE, press F12 to open Developer Tools, and follow  Script/Console
+//        if (window.console && window.console.log)
+//            window.console.log($obj.toString());
+//    };
+
+</script>
+
+
+<script type="text/javascript">
+
+    $(function () {
+
+        var autocompleteRows = $.parseJSON('@(ViewData["autocompleteRows"]??"[]")');
+        //$.ui.searchboxautocomplete.separator = ": ";
+
+        $("#search")
+            .setSearchText(autocompleteRows)
+            .searchboxautocomplete({
+                autocompleteRows: autocompleteRows,
+                source: function (request, response) {
+                    var term = $.ui.searchboxautocomplete.extractLast(request.term);
+                    //debugger;
+                    var dummyVXMode = $('.dummyVXMode');
+                    var dummyVXModeIsChecked = $(dummyVXMode).attr("checked");
+                    var liveApplicationsOnly = dummyVXModeIsChecked == null;
+                    logIt("source: extractLast(request.term): " + term);
+                    //                    var data = this.options.getCachedData(term);
+                    //                    if (data != null) {
+                    //                        response(data);
+                    //                        return true;
+                    //                    }
+                    var that = this;
+                    this.options.lastXhr =
+                        $.getJSON("/AutoComplete",
+                            {
+                                term: term,
+                                acRows: JSON.stringify(this.options.autocompleteRows),
+                                liveApplicationsOnly: liveApplicationsOnly
+                            },
+                            function (data, status, xhr) {
+                                //that.options.setCachedData(term, data);
+                                if (xhr === that.options.lastXhr) {
+                                    response(data);
+                                }
+                            })
+                            .error(function (xhr, status, c) {
+                                alert("error");
+                            })
+                },
+                search: function () {
+                    // custom minLength
+                    var term = $.trim($.ui.searchboxautocomplete.extractLast(this.value));
+                    logIt("search: custom minLength=>" + term + "<=");
+                    if ($(this).data("searchboxautocomplete").menu.element.is(":visible"))
+                        $(this).data("searchboxautocomplete").close(null);
+                    if (term.length < 3) {
+                        return false;
+                    }
+                },
+                focus: function () {
+                    // prevent value inserted on focus
+                    return false;
+                },
+                submitBox: function () {
+                    //$('#searchbox').trigger("submit");
+                },
+                select: function (event, ui)
+                {
+                    debugger;
+                    window.location = "/" + ui.item.tagModel.CloudApplicationModel.CategoryTag + "/" + ui.item.tagModel.CloudApplicationModel.ShopTag;
+                    //window.location = "/" + ui.item.tagModel.CloudApplicationModel.CategoryTag + "/" + ui.item.tagModel.CloudApplicationModel.ShopTagURL;
+                }
+
+            })
+
+        .data("searchboxautocomplete")._renderItem = function (ul, item) {
+            //return $("<li>" + "<img src='GetThumbnail?vendorID=" + item.vendorID + "'/>" + "</li>")
+
+            debugger;
+            return $("<li>"
+
+            //+ "<a href='AutoCompleteResultRedirect?id="
+            //+ item.tagModel.CloudApplicationModel.CloudApplicationID
+            //+ "&term=" + item.value
+            //+ "&scripting=true"
+
+            + "<a href='#home"
+            //+ item.tagModel.CloudApplicationModel.CategoryTag
+            //+ "/"
+            //+ item.tagModel.CloudApplicationModel.ShopTag
+
+            + "' class='font-normal-13px-black'>"
+            //+ "<img src='GetThumbnail'/>"
+            //+ "<b></b>"
+            + "<img src='/GetThumbnail?vendorID="
+            //+ item.vendorID + "&vendorName=" + item.labelShort + "' style='max-width:75px;'/>"
+            + item.vendorID + "&vendorName=" + item.labelAsURL + "' style='max-width:75px;'/>"
+            + item.labelShort + " (" + item.value + ")"
+            + "</a>"
+
+            + "</li>")
+        .data("item.autocomplete", item)
+
+            //        .append($("<a href='AutoCompleteResultRedirect?id="
+            //            + item.tagModel.CloudApplicationModel.CloudApplicationID 
+            //            + "&term=" + item.value
+            //            + "' class='font-normal-13px-black'>"
+            //            + "</a>")
+
+            //.append($(item).text(item.labelShort + " (" + item.value + ")"))
+        .appendTo(ul);
+        };
+
+        // hijack the form submit 
+        $('#searchbox').submit(function (e) {
+            alert("submit");
+            debugger;
+            var rows = $("#search").data("searchboxautocomplete").options.autocompleteRows;
+            $('#selectedAutocompleteRows').val(JSON.stringify(rows));
+            $('#separator').val($.ui.searchboxautocomplete.separator);
+            //alert($('#selectedAutocompleteRows').val()); e.preventDefault(); return false;
+            return true;
+        });
+
+
+    });
+
+    function logIt($obj, what) {
+        // for IE, press F12 to open Developer Tools, and follow  Script/Console
+        if (window.console && window.console.log)
+            window.console.log($obj.toString());
+    };
+
+</script>

@@ -1,0 +1,40 @@
+﻿@model CompareCloudware.Web.Models.SelectListItemCollection
+
+@if (Model != null || Model==null)
+{
+    @Html.HiddenFor(m => m.MultiSelect)
+    @Html.HiddenFor(m => m.CollectionTitle)
+@*    @Html.HiddenFor(m => m.ChosenValue)*@
+    @Html.HiddenFor(m => m.ColumnCount)
+
+    if (Model.SelectListItems != null)
+    {
+            int currentColumn = 1;
+<table style="width:100%;" class="list-collection">
+    <tr style="">
+        @for (int i = 0; i < Model.SelectListItems.Count; i++)
+        {
+            @Html.HiddenFor(m => m.SelectListItems[i].Text)
+            @Html.HiddenFor(m => m.SelectListItems[i].Value)
+            if (currentColumn > Model.ColumnCount)
+            {
+                currentColumn = 1;
+                @:</tr>
+                @:<tr style="">
+            }
+                
+            <td style="width:10px;">
+@*                @Html.RadioButtonFor(m => m.SelectListItems[i].Selected, new { @checked = "checked" })*@
+@*                @Html.RadioButton(Model.CollectionTitle, Model.SelectListItems[i].Text, new { @class = "radFromToMonthlyPrice" })*@
+                @Html.RadioButtonFor(x => x.ChosenValue, Model.SelectListItems[i].Text, new { @class = "radCustomRadioButtonList" })
+            </td>
+            <td style="width:100px;">
+                @Html.LabelFor(m => m.SelectListItems[i].Text, Model.SelectListItems[i].Text, new { @class = "font-normal-11px-black" })
+            </td>
+            currentColumn += 1;
+        }
+    </tr>
+</table>
+
+    }
+}

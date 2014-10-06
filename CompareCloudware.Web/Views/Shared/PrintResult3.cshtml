@@ -1,0 +1,1598 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+@using CompareCloudware.Web.Models
+@using System.Web.Mvc;
+@using System.Configuration;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <title>PrintResult2</title>@*
+    <link href="@Url.Content("http://localhost:3785/Content/jquery-ui.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/EnabledJavaScript/simple-search-input.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/Creature.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/overflow-text-ellipsis.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("http://localhost:3785/Content/jquery-ui.custom.css")" rel="stylesheet" type="text/css" media="all" />    
+*@
+
+@*    @Request.Url.Authority@Request.ApplicationPath*@
+    @{bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);}
+    @{testMode = false;}
+    @{string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"];}
+    @{int columnCount;}
+@*    @{string homePath = "http://" + @Request.Url.Authority + @Request.ApplicationPath;}*@
+    @{string homePath = "http://" + @Request.Url.Authority;}
+    @{string hRef = null;}
+
+    <link href="@Url.Content(homePath + "/Content/Site.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content(homePath + "/Content/fonts.css")" rel="Stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content(homePath + "/Content/overflow-text-ellipsis.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content(homePath + "/Content/search-page.css")" rel="stylesheet" type="text/css" media="all" />
+
+    <script src="@Url.Content(homePath + "/Scripts/jquery-1.8.1.js")" type="text/javascript"></script>
+
+    <style type="text/css" media="all">
+        .xfont-normal-22px-purple
+        {
+            font-size: 13px;
+            font-weight: normal;
+            font-style: normal;
+            color: #800080;
+        }
+        
+        .xfont-bold-22px-purple
+        {
+            font-size: 22px;
+            font-weight: bold;
+            font-style: normal;
+            color: #800080;
+            font-family: Vagabond;
+        }
+        
+        .xfont-normal-22px-purple
+        {
+            font-family: Vagabond;
+        }
+
+    </style>
+</head>
+<body style="width:210mm;">
+    <!-- 100% WIDTH-->
+    <a href="@homePageURL" style="text-decoration:none;">
+        <div class="pdf-thank-you">
+           <font class="font-normal-11px-black" >
+                @for (int i = 0; i < 2000; i++)
+                {
+                    @:&nbsp;
+                }
+            </font>
+        </div>
+    </a>
+
+    <!-- 100% WIDTH-->
+    <div class="pdf-thank-you-text">
+        <font class="font-normal-22px-purple" >
+            <label>
+                Thank you @Model.CustomSession.Forename @Model.CustomSession.Surname for using Compare Cloudware. Here are the details you requested.
+            </label>
+        </font>
+    </div>
+
+    @{ var searchResultModel = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationSearchResultModel;}
+    @{ int days = -1;}
+    @{ bool isDays = int.TryParse(searchResultModel.FreeTrialPeriod, out days);}
+
+    <table style="width:100%;">
+        <tr>
+            <td style="width:65%;vertical-align:top;">
+    <div class="xsearch-result-page-div font-normal-11px" style="margin-top:0px;width:100%;">
+        <div class="search-result-div" style="margin-right:20px;">
+            <div class="search-header-result-container">
+                <div class="cloud-application-search-result-table-outer">
+                    <table id="xheader" class="search-header-results-table-inner" style="width:100%;">
+                        <tr>
+                            <td style="width: 43%;border:0px solid white;">
+                                <font class="font-normal-11px-white" >
+                                    <label>@searchResultModel.CloudwareProviderColumnHeader</label>
+                                </font>
+                            </td>
+                            <td style="width: 17%;border:0px solid white;" class="font-normal-11px-white">
+                                <font class="font-normal-11px-white" >
+                                    <label id="MonthlyPrice">@searchResultModel.MonthlyPriceColumnHeader</label>
+                                </font>
+                            </td>
+                            <td style="width: 17%;border:0px solid white;" class="font-normal-11px-white">
+                                <font class="font-normal-11px-white" >
+                                    <label id="AnnualPrice">@searchResultModel.AnnualPriceColumnHeader</label>
+                                </font>
+                            </td>
+                            <td style="width: 12%;border:0px solid white;" class="font-normal-11px-white">
+                                <font class="font-normal-11px-white" >
+                                    <label id="SetupFee">@searchResultModel.SetupFeeColumnHeader</label>
+                                </font>
+                            </td>
+                            <td style="width: 11%;border:0px solid white;" class="font-normal-11px-white">
+                                <font class="font-normal-11px-white" >
+                                    <label id="FreeTrial">@searchResultModel.FreeTrialColumnHeader</label>
+                                </font>
+                            </td>
+                        </tr>
+                    </table>
+
+
+                    <table id="dataTable" class="cloud-application-search-result-table-inner box-shadow" style="width: 100%;margin-left:3px;border:3px solid;margin-top:3px;">
+                        <tr>
+                            @{hRef = homePath + "/Admin/CloudApplication?cloudApplicationID=" + Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationID.ToString();}
+                            <td style="width: 27%;">
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="search-results-table-main-details-logo">
+            @*                        <img src='@Url.Action("ShowLogo", "Home", new { vendorID = searchResultModel.VendorID })' class="logo-image" />*@
+                                        <img src='http://cc-staging.wilsonmiller.co.uk/Home/ShowLogo?vendorID=@searchResultModel.VendorID' class="logo-image" />
+                                    </div>
+                                </a>
+                            </td>
+                            <td style="width: 22%;" class="font-bold-22px-purple search-result-header">
+                                <div class="search-results-table-main-details">
+                                    <table style="width:100%;">
+                                        <tr style="line-height:7px;">
+                                            <td class="search-result-header">
+                                            @if (searchResultModel.ApplicationCostPerMonthOffered)
+                                            {
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerMonthFrom > 0)
+                                                    {
+                                                        @("from")
+                                                    }
+                                                    else
+                                                    {
+                                                        @:&nbsp;
+                                                    }
+                                                    </label>
+                                                </font>
+                                            }
+                                            else
+                                            {
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerMonthFree)
+                                                    {
+                                                        @("FREE")
+                                                    }
+                                                    else
+                                                    {
+                                                        @:&nbsp;
+                                                    }
+                                                    </label>
+                                                </font>
+                                            }
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="search-result-header">
+                                                <font class="font-bold-22px-purple-arial search-result-header" >
+                                                    <label class="font-bold-22px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerMonthPOA)
+                                                    {
+                                                        @:POA
+                                                    }
+                                                    else if (searchResultModel.PayAsYouGo)
+                                                    {
+                                                        @:PAYG
+                                                    }
+                                                    else if (searchResultModel.ApplicationCostPerMonthFree)
+                                                    {
+                                                        @("FREE")
+                                                    }
+                                                    else if (searchResultModel.ApplicationCostPerMonthOffered)
+                                                    {
+                                                        if (searchResultModel.ApplicationCostPerMonthFrom > 0 && searchResultModel.ApplicationCostPerMonthTo == 0)
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@searchResultModel.ApplicationCostPerMonthFrom.ToString("#0.00")
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerMonthFrom > 0)
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@searchResultModel.ApplicationCostPerMonthFrom.ToString("#0.00")
+                                                        }
+                                                        else
+                                                        {
+                                                            if (searchResultModel.ApplicationCostPerMonth == 0)
+                                                            {
+                                                                @searchResultModel.Currency.CurrencySymbol@:0.00
+                                                            }
+                                                            else
+                                                            {
+                                                                @searchResultModel.Currency.CurrencySymbol@searchResultModel.ApplicationCostPerMonth.ToString("#0.00")
+                                                            }
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        @("N/A")
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr style="line-height:15px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerMonthOffered)
+                                                    {
+                                                        if (searchResultModel.ApplicationCostPerMonthIsForUnlimitedUsers)
+                                                        {
+                                                            @:unlimited users
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerMonthFrom != 0 && searchResultModel.ApplicationCostPerMonthTo != 0)
+                                                        {
+                                                            @*@:per year*@
+                                                            @("to " + @searchResultModel.Currency.CurrencySymbol + searchResultModel.ApplicationCostPerMonthTo.ToString("#0.00"))
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerMonth == 0)
+                                                        {
+                                                            @*@Model.MonthlyPriceColumnHeader*@
+                                                            @:per month
+                                                        }
+                                                        else
+                                                        {
+                                                            @*@Model.MonthlyPriceColumnHeader*@
+                                                            @:per month
+                                                        }
+                                                    }
+                                                    else if (searchResultModel.ApplicationCostPerMonthFree)
+                                                    {
+                                                        @:FREE
+                                                    }
+                                                    else
+                                                    {
+                                                        @:&nbsp;
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="width: 22%;" class="font-bold-22px-purple-arial  search-result-header">
+                                <div class="search-results-table-main-details">
+                                    <table style="width:100%;">
+                                        <tr style="line-height:7px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerAnnumOffered)
+                                                    {
+                                                        if (searchResultModel.ApplicationCostPerAnnumFrom > 0)
+                                                        {
+                                                            @("from")
+                                                        }
+                                                        else
+                                                        {
+                                                            @:&nbsp;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        if (searchResultModel.ApplicationCostPerAnnumFree)
+                                                        {
+                                                            @("FREE")
+                                                        }
+                                                        else
+                                                        {
+                                                            @:&nbsp;
+                                                        }
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="search-result-header">
+                                                <font class="font-bold-22px-purple-arial" >
+                                                    <label class="font-bold-22px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerAnnumPOA)
+                                                    {
+                                                        @searchResultModel.Currency.CurrencySymbol@:POA
+                                                    }
+                                                    else if (searchResultModel.PayAsYouGo)
+                                                    {
+                                                        @:PAYG
+                                                    }
+                                                    else if (searchResultModel.ApplicationCostPerAnnumFree)
+                                                    {
+                                                        @("FREE")
+                                                    }
+                                                    else if (searchResultModel.ApplicationCostPerAnnumOffered)
+                                                    {
+                                                        if (searchResultModel.ApplicationCostPerAnnumFrom > 0 && searchResultModel.ApplicationCostPerAnnumTo == 0)
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@searchResultModel.ApplicationCostPerAnnumFrom.ToString("#0.00")
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerAnnumFrom > 0)
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@searchResultModel.ApplicationCostPerAnnumFrom.ToString("#0.00")
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerAnnum == 0)
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@:0.00
+                                                        }
+                                                        else
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@searchResultModel.ApplicationCostPerAnnum.ToString("#0.00")
+                                                        }
+                                                    }
+@*                                                  else if (Model.ApplicationCostPerAnnumFree)
+                                                    {
+                                                        @("FREE")
+                                                    }
+                                                    else if (Model.ApplicationCostPerAnnumPOA)
+                                                    {
+                                                        @:POA
+                                                    }*@
+                                                    else
+                                                    {
+                                                        @("N/A")
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr style="line-height:15px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (searchResultModel.ApplicationCostPerAnnumOffered)
+                                                    {
+                                                        if (searchResultModel.ApplicationCostPerAnnumIsForUnlimitedUsers)
+                                                        {
+                                                            @:unlimited users
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerAnnumFrom > 0 && searchResultModel.ApplicationCostPerAnnumTo > 0)
+                                                        {
+                                                            @("to " + @searchResultModel.Currency.CurrencySymbol + searchResultModel.ApplicationCostPerAnnumTo.ToString("#0.00"))
+                                                        }
+                                                        else if (searchResultModel.ApplicationCostPerAnnum != 0)
+                                                        {
+                                                            @*@Model.AnnualPriceColumnHeader*@
+                                                            @:per year
+                                                        }
+                                                        else
+                                                        {
+                                                            @*@Model.AnnualPriceColumnHeader*@
+                                                            @:per year
+                                                        }
+                                                    }
+                                                    else if (searchResultModel.ApplicationCostPerAnnumFree)
+                                                    {
+                                                        @:FREE
+                                                    }
+                                                    else
+                                                    {
+                                                        @:&nbsp;
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="width: 16%;" class="font-bold-22px-purple-arial search-result-header">
+                                <div class="search-results-table-main-details">
+                                    <table style="width:100%;">
+                                        <tr style="line-height:7px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">&nbsp;</label>
+                                                </font>
+                                            </td>
+                                        </tr>                   
+                                        <tr>
+                                            <td class="search-result-header">
+                                                <font class="font-bold-22px-purple-arial" >
+                                                    <label class="font-bold-22px-purple-arial search-result-header">
+                                                    @if (searchResultModel.SetupFee != null)
+                                                    {
+                                                        if (searchResultModel.SetupFee.ToUpper().StartsWith("NO"))
+                                                        {
+                                                            @:No
+                                                        }
+                                                        else
+                                                        {
+                                                            @searchResultModel.Currency.CurrencySymbol@searchResultModel.SetupFee
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        @:N/A
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>                   
+                                        <tr style="line-height:15px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (searchResultModel.SetupFee != null)
+                                                    {
+                                                        if (!searchResultModel.SetupFee.ToUpper().StartsWith("NO"))
+                                                        {
+                                                            @:setup
+                                                        }
+                                                        else
+                                                        {
+                                                            @:
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        @:N/A
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>                   
+                                    </table>
+                                </div>
+                            </td>
+                            <td style="width: 13%;" class="font-bold-22px-purple-arial  search-result-header">
+                                <div class="search-results-table-main-details" style="border-right-style: none;border-right-width: 0px;">
+                                    <table style="width:100%;">
+                                        <tr style="line-height:7px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">&nbsp;</label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="search-result-header">
+                                                <font class="font-bold-22px-purple-arial" >
+                                                    <label class="font-bold-22px-purple-arial search-result-header">
+                                                    @if (searchResultModel.DemoOffered)
+                                                    {
+                                                        @:Demo
+                                                    }
+                                                    else
+                                                    {
+                                                        if (@searchResultModel.FreeTrialPeriod != null)
+                                                        {
+                                                            @searchResultModel.FreeTrialPeriod
+                                                        }
+                                                        else
+                                                        {
+                                                            @:No
+                                                        }
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                        <tr style="line-height:15px;">
+                                            <td class="search-result-header">
+                                                <font class="font-bold-11px-purple-arial" >
+                                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                                    @if (!searchResultModel.DemoOffered)
+                                                    {
+                                                        if (@searchResultModel.FreeTrialPeriod != null)
+                                                        {
+                                                            @*@:days free trial*@
+                        @*                                    @Model.FreeTrialPeriod *@
+                                                            @(isDays ? " days" : null)
+                                                        }
+                                                        else
+                                                        {
+                                                            @:&nbsp;
+                                                        }
+                                                    }
+                                                    </label>
+                                                </font>
+                                            </td>
+                                        </tr>
+                                    </table>                    
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td class="font-bold-13px-purple" style="width: 70%; border-bottom: 0px solid black;" colspan="5">
+                            <font class="font-bold-13px-purple" >
+                                @searchResultModel.ServiceName
+                            </font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="font-normal-12px-black" style="width: 70%" colspan="5">
+                            <div class="none-ellipsify line-height-15px" style="width: 100%;">
+                                <font class="font-normal-12px-black" >
+                                @searchResultModel.Description
+                                </font>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+            </div>
+
+
+            <div class="search-header-result-container">
+                <div class="cloud-application-search-result-table-outer">
+    
+                <br />
+    
+                <table class="box-shadow" style="width:100%;margin-left:3px;border:0px solid" >
+            <tr>
+                <td style="width:100%;text-align:left;border:0px solid black;" >
+                    <font class="font-normal-22px-purple" >
+                        <label class="font-normal-22px-purple search-result-header">Summary</label>
+                    </font>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 100%;border:0px solid black;">
+                    <div id="main3" style="position:relative; width: 100%;border:0px solid black;">
+                        <div style="width:100%;border:0px solid black;" class="xsearch-result-summary-div">
+                            <table style="width:100%;">
+                                <!-- OPERATING SYSTEMS -->
+                                <tr>
+                                    <td style="width:100%;">
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Operating system:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                @foreach (OperatingSystemModel os in Model.ContainerModel.ChosenCloudApplicationModel.OperatingSystems)
+                                {
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@os.OperatingSystemName</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                }
+                                <!-- SUPPORT TYPES -->
+                                <tr>
+                                    <td>
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support type:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                @foreach (SupportTypeModel st in Model.ContainerModel.ChosenCloudApplicationModel.SupportTypes)
+                                {
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@st.SupportTypeName</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                }
+                                <!-- SUPPORT DAYS -->
+                                <tr>
+                                    <td>
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support days:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@(Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName.Length > 0 ? Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName : "N/A")</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <!-- SUPPORT HOURS -->
+                                <tr>
+                                    <td>
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support hours:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@(Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName.Length > 0 ? Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName : "N/A")</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <!-- SUPPORT TERRITORIES -->
+                                @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories != null)
+                                {
+                                <tr>
+                                    <td>
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support territory:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories.Count == 0)
+                                {
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">N/A</label>
+                                        </font>
+                                    </td>
+                                </tr>
+
+                                }
+                                foreach (SupportTerritoryModel stm in Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories)
+                                {
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@stm.SupportTerritoryName</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                }
+                                }
+                                <!-- VIDEO TRAINING -->
+                                <tr>
+                                    <td>
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Video Training:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <font class="font-normal-11px-black" >
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@(Model.ContainerModel.ChosenCloudApplicationModel.VideoTrainingSupport ? "Yes" : "No")</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                <!-- LANGUAGES -->
+                                @if (Model.ContainerModel.ChosenCloudApplicationModel.Languages.Count > 0)
+                                {
+                                <tr>
+                                    <td>
+                                        <table style="width:100%">
+                                    
+                                        </table>
+                                    </td>
+                                </tr>
+                                    <tr>
+                                    <td>
+                                        <table style="width:100%">
+                                    @{int i = 0;}
+                                    @{int languageCount = Model.ContainerModel.ChosenCloudApplicationModel.Languages.Count;}
+                                    @{columnCount = 3;}
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple" >
+                                                <label class="font-bold-11px-purple search-result-header line-height-150">Language:</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+                                    @do
+                                    {
+                                        //i++;
+                                        <tr>
+                                            <td style="width:@(100 / columnCount)%">
+                                                <font class="font-normal-11px-black" >
+                                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.Languages[i].LanguageName</label>
+                                                </font>
+                                                @{i++;}
+                                            </td>
+                                            @if (i < languageCount)
+                                            {
+                                            <td style="width:@(100 / columnCount)%">
+                                                <font class="font-normal-11px-black" >
+                                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.Languages[i].LanguageName</label>
+                                                </font>
+                                                @{i++;}
+                                            </td>
+                                            }
+                                            @if (i < languageCount)
+                                            {
+                                            <td style="width:@(100 / columnCount)%">
+                                                <font class="font-normal-11px-black" >
+                                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.Languages[i].LanguageName</label>
+                                                </font>
+                                                @{i++;}
+                                            </td>
+                                            }
+                                        </tr>
+
+                                    } while (i < languageCount);
+                                        
+                                        </table>
+                                    </td>
+                                    </tr>
+                                }        
+                            </table>
+                        </div>
+                        <div style="clear:both;height:10px;"></div>
+                        <div class="xsearch-result-summary-div" style="position:relative;width:100%;border:0px solid black;">
+
+                            <!-- FEATURES -->
+                            <table style="width:100%;">
+                                <tr>
+                                    <td style="width:50%">
+                                        <font class="font-bold-11px-purple" >
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">
+                                            Features:</label>
+                                        </font>
+                                    </td>
+                                </tr>
+                                @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures.Count > 0)
+                                {
+                                    int i = 0;
+                                    int featureCount;
+                                    string stringFeatureCountSuffix;
+                                    string stringFeatureCount;
+                                    bool includeAtExtraCost;
+                                    do
+                                    {
+                                        featureCount = (int)Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Count;
+                                        stringFeatureCountSuffix = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].CountSuffix;
+                                        if (featureCount == 16384)
+                                        {
+                                            stringFeatureCount = "Unlimited ";
+                                        }
+                                        else if (featureCount == 0)
+                                        {
+                                            stringFeatureCount = "";
+                                        }
+                                        else
+                                        {
+                                            stringFeatureCount = featureCount.ToString() + " " + stringFeatureCountSuffix + " ";
+                                        }
+                                        includeAtExtraCost = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].IncludeExtraCost;
+                                
+                                        @:<tr>
+                                            <td style="padding-right:20px;width:50%;"> 
+                                                <font class="font-normal-11px-black" >
+                                                    <label class="font-normal-11px-black search-result-header line-height-150">
+                                                        @(stringFeatureCount) @Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Feature.FeatureName
+                                                        @(includeAtExtraCost ? "(at extra cost)" : "") 
+                                                    </label> 
+                                                </font>
+                                            </td> 
+                                        i++;
+                                        if (i < Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures.Count)
+                                        {
+                                            featureCount = (int)Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Count;
+                                            stringFeatureCountSuffix = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].CountSuffix;
+                                            if (featureCount == 16384)
+                                            {
+                                                stringFeatureCount = "Unlimited ";
+                                            }
+                                            else if (featureCount == 0)
+                                            {
+                                                stringFeatureCount = "";
+                                            }
+                                            else
+                                            {
+                                                stringFeatureCount = featureCount.ToString() + " " + stringFeatureCountSuffix + " ";
+                                            }
+                                            includeAtExtraCost = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].IncludeExtraCost;
+                                                @:<td style="margin-right:0px;width:50%;"> 
+                                                    <font class="font-normal-11px-black" >
+                                                        <label class="font-normal-11px-black search-result-header line-height-150"> @(stringFeatureCount) @Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Feature.FeatureName @(includeAtExtraCost ? "(at extra cost)" : "") </label> 
+                                                    </font>
+                                                @:</td> 
+                                            }
+                                        i++; 
+                                        @:</tr>
+                                    } while (i < Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures.Count);
+                                }
+                            </table>
+                            <div style="clear:both"></div>
+                            <!-- APPLICATIONS -->
+                            @Html.Partial("CloudApplicationApplications", Model);
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+            
+            </div>
+        </div>
+    </div>
+
+        <div style="clear:both;height:10px;"></div>
+
+
+    </div>
+            
+            </td>
+
+            <!-- START OF SECOND COLUMN-->
+            <td style="width:35%;">
+
+                <div class="xsearch-result-product-ratings-div" style="width:100%;">
+    
+                    <!-- READY TO PROCEED -->
+
+                    <div class="pdf-ready-to-proceed">
+    <div style="width:249px;height:100px;">
+        <font class="font-bold-15px-white" >
+            <label>Ready to proceed?</label>
+        </font>
+        <br />
+        <br />
+        @{hRef = homePath + "/Admin/CloudApplication?cloudApplicationID=" + Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationID.ToString();}
+
+        <a href="@hRef" style="text-decoration:none;">
+            <div class="pdf-click-here-button">
+                <font class="font-normal-11px-black" >
+                @for (int i = 0; i < 105; i++)
+                {
+                    @:&nbsp;
+                }
+                </font>
+            </div>
+        </a>
+        <br />
+        <br />
+    </div>
+</div>
+
+                    <div style="clear: both;height:20px;"></div>
+
+                    <!-- ALTERNATIVES -->
+                    @if (@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationModelAlternatives.Count > 0)
+                    {
+                    <div class="xsearch-result-alternatives" style="width:100%;">
+                        <font class="font-bold-13px-purple" >
+                            <label>Alternative @Model.ContainerModel.ChosenCloudApplicationModel.Category.CategoryName.ToLowerInvariant() applications from @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName</label>
+                        </font>
+                        <br />
+                        @foreach (CloudApplicationModelAlternative cama in Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationModelAlternatives)
+                        {
+                            hRef = homePath + "/Admin/CloudApplication?cloudApplicationID=" + cama.CloudApplicationID.ToString();
+                            <a href="@hRef" style="text-decoration:none;">
+                                <font class="font-normal-11px-black" >
+                                    <label>@cama.ServiceName</label>
+                                </font>
+                            </a>
+                            <br />
+                        }
+                    </div>
+                    }
+    
+                    <div style="clear: both;height:20px;"></div>
+
+                    <!-- WHAT ELSE IS AVAILABLE -->
+                    <table style="width: 100%;border:0px solid;" class="box-shadow">
+                    <tr>
+                        <td>
+                            <div class="pdf-what-else-is-available">
+                                <font class="font-normal-22px-purple" >
+                                    <label>
+                                    What else is available at Compare Cloudware?
+                                    </label>
+                                </font>
+                                <div style="clear: both;height:10px;"></div>
+                                <font class="font-normal-11px-black" >
+                                    <label>
+                                    Compare Cloudware is the best place to compare the features, benefits and costs of cloud services and applications, make a choice and start using them.
+                                    </label>
+                                </font>
+                                <div style="clear: both;height:10px;"></div>
+                                <font class="font-bold-11px-purple" >
+                                    <label>
+                                    Below is a list of current cloud categories:
+                                    </label>
+                                </font>
+                                <div style="clear: both;height:10px;"></div>
+
+                                <div class="pdf-category-buttons">
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=3";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-conferencing-button">
+                                        <font class="font-normal-14px-purple" >
+                                        @for (int i = 0; i < 18; i++)
+                                        {
+                                        @:&nbsp;
+                                        }
+                                        </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=4";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-email-button">
+                                        <font class="font-normal-14px-purple" >
+                                        @for (int i = 0; i < 18; i++)
+                                        {
+                                        @:&nbsp;
+                                        }
+                                        </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=6";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-storage-button">
+                                        <font class="font-normal-14px-purple" >
+                                        @for (int i = 0; i < 18; i++)
+                                        {
+                                            @:&nbsp;
+                                        }
+                                        </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=1";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-phone-button">
+                                       <font class="font-normal-14px-purple" >
+                                       @for (int i = 0; i < 18; i++)
+                                       {
+                                          @:&nbsp;
+                                       }
+                                       </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=5";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-office-button">
+                                       <font class="font-normal-14px-purple" >
+                                       @for (int i = 0; i < 18; i++)
+                                       {
+                                          @:&nbsp;
+                                       }
+                                       </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=8";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-financial-button">
+                                       <font class="font-normal-14px-purple" >
+                                       @for (int i = 0; i < 18; i++)
+                                       {
+                                          @:&nbsp;
+                                       }
+                                       </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=2";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-customer-management-button">
+                                       <font class="font-normal-14px-purple" >
+                                       @for (int i = 0; i < 18; i++)
+                                       {
+                                          @:&nbsp;
+                                       }
+                                       </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=7";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-project-management-button">
+                                       <font class="font-normal-14px-purple" >
+                                       @for (int i = 0; i < 18; i++)
+                                       {
+                                          @:&nbsp;
+                                       }
+                                       </font>
+                                    </div>
+                                </a>
+                                <div style="clear:both;height:5px;"></div>
+                                @{hRef = homePath + "/Admin/CategoryPage?categoryID=9";}
+                                <a href="@hRef" style="text-decoration:none;">
+                                    <div class="pdf-security-button">
+                                       <font class="font-normal-14px-purple" >
+                                       @for (int i = 0; i < 18; i++)
+                                       {
+                                          @:&nbsp;
+                                       }
+                                       </font>
+                                    </div>
+                                </a>
+                                </div>
+
+                                <div style="clear: both;">
+                            </div>
+                        </div>
+                        </td>        
+                    </tr>
+                </table>
+
+                    <!-- SOCIAL FOLLOWERS -->
+                    <div style="clear:both;height:20px;"></div>
+
+                    <div class="social-followers-header">
+                        <font class="font-normal-22px-purple" >
+                            <label class="font-normal-22px-purple">Community</label>
+                        </font>
+                    </div>
+
+                    <div class="social-followers">
+                        <div class="social-follower" style="float:left;width:80px;">
+                        <div class="follower-icon-container">
+                            <div class="pdf-twitter-icon">
+
+                            </div>
+                        </div>
+                        <div class="follower-count-container">
+                            <font class="font-bold-13px-purple" >
+                                <label class="font-bold-13px-purple">@String.Format("{0:N0}", Model.ContainerModel.ChosenCloudApplicationModel.TwitterFollowers)</label>
+                            </font>
+                        </div>
+                        <div class="follower-count-suffix-container">
+                            <font class="font-bold-11px-black" >
+                                <label class="font-bold-11px-black">followers</label>
+                            </font>
+                        </div>
+                    </div>
+
+                        <div class="social-follower" style="float:left;width:80px;">
+                        <div class="follower-icon-container">
+                            <div class="pdf-facebook-icon">
+
+                            </div>
+                        </div>
+                        <div class="follower-count-container">
+                            <font class="font-bold-13px-purple" >
+                                <label class="font-bold-13px-purple">@String.Format("{0:N0}", Model.ContainerModel.ChosenCloudApplicationModel.FacebookFollowers)</label>
+                            </font>
+                        </div>
+                        <div class="follower-count-suffix-container">
+                            <font class="font-bold-11px-black" >
+                                <label class="font-bold-11px-black">fans</label>
+                            </font>
+                        </div>
+                    </div>
+
+                        <div class="social-follower" style="float:left;width:80px;">
+                        <div class="follower-icon-container">
+                            <div class="pdf-linkedin-icon">
+
+                            </div>
+                        </div>
+                        <div class="follower-count-container">
+                            <font class="font-bold-13px-purple" >
+                                <label class="font-bold-13px-purple">@String.Format("{0:N0}", Model.ContainerModel.ChosenCloudApplicationModel.LinkedInFollowers)</label>
+                            </font>
+                        </div>
+                        <div class="follower-count-suffix-container">
+                            <font class="font-bold-11px-black" >
+                                <label class="font-bold-11px-black">members</label>
+                            </font>
+                        </div>
+                    </div>
+                        <div style="clear: both;"></div>
+                    </div>
+
+                    <div style="clear:both; height:10px;"></div>
+
+                    <!-- OVERALL RATINGS -->
+                    <div class="xproduct-overall-rating" style="width: 100%; border: 0px solid black;">
+    <div style="width: 100%; border: 0px solid black;">
+        <table style="width: 100%;" width="100%">
+            <tr>
+                <td class="product-overall-rating-header" style="width:100%;" colspan="2">
+                    <font class="font-normal-22px-purple" >
+                        <label class="font-normal-22px-purple">User ratings</label>
+                    </font>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font class="font-bold-11px-black" >
+                        <label style="float:left" class="font-bold-11px-black">Overall rating:</label>
+                    </font>
+                </td>
+                <td>
+                    <div style="float:right;" class="xoverall-rating-container">
+                        @for (decimal i = 1; i <= 5; i += 1)
+                        {
+                            if (Model.ContainerModel.ChosenCloudApplicationModel.AverageOverallRating / 20 >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-cloud-icon"></div>
+                            }
+                            else if ((Model.ContainerModel.ChosenCloudApplicationModel.AverageOverallRating / 20) + .5m >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-and-blue-cloud-icon"></div>
+                            }
+                            else
+                            {
+                                <div class="overall-rating-icon-container pdf-blue-cloud-icon"></div>
+                            }
+                        }    
+
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font class="font-bold-11px-black" >
+                        <label class="font-bold-11px-black">Ease of use:</label>
+                    </font>
+                </td>
+                <td>
+                    <div style="float:right;" class="xoverall-rating-container">
+                        @for (decimal i = 1; i <= 5; i += 1)
+                        {
+                            if (Model.ContainerModel.ChosenCloudApplicationModel.AverageEaseOfUse / 20 >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-cloud-icon"></div>
+                            }
+                            else if ((Model.ContainerModel.ChosenCloudApplicationModel.AverageEaseOfUse / 20) + .5m >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-and-blue-cloud-icon"></div>
+                            }
+                            else
+                            {
+                                <div class="overall-rating-icon-container pdf-blue-cloud-icon"></div>
+                            }
+                        }    
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font class="font-bold-11px-black" >
+                        <label class="font-bold-11px-black">Value for money:</label>
+                    </font>
+                </td>
+                <td>
+                    <div style="float:right;" class="xoverall-rating-container">
+                        @for (decimal i = 1; i <= 5; i += 1)
+                        {
+                            if (Model.ContainerModel.ChosenCloudApplicationModel.AverageValueForMoney / 20 >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-cloud-icon"></div>
+                            }
+                            else if ((Model.ContainerModel.ChosenCloudApplicationModel.AverageValueForMoney / 20) + .5m >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-and-blue-cloud-icon"></div>
+                            }
+                            else
+                            {
+                                <div class="overall-rating-icon-container pdf-blue-cloud-icon"></div>
+                            }
+                        }    
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <font class="font-bold-11px-black" >
+                        <label class="font-bold-11px-black">Functionality:</label>
+                    </font>
+                </td>
+                <td>
+                    <div style="float:right;" class="xoverall-rating-container">
+                        @for (decimal i = 1; i <= 5; i += 1)
+                        {
+                            if (Model.ContainerModel.ChosenCloudApplicationModel.AverageFunctionality / 20 >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-cloud-icon"></div>
+                            }
+                            else if ((Model.ContainerModel.ChosenCloudApplicationModel.AverageFunctionality / 20) + .5m >= i)
+                            {
+                                <div class="overall-rating-icon-container pdf-purple-and-blue-cloud-icon"></div>
+                            }
+                            else
+                            {
+                                <div class="overall-rating-icon-container pdf-blue-cloud-icon"></div>
+                            }
+                        }    
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+    
+                    <div style="clear:both; height:10px;"></div>
+
+                </div>
+            
+            </td>
+        </tr>
+    </table>
+    
+@*    <BR style="page-break-after: always">*@
+
+    <table style="width:100%;">
+        <tr>
+            <td style="width:65%;vertical-align:top;">
+                <div class="xsearch-result-page-div font-normal-11px" style="margin-top:0px;width:100%;">
+                    <div class="search-result-div">
+                        <div class="search-header-result-container">
+                            <div class="cloud-application-search-result-table-outer">
+                            <!-- THUMBNAIL DOCUMENTS -->
+                                <table class="box-shadow" style="width:93%;margin-left:3px;border:0px solid">
+                                    <tr>
+                                        <td style="width:100%;text-align:left;" >
+                                            <font class="font-normal-22px-purple" >
+                                                <label class="font-normal-22px-purple search-result-header">Discover more about @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName</label>
+                                            </font>
+                                        </td>                    
+                                    </tr>
+                                    <!-- CASE STUDIES -->
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple" >
+                                                <label class="font-bold-11px-purple search-result-header">Case Studies</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+                                    @{int documentID = 0;}
+                                    <tr>
+                                        <td>
+                                            <div class="thumbnail-documents" style="width:100%;border:0px solid black;">
+                            @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Where(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("CASE")).Count() == 0)
+                            {
+                                            <font class="font-bold-11px-black" >
+                                               <label class="font-bold-11px-black">Currently not available</label>
+                                            </font>
+                            }
+                                                @{columnCount = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Where(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("CASE")).ToList().Count;}
+                                                <table style="width:100%;border:0px solid black;">
+                                                    <tr>
+                                                    @for (int td = 1; td <= Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Count; td++)
+                                                    {
+                                                    if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("CASE"))
+                                                    {
+                                                        <td style="float:left;position:relative;width:@((100 / columnCount) - 1)%;border:0px solid black;">
+                                                            <div class="xthumbnail-document" style="width:100%;border:0px solid black;">
+                                                            @{documentID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentID;}
+                                                            @{hRef = homePath + "/Admin/RedirectShowDocument?documentID=" + documentID.ToString();}
+                                                                <a href="@hRef" style="text-decoration:none;">
+                                                                    <label class="font-bold-11px-black">@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentTitle</label>
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    }
+                                                    }
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- WHITE PAPERS -->
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple" >
+                                                <label class="font-bold-11px-purple search-result-header">White Papers</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="thumbnail-documents" style="width:100%;border:0px solid black;">
+                            @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Where(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("WHITE")).Count() == 0)
+                            {
+                                            <font class="font-bold-11px-black" >
+                                               <label class="font-bold-11px-black">Currently not available</label>
+                                            </font>
+                            }
+                                            @{columnCount = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Where(x => x.CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("WHITE")).ToList().Count;}
+                                                <table style="width:100%;border:0px solid black;">
+                                                    <tr>
+                                                    @for (int td = 1; td <= Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Count; td++)
+                                                    {
+                                                        if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("WHITE"))
+                                                        {
+                                                        <td style="float:left;position:relative;width:@((100 / columnCount) - 1)%;border:0px solid black;">
+                                                            <div class="xthumbnail-document" style="width:100%;border:0px solid black;">
+                                                            @{documentID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentID;}
+                                                                <font class="font-bold-11px-black" >
+                                                                @{hRef = homePath + "/Admin/RedirectShowDocument?documentID=" + documentID.ToString();}
+                                                                    <a href="@hRef" style="text-decoration:none;">
+                                                                        <label class="font-bold-11px-black">@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentTitle</label>
+                                                                    </a>
+                                                                </font>
+                                                            </div>
+                                                        </td>
+                                                        }
+                                                    }
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <!-- VIDEOS -->
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationVideos.Count > 0)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-purple-arial" >
+                                                <label class="font-bold-11px-purple search-result-header">Videos</label>
+                                            </font>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>
+@*                        @Html.EditorFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationVideos)*@
+        @{hRef = homePath + "/Admin/CloudApplication?cloudApplicationID=" + Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationID.ToString();}
+
+        <a href="@hRef" style="text-decoration:none;">
+        <div class="pdf-video">
+           <font class="font-normal-11px-black" >
+                @for (int i = 0; i < 780; i++)
+                {
+                    @:&nbsp;
+                }
+            </font>
+        </div>
+        </a>
+                                        </td>
+                                    </tr>
+                                    }
+                                    <tr>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear:both;height:10px;"></div>
+
+
+
+                    <div class="search-result-div">
+                        <div class="search-header-result-container">
+                            <div class="cloud-application-search-result-table-outer">
+                                <table class="box-shadow" style="width:93%;margin-left:3px;border:0px solid">
+                                    <tr>
+                                        <td style="width:100%;text-align:left;" >
+                                            <!-- PRODUCT REVIEWS -->
+                                            <font class="font-normal-22px-purple" >
+                                                <label class="font-normal-22px-purple">Product reviews</label>
+                                            </font>
+                                        </td>                    
+                                    </tr>
+
+                                    <tr>
+                                        <td style="width:100%;text-align:left;border:0px solid black;">
+                                            <div class="xsearch-result-product-reviews-div" style="border:0px solid black;width:100%;">
+        @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews.Count == 0)
+        {
+            <label class="font-bold-11px-black">Currently not available</label>
+        }
+@*                                            @foreach (CloudApplicationProductReviewModel capr in Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews)*@
+                                                <table style="width:100%;">
+                                                @for (int i = 0; i < Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews.Count; i++)
+                                                {
+                                                    CloudApplicationProductReviewModel capr = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews[i];
+                                                    if (i % 2 == 0)
+                                                    {
+                                                    @:<tr>
+                                                    }
+                                                        <td style="width:50%;border:0px solid black;vertical-align:top;">
+                                                        <div class="xproduct-review" style="width:100%;border:0px solid black;display:inline;">
+                                                    <div style="width:100%;border:0px solid black;display:inline;">
+                                                        <div style="width:100%;border:0px solid black;display:inline;">
+                                                            <table style="width:93.5%;border:0px solid black;display:inline;">
+                                                                <tr>
+                                                                    <td>
+                                                                        <font class="font-bold-11px-purple" >
+                                                                            <label class="font-bold-11px-purple">@capr.CloudApplicationProductReviewPublisherName.Trim() - @capr.CloudApplicationProductReviewDate.ToShortDateString()</label>
+                                                                        </font>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="line-height:12px;" class="font-bold-11px-black">
+                        @*                                              <label class="font-bold-11px-black"></label>*@
+                                                                        <div>
+                        @*                                                  @Html.LabelFor(@Model.CloudApplicationReviewHeadline)*@
+                                                                            <span class="viewReviewDialog">@capr.CloudApplicationProductReviewHeadline</span>
+                                                                            <span style="display:none;">@capr.CloudApplicationProductReviewURL</span>
+                                                                            <span style="display:none;">@capr.CloudApplicationProductReviewURLDocumentFormat</span>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td style="padding-top:5px;" class="font-normal-11px-black">
+                                                                        <div class="ellipsify-15px-8-lines">
+@*                                                                            <div class="pre-dots-15px-8-lines"></div>
+                                                                            <div class="dots-15px-8-lines">
+                                                                            &hellip;
+                                                                            </div>*@
+                                                                            <label class="font-normal-11px-black review-text">
+                                                                            @capr.CloudApplicationProductReviewText
+                                                                            </label>
+@*                                                                            <span class="hidedots1-15px-8-lines"></span>
+                                                                            <div class="xhidedots2-15px-8-lines">
+                                                                            </div>*@
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                        
+                                                        </td>
+                                                                            if (i % 2 == 1)
+                                                                            {
+                                                    @:</tr>
+                                                    }
+                                                }
+                                                </table>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both;height:10px;"></div>
+
+                </div>
+            
+            </td>
+
+            <!-- START OF SECOND COLUMN-->
+            <td style="width:35%;vertical-align:top;">
+
+                <div class="xsearch-result-product-ratings-div" style="width:100%;">
+                    <font class="font-normal-22px-purple" >
+                        <label class="font-normal-22px-purple">User reviews</label>
+                    </font>
+
+                    <!-- USER REVIEWS -->
+                    @{bool suppressUserReviewNumberOfStaff = Convert.ToBoolean(ConfigurationManager.AppSettings["SuppressUserReviewNumberOfStaff"]); }
+
+                    @foreach (CloudApplicationUserReviewModel caur in Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationUserReviews)
+                    {
+                    <div style="width:100%;border: 0px solid black;">
+                        <div style="width:100%;border: 0px solid black;">
+                            <div style="width:100%;border: 0px solid black;">
+                                <table style="width:100%;">
+                                    <tr>
+                                        <td>
+                                            <font class="font-bold-11px-black" >
+                                                <label class="font-bold-11px-purple">@caur.ChosenIndustry.description</label>
+                                            </font>
+                                        </td>
+                                        <td>
+                                            <div style="float:right;" class="xoverall-rating-container">
+                                            @for (decimal i = 1; i <= 5; i += 1)
+                                            {
+                                                if (caur.CloudApplicationUserReviewOverallRating / 20 >= i)
+                                                {
+                                                <div class="overall-rating-icon-container pdf-purple-cloud-icon"></div>
+                                                }
+                                                else if ((caur.CloudApplicationUserReviewOverallRating / 20) + .5m >= i)
+                                                {
+                                                <div class="overall-rating-icon-container pdf-purple-and-blue-cloud-icon"></div>
+                                                }
+                                                else
+                                                {
+                                                <div class="overall-rating-icon-container pdf-blue-cloud-icon"></div>
+                                                }
+                                            }    
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    @if (!suppressUserReviewNumberOfStaff)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-black">@caur.CloudApplicationUserReviewEmployeeCount staff</label>
+                                        </td>
+                                        <td></td>
+                                    </tr>
+                                    }
+                                    <tr>
+                                        <td class="font-normal-11px-black" colspan="2">
+                                            <div class="ellipsify-15px-8-lines" style="border: 0px solid black;">
+@*                                              <div class="pre-dots-15px-8-lines">
+                                                </div>
+                                                <div class="dots-15px-8-lines">
+                                                &hellip;
+                                                </div>*@
+                                                <label class="font-normal-11px-black review-text">
+                                                    @caur.CloudApplicationUserReviewText
+                                                </label>
+@*                                              <span class="hidedots1-15px-8-lines"></span>
+                                                <div class="xhidedots2-15px-8-lines">
+                                                </div>*@
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="clear:both; height:0px;"></div>    
+                    }
+
+
+
+                    <div style="clear:both; height:0px;"></div>
+                </div>
+            
+            </td>
+        </tr>
+    </table>
+
+<script language="javascript" type="text/javascript">
+    //    $(document).ready(function () {
+    function CheckReviewTextHeight() {
+        //alert("IN");
+        var reviewTexts = $('.review-text');
+        CheckTextHeight(reviewTexts);
+    }
+
+    function CheckTextHeight(theReviews) {
+        //debugger;
+
+        $.each(theReviews, function (key, value) {
+            //debugger;
+            var textHeightCSS = $(this).css('height');
+            var ellipsify = $(this).parent();
+            //$(ellipsify).css('height', textHeightCSS);
+
+            var textHeight = $(this).height();
+            if (textHeight == 149) {
+                textHeight -= 15;
+                var preDots = $(ellipsify).find('.pre-dots-15px-8-lines');
+                //$(preDots).css('height', textHeight + 'px');
+            }
+            else {
+                var dots = $(ellipsify).find('.dots-15px-8-lines');
+                $(dots).empty();
+            }
+
+            //debugger;
+            //var containingDiv = $(ellipsify).find('.ellipsify-15px-8-lines');
+            //$(ellipsify).css('height', "10px");
+            $(ellipsify).css('max-height', "1000px");
+            var text = $(ellipsify).find('.review-text');
+            var textHeight = parseInt($(text).height());
+            var maxHeight = parseInt('120');
+            if (textHeight > maxHeight) {
+                //var stringText = $(text).text().trim();
+                var stringText = $.trim($(text).text());
+                while (textHeight > maxHeight) {
+                    var stringLength = stringText.length;
+                    stringText = stringText.substr(0, stringLength - 1);
+                    $(text).text(stringText);
+                    textHeight = parseInt($(text).height());
+                    //debugger;
+                }
+                //stringText = textHeight.toString() + maxHeight.toString() + stringText.substr(0, stringLength - 5) + "...";
+                stringText = stringText.substr(0, stringLength - 50) + "...";
+                $(text).text(stringText);
+            }
+
+        });
+
+    }
+
+    CheckReviewTextHeight();
+
+    //    });
+</script>
+
+
+</body>
+</html>

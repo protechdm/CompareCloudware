@@ -1,0 +1,147 @@
+﻿@model CompareCloudware.Web.Models.TermsAndConditionsModel
+@using CompareCloudware.Web.Models
+
+@{List<TermConditionModel> section1 = Model.TermsAndConditions.Where(x => x.Section != 99).ToList();}
+
+<div class="cloudware-explained-page-content">
+@*    <div class="cloudware-explained-menubar">
+        <label class="font-bold-13px-white">Cloudware Explained</label>
+    </div>
+*@    
+    <div class="cloudware-explained-page-content-text">
+        <table style="border: 0px solid black;">
+            @{int previousDisplayID = 1;}
+            @{int colSpanCount = 0;}
+            @{string fontClass = "";}
+            @{int n;}
+            <tr>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:5%;"></td>
+                <td style="width:25%;"></td>
+            </tr>
+            
+            <tr>
+            @for (int td = 0; td < section1.Count; td++)
+            {
+                TermConditionModel termCondition = section1[td];
+                if (termCondition.IsBold)
+                {
+                    fontClass = "font-bold-12px-black";
+                }
+                else
+                {
+                    fontClass = "font-normal-12px-black";
+                }
+                    
+                if (termCondition.DisplayID > previousDisplayID)
+                {
+                    colSpanCount = termCondition.Indent;
+                    n=0;
+                @:</tr>
+                @:<tr>
+                    while (n < colSpanCount)
+                    {
+                        <td>???</td>
+                        n += 1;
+                    };
+                }
+
+                if (colSpanCount < 12)
+                {
+                
+                    <td colspan="@termCondition.ColumnSpan" style="vertical-align:top;">
+
+                        @if (termCondition.SectionText1IsMailRef)
+                        {
+                        <a href="mailto: @termCondition.SectionText1MailRef" class="@fontClass">@termCondition.SectionText1</a>
+                        }
+                        else if (termCondition.SectionText1IsURL)
+                        {
+                        <a href="@termCondition.SectionText1URL" class="@fontClass">@termCondition.SectionText1URL</a>
+                        }
+                        else
+                        {
+                        <label class="@fontClass">@termCondition.SectionText1</label>
+                        }
+
+
+                        @if (termCondition.SectionText2IsMailRef)
+                        {
+                        <a href="mailto: @termCondition.SectionText2MailRef" class="@fontClass">@termCondition.SectionText2</a>
+                        }
+                        else if (termCondition.SectionText2IsURL)
+                        {
+                        <a href="@termCondition.SectionText2URL" class="@fontClass">@termCondition.SectionText2URL</a>
+                        }
+                        else
+                        {
+                        <label class="@fontClass">@termCondition.SectionText2</label>
+                        }
+
+
+                        @if (termCondition.SectionText3IsMailRef)
+                        {
+                        <a href="mailto: @termCondition.SectionText3MailRef" class="@fontClass">@termCondition.SectionText3</a>
+                        }
+                        else if (termCondition.SectionText3IsURL)
+                        {
+                        <a href="@termCondition.SectionText3URL" class="@fontClass">@termCondition.SectionText3URL</a>
+                        }
+                        else
+                        {
+                        <label class="@fontClass">@termCondition.SectionText3</label>
+                        }
+
+
+                        @if (termCondition.SectionText4IsMailRef)
+                        {
+                        <a href="mailto: @termCondition.SectionText4MailRef" class="@fontClass">@termCondition.SectionText4</a>
+                        }
+                        else if (termCondition.SectionText4IsURL)
+                        {
+                        <a href="@termCondition.SectionText4URL" class="@fontClass">@termCondition.SectionText4URL</a>
+                        }
+                        else
+                        {
+                        <label class="@fontClass">@termCondition.SectionText4</label>
+                        }
+
+
+                        @if (termCondition.SectionText5IsMailRef)
+                        {
+                        <a href="mailto: @termCondition.SectionText5MailRef" class="@fontClass">@termCondition.SectionText5</a>
+                        }
+                        else if (termCondition.SectionText5IsURL)
+                        {
+                        <a href="@termCondition.SectionText5URL" class="@fontClass">@termCondition.SectionText5URL</a>
+                        }
+                        else
+                        {
+                        <label class="@fontClass">@termCondition.SectionText5</label>
+                        }
+
+@*                    @if (termCondition.Indent == 4)
+                    {
+                    }*@
+                    </td>
+                }
+                
+                colSpanCount = termCondition.Indent + termCondition.ColumnSpan ;
+                previousDisplayID = termCondition.DisplayID;
+            }
+        </table>
+    </div>
+</div>

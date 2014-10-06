@@ -1,0 +1,89 @@
+﻿@model CompareCloudware.Web.Models.HeaderModel
+@using CompareCloudware.Web.Models;
+@using System.Configuration;
+
+@using (Html.BeginForm("HeaderModel", "Home", new { tab = "1" }))
+{
+    bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+    string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"];
+    <div class="footer-container">
+        <br />
+@*        <div class="footer-register-login">
+            @Html.ActionLink("Vendor login", "VendorLogin", null, new { @class = "font-normal-13px-purple" })
+        </div>*@
+@*        <div class="footer-logo-container">
+            <div class="footer-logo">
+                <a href="@homePageURL">
+                    <img src="@Url.Content("~/Images/CCW_Logo.png")" />
+                </a>
+            </div>
+        </div>*@
+        <div style="clear:both;"></div>
+        <div class="footer-site-various-hyperlinks">
+            <div class="footer-site-various-hyperlinks-line1">
+@*              @Html.ActionLink("Register cloudware", "RegisterCloudware", null, new { @class = "font-normal-13px-purple" })*@
+
+                <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">Become a partner</a>
+                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+                
+                
+                <a data-toggle="modal" data-id="update" href="#modalinput" class="font-normal-13px-purple register-or-update">Update cloudware</a>
+            
+                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+@*                @Html.RouteLink("Corporate Information", "CorporateInformation", new RouteValueDictionary() { {"activeTab","0"} })*@
+                @Html.RouteLink("Corporate Information", "corporate", new { activeTab = 0 }, new { @class = "font-normal-13px-black" })
+@*                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>*@
+            </div>
+            <div class="footer-site-various-hyperlinks-line2">
+                
+                
+@*                @Html.ActionLink("Contact", "ContactPage", null, new { @class = "font-normal-13px-black" })*@
+                @Html.RouteLink("Contact", "contact", new { activeTab = 6 }, new { @class = "font-normal-13px-black" })
+                
+                
+                
+                
+                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+@*                @Html.ActionLink("Vendors", "VendorsPage", null, new { @class = "font-normal-13px-black" })*@
+@*                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>*@
+@*                @Html.ActionLink("Sitemap", "SitemapPage", null, new { @class = "font-normal-13px-black" })*@
+                @Html.RouteLink("Sitemap", "sitemap", null, new { @class = "font-normal-13px-black" })
+                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+@*                @Html.ActionLink("Privacy policy", "PrivacyPolicyPage", null, new { @class = "font-normal-13px-black" })*@
+                @Html.RouteLink("Privacy policy", "privacy", null, new { @class = "font-normal-13px-black" })
+@*              <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+                @Html.ActionLink("Provider Terms of use", "ProviderTermsOfUsePage", null, new { @class = "font-normal-13px-black" })*@
+                <label class="font-normal-13px-purple">&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;</label>
+@*                @Html.ActionLink("Terms of use", "UserTermsOfUsePage", null, new { @class = "font-normal-13px-black" })*@
+                @Html.RouteLink("Terms of use", "terms", null, new { @class = "font-normal-13px-black" })
+            </div>
+        
+        </div>
+        <div class="footer-site-copyright">
+            <label class="font-normal-13px-black">Copyright &copy; @System.DateTime.Now.Year Compare Cloudware. All Rights Reserved.</label>
+        </div>
+        <div style="clear:both;"></div>
+        <hr class="dashed" />
+        @Html.Partial("LegalRights")
+    </div>
+    
+}
+
+@Html.Partial("CloudApplicationRegistrationOrUpdate", Model.CloudApplicationRegistrationModel)
+
+
+@*    
+    @Html.Partial("BetaPhaseSplash")
+    *@
+    
+
+<br />
+<br />
+
+
+@*@if (!(Model.CustomSession.BetaSplashShown ?? false))
+{
+<script>
+    $('#betaSplash').modal('show');
+</script>
+}*@

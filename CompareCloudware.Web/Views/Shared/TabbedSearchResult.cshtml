@@ -1,0 +1,30 @@
+﻿@model CompareCloudware.Web.Models.SearchResultModel
+<table id="dataTable" style="width: 100%;">
+    <tr>
+        <td style="width: 30%; overflow:hidden; vertical-align:top;" rowspan="2">
+@*            <img src="@Model.VendorLogoURL" class="search-result-image"/>
+*@
+            <a href="CloudApplication?cloudApplicationID=@Model.CloudApplicationID">
+                <img src='@Url.Action("ShowLogo", "Home", new { vendorID = Model.VendorID })' class="search-result-image" />
+            </a>
+            @Html.HiddenFor(x => x.CloudApplicationID)
+        </td>
+        <td style="width: 70%; padding-left:5px;" class="font-bold-12px-purple">@Model.ServiceName
+        </td>
+    </tr>
+    <tr>
+@*        <td></td>*@
+        <td class="font-normal-12px-black" style="width: 70%;padding-left:5px; height:55px;">
+            <div class="ellipsify">
+                <div class="pre-dots">
+                </div>
+                <div class="dots">
+                    &hellip;</div>
+                @Model.Description
+                <span class="hidedots1"></span>
+                <div class="hidedots2">
+                </div>
+            </div>
+        </td>
+    </tr>
+</table>

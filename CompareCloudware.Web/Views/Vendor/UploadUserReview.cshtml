@@ -1,0 +1,217 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationUserReviewModel
+@using CompareCloudware.Web.Helpers;
+
+@using System.Configuration;
+
+@{bool displayDebugFields = Convert.ToBoolean(ConfigurationManager.AppSettings["VendorTestMode"]);}
+
+@{this.ViewContext.FormContext = new FormContext();}
+
+@{
+    Layout = null;
+}
+@{
+    ViewBag.Title = "Product review uploader";
+}
+@*@section Styles
+{
+}
+*@
+<link href="@Url.Content("~/Content/ImageArea.css")" rel="stylesheet" />
+@*@section Scripts
+{
+}
+*@
+<script>
+    $(document).ready(function () {
+
+        $.validator.unobtrusive.parse($('#uploadUserReviewForm'));
+        //alert("READY");
+    });
+</script>
+<div class="upload-user-review-input-container" id="dialog-upload-user-review" title="Upload a user review">
+    <form id="uploadUserReviewForm" method="post" action="/Home.mvc/RatingReview">
+    
+    @Html.HiddenFor(x => x.IsLive)
+    @Html.HiddenFor(x => x.AddMode)
+    @Html.HiddenFor(x => x.CloudApplicationUserReviewID)
+    @Html.HiddenFor(x => x.CloudApplicationID)
+    @Html.HiddenFor(x => x.CloudApplicationUserReviewStatus)
+    @if (!displayDebugFields)
+    {
+        @Html.HiddenFor(x => x.Persisted)
+        @Html.HiddenFor(x => x.RowID)
+    }
+
+    <div class="user-review-input-container">
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewForename)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationUserReviewForename)
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewSurname)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationUserReviewSurname)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewDate)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewTitle)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationUserReviewTitle)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewHeadline)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewCompany)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.EditorFor(model => model.CloudApplicationUserReviewCompany)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewPublisherName)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.ChosenIndustryID)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.DropDownListFor(x => x.ChosenIndustryID,
+                           new SelectList(Model.Industries, "IndustryID", "description", Model.ChosenIndustryID)
+                                , new { @class = "font-normal-13px-black" })
+            </div>
+            @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewText)*@
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.ChosenEmployeeCount)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.DropDownListFor(x => x.ChosenEmployeeCount,
+                            new SelectList(Model.EmployeeCount, "UserValue", "UserValue", Model.ChosenEmployeeCount)
+                                , new { @class = "font-normal-13px-black" })
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURL)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewEaseOfUse)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.DisplayFor(model => model.CloudApplicationUserReviewEaseOfUse)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewValueForMoney)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.DisplayFor(model => model.CloudApplicationUserReviewValueForMoney)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewFunctionality)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.DisplayFor(model => model.CloudApplicationUserReviewFunctionality)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewOverallRating)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.DisplayFor(model => model.CloudApplicationUserReviewOverallRating)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.CloudApplicationUserReviewText)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.TextAreaFor(model => model.CloudApplicationUserReviewText, 15, 1, new { style = "width:99%;resize:none;" })
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.RowID)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.RowID)
+                @Html.EditorFor(model => model.RowID)
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        }
+        
+        @if (displayDebugFields)
+        {
+        <div class="editor-row-user-review">
+            <div class="editor-label-user-review font-normal-13px-black">
+                @Html.LabelFor(model => model.Persisted)
+            </div>
+            <div class="editor-field-user-review font-normal-13px-black">
+                @Html.HiddenFor(model => model.Persisted)
+@*                @Html.EditorFor(model => model.Persisted)*@
+                @*                @Html.ValidationMessageFor(model => model.CloudApplicationReviewURLDocumentExtension)*@
+            </div>
+        </div>
+        }
+        
+        @if (!Model.Persisted)
+        {
+            <div class="editor-row-user-review">
+                <div class="editor-label-user-review font-normal-13px-black">
+                </div>
+                <div class="editor-field-user-review font-normal-13px-black">
+                    <button id="uploadUserReviewAJAXButton" type="button">
+                        Upload AJAX</button>
+                    @*                <button id="uploadProductReviewFULLButton" type="submit">Upload FULL</button>*@
+                </div>
+            </div>
+            <div class="editor-row-user-review">
+                @Html.ValidationSummary(true)
+            </div>
+        }
+        else
+        {
+            <div class="editor-row-user-review">
+                <div class="editor-label-user-review font-normal-13px-black">
+                </div>
+                <div class="editor-field-user-review font-normal-13px-black">
+                    <button id="uploadUserReviewAJAXButton" type="button">
+                        Upload AJAX</button>
+                    @*                <button id="uploadProductReviewFULLButton" type="submit">Upload FULL</button>*@
+                </div>
+            </div>
+            <div class="editor-row-user-review">
+                @Html.ValidationSummary(true)
+            </div>
+        }
+    </div>
+    <div class="clear">
+    </div>
+    </form>
+</div>
+@*<div id="dialog-view-review" title="Product Review">
+    <IFRAME id="theReview" style="border: 0px;" src="http://www.samplepdf.com/sample.pdf" width="100%" height = "100%"></IFRAME>
+</div>*@ 

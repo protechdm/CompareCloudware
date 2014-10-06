@@ -1,0 +1,95 @@
+﻿@model CompareCloudware.Web.CustomSession
+
+        <table class="search-header-result-table-inner" style="width: 100%;">
+            <tr>
+            @{if (Model.HasSearchResults == true)
+                  
+              {
+                <td style="width:20px;">
+                    <div class="button-bar">
+                        <div class="site-button">
+                            <input type="submit" 
+                                    name="@Html.Encode("BACKRESULTS_BUTTON")"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="BackResults"
+                                    class="cancel" />
+
+@*                            <img    src="@Url.Content("~/Images/Buttons/CCW_BackResults.png")"
+                                    name="@Html.Encode("EMAIL_BUTTON")"
+                                    id = "backToResultsButton"
+                                     />
+*@
+                        </div>
+                    </div>
+                </td>
+                }
+                }
+                <td style="width:20px;">
+                    <div class="button-bar">
+                        <div class="site-button">
+@*                            <input type="image" 
+                                    name="@Html.Encode("EMAIL_BUTTON")"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="EmailPage" 
+                                    class="cancel" />
+*@
+
+
+                            <img    src="@Url.Content("~/Images/Buttons/CCW_EmailPage.png")"
+                                    name="@Html.Encode("EMAIL_BUTTON")"
+                                    id = "emailApplicationButton"
+                                    height = "30px"
+                                     />
+                        </div>
+
+                    </div>
+@*                    <div class="button-bar">
+                        <div class="site-button">
+                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="Print" />
+                        </div>
+                    </div>
+                    <div class="button-bar">
+                        <div class="site-button">
+                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="CompareAgain" />
+                        </div>
+                    </div>
+*@                </td>
+                    <td style="width:50%;"></td>
+            </tr>
+        </table>
+
+
+
+
+@*        <table class="search-header-results-table-inner" style="width: 100%;">
+            <tr>
+                <td style="width: 100%;">
+                    <div class="button-bar">
+                        <input class="cloud-compare-button-blue" type="submit" value="< Back To Results" />
+                    </div>
+                    <div class="button-bar">
+                        <input class="cloud-compare-button-blue" type="submit" value="Email page" />
+                    </div>
+                    <div class="button-bar">
+                        <input class="cloud-compare-button-blue" type="submit" value="Print page >" />
+                    </div>
+                    <div class="button-bar">
+                        <input class="cloud-compare-button-red" type="submit" value="Compare again >" />
+                    </div>
+                </td>
+                <td style="width: 20%;">
+                </td>
+                <td style="width: 20%;">
+                </td>
+                <td style="width: 20%;">
+                </td>
+                <td style="width: 13%;">
+                    Free trial
+                </td>
+            </tr>
+        </table>
+*@
