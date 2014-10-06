@@ -1,0 +1,21 @@
+﻿An existing Provider has enquired
+
+Details are as follows
+
+First name: {%= FirstName %}
+
+Surname: {%= Surname %}
+
+Position: {%= Position %}
+
+Company: {%= Company %}
+
+Work email: {%= EMail %}
+
+Telephone: {%= Telephone %}
+
+Country: {%= Country %}
+
+Join User Group: {%= IsInUserGroup %}
+
+Update details: {%= UpdateDetails %}

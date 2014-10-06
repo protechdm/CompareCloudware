@@ -1,0 +1,14 @@
+﻿REM UNINSTALL:-
+H:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\installutil /u /logtoconsole=false J:\CompareCloudwareVideo\WSMailPDF\bin\Debug\WSMailPDF.exe
+
+REM INSTALL:-
+H:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\installutil J:\CompareCloudwareVideo\WSMailPDF\bin\Debug\WSMailPDF.exe
+
+DEVELOPMENT\GLYN
+
+OR
+
+server21\wm-admin
+Her0sandwich=2k8
+
+

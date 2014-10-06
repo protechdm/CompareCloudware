@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="WindowsServiceWrapper.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConfiguredFileName" Type="System.String" Scope="User">
+      <Value Profile="(Default)">ServiceToBeMonitored.exe.config</Value>
+    </Setting>
+    <Setting Name="SERVICE_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">BRAVEHEART FILE WATCHER</Value>
+    </Setting>
+    <Setting Name="TEST_SERVICE_NAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)">W32Time</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

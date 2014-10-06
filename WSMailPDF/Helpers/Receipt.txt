@@ -1,0 +1,4 @@
+﻿Dear {%= CustomerName %},
+
+Hopefully we’ve helped you find the right cloudware for your business. 
+When you’re ready to order or register for your FREE trial, make sure you complete your order through Compare Cloudware to get the best pricing and trial period. 
