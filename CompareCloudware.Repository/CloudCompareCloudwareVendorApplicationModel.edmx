@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="CloudCompareDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="CloudCompareDataModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CloudCompareDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CloudCompareDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Application" EntityType="CloudCompareDataModel.Application" />
+          <EntitySet Name="Vendor" EntityType="CloudCompareDataModel.Vendor" />
+          <EntitySet Name="VendorApplicationCategory" EntityType="CloudCompareDataModel.VendorApplicationCategory" />
+          <EntitySet Name="VendorApplicationOperatingSystem" EntityType="CloudCompareDataModel.VendorApplicationOperatingSystem" />
+          <EntitySet Name="VendorApplicationBrowser" EntityType="CloudCompareDataModel.VendorApplicationBrowser" />
+          <EntitySet Name="VendorApplicationLanguage" EntityType="CloudCompareDataModel.VendorApplicationLanguage" />
+          <EntitySet Name="VendorApplicationSupportType" EntityType="CloudCompareDataModel.VendorApplicationSupportType" />
+          <EntitySet Name="VendorApplicationSupportTerritory" EntityType="CloudCompareDataModel.VendorApplicationSupportTerritory" />
+          <EntitySet Name="VendorApplicationFeature" EntityType="CloudCompareDataModel.VendorApplicationFeature" />
+          <EntitySet Name="ThumbnailDocument" EntityType="CloudCompareDataModel.ThumbnailDocument" />
+          <EntitySet Name="DocumentType" EntityType="CloudCompareDataModel.DocumentType" />
+          <EntitySet Name="ProductReview" EntityType="CloudCompareDataModel.ProductReview" />
+          <EntitySet Name="RatingReview" EntityType="CloudCompareDataModel.RatingReview" />
+          <EntitySet Name="ApplicationFeature" EntityType="CloudCompareDataModel.ApplicationFeature" />
+          <EntitySet Name="Feature" EntityType="CloudCompareDataModel.Feature" />
+          <AssociationSet Name="ApplicationVendor" Association="CloudCompareDataModel.ApplicationVendor">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="Vendor" EntitySet="Vendor" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationThumbnailDocument" Association="CloudCompareDataModel.ApplicationThumbnailDocument">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ThumbnailDocument" EntitySet="ThumbnailDocument" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationProductReview" Association="CloudCompareDataModel.ApplicationProductReview">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ProductReview" EntitySet="ProductReview" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationRatingReview" Association="CloudCompareDataModel.ApplicationRatingReview">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="RatingReview" EntitySet="RatingReview" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationApplicationFeature" Association="CloudCompareDataModel.ApplicationApplicationFeature">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="ApplicationFeature" EntitySet="ApplicationFeature" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationFeatureFeature" Association="CloudCompareDataModel.ApplicationFeatureFeature">
+            <End Role="ApplicationFeature" EntitySet="ApplicationFeature" />
+            <End Role="Feature" EntitySet="Feature" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationCategory" Association="CloudCompareDataModel.ApplicationVendorApplicationCategory">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationCategory" EntitySet="VendorApplicationCategory" />
+          </AssociationSet>
+          <EntitySet Name="Category" EntityType="CloudCompareDataModel.Category" />
+          <EntitySet Name="OperatingSystem" EntityType="CloudCompareDataModel.OperatingSystem" />
+          <EntitySet Name="Language" EntityType="CloudCompareDataModel.Language" />
+          <EntitySet Name="Browser" EntityType="CloudCompareDataModel.Browser" />
+          <EntitySet Name="SupportType" EntityType="CloudCompareDataModel.SupportType" />
+          <EntitySet Name="SupportTerritory" EntityType="CloudCompareDataModel.SupportTerritory" />
+          <AssociationSet Name="ThumbnailDocumentDocumentType" Association="CloudCompareDataModel.ThumbnailDocumentDocumentType">
+            <End Role="ThumbnailDocument" EntitySet="ThumbnailDocument" />
+            <End Role="DocumentType" EntitySet="DocumentType" />
+          </AssociationSet>
+          <AssociationSet Name="VendorApplicationCategoryCategory" Association="CloudCompareDataModel.VendorApplicationCategoryCategory">
+            <End Role="VendorApplicationCategory" EntitySet="VendorApplicationCategory" />
+            <End Role="Category" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="VendorApplicationOperatingSystemOperatingSystem" Association="CloudCompareDataModel.VendorApplicationOperatingSystemOperatingSystem">
+            <End Role="VendorApplicationOperatingSystem" EntitySet="VendorApplicationOperatingSystem" />
+            <End Role="OperatingSystem" EntitySet="OperatingSystem" />
+          </AssociationSet>
+          <AssociationSet Name="VendorApplicationLanguageLanguage" Association="CloudCompareDataModel.VendorApplicationLanguageLanguage">
+            <End Role="VendorApplicationLanguage" EntitySet="VendorApplicationLanguage" />
+            <End Role="Language" EntitySet="Language" />
+          </AssociationSet>
+          <AssociationSet Name="VendorApplicationBrowserBrowser" Association="CloudCompareDataModel.VendorApplicationBrowserBrowser">
+            <End Role="VendorApplicationBrowser" EntitySet="VendorApplicationBrowser" />
+            <End Role="Browser" EntitySet="Browser" />
+          </AssociationSet>
+          <AssociationSet Name="FeatureVendorApplicationFeature" Association="CloudCompareDataModel.FeatureVendorApplicationFeature">
+            <End Role="Feature" EntitySet="Feature" />
+            <End Role="VendorApplicationFeature" EntitySet="VendorApplicationFeature" />
+          </AssociationSet>
+          <AssociationSet Name="VendorApplicationSupportTypeSupportType" Association="CloudCompareDataModel.VendorApplicationSupportTypeSupportType">
+            <End Role="VendorApplicationSupportType" EntitySet="VendorApplicationSupportType" />
+            <End Role="SupportType" EntitySet="SupportType" />
+          </AssociationSet>
+          <AssociationSet Name="SupportTerritoryVendorApplicationSupportTerritory" Association="CloudCompareDataModel.SupportTerritoryVendorApplicationSupportTerritory">
+            <End Role="SupportTerritory" EntitySet="SupportTerritory" />
+            <End Role="VendorApplicationSupportTerritory" EntitySet="VendorApplicationSupportTerritory" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationOperatingSystem" Association="CloudCompareDataModel.ApplicationVendorApplicationOperatingSystem">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationOperatingSystem" EntitySet="VendorApplicationOperatingSystem" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationLanguage" Association="CloudCompareDataModel.ApplicationVendorApplicationLanguage">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationLanguage" EntitySet="VendorApplicationLanguage" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationBrowser" Association="CloudCompareDataModel.ApplicationVendorApplicationBrowser">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationBrowser" EntitySet="VendorApplicationBrowser" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationFeature" Association="CloudCompareDataModel.ApplicationVendorApplicationFeature">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationFeature" EntitySet="VendorApplicationFeature" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationSupportType" Association="CloudCompareDataModel.ApplicationVendorApplicationSupportType">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationSupportType" EntitySet="VendorApplicationSupportType" />
+          </AssociationSet>
+          <AssociationSet Name="ApplicationVendorApplicationSupportTerritory" Association="CloudCompareDataModel.ApplicationVendorApplicationSupportTerritory">
+            <End Role="Application" EntitySet="Application" />
+            <End Role="VendorApplicationSupportTerritory" EntitySet="VendorApplicationSupportTerritory" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="ApplicationID" />
+          </Key>
+          <Property Type="Int32" Name="ApplicationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="Brand" Nullable="false" />
+          <Property Type="String" Name="Title" Nullable="false" />
+          <Property Type="String" Name="Description" Nullable="false" />
+          <Property Type="String" Name="IsPromotional" Nullable="false" />
+          <Property Type="String" Name="CostPerMonth" Nullable="false" />
+          <Property Type="String" Name="CostPerAnnum" Nullable="false" />
+          <Property Type="String" Name="SetupFee" Nullable="false" />
+          <Property Type="String" Name="FreeTrialID" Nullable="false" />
+          <Property Type="String" Name="OperatingSystemID" Nullable="false" />
+          <Property Type="String" Name="LicenceTypeID" Nullable="false" />
+          <Property Type="String" Name="SupportTypeID" Nullable="false" />
+          <Property Type="String" Name="SupportDaysID" Nullable="false" />
+          <Property Type="String" Name="SupportHoursID" Nullable="false" />
+          <Property Type="String" Name="LanguageID" Nullable="false" />
+          <Property Type="String" Name="TwitterURL" Nullable="false" />
+          <Property Type="String" Name="FacebookURL" Nullable="false" />
+          <Property Type="String" Name="LinkedInURL" Nullable="false" />
+          <Property Type="String" Name="TwitterFollowers" Nullable="false" />
+          <Property Type="String" Name="FacebookFollowers" Nullable="false" />
+          <Property Type="String" Name="LinkedInFollowers" Nullable="false" />
+          <Property Type="String" Name="AverageOverallRating" Nullable="false" />
+          <Property Type="String" Name="AverageEaseOfUse" Nullable="false" />
+          <Property Type="String" Name="AverageValueForMoney" Nullable="false" />
+          <Property Type="String" Name="AverageFunctionality" Nullable="false" />
+          <Property Type="String" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="FreeTrialPeriodID" Nullable="false" />
+          <Property Type="String" Name="AddDate" Nullable="false" />
+          <Property Type="String" Name="MinimumContractID" Nullable="false" />
+          <Property Type="String" Name="PaymentFrequencyID" Nullable="false" />
+          <Property Type="String" Name="VideoTrainingSupport" Nullable="false" />
+          <Property Type="String" Name="MaximumMeetingAttendees" Nullable="false" />
+          <Property Type="String" Name="MaximumWebinarAttendees" Nullable="false" />
+          <Property Type="String" Name="ApprovalAssignedPersonID" Nullable="false" />
+          <Property Type="String" Name="ApprovalStatusID" Nullable="false" />
+          <Property Type="String" Name="ApplicationContentStatusID" Nullable="false" />
+          <NavigationProperty Name="Vendors" Relationship="CloudCompareDataModel.ApplicationVendor" FromRole="Application" ToRole="Vendor" />
+          <NavigationProperty Name="ThumbnailDocuments" Relationship="CloudCompareDataModel.ApplicationThumbnailDocument" FromRole="Application" ToRole="ThumbnailDocument" />
+          <NavigationProperty Name="ProductReviews" Relationship="CloudCompareDataModel.ApplicationProductReview" FromRole="Application" ToRole="ProductReview" />
+          <NavigationProperty Name="RatingReviews" Relationship="CloudCompareDataModel.ApplicationRatingReview" FromRole="Application" ToRole="RatingReview" />
+          <NavigationProperty Name="ApplicationFeatures" Relationship="CloudCompareDataModel.ApplicationApplicationFeature" FromRole="Application" ToRole="ApplicationFeature" />
+          <NavigationProperty Name="VendorApplicationCategories" Relationship="CloudCompareDataModel.ApplicationVendorApplicationCategory" FromRole="Application" ToRole="VendorApplicationCategory" />
+          <NavigationProperty Name="VendorApplicationOperatingSystems" Relationship="CloudCompareDataModel.ApplicationVendorApplicationOperatingSystem" FromRole="Application" ToRole="VendorApplicationOperatingSystem" />
+          <NavigationProperty Name="VendorApplicationLanguages" Relationship="CloudCompareDataModel.ApplicationVendorApplicationLanguage" FromRole="Application" ToRole="VendorApplicationLanguage" />
+          <NavigationProperty Name="VendorApplicationBrowsers" Relationship="CloudCompareDataModel.ApplicationVendorApplicationBrowser" FromRole="Application" ToRole="VendorApplicationBrowser" />
+          <NavigationProperty Name="VendorApplicationFeatures" Relationship="CloudCompareDataModel.ApplicationVendorApplicationFeature" FromRole="Application" ToRole="VendorApplicationFeature" />
+          <NavigationProperty Name="VendorApplicationSupportTypes" Relationship="CloudCompareDataModel.ApplicationVendorApplicationSupportType" FromRole="Application" ToRole="VendorApplicationSupportType" />
+          <NavigationProperty Name="VendorApplicationSupportTerritories" Relationship="CloudCompareDataModel.ApplicationVendorApplicationSupportTerritory" FromRole="Application" ToRole="VendorApplicationSupportTerritory" />
+        </EntityType>
+        <EntityType Name="Vendor">
+          <Key>
+            <PropertyRef Name="VendorID" />
+          </Key>
+          <Property Type="Int32" Name="VendorID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorLogoURL" Nullable="false" />
+          <Property Type="String" Name="VendorLogo" Nullable="false" />
+          <Property Type="String" Name="VendorName" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendor" FromRole="Vendor" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendorApplicationCategory">
+          <Key>
+            <PropertyRef Name="VendorApplicationCategoryID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationCategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="SendUpdates" Nullable="false" />
+          <Property Type="String" Name="SendNews" Nullable="false" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationCategory" FromRole="VendorApplicationCategory" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="false" />
+          <NavigationProperty Name="Category" Relationship="CloudCompareDataModel.VendorApplicationCategoryCategory" FromRole="VendorApplicationCategory" ToRole="Category" />
+        </EntityType>
+        <EntityType Name="VendorApplicationOperatingSystem">
+          <Key>
+            <PropertyRef Name="VendorApplicationOperatingSystemID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationOperatingSystemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="OperatingSystemID" Nullable="false" />
+          <NavigationProperty Name="OperatingSystem" Relationship="CloudCompareDataModel.VendorApplicationOperatingSystemOperatingSystem" FromRole="VendorApplicationOperatingSystem" ToRole="OperatingSystem" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationOperatingSystem" FromRole="VendorApplicationOperatingSystem" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VendorApplicationBrowser">
+          <Key>
+            <PropertyRef Name="VendorApplicationBrowserID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationBrowserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="BrowserID" Nullable="false" />
+          <NavigationProperty Name="Browser" Relationship="CloudCompareDataModel.VendorApplicationBrowserBrowser" FromRole="VendorApplicationBrowser" ToRole="Browser" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationBrowser" FromRole="VendorApplicationBrowser" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VendorApplicationLanguage">
+          <Key>
+            <PropertyRef Name="VendorApplicationLanguageID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationLanguageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="BrowserID" Nullable="false" />
+          <NavigationProperty Name="Language" Relationship="CloudCompareDataModel.VendorApplicationLanguageLanguage" FromRole="VendorApplicationLanguage" ToRole="Language" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationLanguage" FromRole="VendorApplicationLanguage" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VendorApplicationSupportType">
+          <Key>
+            <PropertyRef Name="VendorApplicationSupportTypeID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationSupportTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="BrowserID" Nullable="false" />
+          <NavigationProperty Name="SupportType" Relationship="CloudCompareDataModel.VendorApplicationSupportTypeSupportType" FromRole="VendorApplicationSupportType" ToRole="SupportType" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationSupportType" FromRole="VendorApplicationSupportType" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VendorApplicationSupportTerritory">
+          <Key>
+            <PropertyRef Name="VendorApplicationSupportTerritoryID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationSupportTerritoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="BrowserID" Nullable="false" />
+          <NavigationProperty Name="SupportTerritory" Relationship="CloudCompareDataModel.SupportTerritoryVendorApplicationSupportTerritory" FromRole="VendorApplicationSupportTerritory" ToRole="SupportTerritory" />
+          <Property Type="Int32" Name="SupportTerritorySupportTerritoryID" Nullable="true" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationSupportTerritory" FromRole="VendorApplicationSupportTerritory" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VendorApplicationFeature">
+          <Key>
+            <PropertyRef Name="VendorApplicationFeatureID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationFeatureID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="FeatureID" Nullable="false" />
+          <Property Type="String" Name="ExtraCost" Nullable="false" />
+          <Property Type="String" Name="FeatureCount" Nullable="false" />
+          <NavigationProperty Name="Feature" Relationship="CloudCompareDataModel.FeatureVendorApplicationFeature" FromRole="VendorApplicationFeature" ToRole="Feature" />
+          <Property Type="Int32" Name="FeatureFeatureID" Nullable="true" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationVendorApplicationFeature" FromRole="VendorApplicationFeature" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ThumbnailDocument">
+          <Key>
+            <PropertyRef Name="ThumbnailDocumentID" />
+          </Key>
+          <Property Type="Int32" Name="ThumbnailDocumentID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ThumbnailDocumentTypeID" Nullable="false" />
+          <Property Type="String" Name="ThumbnailDocumentTitle" Nullable="false" />
+          <Property Type="String" Name="ThumbnailDocumentURL" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationThumbnailDocument" FromRole="ThumbnailDocument" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+          <NavigationProperty Name="DocumentType" Relationship="CloudCompareDataModel.ThumbnailDocumentDocumentType" FromRole="ThumbnailDocument" ToRole="DocumentType" />
+        </EntityType>
+        <EntityType Name="DocumentType">
+          <Key>
+            <PropertyRef Name="ThumbnailDocumentTypeID" />
+          </Key>
+          <Property Type="Int32" Name="ThumbnailDocumentTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ThumbnailDocumentTypeName" Nullable="false" />
+          <NavigationProperty Name="ThumbnailDocuments" Relationship="CloudCompareDataModel.ThumbnailDocumentDocumentType" FromRole="DocumentType" ToRole="ThumbnailDocument" />
+        </EntityType>
+        <EntityType Name="ProductReview">
+          <Key>
+            <PropertyRef Name="ProductReviewID" />
+          </Key>
+          <Property Type="Int32" Name="ProductReviewID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ProductReviewHeadline" Nullable="false" />
+          <Property Type="String" Name="ProductReviewPublisherName" Nullable="false" />
+          <Property Type="String" Name="ProductReviewText" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="ProductReviewDate" Nullable="false" />
+          <Property Type="String" Name="ProductReviewURL" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationProductReview" FromRole="ProductReview" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="RatingReview">
+          <Key>
+            <PropertyRef Name="RatingReviewID" />
+          </Key>
+          <Property Type="Int32" Name="RatingReviewID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="RatingReviewReviewerName" Nullable="false" />
+          <Property Type="String" Name="RatingReviewReviewerTitle" Nullable="false" />
+          <Property Type="String" Name="RatingReviewReviewerCompany" Nullable="false" />
+          <Property Type="String" Name="RatingReviewText" Nullable="false" />
+          <Property Type="String" Name="OverallRating" Nullable="false" />
+          <Property Type="String" Name="EaseOfUse" Nullable="false" />
+          <Property Type="String" Name="ValueForMoney" Nullable="false" />
+          <Property Type="String" Name="Functionality" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationRatingReview" FromRole="RatingReview" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="ApplicationFeature">
+          <Key>
+            <PropertyRef Name="ApplicationFeatureID" />
+          </Key>
+          <Property Type="Int32" Name="ApplicationFeatureID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="FeatureID" Nullable="false" />
+          <Property Type="String" Name="IsSearchParameter" Nullable="false" />
+          <NavigationProperty Name="Application" Relationship="CloudCompareDataModel.ApplicationApplicationFeature" FromRole="ApplicationFeature" ToRole="Application" />
+          <Property Type="Int32" Name="ApplicationApplicationID" Nullable="false" />
+          <NavigationProperty Name="Features" Relationship="CloudCompareDataModel.ApplicationFeatureFeature" FromRole="ApplicationFeature" ToRole="Feature" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="FeatureID" />
+          </Key>
+          <Property Type="Int32" Name="FeatureID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FeatureName" Nullable="false" />
+          <Property Type="String" Name="Include" Nullable="false" />
+          <Property Type="String" Name="IncludeExtraCost" Nullable="false" />
+          <Property Type="String" Name="IncludeCount" Nullable="false" />
+          <NavigationProperty Name="ApplicationFeature" Relationship="CloudCompareDataModel.ApplicationFeatureFeature" FromRole="Feature" ToRole="ApplicationFeature" />
+          <Property Type="Int32" Name="ApplicationFeatureApplicationFeatureID" Nullable="true" />
+          <NavigationProperty Name="VendorApplicationFeatures" Relationship="CloudCompareDataModel.FeatureVendorApplicationFeature" FromRole="Feature" ToRole="VendorApplicationFeature" />
+        </EntityType>
+        <Association Name="ApplicationVendor">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="CloudCompareDataModel.Vendor" Role="Vendor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="Vendor">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationThumbnailDocument">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.ThumbnailDocument" Role="ThumbnailDocument" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="ThumbnailDocument">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationProductReview">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.ProductReview" Role="ProductReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="ProductReview">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationRatingReview">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.RatingReview" Role="RatingReview" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="RatingReview">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationApplicationFeature">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="CloudCompareDataModel.ApplicationFeature" Role="ApplicationFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="ApplicationFeature">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationFeatureFeature">
+          <End Type="CloudCompareDataModel.ApplicationFeature" Role="ApplicationFeature" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.Feature" Role="Feature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ApplicationFeature">
+              <PropertyRef Name="ApplicationFeatureID" />
+            </Principal>
+            <Dependent Role="Feature">
+              <PropertyRef Name="ApplicationFeatureApplicationFeatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationCategory">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="1" />
+          <End Type="CloudCompareDataModel.VendorApplicationCategory" Role="VendorApplicationCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationCategory">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryID" />
+          </Key>
+          <Property Type="Int32" Name="CategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CategoryName" Nullable="false" />
+          <Property Type="Int32" Name="VendorApplicationCategoryVendorApplicationCategoryID" Nullable="true" />
+          <NavigationProperty Name="VendorApplicationCategories" Relationship="CloudCompareDataModel.VendorApplicationCategoryCategory" FromRole="Category" ToRole="VendorApplicationCategory" />
+        </EntityType>
+        <EntityType Name="OperatingSystem">
+          <Key>
+            <PropertyRef Name="OperatingSystemID" />
+          </Key>
+          <Property Type="Int32" Name="OperatingSystemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="OperatingSystemName" Nullable="false" />
+          <NavigationProperty Name="VendorApplicationOperatingSystems" Relationship="CloudCompareDataModel.VendorApplicationOperatingSystemOperatingSystem" FromRole="OperatingSystem" ToRole="VendorApplicationOperatingSystem" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageID" />
+          </Key>
+          <Property Type="Int32" Name="LanguageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="LanguageName" Nullable="false" />
+          <NavigationProperty Name="VendorApplicationLanguages" Relationship="CloudCompareDataModel.VendorApplicationLanguageLanguage" FromRole="Language" ToRole="VendorApplicationLanguage" />
+        </EntityType>
+        <EntityType Name="Browser">
+          <Key>
+            <PropertyRef Name="BrowserID" />
+          </Key>
+          <Property Type="Int32" Name="BrowserID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="BrowserName" Nullable="false" />
+          <NavigationProperty Name="VendorApplicationBrowsers" Relationship="CloudCompareDataModel.VendorApplicationBrowserBrowser" FromRole="Browser" ToRole="VendorApplicationBrowser" />
+        </EntityType>
+        <EntityType Name="SupportType">
+          <Key>
+            <PropertyRef Name="SupportTypeID" />
+          </Key>
+          <Property Type="Int32" Name="SupportTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SupportTypeName" Nullable="false" />
+          <NavigationProperty Name="VendorApplicationSupportTypes" Relationship="CloudCompareDataModel.VendorApplicationSupportTypeSupportType" FromRole="SupportType" ToRole="VendorApplicationSupportType" />
+        </EntityType>
+        <EntityType Name="SupportTerritory">
+          <Key>
+            <PropertyRef Name="SupportTerritoryID" />
+          </Key>
+          <Property Type="Int32" Name="SupportTerritoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SupportTerritoryName" Nullable="false" />
+          <NavigationProperty Name="VendorApplicationSupportTerritories" Relationship="CloudCompareDataModel.SupportTerritoryVendorApplicationSupportTerritory" FromRole="SupportTerritory" ToRole="VendorApplicationSupportTerritory" />
+        </EntityType>
+        <Association Name="ThumbnailDocumentDocumentType">
+          <End Type="CloudCompareDataModel.ThumbnailDocument" Role="ThumbnailDocument" Multiplicity="*" />
+          <End Type="CloudCompareDataModel.DocumentType" Role="DocumentType" Multiplicity="0..1" />
+        </Association>
+        <Association Name="VendorApplicationCategoryCategory">
+          <End Type="CloudCompareDataModel.VendorApplicationCategory" Role="VendorApplicationCategory" Multiplicity="*" />
+          <End Type="CloudCompareDataModel.Category" Role="Category" Multiplicity="0..1" />
+        </Association>
+        <Association Name="VendorApplicationOperatingSystemOperatingSystem">
+          <End Type="CloudCompareDataModel.VendorApplicationOperatingSystem" Role="VendorApplicationOperatingSystem" Multiplicity="*" />
+          <End Type="CloudCompareDataModel.OperatingSystem" Role="OperatingSystem" Multiplicity="0..1" />
+        </Association>
+        <Association Name="VendorApplicationLanguageLanguage">
+          <End Type="CloudCompareDataModel.VendorApplicationLanguage" Role="VendorApplicationLanguage" Multiplicity="*" />
+          <End Type="CloudCompareDataModel.Language" Role="Language" Multiplicity="0..1" />
+        </Association>
+        <Association Name="VendorApplicationBrowserBrowser">
+          <End Type="CloudCompareDataModel.VendorApplicationBrowser" Role="VendorApplicationBrowser" Multiplicity="*" />
+          <End Type="CloudCompareDataModel.Browser" Role="Browser" Multiplicity="0..1" />
+        </Association>
+        <Association Name="FeatureVendorApplicationFeature">
+          <End Type="CloudCompareDataModel.Feature" Role="Feature" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationFeature" Role="VendorApplicationFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Feature">
+              <PropertyRef Name="FeatureID" />
+            </Principal>
+            <Dependent Role="VendorApplicationFeature">
+              <PropertyRef Name="FeatureFeatureID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VendorApplicationSupportTypeSupportType">
+          <End Type="CloudCompareDataModel.VendorApplicationSupportType" Role="VendorApplicationSupportType" Multiplicity="*" />
+          <End Type="CloudCompareDataModel.SupportType" Role="SupportType" Multiplicity="0..1" />
+        </Association>
+        <Association Name="SupportTerritoryVendorApplicationSupportTerritory">
+          <End Type="CloudCompareDataModel.SupportTerritory" Role="SupportTerritory" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationSupportTerritory" Role="VendorApplicationSupportTerritory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupportTerritory">
+              <PropertyRef Name="SupportTerritoryID" />
+            </Principal>
+            <Dependent Role="VendorApplicationSupportTerritory">
+              <PropertyRef Name="SupportTerritorySupportTerritoryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationOperatingSystem">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationOperatingSystem" Role="VendorApplicationOperatingSystem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationOperatingSystem">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationLanguage">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationLanguage" Role="VendorApplicationLanguage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationLanguage">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationBrowser">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationBrowser" Role="VendorApplicationBrowser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationBrowser">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationFeature">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationFeature" Role="VendorApplicationFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationFeature">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationSupportType">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationSupportType" Role="VendorApplicationSupportType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationSupportType">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ApplicationVendorApplicationSupportTerritory">
+          <End Type="CloudCompareDataModel.Application" Role="Application" Multiplicity="0..1" />
+          <End Type="CloudCompareDataModel.VendorApplicationSupportTerritory" Role="VendorApplicationSupportTerritory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Application">
+              <PropertyRef Name="ApplicationID" />
+            </Principal>
+            <Dependent Role="VendorApplicationSupportTerritory">
+              <PropertyRef Name="ApplicationApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CloudCompareDataModel" />
+        <Alias Key="Target" Value="CloudCompareDataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CloudCompareDataModelContainer" StorageEntityContainer="CloudCompareDataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CloudCompareDataModel" ZoomLevel="62" >
+        <EntityTypeShape EntityType="CloudCompareDataModel.Application" Width="2.375" PointX="4.5" PointY="6.5" Height="8.9879361979166656" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.Vendor" Width="1.5" PointX="0.5" PointY="6.625" Height="1.9210009765624996" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationCategory" Width="2.5" PointX="0.5" PointY="17.125" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationOperatingSystem" Width="2.75" PointX="3.375" PointY="17.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationBrowser" Width="3.5" PointX="10.25" PointY="17.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationLanguage" Width="3.375" PointX="6.5" PointY="17.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationSupportType" Width="3.5" PointX="20.875" PointY="17.125" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationSupportTerritory" Width="3.5" PointX="24.75" PointY="17.125" Height="2.2496956380208353" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.VendorApplicationFeature" Width="3.5" PointX="16.25" PointY="17.125" Height="2.5783902994791674" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.ThumbnailDocument" Width="2.125" PointX="1" PointY="2.75" Height="2.2496956380208326" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.DocumentType" Width="2.375" PointX="2.625" PointY="0.5" Height="1.2636116536458335" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.ProductReview" Width="2" PointX="5.25" PointY="2.75" Height="2.4140429687499996" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.RatingReview" Width="2.25" PointX="9.125" PointY="2.75" Height="2.9070849609374996" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.ApplicationFeature" Width="2.125" PointX="10.625" PointY="7.25" Height="2.2496956380208335" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.Feature" Width="1.5" PointX="14.875" PointY="21.25" Height="2.2496956380208335" />
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendor">
+          <ConnectorPoint PointX="4.5" PointY="7.58550048828125" />
+          <ConnectorPoint PointX="2.6770833333333335" PointY="7.5855004882812489" />
+          <ConnectorPoint PointX="2.5104166666666665" PointY="7.58550048828125" />
+          <ConnectorPoint PointX="2" PointY="7.58550048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationThumbnailDocument">
+          <ConnectorPoint PointX="4.5" PointY="12.048218587239584" />
+          <ConnectorPoint PointX="2.59375" PointY="12.048218587239584" />
+          <ConnectorPoint PointX="2.59375" PointY="4.9996956380208326" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationProductReview">
+          <ConnectorPoint PointX="6.0625" PointY="6.5" />
+          <ConnectorPoint PointX="6.0625" PointY="5.16404296875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationRatingReview">
+          <ConnectorPoint PointX="4.84375" PointY="6.5" />
+          <ConnectorPoint PointX="4.84375" PointY="5.44181396484375" />
+          <ConnectorPoint PointX="5.979166666666667" PointY="5.4418139648437487" />
+          <ConnectorPoint PointX="6.145833333333333" PointY="5.44181396484375" />
+          <ConnectorPoint PointX="9.125" PointY="5.44181396484375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationApplicationFeature">
+          <ConnectorPoint PointX="6.875" PointY="8.3748478190104159" />
+          <ConnectorPoint PointX="10.625" PointY="8.3748478190104159" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationFeatureFeature">
+          <ConnectorPoint PointX="12.75" PointY="8.3748478190104159" />
+          <ConnectorPoint PointX="15.34375" PointY="8.3748478190104159" />
+          <ConnectorPoint PointX="15.34375" PointY="21.25" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationCategory">
+          <ConnectorPoint PointX="6.3125" PointY="15.487936197916666" />
+          <ConnectorPoint PointX="6.3125" PointY="19.488119303385417" />
+          <ConnectorPoint PointX="4.520833333333333" PointY="19.488119303385417" />
+          <ConnectorPoint PointX="4.354166666666667" PointY="19.488119303385417" />
+          <ConnectorPoint PointX="3" PointY="19.488119303385417" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CloudCompareDataModel.Category" Width="1.5" PointX="0.875" PointY="20.875" Height="1.592306315104171" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.OperatingSystem" Width="1.875" PointX="3.5" PointY="21" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.Language" Width="1.5" PointX="6.625" PointY="20.875" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.Browser" Width="1.5" PointX="10.25" PointY="20.875" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.SupportType" Width="1.5" PointX="20.875" PointY="21.375" Height="1.4279589843750031" />
+        <EntityTypeShape EntityType="CloudCompareDataModel.SupportTerritory" Width="2" PointX="24.75" PointY="21.375" Height="1.4279589843750031" />
+        <AssociationConnector Association="CloudCompareDataModel.ThumbnailDocumentDocumentType">
+          <ConnectorPoint PointX="2.875" PointY="2.75" />
+          <ConnectorPoint PointX="2.875" PointY="1.927958984375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.VendorApplicationCategoryCategory">
+          <ConnectorPoint PointX="1.625" PointY="19.703390299479167" />
+          <ConnectorPoint PointX="1.625" PointY="20.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.VendorApplicationOperatingSystemOperatingSystem">
+          <ConnectorPoint PointX="4.4375" PointY="19.210348307291667" />
+          <ConnectorPoint PointX="4.4375" PointY="21" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.VendorApplicationLanguageLanguage">
+          <ConnectorPoint PointX="7.375" PointY="19.210348307291667" />
+          <ConnectorPoint PointX="7.375" PointY="20.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.VendorApplicationBrowserBrowser">
+          <ConnectorPoint PointX="11" PointY="19.210348307291667" />
+          <ConnectorPoint PointX="11" PointY="20.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.FeatureVendorApplicationFeature" ManuallyRouted="false">
+          <ConnectorPoint PointX="15.828127" PointY="21.25" />
+          <ConnectorPoint PointX="15.828127" PointY="18.414195149739584" />
+          <ConnectorPoint PointX="16.25" PointY="18.414195149739584" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.VendorApplicationSupportTypeSupportType">
+          <ConnectorPoint PointX="21.625" PointY="19.210348307291667" />
+          <ConnectorPoint PointX="21.625" PointY="21.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.SupportTerritoryVendorApplicationSupportTerritory">
+          <ConnectorPoint PointX="25.75" PointY="21.375" />
+          <ConnectorPoint PointX="25.75" PointY="19.374695638020835" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationOperatingSystem">
+          <ConnectorPoint PointX="5.3125" PointY="15.487936197916666" />
+          <ConnectorPoint PointX="5.3125" PointY="17.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationLanguage">
+          <ConnectorPoint PointX="6.875" PointY="11.962644508463541" />
+          <ConnectorPoint PointX="8.4062525" PointY="11.962644508463541" />
+          <ConnectorPoint PointX="8.4062525" PointY="17.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationBrowser">
+          <ConnectorPoint PointX="6.875" PointY="13.756542853190105" />
+          <ConnectorPoint PointX="8.3229191666666669" PointY="13.756542853190105" />
+          <ConnectorPoint PointX="8.4895858333333347" PointY="13.756542853190105" />
+          <ConnectorPoint PointX="13.28125" PointY="13.756542853190105" />
+          <ConnectorPoint PointX="13.28125" PointY="17.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationFeature">
+          <ConnectorPoint PointX="6.3437525" PointY="15.487936197916666" />
+          <ConnectorPoint PointX="6.3437525" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="7.291666666666667" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="7.458333333333333" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="10.916666666666666" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="11.083333333333334" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="15.744793666666666" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="15.911460333333334" PointY="19.380483805338542" />
+          <ConnectorPoint PointX="16.25" PointY="19.380483805338542" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationSupportType">
+          <ConnectorPoint PointX="6.875" PointY="10.731167573242185" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="10.731167573242185" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="10.731167573242185" />
+          <ConnectorPoint PointX="22.625" PointY="10.731167573242185" />
+          <ConnectorPoint PointX="22.625" PointY="17.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareDataModel.ApplicationVendorApplicationSupportTerritory">
+          <ConnectorPoint PointX="6.875" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="8.3229191666666669" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="8.4895858333333347" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="13.197916666666666" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="13.364583333333334" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="22.541666666666668" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="22.708333333333332" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="26.5" PointY="14.653492025553387" />
+          <ConnectorPoint PointX="26.5" PointY="17.125" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

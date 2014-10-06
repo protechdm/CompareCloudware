@@ -1,0 +1,10 @@
+﻿/* Image in Text Box */
+.tb11
+{
+    background: #FFFFFF url('../Images/search.png') no-repeat 4px 4px;
+    padding: 4px 4px 4px 22px;
+    border: 1px solid #CCCCCC;
+    width: 230px;
+    height: 16px;
+    line-height: 16px;
+}

@@ -1,0 +1,9 @@
+﻿#blq-pre-mast, #blq-container-inner {
+    width: 976px;
+}
+#blq-container-inner {
+    position: relative;
+}
+#blq-pre-mast, #blq-container-inner {
+    margin: 0 auto;
+}

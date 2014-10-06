@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="CompareCloudware.WCF.CompareCloudwareService" CodeBehind="CompareCloudwareService.svc.cs" %>

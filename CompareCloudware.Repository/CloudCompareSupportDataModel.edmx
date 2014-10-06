@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="CloudCompareSupportDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="CloudCompareSupportDataModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CloudCompareSupportDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CloudCompareSupportDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="SupportArea" EntityType="CloudCompareSupportDataModel.SupportArea" />
+          <EntitySet Name="SupportAreaVendorApplication" EntityType="CloudCompareSupportDataModel.SupportAreaVendorApplication" />
+          <EntitySet Name="SupportAreaQA" EntityType="CloudCompareSupportDataModel.SupportAreaQA" />
+          <EntitySet Name="QAStatus" EntityType="CloudCompareSupportDataModel.QAStatus" />
+          <AssociationSet Name="SupportAreaSupportAreaVendorApplication" Association="CloudCompareSupportDataModel.SupportAreaSupportAreaVendorApplication">
+            <End Role="SupportArea" EntitySet="SupportArea" />
+            <End Role="SupportAreaVendorApplication" EntitySet="SupportAreaVendorApplication" />
+          </AssociationSet>
+          <AssociationSet Name="SupportAreaVendorApplicationSupportAreaQA" Association="CloudCompareSupportDataModel.SupportAreaVendorApplicationSupportAreaQA">
+            <End Role="SupportAreaVendorApplication" EntitySet="SupportAreaVendorApplication" />
+            <End Role="SupportAreaQA" EntitySet="SupportAreaQA" />
+          </AssociationSet>
+          <AssociationSet Name="SupportAreaQAQAStatus" Association="CloudCompareSupportDataModel.SupportAreaQAQAStatus">
+            <End Role="SupportAreaQA" EntitySet="SupportAreaQA" />
+            <End Role="QAStatus" EntitySet="QAStatus" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="SupportArea">
+          <Key>
+            <PropertyRef Name="SupportAreaID" />
+          </Key>
+          <Property Type="Int32" Name="SupportAreaID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SupportAreaName" Nullable="false" />
+          <NavigationProperty Name="SupportAreaVendorApplications" Relationship="CloudCompareSupportDataModel.SupportAreaSupportAreaVendorApplication" FromRole="SupportArea" ToRole="SupportAreaVendorApplication" />
+        </EntityType>
+        <EntityType Name="SupportAreaVendorApplication">
+          <Key>
+            <PropertyRef Name="SupportAreaVendorApplicationID" />
+          </Key>
+          <Property Type="Int32" Name="SupportAreaVendorApplicationID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SupportAreaID" Nullable="false" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <NavigationProperty Name="SupportArea" Relationship="CloudCompareSupportDataModel.SupportAreaSupportAreaVendorApplication" FromRole="SupportAreaVendorApplication" ToRole="SupportArea" />
+          <Property Type="Int32" Name="SupportAreaSupportAreaID" Nullable="true" />
+          <NavigationProperty Name="SupportAreaQAs" Relationship="CloudCompareSupportDataModel.SupportAreaVendorApplicationSupportAreaQA" FromRole="SupportAreaVendorApplication" ToRole="SupportAreaQA" />
+        </EntityType>
+        <EntityType Name="SupportAreaQA">
+          <Key>
+            <PropertyRef Name="SupportAreaQAID" />
+          </Key>
+          <Property Type="Int32" Name="SupportAreaQAID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="SupportAreaVendorApplicationID" Nullable="false" />
+          <Property Type="String" Name="SubmittedPersonID" Nullable="false" />
+          <Property Type="String" Name="Question" Nullable="false" />
+          <Property Type="String" Name="QuestionDate" Nullable="false" />
+          <Property Type="String" Name="Answer" Nullable="false" />
+          <Property Type="String" Name="AnswerDate" Nullable="false" />
+          <Property Type="String" Name="AssignedPersonID" Nullable="false" />
+          <Property Type="String" Name="QAStatusID" Nullable="false" />
+          <NavigationProperty Name="SupportAreaVendorApplication" Relationship="CloudCompareSupportDataModel.SupportAreaVendorApplicationSupportAreaQA" FromRole="SupportAreaQA" ToRole="SupportAreaVendorApplication" />
+          <Property Type="Int32" Name="SupportAreaVendorApplicationSupportAreaVendorApplicationID" Nullable="true" />
+          <NavigationProperty Name="QAStatu" Relationship="CloudCompareSupportDataModel.SupportAreaQAQAStatus" FromRole="SupportAreaQA" ToRole="QAStatus" />
+        </EntityType>
+        <EntityType Name="QAStatus">
+          <Key>
+            <PropertyRef Name="QAStatusID" />
+          </Key>
+          <Property Type="Int32" Name="QAStatusID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="QAStatusName" Nullable="false" />
+          <NavigationProperty Name="SupportAreaQAs" Relationship="CloudCompareSupportDataModel.SupportAreaQAQAStatus" FromRole="QAStatus" ToRole="SupportAreaQA" />
+        </EntityType>
+        <Association Name="SupportAreaSupportAreaVendorApplication">
+          <End Type="CloudCompareSupportDataModel.SupportArea" Role="SupportArea" Multiplicity="0..1" />
+          <End Type="CloudCompareSupportDataModel.SupportAreaVendorApplication" Role="SupportAreaVendorApplication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupportArea">
+              <PropertyRef Name="SupportAreaID" />
+            </Principal>
+            <Dependent Role="SupportAreaVendorApplication">
+              <PropertyRef Name="SupportAreaSupportAreaID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SupportAreaVendorApplicationSupportAreaQA">
+          <End Type="CloudCompareSupportDataModel.SupportAreaVendorApplication" Role="SupportAreaVendorApplication" Multiplicity="0..1" />
+          <End Type="CloudCompareSupportDataModel.SupportAreaQA" Role="SupportAreaQA" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SupportAreaVendorApplication">
+              <PropertyRef Name="SupportAreaVendorApplicationID" />
+            </Principal>
+            <Dependent Role="SupportAreaQA">
+              <PropertyRef Name="SupportAreaVendorApplicationSupportAreaVendorApplicationID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="SupportAreaQAQAStatus">
+          <End Type="CloudCompareSupportDataModel.SupportAreaQA" Role="SupportAreaQA" Multiplicity="*" />
+          <End Type="CloudCompareSupportDataModel.QAStatus" Role="QAStatus" Multiplicity="0..1" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CloudCompareSupportDataModel" />
+        <Alias Key="Target" Value="CloudCompareSupportDataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CloudCompareSupportDataModelContainer" StorageEntityContainer="CloudCompareSupportDataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CloudCompareSupportDataModel" >
+        <EntityTypeShape EntityType="CloudCompareSupportDataModel.SupportArea" Width="1.5" PointX="0.75" PointY="1" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="CloudCompareSupportDataModel.SupportAreaVendorApplication" Width="2.375" PointX="0.75" PointY="3.375" Height="2.0853483072916661" />
+        <EntityTypeShape EntityType="CloudCompareSupportDataModel.SupportAreaQA" Width="2.375" PointX="4.375" PointY="3.375" Height="2.7427376302083317" />
+        <EntityTypeShape EntityType="CloudCompareSupportDataModel.QAStatus" Width="1.5" PointX="7.875" PointY="3.375" Height="1.2636116536458326" />
+        <AssociationConnector Association="CloudCompareSupportDataModel.SupportAreaSupportAreaVendorApplication">
+          <ConnectorPoint PointX="1.5" PointY="2.4279589843749996" />
+          <ConnectorPoint PointX="1.5" PointY="3.375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareSupportDataModel.SupportAreaVendorApplicationSupportAreaQA">
+          <ConnectorPoint PointX="3.125" PointY="4.4176741536458328" />
+          <ConnectorPoint PointX="4.375" PointY="4.4176741536458328" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareSupportDataModel.SupportAreaQAQAStatus">
+          <ConnectorPoint PointX="6.75" PointY="4.0889794921875" />
+          <ConnectorPoint PointX="7.875" PointY="4.0889794921875" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

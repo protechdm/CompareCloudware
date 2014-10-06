@@ -1,0 +1,222 @@
+﻿div.overflow {
+  /* essential */
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  width: 300px;
+  height: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  
+  /* for good looks */
+  /* padding: 10px; */
+}
+
+
+/* the wrapper */
+.ellipsify
+{
+    font-size: inherit;
+    line-height: 14px;
+    height: 56px; /* 4x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    /*background: white;*/
+    z-index:inherit;
+}
+
+/* Used to push down .dots. Can't use absolute positioning, since that
+   would stop the floating. Can't use relative positioning, since that
+   would cause floating in the wrong (namely: original) place. Can't 
+   change height of #dots, since it would have the full width, and
+   thus cause early wrapping on all lines. */
+.pre-dots
+{
+    border-style: solid;
+    border-width: 0px;
+    border-color: inherit;
+    float: right;
+    height: 42px; /* 3x line height (one less than visible lines) */
+    /*background: white;*/
+    z-index: inherit;
+}
+
+.dots {
+    float: right; /* to make the text wrap around the dots */
+    clear: right; /* to push us below (not next to) .pre-dots */
+    /*background-color: white;*/
+    /*height: 48px;*/
+    vertical-align:bottom;
+    position:static;
+}
+
+/* hides the dots if the text has *exactly* 3 lines */
+.hidedots1
+{
+    /*background: #FF00FF;*/
+    width: 100%;
+    height: 14px; /* line height */
+    position: absolute; /* otherwise, because of the width, it'll be wrapped */
+}
+
+/* hides the dots if the text has *less than* 3 lines */
+.hidedots2 {
+    /*background: white; */
+    width: 100%;
+    height: 42px;       /* 3x line height, to ensure hiding even if empty */
+    position: absolute; /* ensures we're above the dots */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ELLIPSIFY 15px */
+/* the wrapper */
+.ellipsify-15px
+{
+    font-size: inherit;
+    line-height: 15px;
+    height: 60px; /* 4x line height */
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    /*background: white;*/
+    z-index:inherit;
+}
+
+/* Used to push down .dots. Can't use absolute positioning, since that
+   would stop the floating. Can't use relative positioning, since that
+   would cause floating in the wrong (namely: original) place. Can't 
+   change height of #dots, since it would have the full width, and
+   thus cause early wrapping on all lines. */
+.pre-dots-15px
+{
+    border-style: solid;
+    border-width: 0px;
+    border-color: inherit;
+    float: right;
+    height: 45px; /* 3x line height (one less than visible lines) */
+    /*background: white;*/
+    z-index: inherit;
+}
+
+.dots-15px {
+    float: right; /* to make the text wrap around the dots */
+    clear: right; /* to push us below (not next to) .pre-dots */
+    /*background-color: white;*/
+    /*height: 48px;*/
+    vertical-align:bottom;
+    position:static;
+}
+
+/* hides the dots if the text has *exactly* 3 lines */
+.hidedots1-15px
+{
+    /*background: #FF00FF;*/
+    width: 100%;
+    height: 15px; /* line height */
+    position: absolute; /* otherwise, because of the width, it'll be wrapped */
+}
+
+/* hides the dots if the text has *less than* 3 lines */
+.hidedots2-15px {
+    /*background: white; */
+    width: 100%;
+    height: 45px;       /* 3x line height, to ensure hiding even if empty */
+    position: absolute; /* ensures we're above the dots */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ELLIPSIFY 15px 8 LINES*/
+/* the wrapper */
+.ellipsify-15px-8-lines
+{
+    font-size: inherit;
+    line-height: 15px;
+    xheight: 120px; /*  8x line height */
+    max-height: 120px; /* 8x line height */
+    height:auto;
+    width: 100%;
+    overflow: hidden;
+    position: relative; /* so we're a positioning parent for the dot hiders */
+    /*background: white;*/
+    z-index:inherit;
+}
+
+/* Used to push down .dots. Can't use absolute positioning, since that
+   would stop the floating. Can't use relative positioning, since that
+   would cause floating in the wrong (namely: original) place. Can't 
+   change height of #dots, since it would have the full width, and
+   thus cause early wrapping on all lines. */
+.pre-dots-15px-8-lines
+{
+    border-style: solid;
+    border-width: 0px;
+    border-color: inherit;
+    float: right;
+    xheight: 105px; /* 7x line height (one less than visible lines) */
+    max-height: 105px; /* 7x line height (one less than visible lines) */
+    /*background: white;*/
+    z-index: inherit;
+}
+
+.dots-15px-8-lines
+{
+    float: right; /* to make the text wrap around the dots */
+    clear: right; /* to push us below (not next to) .pre-dots */
+    /*background-color: white;*/
+    /*height: 48px;*/
+    vertical-align:bottom;
+    position:static;
+}
+
+/* hides the dots if the text has *exactly* 3 lines */
+.hidedots1-15px-8-lines
+{
+    /*background: #FF00FF;*/
+    width: 100%;
+    height: 15px; /* line height */
+    position: absolute; /* otherwise, because of the width, it'll be wrapped */
+}
+
+/* hides the dots if the text has *less than* 3 lines */
+.hidedots2-15px-8-lines {
+    /*background: white; */
+    width: 100%;
+    height: 105px;       /* 7x line height, to ensure hiding even if empty */
+    position: absolute; /* ensures we're above the dots */
+}

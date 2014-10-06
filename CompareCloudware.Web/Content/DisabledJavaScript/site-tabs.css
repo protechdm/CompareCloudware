@@ -1,0 +1,721 @@
+﻿.home-page-content
+{
+    /*min-height:1000px;*/
+    overflow:hidden;
+    height:100%;
+}
+
+.search-homepage-container
+{
+    height:100%;
+    overflow:visible;   
+}
+
+#tabstripmain
+{
+    left: 25px;
+    /*position: fixed;*/
+    /*padding: 30px 30px 15px 30px;*/
+    background-color: #FFFFFF;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    position:relative;
+    top:-75px;
+}
+
+#tabstripmain > div
+{
+}
+
+.nojavascript-tab
+{
+    border: .25px solid #FFFFFF;
+    /*display: inline-block;*/
+    float: left;
+    /*position: relative;*/
+    width: 33.12%;
+    /*height: 30px;*/
+    /*max-height: 30px;*/
+    /*background-color: #C0C0C0;*/
+    border-radius: 10px 10px 0px 0px; /*
+    background-image: url("../Images/Cloud-icon-16x32.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+*/
+    padding-right: 0px;
+    /*height:100%;*/
+    overflow:visible;
+}
+
+input {
+    display: block;
+}
+
+/*input*/
+.nojavascript-tabcheckbox
+{
+    display: none;
+    float: none;
+}
+
+.nojavascript-divforlabel
+{
+    position: static;
+    display: inline-block;
+    float: none;
+    border-radius: 10px 10px 0px 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    border-left: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    width: 100%;
+    height: 30px;
+    max-height: 30px;
+    background-image: url("../../Images/Cloud-icon-16x32.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    padding-right: 0px;
+    background-color: #999999;
+}
+
+.nojavascript-label
+{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 50px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: relative;
+    top: 5px;
+    float: left;
+    padding-right: 200%;
+    overflow:hidden;
+    white-space:nowrap;
+    height: 30px;
+    /*z-index: inherit;*/
+}
+
+.nojavascript-results
+{
+    border-style: none solid solid solid;
+    border-width: 0px 1px 1px 1px;
+    /*border-style:solid;*/
+    /*border-width:0px;*/
+    position:relative;
+    float:left;
+    /*border-radius: 10px 10px 10px 10px;*/
+    display: block;
+    width: 300%;
+    /*min-height: 100px;*/
+    /*z-index:100;*/
+    overflow:visible;
+    height:100%;
+    /*color:#000000;*/
+    /*top:-10px;*/
+    z-index:0;
+}
+
+.nojavascript-results table
+{
+    /*height:1000px;   */
+}
+
+.nojavascript-fixed-results
+{
+    border-style:solid;
+    border-width:0px;
+    position:relative;
+    float:left;
+    border-radius: 10px 10px 10px 10px;
+    display: inline;
+    width: 300%;
+    min-height: 100%;
+}
+
+input:checked ~ div[title ~= tabtitle]
+{
+    background: #99C2FF;
+    border:solid; 
+    border-width:0px; 
+    position:static; 
+    display:inline-block; 
+    float:none;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 0px;
+    padding-top: 0px;
+    width:100%;
+    height: 30px;
+    max-height: 30px;
+    background-image: url("../../Images/Cloud-icon-16x32.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+}
+
+input
+{
+    color: #000fff;
+}
+
+input[type=radio]:checked
+{
+    color: #000fff;
+}
+
+input:checked ~ div[title~=results]
+{
+    /*background: #000000;*/
+}
+
+input:checked ~ div[title~=results] table
+{
+    background: #fff;
+    display: inline;
+    width: 300%;
+/*    display: block;*/
+}
+
+div[title~=results] table {
+    display: none; 
+    /*left: 0px;*/
+    width: 300%;
+}
+
+.span-nojavascript-label {
+    display: block;
+    overflow: hidden;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0%;
+    padding-right: 100%;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: relative;
+    top: 0px;
+    float: left;
+    /*width: 0%;*/
+    height: 50px;
+    /*z-index: 0;*/
+   /*background-color:transparent;*/
+}
+
+input[type="submit"].nojavascript-tabimageclick
+{
+    display: block;
+    overflow: hidden;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-top: 0px;
+    margin-bottom: 0px; /*padding-left: 100%;*/ /*padding-right: 100%;*/
+    padding-left: 15%;
+    padding-top: 2px;
+    padding-bottom: 0px;
+    position: absolute;
+    top: 0px;
+    float: left; /*width: 50%;*/
+    min-width: 100%;
+    height: 30px;
+    background-image: url("../../Images/Cloud-icon-16x32.png");
+    background-repeat: no-repeat;
+    background-position: 15px 7px;
+    background-color: transparent; /*z-index: 1000;*/ /*font-size: inherit;*/ /*font-family: inherit;*/
+    color: White;
+    border: 0px solid #FFFFFF;
+    text-align: left;
+    text-indent: 50px; /*this will work for Chrome, Safari
+    line-height:7px;
+    /*font-size:0px;*/
+    /*font-size: 0.85em;*/
+}
+
+input[type="submit"].ie7
+{
+    text-indent: -10px;
+}
+
+.nojavascript-divforlabel-nographic
+{
+    position: static;
+    display: inline-block;
+    float: none;
+    border-radius: 10px 10px 10px 10px;
+    margin-left: 0px;
+    padding-left: 0px;
+    border-left: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    width: 100%;
+    height: 30px;
+    max-height: 30px;
+    padding-right: 0px;
+}
+
+
+
+input, select, button, label
+{
+    cursor: pointer;
+    border-bottom: 0px solid #000;
+    /*font-family: Arial, sans-serif;*/
+    color: #FFFFFF;
+}
+
+
+
+
+
+/*           DEPRECATED        */
+/*
+.tabs-noscript {  This basically collapses unless height included. Provides 0,0 for other objects 
+    position: relative;
+    width: 100%;
+    background: #fff;
+}
+
+.tabs-noscript > section > a {
+    position: relative;
+    display: block;
+    float: left;
+    border: 1px solid red;
+    border-bottom-width: 0 !important;
+    border-radius: 10px 10px 10px 10px;
+    background-image: url("../Images/Cloud-icon-16x32.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    margin-top: 5px;
+    padding: 0.5em 20px 0.5em 30px;
+    text-decoration: none;
+}
+
+.tabs-noscript > section > a:active {
+    border: 1px solid green;
+}
+
+.tabs-noscript > section > a:focus {
+    border: 1px solid green;
+}
+
+.tabs-noscript > section > a:link
+{
+    border: 1px solid green;
+}
+
+.tabs-noscript > section > ax {
+    border: 1px solid yellow;
+}
+
+.tabs-noscript > section > div {
+    position: absolute;
+    top: 10.5em;
+    left: -50000px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid blue;
+}
+
+.tabs-noscript > section:target > div {
+    left: 0;
+    background: #aaa;
+}
+
+.tabs-noscript > section:not(:target)#one > div {
+    left: 0;
+    background: #bbb;
+}    
+
+.appear {
+    display: none;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: #fff;
+    padding: 10px;
+}
+ 
+.xinput:checked ~ .appear {
+    display: block;
+    background: #bbb;
+}
+
+*/
+
+
+/*input:checked ~ div[title~=results]  table*/
+#tabstripmain-corporate input:checked ~ div div[title~=results]  table
+{
+    background: #D5FFFF;
+    display: inline;
+    width: 300%;
+/*    display: block;*/
+    /*padding: 20px;*/
+}
+
+#tabstripmain-corporate div[title~=results]  table {
+    display: none; 
+    /*left: 0px;*/
+    width: 300%;
+}
+
+#tabstripmain-corporate input:checked ~ .cc-ui-selected-tab-icon
+{
+    display: block;
+    margin-top: 15px;
+}
+
+#tabstripmain-corporate .cc-ui-selected-tab-icon
+{
+    display: none; 
+}
+
+#tabstripmain-corporate
+{
+    /*left: 25px;*/
+    /*position: fixed;*/
+    /*padding: 30px 30px 15px 30px;*/
+    background-color: #FFFFFF;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    position:relative;
+    height:900px;
+    margin-top:20px;
+}
+
+#tabstripmain-corporate .nojavascript-tab
+{
+    border: 0px;
+    display: inline-block;
+    float: left;
+    position: relative;
+    width: 100%;
+    /*height: 30px;*/
+    /*max-height: 30px;*/
+    /*background-color: #C0C0C0;*/
+    border-radius: 0px; 
+    background-image: none;
+    /*background-position: left center;*/
+    /*background-repeat: no-repeat;*/
+
+    padding-right: 0px;
+}
+
+#tabstripmain-corporate .nojavascript-label
+{
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    padding-top: 12px;
+    padding-bottom: 0px;
+    position: relative;
+    top: 0px;
+    float: left;
+    padding-right: 0px;
+    overflow:hidden;
+    white-space:nowrap;
+    height: 30px;
+    /*z-index: inherit;*/
+    text-align:right;
+    width:100%;
+}
+
+#tabstripmain-corporate .nojavascript-label:hover
+{
+    color:#000000;
+}
+
+#tabstripmain-corporate .nojavascript-label:focus
+{
+    color:#800080;
+}
+
+#tabstripmain-corporate .nojavascript-results
+{
+    border-style:solid;
+    border-width:0px;
+    position:relative;
+    float:right;
+    border-radius: 10px 10px 10px 10px;
+    /*display: inline;*/
+    width: 65%;
+    /*min-height: 100%;*/
+    z-index:100;
+    overflow:visible;
+    /*max-height:40px;*/
+}
+
+#xtabstripmain-corporate .nojavascript-results div
+{
+    overflow:visible;
+    z-index:100;
+}
+
+#tabstripmain-corporate .content-text-container
+{
+    position:absolute;
+    width:820px;
+    /*height:auto;*/
+    margin-left:15px;
+    /*margin-right:20px;*/
+    /*margin-top:20px;*/
+    /*margin-bottom:20px;*/
+    background-color:#D5FFFF;
+    overflow:visible;
+        border-top-width: 20px;
+        border-top-color:#D5FFFF;
+        border-top-style:solid;
+        /*border:20px #D5FFFF solid;*/
+}
+
+#tabstripmain-corporate .content-text
+{
+    margin-left:20px;
+    margin-right:20px;
+    /*margin-top:20px;*/
+    background-color:#D5FFFF;
+    margin-bottom:20px;
+}
+
+#tabstripmain-corporate .content-text td
+{
+    padding-top:5px;
+    padding-bottom:5px;
+}
+
+#xtabstripmain-corporate table
+{
+    overflow:visible;
+    table-layout:fixed;
+}
+
+#xtabstripmain-corporate table tr
+{
+    max-height:30px;
+    overflow:hidden;
+    height:30px;
+}
+
+#xtabstripmain-corporate table td
+{
+    max-height:30px;
+    overflow:hidden;
+    height:30px;
+}
+
+#tabstripmain-corporate .nojavascript-fixed-results
+{
+    border-style:solid;
+    border-width:0px;
+    position:relative;
+    float:left;
+    border-radius: 10px 10px 10px 10px;
+    display: inline;
+    width: 300%;
+    min-height: 100%;
+}
+
+#tabstripmain-corporate input:checked ~ div[title ~= tabtitle]
+{
+    background: #99C2FF;
+    /*background: #e8f5fd;*/
+    border:solid; 
+    border-width:0px; 
+    position:static; 
+    display:inline-block; 
+    float:none;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 0px;
+    padding-top: 0px;
+    width:100%;
+    height: 30px;
+    max-height: 30px;
+    background-image: url("../../Images/Cloud-icon-16x32.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+}
+
+#tabstripmain-corporate input:checked ~ div[title~=results] > table
+{
+    background: #fff;
+    display: inline;
+    width: 300%;
+/*    display: block;*/
+}
+
+#tabstripmain-corporate div[title~=results] > table {
+    display: none; 
+    /*left: 0px;*/
+    width: 300%;
+}
+
+#tabstripmain-corporate .nojavascript-divforlabel
+{
+    position: static;
+    display: inline-block;
+    float: right;
+    border-radius: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    border-left: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    width: 80%;
+    height: 30px;
+    max-height: 30px;
+    background-image: none;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    padding-right: 10px;
+    background-color: #FFFFFF;
+}
+
+
+#tabstripmain .tab-anchor
+{
+    width:inherit;
+    height:30px;   
+}
+
+div[title ~= active]
+{
+    /*background: #99C2FF;*/
+    background: #00a3e7;
+    border:solid; 
+    border-width:0px; 
+    position:static; 
+    display:inline-block; 
+    float:none;
+    border-radius: 10px 10px 0px 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    width:100%;
+    height: 30px;
+    max-height: 30px;
+    background-image: url("../../Images/Cloud-icon-16x32.png");
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    /*z-index:100;*/
+}
+
+
+
+/* CLOUDWARE EXPLAINED */
+.cloudware-explained-tabstripmain
+{
+    /*left: 25px;*/
+    /*position: fixed;*/
+    /*padding: 30px 30px 15px 30px;*/
+    background-color: #FFFFFF;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    position:relative;
+    top:75px;
+}
+
+.cloudware-explained-tabstripmain .tab-anchor
+{
+    width:auto;
+    height:30px;
+    z-index:100;
+}
+
+
+
+
+
+
+/* CORPORATE INFORMATION */
+#tabstripmain-corporate .tab-anchor
+{
+    width:auto;
+    height:30px;   
+}
+
+#tabstripmain-corporate div[title ~= displayicon]
+{
+    display: block;
+    margin-top: 15px;
+}
+
+
+/* CATEGORY PAGE TABS */
+#tabstripmain-category
+{
+    border-style: none solid solid solid;
+    border-width: 0px 1px 1px 1px;
+    left: 25px; /*position: fixed;*/ /*padding: 30px 30px 15px 30px;*/
+    background-color: #FFFFFF;
+    /*border-radius: 4px 0 0 0;*/
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0; /*position:relative;*/ /*top:-75px;*/ /*height:1000px;*/
+    height: 100%;
+    overflow: hidden;
+    width: 100%; /*height:auto;*/
+}
+
+/* PRESS */
+#corporatePressTabsLinks
+{
+    width:25%;
+    float:left;   
+}
+
+#corporatePressTabsText
+{
+    width:73%;
+    float:left; 
+    margin-top:35px;  
+}
+
+#corporatePressTabs td
+{
+    border:0px solid;
+    line-height:16px;
+}
+
+#tabstripmain-corporate td
+{
+    border:0px solid;
+    line-height:16px;
+}
+
+.content-text a:link
+{
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration:none;
+}
+
+#corporatePressTabsLinks label
+{
+    line-height:15px;   
+    text-decoration:none;
+}
+
+#corporatePressTabsLinks ul
+{
+    line-height:13px;   
+    text-decoration:none;
+    z-index:1000;
+}
+
+#corporatePressTabsLinks li
+{
+    margin-bottom:20px;
+}
+
+#corporatePressTabsLinks a
+{
+    line-height:13px;   
+    text-decoration:none;
+}
+

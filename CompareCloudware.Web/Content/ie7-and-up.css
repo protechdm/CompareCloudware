@@ -1,0 +1,67 @@
+﻿body {
+}
+
+.tc-home-object-label
+{
+	margin-top:5px;
+}
+
+table {
+    /*border: solid 1px #e8eef4;*/
+    border-collapse: collapse;
+}
+
+.xsearch-result-header
+{
+    line-height:150%;   
+}
+
+.review-input-object-container
+{
+    margin-top:0px;
+	height:22px;
+}
+
+.review-input-object-container-multi-line
+{
+	height:70px;
+}
+
+.line-height-150
+{
+    line-height:175%;   
+}
+
+.review-input-drop-down-list
+{
+	margin-top:2px;
+}
+
+select
+{
+	height:19px;	
+}
+
+.review-input-object-label
+{
+	height:19px;	
+	margin-top:5px;
+}
+
+.tc-review-input-object-container
+{
+    position:relative;
+    width:100%;
+    left:0px;
+	margin-top:5px;
+}
+
+.free-trial-input-object-label
+{
+	margin-top:5px;	
+}
+
+.tc-checkbox > input
+{
+    margin-top:1px;
+}

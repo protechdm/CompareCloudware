@@ -1,0 +1,27 @@
+﻿<html>
+<head>
+    <title>Compare Cloudware</title>
+<script type="text/javascript">
+    var id = getParameterByName('cloudApplicationID');
+    //var returnURL = getParameterByName('returnUrl');
+    //if (returnURL.length > 0) {
+        //alert(returnURL)
+    //}
+    window.location.href = "http://localhost:81/Home/CloudApplication?id=" + id + "&scripting=true";
+    //window.location.href = 'http://cc-staging.wilsonmiller.co.uk/Home/IndexCustom?id=0&scripting=true&showDiagnostics=' + showDiagnostics;
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+</script>
+<meta http-equiv="refresh" content="0;url=http://localhost:81/Home/IndexCustom?id=0&scripting=false" />
+<!--<meta http-equiv="refresh" content="0;url=http://cc-staging.wilsonmiller.co.uk/Home/IndexCustom?id=0&scripting=false" />-->
+</head>
+<body onload="document.getElementById('form').submit();">
+<form style="display:none;height:0px;width:0px;" method="post" name="form" id="form" action="/">
+</form>
+</body>
+</html>

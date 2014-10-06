@@ -1,0 +1,21 @@
+<manifest alg="2" build="328" opt="true" iceEnabled="true" exportTarget="other" resolutions="1x" timestamp="1403627986060">
+  <folder name="css">
+    <file name="site_global.css" crc="475048684"/>
+    <file name="index.css" crc="4093081679" ref="index"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="3850798583" ref="index"/>
+    <file name="museutils.js" crc="212726984" ref="index"/>
+    <file name="pie.js" crc="3827607177" ref="index"/>
+    <file name="webpro.js" crc="114405901" ref="index"/>
+    <file name="musewpdisclosure.js" crc="4130026270" ref="index"/>
+  </folder>
+  <folder name="images">
+    <file name="u93-grad.png" crc="4224209130" ref="index"/>
+    <file name="u93-r-grad.png" crc="4227766472" ref="index"/>
+    <file name="u87-10.png" crc="3862683296" ref="index"/>
+    <file name="u117-12.png" crc="4228402852" ref="index"/>
+    <file name="u118-28.png" crc="3788349854" ref="index"/>
+  </folder>
+  <file name="index.html" crc="3836998847" mt="1403627921297" redirect="true"/>
+</manifest>

@@ -1,0 +1,288 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="CloudComparePersonDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="CloudComparePersonDataModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CloudComparePersonDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CloudComparePersonDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Person" EntityType="CloudComparePersonDataModel.Person" />
+          <EntitySet Name="DashBoardRole" EntityType="CloudComparePersonDataModel.DashBoardRole" />
+          <EntitySet Name="VendorDashboards" EntityType="CloudComparePersonDataModel.VendorDashboard" />
+          <EntitySet Name="VendorDashboardRolePerson" EntityType="CloudComparePersonDataModel.VendorDashboardRolePerson" />
+          <EntitySet Name="VendorDashboardRole" EntityType="CloudComparePersonDataModel.VendorDashboardRole" />
+          <EntitySet Name="VendorApplicationCategory" EntityType="CloudComparePersonDataModel.VendorApplicationCategory" />
+          <EntitySet Name="PersonSupportArea" EntityType="CloudComparePersonDataModel.PersonSupportArea" />
+          <EntitySet Name="Profile" EntityType="CloudComparePersonDataModel.Profile" />
+          <AssociationSet Name="DashBoardRoleVendorDashboard" Association="CloudComparePersonDataModel.DashBoardRoleVendorDashboard">
+            <End Role="DashBoardRole" EntitySet="DashBoardRole" />
+            <End Role="VendorDashboard" EntitySet="VendorDashboards" />
+          </AssociationSet>
+          <AssociationSet Name="ProfileVendorDashboard" Association="CloudComparePersonDataModel.ProfileVendorDashboard">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="VendorDashboard" EntitySet="VendorDashboards" />
+          </AssociationSet>
+          <AssociationSet Name="DashBoardRoleVendorDashboardRole" Association="CloudComparePersonDataModel.DashBoardRoleVendorDashboardRole">
+            <End Role="DashBoardRole" EntitySet="DashBoardRole" />
+            <End Role="VendorDashboardRole" EntitySet="VendorDashboardRole" />
+          </AssociationSet>
+          <AssociationSet Name="VendorDashboardRolePersonVendorDashboardRole" Association="CloudComparePersonDataModel.VendorDashboardRolePersonVendorDashboardRole">
+            <End Role="VendorDashboardRolePerson" EntitySet="VendorDashboardRolePerson" />
+            <End Role="VendorDashboardRole" EntitySet="VendorDashboardRole" />
+          </AssociationSet>
+          <AssociationSet Name="PersonVendorDashboardRolePerson" Association="CloudComparePersonDataModel.PersonVendorDashboardRolePerson">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="VendorDashboardRolePerson" EntitySet="VendorDashboardRolePerson" />
+          </AssociationSet>
+          <AssociationSet Name="PersonPersonSupportArea" Association="CloudComparePersonDataModel.PersonPersonSupportArea">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonSupportArea" EntitySet="PersonSupportArea" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="PersonID" />
+          </Key>
+          <Property Type="Int32" Name="PersonID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Forename" Nullable="false" />
+          <Property Type="String" Name="Surname" Nullable="false" />
+          <Property Type="String" Name="EMail" Nullable="false" />
+          <Property Type="String" Name="Telephone" Nullable="false" />
+          <Property Type="String" Name="Company" Nullable="false" />
+          <Property Type="String" Name="NumberOfEmployees" Nullable="false" />
+          <Property Type="String" Name="Position" Nullable="false" />
+          <Property Type="String" Name="Username" Nullable="false" />
+          <Property Type="String" Name="Password" Nullable="false" />
+          <Property Type="String" Name="PersonAddress1" Nullable="false" />
+          <Property Type="String" Name="PersonAddress2" Nullable="false" />
+          <Property Type="String" Name="PersonRegion" Nullable="false" />
+          <Property Type="String" Name="PersonCountry" Nullable="false" />
+          <Property Type="String" Name="PersonPostCode" Nullable="false" />
+          <Property Type="String" Name="AccountsPersonID" Nullable="false" />
+          <Property Type="String" Name="LastLoggedIn" Nullable="false" />
+          <Property Type="String" Name="IsAdministrator" Nullable="false" />
+          <Property Type="String" Name="IsEditor" Nullable="false" />
+          <Property Type="String" Name="IsFinanceContact" Nullable="false" />
+          <NavigationProperty Name="VendorDashboardRolePersons" Relationship="CloudComparePersonDataModel.PersonVendorDashboardRolePerson" FromRole="Person" ToRole="VendorDashboardRolePerson" />
+          <NavigationProperty Name="PersonSupportAreas" Relationship="CloudComparePersonDataModel.PersonPersonSupportArea" FromRole="Person" ToRole="PersonSupportArea" />
+        </EntityType>
+        <EntityType Name="DashBoardRole">
+          <Key>
+            <PropertyRef Name="DashboardRoleID" />
+          </Key>
+          <Property Type="Int32" Name="DashboardRoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DashboardRoleName" Nullable="false" />
+          <NavigationProperty Name="VendorDashboards" Relationship="CloudComparePersonDataModel.DashBoardRoleVendorDashboard" FromRole="DashBoardRole" ToRole="VendorDashboard" />
+          <Property Type="Int32" Name="ProfileProfileID" Nullable="false" />
+          <NavigationProperty Name="VendorDashboardRoles" Relationship="CloudComparePersonDataModel.DashBoardRoleVendorDashboardRole" FromRole="DashBoardRole" ToRole="VendorDashboardRole" />
+        </EntityType>
+        <EntityType Name="VendorDashboard">
+          <Key>
+            <PropertyRef Name="VendorDashboardID" />
+          </Key>
+          <Property Type="Int32" Name="VendorDashboardID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="DashboardRoleID" Nullable="false" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="DashBoardRole" Relationship="CloudComparePersonDataModel.DashBoardRoleVendorDashboard" FromRole="VendorDashboard" ToRole="DashBoardRole" />
+          <Property Type="Int32" Name="DashBoardRoleDashboardRoleID" Nullable="true" />
+          <NavigationProperty Name="Profile" Relationship="CloudComparePersonDataModel.ProfileVendorDashboard" FromRole="VendorDashboard" ToRole="Profile" />
+          <Property Type="Int32" Name="ProfileProfileID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendorDashboardRolePerson">
+          <Key>
+            <PropertyRef Name="VendorDashboardRolePersonID" />
+          </Key>
+          <Property Type="Int32" Name="VendorDashboardRolePersonID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorDashboardRoleID" Nullable="false" />
+          <Property Type="String" Name="PersonID" Nullable="false" />
+          <NavigationProperty Name="VendorDashboardRoles" Relationship="CloudComparePersonDataModel.VendorDashboardRolePersonVendorDashboardRole" FromRole="VendorDashboardRolePerson" ToRole="VendorDashboardRole" />
+          <NavigationProperty Name="Person" Relationship="CloudComparePersonDataModel.PersonVendorDashboardRolePerson" FromRole="VendorDashboardRolePerson" ToRole="Person" />
+          <Property Type="Int32" Name="PersonPersonID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="VendorDashboardRole">
+          <Key>
+            <PropertyRef Name="VendorDashboardRoleID" />
+          </Key>
+          <Property Type="Int32" Name="VendorDashboardRoleID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DashboardRoleID" Nullable="false" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+          <NavigationProperty Name="DashBoardRole" Relationship="CloudComparePersonDataModel.DashBoardRoleVendorDashboardRole" FromRole="VendorDashboardRole" ToRole="DashBoardRole" />
+          <Property Type="Int32" Name="DashBoardRoleDashboardRoleID" Nullable="true" />
+          <NavigationProperty Name="VendorDashboardRolePerson" Relationship="CloudComparePersonDataModel.VendorDashboardRolePersonVendorDashboardRole" FromRole="VendorDashboardRole" ToRole="VendorDashboardRolePerson" />
+          <Property Type="Int32" Name="VendorDashboardRolePersonVendorDashboardRolePersonID" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VendorApplicationCategory">
+          <Key>
+            <PropertyRef Name="VendorApplicationCategoryID" />
+          </Key>
+          <Property Type="Int32" Name="VendorApplicationCategoryID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="CategoryID" Nullable="false" />
+          <Property Type="String" Name="SendUpdates" Nullable="false" />
+          <Property Type="String" Name="SendNews" Nullable="false" />
+          <Property Type="String" Name="IsActive" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PersonSupportArea">
+          <Key>
+            <PropertyRef Name="PersonSupportAreaID" />
+          </Key>
+          <Property Type="Int32" Name="PersonSupportAreaID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PersonID" Nullable="false" />
+          <Property Type="String" Name="SupportAreaID" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="CloudComparePersonDataModel.PersonPersonSupportArea" FromRole="PersonSupportArea" ToRole="Person" />
+          <Property Type="Int32" Name="PersonPersonID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ProfileID" />
+          </Key>
+          <Property Type="Int32" Name="ProfileID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageVendorID" Nullable="false" />
+          <Property Type="String" Name="VendorDashboardID" Nullable="false" />
+          <NavigationProperty Name="VendorDashboards" Relationship="CloudComparePersonDataModel.ProfileVendorDashboard" FromRole="Profile" ToRole="VendorDashboard" />
+        </EntityType>
+        <Association Name="DashBoardRoleVendorDashboard">
+          <End Type="CloudComparePersonDataModel.DashBoardRole" Role="DashBoardRole" Multiplicity="0..1" />
+          <End Type="CloudComparePersonDataModel.VendorDashboard" Role="VendorDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DashBoardRole">
+              <PropertyRef Name="DashboardRoleID" />
+            </Principal>
+            <Dependent Role="VendorDashboard">
+              <PropertyRef Name="DashBoardRoleDashboardRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProfileVendorDashboard">
+          <End Type="CloudComparePersonDataModel.Profile" Role="Profile" Multiplicity="1" />
+          <End Type="CloudComparePersonDataModel.VendorDashboard" Role="VendorDashboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="ProfileID" />
+            </Principal>
+            <Dependent Role="VendorDashboard">
+              <PropertyRef Name="ProfileProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="DashBoardRoleVendorDashboardRole">
+          <End Type="CloudComparePersonDataModel.DashBoardRole" Role="DashBoardRole" Multiplicity="0..1" />
+          <End Type="CloudComparePersonDataModel.VendorDashboardRole" Role="VendorDashboardRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DashBoardRole">
+              <PropertyRef Name="DashboardRoleID" />
+            </Principal>
+            <Dependent Role="VendorDashboardRole">
+              <PropertyRef Name="DashBoardRoleDashboardRoleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="VendorDashboardRolePersonVendorDashboardRole">
+          <End Type="CloudComparePersonDataModel.VendorDashboardRolePerson" Role="VendorDashboardRolePerson" Multiplicity="1" />
+          <End Type="CloudComparePersonDataModel.VendorDashboardRole" Role="VendorDashboardRole" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="VendorDashboardRolePerson">
+              <PropertyRef Name="VendorDashboardRolePersonID" />
+            </Principal>
+            <Dependent Role="VendorDashboardRole">
+              <PropertyRef Name="VendorDashboardRolePersonVendorDashboardRolePersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonVendorDashboardRolePerson">
+          <End Type="CloudComparePersonDataModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="CloudComparePersonDataModel.VendorDashboardRolePerson" Role="VendorDashboardRolePerson" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="VendorDashboardRolePerson">
+              <PropertyRef Name="PersonPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonPersonSupportArea">
+          <End Type="CloudComparePersonDataModel.Person" Role="Person" Multiplicity="0..1" />
+          <End Type="CloudComparePersonDataModel.PersonSupportArea" Role="PersonSupportArea" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="PersonID" />
+            </Principal>
+            <Dependent Role="PersonSupportArea">
+              <PropertyRef Name="PersonPersonID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CloudComparePersonDataModel" />
+        <Alias Key="Target" Value="CloudComparePersonDataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CloudComparePersonDataModelContainer" StorageEntityContainer="CloudComparePersonDataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CloudComparePersonDataModel" >
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.Person" Width="1.5" PointX="7.625" PointY="8.625" Height="4.2218636067708326" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.DashBoardRole" Width="1.875" PointX="4.125" PointY="3.125" Height="1.427958984375" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.VendorDashboard" Width="2.375" PointX="0.75" PointY="3.125" Height="2.2496956380208326" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.VendorDashboardRolePerson" Width="2.75" PointX="7" PointY="6" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.VendorDashboardRole" Width="2.375" PointX="7.125" PointY="3.125" Height="1.4279589843750005" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.VendorApplicationCategory" Width="2.875" PointX="3.875" PointY="0.5" Height="2.0853483072916674" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.PersonSupportArea" Width="2.5" PointX="3.25" PointY="8.625" Height="1.427958984375" />
+        <EntityTypeShape EntityType="CloudComparePersonDataModel.Profile" Width="1.5" PointX="0.75" PointY="0.5" Height="1.4279589843749996" />
+        <AssociationConnector Association="CloudComparePersonDataModel.DashBoardRoleVendorDashboard">
+          <ConnectorPoint PointX="4.125" PointY="4.0033268229166659" />
+          <ConnectorPoint PointX="3.125" PointY="4.0033268229166659" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePersonDataModel.ProfileVendorDashboard">
+          <ConnectorPoint PointX="1.5" PointY="2.092306315104167" />
+          <ConnectorPoint PointX="1.5" PointY="3.125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePersonDataModel.DashBoardRoleVendorDashboardRole">
+          <ConnectorPoint PointX="6" PointY="4.0033268229166659" />
+          <ConnectorPoint PointX="7.125" PointY="4.0033268229166659" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePersonDataModel.VendorDashboardRolePersonVendorDashboardRole">
+          <ConnectorPoint PointX="8.3125" PointY="6" />
+          <ConnectorPoint PointX="8.3125" PointY="5.2103483072916656" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePersonDataModel.PersonVendorDashboardRolePerson">
+          <ConnectorPoint PointX="8.375" PointY="8.625" />
+          <ConnectorPoint PointX="8.375" PointY="7.9210009765625" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePersonDataModel.PersonPersonSupportArea">
+          <ConnectorPoint PointX="7.625" PointY="9.5033268229166659" />
+          <ConnectorPoint PointX="5.75" PointY="9.5033268229166659" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

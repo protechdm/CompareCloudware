@@ -1,0 +1,31 @@
+2014-09-07 19:16:06,740 DEBUG 36 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-09-07 19:16:06,751 DEBUG 36 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-09-07 19:16:09,099 DEBUG 36 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-09-07 19:16:20,815 DEBUG 36 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-09-07 19:16:21,277 DEBUG 36 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-09-07 19:16:21,289 DEBUG 36 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-09-07 19:16:23,034 DEBUG 36 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 07/09/2014 19:16:23.
+2014-09-07 19:16:23,148 DEBUG 42 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_104 at 07/09/2014 19:16:23.
+2014-09-07 19:16:23,181 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_108 at 07/09/2014 19:16:23.
+2014-09-07 19:16:23,216 DEBUG 42 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 07/09/2014 19:16:23.
+2014-09-07 19:16:23,522 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_78 at 07/09/2014 19:16:23.
+2014-09-07 19:16:23,708 ERROR 43 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 595
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2470
+2014-09-07 19:16:23,722 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 07/09/2014 19:16:23.
+2014-09-07 19:16:24,019 DEBUG 36 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_23 at 07/09/2014 19:16:24.
+2014-09-07 19:16:25,036 DEBUG 36 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_48 at 07/09/2014 19:16:25.
+2014-09-07 19:16:25,554 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 07/09/2014 19:16:25.
+2014-09-07 19:16:26,048 DEBUG 41 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 07/09/2014 19:16:26.
+2014-09-07 19:16:31,308 DEBUG 45 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-09-07 19:16:32,142 DEBUG 45 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-09-07 19:16:32,152 DEBUG 45 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_23 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,244 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_78 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,245 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_108 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,245 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_48 at 07/09/2014 19:32:38. Reason - Removed
+2014-09-07 19:32:38,245 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_104 at 07/09/2014 19:32:38. Reason - Removed

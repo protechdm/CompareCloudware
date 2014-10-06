@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="CloudCompareInvoiceDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="CloudCompareInvoiceDataModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CloudCompareInvoiceDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CloudCompareInvoiceDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Invoice" EntityType="CloudCompareInvoiceDataModel.Invoice" />
+          <EntitySet Name="VAT" EntityType="CloudCompareInvoiceDataModel.VAT" />
+          <AssociationSet Name="InvoiceVAT" Association="CloudCompareInvoiceDataModel.InvoiceVAT">
+            <End Role="Invoice" EntitySet="Invoice" />
+            <End Role="VAT" EntitySet="VAT" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Invoice">
+          <Key>
+            <PropertyRef Name="InvoiceID" />
+          </Key>
+          <Property Type="Int32" Name="InvoiceID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <Property Type="String" Name="ApplicationID" Nullable="false" />
+          <Property Type="String" Name="InvoiceBytes" Nullable="false" />
+          <Property Type="String" Name="InvoiceDate" Nullable="false" />
+          <Property Type="String" Name="InvoiceNumber" Nullable="false" />
+          <Property Type="String" Name="InvoiceNetAmount" Nullable="false" />
+          <Property Type="String" Name="InvoiceGrossAmount" Nullable="false" />
+          <Property Type="String" Name="InvoiceTotalAmount" Nullable="false" />
+          <Property Type="String" Name="VATID" Nullable="false" />
+          <Property Type="String" Name="InvoiceDescription" Nullable="false" />
+          <NavigationProperty Name="VATs" Relationship="CloudCompareInvoiceDataModel.InvoiceVAT" FromRole="Invoice" ToRole="VAT" />
+        </EntityType>
+        <EntityType Name="VAT">
+          <Key>
+            <PropertyRef Name="VATID" />
+          </Key>
+          <Property Type="Int32" Name="VATID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FromDate" Nullable="false" />
+          <Property Type="String" Name="ToDate" Nullable="false" />
+          <Property Type="String" Name="VATPercentage" Nullable="false" />
+          <NavigationProperty Name="Invoice" Relationship="CloudCompareInvoiceDataModel.InvoiceVAT" FromRole="VAT" ToRole="Invoice" />
+          <Property Type="Int32" Name="InvoiceInvoiceID" Nullable="true" />
+        </EntityType>
+        <Association Name="InvoiceVAT">
+          <End Type="CloudCompareInvoiceDataModel.Invoice" Role="Invoice" Multiplicity="0..1" />
+          <End Type="CloudCompareInvoiceDataModel.VAT" Role="VAT" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoice">
+              <PropertyRef Name="InvoiceID" />
+            </Principal>
+            <Dependent Role="VAT">
+              <PropertyRef Name="InvoiceInvoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CloudCompareInvoiceDataModel" />
+        <Alias Key="Target" Value="CloudCompareInvoiceDataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CloudCompareInvoiceDataModelContainer" StorageEntityContainer="CloudCompareInvoiceDataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CloudCompareInvoiceDataModel" >
+        <EntityTypeShape EntityType="CloudCompareInvoiceDataModel.Invoice" Width="1.5" PointX="3.375" PointY="2.5" Height="2.7427376302083326" />
+        <EntityTypeShape EntityType="CloudCompareInvoiceDataModel.VAT" Width="1.5" PointX="6.125" PointY="3.125" Height="1.5923063151041665" />
+        <AssociationConnector Association="CloudCompareInvoiceDataModel.InvoiceVAT">
+          <ConnectorPoint PointX="4.875" PointY="4.08550048828125" />
+          <ConnectorPoint PointX="6.125" PointY="4.08550048828125" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

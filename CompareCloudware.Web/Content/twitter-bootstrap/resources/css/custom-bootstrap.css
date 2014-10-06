@@ -1,0 +1,566 @@
+input,
+button,
+select,
+textarea {
+    /*font-family: Arial, Helvetica, sans-serif;*/
+    font-family: Vagabond, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+}
+
+
+.modal-cloudware-registration select,
+.modal-cloudware-registration textarea,
+.modal-cloudware-registration input[type="text"],
+.modal-cloudware-registration input[type="password"],
+.modal-cloudware-registration input[type="datetime"],
+.modal-cloudware-registration input[type="datetime-local"],
+.modal-cloudware-registration input[type="date"],
+.modal-cloudware-registration input[type="month"],
+.modal-cloudware-registration input[type="time"],
+.modal-cloudware-registration input[type="week"],
+.modal-cloudware-registration input[type="number"],
+.modal-cloudware-registration input[type="email"],
+.modal-cloudware-registration input[type="url"],
+.modal-cloudware-registration input[type="search"],
+.modal-cloudware-registration input[type="tel"],
+.modal-cloudware-registration input[type="color"],
+.modal-cloudware-registration .uneditable-input {
+  display: inline-block;
+  height: 17px;
+  width: 100%;
+  padding: 0px 0px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #666666;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
+
+.modal-cloudware-registration textarea,
+.modal-cloudware-registration input[type="text"],
+.modal-cloudware-registration input[type="password"],
+.modal-cloudware-registration input[type="datetime"],
+.modal-cloudware-registration input[type="datetime-local"],
+.modal-cloudware-registration input[type="date"],
+.modal-cloudware-registration input[type="month"],
+.modal-cloudware-registration input[type="time"],
+.modal-cloudware-registration input[type="week"],
+.modal-cloudware-registration input[type="number"],
+.modal-cloudware-registration input[type="email"],
+.modal-cloudware-registration input[type="url"],
+.modal-cloudware-registration input[type="search"],
+.modal-cloudware-registration input[type="tel"],
+.modal-cloudware-registration input[type="color"],
+.modal-cloudware-registration .uneditable-input {
+  background-color: #e8f5fd;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+
+.control-group {
+  margin-bottom: 5px;
+}
+
+/*
+input,
+textarea,
+.uneditable-input {
+  width: 200px;
+}
+*/
+
+.modal-cloudware-registration h1 {
+  /*font-size: 38.5px;*/
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+}
+
+.modal-cloudware-registration .dummy-h1 {
+  /*font-size: 38.5px;*/
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+}
+
+.modal-cloudware-registration h5 {
+  /*font-size: 38.5px;*/
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: #666666;
+}
+
+.checkbox-label {
+    vertical-align:middle;
+    margin-top:0px;
+    margin-bottom:0px;
+    /*padding-top:15px;*/
+    height:10px;
+    margin-left:5px;
+    /*float:left;*/
+    display:inline;
+    top:1px;
+    bottom:5px;
+    
+}
+
+.anchor-label {
+    /*vertical-align:middle;*/
+    /*margin-top:16px;*/
+    /*margin-bottom:-5px;*/
+    /*padding-top:15px;*/
+    height:23px;
+    /*margin-left:5px;*/
+    /*padding-top:10px;*/
+    /*float:right;*/
+    display:inline;
+    position:relative;
+    top:1px;
+}
+
+.modal-cloudware-registration .site-button-container
+{
+    margin-top:20px;
+}
+
+.modal-cloudware-registration textarea
+{
+    resize:none;
+    height:125px;
+}
+
+.modal-cloudware-registration {
+  width:880px;
+  position: fixed;
+  top: 10%;
+  /*left: 50%;*/
+  left: 25%;
+  right:25%;
+  z-index: 1050;
+  /*margin: -250px 0 0 -280px;*/
+  margin: -250px 0 0 -125px;
+  
+  color:#FFFFFF;
+  font-size: 0.9em;
+  line-height:normal;
+  text-align:left;
+  
+}
+
+.modal-cloudware-registration .modal-header
+{
+    border-bottom:0px;
+    padding: 5px 7px;
+}
+
+.modal-cloudware-registration .modal-body
+{
+    max-height:520px;
+    max-width:810px;
+}
+
+.modal-cloudware-registration input[type='checkbox']
+{
+    display:inline;
+    vertical-align:middle;
+}
+
+.modal-cloudware-registration fieldset
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.modal-cloudware-registration .popover-content
+{
+    padding: 1px 1px 1px 1px;
+}
+
+.modal-cloudware-registration .popover-content p
+{
+    font-size: 13px;
+}
+
+
+
+.modal-cloudware-registration-confirmation {
+  width:350px;
+  position: fixed;
+  top: 10%;
+  /*left: 50%;*/
+  left: 35%;
+  /*right:30%;*/
+  z-index: 1050;
+  /*margin: -250px 0 0 -280px;*/
+  margin: 0px 0 0 0px;
+}
+
+.modal-cloudware-registration-confirmation .modal-header
+{
+    border-bottom:0px;
+    padding: 5px 7px;
+}
+
+.modal-cloudware-registration-confirmation .modal-body h5
+{
+    text-align:center;   
+}
+
+.bootstrapper-text
+{
+    text-align:left;    
+}
+
+.bootstrapper-text h6 {
+  font-size: 11.9px;
+}
+
+.bootstrapper-text h1,
+.bootstrapper-text h2,
+.bootstrapper-text h3,
+.bootstrapper-text h4,
+.bootstrapper-text h5,
+.bootstrapper-text h6 {
+  margin: 10px 0;
+  font-family: inherit;
+  font-weight: bold;
+  line-height: 20px;
+  color: inherit;
+  text-rendering: optimizelegibility;
+}
+
+.bootstrapper-text h1 small,
+.bootstrapper-text h2 small,
+.bootstrapper-text h3 small,
+.bootstrapper-text h4 small,
+.bootstrapper-text h5 small,
+.bootstrapper-text h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999999;
+}
+
+.bootstrapper-text h1,
+.bootstrapper-text h2,
+.bootstrapper-text h3 {
+  line-height: 40px;
+}
+
+.bootstrapper-text h1 {
+  font-size: 38.5px;
+}
+
+.bootstrapper-text h2 {
+  font-size: 31.5px;
+}
+
+.bootstrapper-text h3 {
+  font-size: 24.5px;
+}
+
+.bootstrapper-text h4 {
+  font-size: 17.5px;
+}
+
+.bootstrapper-text h5 {
+  font-size: 14px;
+}
+
+.bootstrapper-text h6 {
+  font-size: 11.9px;
+}
+
+.bootstrapper-text h1 small {
+  font-size: 24.5px;
+}
+
+.bootstrapper-text h2 small {
+  font-size: 17.5px;
+}
+
+.bootstrapper-text h3 small {
+  font-size: 14px;
+}
+
+.bootstrapper-text h4 small {
+  font-size: 14px;
+}
+
+
+
+
+
+
+/* NOSCRIPT */
+.modal-cloudware-registration-noscript .controls .input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+
+.modal-cloudware-registration-noscript select,
+.modal-cloudware-registration-noscript textarea,
+.modal-cloudware-registration-noscript input[type="text"],
+.modal-cloudware-registration-noscript input[type="password"],
+.modal-cloudware-registration-noscript input[type="datetime"],
+.modal-cloudware-registration-noscript input[type="datetime-local"],
+.modal-cloudware-registration-noscript input[type="date"],
+.modal-cloudware-registration-noscript input[type="month"],
+.modal-cloudware-registration-noscript input[type="time"],
+.modal-cloudware-registration-noscript input[type="week"],
+.modal-cloudware-registration-noscript input[type="number"],
+.modal-cloudware-registration-noscript input[type="email"],
+.modal-cloudware-registration-noscript input[type="url"],
+.modal-cloudware-registration-noscript input[type="search"],
+.modal-cloudware-registration-noscript input[type="tel"],
+.modal-cloudware-registration-noscript input[type="color"],
+.modal-cloudware-registration-noscript .uneditable-input {
+  display: inline-block;
+  height: 17px;
+  width: 100%;
+  padding: 0px 0px;
+  font-size: 13px;
+  line-height: 15px;
+  color: #666666;
+  vertical-align: middle;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+
+
+
+.modal-cloudware-registration-noscript textarea,
+.modal-cloudware-registration-noscript input[type="text"],
+.modal-cloudware-registration-noscript input[type="password"],
+.modal-cloudware-registration-noscript input[type="datetime"],
+.modal-cloudware-registration-noscript input[type="datetime-local"],
+.modal-cloudware-registration-noscript input[type="date"],
+.modal-cloudware-registration-noscript input[type="month"],
+.modal-cloudware-registration-noscript input[type="time"],
+.modal-cloudware-registration-noscript input[type="week"],
+.modal-cloudware-registration-noscript input[type="number"],
+.modal-cloudware-registration-noscript input[type="email"],
+.modal-cloudware-registration-noscript input[type="url"],
+.modal-cloudware-registration-noscript input[type="search"],
+.modal-cloudware-registration-noscript input[type="tel"],
+.modal-cloudware-registration-noscript input[type="color"],
+.modal-cloudware-registration-noscript .uneditable-input {
+  background-color: #e8f5fd;
+  border: 1px solid #cccccc;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+}
+
+
+/*
+input,
+textarea,
+.uneditable-input {
+  width: 200px;
+}
+*/
+
+.modal-cloudware-registration-noscript h1 {
+  /*font-size: 38.5px;*/
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+}
+
+.modal-cloudware-registration-noscript h5 {
+  /*font-size: 38.5px;*/
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: #666666;
+}
+
+
+
+.modal-cloudware-registration-noscript .site-button-container
+{
+    margin-top:20px;
+}
+
+.modal-cloudware-registration-noscript textarea
+{
+    resize:none;
+    height:125px;
+}
+
+.modal-cloudware-registration-noscript {
+  width:880px;
+  position: fixed;
+  top: 10%;
+  /*left: 50%;*/
+  left: 25%;
+  right:25%;
+  z-index: 1000;
+  /*margin: -250px 0 0 -280px;*/
+  margin: -250px 0 0 -125px;
+  
+  color:#FFFFFF;
+  font-size: 0.9em;
+  line-height:normal;
+  text-align:left;
+  
+}
+
+.modal-cloudware-registration-noscript .modal-header
+{
+    border-bottom:0px;
+    padding: 5px 7px;
+}
+
+.modal-cloudware-registration-noscript .modal-body
+{
+    max-height:500px;
+    max-width:810px;
+}
+
+.modal-cloudware-registration-noscript input[type='checkbox']
+{
+    display:inline;
+    vertical-align:middle;
+}
+
+.modal-cloudware-registration-noscript fieldset
+{
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+.modal-cloudware-registration-noscript .popover-content
+{
+    padding: 1px 1px 1px 1px;
+}
+
+.modal-cloudware-registration-noscript .popover-content p
+{
+    font-size: 13px;
+}
+
+
+
+.modal-cloudware-registration-noscript-confirmation {
+  width:350px;
+  position: fixed;
+  top: 10%;
+  /*left: 50%;*/
+  left: 35%;
+  /*right:30%;*/
+  z-index: 1050;
+  /*margin: -250px 0 0 -280px;*/
+  margin: 0px 0 0 0px;
+}
+
+.modal-cloudware-registration-noscript-confirmation .modal-header
+{
+    border-bottom:0px;
+    padding: 5px 7px;
+}
+
+.modal-cloudware-registration-noscript-confirmation .modal-body h5
+{
+    text-align:center;   
+}
+
+
+
+/* BETA SPLASH */
+.modal-splash {
+  width:600px;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  /*left: 25%;*/
+  /*right:25%;*/
+  z-index: 1050;
+  /*margin: -250px 0 0 -280px;*/
+  /*margin: -250px 0 0 -125px;*/
+  margin-left:-300px;
+  color:#FFFFFF;
+  font-size: 0.9em;
+  line-height:normal;
+  text-align:left;
+  
+}
+
+.modal-splash .modal-header
+{
+    border-bottom:0px;
+    padding: 5px 7px;
+    max-width:590px;
+}
+
+
+.modal-splash .modal-body
+{
+    max-height:500px;
+    max-width:590px;
+}
+
+.modal-splash .span7
+{
+    width:560px;
+}
+
+/*
+.modal-splash [class*="span"]
+{
+    margin-left:0px;
+}
+*/
+
+.modal-splash .span4
+{
+    margin-left:10px;
+    width:250px;
+}
+
+.modal-splash h1 {
+  /*font-size: 38.5px;*/
+    font-size: 22px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+}
+
+.modal-splash h5 {
+  /*font-size: 38.5px;*/
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: #666666;
+}
+
+.modal-splash .site-button-container
+{
+    margin-top:20px;
+}
+
+.modal-splash h1 {
+    line-height:22px;
+}

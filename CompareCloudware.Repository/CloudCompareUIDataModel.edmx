@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="CloudCompareUIDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="CloudCompareUIDataModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CloudCompareUIDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CloudCompareUIDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Placeholder" EntityType="CloudCompareUIDataModel.Placeholder" />
+          <EntitySet Name="PlaceholderTextBased" EntityType="CloudCompareUIDataModel.PlaceholderTextBased" />
+          <EntitySet Name="PlaceholderGraphicBased" EntityType="CloudCompareUIDataModel.PlaceholderGraphicBased" />
+          <AssociationSet Name="PlaceholderPlaceholderTextBased" Association="CloudCompareUIDataModel.PlaceholderPlaceholderTextBased">
+            <End Role="Placeholder" EntitySet="Placeholder" />
+            <End Role="PlaceholderTextBased" EntitySet="PlaceholderTextBased" />
+          </AssociationSet>
+          <AssociationSet Name="PlaceholderPlaceholderGraphicBased" Association="CloudCompareUIDataModel.PlaceholderPlaceholderGraphicBased">
+            <End Role="Placeholder" EntitySet="Placeholder" />
+            <End Role="PlaceholderGraphicBased" EntitySet="PlaceholderGraphicBased" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Placeholder">
+          <Key>
+            <PropertyRef Name="PlaceholderID" />
+          </Key>
+          <Property Type="Int32" Name="PlaceholderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="CategoryID" Nullable="false" />
+          <NavigationProperty Name="PlaceholderTextBaseds" Relationship="CloudCompareUIDataModel.PlaceholderPlaceholderTextBased" FromRole="Placeholder" ToRole="PlaceholderTextBased" />
+          <NavigationProperty Name="PlaceholderGraphicBaseds" Relationship="CloudCompareUIDataModel.PlaceholderPlaceholderGraphicBased" FromRole="Placeholder" ToRole="PlaceholderGraphicBased" />
+        </EntityType>
+        <EntityType Name="PlaceholderTextBased">
+          <Key>
+            <PropertyRef Name="PlaceholderID" />
+          </Key>
+          <Property Type="Int32" Name="PlaceholderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PlaceholderTitle" Nullable="false" />
+          <Property Type="String" Name="PlaceholderText" Nullable="false" />
+          <Property Type="String" Name="PlaceholderGraphic" Nullable="false" />
+          <Property Type="String" Name="PlaceholderGraphicText" Nullable="false" />
+          <NavigationProperty Name="Placeholder" Relationship="CloudCompareUIDataModel.PlaceholderPlaceholderTextBased" FromRole="PlaceholderTextBased" ToRole="Placeholder" />
+          <Property Type="Int32" Name="PlaceholderPlaceholderID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PlaceholderGraphicBased">
+          <Key>
+            <PropertyRef Name="PlaceholderID" />
+          </Key>
+          <Property Type="Int32" Name="PlaceholderID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PlaceholderGraphicURL" Nullable="false" />
+          <NavigationProperty Name="Placeholder" Relationship="CloudCompareUIDataModel.PlaceholderPlaceholderGraphicBased" FromRole="PlaceholderGraphicBased" ToRole="Placeholder" />
+          <Property Type="Int32" Name="PlaceholderPlaceholderID" Nullable="true" />
+        </EntityType>
+        <Association Name="PlaceholderPlaceholderTextBased">
+          <End Type="CloudCompareUIDataModel.Placeholder" Role="Placeholder" Multiplicity="0..1" />
+          <End Type="CloudCompareUIDataModel.PlaceholderTextBased" Role="PlaceholderTextBased" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Placeholder">
+              <PropertyRef Name="PlaceholderID" />
+            </Principal>
+            <Dependent Role="PlaceholderTextBased">
+              <PropertyRef Name="PlaceholderPlaceholderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PlaceholderPlaceholderGraphicBased">
+          <End Type="CloudCompareUIDataModel.Placeholder" Role="Placeholder" Multiplicity="0..1" />
+          <End Type="CloudCompareUIDataModel.PlaceholderGraphicBased" Role="PlaceholderGraphicBased" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Placeholder">
+              <PropertyRef Name="PlaceholderID" />
+            </Principal>
+            <Dependent Role="PlaceholderGraphicBased">
+              <PropertyRef Name="PlaceholderPlaceholderID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CloudCompareUIDataModel" />
+        <Alias Key="Target" Value="CloudCompareUIDataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CloudCompareUIDataModelContainer" StorageEntityContainer="CloudCompareUIDataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CloudCompareUIDataModel" >
+        <EntityTypeShape EntityType="CloudCompareUIDataModel.Placeholder" Width="1.5" PointX="4.125" PointY="0.625" Height="1.2636116536458335" />
+        <EntityTypeShape EntityType="CloudCompareUIDataModel.PlaceholderTextBased" Width="2.5" PointX="1.625" PointY="3" Height="1.7566536458333326" />
+        <EntityTypeShape EntityType="CloudCompareUIDataModel.PlaceholderGraphicBased" Width="2.75" PointX="5.125" PointY="3" Height="1.2636116536458326" />
+        <AssociationConnector Association="CloudCompareUIDataModel.PlaceholderPlaceholderTextBased">
+          <ConnectorPoint PointX="4.625" PointY="2.052958984375" />
+          <ConnectorPoint PointX="4.625" PointY="4.70572998046875" />
+          <ConnectorPoint PointX="4.125" PointY="4.70572998046875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudCompareUIDataModel.PlaceholderPlaceholderGraphicBased">
+          <ConnectorPoint PointX="5.375" PointY="2.2173063151041665" />
+          <ConnectorPoint PointX="5.375" PointY="3" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,990 @@
+/* HACK FOR URL addresses! */
+.ui-widget-content 
+{ 
+    background: #ffffff url("../images/ui-bg_flat_75_ffffff_40x100.png") 50% 50% repeat-x; 
+}
+.ui-widget-header 
+{ 
+    background: #cccccc url("../images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x; 
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default 
+{ 
+    background: #e6e6e6 url("../images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x; 
+}
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .xui-widget-content .xui-state-focus, .ui-widget-header .ui-state-focus 
+{ 
+    background: #dadada url("../images/ui-bg_glass_75_dadada_1x400.png") 50% 50% repeat-x; 
+}
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active 
+{ 
+    background: #ffffff url("../images/ui-bg_glass_65_ffffff_1x400.png") 50% 50% repeat-x; 
+}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight  
+{
+    background: #fbf9ee url("../images/ui-bg_glass_55_fbf9ee_1x400.png") 50% 50% repeat-x; 
+}
+.ui-state-error, .ui-widget-content .ui-state-error, .ui-widget-header .ui-state-error 
+{
+    background: #fef1ec url("../images/ui-bg_glass_95_fef1ec_1x400.png") 50% 50% repeat-x; 
+}
+.ui-icon 
+{ 
+    background-image: url("../images/ui-icons_222222_256x240.png"); 
+}
+.ui-widget-content .ui-icon 
+{
+    background-image: url("../images/ui-icons_222222_256x240.png"); 
+}
+.ui-widget-header .ui-icon 
+{
+    background-image: url("../images/ui-icons_222222_256x240.png"); 
+}
+.ui-state-default .ui-icon 
+{ 
+    background-image: url("../images/ui-icons_888888_256x240.png"); 
+}
+.ui-state-hover .ui-icon, .ui-state-focus .ui-icon 
+{
+    background-image: url("../images/ui-icons_454545_256x240.png"); 
+}
+.ui-state-active .ui-icon 
+{
+    background-image: url(../images/ui-icons_454545_256x240.png)/*{iconsActive}*/; 
+}
+.ui-state-highlight .ui-icon 
+{
+    background-image: url(../images/ui-icons_2e83ff_256x240.png)/*{iconsHighlight}*/; 
+}
+.ui-state-error .ui-icon, .ui-state-error-text .ui-icon 
+{
+    background-image: url(../images/ui-icons_cd0a0a_256x240.png)/*{iconsError}*/; 
+}
+.ui-widget-overlay 
+{ 
+    background: #aaaaaa url("../images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x; 
+}
+.ui-widget-shadow 
+{ 
+    background: #aaaaaa url("../images/ui-bg_flat_0_aaaaaa_40x100.png") 50% 50% repeat-x; 
+}
+
+
+
+/* Customisation of jQuery-ui classes */
+
+#tabs.ui-state-error  
+{	
+	padding: 3px;
+	padding-left : 10px;
+}
+
+#tabs.ui-state-highlight {
+	padding: 3px;	
+	padding-left : 10px;
+}
+
+#tabs.ui-icon 
+{
+	margin-top: 2px;
+}
+
+#tabs.ui-tabs
+{
+    /*width: 32%;*/
+    /*height: 30px;*/
+    /*background-image: url('../Images/Cloud-icon-16x32.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: left;*/
+    /*background-image: url(/images/CCW_Iconography.png); */
+    /*background-position: background-position: -298 -10;*/
+    zoom: 1; 
+}
+
+/*ADDED*/
+#tabs.ui-tabs .ui-tabs-nav 
+{ 
+    list-style: none; 
+    position: relative; 
+    /*padding: .2em .2em 0; */
+}
+
+#tabs .ui-tabs-nav li
+{
+    width: 33.242%;
+    height: 30px;
+    background-image: url('../Images/Cloud-icon-16x32.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    /*background-image: url(/images/CCW_Iconography.png); */
+    /*background-position: background-position: -298 -10;*/
+}
+
+/*ADDED*/
+#tabs.ui-tabs .ui-tabs-nav li 
+{ 
+    position: relative; 
+    float: left; 
+    border-bottom-width: 0 !important; 
+    /*margin: 0 .2em -1px 0; */
+    margin: 0 .08em -1px 0; 
+    padding: 0; 
+}
+
+/*ADDED*/
+#tabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected 
+{ 
+    padding-bottom: 0px; 
+    border-bottom-width: 0; 
+}
+
+/*ADDED*/
+#tabs.ui-tabs .ui-tabs-panel 
+{ 
+    /*padding: 1em 1.4em; */
+    display: block; 
+    /*border-width: 0; */
+    /*background: none; */
+    margin-top:1px;
+    margin-left:3px;
+    margin-right:3px;
+    z-index:-1;
+}
+
+/*ADDED*/
+#tabs.ui-tabs .ui-tabs-hide { display: none !important; }
+
+#tabs.ui-tabs .ui-tabs-nav li a
+{
+    float: left; /*padding: 0.5em 1em;*/
+    text-decoration: none;
+    /*display: block;*/ /* may not need this, but I've found I do */
+    position:absolute;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 85%;
+    height: 20px;
+    padding-top: 7px;
+    padding-bottom: 3px;
+    padding-left: 47px;  /* width of the image plus a little extra padding */
+    padding-right: 0px;
+    overflow:hidden;
+    color:#FFFFFF;
+}
+
+#tabs .ui-state-default,#tabs .ui-tabs-selected
+{
+    margin: 100px;
+    border-radius: 5px 5px 0px 0px;
+    line-height: 15px;
+    /*border-bottom-width: 0 !important;*/
+    float: left;
+    margin: 10 0.2em -1px 0;
+    padding: 10px;
+    position: relative;
+    /*background: url("images/ui-bg_glass_80_e6e6e6_1x400.png") repeat-x scroll 50% 50% #999999;*/
+    background: #999999;
+ }
+
+#tabs.ui-tabs .ui-state-default, #tabs.ui-tabs .ui-widget-content .ui-state-default {
+    /*background: url("images/ui-bg_glass_80_e6e6e6_1x400.png") repeat-x scroll 50% 50% #999999;*/
+    background: #999999;
+}
+
+#tabs.ui-tabs .ui-state-active, #tabs.ui-tabs .ui-widget-content .ui-state-active {
+    /*background: url("images/ui-bg_glass_50_99c2ff_1x400.png") repeat-x scroll 50% 50% #99C2FF;*/
+    /*background: #99C2FF;*/
+    background: #00a3e7;
+}
+
+
+#tabs.ui-tabs .ui-widget-header
+{	
+	background: none;
+	background-color:#FFFFFF;
+}
+
+#tabs.ui-tabs .ui-state-default
+{	
+	border-width:0px;
+}
+
+#tabs .ui-widget-header
+{	
+	background-color: #FFFFFF;
+	/*border: 0px solid;*/
+	border: 0px none;
+	/*background: none;*/
+}
+
+#tabs.ui-widget-content 
+{ 
+    /*border: 1px solid #dddddd; */
+    /*background: #EBEBEB url(images/ui-bg_highlight-hard_100_f9f9f9_1x100.png) 50% top repeat-x; */
+    /*color: #362b36; */
+    color: #FFFFFF;
+    border:none;
+    background:none; 
+  }
+
+#tabs.ui-widget {
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#FFFFFF;
+}
+
+#tabs ul
+{
+    /*background-color:#99C2FF;   */
+    background-color:#FFFFFF;
+    padding: 0px 0px 0px 0px;
+}
+
+#tabs ul label
+{
+	height:11px;
+}
+
+#tabs.ui-tabs
+{
+    padding:0px 0px 0px 0px;   
+}
+
+
+
+/* VERTICAL TABS */
+#corporateTabs.ui-tabs-vertical 
+{ 
+    /*width: 55em; */
+    /*width: 75%;*/
+    width: 100%;
+    border:none; 
+    list-style-type:none;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav 
+{ 
+    /*padding: .2em .1em .2em .2em; */
+    float: left; 
+    /*width: 19%;*/
+    width: 14%;
+    padding: 0px;
+    padding-top:20px;
+    line-height:40px; 
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li 
+{ 
+    clear: left; 
+    width: 100%; 
+    border-bottom-width: 1px !important; 
+    border-right-width: 0 !important; 
+    /*margin: 0 -1px .2em 0; */
+    background: none;
+    border:none;
+    margin: 0px;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li a 
+{ 
+    display:block;
+    padding:0px;
+    padding-right:10px; 
+    float:right;
+    border:0px;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li div
+{ 
+    background-image:none;
+    padding:0px; 
+    float:right;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active 
+{ 
+    padding-bottom: 0; 
+    padding-right: .1em; 
+    border-right-width: 1px; 
+    border-right-width: 1px; 
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-panel
+{
+    /*padding: 1em; */
+    float: left; /*width: 40em;*/
+    /*width: 60%;*/
+    width: 81.5%;
+    padding: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    /*background-color: #D5FFFF;*/
+    background-color: #e8f5fd;
+    margin-top: 20px;
+    line-height: 15px;
+}
+
+#corporateTabs .ui-widget-header
+{
+    background: none;
+    border:none;
+}
+
+#corporateTabs.ui-tabs .ui-tabs-hide { display: none !important; }
+
+#corporateTabs .ui-state-active a, #corporateTabs .ui-state-active a:link, #corporateTabs .ui-state-active a:visited {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li a:focus
+{
+    border:0px;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li a:active
+{
+    border:0px;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav li a:selected
+{
+    border:0px;
+}
+
+#corporateTabs.ui-tabs-vertical .ui-tabs-nav .ui-tabs-selected div
+{
+    background-image: url(../images/CCW_Iconography.png);
+    margin-top:15px; 
+}
+
+
+
+
+
+
+
+/* CLOUDWARE EXPLAINED TABS */
+/*
+#cloudwareExplainedTabs.ui-tabs
+{ 
+    width: 70%;
+    border:none; 
+}
+*/
+
+/*
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav 
+{ 
+    float: left; 
+    width: 9em;
+    padding: 0px;
+    padding-top:20px;
+    line-height:40px; 
+}
+*/
+
+/*
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li 
+{ 
+    clear: left; 
+    width: 100%; 
+    border-bottom-width: 1px !important; 
+    border-right-width: 0 !important; 
+    background: none;
+    border:none;
+    margin: 0px;
+}
+*/
+
+
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li a 
+{ 
+    display:block;
+    padding-left:10px;
+    padding-right:10px; 
+    float:right;
+    /*border:0px;*/
+    font-size: 13px;
+    font-weight: bold;
+    font-style: normal;
+    color: #FFFFFF;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li div
+{ 
+    background-image:none;
+    padding:0px; 
+    float:right;
+}
+*/
+
+/*
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li.ui-tabs-active 
+{ 
+    padding-bottom: 0; 
+    padding-right: .1em; 
+    border-right-width: 1px; 
+    border-right-width: 1px; 
+}
+*/
+
+/*
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-panel
+{
+    float: left;
+    width: 60%;
+    padding: 0px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    background-color: #D5FFFF;
+    margin-top: 20px;
+    line-height: 15px;
+}
+*/
+
+
+#cloudwareExplainedTabs .ui-widget-header
+{
+    background: none;
+    border:none;
+}
+
+
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-hide { display: none !important; }
+
+
+#cloudwareExplainedTabs .ui-state-default, 
+#cloudwareExplainedTabs .ui-widget-content .ui-state-default, 
+#cloudwareExplainedTabs .ui-widget-header .ui-state-default 
+{ 
+    background:none;
+    /*background-color: #99C2FF;*/
+    background-color: #00a3e7;
+
+}
+
+#cloudwareExplainedTabs .ui-state-active a, 
+#cloudwareExplainedTabs .ui-state-active a:link, 
+#cloudwareExplainedTabs .ui-state-active a:visited {
+    /*background-color: #800080;*/
+}
+
+
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li a:focus
+{
+    border:10px;
+}
+
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li a:active
+{
+    border:10px;
+}
+
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav li a:selected
+{
+    border:10px;
+}
+
+#cloudwareExplainedTabs .ui-tabs-nav .ui-tabs-selected 
+{
+    background-color: #800080;
+}
+
+
+/*
+#cloudwareExplainedTabs.ui-tabs .ui-tabs-nav .ui-tabs-selected div
+{
+    background-image: url(../images/CCW_Iconography.png);
+    margin-top:15px; 
+}
+*/
+
+
+
+/* AUTOCOMPLETE */
+.ui-autocomplete
+{
+    max-height: 699px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border: 1px solid black;
+    width:340px;
+    z-index:200 !important;
+}
+
+/*
+.ui-autocomplete ul
+{
+    z-index:200;
+    background-color: #FFFFFF;
+}
+*/
+
+/*
+.ui-selectmenu-menu {
+    z-index:200;
+}
+*/
+
+.ui-autocomplete-category
+{
+    /*background-color:#99C2FF;*/
+    background-color:#FFFFFF;
+    width:100%;
+    /*height:10px;*/
+}
+
+.ui-autocomplete-category div
+{
+    /*background-color:#99C2FF;*/
+    background-color:#FFFFFF;
+    width:100%;
+}
+
+.ui-autocomplete-category div label
+{
+    /*background-color:#99C2FF;*/
+    /*background-color:#FFFFFF;*/
+    width:100%;
+}
+
+.ui-menu-item a
+{
+    vertical-align:top;   
+}
+
+.ui-menu-item a img
+{
+    vertical-align:bottom;   
+}
+
+
+/* DIALOGS */
+
+{
+   
+}
+
+.ui-dialog .ui-widget-header 
+{ 
+    border: 1px solid #aaaaaa/*{borderColorHeader}*/; 
+    background: #cccccc url("../images/ui-bg_highlight-soft_75_cccccc_1x100.png") 50% 50% repeat-x; 
+    color: #222222/*{fcHeader}*/; 
+    font-weight: bold; 
+}
+
+.ui-dialog .ui-dialog-titlebar-close span 
+{ 
+    background-image: url("../images/ui-icons_222222_256x240.png");
+}
+
+
+.ui-dialog .ui-dialog-buttonpane button
+{
+    border-radius: 4px 4px 4px 4px;
+    /*line-height: 0px;*/
+    /*border-bottom-width: 0 !important;*/
+    float: none;
+    margin: 0.5em 0.4em 0.5em 0;
+    padding: 0px;
+    position: relative;
+    border: 1px solid #999999;
+    /*background: url("images/ui-bg_glass_80_e6e6e6_1x400.png") repeat-x scroll 50% 50% #999999;*/
+    /*background: #999999;*/
+    /*border-bottom-width: 2px;*/
+}
+
+/*
+.ui-dialog .ui-dialog-buttonpane .ui-state-default
+{
+    border-bottom-width: 1 !important;
+}
+
+.ui-state-default
+{
+    border-bottom-width: 1 !important;
+}
+*/
+
+
+
+
+/* VERTICAL TABS */
+#corporatePressTabs.ui-tabs-vertical 
+{ 
+    /*width: 55em; */
+    /*width: 75%;*/
+    width: 100%;
+    border:none; 
+    background:#E8F5FD;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav 
+{ 
+    /*padding: .2em .1em .2em .2em; */
+    float: left; 
+    width: 25%;
+    padding: 0px;
+    padding-top:0px;
+    /*line-height:40px; */
+    line-height:17px; 
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li 
+{ 
+    clear: left; 
+    width: 100%; 
+    border-bottom-width: 1px !important; 
+    border-right-width: 0 !important; 
+    /*margin: 0 -1px .2em 0; */
+    background: none;
+    border:none;
+    margin: 0px;
+    margin-top:10px;
+    margin-bottom:10px;
+    list-style-type:none;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li a 
+{ 
+    display:block;
+    padding:0px;
+    padding-right:0px; 
+    float:left;
+    border:0px;
+    width:100%;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav .ui-state-active a label
+{ 
+    color:#800080;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li div
+{ 
+    background-image:none;
+    padding:0px; 
+    float:right;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active 
+{ 
+    padding-bottom: 0; 
+    padding-right: .1em; 
+    border-right-width: 1px; 
+    border-right-width: 1px; 
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-panel
+{
+    /*padding: 1em; */
+    float: left; /*width: 40em;*/
+    width: 72%;
+    padding: 0px;
+    padding-top: 45px;
+    padding-left: 20px;
+    padding-right: 0px;
+    padding-bottom: 20px;
+    /*background-color: #D5FFFF;*/
+    background-color: #e8f5fd;
+    margin-top: 0px;
+    line-height: 15px;
+}
+
+#corporatePressTabs .ui-widget-header
+{
+    background: none;
+    border:none;
+}
+
+#corporatePressTabs.ui-tabs .ui-tabs-hide { display: none !important; }
+
+#corporatePressTabs .ui-state-active a, #corporatePressTabs .ui-state-active a:link, #corporatePressTabs .ui-state-active a:visited {
+    font-size: 13px;
+    font-weight: normal;
+    font-style: normal;
+    color: #800080;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li a:focus
+{
+    border:0px;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li a:active
+{
+    border:0px;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav li a:selected
+{
+    border:0px;
+}
+
+#corporatePressTabs.ui-tabs-vertical .ui-tabs-nav .ui-tabs-selected div
+{
+    /*background-image: url(../images/CCW_Iconography.png);*/
+    background-image:none;
+    margin-top:0px; 
+}
+
+#corporatePressTabs table td
+{
+    padding-left:0px;
+}
+
+#corporatePressTabs ul li
+{
+    list-style-type:none;   
+}
+
+
+
+
+
+
+
+
+
+
+#onpageoptimisation-tabs.ui-state-error  
+{	
+	padding: 3px;
+	padding-left : 10px;
+}
+
+#onpageoptimisation-tabs.ui-state-highlight {
+	padding: 3px;	
+	padding-left : 10px;
+}
+
+#onpageoptimisation-tabs.ui-icon 
+{
+	margin-top: 2px;
+}
+
+#onpageoptimisation-tabs.ui-tabs
+{
+    /*width: 32%;*/
+    /*height: 30px;*/
+    /*background-image: url('../Images/Cloud-icon-16x32.png');*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: left;*/
+    /*background-image: url(/images/CCW_Iconography.png); */
+    /*background-position: background-position: -298 -10;*/
+    zoom: 1; 
+}
+
+/*ADDED*/
+#onpageoptimisation-tabs.ui-tabs .ui-tabs-nav 
+{ 
+    list-style: none; 
+    position: relative; 
+    /*padding: .2em .2em 0; */
+}
+
+#onpageoptimisation-tabs .ui-tabs-nav li
+{
+    width: 33.08%;
+    height: 50px;
+    background-image: url('../Images/Cloud-icon-16x32.png');
+    background-repeat: no-repeat;
+    background-position: left;
+    /*background-image: url(/images/CCW_Iconography.png); */
+    /*background-position: background-position: -298 -10;*/
+    white-space:normal;
+}
+
+/*ADDED*/
+#onpageoptimisation-tabs.ui-tabs .ui-tabs-nav li 
+{ 
+    position: relative; 
+    float: left; 
+    border-bottom-width: 0 !important; 
+    /*margin: 0 .2em -1px 0; */
+    margin: 0 .08em -1px 0; 
+    padding: 0; 
+}
+
+/*ADDED*/
+#onpageoptimisation-tabs.ui-tabs .ui-tabs-nav li.ui-tabs-selected 
+{ 
+    padding-bottom: 0px; 
+    border-bottom-width: 0; 
+}
+
+/*ADDED*/
+.homepage-container #onpageoptimisation-tabs.ui-tabs .ui-tabs-panel 
+{ 
+    /*padding: 1em 1.4em; */
+    display: block; 
+    /*border-width: 0; */
+    /*background: none; */
+    margin-top:1px;
+    margin-left:3px;
+    margin-right:3px;
+    z-index:-1;
+    /*height:405px;*/
+	height:325px;
+    overflow-y:scroll;
+}
+
+
+.category-page-container #onpageoptimisation-tabs.ui-tabs .ui-tabs-panel 
+{ 
+    /*padding: 1em 1.4em; */
+    display: block; 
+    /*border-width: 0; */
+    /*background: none; */
+    margin-top:1px;
+    margin-left:3px;
+    margin-right:3px;
+    z-index:-1;
+    height:180px;
+    overflow-y:scroll;
+}
+
+/*ADDED*/
+#onpageoptimisation-tabs.ui-tabs .ui-tabs-hide { display: none !important; }
+
+#onpageoptimisation-tabs.ui-tabs .ui-tabs-nav li a
+{
+    float: left; /*padding: 0.5em 1em;*/
+    text-decoration: none;
+    /*display: block;*/ /* may not need this, but I've found I do */
+    /*position:absolute;*/
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 90%;
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;  /* width of the image plus a little extra padding */
+    padding-right: 10px;
+    overflow:hidden;
+    color:#FFFFFF;
+}
+
+#onpageoptimisation-tabs .ui-state-default,#tabs .ui-tabs-selected
+{
+    margin: 100px;
+    border-radius: 5px 5px 0px 0px;
+    line-height: 15px;
+    /*border-bottom-width: 0 !important;*/
+    float: left;
+    margin: 10 0.2em -1px 0;
+    padding: 10px;
+    position: relative;
+    /*background: url("images/ui-bg_glass_80_e6e6e6_1x400.png") repeat-x scroll 50% 50% #999999;*/
+    background: #999999;
+ }
+
+#onpageoptimisation-tabs.ui-tabs .ui-state-default, #tabs.ui-tabs .ui-widget-content .ui-state-default {
+    /*background: url("images/ui-bg_glass_80_e6e6e6_1x400.png") repeat-x scroll 50% 50% #999999;*/
+    background: #999999;
+}
+
+#onpageoptimisation-tabs.ui-tabs .content-data-header .plusminus{
+    background-image: url('../Images/CCW_Iconography.png');
+    /*background-position: -273px -95px; */
+    background-position: -246px -95px; 
+    height:22px;
+    width:20px;
+    float:left;
+    margin-top:5px;
+    margin-right:10px;
+    margin-left:15px;
+}
+
+#onpageoptimisation-tabs.ui-tabs .content-data-header-selected .plusminus {
+    background-image: url('../Images/CCW_Iconography.png');
+    background-position: -273px -95px; 
+    /*background-position: -246px -95px; */
+    height:22px;
+    width:20px;
+    float:left;
+    margin-top:5px;
+    margin-right:10px;
+    margin-left:15px;
+}
+
+.anchor-plus-minus {
+}
+
+#onpageoptimisation-tabs.ui-tabs .ui-state-active, #tabs.ui-tabs .ui-widget-content .ui-state-active {
+    /*background: url("images/ui-bg_glass_50_99c2ff_1x400.png") repeat-x scroll 50% 50% #99C2FF;*/
+    /*background: #99C2FF;*/
+    background: #00a3e7;
+}
+
+
+#onpageoptimisation-tabs.ui-tabs .ui-widget-header
+{	
+	background: none;
+	background-color:#FFFFFF;
+}
+
+#onpageoptimisation-tabs.ui-tabs .ui-state-default
+{	
+	border-width:0px;
+}
+
+#onpageoptimisation-tabs .ui-widget-header
+{	
+	background-color: #FFFFFF;
+	/*border: 0px solid;*/
+	border: 0px none;
+	/*background: none;*/
+}
+
+#onpageoptimisation-tabs.ui-widget-content 
+{ 
+    /*border: 1px solid #dddddd; */
+    /*background: #EBEBEB url(images/ui-bg_highlight-hard_100_f9f9f9_1x100.png) 50% top repeat-x; */
+    /*color: #362b36; */
+    color: #FFFFFF;
+    border:none;
+    background:none; 
+  }
+
+#onpageoptimisation-tabs.ui-widget {
+    font-size: 11px;
+    font-weight: normal;
+    font-style: normal;
+    color: #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:#FFFFFF;
+}
+
+#onpageoptimisation-tabs ul
+{
+    /*background-color:#99C2FF;   */
+    background-color:#FFFFFF;
+    padding: 0px 0px 0px 0px;
+}
+
+#onpageoptimisation-tabs ul label
+{
+	height:11px;
+}
+
+#onpageoptimisation-tabs.ui-tabs
+{
+    padding:0px 0px 0px 0px;   
+}

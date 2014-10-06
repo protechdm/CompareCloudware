@@ -1,0 +1,1234 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+body
+{
+    /*background-color: #EBEBEB;*/
+    background-color: #FFFFFF;
+    /*font-size: .85em;*/
+    font-family: Vagabond, "Trebuchet MS" , Verdana, Helvetica, Sans-Serif;
+    margin: 0;
+    padding: 0;
+    /*color: #EBEBEB;*/
+    color: #FFFFFF;
+    /*color:Green;*/
+    /*width: 976px; */
+    /*width: 77.3%;*/
+    /*width: 100%;*/
+    height: 100%;
+}
+
+/*ADDED*/
+input, select, button, label
+{
+    font-family: inherit;
+    font-size: inherit;
+    color: Black;
+}
+
+a:link {
+    /*color: #034af3;*/
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+p, ul {
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+header, #header {
+    position: relative;
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+    width: 976px;
+    margin: 0 auto;
+}
+
+header h1, #header h1 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color: #fff;
+    border: none;
+    line-height: 2em;
+    font-size: 32px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+#main {
+    padding: 0px 0px 0px 0px; /*30px 30px 15px 30px;*/
+    /*background-color: #EBEBEB;*/
+    background-color: #FFFFFF;
+    border-radius: 4px 0 0 0;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    height: auto;
+    overflow:hidden;
+
+    width: 976px;
+    margin: 0 auto;
+	
+}
+
+footer,#footer 
+{
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 0 0 30px 0;
+    font-size: .9em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+    width: 976px;
+    margin: 0 auto;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu {
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+/*
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;     
+    padding: 2px;
+    color: #444;
+    width: 200px;
+}
+*/
+/*font-size: 1.2em;*/
+
+/*
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+}
+*/
+
+/*
+input[type="submit"] {
+    font-size: 1.2em;
+    padding: 5px;
+}
+*/
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    /*border: solid 1px #e8eef4;*/
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 0px;
+    /*border: solid 1px #e8eef4;*/
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, 
+#menucontainer {
+    margin-top: 40px;
+}
+
+div#title {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+
+#logindisplay a:link {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+#logindisplay a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
+
+
+
+
+
+/* SITE SPECIFICS */
+
+
+
+/*
+label ~ input:checked {
+    background: #bbb;
+}
+*/
+
+/*
+input ~ div{
+    background: #ccc;
+}
+*/
+
+
+
+
+
+
+
+.noborderradius div
+{
+    background-image: url("../Images/Logos/BT.bmp");
+}
+
+
+
+
+
+
+
+.search-homepage-container
+{
+    position:static;
+    top:-75px;
+}
+
+.search-results
+{
+    position:relative;   
+}
+
+.searchresultslabel > label
+{
+    cursor: pointer;
+    border-bottom: 0px solid #000;
+    font-family: Arial, sans-serif;
+    color: #000000;
+}
+
+.box-shadow
+{
+/*-moz-box-shadow: 5px 5px 5px #888;*/
+/*-webkit-box-shadow: 5px 5px 5px #888;*/
+    box-shadow: 1px 1px 4px 1px #EBEBEB;
+    margin-bottom: 3px;
+}
+
+.search-result-image
+{
+    width:100%;   
+    height:100%;
+}
+
+
+
+
+
+
+/* CATEGORY PAGE */
+.search-input-category-page
+{
+    /*position:relative;*/
+    /*width:27%;*/
+    /*float:left;*/
+    /*margin: 20px;*/
+    /*border: 20px solid transparent;*/
+    position:static;
+    top:-75px;
+
+}
+
+.overview-category-page
+{
+    position:relative;
+    width:73%;
+    float:right;
+    height:350px;  
+}
+
+
+/* HEADER SECTION */
+.search-site-plus-social-icons
+{
+    width:50%;
+    position:relative;
+    float:right;
+}
+
+.search-site
+{
+}
+
+.site-diagnostics
+{
+    position:relative;
+    /*float:right;*/
+    clear:both;
+    height:20px;
+    width:100%;
+    background-color:#FC371B;    
+}
+
+.site-diagnostics-element
+{
+    position:relative;
+    float:right;
+    /*clear:both;    */
+    padding-left:20px;
+}
+
+.social-icons
+{
+    position:relative;
+}
+
+.social-icons-alternative
+{
+    position:relative;
+}
+
+.header-container
+{
+    width:inherit;
+    background-color:#FFFFFF;   
+}
+
+.header-logo-container
+{
+    position:relative;
+    float:left;
+    height: 75px;
+    width: 35%;
+    overflow:hidden;
+    /*border: 1px solid black;*/
+}
+
+.header-logo
+{
+    position:relative;
+    height: 75px;
+    width: 300px;
+    top: 0px;
+}
+
+
+
+/* ICONS  */
+.social-icon-container
+{
+    float: right;
+    color:Black;
+    background-color:White;
+}
+
+.overall-rating-container
+{
+    float: right;
+    color:Black;
+    background-color:White;
+    margin-top:8px;
+}
+
+.overall-rating-icon-container
+{
+    float: left;
+    color:Black;
+    background-color:White;
+}
+
+.tabs-container
+{
+    width: 100%;
+    position: relative;
+}
+
+.tabs-icon-container
+{
+    /*float: left;*/
+    /*position:absolute;*/
+    /*color:Black;*/
+    background-color:transparent;
+    /*width:100%;*/
+    margin-top: -3px;
+    margin-left: 10px;
+}
+
+.cc-ui-icon 
+{ 
+    width: 31px; 
+    height: 30px; 
+    background-image: url(/images/CCW_Iconography.png); 
+    display: block; 
+    text-indent: -99999px; 
+    overflow: visible; 
+    background-repeat: no-repeat;  
+    margin-top: 2px;
+}
+
+
+.cc-ui-rating-icon 
+{ 
+    width: 20px; 
+    height: 13px; 
+    background-image: url(/images/CCW_Iconography.png); 
+    display: block; 
+    text-indent: -99999px; 
+    overflow: visible; 
+    background-repeat: no-repeat;  
+    /*margin-top: 2px;*/
+}
+
+
+/*.ui-icon { display: block; text-indent: -99999px; overflow: visible; background-repeat: no-repeat; }*/
+/*.ui-icon {	margin-top: 2px; }*/
+
+.cc-ui-icon-down-arrow-white { background-position: 0 0; }
+.cc-ui-icon-down-arrow-black { background-position: 0 0; }
+.cc-ui-icon-twitter { background-position: -74px -10px; }
+.cc-ui-icon-facebook { background-position: -121px -10px; }
+.cc-ui-icon-google { background-position: -163px -10px; }
+.cc-ui-icon-linkedin { background-position: -210px -10px; }
+.cc-ui-icon-broadcast { background-position: -254px -10px; }
+.cc-ui-icon-cloud-black { background-position: -298px -10px; }
+.cc-ui-icon-cloud-white { background-position: -354px -10px; }
+.cc-ui-icon-search { background-position: -635px -15px; }
+.cc-ui-icon-purple-cloud { background-position: -96px -59px; }
+.cc-ui-icon-purpleandblue-cloud { background-position: -123px -59px; }
+.cc-ui-icon-blue-cloud { background-position: -151px -59px; }
+
+
+
+/*                  BUTTONS                  */
+.cloud-compare-button-red
+{
+    float:none;
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px outset;
+    /*font-size: 14px;*/
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    z-index: 4;
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(left, #860EAA 0%, #C43418 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(left, #860EAA 0%, #C43418 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(left, #860EAA 0%, #C43418 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(0, #860EAA), color-stop(1, #C43418));
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(left, #860EAA 0%, #C43418 100%);
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to right, #860EAA 0%, #C43418 100%);
+    /* IE6 & IE7 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#860EAA', endColorstr='#C43418'); 
+    /* IE8+ */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#860EAA', endColorstr='#C43418')";       
+}
+
+
+.cloud-compare-button-blue
+{
+    float:none;
+    color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px outset;
+    /*font-size: 14px;*/
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 0px;
+    z-index: 4;
+   
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(bottom, #1F6AA3 0%, #BFDDFF 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(bottom, #1F6AA3 0%, #BFDDFF 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(bottom, #1F6AA3 0%, #BFDDFF 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #1F6AA3), color-stop(1, #BFDDFF));
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(bottom, #1F6AA3 0%, #BFDDFF 100%);
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top, #1F6AA3 0%, #BFDDFF 100%);    /* IE6 & IE7 */  
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1F6AA3', endColorstr='#BFDDFF'); 
+    /* IE8+ */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1F6AA3', endColorstr='#BFDDFF')";       
+}
+
+
+.site-button
+{
+    float:right;
+}
+
+.site-button input[value|=MoreInfo]
+{
+    background: transparent url(../../Images/Buttons/CCW_MoreInfo.png) no-repeat 0 0;
+    width:115px;
+    height:30px;
+    border:0px;
+    color:transparent;
+}
+
+.site-button input[value|=Proceed]
+{
+    background: transparent url(../../Images/Buttons/CCW_Proceed.png) no-repeat 0 0;
+    width:115px;
+    height:30px;
+}
+
+.site-button input[value|=CompareCloudwareHome]
+{
+    background: transparent url(../../Images/Buttons/CCW_CompareCloudware_home.png) no-repeat 0 0;
+    width:212px;
+    height:33px;
+    float:right;
+}
+
+.site-button input[value|=Submit]
+{
+    background: transparent url(../../Images/Buttons/CCW_Submit.png) no-repeat 0 0;
+    width:109px;
+    height:30px;
+}
+
+.site-button input[value|=CreateReview]
+{
+    background: transparent url(../../Images/Buttons/CCW_CreateReview.png) no-repeat 0 0;
+    width:182px;
+    height:30px;
+}
+
+.site-button input[value|=CompareAgain]
+{
+    background: transparent url(../../Images/Buttons/CCW_CompareAgain.png) no-repeat 0 0;
+    width:156px;
+    height:30px;
+    color:transparent;
+}
+
+.site-button input[value|=Print]
+{
+    background: transparent url(../../Images/Buttons/CCW_Print.png) no-repeat 0 0;
+    width:119px;
+    height:30px;
+    color:transparent;
+}
+
+.site-button input[value|=BackResults]
+{
+    background: transparent url(../../Images/Buttons/CCW_BackResults.png) no-repeat 0 0;
+    width:151px;
+    height:30px;
+    color:transparent;
+}
+
+.site-button input[value|=EmailPage]
+{
+    background: transparent url(../../Images/Buttons/CCW_EmailPage.png) no-repeat 0 0;
+    width:119px;
+    height:30px;
+    color:transparent;
+}
+
+.site-button input[value|=FullView]
+{
+    background: transparent url(../../Images/Buttons/CCW_FullView.png) no-repeat 0 0;
+    width:87px;
+    height:23px;
+    border:0px;
+    color:transparent;
+}
+
+.site-button input[value|=SummaryView]
+{
+    background: transparent url(../../Images/Buttons/CCW_Summary.png) no-repeat 0 0;
+    width:87px;
+    height:23px;
+    border:0px;
+    color:transparent;
+}
+
+/* NAVIGATION BUTTONS */
+.nav-button
+{
+    float:right;
+}
+
+.nav-button input[value|=Security]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Security_Grey.png) no-repeat 0 0;
+    width:93px;
+    height:31px;
+}
+
+.nav-button input[value|=Security]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Security_Blue.png) no-repeat 0 0;
+    width:93px;
+    height:31px;
+}
+
+.nav-button input[value|=ProjectManagement]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_ProjectManage_Grey.png) no-repeat 0 0;
+    width:159px;
+    height:31px;
+}
+
+.nav-button input[value|=ProjectManagement]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_ProjectManage_Blue.png) no-repeat 0 0;
+    width:159px;
+    height:31px;
+}
+
+.nav-button input[value|=CustomerManagement]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_CustomManagement_Grey.png) no-repeat 0 0;
+    width:178px;
+    height:31px;
+}
+
+.nav-button input[value|=CustomerManagement]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_CustomManagement_Blue.png) no-repeat 0 0;
+    width:178px;
+    height:31px;
+}
+
+.nav-button input[value|=Financial]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Financial_Grey.png) no-repeat 0 0;
+    width:83px;
+    height:31px;
+}
+
+.nav-button input[value|=Financial]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Financial_Blue.png) no-repeat 0 0;
+    width:83px;
+    height:31px;
+}
+
+.nav-button input[value|=Office]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Office_Grey.png) no-repeat 0 0;
+    width:65px;
+    height:31px;
+}
+
+.nav-button input[value|=Office]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Office_Blue.png) no-repeat 0 0;
+    width:65px;
+    height:31px;
+}
+
+.nav-button input[value|=Voice]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Voice_Grey.png) no-repeat 0 0;
+    width:63px;
+    height:31px;
+}
+
+.nav-button input[value|=Voice]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Voice_Blue.png) no-repeat 0 0;
+    width:63px;
+    height:31px;
+}
+
+.nav-button input[value|=StorageAndBackUp]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Storage_Grey.png) no-repeat 0 0;
+    width:149px;
+    height:31px;
+}
+
+.nav-button input[value|=StorageAndBackUp]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Storage_Blue.png) no-repeat 0 0;
+    width:149px;
+    height:31px;
+}
+
+.nav-button input[value|=Email]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Email_Grey.png) no-repeat 0 0;
+    width:62px;
+    height:31px;
+}
+
+.nav-button input[value|=Email]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Email_Blue.png) no-repeat 0 0;
+    width:62px;
+    height:31px;
+}
+
+.nav-button input[value|=Conferencing]
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Conferencing_Grey.png) no-repeat 0 0;
+    width:119px;
+    height:31px;
+}
+
+.nav-button input[value|=Conferencing]:hover
+{
+    background: transparent url(../../Images/Buttons/CCW_NavBar_Conferencing_Blue.png) no-repeat 0 0;
+    width:119px;
+    height:31px;
+}
+
+
+/* FOOTER */
+.footer-container
+{
+    position:relative;
+    float:right;
+    /*height: auto;*/
+    width: 100%;
+    overflow:hidden;
+    /*border: 1px solid black;*/
+    background-color: #FFFFFF;
+}
+
+.footer-logo-container
+{
+    position:relative;
+    float:right;
+    height: 50px;
+    width: 220px;
+    overflow:hidden;
+    /*border: 1px solid black;*/
+}
+
+.footer-register-login
+{
+    position:relative;
+    float:left;   
+    /*height: 50px;*/
+    width: 300px;
+    top:30px;
+}
+
+.footer-register-login a
+{
+    float:left;   
+}
+
+.footer-register-login label
+{
+    float:left;   
+}
+
+.footer-site-copyright
+{
+    position:relative;
+    float:right;   
+}
+
+.footer-site-various-hyperlinks
+{
+    position:relative;
+    float:left;   
+}
+
+.footer-logo
+{
+    position:relative;
+    /*height: 75px;*/
+    width: 200px;
+    top: -100px;
+}
+
+
+
+/* INPUT BOX  */
+.input-box-left
+{
+    position:relative;
+    height: 25px;
+    /*width: 7px;*/
+    width: 3%;
+    float: left;
+    background: transparent url(../../Images/CCW_LeftCurvedField.png) no-repeat 0 0;
+}
+
+.input-box-centre
+{
+    position: relative;
+    height: 25px;
+    width: 94%;
+    overflow: hidden;
+    float: left;
+    background: transparent url(../../Images/CCW_CentreField.png) repeat 0 0;
+}
+
+.input-box-right
+{
+    position:relative;
+    height: 25px;
+    /*width: 8px;*/
+    width: 3%;
+    float: right;
+    background: transparent url(../../Images/CCW_RightCurvedField.png) no-repeat 0 0;
+}
+
+.input-text-box
+{
+    width:100%;
+    background: transparent;
+    border:0px;   
+    margin-top: 4px;
+    padding-left: 3px;
+}
+
+.input-drop-down-list
+{
+    width:103%;
+    background: transparent;
+    border:0px none transparent;   
+    margin-top: 4px;
+    /*background: transparent url(../../Images/CCW_CentreField.png) repeat 0 0;*/
+}
+
+.input-drop-down-list option
+{
+    background: transparent url(../../Images/CCW_CentreField.png) repeat 0 0;
+    border:0px none transparent;   
+    margin:0px;
+    outline-color: transparent;
+    outline-width:0px;
+    padding:0px;
+    
+}
+
+.input-drop-down-list option:hover
+{
+    background: blue;
+    border:0px none transparent;   
+    margin:0px;
+    outline-color: transparent;
+    outline-width:0px;
+    padding:0px;
+    
+}
+
+
+/* CAROUSEL */
+.carousel_container
+{
+    width:916px;   
+    
+}
+
+.carousel_inner 
+{
+    float:left; /* important for inline positioning */
+    /*width:630px; /* important (this width = width of list item(including margin) * items shown */ 
+    width:916px;
+    overflow: hidden;  /* important (hide the items outside the div) */
+    /* non-important styling bellow */
+    background: #F0F0F0;
+}
+
+.carousel_ul 
+{
+    position:relative;
+    /*left:-210px; /* important (this should be negative number of list items width(including margin) */
+    left:-916px; /* important (this should be negative number of list items width(including margin) */
+    list-style-type: none; /* removing the default styling for unordered list items */
+    margin: 0px;
+    padding: 0px;
+    width:9999px; /* important */
+    /* non-important styling bellow */
+    padding-bottom:10px;
+}
+
+.carousel_ul li
+{
+    float: left; /* important for inline positioning of the list items */                                    
+    /*width:200px;  /* fixed width, important */
+    width:916;  /* fixed width, important */
+    /* just styling bellow*/
+    padding:0px;
+    /*height:110px; /*height of carousel images */
+    height:300px;
+    background: #000000;
+    margin-top:0px;
+    margin-bottom:0px; 
+    margin-left:0px; 
+    margin-right:0px; 
+}
+
+.carousel_ul li img 
+{
+    .margin-bottom:-4px; /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
+    /* styling */
+    cursor:pointer;
+    cursor: hand; 
+    border:0px; 
+}
+
+.left_scroll, .right_scroll
+{
+    float:left; 
+    height:130px; 
+    width:15px; 
+    background: #C0C0C0; 
+}
+
+.left_scroll img, .right_scroll img
+{
+    border:0; /* remove the default border of linked image */
+    /*styling*/
+    cursor: pointer;
+    cursor: hand;
+}
+
+
+.carousel-icons-container
+{
+    width: 100%;
+    position: relative;
+    top: -30px;
+    right: -700px;
+}
+
+.cc-ui-icon-carousel-one-blue { background-position: -397px -20px; }
+.cc-ui-icon-carousel-one-grey { background-position: -428px -20px; }
+.cc-ui-icon-carousel-two-blue { background-position: -459px -20px; }
+.cc-ui-icon-carousel-two-grey { background-position: -490px -20px; }
+.cc-ui-icon-carousel-three-blue { background-position: -521px -20px; }
+.cc-ui-icon-carousel-three-grey { background-position: -552px -20px; }
+.cc-ui-icon-carousel-four-blue { background-position: -583px -20px; }
+.cc-ui-icon-carousel-four-grey { background-position: -614px -20px; }
+
+.cc-carousel-icon 
+{ 
+    width: 18px; 
+    height: 18px; 
+    background-image: url(/images/CCW_Iconography.png); 
+    /*display: block; */
+    text-indent: -99999px; 
+    overflow: visible; 
+    background-repeat: no-repeat;  
+    /*margin-top: 2px;*/
+    position:relative;
+    /*float:left;*/
+}
+
+.carousel-icon-container
+{
+    float: left;
+    position:relative;
+    /*color:Black;*/
+    background-color:transparent;
+    width:18px;
+    height:18px;
+    /*margin-top: -3px;*/
+    /*margin-left: 10px;*/
+    /*z-index:100;*/
+}
+
+.carousel-icon-container a
+{
+    float: left; 
+    /*padding: 0.5em 1em;*/
+    text-decoration: none;
+    /*display: block;*/ /* may not need this, but I've found I do */
+    position:relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    width: 18px;
+    height: 18px;
+    /*padding-top: 15px;*/
+    /*padding-bottom: 0px;*/
+    /*padding-left: 47px;*/  /* width of the image plus a little extra padding */
+    /*padding-right: 0px;*/
+    /*overflow:hidden;*/
+    color:#FFFFFF;
+    z-index:100;
+}
+
+
+
+
+
+
+
+/* EBAY */
+.asp-v {
+    margin: 3px 0;
+    padding: 0 0 0 16px;
+    position: relative;
+}
+
+.asp-v-selected {
+    margin: 3px 0;
+    padding: 0 0 0 16px;
+    position: relative;
+}
+
+.asp-v a {
+    color: #333333;
+    font-size: 0.923em;
+    line-height: 16px;
+    position: relative;
+    text-decoration: none;
+}
+
+.asp-v-selected a {
+    color: #333333;
+    font-size: 0.923em;
+    line-height: 16px;
+    position: relative;
+    text-decoration: none;
+}
+
+.asp-v a b {
+    /*background-position: 0 -26px;*/
+    /*background-position: -435px -57px;*/
+    background-position: -415px -57px;
+}
+
+.asp-v-selected a b {
+    /*background-position: 0 -26px;*/
+    background-position: -435px -57px;
+    /*background-position: -415px -57px;*/
+}
+
+.asp-v a b {
+    height: 20px;
+    left: -16px;
+    margin: 2px 5px -1px 0;
+    overflow: hidden;
+    position: absolute;
+    width: 20px;
+}
+
+.asp-v-selected a b {
+    height: 20px;
+    left: -16px;
+    margin: 2px 5px -1px 0;
+    overflow: hidden;
+    position: absolute;
+    width: 20px;
+}
+
+.sprCheckboxes {
+    background-image: url(/images/CCW_Iconography.png); 
+    background-repeat: no-repeat;
+}

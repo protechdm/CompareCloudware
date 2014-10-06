@@ -1,0 +1,44 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Web.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using CompareCloudware.Web;
+using CompareCloudware.Web.Controllers;
+
+namespace CompareCloudware.Web.Tests.Controllers
+{
+    [TestClass]
+    public class HomeControllerTest
+    {
+        [TestMethod]
+        public void Index()
+        {
+            // Arrange
+            HomeController controller = new HomeController(null,null,null);
+
+            // Act
+            //ViewResult result = controller.Index("1","1") as ViewResult;
+            ViewResult result = controller.Index("1",false) as ViewResult;
+
+            // Assert
+            Assert.AreEqual("Welcome to ASP.NET MVC!", result.ViewBag.Message);
+        }
+
+        [TestMethod]
+        public void About()
+        {
+            // Arrange
+            HomeController controller = new HomeController(null,null,null);
+
+            // Act
+            ViewResult result = controller.About() as ViewResult;
+
+            // Assert
+            Assert.IsNotNull(result);
+        }
+
+
+    }
+}

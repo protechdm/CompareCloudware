@@ -1,0 +1,9 @@
+﻿.tc-checkbox
+{
+    z-index:100;       
+}
+
+.tc-checkbox input
+{
+    z-index:100;       
+}

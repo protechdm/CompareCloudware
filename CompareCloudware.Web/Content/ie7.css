@@ -1,0 +1,12 @@
+﻿/* BUMP THE DIV UPWARDS SO THE TITLE BAR OVERLAYS ON THE TITLE BAR .search-page-title-bar */
+/* margin-top MUST BE THE EQUIVALENT OF THE HEIGHT OF search-page-title-bar */
+.search-result-page-div
+{
+    width:65%;
+    overflow:auto;
+    height:auto;
+    /*z-index:0;       */
+    margin-top:-49px;
+    /*margin-top:0px;*/
+    float:left;
+}

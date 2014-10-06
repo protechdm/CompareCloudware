@@ -1,0 +1,2272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8E7E59C1-D959-40B1-8061-B3F4E2D5361F}</ProjectGuid>
+    <ProjectTypeGuids>{E53F8FEA-EAE0-44A6-8774-FFD645390401};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompareCloudware.Web</RootNamespace>
+    <AssemblyName>CompareCloudware.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <PublishDatabases>false</PublishDatabases>
+    <DeployIisAppPath>Default Web Site/CompareCloudwareUXStaging</DeployIisAppPath>
+    <PackageAsSingleFile>true</PackageAsSingleFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alpinely.TownCrier">
+      <HintPath>..\packages\TownCrier.1.1\lib\Alpinely.TownCrier.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Facilities.Logging, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.LoggingFacility.3.1.0\lib\net40\Castle.Facilities.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Services.Logging.Log4netIntegration, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core-log4net.3.1.0\lib\net40\Castle.Services.Logging.Log4netIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Hammock.ClientProfile, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\LinqKit\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\log4net.1.2.10\lib\2.0\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="MarkdownSharp">
+      <HintPath>..\packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\Microsoft.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Omu.AwesomeMvc">
+      <HintPath>..\..\AwesomeMvcDemo\AwesomeMvcDemo\libs\Omu.AwesomeMvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MVC4\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="TweetSharp, Version=2.0.0.0, Culture=neutral, PublicKeyToken=c148cfba29ed1a4d, processorArchitecture=MSIL">
+      <HintPath>..\packages\TweetSharp.2.3.1\lib\4.0\TweetSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_LocalResources\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SiteController.cs" />
+    <Compile Include="Controllers\VendorController.cs" />
+    <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="Helpers\Exceptions.cs" />
+    <Compile Include="Helpers\HtmlExtensions.cs" />
+    <Compile Include="Helpers\ModelHelpers.cs" />
+    <Compile Include="Helpers\SiteAnalytics.cs" />
+    <Compile Include="Models\CategoryModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\CloudApplicationUserReviewsContainerModel.cs" />
+    <Compile Include="Models\CloudApplicationVideoModel.cs" />
+    <Compile Include="Models\CloudApplicationInputModel.cs" />
+    <Compile Include="Models\CloudApplicationApplicationModel.cs" />
+    <Compile Include="Models\CloudApplicationInputModelNoValidation.cs" />
+    <Compile Include="Models\CloudApplicationProductReviewsContainerModel.cs" />
+    <Compile Include="Models\CloudApplicationDocumentsContainerModel.cs" />
+    <Compile Include="Models\CloudApplicationVideosContainerModel.cs" />
+    <Compile Include="Models\CloudApplicationRegistrationAndUpdateModel.cs" />
+    <Compile Include="Models\CarouselModel.cs" />
+    <Compile Include="Models\CloudwareExplainedPageModel.cs" />
+    <Compile Include="Models\ContentPageModel.cs" />
+    <Compile Include="Models\HomePageModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\OnpageOptimisationTab2Model.cs" />
+    <Compile Include="Models\OnpageOptimisationTab3Model.cs" />
+    <Compile Include="Models\OnpageOptimisationTab1Model.cs" />
+    <Compile Include="Models\TabbedOnpageOptimisationModel.cs" />
+    <Compile Include="Models\SupportCategoryModel.cs" />
+    <Compile Include="Models\SiteAnalyticModel.cs" />
+    <Compile Include="Models\NewCloudwareModel.cs" />
+    <Compile Include="Models\SiteAnalyticTypeModel.cs" />
+    <Compile Include="Models\TopTenCloudwareModel.cs" />
+    <Compile Include="Models\CurrencyModel.cs" />
+    <Compile Include="Models\FeaturedCloudwareModel.cs" />
+    <Compile Include="Models\SiteMapModel.cs" />
+    <Compile Include="Models\StatusModel.cs" />
+    <Compile Include="Models\UploadImageModel.cs" />
+    <Compile Include="Models\TermConditionModel.cs" />
+    <Compile Include="Models\TermsAndConditionsModel.cs" />
+    <Compile Include="SessionExpireFilterAttribute.cs" />
+    <Compile Include="Current.cs" />
+    <Compile Include="CustomSession.cs" />
+    <Compile Include="DefaultPolicyViolationHandler.cs" />
+    <Compile Include="FluentSecurity\Builder!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\By.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\Cache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\ICacheKeyProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\ISecurityCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\PolicyResultCacheExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\PolicyResultCacheKeyBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\PolicyResultCacheStrategy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Caching\SecurityCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ConfigurationExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Configuration\AdvancedConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Configuration\IAdvancedConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Configuration\ViolationConfigurationExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Configuration\ViolationHandlerExpression.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ConventionPolicyContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ConventionPolicyContainerExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Conventions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\DefaultPolicyAppender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\DefaultWhatDoIHaveBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ExceptionFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ExceptionPolicyViolationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Extensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\HandleSecurityAttribute.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\HttpContextRequestDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IConventionPolicyContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IPolicyAppender.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IPolicyContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IPolicyViolationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IPolicyViolationHandlerSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IRequestDescription.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ISecurityConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ISecurityContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ISecurityHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ISecurityServiceLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\IWhatDoIHaveBuilder.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\PolicyContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\PolicyContainerExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\PolicyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\PolicyViolationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\Contexts\DelegateSecurityContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\Contexts\SecurityContextWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\DelegatePolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\DenyAnonymousAccessPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\DenyAuthenticatedAccessPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\IgnorePolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ILazySecurityPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ISecurityPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\LazySecurityPolicy!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\RequireAllRolesPolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\RequireRolePolicy.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\Results\DelegatePolicyResult.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\DefaultPolicyViolationHandlerIsInstanceConvention!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\DefaultPolicyViolationHandlerIsOfTypeConvention!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\FindByPolicyNameConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\FindDefaultPolicyViolationHandlerByNameConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\IPolicyViolationHandlerConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\LazyInstancePolicyViolationHandlerConvention!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\LazyTypePolicyViolationHandlerConvention!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\PolicyTypeToPolicyViolationHandlerInstanceConvention!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\PolicyTypeToPolicyViolationHandlerTypeConvention!2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\PolicyViolationHandlerFilterConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\PolicyViolationHandlerTypeConvention.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\PredicateToPolicyViolationHandlerInstanceConvention!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\Conventions\PredicateToPolicyViolationHandlerTypeConvention!1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\DelegatePolicyViolationHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Policy\ViolationHandlers\PolicyViolationHandlerSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Scanning\AssemblyScanner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Scanning\ControllerTypeScanner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\Scanning\ITypeScanner.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\SecurityConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\SecurityConfigurator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\SecurityContext.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\SecurityHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Container.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\ExternalServiceLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\IContainer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\IContainerSource.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\LifecycleExtensions.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\HttpContextLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\HttpSessionLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\HybridHttpContextLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\HybridHttpSessionLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\ILifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\IObjectCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\NullObjectCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\ObjectCache.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\SingletonLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\ThreadLocalStorageLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\Lifecycles\TransientLifecycle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\RegisteredObject.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\ServiceLocator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FluentSecurity\ServiceLocation\TypeNotRegisteredException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\AdditionalOutput.cs" />
+    <Compile Include="Helpers\CompareCloudwareService.cs" />
+    <Compile Include="Helpers\CompositeType.cs" />
+    <Compile Include="Helpers\SiteActivities.cs" />
+    <Compile Include="Helpers\CustomModelBinder.cs" />
+    <Compile Include="Helpers\GlobalVariables.cs" />
+    <Compile Include="Helpers\HtmlPrefixScopeExtensions.cs" />
+    <Compile Include="Helpers\ICompareCloudwareService.cs" />
+    <Compile Include="Helpers\IFilteredModelBinder.cs" />
+    <Compile Include="Helpers\ImageBag.cs" />
+    <Compile Include="Helpers\LogoPositioning.cs" />
+    <Compile Include="Helpers\Mail.cs" />
+    <Compile Include="Helpers\MvcExtensions.cs" />
+    <Compile Include="Helpers\PDFEngineType.cs" />
+    <Compile Include="Helpers\PDFGenerator.cs" />
+    <Compile Include="Helpers\PDFImageInsert.cs" />
+    <Compile Include="Helpers\SearchInputModelStyle.cs" />
+    <Compile Include="Helpers\SearchResultDisplayFormat.cs" />
+    <Compile Include="Helpers\SecurityHelper.cs" />
+    <Compile Include="Helpers\StringExtensions.cs" />
+    <Compile Include="Helpers\UrlExtensions.cs" />
+    <Compile Include="Helpers\ViewModelHelpers.cs" />
+    <Compile Include="ICustomSession.cs" />
+    <Compile Include="Installers\ControllersInstaller.cs" />
+    <Compile Include="Installers\CustomSessionInstaller.cs" />
+    <Compile Include="Installers\LoggerInstaller.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\AutocompleteRow.cs" />
+    <Compile Include="Models\BaseModel.cs" />
+    <Compile Include="Models\BrowserModel.cs" />
+    <Compile Include="Models\CategoryPageModel.cs" />
+    <Compile Include="Models\CloudApplicationFeatureModel.cs" />
+    <Compile Include="Models\CloudApplicationModel.cs" />
+    <Compile Include="Models\CloudApplicationUserReviewModel.cs" />
+    <Compile Include="Models\CloudApplicationProductReviewModel.cs" />
+    <Compile Include="Models\ContentTextModel.cs" />
+    <Compile Include="Models\ContentTextsModel.cs" />
+    <Compile Include="Models\ContentTextTypeModel.cs" />
+    <Compile Include="Models\CloudApplicationModelAlternative.cs" />
+    <Compile Include="Models\CloudApplicationSearchResultModel.cs" />
+    <Compile Include="Models\CloudApplicationAutoCompleteModel.cs" />
+    <Compile Include="Models\GenericValueModel.cs" />
+    <Compile Include="Models\DeviceModel.cs" />
+    <Compile Include="Models\IndustryModel.cs" />
+    <Compile Include="Models\RequestTypeModel.cs" />
+    <Compile Include="Models\OperatingSystemModelSearchResults.cs" />
+    <Compile Include="Models\GlobalSearchResultModelOneColumn.cs" />
+    <Compile Include="Models\GlobalSearchResultsModelOneColumn.cs" />
+    <Compile Include="Models\GlobalSearchResultsModel.cs" />
+    <Compile Include="Models\GlobalSearchPageContainerModel.cs" />
+    <Compile Include="Models\GlobalSearchPageModel.cs" />
+    <Compile Include="Models\TagTypeModel.cs" />
+    <Compile Include="Models\ReservationViewModel.cs" />
+    <Compile Include="Models\FeatureModel.cs" />
+    <Compile Include="Models\FreeTrialBuyNowModel.cs" />
+    <Compile Include="Models\FreeTrialPeriodModel.cs" />
+    <Compile Include="Models\HeaderModel.cs" />
+    <Compile Include="Models\IBaseModel.cs" />
+    <Compile Include="Models\IUser.cs" />
+    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Models\LicenceTypeMaximumModel.cs" />
+    <Compile Include="Models\LicenceTypeMinimumModel.cs" />
+    <Compile Include="Models\MinimumContractModel.cs" />
+    <Compile Include="Models\MobilePlatformModel.cs" />
+    <Compile Include="Models\NumberOfUsersModel.cs" />
+    <Compile Include="Models\OperatingSystemModel.cs" />
+    <Compile Include="Models\PaymentFrequencyModel.cs" />
+    <Compile Include="Models\PaymentOptionModel.cs" />
+    <Compile Include="Models\SearchFilterModelOneColumn.cs" />
+    <Compile Include="Models\SearchFilterModelTwoColumn.cs" />
+    <Compile Include="Models\SearchFiltersForFeatureTypeModel.cs" />
+    <Compile Include="Models\SearchFiltersModel.cs" />
+    <Compile Include="Models\SearchFiltersModelBase.cs" />
+    <Compile Include="Models\SearchFiltersModelOneColumn.cs" />
+    <Compile Include="Models\SearchFiltersModelTwoColumn.cs" />
+    <Compile Include="Models\SearchInputModel.cs" />
+    <Compile Include="Models\SearchPageContainerModel.cs" />
+    <Compile Include="Models\SearchPageModel.cs" />
+    <Compile Include="Models\SearchResultModel.cs" />
+    <Compile Include="Models\SearchResultModelOneColumn.cs" />
+    <Compile Include="Models\SearchResultsModel.cs" />
+    <Compile Include="Models\SearchResultsModelOneColumn.cs" />
+    <Compile Include="Models\SearchResultSummaryModel.cs" />
+    <Compile Include="Models\SetupFeeModel.cs" />
+    <Compile Include="Models\SupportDaysModel.cs" />
+    <Compile Include="Models\SupportHoursModel.cs" />
+    <Compile Include="Models\SupportTerritoryModel.cs" />
+    <Compile Include="Models\SupportTypeModel.cs" />
+    <Compile Include="Models\TabbedSearchResultsModel.cs" />
+    <Compile Include="Models\TagModel.cs" />
+    <Compile Include="Models\CloudApplicationDocumentModel.cs" />
+    <Compile Include="Models\DocumentTypeModel.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRole.cs" />
+    <Compile Include="Models\VendorModel.cs" />
+    <Compile Include="PerWebSessionLifestyleModule.cs" />
+    <Compile Include="Plumbing\CustomViewEngines.cs" />
+    <Compile Include="Plumbing\NoScriptRazorViewEngine.cs" />
+    <Compile Include="Plumbing\WindsorControllerFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SecurityBootstrapper.cs" />
+    <Compile Include="Validation\SurnameAttribute.cs" />
+    <Compile Include="Validation\FirstNameAttribute.cs" />
+    <Compile Include="Validation\EMailAttribute.cs" />
+    <Compile Include="Validation\FreeTrialBuyNowAttribute.cs" />
+    <Compile Include="WebSessionScopeAccessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cloudapplication.htm" />
+    <Content Include="Content\1.9.1\jquery-ui.css" />
+    <Content Include="Content\accordion-custom-theme.css" />
+    <Content Include="Content\all-ie-only.css" />
+    <Content Include="Content\ImageArea.css" />
+    <Content Include="Content\Modal.css" />
+    <Content Include="Content\safari.css" />
+    <Content Include="Content\ie8-and-downx.css" />
+    <Content Include="Content\ie7.css" />
+    <Content Include="Content\ie8-and-down.css" />
+    <Content Include="Content\ie7-and-up.css" />
+    <Content Include="Content\bbc.css" />
+    <Content Include="Content\border-radius.htc" />
+    <Content Include="Content\Carousel.css" />
+    <Content Include="Content\creature.css" />
+    <Content Include="Content\demos.css" />
+    <Content Include="Content\DisabledJavaScript\simple-search-input.css" />
+    <Content Include="Content\DisabledJavaScript\site-tabs.css" />
+    <Content Include="Content\EnabledJavaScript\simple-search-input.css" />
+    <Content Include="Content\EnabledJavaScript\site-tabs.css" />
+    <Content Include="Content\fonts.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.custom.css" />
+    <Content Include="Content\jquery.ui.accordion.css" />
+    <Content Include="Content\jquery.ui.autocomplete.css" />
+    <Content Include="Content\modernizr-1.7.js" />
+    <Content Include="Content\modernizr-1.7.min.js" />
+    <Content Include="Content\overflow-text-ellipsis.css" />
+    <Content Include="Content\search-page.css" />
+    <Content Include="Content\search-textbox.css" />
+    <Content Include="Content\selectivizr.js" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\twitter-bootstrap\resources\css\bootstrap-responsive.css" />
+    <Content Include="Content\twitter-bootstrap\resources\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\twitter-bootstrap\resources\css\bootstrap.css" />
+    <Content Include="Content\twitter-bootstrap\resources\css\bootstrap.min.css" />
+    <Content Include="Content\twitter-bootstrap\resources\css\custom-bootstrap.css" />
+    <Content Include="Content\twitter-bootstrap\resources\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\twitter-bootstrap\resources\img\glyphicons-halflings.png" />
+    <Content Include="Content\twitter-bootstrap\resources\js\bootstrap.js" />
+    <Content Include="Content\twitter-bootstrap\resources\js\bootstrap.min.js" />
+    <Content Include="Content\twitter-bootstrap\resources\js\jquery.validate.bootstrap.js" />
+    <Content Include="Content\twitter-bootstrap\resources\js\jquery.validate.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\css\bootstrap-responsive.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\css\bootstrap.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\css\docs.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\css\example-fixed-layout.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\css\example-fluid-layout.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\ico\bootstrap-apple-114x114.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\ico\bootstrap-apple-57x57.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\ico\bootstrap-apple-72x72.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\ico\favicon.ico" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\bird.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\bootstrap-mdo-sfmoma-01.jpg" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\bootstrap-mdo-sfmoma-02.jpg" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\bootstrap-mdo-sfmoma-03.jpg" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\browsers.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-diagram-01.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-diagram-02.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-diagram-03.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-sites\bartop.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-sites\fleetio.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-sites\jshint.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-sites\kippt.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-sites\railwayjs.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\example-sites\totalwireframe.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\examples\bootstrap-example-fluid.jpg" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\examples\bootstrap-example-hero.jpg" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\examples\bootstrap-example-starter.jpg" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\github-16px.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons-halflings.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_009_magic.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_042_group.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_079_podium.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_082_roundabout.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_155_show_thumbnails.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_163_iphone.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_214_resize_small.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\glyphicons\glyphicons_266_book_open.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\grid-18px-masked.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\icon-css3.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\icon-github.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\icon-html5.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\icon-twitter.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\less-logo-large.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\less-small.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\img\responsive-illustrations.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\application.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-alert.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-button.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-carousel.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-collapse.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-dropdown.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-modal.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-popover.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-scrollspy.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-tab.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-tooltip.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-transition.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\bootstrap-typeahead.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\google-code-prettify\prettify.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\google-code-prettify\prettify.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\jquery.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\base-css.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\index.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\lib\compiler.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\lib\hogan.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\lib\template.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\html\list.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\index.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\index.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\mustache.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\tools\release.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\tools\web_templates.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\1.0.0\hogan.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\1.0.0\hogan.min.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.0\hogan.min.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.3\hogan.min.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.amd.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.common.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.amd.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.common.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.min.mustache.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\hogan-1.0.5.mustache.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\builds\1.0.5\template-1.0.5.min.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\favicon.ico" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\images\logo.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\images\noise.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\images\small-hogan-icon.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\images\stripes.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\stylesheets\layout.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\stylesheets\skeleton.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\components.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\download.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\examples.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\examples\fluid.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\examples\hero.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\examples\starter-template.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\index.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\javascript.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\less.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\scaffolding.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\upgrading.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\img\glyphicons-halflings.png" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-alert.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-button.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-carousel.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-collapse.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-dropdown.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-modal.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-popover.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-scrollspy.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-tab.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-tooltip.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-transition.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\bootstrap-typeahead.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\index.html" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-alert.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-button.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-collapse.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-dropdown.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-modal.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-popover.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-scrollspy.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-tab.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-tooltip.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-transition.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\unit\bootstrap-typeahead.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\vendor\jquery.js" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\vendor\qunit.css" />
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\tests\vendor\qunit.js" />
+    <Content Include="Content\ui\jquery.ui.position.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="home.htm" />
+    <Content Include="homepage.htm" />
+    <Content Include="Images\2nd_nav_thanks_message_bug1.gif" />
+    <Content Include="Images\Bob-in-beta-message.gif" />
+    <Content Include="Images\border-anim-h.gif" />
+    <Content Include="Images\border-anim-v.gif" />
+    <Content Include="Images\Buttons\CCW_NavBar_Business_Opps_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Business_Opps_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Communications_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Communications_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Creative_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Creative_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_CRM_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_CRM_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_CustomMan_Voice_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_CustomMan_Voice_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Hosting_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Hosting_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_HR_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_HR_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Marketing_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Marketing_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Payments_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Payments_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Sales_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Sales_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Website_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Website_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Website_Intel_report_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Website_Intel_report_Grey.png" />
+    <Content Include="Images\Buttons\CCW_Refresh.png" />
+    <Content Include="Images\Buttons\Close-btn.gif" />
+    <Content Include="Images\Buttons\What_is_cloudware_normal_btn.png" />
+    <Content Include="Images\Buttons\What_is_cloudware_rollover_btn.png" />
+    <Content Include="Images\Carousel\Category\Customer Management\Cat-Banner-customer-manage.gif" />
+    <Content Include="Images\Carousel\Category\Customer Management\Pipe Line Deals Carbonite_carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Customer Management\Sales Boom_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Customer Management\Salesforce_Carousel.png" />
+    <Content Include="Images\Carousel\Category\EMail\1AND1_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\EMail\2nd-frame-of-cat-banners.gif" />
+    <Content Include="Images\Carousel\Category\EMail\Cat-Banner-email.gif" />
+    <Content Include="Images\Carousel\Category\EMail\Webfusion_carousel976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Financial\Cat-Banner-finance.gif" />
+    <Content Include="Images\Carousel\Category\Financial\FreeAgent_carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Financial\Freshbooks_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Financial\Sageone.jpg" />
+    <Content Include="Images\Carousel\Category\Office\Cat-Banner-Documents.gif" />
+    <Content Include="Images\Carousel\Category\Office\Evernote.jpg" />
+    <Content Include="Images\Carousel\Category\Office\Hyperoffice.jpg" />
+    <Content Include="Images\Carousel\Category\Office\Prezi.jpg" />
+    <Content Include="Images\Carousel\Category\Project Management\Cat-Banner-pro-manage.gif" />
+    <Content Include="Images\Carousel\Category\Project Management\Copper Project_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Project Management\Huddle.jpg" />
+    <Content Include="Images\Carousel\Category\Project Management\Project Manager_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Security\Bitdefender_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Security\Cat-Banner-IT-security.gif" />
+    <Content Include="Images\Carousel\Category\Security\Mcafee.jpg" />
+    <Content Include="Images\Carousel\Category\Security\Trend micro.jpg" />
+    <Content Include="Images\Carousel\Category\Storage And Backup\Carbonite_carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Storage And Backup\Cat-Banner-files-records.gif" />
+    <Content Include="Images\Carousel\Category\Storage And Backup\iDrive_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Storage And Backup\Live Drive_carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Voice\Cat-Banner-phone.gif" />
+    <Content Include="Images\Carousel\Category\Voice\Skype.jpg" />
+    <Content Include="Images\Carousel\Category\Web Conferencing\Cat-Banner-desk-con.gif" />
+    <Content Include="Images\Carousel\Category\Web Conferencing\Citrix.jpg" />
+    <Content Include="Images\Carousel\Category\Web Conferencing\Intercall_Carousel_976x262.jpg" />
+    <Content Include="Images\Carousel\Category\Web Conferencing\Omnijoin.jpg" />
+    <Content Include="Images\Carousel\Home\Carousel-home-frames_1.jpg" />
+    <Content Include="Images\Carousel\Home\Carousel-home-frames_2.jpg" />
+    <Content Include="Images\Carousel\Home\Carousel-home-frames_3.jpg" />
+    <Content Include="Images\Carousel\Home\Carousel-home-frames_4.jpg" />
+    <Content Include="Images\Carousel\Home\Carousel-home-frames_5.jpg" />
+    <Content Include="Images\Carousel\Home\Home_Page_carousel_frame_1.gif" />
+    <Content Include="Images\Carousel\Home\Home_Page_carousel_frame_2.gif" />
+    <Content Include="Images\Carousel\Home\Home_Page_carousel_frame_3.gif" />
+    <Content Include="Images\Carousel\Home\Home_Page_carousel_frame_4.gif" />
+    <Content Include="Images\Carousel\Social\Facebook_Social_carousel_frame.gif" />
+    <Content Include="Images\Carousel\Social\LinkedIn_Social_carousel_frame.gif" />
+    <Content Include="Images\Carousel\Social\Twitter_Social_carousel_frame.gif" />
+    <Content Include="Images\Carousel\Social\YouTube_Social_carousel_frame.gif" />
+    <Content Include="Images\Cat_Search_Panel_Module_July_2014.gif" />
+    <Content Include="Images\CCW_Comparing_HoldingPage.gif" />
+    <Content Include="Images\CCW_Error_HoldingPage.gif" />
+    <Content Include="Images\CCW_Explained_Bug.gif" />
+    <Content Include="Images\Compo_Final_HOME.gif" />
+    <Content Include="Images\Compo_Final_SEARCHRESULTS.gif" />
+    <Content Include="Images\empty.png" />
+    <Content Include="Images\Got-some-changes.gif" />
+    <Content Include="Images\Home_Search_Panel_Module_July_2014.gif" />
+    <Content Include="Images\Let-me-in.gif" />
+    <Content Include="Images\Logos\CCW_All.png" />
+    <Content Include="Images\Pinned-Beta-Tab.png" />
+    <Content Include="Images\ShopPDF\Blue-cloud-icon.png" />
+    <Content Include="Images\ShopPDF\Click-here.btn.png" />
+    <Content Include="Images\ShopPDF\Click-to-proceed-217px.png" />
+    <Content Include="Images\ShopPDF\Conferencing-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Cust-manage-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Email-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Facebook-icon.png" />
+    <Content Include="Images\ShopPDF\Financial-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\half-cloud-icon.png" />
+    <Content Include="Images\ShopPDF\Linked-in-icon.png" />
+    <Content Include="Images\ShopPDF\Office-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Phone-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Project-management-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Purple-cloud-icon.png" />
+    <Content Include="Images\ShopPDF\Security-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\shop-conference-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\shop-conference-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-cust-manage-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-edm-header-724.jpg" />
+    <Content Include="Images\ShopPDF\shop-edm-header.gif" />
+    <Content Include="Images\ShopPDF\shop-email-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-financial-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-office-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-panel-btn-249px.gif" />
+    <Content Include="Images\ShopPDF\shop-panel-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-phone-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-pro-manage-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-pro-storage-btn.gif" />
+    <Content Include="Images\ShopPDF\shop-security-btn.gif" />
+    <Content Include="Images\ShopPDF\Storage-btn-216px.gif" />
+    <Content Include="Images\ShopPDF\Twitter-icon.png" />
+    <Content Include="Images\ShopPDF\Video-graphic-for-shop-half.gif" />
+    <Content Include="Images\ShopPDF\Video-graphic-for-shop.gif" />
+    <Content Include="Images\Videos\CCW Provider Demo 1.mp4" />
+    <Content Include="Images\Videos\intro.wmv" />
+    <Content Include="Images\We_are_sorry_message_bug1.gif" />
+    <Content Include="LinkedIn2.htm" />
+    <Content Include="Documents\CaseStudies\output.jpg" />
+    <Content Include="Documents\test.htm" />
+    <Content Include="Documents\WhitePapers\output.jpg" />
+    <Content Include="Global.asax" />
+    <EmbeddedResource Include="Helpers\Receipt.txt" />
+    <Content Include="Images\10-reasons.gif" />
+    <Content Include="Images\Buttons\1x1-transparent.png" />
+    <Content Include="Images\Buttons\CCW_BackResults.png" />
+    <Content Include="Images\Buttons\CCW_CentreField.png" />
+    <Content Include="Images\Buttons\CCW_Cloudware_explained.png" />
+    <Content Include="Images\Buttons\CCW_CompareAgain.png" />
+    <Content Include="Images\Buttons\CCW_CompareCloudware_home.png" />
+    <Content Include="Images\Buttons\CCW_CreateReview.png" />
+    <Content Include="Images\Buttons\CCW_CustomManagement_Voice_Blue.png" />
+    <Content Include="Images\Buttons\CCW_CustomManagement_Voice_Grey.png" />
+    <Content Include="Images\Buttons\CCW_EmailPage.png" />
+    <Content Include="Images\Buttons\CCW_Full-view.png" />
+    <Content Include="Images\Buttons\CCW_FullView.png" />
+    <Content Include="Images\Buttons\CCW_HeaderGradientBar.jpg" />
+    <Content Include="Images\Buttons\CCW_Iconography.png" />
+    <Content Include="Images\Buttons\CCW_LeftCurvedField.png" />
+    <Content Include="Images\Buttons\CCW_Logo.png" />
+    <Content Include="Images\Buttons\CCW_MoreInfo.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Conferencing_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Conferencing_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_CustomManagement_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_CustomManagement_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Email_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Email_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Financial_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Financial_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Full_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Full_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Office_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Office_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_ProjectManage_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_ProjectManage_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Security_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Security_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Storage_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Storage_Grey.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Voice_Blue.png" />
+    <Content Include="Images\Buttons\CCW_NavBar_Voice_Grey.png" />
+    <Content Include="Images\Buttons\CCW_Print.png" />
+    <Content Include="Images\Buttons\CCW_Proceed.png" />
+    <Content Include="Images\Buttons\CCW_RightCurvedField.png" />
+    <Content Include="Images\Buttons\CCW_Submit.png" />
+    <Content Include="Images\Buttons\CCW_Summary-view.png" />
+    <Content Include="Images\Buttons\CCW_Summary.png" />
+    <Content Include="Images\Carousel\Category\AllCategories1.gif" />
+    <Content Include="Images\Carousel\Category\Conferencing1.gif" />
+    <Content Include="Images\Carousel\Category\CustomerManagement1.gif" />
+    <Content Include="Images\Carousel\Category\EMail1.gif" />
+    <Content Include="Images\Carousel\Category\Financial1.gif" />
+    <Content Include="Images\Carousel\Category\Office1.gif" />
+    <Content Include="Images\Carousel\Category\Phone1.gif" />
+    <Content Include="Images\Carousel\Category\ProjectManagement1.gif" />
+    <Content Include="Images\Carousel\Category\Security1.gif" />
+    <Content Include="Images\Carousel\Category\StorageAndBackup1.gif" />
+    <Content Include="Images\CCW-explained-comp.gif" />
+    <Content Include="Images\CCW-explained-pink.gif" />
+    <Content Include="Images\CCW_CentreField.png" />
+    <Content Include="Images\CCW_Iconography.png" />
+    <Content Include="Images\CCW_LeftCurvedField.png" />
+    <Content Include="Images\CCW_Logo.png" />
+    <Content Include="Images\CCW_RightCurvedField.png" />
+    <Content Include="Images\Cloud-icon-16x32.png" />
+    <Content Include="Images\CloudIcon1.png" />
+    <Content Include="Images\CloudIcon2.png" />
+    <Content Include="Images\Compo_Final.gif" />
+    <Content Include="Images\Compo_Final_Categorys.gif" />
+    <Content Include="Images\Compo_Final_REVIEW.gif" />
+    <Content Include="Images\Compo_Final_SearchFilters.gif" />
+    <Content Include="Images\Compo_Final_TRIAL.gif" />
+    <Content Include="Images\creature.jpg" />
+    <Content Include="Images\creature.png" />
+    <Content Include="Images\creature_1.jpg" />
+    <Content Include="Images\down_arrow_select.jpg" />
+    <Content Include="Images\down_arrow_select.png" />
+    <Content Include="Images\item1.png" />
+    <Content Include="Images\item2.png" />
+    <Content Include="Images\item3.png" />
+    <Content Include="Images\item4.png" />
+    <Content Include="Images\item5.png" />
+    <Content Include="Images\left.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\Logos\Customer Management\appshore logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\batch book logo.png" />
+    <Content Include="Images\Logos\Customer Management\bright pearl logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\buddy crm logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\capsule crm logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\maximizer logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\microsoft dynamics logo.png" />
+    <Content Include="Images\Logos\Customer Management\open crm logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\sage crm logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\salesforce_logo.jpeg" />
+    <Content Include="Images\Logos\Customer Management\soho os logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\sugar crm logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\Tactile_CRM.jpg" />
+    <Content Include="Images\Logos\Customer Management\we can do biz logo.png" />
+    <Content Include="Images\Logos\Customer Management\web crm logo.jpg" />
+    <Content Include="Images\Logos\Customer Management\workbooks logo.png" />
+    <Content Include="Images\Logos\Customer Management\worketc. logo.png" />
+    <Content Include="Images\Logos\Customer Management\Zoho logo.gif" />
+    <Content Include="Images\Logos\EMail\1&amp;1 logo.jpg" />
+    <Content Include="Images\Logos\EMail\Blue tie logo.jpg" />
+    <Content Include="Images\Logos\EMail\eclipse logo.jpg" />
+    <Content Include="Images\Logos\EMail\Fast Mail logo.gif" />
+    <Content Include="Images\Logos\EMail\FastHosts Logo.jpg" />
+    <Content Include="Images\Logos\EMail\Fusemail logo.png" />
+    <Content Include="Images\Logos\EMail\gmail logo.jpg" />
+    <Content Include="Images\Logos\EMail\Hyperoffice logo.png" />
+    <Content Include="Images\Logos\EMail\Intermedia logo.jpg" />
+    <Content Include="Images\Logos\EMail\ms exchange online logo.png" />
+    <Content Include="Images\Logos\EMail\Rackspace logo.jpg" />
+    <Content Include="Images\Logos\EMail\sms logo.jpg" />
+    <Content Include="Images\Logos\EMail\star logo.jpg" />
+    <Content Include="Images\Logos\EMail\Webfusion logo.jpg" />
+    <Content Include="Images\Logos\EMail\Yahoo logo.jpg" />
+    <Content Include="Images\Logos\EMail\Zoho logo.gif" />
+    <Content Include="Images\Logos\Finance\arithmo logo.gif" />
+    <Content Include="Images\Logos\Finance\clearbooks logo.png" />
+    <Content Include="Images\Logos\Finance\e-conomic logo.jpg" />
+    <Content Include="Images\Logos\Finance\freeagent central logo.jpg" />
+    <Content Include="Images\Logos\Finance\freshbooks logo.jpg" />
+    <Content Include="Images\Logos\Finance\icashbook logo.gif" />
+    <Content Include="Images\Logos\Finance\kashflow logo.jpg" />
+    <Content Include="Images\Logos\Finance\kashoo logo.gif" />
+    <Content Include="Images\Logos\Finance\ledgerble logo.jpg" />
+    <Content Include="Images\Logos\Finance\liquid accounts logo.jpg" />
+    <Content Include="Images\Logos\Finance\outright logo.png" />
+    <Content Include="Images\Logos\Finance\sage one logo.jpg" />
+    <Content Include="Images\Logos\Finance\xero logo.jpg" />
+    <Content Include="Images\Logos\Finance\yendo logo.jpg" />
+    <Content Include="Images\Logos\Finance\Zoho Books logo.PNG" />
+    <Content Include="Images\Logos\Office\evernote logo.jpg" />
+    <Content Include="Images\Logos\Office\feng office logo.png" />
+    <Content Include="Images\Logos\Office\google apps logo.jpg" />
+    <Content Include="Images\Logos\Office\Hyperoffice logo.png" />
+    <Content Include="Images\Logos\Office\live documents logo.jpg" />
+    <Content Include="Images\Logos\Office\Microsoft Office logo.png" />
+    <Content Include="Images\Logos\Office\my office logo.jpg" />
+    <Content Include="Images\Logos\Office\Prezi logo.jpg" />
+    <Content Include="Images\Logos\Office\Quick office logo.jpg" />
+    <Content Include="Images\Logos\Office\slide rocket logo.jpg" />
+    <Content Include="Images\Logos\Office\thinkfree logo.jpg" />
+    <Content Include="Images\Logos\Office\zcubes logo.jpg" />
+    <Content Include="Images\Logos\Office\Zoho logo.gif" />
+    <Content Include="Images\Logos\Project Management\attask logo.jpg" />
+    <Content Include="Images\Logos\Project Management\Basecamp logo.gif" />
+    <Content Include="Images\Logos\Project Management\blue camroo logo.jpg" />
+    <Content Include="Images\Logos\Project Management\celoxis logo.png" />
+    <Content Include="Images\Logos\Project Management\clarizen logo.png" />
+    <Content Include="Images\Logos\Project Management\collaboratecloud logo.png" />
+    <Content Include="Images\Logos\Project Management\copper project logo.png" />
+    <Content Include="Images\Logos\Project Management\Genius Project logo.JPG" />
+    <Content Include="Images\Logos\Project Management\glasscubes logo.jpg" />
+    <Content Include="Images\Logos\Project Management\Hyperoffice logo.png" />
+    <Content Include="Images\Logos\Project Management\Intervals logo.png" />
+    <Content Include="Images\Logos\Project Management\liquidplanner logo.jpg" />
+    <Content Include="Images\Logos\Project Management\manage project logo.jpg" />
+    <Content Include="Images\Logos\Project Management\mavenlink logo.jpg" />
+    <Content Include="Images\Logos\Project Management\Project Manager logo.jpg" />
+    <Content Include="Images\Logos\Project Management\project place logo.png" />
+    <Content Include="Images\Logos\Project Management\proworkflow logo.png" />
+    <Content Include="Images\Logos\Project Management\traffic live logo.jpg" />
+    <Content Include="Images\Logos\Project Management\worketc. logo.png" />
+    <Content Include="Images\Logos\Project Management\Zoho Projects logo.gif" />
+    <Content Include="Images\Logos\Storage And Backup\Adrive logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Backupify logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Box logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Carbonite logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Crashplan logo.png" />
+    <Content Include="Images\Logos\Storage And Backup\Dropbox logo.png" />
+    <Content Include="Images\Logos\Storage And Backup\Elephant Drive logo.png" />
+    <Content Include="Images\Logos\Storage And Backup\Flipdrive logo.PNG" />
+    <Content Include="Images\Logos\Storage And Backup\iBackup logo.png" />
+    <Content Include="Images\Logos\Storage And Backup\iDrive Logo.png" />
+    <Content Include="Images\Logos\Storage And Backup\Live Drive logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Mozy logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Open Drive logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Storegate logo.jpg" />
+    <Content Include="Images\Logos\Storage And Backup\Sugar Sync logo.png" />
+    <Content Include="Images\Logos\TopLogo.bmp" />
+    <Content Include="Images\Logos\Voice\BT logo.jpg" />
+    <Content Include="Images\Logos\Voice\Colt logo.jpg" />
+    <Content Include="Images\Logos\Voice\freespeech.co.uk logo.gif" />
+    <Content Include="Images\Logos\Voice\Gradwell logo.png" />
+    <Content Include="Images\Logos\Voice\magicjack logo.jpg" />
+    <Content Include="Images\Logos\Voice\ntaltd logo.jpg" />
+    <Content Include="Images\Logos\Voice\press1.co.uk logo.gif" />
+    <Content Include="Images\Logos\Voice\Ring Central logo.jpg" />
+    <Content Include="Images\Logos\Voice\Sipgate logo.jpg" />
+    <Content Include="Images\Logos\Voice\Skype logo.png" />
+    <Content Include="Images\Logos\Voice\sure voip logo.png" />
+    <Content Include="Images\Logos\Voice\Tpad logo.jpg" />
+    <Content Include="Images\Logos\Voice\usomo logo.jpg" />
+    <Content Include="Images\Logos\Voice\Vodafone logo.jpg" />
+    <Content Include="Images\Logos\Voice\voiptalk logo.png" />
+    <Content Include="Images\Logos\Voice\Vonage logo.jpg" />
+    <Content Include="Images\Logos\Voice\Yourchoicevoip logo.png" />
+    <Content Include="Images\Logos\Web Conferencing\cisco-webex-logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Fuze Meeting logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\GoToMeeting Logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Infinite conferencing logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Intercall Logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Lotus Live Logo.png" />
+    <Content Include="Images\Logos\Web Conferencing\Meeting Zone Logo.gif" />
+    <Content Include="Images\Logos\Web Conferencing\MegaMeeting Logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Microsoft Lync logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\onsync logo.png" />
+    <Content Include="Images\Logos\Web Conferencing\Powwownow logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Yugma Logo.jpg" />
+    <Content Include="Images\Logos\Web Conferencing\Zoho Meeting logo.gif" />
+    <Content Include="Images\pic1.jpg" />
+    <Content Include="Images\pic2.JPG" />
+    <Content Include="Images\pic3.JPG" />
+    <Content Include="Images\pic4.JPG" />
+    <Content Include="Images\pic5.JPG" />
+    <Content Include="Images\Predicate Search.bmp" />
+    <Content Include="Images\right.png" />
+    <Content Include="Images\rotate-SSearching-results.gif" />
+    <Content Include="Images\rotate-without-loading.gif" />
+    <Content Include="Images\search.png" />
+    <Content Include="Images\SearchResultPDFImages\CCW_BlueCloud.png" />
+    <Content Include="Images\SearchResultPDFImages\CCW_Logo_Bottom.png" />
+    <Content Include="Images\SearchResultPDFImages\CCW_Logo_Top.gif" />
+    <Content Include="Images\SearchResultPDFImages\CCW_Logo_Top.png" />
+    <Content Include="Images\SearchResultPDFImages\CCW_NavBar_Full_Grey.png" />
+    <Content Include="Images\SearchResultPDFImages\CCW_PurpleBlueCloud.png" />
+    <Content Include="Images\SearchResultPDFImages\CCW_PurpleCloud.png" />
+    <Content Include="Images\SearchResultPDFImages\Compo_Final_TRIAL.gif" />
+    <Content Include="Images\TabsWithJavaScript.bmp" />
+    <Content Include="Images\TabsWithoutJavaScript.bmp" />
+    <Content Include="Images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Images\ui-icons_222222_256x240.png" />
+    <Content Include="Images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Images\ui-icons_454545_256x240.png" />
+    <Content Include="Images\ui-icons_888888_256x240.png" />
+    <Content Include="Images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="LinkedIn.htm" />
+    <Content Include="LinkedIn3.htm" />
+    <Content Include="Scripts\1.10.1\development-bundle\AUTHORS.txt" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\collapsible.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\custom-icons.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\fillspace.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\hoverintent.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\no-auto-height.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\accordion\sortable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\categories.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\combobox.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\custom-data.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\folding.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\images\jqueryui_32x32.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\images\jquery_32x32.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\images\sizzlejs_32x32.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\images\transparent_1x1.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\images\ui-anim_basic_16x16.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\london.xml" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\maxheight.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\multiple-remote.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\multiple.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\remote-jsonp.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\remote-with-cache.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\remote.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\autocomplete\xml.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\checkbox.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\icons.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\radio.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\splitbutton.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\button\toolbar.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\alt-field.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\animation.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\buttonbar.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\date-formats.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\date-range.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\dropdown-month-year.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\icon-trigger.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\images\calendar.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\inline.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\jquery.ui.datepicker-ar.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\jquery.ui.datepicker-fr.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\jquery.ui.datepicker-he.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\localization.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\min-max.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\multiple-calendars.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\other-months.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\datepicker\show-week.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\demos.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\animated.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\modal-confirmation.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\modal-form.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\modal-message.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\dialog\modal.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\constrain-movement.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\cursor-style.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\delay-start.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\events.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\handle.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\revert.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\scroll.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\snap-to.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\sortable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\draggable\visual-feedback.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\accepted-elements.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras2.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras2_min.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras3.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras3_min.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras4.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras4_min.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\images\high_tatras_min.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\photo-manager.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\propagation.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\revert.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\shopping-cart.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\droppable\visual-feedback.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\effect\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\effect\easing.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\effect\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\calendar.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\demo-config-on-tile.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\demo-config-on.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\demo-spindown-closed.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\demo-spindown-open.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\icon-docs-info.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\images\pbar-ani.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\menu\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\menu\icons.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\menu\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\position\cycler.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\position\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\position\images\earth.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\position\images\flight.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\position\images\rocket.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\position\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\progressbar\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\progressbar\images\pbar-ani.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\progressbar\indeterminate.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\progressbar\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\progressbar\label.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\animate.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\aspect-ratio.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\constrain-area.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\delay-start.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\helper.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\max-min.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\snap-to-grid.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\synchronous-resize.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\textarea.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\resizable\visual-feedback.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\selectable\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\selectable\display-grid.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\selectable\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\selectable\serialize.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\colorpicker.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\hotelrooms.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\multiple-vertical.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\range-vertical.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\range.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\rangemax.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\rangemin.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\side-scroll.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\slider-vertical.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\slider\steps.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\connect-lists-through-tabs.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\connect-lists.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\delay-start.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\display-grid.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\empty-lists.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\items.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\placeholder.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\sortable\portlets.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\currency.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\decimal.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\latlong.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\overflow.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\spinner\time.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\ajax.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\ajax\content1.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\ajax\content2.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\bottom.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\collapsible.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\manipulation.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\mouseover.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\sortable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tabs\vertical.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\ajax\content1.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\ajax\content2.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\custom-animation.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\custom-content.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\custom-style.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\forms.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\images\st-stephens.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\images\tower-bridge.jpg" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\tracking.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\tooltip\video-player.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\widget\default.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\demos\widget\index.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\accordion.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\autocomplete.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\blind-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\bounce-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\button.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\clip-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\datepicker.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\dialog.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\draggable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\drop-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\droppable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\explode-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\fade-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\fold-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\highlight-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\jQuery.widget.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\menu.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\mouse.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\position.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\progressbar.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\puff-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\pulsate-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\resizable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\scale-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\selectable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\shake-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\size-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\slide-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\slider.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\sortable.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\spinner.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\tabs.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\tooltip.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\docs\transfer-effect.html" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\globalize.culture.de-DE.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\globalize.culture.ja-JP.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\globalize.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\jquery.mousewheel.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\jshint.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\qunit.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\external\qunit.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\grunt.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\jquery-1.9.1.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\MIT-LICENSE.txt" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\animated-overlay.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery-ui.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.all.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.base.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.button.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.core.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.menu.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.slider.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.theme.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\animated-overlay.gif" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery-ui.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.accordion.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.all.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.autocomplete.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.base.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.button.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.core.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.datepicker.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.dialog.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.menu.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.progressbar.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.resizable.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.selectable.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.slider.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.spinner.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.tabs.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\jquery.ui.tooltip.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery-ui.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.button.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.core.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.menu.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.slider.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\themes\no-theme\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery-ui-i18n.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-af.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ar-DZ.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ar.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-az.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-be.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-bg.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-bs.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ca.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-cs.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-cy-GB.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-da.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-de.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-el.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-en-AU.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-en-GB.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-en-NZ.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-eo.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-es.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-et.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-eu.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-fa.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-fi.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-fo.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-fr-CA.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-fr-CH.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-fr.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-gl.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-he.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-hi.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-hr.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-hu.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-hy.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-id.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-is.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-it.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ja.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ka.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-kk.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-km.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ko.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ky.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-lb.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-lt.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-lv.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-mk.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ml.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ms.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-nb.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-nl-BE.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-nl.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-nn.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-no.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-pl.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-pt-BR.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-pt.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-rm.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ro.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ru.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-sk.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-sl.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-sq.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-sr-SR.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-sr.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-sv.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-ta.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-th.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-tj.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-tr.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-uk.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-vi.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-zh-CN.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-zh-HK.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\i18n\jquery.ui.datepicker-zh-TW.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery-ui.custom.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.accordion.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.button.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.core.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.datepicker.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.dialog.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.draggable.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.droppable.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-blind.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-bounce.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-clip.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-drop.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-explode.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-fade.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-fold.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-highlight.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-pulsate.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-scale.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-shake.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-slide.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect-transfer.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.effect.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.menu.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.mouse.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.position.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.progressbar.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.resizable.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.selectable.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.slider.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.sortable.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.spinner.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.tabs.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.tooltip.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\jquery.ui.widget.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery-ui-i18n.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-af.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ar-DZ.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ar.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-az.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-be.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-bg.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-bs.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ca.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-cs.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-cy-GB.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-da.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-de.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-el.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-en-AU.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-en-GB.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-en-NZ.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-eo.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-es.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-et.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-eu.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fa.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fi.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fo.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fr-CA.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fr-CH.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-fr.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-gl.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-he.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hi.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hr.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hu.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-hy.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-id.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-is.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-it.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ja.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ka.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-kk.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-km.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ko.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ky.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-lb.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-lt.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-lv.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-mk.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ml.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ms.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-nb.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-nl-BE.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-nl.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-nn.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-no.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-pl.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-pt-BR.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-pt.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-rm.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ro.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ru.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sk.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sl.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sq.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sr-SR.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sr.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-sv.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-ta.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-th.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-tj.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-tr.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-uk.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-vi.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-zh-CN.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-zh-HK.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\i18n\jquery.ui.datepicker-zh-TW.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery-ui.custom.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.accordion.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.autocomplete.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.button.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.core.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.datepicker.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.dialog.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.draggable.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.droppable.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-blind.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-bounce.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-clip.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-drop.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-explode.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-fade.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-fold.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-highlight.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-pulsate.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-scale.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-shake.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-slide.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect-transfer.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.effect.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.menu.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.mouse.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.position.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.progressbar.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.resizable.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.selectable.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.slider.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.sortable.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.spinner.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.tabs.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.tooltip.min.js" />
+    <Content Include="Scripts\1.10.1\development-bundle\ui\minified\jquery.ui.widget.min.js" />
+    <Content Include="Scripts\1.10.1\js\jquery-1.9.1.js" />
+    <Content Include="Scripts\1.10.1\js\jquery-ui-1.10.1.custom.js" />
+    <Content Include="Scripts\1.9.1\ui\jquery-ui.js" />
+    <Content Include="Scripts\1.9.1\ui\jquery.ui.dialog.js" />
+    <Content Include="Scripts\bootstrap-MVC-validation.js" />
+    <Content Include="Scripts\CompareCloudware.js" />
+    <Content Include="Scripts\CompareCloudwareVX.js" />
+    <Content Include="Scripts\Copy of Copy of linkedin_industries.js" />
+    <Content Include="Scripts\Copy of linkedin_industries.js" />
+    <Content Include="Scripts\ImageUpload\jquery.fancyupload.js" />
+    <Content Include="Scripts\ImageUpload\jquery.imgareaselect.js" />
+    <Content Include="Scripts\jquery-1.5.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-1.5.1.min.js" />
+    <Content Include="Scripts\jquery-1.8.1-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.1.js" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.js" />
+    <Content Include="Scripts\jquery-ui-1.8.11.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.js" />
+    <Content Include="Scripts\jquery-ui-1.8.23.min.js" />
+    <Content Include="Scripts\jquery.carousel.min.js" />
+    <Content Include="Scripts\jquery.corner.js" />
+    <Content Include="Scripts\jquery.fancyupload.js" />
+    <Content Include="Scripts\jquery.filestyle.js" />
+    <Content Include="Scripts\jquery.imgareaselect.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.more-show.js" />
+    <Content Include="Scripts\jquery.ui.autocomplete.js" />
+    <Content Include="Scripts\jquery.ui.core.js" />
+    <Content Include="Scripts\jquery.ui.searchboxautocomplete.js" />
+    <Content Include="Scripts\jquery.ui.tabs.js" />
+    <Content Include="Scripts\jquery.ui.widget.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\JSON2.js" />
+    <Content Include="Scripts\modernizr-1.7.js" />
+    <Content Include="Scripts\modernizr-1.7.min.js" />
+    <Content Include="UIScratchPad\accordion.htm" />
+    <Content Include="UIScratchPad\datepicker.htm" />
+    <Content Include="UIScratchPad\fluidtable.htm" />
+    <Content Include="UIScratchPad\HangingIndent.htm" />
+    <Content Include="UIScratchPad\IE7centering.htm" />
+    <Content Include="UIScratchPad\modaldialog.htm" />
+    <Content Include="UIScratchPad\curvesusinghtc.htm" />
+    <Content Include="UIScratchPad\dropdown.htm" />
+    <Content Include="UIScratchPad\jborder.htm" />
+    <Content Include="UIScratchPad\jborderfromweb.htm" />
+    <Content Include="UIScratchPad\trfixedheight.htm" />
+    <Content Include="UIScratchPad\youtube.htm" />
+    <Content Include="Vendor Rollbacks\CompareCloudware.js" />
+    <Content Include="1959474.htm" />
+    <Content Include="Views\Shared\PrintResult3.cshtml" />
+    <Content Include="Views\Shared\About.cshtml" />
+    <Content Include="log4net.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\TCDialog.cshtml" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ChangePassword.cshtml" />
+    <Content Include="Views\Account\ChangePasswordSuccess.cshtml" />
+    <Content Include="Views\Account\LogOn.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_LogOnPartial.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Shared\About2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\twitter-bootstrap\images\" />
+    <Folder Include="Images\Carousel\Category\Finance\" />
+    <Folder Include="Views\Home\DisplayTemplates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\PartialPages\NoScript\SearchInputSimple.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\FreeTrialBuyNowModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SearchInputModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\NoScript\SearchResultsNoScriptIE.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\CarouselModel.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationCloudRating.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationOverallRating.cshtml" />
+    <Content Include="Views\Shared\CloudCompareLayout.cshtml" />
+    <Content Include="Views\Shared\CreatureWithTextOnLeft.cshtml" />
+    <Content Include="Views\Shared\CreatureWithTextOnRight.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\FooterModel.cshtml" />
+    <Content Include="Views\Shared\ForceDisplayTemplate.cshtml" />
+    <Content Include="Views\Shared\HeaderModel.cshtml" />
+    <Content Include="Views\Shared\SearchFilterModelTwoColumnEnumerable.cshtml" />
+    <Content Include="Views\Shared\SearchResultButtonsTop.cshtml" />
+    <Content Include="Views\Shared\TabbedSearchResult.cshtml" />
+    <Content Include="Views\Shared\TabbedSearchResults.cshtml" />
+    <Content Include="Views\Shared\TabbedSearchResultsFeaturedCloudware.cshtml" />
+    <Content Include="Views\Shared\TabbedSearchResultsNewCloudware.cshtml" />
+    <Content Include="Views\Shared\TabbedSearchResultsTopTenCloudware.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Vendor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompareCloudware.Domain\CompareCloudware.Domain.csproj">
+      <Project>{9586A4AA-25C3-40AB-B851-0BCEEB0D7098}</Project>
+      <Name>CompareCloudware.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompareCloudware.POCOQueryRepository\CompareCloudware.POCOQueryRepository.csproj">
+      <Project>{97DB1E05-3464-477F-A1B6-B45137EF2D46}</Project>
+      <Name>CompareCloudware.POCOQueryRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompareCloudware.SocialNetworking\CompareCloudware.SocialNetworking.csproj">
+      <Project>{9BBDDF47-FBB8-4948-BF64-21F797BD4169}</Project>
+      <Name>CompareCloudware.SocialNetworking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PagedList-master\src\PagedList\PagedList.csproj">
+      <Project>{da52d7c3-b871-48ec-b009-ac782ad50266}</Project>
+      <Name>PagedList</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\ENGLISH.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="App_LocalResources\Images.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\HomePage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\SearchInputModel.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\CustomTextBox.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\EditorTemplates\CustomTextBoxInt.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SearchPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SearchPageContainerModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SearchFiltersModel.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\SearchFilterModelOneColumn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SearchResultsModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\SearchResultModelOneColumn.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\SearchResultSummaryModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\CloudApplicationProductReviewModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\DisplayTemplates\FreeTrialBuyNowModel.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\CloudApplicationModel.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\PrintResult2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\SearchFiltersModelNoScript.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\bootstrap.zip" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\assets\js\README.md" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\bin\hulk" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\LICENSE" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\Makefile" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\package.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\README.md" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\Changes" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\Rakefile" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\README.md" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\comments.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\comments.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\delimiters.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\interpolation.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\inverted.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\inverted.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\partials.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\partials.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\sections.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\sections.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\specs\~lambdas.yml" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\spec\TESTING.md" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\test\templates\list.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\web\index.html.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\wrappers\amd.js.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\wrappers\common.js.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\wrappers\js.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\node_modules\hogan.js\wrappers\mustache.js.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\build\package.json" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\layout.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\base-css.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\components.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\download.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\examples.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\index.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\javascript.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\less.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\scaffolding.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\docs\templates\pages\upgrading.mustache" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\js\README.md" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\accordion.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\alerts.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\bootstrap.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\breadcrumbs.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\button-groups.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\buttons.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\carousel.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\close.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\code.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\component-animations.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\dropdowns.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\forms.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\grid.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\hero-unit.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\labels.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\layouts.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\mixins.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\modals.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\navbar.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\navs.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\pager.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\pagination.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\popovers.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\progress-bars.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\reset.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\responsive.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\scaffolding.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\sprites.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\tables.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\thumbnails.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\tooltip.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\type.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\utilities.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\variables.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\less\wells.less" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\LICENSE" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\Makefile" />
+    <None Include="Content\twitter-bootstrap\twitter-bootstrap-v2\README.md" />
+    <None Include="Documents\CaseStudies\AdobeID.pdf" />
+    <None Include="Documents\CaseStudies\DefaultID.pdf" />
+    <None Include="Documents\CaseStudies\Dynamic.pdf" />
+    <None Include="Documents\CaseStudies\ENUtxt.pdf" />
+    <None Include="Documents\CaseStudies\PDFSigQFormalRep.pdf" />
+    <None Include="Documents\CaseStudies\pdftown.com_986_ac-electrics.pdf" />
+    <None Include="Documents\test.pdf" />
+    <None Include="Documents\WhitePapers\GROHE_Bathroom_Brochure.pdf" />
+    <None Include="Documents\WhitePapers\SignHere.pdf" />
+    <None Include="Documents\WhitePapers\StandardBusiness.pdf" />
+    <None Include="Documents\WhitePapers\Words.pdf" />
+    <None Include="Fonts\Vagabond.ttf" />
+    <Content Include="Views\Shared\DisplayTemplates\CloudApplicationUserReviewModel.cshtml" />
+    <Content Include="Views\Shared\_ViewStart.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\CreatureWithTextAbove.cshtml" />
+    <Content Include="Views\Shared\Index.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\CategoryPage.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\SearchTags.cshtml" />
+    <Content Include="Views\Shared\SearchBox.cshtml" />
+    <Content Include="Views\Shared\CategoryContentTextModel.cshtml" />
+    <Content Include="Views\Shared\CloudwareExplainedPartial.cshtml" />
+    <Content Include="Views\Shared\CorporateInformationPage.cshtml" />
+    <Content Include="Views\Shared\GlobalSearchPage.cshtml" />
+    <Content Include="Views\Shared\GlobalSearchPageContainerModel.cshtml" />
+    <Content Include="Views\Shared\GlobalSearchResultsModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\GlobalSearchResultModelOneColumn.cshtml" />
+    <Content Include="Views\Shared\SearchNavigationButtons.cshtml" />
+    <Content Include="Views\Shared\GlobalSearchNavigationButtons.cshtml" />
+    <Content Include="Views\Shared\GlobalSearchNavigationInfo.cshtml" />
+    <Content Include="Views\Shared\SearchNavigationInfo.cshtml" />
+    <Content Include="UIScratchPad\OldCarouselModel.cshtml" />
+    <Content Include="Views\Shared\10ReasonsForUsingCloudware.cshtml" />
+    <Content Include="Views\Shared\WhatDoesMyBusinessNeedToRunCloudware.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EnquiryFormModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CloudApplicationModelAlternative.cshtml" />
+    <Content Include="Views\Shared\TabbedSearchResultsNoScript.cshtml">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="Views\Shared\CloudwareExplainedPageNoScript.cshtml" />
+    <Content Include="Views\Shared\CorporateInformationPageNoScript.cshtml" />
+    <Content Include="Views\Shared\NoScriptDialog.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\CloudApplicationSearchResultModel.cshtml" />
+    <Content Include="Views\Shared\SocialFollowers.cshtml" />
+    <Content Include="Views\Shared\UserReview.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\OneToFiveWithHalves.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomMultiLineTextBox.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\RequestTypes.cshtml" />
+    <Content Include="Views\Shared\FullSummaryButton.cshtml" />
+    <Content Include="Views\Shared\Loading.cshtml" />
+    <Content Include="Views\Shared\CreatureWithTextOnLeftCategory.cshtml" />
+    <Content Include="Views\Shared\UserReviewContainer.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ForenameTextBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SurnameTextBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\EmailTextBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\TermsAndConditions.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TermsAndConditions.cshtml" />
+    <Content Include="Views\Shared\TermsAndConditions.cshtml" />
+    <Content Include="Views\Shared\SearchResultsMPUs.cshtml" />
+    <Content Include="Views\Shared\SearchResultButtonsBottom.cshtml" />
+    <Content Include="Views\Shared\TermsAndConditionsPage.cshtml" />
+    <Content Include="Views\Shared\NoScriptDialogRatingReview.cshtml" />
+    <Content Include="Views\Shared\NoScriptDialogHomePage.cshtml" />
+    <Content Include="Views\Shared\NoScriptDialogCategoryPage.cshtml" />
+    <Content Include="Views\Vendor\RegisterApplication.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomCheckBoxList.cshtml" />
+    <Content Include="Views\Vendor\UploadImage.cshtml" />
+    <Content Include="Views\Vendor\UploadImageModal.cshtml" />
+    <Content Include="Views\Vendor\ViewPage1.cshtml" />
+    <Content Include="Views\Vendor\ApplicationCosts.cshtml" />
+    <Content Include="Views\Vendor\UploadProductReview.cshtml" />
+    <Content Include="Views\Vendor\datepicker.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationProductReviewModel.cshtml" />
+    <Content Include="Views\Vendor\ProductReviewsContainer.cshtml" />
+    <Content Include="Views\Vendor\GroupBorderCaption.cshtml" />
+    <Content Include="Views\Vendor\VendorMain.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomCheckBoxListFeatures.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\BytesDropdown.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MonetaryTextBox.cshtml" />
+    <Content Include="Views\Vendor\UploadVideo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomRadioButtonList.cshtml" />
+    <Content Include="Views\Vendor\VideosContainer.cshtml" />
+    <Content Include="Views\Vendor\DisplayLogo.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationVideoModel.cshtml" />
+    <Content Include="Views\Vendor\UploadUserReview.cshtml" />
+    <Content Include="Views\Vendor\UserReviewsContainer.cshtml" />
+    <Content Include="Views\Vendor\DocumentsContainer.cshtml" />
+    <Content Include="Views\Vendor\UploadDocument.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ThumbnailDocumentModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationUserReviewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationDocumentModel.cshtml" />
+    <Content Include="Views\Vendor\SocialNetworking.cshtml" />
+    <Content Include="Vendor Rollbacks\CloudCompareLayout.cshtml" />
+    <Content Include="Vendor Rollbacks\SearchTextBox.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SearchTextBox.cshtml" />
+    <None Include="Properties\PublishProfiles\CompareCloudwareUX.pubxml" />
+    <None Include="Properties\PublishProfiles\CompareCloudwareUXStaging.pubxml" />
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Scripts\1.10.1\development-bundle\demos\autocomplete\search.php" />
+    <None Include="Scripts\1.10.1\development-bundle\demos\tabs\ajax\content3-slow.php" />
+    <None Include="Scripts\1.10.1\development-bundle\demos\tabs\ajax\content4-broken.php" />
+    <None Include="Scripts\1.10.1\development-bundle\package.json" />
+    <None Include="Scripts\1.10.1\development-bundle\README.md" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.accordion.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.autocomplete.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.button.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.core.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.datepicker.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.dialog.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.draggable.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.droppable.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-blind.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-bounce.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-clip.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-drop.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-explode.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-fade.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-fold.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-highlight.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-pulsate.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-scale.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-shake.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-slide.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect-transfer.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.effect.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.menu.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.mouse.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.position.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.progressbar.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.resizable.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.selectable.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.slider.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.sortable.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.spinner.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.tabs.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.tooltip.jquery.json" />
+    <None Include="Scripts\1.10.1\development-bundle\ui.widget.jquery.json" />
+    <Content Include="Views\Vendor\SupportDays.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationFeatures.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationApplications.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CustomCheckBoxListSupportTypes.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\xCloudApplicationVideoModel.cshtml" />
+    <Content Include="Views\Vendor\VideoTemplate.cshtml" />
+    <Content Include="Views\Shared\LoadingSearchResults.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationLanguages.cshtml" />
+    <Content Include="Views\Shared\NumberOfUsersDialog.cshtml" />
+    <Content Include="Views\Shared\SiteMapPage.cshtml" />
+    <Content Include="Views\Vendor\ZeroCostsDialog.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationUserReviewsContainerModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationProductReviewsContainerModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationDocumentsContainerModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\CloudApplicationVideosContainerModel.cshtml" />
+    <Content Include="Views\WS.cshtml" />
+    <Content Include="Views\Home\WS.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TabbedSearchResultsModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\FeaturedCloudwareModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TabbedSearchResultsNewCloudware.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TabbedSearchResultsTopTenCloudware.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SearchResultModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TopTenCloudwareModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\NewCloudwareModel.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationModelPDF.cshtml" />
+    <Content Include="Views\Shared\ShopPDFPage2.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationRegistration.cshtml" />
+    <Content Include="Views\Shared\TwitterBootstrapTests.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationRegistrationOrUpdate.cshtml" />
+    <Content Include="Views\Shared\PrivacyPolicy.cshtml" />
+    <Content Include="Views\Shared\LegalRights.cshtml" />
+    <Content Include="Views\Shared\CloudApplicationRegistrationOrUpdateNoScript.cshtml" />
+    <Content Include="Views\Shared\NoScriptDialogRegisterOrUpdatePage.cshtml" />
+    <Content Include="Views\Shared\BetaPhaseSplash.cshtml" />
+    <Content Include="Views\Shared\BetaPhaseSplashNoScript.cshtml" />
+    <Content Include="Views\Shared\ThanksForComing.cshtml" />
+    <Content Include="Views\Shared\PageNotFound.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\TabbedOnpageOptimisationModel.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\OnpageOptimisationTab1Model.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\ContentTextModel.cshtml" />
+    <Content Include="Views\Shared\CarouselSocialModel.cshtml" />
+    <Content Include="Views\Shared\CloudwareExplainedOldPage.cshtml" />
+    <Content Include="Views\Shared\CloudwareExplainedPage.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ASPPDFLib">
+      <Guid>{414FEE4B-2879-4090-957E-423567FFCFC6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>81</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/CompareCloudware.Web</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+</Project>

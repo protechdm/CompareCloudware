@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl" Namespace="CloudComparePackageDataModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005">
+        <EntityContainer Name="CloudComparePackageDataModelTargetContainer" >
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CloudComparePackageDataModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="CloudComparePackageDataModelContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Package" EntityType="CloudComparePackageDataModel.Package" />
+          <EntitySet Name="PackageVendor" EntityType="CloudComparePackageDataModel.PackageVendor" />
+          <EntitySet Name="PackageBulletPoint" EntityType="CloudComparePackageDataModel.PackageBulletPoint" />
+          <EntitySet Name="PackageType" EntityType="CloudComparePackageDataModel.PackageType" />
+          <EntitySet Name="PackageFeature" EntityType="CloudComparePackageDataModel.PackageFeature" />
+          <EntitySet Name="WhatHappensNext" EntityType="CloudComparePackageDataModel.WhatHappensNext" />
+          <EntitySet Name="PackageStep" EntityType="CloudComparePackageDataModel.PackageStep" />
+          <EntitySet Name="Profile" EntityType="CloudComparePackageDataModel.Profile" />
+          <EntitySet Name="Feature" EntityType="CloudComparePackageDataModel.Feature" />
+          <AssociationSet Name="ProfilePackageVendor" Association="CloudComparePackageDataModel.ProfilePackageVendor">
+            <End Role="Profile" EntitySet="Profile" />
+            <End Role="PackageVendor" EntitySet="PackageVendor" />
+          </AssociationSet>
+          <AssociationSet Name="PackageVendorPackage" Association="CloudComparePackageDataModel.PackageVendorPackage">
+            <End Role="PackageVendor" EntitySet="PackageVendor" />
+            <End Role="Package" EntitySet="Package" />
+          </AssociationSet>
+          <AssociationSet Name="PackagePackageBulletPoint" Association="CloudComparePackageDataModel.PackagePackageBulletPoint">
+            <End Role="Package" EntitySet="Package" />
+            <End Role="PackageBulletPoint" EntitySet="PackageBulletPoint" />
+          </AssociationSet>
+          <AssociationSet Name="PackagePackageFeature" Association="CloudComparePackageDataModel.PackagePackageFeature">
+            <End Role="Package" EntitySet="Package" />
+            <End Role="PackageFeature" EntitySet="PackageFeature" />
+          </AssociationSet>
+          <AssociationSet Name="PackagePackageType" Association="CloudComparePackageDataModel.PackagePackageType">
+            <End Role="Package" EntitySet="Package" />
+            <End Role="PackageType" EntitySet="PackageType" />
+          </AssociationSet>
+          <AssociationSet Name="PackageFeatureFeature" Association="CloudComparePackageDataModel.PackageFeatureFeature">
+            <End Role="PackageFeature" EntitySet="PackageFeature" />
+            <End Role="Feature" EntitySet="Feature" />
+          </AssociationSet>
+          <AssociationSet Name="PackagePackageStep" Association="CloudComparePackageDataModel.PackagePackageStep">
+            <End Role="Package" EntitySet="Package" />
+            <End Role="PackageStep" EntitySet="PackageStep" />
+          </AssociationSet>
+          <AssociationSet Name="PackageWhatHappensNext" Association="CloudComparePackageDataModel.PackageWhatHappensNext">
+            <End Role="Package" EntitySet="Package" />
+            <End Role="WhatHappensNext" EntitySet="WhatHappensNext" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Package">
+          <Key>
+            <PropertyRef Name="PackageID" />
+          </Key>
+          <Property Type="Int32" Name="PackageID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageName" Nullable="false" />
+          <Property Type="String" Name="PackageCostPerQuarter" Nullable="false" />
+          <Property Type="String" Name="PackageCostPerAnnum" Nullable="false" />
+          <Property Type="String" Name="PackageActiveFrom" Nullable="false" />
+          <Property Type="String" Name="PackageActiveTo" Nullable="false" />
+          <Property Type="String" Name="PackageTypeID" Nullable="false" />
+          <NavigationProperty Name="PackageVendor" Relationship="CloudComparePackageDataModel.PackageVendorPackage" FromRole="Package" ToRole="PackageVendor" />
+          <Property Type="Int32" Name="PackageVendorPackageVendorID" Nullable="true" />
+          <NavigationProperty Name="PackageBulletPoints" Relationship="CloudComparePackageDataModel.PackagePackageBulletPoint" FromRole="Package" ToRole="PackageBulletPoint" />
+          <NavigationProperty Name="PackageFeatures" Relationship="CloudComparePackageDataModel.PackagePackageFeature" FromRole="Package" ToRole="PackageFeature" />
+          <NavigationProperty Name="PackageType" Relationship="CloudComparePackageDataModel.PackagePackageType" FromRole="Package" ToRole="PackageType" />
+          <NavigationProperty Name="PackageSteps" Relationship="CloudComparePackageDataModel.PackagePackageStep" FromRole="Package" ToRole="PackageStep" />
+          <NavigationProperty Name="WhatHappensNexts" Relationship="CloudComparePackageDataModel.PackageWhatHappensNext" FromRole="Package" ToRole="WhatHappensNext" />
+        </EntityType>
+        <EntityType Name="PackageVendor">
+          <Key>
+            <PropertyRef Name="PackageVendorID" />
+          </Key>
+          <Property Type="Int32" Name="PackageVendorID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageID" Nullable="false" />
+          <Property Type="String" Name="VendorID" Nullable="false" />
+          <NavigationProperty Name="Profile" Relationship="CloudComparePackageDataModel.ProfilePackageVendor" FromRole="PackageVendor" ToRole="Profile" />
+          <Property Type="Int32" Name="ProfileProfileID" Nullable="true" />
+          <NavigationProperty Name="Packages" Relationship="CloudComparePackageDataModel.PackageVendorPackage" FromRole="PackageVendor" ToRole="Package" />
+        </EntityType>
+        <EntityType Name="PackageBulletPoint">
+          <Key>
+            <PropertyRef Name="PackageBulletPointID" />
+          </Key>
+          <Property Type="Int32" Name="PackageBulletPointID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageID" Nullable="false" />
+          <Property Type="String" Name="PackageBulletPointDescription" Nullable="false" />
+          <Property Type="String" Name="ListPosition" Nullable="false" />
+          <NavigationProperty Name="Package" Relationship="CloudComparePackageDataModel.PackagePackageBulletPoint" FromRole="PackageBulletPoint" ToRole="Package" />
+          <Property Type="Int32" Name="PackagePackageID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PackageType">
+          <Key>
+            <PropertyRef Name="PackageTypeID" />
+          </Key>
+          <Property Type="Int32" Name="PackageTypeID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageTypeName" Nullable="false" />
+          <NavigationProperty Name="Packages" Relationship="CloudComparePackageDataModel.PackagePackageType" FromRole="PackageType" ToRole="Package" />
+        </EntityType>
+        <EntityType Name="PackageFeature">
+          <Key>
+            <PropertyRef Name="PackageFeatureID" />
+          </Key>
+          <Property Type="Int32" Name="PackageFeatureID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ParentPackageFeatureID" Nullable="false" />
+          <Property Type="String" Name="PackageID" Nullable="false" />
+          <Property Type="String" Name="IsSearchParameter" Nullable="false" />
+          <NavigationProperty Name="Package" Relationship="CloudComparePackageDataModel.PackagePackageFeature" FromRole="PackageFeature" ToRole="Package" />
+          <Property Type="Int32" Name="PackagePackageID" Nullable="true" />
+          <Property Type="String" Name="FeatureID" Nullable="false" />
+          <Property Type="Int32" Name="PackagePackageID1" Nullable="true" />
+          <NavigationProperty Name="Feature" Relationship="CloudComparePackageDataModel.PackageFeatureFeature" FromRole="PackageFeature" ToRole="Feature" />
+        </EntityType>
+        <EntityType Name="WhatHappensNext">
+          <Key>
+            <PropertyRef Name="WhatHappensNextID" />
+          </Key>
+          <Property Type="Int32" Name="WhatHappensNextID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="WhatHappensNextName" Nullable="false" />
+          <Property Type="String" Name="ListPosition" Nullable="false" />
+          <Property Type="String" Name="PackageID" Nullable="false" />
+          <NavigationProperty Name="Package" Relationship="CloudComparePackageDataModel.PackageWhatHappensNext" FromRole="WhatHappensNext" ToRole="Package" />
+          <Property Type="Int32" Name="PackagePackageID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="PackageStep">
+          <Key>
+            <PropertyRef Name="PackageStepID" />
+          </Key>
+          <Property Type="Int32" Name="PackageStepID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageStepName" Nullable="false" />
+          <Property Type="String" Name="ListPosition" Nullable="false" />
+          <Property Type="String" Name="PackageID" Nullable="false" />
+          <NavigationProperty Name="Package" Relationship="CloudComparePackageDataModel.PackagePackageStep" FromRole="PackageStep" ToRole="Package" />
+          <Property Type="Int32" Name="PackagePackageID" Nullable="true" />
+        </EntityType>
+        <EntityType Name="Profile">
+          <Key>
+            <PropertyRef Name="ProfileID" />
+          </Key>
+          <Property Type="Int32" Name="ProfileID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="PackageVendorID" Nullable="false" />
+          <Property Type="String" Name="VendorDashboardID" Nullable="false" />
+          <NavigationProperty Name="PackageVendors" Relationship="CloudComparePackageDataModel.ProfilePackageVendor" FromRole="Profile" ToRole="PackageVendor" />
+        </EntityType>
+        <EntityType Name="Feature">
+          <Key>
+            <PropertyRef Name="FeatureID" />
+          </Key>
+          <Property Type="Int32" Name="FeatureID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="FeatureName" Nullable="false" />
+          <Property Type="String" Name="Include" Nullable="false" />
+          <Property Type="String" Name="IncludeExtraCost" Nullable="false" />
+          <Property Type="String" Name="IncludeCount" Nullable="false" />
+          <NavigationProperty Name="PackageFeatures" Relationship="CloudComparePackageDataModel.PackageFeatureFeature" FromRole="Feature" ToRole="PackageFeature" />
+        </EntityType>
+        <Association Name="ProfilePackageVendor">
+          <End Type="CloudComparePackageDataModel.Profile" Role="Profile" Multiplicity="0..1" />
+          <End Type="CloudComparePackageDataModel.PackageVendor" Role="PackageVendor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Profile">
+              <PropertyRef Name="ProfileID" />
+            </Principal>
+            <Dependent Role="PackageVendor">
+              <PropertyRef Name="ProfileProfileID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PackageVendorPackage">
+          <End Type="CloudComparePackageDataModel.PackageVendor" Role="PackageVendor" Multiplicity="0..1" />
+          <End Type="CloudComparePackageDataModel.Package" Role="Package" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PackageVendor">
+              <PropertyRef Name="PackageVendorID" />
+            </Principal>
+            <Dependent Role="Package">
+              <PropertyRef Name="PackageVendorPackageVendorID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PackagePackageBulletPoint">
+          <End Type="CloudComparePackageDataModel.Package" Role="Package" Multiplicity="0..1" />
+          <End Type="CloudComparePackageDataModel.PackageBulletPoint" Role="PackageBulletPoint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="PackageID" />
+            </Principal>
+            <Dependent Role="PackageBulletPoint">
+              <PropertyRef Name="PackagePackageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PackagePackageFeature">
+          <End Type="CloudComparePackageDataModel.Package" Role="Package" Multiplicity="0..1" />
+          <End Type="CloudComparePackageDataModel.PackageFeature" Role="PackageFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="PackageID" />
+            </Principal>
+            <Dependent Role="PackageFeature">
+              <PropertyRef Name="PackagePackageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PackagePackageType">
+          <End Type="CloudComparePackageDataModel.Package" Role="Package" Multiplicity="*" />
+          <End Type="CloudComparePackageDataModel.PackageType" Role="PackageType" Multiplicity="0..1" />
+        </Association>
+        <Association Name="PackageFeatureFeature">
+          <End Type="CloudComparePackageDataModel.PackageFeature" Role="PackageFeature" Multiplicity="*" />
+          <End Type="CloudComparePackageDataModel.Feature" Role="Feature" Multiplicity="0..1" />
+        </Association>
+        <Association Name="PackagePackageStep">
+          <End Type="CloudComparePackageDataModel.Package" Role="Package" Multiplicity="0..1" />
+          <End Type="CloudComparePackageDataModel.PackageStep" Role="PackageStep" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="PackageID" />
+            </Principal>
+            <Dependent Role="PackageStep">
+              <PropertyRef Name="PackagePackageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PackageWhatHappensNext">
+          <End Type="CloudComparePackageDataModel.Package" Role="Package" Multiplicity="0..1" />
+          <End Type="CloudComparePackageDataModel.WhatHappensNext" Role="WhatHappensNext" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Package">
+              <PropertyRef Name="PackageID" />
+            </Principal>
+            <Dependent Role="WhatHappensNext">
+              <PropertyRef Name="PackagePackageID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs" Space="C-S">
+        <Alias Key="Model" Value="CloudComparePackageDataModel" />
+        <Alias Key="Target" Value="CloudComparePackageDataModel.Store" />
+        <EntityContainerMapping CdmEntityContainer="CloudComparePackageDataModelContainer" StorageEntityContainer="CloudComparePackageDataModelTargetContainer">
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="CloudComparePackageDataModel" >
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.Package" Width="2.375" PointX="4" PointY="2.875" Height="2.085348307291667" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.PackageVendor" Width="1.5" PointX="1.625" PointY="2.875" Height="1.427958984375" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.PackageBulletPoint" Width="2.25" PointX="7.375" PointY="2.875" Height="1.5923063151041665" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.PackageType" Width="1.5" PointX="4.375" PointY="0.5" Height="1.2636116536458326" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.PackageFeature" Width="2.375" PointX="4" PointY="6.75" Height="2.0853483072916656" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.WhatHappensNext" Width="2.25" PointX="9.875" PointY="6.75" Height="1.5923063151041657" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.PackageStep" Width="2.25" PointX="1" PointY="6.75" Height="1.5923063151041657" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.Profile" Width="1.5" PointX="1.625" PointY="0.5" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="CloudComparePackageDataModel.Feature" Width="1.5" PointX="7.375" PointY="6.75" Height="1.7566536458333353" />
+        <AssociationConnector Association="CloudComparePackageDataModel.ProfilePackageVendor">
+          <ConnectorPoint PointX="2.375" PointY="2.092306315104167" />
+          <ConnectorPoint PointX="2.375" PointY="2.875" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackageVendorPackage">
+          <ConnectorPoint PointX="3.125" PointY="3.83550048828125" />
+          <ConnectorPoint PointX="4" PointY="3.83550048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackagePackageBulletPoint">
+          <ConnectorPoint PointX="6.375" PointY="3.83550048828125" />
+          <ConnectorPoint PointX="7.375" PointY="3.83550048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackagePackageFeature">
+          <ConnectorPoint PointX="5.1875" PointY="5.7820849609375" />
+          <ConnectorPoint PointX="5.1875" PointY="6.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackagePackageType">
+          <ConnectorPoint PointX="5.125" PointY="2.875" />
+          <ConnectorPoint PointX="5.125" PointY="1.927958984375" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackageFeatureFeature">
+          <ConnectorPoint PointX="6.375" PointY="7.71050048828125" />
+          <ConnectorPoint PointX="7.375" PointY="7.71050048828125" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackagePackageStep">
+          <ConnectorPoint PointX="4" PointY="5.4024666341145826" />
+          <ConnectorPoint PointX="1.28125" PointY="5.4024666341145826" />
+          <ConnectorPoint PointX="1.28125" PointY="6.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="CloudComparePackageDataModel.PackageWhatHappensNext">
+          <ConnectorPoint PointX="6.375" PointY="5.4846402994791656" />
+          <ConnectorPoint PointX="11" PointY="5.4846402994791656" />
+          <ConnectorPoint PointX="11" PointY="6.75" />
+        </AssociationConnector>
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

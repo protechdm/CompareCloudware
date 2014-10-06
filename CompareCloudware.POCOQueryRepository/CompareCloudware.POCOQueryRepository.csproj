@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97DB1E05-3464-477F-A1B6-B45137EF2D46}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CompareCloudware.POCOQueryRepository</RootNamespace>
+    <AssemblyName>CompareCloudware.POCOQueryRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Castle.Core.3.1.0\lib\net40-client\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit\LinqKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.4.5.10\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseRepository.cs" />
+    <Compile Include="Caching\Caching.cs" />
+    <Compile Include="CompareCloudwareContext.cs" />
+    <Compile Include="Configurations\BrowserConfiguration.cs" />
+    <Compile Include="Configurations\CategoryConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationFeatureConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationProductReviewConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationUserReviewConfiguration.cs" />
+    <Compile Include="Configurations\AdvertisingImageConfiguration.cs" />
+    <Compile Include="Configurations\AdvertisingImageTypeConfiguration.cs" />
+    <Compile Include="Configurations\ContentTextConfiguration.cs" />
+    <Compile Include="Configurations\ContentTextTypeConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationRequestConfiguration.cs" />
+    <Compile Include="Configurations\CategoryParametersConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationVideoConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationDocumentFormatConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationDocumentImageConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationApplicationConfiguration.cs" />
+    <Compile Include="Configurations\AdvertisingImageServerConfiguration.cs" />
+    <Compile Include="Configurations\ContentPageConfiguration.cs" />
+    <Compile Include="Configurations\SiteMapFrequencyConfiguration.cs" />
+    <Compile Include="Configurations\SiteMapNodeConfiguration.cs" />
+    <Compile Include="Configurations\SupportAreaQACategoryConfiguration.cs" />
+    <Compile Include="Configurations\SupportCategoryConfiguration.cs" />
+    <Compile Include="Configurations\SupportAreaConfiguration.cs" />
+    <Compile Include="Configurations\QAStatusConfiguration.cs" />
+    <Compile Include="Configurations\SupportAreaQAConfiguration.cs" />
+    <Compile Include="Configurations\SiteAnalyticConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configurations\SiteAnalyticTypeConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configurations\StatusConfiguration.cs" />
+    <Compile Include="Configurations\CurrencyConfiguration.cs" />
+    <Compile Include="Configurations\TimeZoneConfiguration.cs" />
+    <Compile Include="Configurations\VendorDashboardRolePersonConfiguration.cs" />
+    <Compile Include="Configurations\VendorDashboardRoleConfiguration.cs" />
+    <Compile Include="Configurations\VendorDashboardConfiguration.cs" />
+    <Compile Include="Configurations\ProfileConfiguration.cs" />
+    <Compile Include="Configurations\TermConditionConfiguration.cs" />
+    <Compile Include="Configurations\VendorLogoConfiguration.cs" />
+    <Compile Include="Configurations\IndustryConfiguration.cs" />
+    <Compile Include="Configurations\RequestTypeConfiguration.cs" />
+    <Compile Include="Configurations\SiteActivityConfiguration.cs" />
+    <Compile Include="Configurations\DeviceConfiguration.cs" />
+    <Compile Include="Configurations\PersonConfiguration.cs" />
+    <Compile Include="Configurations\TagTypeConfiguration.cs" />
+    <Compile Include="Configurations\TagConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationDocumentConfiguration.cs" />
+    <Compile Include="Configurations\CloudApplicationDocumentTypeConfiguration.cs" />
+    <Compile Include="Configurations\FeatureTypeConfiguration.cs" />
+    <Compile Include="Configurations\FeatureConfiguration.cs" />
+    <Compile Include="Configurations\FreeTrialPeriodConfiguration.cs" />
+    <Compile Include="Configurations\HomePageConfiguration.cs" />
+    <Compile Include="Configurations\LanguageConfiguration.cs" />
+    <Compile Include="Configurations\LicenceTypeConfiguration.cs" />
+    <Compile Include="Configurations\MinimumContractConfiguration.cs" />
+    <Compile Include="Configurations\MobilePlatformConfiguration.cs" />
+    <Compile Include="Configurations\OperatingSystemConfiguration.cs" />
+    <Compile Include="Configurations\PaymentFrequencyConfiguration.cs" />
+    <Compile Include="Configurations\PaymentOptionConfiguration.cs" />
+    <Compile Include="Configurations\SearchResultConfiguration.cs" />
+    <Compile Include="Configurations\SetupFeeConfiguration.cs" />
+    <Compile Include="Configurations\SimpleSearchInputsConfiguration.cs" />
+    <Compile Include="Configurations\SupportDaysConfiguration.cs" />
+    <Compile Include="Configurations\SupportHoursConfiguration.cs" />
+    <Compile Include="Configurations\SupportTerritoryConfiguration.cs" />
+    <Compile Include="Configurations\SupportTypeConfiguration.cs" />
+    <Compile Include="Configurations\TabbedSearchResultsConfiguration.cs" />
+    <Compile Include="Configurations\VendorConfiguration.cs" />
+    <Compile Include="DataPump\AdvertisingImageData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DataPump\AdvertisingImageDataOLD.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\PhoneProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\CustomerManagementProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\WebConferencingProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\EmailProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\OfficeProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\StorageAndBackupProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\ProjectManagementProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\FinancialProductionData.cs" />
+    <Compile Include="DataPump\ApplicationProductionData\SecurityProductionData.cs" />
+    <Compile Include="DataPump\ContentTextData.cs" />
+    <Compile Include="DataPump\ContentPageData.cs" />
+    <Compile Include="DataPump\FakeData.cs" />
+    <Compile Include="DataPump\TermsAndConditionsData.cs" />
+    <Compile Include="DataPump\TagData.cs" />
+    <Compile Include="DataPump\ReferenceData.cs" />
+    <Compile Include="FakeCloudCompareContext.cs" />
+    <Compile Include="FakeObjectSet.cs" />
+    <Compile Include="Helpers\RepositoryFunctions.cs" />
+    <Compile Include="Helpers\GlobalVariables.cs" />
+    <Compile Include="Helpers\MvcExtensions.cs" />
+    <Compile Include="Migrations\201307161631047_base.cs" />
+    <Compile Include="Migrations\201307161631047_base.Designer.cs">
+      <DependentUpon>201307161631047_base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307161641373_AddSiteAnalytics.cs" />
+    <Compile Include="Migrations\201307161641373_AddSiteAnalytics.Designer.cs">
+      <DependentUpon>201307161641373_AddSiteAnalytics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307171116512_SiteAnalytic_ReferenceRowID.cs" />
+    <Compile Include="Migrations\201307171116512_SiteAnalytic_ReferenceRowID.Designer.cs">
+      <DependentUpon>201307171116512_SiteAnalytic_ReferenceRowID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307171358194_SiteAnalytic_RemoveDateStampsAndRowVersion.cs" />
+    <Compile Include="Migrations\201307171358194_SiteAnalytic_RemoveDateStampsAndRowVersion.Designer.cs">
+      <DependentUpon>201307171358194_SiteAnalytic_RemoveDateStampsAndRowVersion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201307282228117_SiteAnalyticType_AddScoreValue.cs" />
+    <Compile Include="Migrations\201307282228117_SiteAnalyticType_AddScoreValue.Designer.cs">
+      <DependentUpon>201307282228117_SiteAnalyticType_AddScoreValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308082231318_AddSupport.cs" />
+    <Compile Include="Migrations\201308082231318_AddSupport.Designer.cs">
+      <DependentUpon>201308082231318_AddSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308082256549_AddSupport_Release_2.cs" />
+    <Compile Include="Migrations\201308082256549_AddSupport_Release_2.Designer.cs">
+      <DependentUpon>201308082256549_AddSupport_Release_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308101829098_AddSupport_Release_3.cs" />
+    <Compile Include="Migrations\201308101829098_AddSupport_Release_3.Designer.cs">
+      <DependentUpon>201308101829098_AddSupport_Release_3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308102312344_AddIsDateToContentText.cs" />
+    <Compile Include="Migrations\201308102312344_AddIsDateToContentText.Designer.cs">
+      <DependentUpon>201308102312344_AddIsDateToContentText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308102316558_ChangeIsDateToNullableInContentText.cs" />
+    <Compile Include="Migrations\201308102316558_ChangeIsDateToNullableInContentText.Designer.cs">
+      <DependentUpon>201308102316558_ChangeIsDateToNullableInContentText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308140312132_AddServicingFlagToCloudApplicationRequests.cs" />
+    <Compile Include="Migrations\201308140312132_AddServicingFlagToCloudApplicationRequests.Designer.cs">
+      <DependentUpon>201308140312132_AddServicingFlagToCloudApplicationRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201308141033025_AddServicedFlagsToSupportAreaQAs.cs" />
+    <Compile Include="Migrations\201308141033025_AddServicedFlagsToSupportAreaQAs.Designer.cs">
+      <DependentUpon>201308141033025_AddServicedFlagsToSupportAreaQAs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311171513310_AddAdvertisingImageServer.cs" />
+    <Compile Include="Migrations\201311171513310_AddAdvertisingImageServer.Designer.cs">
+      <DependentUpon>201311171513310_AddAdvertisingImageServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311171819012_Add_AdvertisingImageServer_IsServing.cs" />
+    <Compile Include="Migrations\201311171819012_Add_AdvertisingImageServer_IsServing.Designer.cs">
+      <DependentUpon>201311171819012_Add_AdvertisingImageServer_IsServing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311192035348_Add_AdvertisingImage_CloudApplicationID.cs" />
+    <Compile Include="Migrations\201311192035348_Add_AdvertisingImage_CloudApplicationID.Designer.cs">
+      <DependentUpon>201311192035348_Add_AdvertisingImage_CloudApplicationID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405062351369_AddURLTagsToCloudApplication.cs" />
+    <Compile Include="Migrations\201405062351369_AddURLTagsToCloudApplication.Designer.cs">
+      <DependentUpon>201405062351369_AddURLTagsToCloudApplication.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201405101918292_AddSEO.cs" />
+    <Compile Include="Migrations\201405101918292_AddSEO.Designer.cs">
+      <DependentUpon>201405101918292_AddSEO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201408102137385_AddContentText_LineBreakBeforeAfter.cs" />
+    <Compile Include="Migrations\201408102137385_AddContentText_LineBreakBeforeAfter.Designer.cs">
+      <DependentUpon>201408102137385_AddContentText_LineBreakBeforeAfter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="netfx\Testing\Ipsum.cs" />
+    <Compile Include="POCOQueryRepository.cs" />
+    <Compile Include="PredicateBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CompareCloudware.Domain\CompareCloudware.Domain.csproj">
+      <Project>{9586A4AA-25C3-40AB-B851-0BCEEB0D7098}</Project>
+      <Name>CompareCloudware.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CompareCloudware.SocialNetworking\CompareCloudware.SocialNetworking.csproj">
+      <Project>{9BBDDF47-FBB8-4948-BF64-21F797BD4169}</Project>
+      <Name>CompareCloudware.SocialNetworking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GhostScriptSharp\GhostscriptSharp.csproj">
+      <Project>{56605627-E6FA-4F47-9440-FB877CEA5C84}</Project>
+      <Name>GhostscriptSharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="linkedin_industries.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Pre 4.3 Migration.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201307161631047_base.resx">
+      <DependentUpon>201307161631047_base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307161641373_AddSiteAnalytics.resx">
+      <DependentUpon>201307161641373_AddSiteAnalytics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307171116512_SiteAnalytic_ReferenceRowID.resx">
+      <DependentUpon>201307171116512_SiteAnalytic_ReferenceRowID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307171358194_SiteAnalytic_RemoveDateStampsAndRowVersion.resx">
+      <DependentUpon>201307171358194_SiteAnalytic_RemoveDateStampsAndRowVersion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201307282228117_SiteAnalyticType_AddScoreValue.resx">
+      <DependentUpon>201307282228117_SiteAnalyticType_AddScoreValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308082231318_AddSupport.resx">
+      <DependentUpon>201308082231318_AddSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308082256549_AddSupport_Release_2.resx">
+      <DependentUpon>201308082256549_AddSupport_Release_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308101829098_AddSupport_Release_3.resx">
+      <DependentUpon>201308101829098_AddSupport_Release_3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308102312344_AddIsDateToContentText.resx">
+      <DependentUpon>201308102312344_AddIsDateToContentText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308102316558_ChangeIsDateToNullableInContentText.resx">
+      <DependentUpon>201308102316558_ChangeIsDateToNullableInContentText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308140312132_AddServicingFlagToCloudApplicationRequests.resx">
+      <DependentUpon>201308140312132_AddServicingFlagToCloudApplicationRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201308141033025_AddServicedFlagsToSupportAreaQAs.resx">
+      <DependentUpon>201308141033025_AddServicedFlagsToSupportAreaQAs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311171513310_AddAdvertisingImageServer.resx">
+      <DependentUpon>201311171513310_AddAdvertisingImageServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311171819012_Add_AdvertisingImageServer_IsServing.resx">
+      <DependentUpon>201311171819012_Add_AdvertisingImageServer_IsServing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311192035348_Add_AdvertisingImage_CloudApplicationID.resx">
+      <DependentUpon>201311192035348_Add_AdvertisingImage_CloudApplicationID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405062351369_AddURLTagsToCloudApplication.resx">
+      <DependentUpon>201405062351369_AddURLTagsToCloudApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201405101918292_AddSEO.resx">
+      <DependentUpon>201405101918292_AddSEO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201408102137385_AddContentText_LineBreakBeforeAfter.resx">
+      <DependentUpon>201408102137385_AddContentText_LineBreakBeforeAfter.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

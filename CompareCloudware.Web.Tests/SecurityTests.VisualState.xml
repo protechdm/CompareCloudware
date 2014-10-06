@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
+  <TopNode>[0-1000]J:\CompareCloudwareVideo\CompareCloudware.Web.Tests\SecurityTests.nunit</TopNode>
+  <SelectedNode>[0-1000]J:\CompareCloudwareVideo\CompareCloudware.Web.Tests\SecurityTests.nunit</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]J:\CompareCloudwareVideo\CompareCloudware.Web.Tests\SecurityTests.nunit" Expanded="true" Checked="true" />
+    <Node UniqueName="[0-1009]J:\CompareCloudwareVideo\CompareCloudware.Web.Tests\bin\Debug\CloudCompare.Web.Tests.dll" Expanded="true" />
+    <Node UniqueName="[0-1010]CloudCompare" Expanded="true" />
+    <Node UniqueName="[0-1011]CloudCompare.Web" Expanded="true" />
+    <Node UniqueName="[0-1012]CloudCompare.Web.Tests" Expanded="true" />
+    <Node UniqueName="[0-1001]CloudCompare.Web.Tests.WindsorTests" Expanded="true" />
+    <Node UniqueName="[0-1004]CloudCompare.Web.Tests.WindsorTests.All_and_only_controllers_have_Controllers_suffix" Checked="true" />
+    <Node UniqueName="[0-1005]CloudCompare.Web.Tests.WindsorTests.All_and_only_controllers_live_in_Controllers_namespace" Checked="true" />
+    <Node UniqueName="[0-1003]CloudCompare.Web.Tests.WindsorTests.All_controllers_are_registered" Checked="true" />
+    <Node UniqueName="[0-1006]CloudCompare.Web.Tests.WindsorTests.All_controllers_are_transient" Checked="true" />
+    <Node UniqueName="[0-1007]CloudCompare.Web.Tests.WindsorTests.All_controllers_expose_themselves_as_service" Checked="true" />
+    <Node UniqueName="[0-1002]CloudCompare.Web.Tests.WindsorTests.All_controllers_implement_IController" Checked="true" />
+  </Nodes>
+</VisualState>
