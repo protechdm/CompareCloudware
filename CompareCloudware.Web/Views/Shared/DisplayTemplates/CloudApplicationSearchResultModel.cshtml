@@ -1,0 +1,465 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationSearchResultModel
+@using CompareCloudware.Web.Helpers;
+@using CompareCloudware.Web.Models;
+
+@*home display TEST template
+*@
+
+<br />
+    @{var topMargin = "14px;";
+    if (Model.CustomSession.HasSearchResults)
+    {
+        topMargin = "0px;";
+    }
+    }
+
+    @{int days = -1;
+    bool isDays = int.TryParse(Model.FreeTrialPeriod, out days);
+    }
+
+<div class="search-header-result-container" style="margin-top:@topMargin">
+    @if (Model.CustomSession.HasSearchResults == true)
+    {
+
+    <div class="search-header-results-table-outer">
+        @Html.Partial("SearchResultButtonsTop", Model.CustomSession);
+    </div>    
+    }
+
+
+
+
+
+    <div class="cloud-application-search-result-table-outer">
+
+                @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Single)
+                {
+                    <table id="xheader" class="search-header-results-table-inner" style="width: 93.5%;">
+    <tr>
+        <td style="width: 31%;" class="font-normal-11px-white">
+            <label class="search-results-sort-column font-normal-11px-white" id="Vendor">@Model.CloudwareProviderColumnHeader</label>
+        </td>
+        <td style="width: 20%;" class="font-normal-11px-white">
+            <label id="MonthlyPrice">@Model.MonthlyPriceColumnHeader</label>
+        </td>
+        <td style="width: 20%;" class="font-normal-11px-white">
+            <label id="AnnualPrice">@Model.AnnualPriceColumnHeader</label>
+        </td>
+        <td style="width: 16%;" class="font-normal-11px-white">
+            <label id="SetupFee">@Model.SetupFeeColumnHeader</label>
+        </td>
+        <td style="width: 13%;" class="font-normal-11px-white">
+            <label id="FreeTrial">@Model.FreeTrialColumnHeader</label>
+        </td>
+    </tr>
+</table>
+
+                }
+                else
+                {
+                    <table id="xheader" class="search-header-results-table-inner" style="width: 93.5%;">
+    <tr>
+        <td style="width: 31%;" class="search-results-sort-column font-normal-11px-white">
+            <label class="search-results-sort-column font-normal-11px-white" id="Vendor">@Model.CloudwareProviderColumnHeader</label>
+        </td>
+        <td style="width: 20%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="MonthlyPrice">@Model.MonthlyPriceColumnHeader</label>
+        </td>
+        <td style="width: 20%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="AnnualPrice">@Model.AnnualPriceColumnHeader</label>
+        </td>
+        <td style="width: 16%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="SetupFee">@Model.SetupFeeColumnHeader</label>
+        </td>
+        <td style="width: 13%;" class="search-results-sort-column font-normal-11px-white">
+            <label id="FreeTrial">@Model.FreeTrialColumnHeader</label>
+        </td>
+    </tr>
+</table>
+                }
+
+
+
+
+
+    @Html.HiddenFor(x => x.CloudApplicationID)
+
+    <table id="dataTable" class="cloud-application-search-result-table-inner box-shadow" style="width: 93%;margin-left:3px;border:3px solid;margin-top:3px;">
+        <tr>
+            <td style="width: 27%;">
+                <div class="search-results-table-main-details-logo">
+                    <img src='@Url.Action("ShowLogo", "Home", new { vendorID = Model.VendorID })' class="logo-image" />
+                        @Html.HiddenFor(x => x.VendorID)
+                </div>
+            </td>
+            <td style="width: 22%;" class="font-bold-22px-purple search-result-header">
+                <div class="search-results-table-main-details">
+                    @Html.HiddenFor(x => x.ApplicationCostPerMonth)
+                    <table style="width:100%;">
+                        <tr style="line-height:7px;">
+                            <td>
+                                @if (Model.ApplicationCostPerMonthOffered)
+                                {
+                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                    @if (Model.ApplicationCostPerMonthFrom > 0)
+                                    {
+                                        @("from")
+                                    }
+                                    else
+                                    {
+                                        @:&nbsp;
+                                    }
+                                    </label>
+                                }
+                                else
+                                {
+                                    <label class="font-bold-11px-purple-arial search-result-header">
+                                    @if (Model.ApplicationCostPerMonthFree)
+                                    {
+                                        @("FREE")
+                                    }
+                                    else
+                                    {
+                                        @:&nbsp;
+                                    }
+                                    </label>
+                                }
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="font-bold-22px-purple-arial search-result-header">
+                                @if (Model.ApplicationCostPerMonthPOA)
+                                {
+                                @:POA
+                                }
+                                else if (Model.PayAsYouGo)
+                                {
+                                @:PAYG
+                                }
+                                else if (Model.ApplicationCostPerMonthFree)
+                                {
+                                @("FREE")
+                                }
+                                else if (Model.ApplicationCostPerMonthOffered)
+                                {
+
+
+                                    if (Model.ApplicationCostPerMonthFrom > 0 && Model.ApplicationCostPerMonthTo == 0)
+                                    {
+                                        @Model.Currency.CurrencySymbol@Model.ApplicationCostPerMonthFrom.ToString("#0.00")
+                                    }
+                                    else if (Model.ApplicationCostPerMonthFrom > 0)
+                                    {
+                                        @Model.Currency.CurrencySymbol@Model.ApplicationCostPerMonthFrom.ToString("#0.00")
+                                    }
+                                    else
+                                    {
+                                        if (Model.ApplicationCostPerMonth == 0)
+                                        {
+                                            @Model.Currency.CurrencySymbol@:0.00
+                                        }
+                                        else
+                                        {
+                                            @Model.Currency.CurrencySymbol@Model.ApplicationCostPerMonth.ToString("#0.00")
+                                        }
+                                    }
+
+                                }
+                                else
+                                {
+                                    @("N/A")
+                                }
+                                </label>
+                            </td>
+                        </tr>
+                        <tr style="line-height:15px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">
+                                @if (Model.ApplicationCostPerMonthOffered)
+                                {
+                                    if (Model.ApplicationCostPerMonthIsForUnlimitedUsers)
+                                    {
+                                        @:unlimited users
+                                    }
+                                    else if (Model.ApplicationCostPerMonthFrom != 0 && Model.ApplicationCostPerMonthTo != 0)
+                                    {
+                                        @*@:per year*@
+                                        @("to " + @Model.Currency.CurrencySymbol + Model.ApplicationCostPerMonthTo.ToString("#0.00"))
+                                    }
+                                    else if (Model.ApplicationCostPerMonth == 0)
+                                    {
+                                        @*@Model.MonthlyPriceColumnHeader*@
+                                        @:per month
+                                    }
+                                    else
+                                    {
+                                        @*@Model.MonthlyPriceColumnHeader*@
+                                        @:per month
+                                    }
+                                }
+                                else if (Model.ApplicationCostPerMonthFree)
+                                {
+                                    @:FREE
+                                }
+                                else
+                                {
+                                    @:&nbsp;
+                                }
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td style="width: 22%;" class="font-bold-22px-purple-arial  search-result-header">
+                <div class="search-results-table-main-details">
+                    @Html.HiddenFor(x => x.ApplicationCostPerAnnum)
+                    <table style="width:100%;">
+                        <tr style="line-height:7px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">
+                                @if (Model.ApplicationCostPerAnnumOffered)
+                                {
+                                    if (Model.ApplicationCostPerAnnumFrom > 0)
+                                    {
+                                        @("from")
+                                    }
+                                    else
+                                    {
+                                        @:&nbsp;
+                                    }
+                                }
+                                else
+                                {
+                                    if (Model.ApplicationCostPerAnnumFree)
+                                    {
+                                        @("FREE")
+                                    }
+                                    else
+                                    {
+                                        @:&nbsp;
+                                    }
+                                }
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label class="font-bold-22px-purple-arial search-result-header">
+                                @if (Model.ApplicationCostPerAnnumPOA)
+                                {
+                                @Model.Currency.CurrencySymbol@:POA
+                                }
+                                else if (Model.PayAsYouGo)
+                                {
+                                @:PAYG
+                                }
+                                else if (Model.ApplicationCostPerAnnumFree)
+                                {
+                                @("FREE")
+                                }
+                                else if (Model.ApplicationCostPerAnnumOffered)
+                                {
+                                    if (Model.ApplicationCostPerAnnumFrom > 0 && Model.ApplicationCostPerAnnumTo == 0)
+                                    {
+                                        @Model.Currency.CurrencySymbol@Model.ApplicationCostPerAnnumFrom.ToString("#0.00")
+                                    }
+                                    else if (Model.ApplicationCostPerAnnumFrom > 0)
+                                    {
+                                        @Model.Currency.CurrencySymbol@Model.ApplicationCostPerAnnumFrom.ToString("#0.00")
+                                    }
+                                    else if (Model.ApplicationCostPerAnnum == 0)
+                                    {
+                                        @Model.Currency.CurrencySymbol@:0.00
+                                    }
+                                    else
+                                    {
+                                        @Model.Currency.CurrencySymbol@Model.ApplicationCostPerAnnum.ToString("#0.00")
+                                    }
+                                }
+@*                                else if (Model.ApplicationCostPerAnnumFree)
+                                {
+                                    @("FREE")
+                                }
+                                else if (Model.ApplicationCostPerAnnumPOA)
+                                {
+                                    @:POA
+                                }*@
+                                else
+                                {
+                                    @("N/A")
+                                }
+                                </label>
+                            </td>
+                        </tr>
+                        <tr style="line-height:15px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">
+                                @if (Model.ApplicationCostPerAnnumOffered)
+                                {
+                                    if (Model.ApplicationCostPerAnnumIsForUnlimitedUsers)
+                                    {
+                                        @:unlimited users
+                                    }
+                                    else if (Model.ApplicationCostPerAnnumFrom > 0 && Model.ApplicationCostPerAnnumTo > 0)
+                                    {
+                                        @("to " + @Model.Currency.CurrencySymbol + Model.ApplicationCostPerAnnumTo.ToString("#0.00"))
+                                    }
+                                    else if (Model.ApplicationCostPerAnnum != 0)
+                                    {
+                                        @*@Model.AnnualPriceColumnHeader*@
+                                        @:per year
+                                    }
+                                    else
+                                    {
+                                        @*@Model.AnnualPriceColumnHeader*@
+                                        @:per year
+                                    }
+                                }
+                                else if (Model.ApplicationCostPerAnnumFree)
+                                {
+                                    @:FREE
+                                }
+                                else
+                                {
+                                        @:&nbsp;
+                                }
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td style="width: 16%;" class="font-bold-22px-purple-arial search-result-header">
+                <div class="search-results-table-main-details">
+                   @Html.HiddenFor(x => x.SetupFee)
+                    <table style="width:100%;">
+                        <tr style="line-height:7px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">&nbsp;</label>
+                            </td>
+                        </tr>                   
+                        <tr>
+                            <td>
+                               <label class="font-bold-22px-purple-arial search-result-header">
+                               @if (Model.SetupFee != null)
+                               {
+                                   if (Model.SetupFee.ToUpper().StartsWith("NO"))
+                                   {
+                                    @:No
+                                    }
+                                   else
+                                   {
+                                    @Model.Currency.CurrencySymbol@Model.SetupFee
+                                   }
+                               }
+                               else
+                               {
+                                    @:N/A
+                               }
+                                </label>
+                            </td>
+                        </tr>                   
+                        <tr style="line-height:15px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">
+                                @if (Model.SetupFee != null)
+                                {
+                                    if (!Model.SetupFee.ToUpper().StartsWith("NO"))
+                                    {
+                                        @:setup
+                                    }
+                                    else
+                                    {
+                                        @:
+                                    }
+                                }
+                                else
+                                {
+                                    @:N/A
+                                }
+                                </label>
+                            </td>
+                        </tr>                   
+                    </table>
+                </div>
+            </td>
+            <td style="width: 13%;" class="font-bold-22px-purple-arial  search-result-header">
+                <div class="search-results-table-main-details" style="border-right-style: none;border-right-width: 0px;">
+                    @Html.HiddenFor(x => x.FreeTrialPeriod)
+                    <table style="width:100%;">
+                        <tr style="line-height:7px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">&nbsp;</label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <label class="font-bold-22px-purple-arial search-result-header">
+                                @if (Model.DemoOffered)
+                                {
+                                @:Demo
+                                }
+                                else
+                                {
+                                    if (@Model.FreeTrialPeriod != null)
+                                    {
+                                @Model.FreeTrialPeriod
+                                
+                                    }
+                                    else
+                                    {
+                                @:No
+                                }
+                                }
+                            </label>
+                            </td>
+                        </tr>
+                        <tr style="line-height:15px;">
+                            <td>
+                                <label class="font-bold-11px-purple-arial search-result-header">
+                                @if (!Model.DemoOffered)
+                                {
+
+                                    if (@Model.FreeTrialPeriod != null)
+                                    {
+                                    @*@:days free trial*@
+@*                                    @Model.FreeTrialPeriod *@
+                                    @(isDays ? " days" : null)
+                                    }
+                                    else
+                                    {
+                                    @:&nbsp;
+                                }
+                                }
+                                </label>
+                            </td>
+                        </tr>
+                    </table>                    
+                </div>
+            </td>
+        </tr>
+        <tr>
+            @Html.HiddenFor(x => x.ServiceName)
+            <td class="font-bold-13px-purple" style="width: 70%; border-bottom: 0px solid black;"
+                colspan="5">@Model.ServiceName
+            </td>
+        </tr>
+        <tr>
+            <td class="font-normal-12px-black" style="width: 70%" colspan="5">
+                @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Single)
+                {
+                <div class="none-ellipsify line-height-20px" style="width: 100%;">
+                    @Model.Description
+                </div>
+                }
+            </td>
+        </tr>
+    </table>
+    </div>
+</div>
+
+
+
+

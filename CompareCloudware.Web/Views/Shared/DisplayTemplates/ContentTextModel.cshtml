@@ -1,0 +1,206 @@
+﻿@model CompareCloudware.Web.Models.ContentTextModel
+
+@{
+    var isBold = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE");
+    //var classValue = Model.IsBold ? "content-data-header" : null;
+    var classValue = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE") ? "content-data-header" : null;
+    var groupHeader = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE") ? "content-section-header" : null;
+    var isNewSection = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE");
+    var isFirstInCollection = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE");
+    var isTabHeader = Model.ContentTextType.ContentTextTypeName.EndsWith("TAB_HEADER");
+}
+
+
+@if(Model.ContentDataPage == ContentDataPage.CloudwareExplained)
+{
+    if (isTabHeader)
+    {
+        //open all
+        @:<tr>
+           @:<td style="width:50%">
+                @:<table id="dataTable" style="width: 100%;">
+                    @:<tr>
+                        @:<td style="width: 100%; padding-left:5px;" class="font-bold-12px-purple content-text @groupHeader">
+                            @:<div class="@classValue">
+                            if (isBold)
+                            {
+                                if (Model.HeaderTagType == HeaderTagType.H1)
+                                {
+                                <h1>@Model.ContentTextData</h1>   
+                                }
+                                else
+                                {
+                                <h2>@Model.ContentTextData</h2>   
+                                }
+                            }
+                            else
+                            {
+                                <span class="font-normal-13px-black line-height-17px">@Model.ContentTextData</span>
+                            }
+                            @:</div>
+                        @:</td>
+                    @:</tr>
+                @:</table>
+            @:</td>
+        @:</tr>
+
+    }
+    else
+    {
+        if(isNewSection)
+        {
+            if (!Model.IsFirstInCollection)
+            {
+                    //new title so close div from previous body + new div + open div for next body
+                                    @:</div>
+                                @:</td>
+                            @:</tr>
+                        @:</table>
+                    @:</td>
+                @:</tr>
+            }
+            @:<tr>
+                @:<td style="width:50%">
+                @:<table id="dataTable" style="width: 100%;">
+                    @:<tr>
+                        @:<td style="width: 100%; padding:0px; height:25px;" class="font-bold-12px-purple content-text @groupHeader">
+                            @:<div class="@classValue">
+
+                                 <div class="plusminus">
+
+                                 </div>
+
+                            if (isBold)
+                            {
+                                if (Model.HeaderTagType == HeaderTagType.H1)
+                                {
+                                <h1>@Model.ContentTextData</h1>   
+                                }
+                                else
+                                {
+                                <h2>@Model.ContentTextData</h2>   
+                                }
+                            }
+                            else
+                            {
+                                <span class="font-normal-13px-black line-height-17px">@Model.ContentTextData</span>
+                            }
+                            @:</div>
+                        @:</td>
+                    @:</tr>
+                @:</table>
+            @:</td>
+            @:</tr>
+
+            if(Model.LineBreakAfter)
+            {
+                <tr>
+                    <td>bollocks</td>
+                </tr>   
+            }
+            if(isNewSection)
+            {
+            @:<tr>
+            @:<td style="width:50%">
+                @:<table id="dataTable" style="width: 100%;">
+                    @:<tr>
+                        @:<td style="width: 100%; padding-left:5px;" class="font-bold-12px-purple content-text ">
+                            @:<div class="cloudware-explained-text">
+            }
+        }
+        else
+        {
+            if(Model.LineBreakBefore)
+            {
+                <br />   
+            }
+            if (isBold)
+            {
+                if (Model.HeaderTagType == HeaderTagType.H1)
+                {
+                    <h1>@Model.ContentTextData</h1>   
+                }
+                else
+                {
+                    <h2>@Model.ContentTextData</h2>   
+                }
+            }
+            else
+            {
+                <span class="font-normal-13px-black line-height-17px">@Model.ContentTextData</span>
+            }
+            if(Model.LineBreakAfter)
+            {
+                <br />   
+            }
+            
+        }
+    }
+    
+    if (Model.IsLastInCollection)
+    {
+                                    @:</div>
+                                @:</td>
+                            @:</tr>
+                        @:</table>
+                    @:</td>
+                @:</tr>
+
+    }
+
+}
+else
+{
+    <tr>
+   <td style="width:50%">
+        <table id="dataTable" style="width: 100%;">
+            <tr>
+                <td style="width: 100%; padding-left:5px;" class="font-bold-13px-purple content-text">
+                    <div class="@classValue">
+                    @if (isBold)
+                    {
+                        if (Model.HeaderTagType == HeaderTagType.H1)
+                        {
+                        <h1>@Model.ContentTextData</h1>   
+                        }
+                        else
+                        {
+                        <h2>@Model.ContentTextData</h2>   
+                        }
+                    }
+                    else
+                    {
+                        if (Model.ContentTextData.Contains("#LINK_URL"))
+                        {
+                            string contentTextData = Model.ContentTextData;
+
+                            int hashTagLength = "#LINK_OBJECT".Length;
+                            int firstLinkPos = contentTextData.IndexOf("#LINK_OBJECT");
+                            int secondLinkPos = contentTextData.IndexOf("#LINK_OBJECT", firstLinkPos + 1 + hashTagLength);
+                            string leftText = contentTextData.Substring(0,firstLinkPos);
+                            string rightText = contentTextData.Substring(secondLinkPos + hashTagLength);
+
+                            int hashTagLinkUrlLength = "#LINK_URL".Length;
+                            int firstLinkUrlPos = contentTextData.IndexOf("#LINK_URL");
+                            int secondLinkUrlPos = contentTextData.IndexOf("#LINK_URL", firstLinkUrlPos + 1);
+                            string linkUrl = contentTextData.Substring(firstLinkUrlPos + hashTagLinkUrlLength, secondLinkUrlPos - firstLinkUrlPos - hashTagLinkUrlLength);
+
+                            int hashTagLinkTextLength = "#LINK_TEXT".Length;
+                            int firstLinkTextPos = contentTextData.IndexOf("#LINK_TEXT");
+                            int secondLinkTextPos = contentTextData.IndexOf("#LINK_TEXT", firstLinkTextPos + 1);
+                            string linkTextUrl = contentTextData.Substring(firstLinkTextPos + hashTagLinkTextLength, secondLinkTextPos - firstLinkTextPos - hashTagLinkTextLength);
+
+                            
+                            <span class="font-normal-13px-black line-height-17px">@leftText<a href="@linkUrl">@linkTextUrl</a>@rightText</span>
+                        }
+                        else
+                        {
+                        <span class="font-normal-13px-black line-height-17px">@Model.ContentTextData</span>
+                        }
+                        <br />
+                    }
+                    </div>
+        </table>
+    </td>
+</tr>
+}

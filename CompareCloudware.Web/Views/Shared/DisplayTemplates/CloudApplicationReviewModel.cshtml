@@ -1,0 +1,49 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationReviewModel
+@using CompareCloudware.Domain.Models
+@*home display TEST template
+*@
+<div class="product-review">
+    <div>
+        <div style="float:left;">
+            <table>
+@*                <tr>
+                    <td class="product-review-header">
+                        <label class="product-review-label font-13px-white">Product review</label>
+                    </td>
+                </tr>*@
+                <tr>
+                    <td>
+                        <label class="font-bold-11px-purple">@Model.CloudApplicationReviewPublisherName.Trim() - @Model.CloudApplicationReviewDate.ToShortDateString()</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="line-height:12px;" class="font-bold-11px-black">
+@*                        <label class="font-bold-11px-black"></label>*@
+                        <div>
+@*                            @Html.LabelFor(@Model.CloudApplicationReviewHeadline)*@
+                            <span class="viewReviewDialog">@Model.CloudApplicationReviewHeadline</span>
+                            <span style="display:none;">@Model.CloudApplicationReviewURL</span>
+                            <span style="display:none;">@Model.CloudApplicationReviewURLDocumentExtension</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-top:5px;" class="font-normal-11px-black">
+                        <div class="ellipsify-15px">
+                            <div class="pre-dots-15px">
+                            </div>
+                            <div class="dots-15px">
+                                &hellip;
+                            </div>
+@*                            <label class="font-normal-11px-black"></label>*@
+                            @Model.CloudApplicationReviewText
+                            <span class="hidedots1-15px"></span>
+                            <div class="hidedots2-15px">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

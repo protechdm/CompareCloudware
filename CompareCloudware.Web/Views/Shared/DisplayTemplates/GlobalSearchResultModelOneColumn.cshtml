@@ -1,0 +1,113 @@
+﻿@model CompareCloudware.Web.Models.GlobalSearchResultModelOneColumn
+@using CompareCloudware.Web.Helpers;
+@using CompareCloudware.Web.Models;
+
+@*home display TEST template
+*@
+
+<div class="global-search-header-results-container">
+    <div class="global-search-header-results-table-outer">
+
+    @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Multiple)
+    {
+    //if (Model.SearchResultID == 0)
+    //{
+@*        <table id="xheader" class="search-header-results-table-inner" style="width: 100%;">
+            <tr>
+                <td style="width: 27%;">
+                    <label>Cloudware provider</label>
+                </td>
+                <td style="width: 20%;">
+                    <label>Price-per-user</label>
+                </td>
+                <td style="width: 20%;">
+                    <label>Annual price</label>
+                </td>
+                <td style="width: 20%;">
+                    <label>Set-up fee</label>
+                </td>
+                <td style="width: 13%;">
+                    <label>Free trial</label>
+                </td>
+            </tr>
+        </table>
+*@    //}
+    }
+    @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Single)
+    {
+        Html.RenderPartial("SearchResultButtonsTop", Model.CustomSession);
+@*
+*@    }    
+    </div>    
+    <div class="global-search-results-table-outer">
+
+
+@*    @if (Model.SearchResultID == 0)
+    {
+
+        <div class="advertising-images-container">
+            <div class="advertising-image-container">
+                <a href="http://www.adobe.com" target="_blank"> 
+                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 1 })' class="advertising-image" />
+                </a>
+            </div>
+            <div class="advertising-image-container">
+                <a href="http://www.adobe.com" target="_blank"> 
+                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 2 })' class="advertising-image" />
+                </a>
+            </div>
+        </div>
+    }
+*@    
+    <table id="dataTable" class="global-search-results-table-inner box-shadow-none" style="width: 100%;">
+        <tr>
+            <td style="width: 20%;" rowspan="2">
+                <div class="global-search-results-table-main-details-logo">
+@*                    <img src="@Model.VendorLogoURL"/>
+*@                    <img src='@Url.Action("ShowLogo", "Home", new { vendorID = Model.VendorID })' class="logo-image" />
+                        @Html.HiddenFor(x => x.VendorID)
+                    qqqqq
+                </div>
+            </td>
+            <td class="font-bold-13px-purple" style="width: 37%;"
+                colspan="5">
+                @Html.HiddenFor(x => x.ServiceName)
+                @Model.ServiceName
+            </td>
+            <td class="font-normal-12px-black" style="width: 43%" colspan="1">
+                <div style="float: right; height: inherit; width:35%;">
+                    @Html.HiddenFor(x => x.CloudApplicationID)
+                    <table width="100%;">
+                        <tr>
+                            <td style="padding: 5px;">
+                                <div class="site-button">
+                                  <input type="image" 
+                                    name="@Html.Encode("PROCEED_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="Proceed" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td class="font-normal-12px-black" colspan="6" style="height:55px;">
+                <div class="ellipsify" style="width: 100%;">
+                    @Html.HiddenFor(x => x.Description)
+                    <div class="pre-dots">
+                    </div>
+                    <div class="dots">
+                        &hellip;</div>
+                    @Model.Description
+                    <span class="hidedots1"></span>
+                    <div class="hidedots2">
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    </div>
+</div>

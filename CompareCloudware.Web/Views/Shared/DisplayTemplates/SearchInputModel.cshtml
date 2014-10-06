@@ -1,0 +1,252 @@
+﻿@model CompareCloudware.Web.Models.SearchInputModel
+@using CompareCloudware.Web.Helpers
+@*@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "InsertCaseForm" }))
+{
+}
+*@ @*    <div id="creaturetext">
+        <label>Submit your details below and start comparing cloudware now</label>
+    </div>
+    <div id="imagediv">
+        <img src="../../../Images/creature.png" />
+    </div>
+*@
+@if (Model.DisplayStyle == SearchInputModelStyle.HomePage)
+{
+    <div class="search-input-container">
+        @{ Html.RenderPartial("CreatureWithTextOnLeft"); }
+        <div class="search-input-data-home-page">
+
+            <div style="clear: both; height:5px;"></div>
+
+@*            <div>
+                <label class="font-22px-white search-input-data-home-page-header">What do you need?</label>
+            </div>*@
+
+            <div style="clear: both; height:20px;"></div>
+
+            <div class="criteria-bump-right">
+                <div class="simple-search-first-column">
+                    <div>
+                        @Html.EditorFor(x => x.Forename, new { @data_placement = "left", @placeholder = "Forename:" })
+                        @Html.EditorFor(x => x.Surname, new { @data_placement = "left", @placeholder = "Surname:" })
+                    </div>
+                    <div class="input-drop-down-list">
+                    @Html.DropDownListFor(x => x.ChosenCategoryID,
+                       new SelectList(Model.Categories, "CategoryID", "CategoryName", Model.ChosenCategoryID)
+                            , new { @class = "font-normal-13px-black" })
+                    </div>
+                </div>
+                <div class="simple-search-second-column">
+                @Html.EditorFor(x => x.EMail)
+                    <div class="input-drop-down-list">
+                    @Html.DropDownListFor(x => x.ChosenNumberOfUsers,
+                        new SelectList(Model.NumberOfUsers, "UserValue", "UserValue", Model.ChosenNumberOfUsers)
+                            , new { @class = "font-normal-13px-black" })
+                    </div>
+                </div>
+            </div>
+
+            <div style="clear: both; height:5px;"></div>
+
+            <div class="tc-home-object-container criteria-bump-right">
+                <div class="tc-home-object-label">
+                    @Html.Partial("TermsAndConditions")
+                </div>
+                <div class="tc-home-object-data tc-checkbox">
+                    @Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "font-normal-13px-black terms" })
+                </div>
+            </div>
+
+            <div style="clear: both; height:5px;"></div>
+
+            <div class="criteria-bump-right">
+                <div class="simple-search-first-column">
+                </div>
+                <div class="simple-search-second-column">
+                    <div class="">
+                        <div class="site-button">
+                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="CompareCloudwareHome" class="terms-checked users-chosen show-search-splash"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+@if (Model.DisplayStyle == SearchInputModelStyle.CategoryPage)
+{
+    <div class="search-input-container-category">
+    
+        @{ Html.RenderPartial("CreatureWithTextOnLeftCategory"); }
+        <div class="search-input-data-category-page">
+
+            <div style="clear: both; height:5px;"></div>
+
+@*            <div>
+                <label class="font-22px-white search-input-data-home-page-header">What do you need?</label>
+            </div>*@
+
+            <div style="clear: both; height:1px;"></div>
+
+            <div class="criteria-bump-right">
+                <div class="simple-search-first-column">
+                    <div>
+                        @Html.EditorFor(x => x.Forename)
+                        @Html.EditorFor(x => x.Surname)
+                    </div>
+
+                    <div class="input-drop-down-list">
+                        @Html.DropDownListFor(x => x.ChosenCategoryID,
+                       new SelectList(Model.Categories, "CategoryID", "CategoryName", Model.ChosenCategoryID)
+                            , new { @class = "font-normal-13px-black" })
+                    </div>
+
+                </div>
+                <div class="simple-search-second-column">
+                    @*                    <div class="search-input-text add-bottom-margin">
+*@ @Html.EditorFor(x => x.EMail)
+                    @*                    @Html.ValidationMessageFor(model => model.EMailAddress)*@
+                    @*                    </div>
+*@ @*                      <div class="styled-select add-bottom-margin">
+*@
+@*                    <div style="clear: both; height: 10px;"></div>
+                    <div class="input-box-left"></div>
+                    <div class="input-box-centre">
+                    </div>
+                    <div class="input-box-right"></div>
+                    <div style="clear: both"></div>*@
+                    @*                    </div>*@
+
+
+
+                    <div class="input-drop-down-list">
+                        @Html.DropDownListFor(x => x.ChosenNumberOfUsers,
+                        new SelectList(Model.NumberOfUsers, "UserValue", "UserValue", Model.ChosenNumberOfUsers)
+                            , new { @class = "font-normal-13px-black numberOfUsers" })
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div style="clear: both; height:5px;"></div>
+
+            <div class="tc-home-object-container criteria-bump-right">
+                <div class="tc-home-object-label">
+                    @Html.Partial("TermsAndConditions")
+                </div>
+                <div class="tc-home-object-data tc-checkbox">
+                    @Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "font-13px-white terms" })
+                </div>
+            </div>
+
+            <div style="clear: both; height:5px;"></div>
+
+            <div class="criteria-bump-right">
+                <div class="simple-search-first-column">
+                </div>
+                <div class="simple-search-second-column">
+                    <div class="">
+                        <div class="site-button">
+                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="CompareCloudwareHome" class="terms-checked users-chosen show-search-splash"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div style="clear: both;">
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+}
+@*<div style="clear: both; display: block;">
+</div>
+*@
+
+    @Html.Partial("TCDialog")
+    @Html.Partial("NumberOfUsersDialog")
+
+    @Html.Partial("LoadingSearchResults")
+
+    <script>
+        var searchInputContainerHome = $('.search-input-container');
+        var searchInputContainerCategory = $('.search-input-container-category');
+        //alert("in");
+        $(':text', searchInputContainerHome).focus(function () {
+            RefreshFocus(this);
+        });
+
+        $(':text', searchInputContainerHome).blur(function () {
+            RefreshBlur(this);
+        });
+
+        $(':text', searchInputContainerCategory).focus(function () {
+            RefreshFocus(this);
+        });
+
+        $(':text', searchInputContainerCategory).blur(function () {
+            RefreshBlur(this);
+        });
+
+        function RefreshFocus(theObject) {
+            var name = $(theObject).attr('name');
+            switch (name) {
+                case "SearchInputModel.Forename":
+                    if ($(theObject).val() == 'First Name') {
+                        $(theObject).val('');
+                    }
+                    break;
+                case "SearchInputModel.Surname":
+                    if ($(theObject).val() == 'Surname') {
+                        $(theObject).val('');
+                    }
+                    break;
+                case "SearchInputModel.EMail":
+                    if ($(theObject).val().toUpperCase() == 'EMAIL') {
+                        $(theObject).val('');
+                    }
+                    break;
+            }
+        }
+
+        function RefreshBlur(theObject) {
+            var name = $(theObject).attr('name');
+            switch (name) {
+                case "SearchInputModel.Forename":
+                    if ($(theObject).val() == '') {
+                        $(theObject).val('First Name');
+                    }
+                    break;
+                case "SearchInputModel.Surname":
+                    if ($(theObject).val() == '') {
+                        $(theObject).val('Surname');
+                    }
+                    break;
+                case "SearchInputModel.EMail":
+                    if ($(theObject).val() == '') {
+                        $(theObject).val('Email');
+                    }
+                    break;
+            }
+            //alert($(this).attr('name'));
+        }
+
+    </script>

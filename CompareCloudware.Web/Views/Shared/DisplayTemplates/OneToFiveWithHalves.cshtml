@@ -1,0 +1,22 @@
+﻿@model decimal
+@*@Html.DropDownList("list", new SelectList(new List<decimal>() { .5M, 1M, 1.5M, 2M, 2.5M, 3M, 3.5M, 4M, 4.5M, 5M }), new { @class = "font-normal-11px-black" })*@
+
+@{
+    List<SelectListItem> list = new List<SelectListItem>();
+    list.Add(new SelectListItem() { Text = ".5 out of 5",Value="0.5" });
+    list.Add(new SelectListItem() { Text = "1 out of 5", Value = "1" });
+    list.Add(new SelectListItem() { Text = "1.5 out of 5", Value = "1.5" });
+    list.Add(new SelectListItem() { Text = "2 out of 5", Value = "2" });
+    list.Add(new SelectListItem() { Text = "2.5 out of 5", Value = "2.5" });
+    list.Add(new SelectListItem() { Text = "3 out of 5", Value = "3" });
+    list.Add(new SelectListItem() { Text = "3.5 out of 5", Value = "3.5" });
+    list.Add(new SelectListItem() { Text = "4 out of 5", Value = "4" });
+    list.Add(new SelectListItem() { Text = "4.5 out of 5", Value = "4.5" });
+    list.Add(new SelectListItem() { Text = "5 out of 5", Value = "5" });
+}
+@Html.DropDownListFor(x => x, new SelectList(list, "Value", "Text", Model), new { @class = "font-normal-13px-black" })
+@*                            , new { @class = "input-drop-down-list font-normal-13px-white" })
+*@
+
+@*                               1M, 1.5M, 2M, 2.5M, 3M, 3.5M, 4M, 4.5M, 5M 
+*@

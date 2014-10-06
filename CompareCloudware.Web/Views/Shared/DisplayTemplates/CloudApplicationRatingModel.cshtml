@@ -1,0 +1,59 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationRatingModel
+@using CompareCloudware.Domain.Models
+@*home display TEST template
+*@
+
+
+
+<div class="product-rating">
+    <div>
+        <div style="float:left;overflow:visible;">
+            <table>
+@*                <tr>
+                    <td class="product-rating-header">
+                        <label class="product-rating-label font-bold-15px-purple">Product rating</label>
+                    </td>
+                </tr>*@
+                <tr>
+                    <td>
+                        <label class="font-bold-11px-purple">@Model.ChosenIndustry.description</label>
+                        <div class="overall-rating-container">
+                            @{Html.RenderPartial("CloudApplicationCloudRating", Model.CloudApplicationOverallRating);}
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label class="font-bold-11px-black">@Model.CloudApplicationRatingEmployeeCount staff</label>
+                    </td>
+                </tr>
+@*                <tr>
+                    <td>
+                        <label class="font-normal-11px-black">@Model.CloudApplicationRatingReviewerCompany</label>
+                    </td>
+                </tr>*@
+                <tr>
+                    <td class="font-normal-11px-black">
+                        <div class="ellipsify-15px">
+                            <div class="pre-dots-15px">
+                            </div>
+                            <div class="dots-15px">
+                                &hellip;
+                            </div>
+@*                            <label class="font-normal-12px-black"></label>*@
+                            @Model.CloudApplicationRatingText
+                            <span class="hidedots1-15px"></span>
+                            <div class="hidedots2-15px">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        ?
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
