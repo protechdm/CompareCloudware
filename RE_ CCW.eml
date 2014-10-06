@@ -1,0 +1,372 @@
+X-Apparently-To: protechdm@yahoo.com via 72.30.237.198; Fri, 15 Aug 2014 17:01:10 +0000
+Received-SPF: permerror (encountered permanent error during SPF processing of domain of wilsonmiller.co.uk)
+X-YMailISG: ibQ_6SkWLDuaUvDqh60csgoR8lMPHeZ8fcZ1ngq99.haCb.k
+ zmMtESu4jlL_mcc6mYmW77Mwv05sdH4Vtwmq3cQPZed1sfjDwCnh1cMFuneD
+ XOpZy9aN2O3N7yZeXj0Rwzsy7w7nF0Sr7NWg.b_gKGCDX0xAKT.c2L7bQwl7
+ 37rCi8uts7uyMoMi56ocM6Du.o4Ral04uHExH0qLkJq8LMr6W4qRSKtY1p7F
+ 2AVo1wjtZZc0I2I6kKsrPymEHjXkwnGMJfX34.2mnV08y9COhlksWf5LuGoW
+ hzCHCHgegB_fbMRfbh95d8wXN.yjNhhB4dRRHxXEgHe.MuzOnV.mB49GYTdz
+ reeYHT814gdNxNOoGa7UAIeD4sMusRynE3Y8O_OhFJALKbPDTKCEkoIABBUy
+ FtyBlBQkjvMI3hwnB3_z8pP8Wqqkh9ZqLOon96MwOHMG76Y.dLpfxaLvb3XL
+ WobDBPkAaxQKEHDHdbZ0JXKsRsQBYnQWx02JoI7SWOnHFcSwCfvryzF_Z9Lq
+ kGUIYDhcPxHcZlPoq_ZbvbPXcv1_1yMhiWUZfixZSs4Kkk6fmdI30iCgq56S
+ 4ud_xzRBdW522jtgrgzbQqcdcstn_HXfTc5BkOG_B6TqC7.uY4mMi9kliQvD
+ kXwIXiJrIw5sROxnAV8k4iCR3HcSytyuc1K_gYj6I9xbsub3oE2juszqSHEn
+ ISHVSEm5u8abuVpPxlr_YT5nL8idVCUnL8vlOMolEL3gov.059uPRscOfZ.R
+ s2ad_BIt_zYu4siJLACWOajyofzBPqFBwawe7d61L30onJCQx.k1vKnY9fHE
+ nVt8jUfRC8crjyb0Dv4INhKa.D5GQazQQwN0pzI4OTb7RwFJlfRvRZMqDztS
+ QIzYe.c3mB.D9.Bm4Jh6T.fWqbyFpYEjt_2lUr9bkVbQ_0MrFRb7bdkXzhvS
+ BT_Rzkjk5WL86RM7qU9MjB9X5lcjB0IE7ntc_2g_UTmbcDu7xGcjvvQYxeS0
+ HRfZtOWttPGSEkzTlXNFnGRuSY0njRIvedvxsNYZXFO0zvei.TGt_0Zfsb1_
+ HjUb_xkfpOGnX9W.29aUhWKcE8Z3cgh8GmWSDdmEBCZIVraDkzO2XtSsGvBD
+ 8FnZ3HdOfWDpIY4zmXASsTsVd3VmBIPR8j_HsilADBjvtzL.3adncG2PD7yB
+ 7zuuuf_n4.7rq_TpcieiVoAQw3vI_BywydsPJC8EprE1SFAsPUob6NuyTGyw
+ pfoL2ruiWWTctJ5ffMYQPLWLtW103HxKrDX4m2WvAIJ_yqsJVNmMCUne2JWA
+ jJMWGDtrPUcOpaGFnUgG9RY1rDg_veg_fy55Z938qWrCBLBw_FfQ0UDU8_.a
+ tYAQMpH0S9A1z9W7UsIQc_Tv7SLZI3vD2YSfGF5tkcCCLWbahFiQhgx_jMqM
+ ddmZZKkxDKMCpDshyu3168hLjogA891nHkvJLi4lHyCqE9Gj5CwZGnfC9zji
+ Hw7X4nksQHU8NjBSRMOFQQ5U8hNl0pyGGghvg0sIHWkf.hYc_o5m3DRk2nSs
+ AdG70pl84E3.SQ6_BE7iq6bdPctTMREeGaJ24yYNBmANtPEqZHv9MieV7B_1
+ YCvy2p.WkZ6eKsbDrGg-
+X-Originating-IP: [213.199.154.13]
+Authentication-Results: mta1560.mail.ne1.yahoo.com  from=wilsonmiller.co.uk; domainkeys=neutral (no sig);  from=wilsonmiller.co.uk; dkim=neutral (no sig)
+Received: from 127.0.0.1  (EHLO emea01-am1-obe.outbound.protection.outlook.com) (213.199.154.13)
+  by mta1560.mail.ne1.yahoo.com with SMTPS; Fri, 15 Aug 2014 17:01:09 +0000
+Received: from DB3FFO11FD005.protection.gbl (10.47.216.32) by
+ DB3FFO11HUB038.protection.gbl (10.47.217.9) with Microsoft SMTP Server (TLS)
+ id 15.0.1010.11; Fri, 15 Aug 2014 17:01:06 +0000
+Received: from WMServer.wilsonmiller.co.uk (109.236.166.63) by
+ DB3FFO11FD005.mail.protection.outlook.com (10.47.216.94) with Microsoft SMTP
+ Server (TLS) id 15.0.1010.11 via Frontend Transport; Fri, 15 Aug 2014
+ 17:01:06 +0000
+Received: from WMServer.wilsonmiller.co.uk ([fe80::f82f:6962:45c2:2539]) by
+ WMServer.wilsonmiller.co.uk ([fe80::f82f:6962:45c2:2539%10]) with mapi id
+ 14.01.0438.000; Fri, 15 Aug 2014 18:07:38 +0100
+From: Dan Murray <DMurray@wilsonmiller.co.uk>
+To: Glyn Threadgold <protechdm@yahoo.com>
+CC: "Gary Gould (Compare Cloudware)" <ggould@comparecloudware.com>
+Subject: RE: CCW
+Thread-Topic: CCW
+Thread-Index: AQHPt7O0CdlVDjWYoUKc4QYhZRyK9ZvQDeiAgAASNoD///BNAIAB1PnE
+Date: Fri, 15 Aug 2014 17:07:37 +0000
+Message-ID: <87DB76011B6E124E92B7465F74FD36A8011BC6A18C@WMServer.wilsonmiller.co.uk>
+References: <1408024371.34929.YahooMailNeo@web140901.mail.bf1.yahoo.com>
+ <D0127DF7.274CF%dmurray@wilsonmiller.co.uk>,<1408024910.23496.YahooMailNeo@web140903.mail.bf1.yahoo.com>
+In-Reply-To: <1408024910.23496.YahooMailNeo@web140903.mail.bf1.yahoo.com>
+Accept-Language: en-US, en-GB
+Content-Language: en-US
+X-MS-Has-Attach:
+X-MS-TNEF-Correlator:
+x-originating-ip: [86.140.102.6]
+Content-Type: multipart/alternative;
+	boundary="_000_87DB76011B6E124E92B7465F74FD36A8011BC6A18CWMServerwilso_"
+MIME-Version: 1.0
+X-EOPAttributedMessage: 0
+X-Forefront-Antispam-Report:
+	CIP:109.236.166.63;CTRY:GB;IPV:NLI;EFV:NLI;SFV:NSPM;SFS:(10009004)(448002)(199003)(377454003)(24454002)(52604005)(69234005)(189002)(54356999)(46102001)(86362001)(81342001)(77096002)(21056001)(64706001)(76176999)(15202345003)(107046002)(87936001)(53416004)(99396002)(221733001)(95666004)(50986999)(80022001)(587094001)(81156004)(92566001)(20776003)(44976005)(66066001)(15975445006)(106466001)(71186001)(2656002)(33656002)(104016003)(19617315012)(106116001)(55846006)(77982001)(92726001)(84326002)(74502001)(74482001)(19580395003)(85852003)(83072002)(83322001)(16297215004)(85306004)(6806004)(4396001)(69596002)(512944002)(31966008)(16236675004)(79102001)(110136001)(85326001)(15395725005)(19580405001)(81542001)(76482001)(74662001)(24704002)(80792004)(10732645003)(16193025007);DIR:OUT;SFP:1101;SCL:1;SRVR:DB3FFO11HUB038;H:WMServer.wilsonmiller.co.uk;FPR:;MLV:sfv;PTR:no-reverse-dns-set.gradwell.com;A:1;MX:1;LANG:en;
+X-Microsoft-Antispam: BCL:0;PCL:0;RULEID:;UriScan:;
+X-Forefront-PRVS: 0304E36CA3
+Received-SPF: PermError (protection.outlook.com: domain of wilsonmiller.co.uk
+ used an invalid SPF mechanism)
+Authentication-Results: spf=permerror (sender IP is 109.236.166.63)
+ smtp.mailfrom=DMurray@wilsonmiller.co.uk; 
+X-OriginatorOrg: wilsonmiller.co.uk
+
+--_000_87DB76011B6E124E92B7465F74FD36A8011BC6A18CWMServerwilso_
+Content-Type: text/plain; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+Hi Glyn,
+
+Hope your well, Here is the link to the video that needs to stream into CCW=
+ site (the size we would like it is 304px x 171px)
+
+Can you use this iframe tag to drop it in?
+<iframe src=3D"//player.vimeo.com/video/103524492?title=3D0&amp;byline=3D0&=
+amp;portrait=3D0" width=3D"304" height=3D"171" frameborder=3D"0" webkitallo=
+wfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+Here's the url of the video http://vimeo.com/103524492
+
+I know video has always been an issue on the site, it may me worth seeing h=
+ow we stream them into our wordpress site (we just use the <iframe src=3D c=
+ode as above, and this works really well)
+See this example: http://rubiconagency.com/ourwork/cisco-inclusion-diversit=
+y-impact/
+
+Call me if you have any questions
+
+Dan
+________________________________
+From: Glyn Threadgold [protechdm@yahoo.com]
+Sent: Thursday, August 14, 2014 3:01 PM
+To: Dan Murray
+Subject: Re: CCW
+
+No rush Dan. Playing out tonight so can't push until tomorrow evening ( pus=
+hing different things tonight! ).
+
+
+On Thursday, 14 August 2014, 14:58, Dan Murray <DMurray@wilsonmiller.co.uk>=
+ wrote:
+
+
+Hi Glyn, it should run:
+Marketing  |  Website  |  Creative  |  Intelligence & reporting  |  Hosting=
+  |  HR  |  Payments  |  Sales  |  Business Operations
+
+I=92ll send over a whole new set (just noticed I have upper case setting fo=
+r =91Reporting=92 and Operations=92
+
+Will be with you be the end of the day (5.30)
+
+Cheers Glyn
+
+From: Glyn Threadgold <protechdm@yahoo.com<mailto:protechdm@yahoo.com>>
+Reply-To: Glyn Threadgold <protechdm@yahoo.com<mailto:protechdm@yahoo.com>>
+Date: Thursday, 14 August 2014 14:52
+To: Wilson Miller <dmurray@wilsonmiller.co.uk<mailto:dmurray@wilsonmiller.c=
+o.uk>>, "Glyn (BT-SO2 BT)" <protechdm@btopenworld.com<mailto:protechdm@btop=
+enworld.com>>
+Cc: Gary Gould <GGould@wilsonmiller.co.uk<mailto:GGould@wilsonmiller.co.uk>=
+>
+Subject: Re: CCW
+
+Dan can you give me the exact location of the sales button with respect to =
+the other buttons in the line?
+
+
+On Thursday, 14 August 2014, 12:34, Dan Murray <DMurray@wilsonmiller.co.uk<=
+mailto:DMurray@wilsonmiller.co.uk>> wrote:
+
+
+Hi glyn,
+
+Attached is a revised set of navigation buttons (the top line hasn=92t chan=
+ged, although I have sorted the issue of the rounded corners, all the files=
+ names are the same, so I wasnt sure wether you can do a straightforward re=
+place)
+
+The second line of navigation does have a change (our fault! We missed off =
+=91Sales=92) so the obvisouly affects the px length of all the other button=
+s on the same line.
+
+'Sales' button will need to link to the same page as the others (Thanks for=
+ coming in here=85)
+
+Also attached is a screen grab of something Andrew picked up, there seems t=
+o be a overhang of box that doesn=92t align with the right hand side of the=
+ 3rd/last tab (I have highlighted the overhang with a red ring)
+
+FYI =96 Rich should have the video ready for tomorrow, so I will forward ov=
+er what you need for that.
+
+
+Call me if you have any questions
+
+Regards
+Dan
+
+
+
+
+
+--_000_87DB76011B6E124E92B7465F74FD36A8011BC6A18CWMServerwilso_
+Content-Type: text/html; charset="Windows-1252"
+Content-Transfer-Encoding: quoted-printable
+
+<html dir=3D"ltr">
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DWindows-1=
+252">
+<style id=3D"owaParaStyle" type=3D"text/css">P {margin-top:0;margin-bottom:=
+0;}</style>
+</head>
+<body ocsi=3D"0" fpstyle=3D"1">
+<div style=3D"direction: ltr;font-family: Tahoma;color: #000000;font-size: =
+10pt;">Hi Glyn,<br>
+<br>
+Hope your well, Here is the link to the video that needs to stream into CCW=
+ site (the size we would like it is 304px x 171px)<br>
+<br>
+Can you use this iframe tag to drop it in?<br>
+&lt;iframe src=3D&quot;//player.vimeo.com/video/103524492?title=3D0&amp;amp=
+;byline=3D0&amp;amp;portrait=3D0&quot; width=3D&quot;304&quot; height=3D&qu=
+ot;171&quot; frameborder=3D&quot;0&quot; webkitallowfullscreen mozallowfull=
+screen allowfullscreen&gt;&lt;/iframe&gt;<br>
+<br>
+Here's the url of the video <a href=3D"http://vimeo.com/103524492" target=
+=3D"_blank">
+http://vimeo.com/103524492</a><br>
+<br>
+I know video has always been an issue on the site, it may me worth seeing h=
+ow we stream them into our wordpress site (we just use the &lt;iframe src=
+=3D code as above, and this works really well)<br>
+See this example: <a href=3D"http://rubiconagency.com/ourwork/cisco-inclusi=
+on-diversity-impact/" target=3D"_blank">
+http://rubiconagency.com/ourwork/cisco-inclusion-diversity-impact/</a><br>
+<br>
+Call me if you have any questions<br>
+<br>
+Dan<br>
+<div style=3D"font-family: Times New Roman; color: #000000; font-size: 16px=
+">
+<hr tabindex=3D"-1">
+<div style=3D"direction: ltr;" id=3D"divRpF784488"><font color=3D"#000000" =
+face=3D"Tahoma" size=3D"2"><b>From:</b> Glyn Threadgold [protechdm@yahoo.co=
+m]<br>
+<b>Sent:</b> Thursday, August 14, 2014 3:01 PM<br>
+<b>To:</b> Dan Murray<br>
+<b>Subject:</b> Re: CCW<br>
+</font><br>
+</div>
+<div></div>
+<div>
+<div style=3D"color:#000; background-color:#fff; font-family:HelveticaNeue,=
+Helvetica Neue,Helvetica,Arial,Lucida Grande,Sans-Serif; font-size:10pt">
+<div><span>No rush Dan. Playing out tonight so can't push until tomorrow ev=
+ening ( pushing different things tonight! ).</span></div>
+<div class=3D"qtdSeparateBR"><br>
+<br>
+</div>
+<div class=3D"yahoo_quoted" style=3D"display:block">
+<div style=3D"font-family:HelveticaNeue,'Helvetica Neue',Helvetica,Arial,'L=
+ucida Grande',sans-serif; font-size:10pt">
+<div style=3D"font-family:HelveticaNeue,'Helvetica Neue',Helvetica,Arial,'L=
+ucida Grande',sans-serif; font-size:12pt">
+<div dir=3D"ltr"><font face=3D"Arial" size=3D"2">On Thursday, 14 August 201=
+4, 14:58, Dan Murray &lt;DMurray@wilsonmiller.co.uk&gt; wrote:<br>
+</font></div>
+<br>
+<br>
+<div class=3D"y_msg_container">
+<div id=3D"yiv4965634218">
+<div>
+<div>Hi Glyn, it should run:</div>
+<div>Marketing &nbsp;| &nbsp;Website &nbsp;| &nbsp;Creative &nbsp;| &nbsp;I=
+ntelligence &amp; reporting &nbsp;| &nbsp;Hosting &nbsp;| &nbsp;HR &nbsp;| =
+&nbsp;Payments &nbsp;| &nbsp;Sales &nbsp;| &nbsp;Business Operations</div>
+<div><br clear=3D"none">
+</div>
+<div>I=92ll send over a whole new set (just noticed I have upper case setti=
+ng for =91Reporting=92 and Operations=92</div>
+<div><br clear=3D"none">
+</div>
+<div>Will be with you be the end of the day (5.30)</div>
+<div><br clear=3D"none">
+</div>
+<div>Cheers Glyn</div>
+<div><br clear=3D"none">
+</div>
+<span id=3D"yiv4965634218OLK_SRC_BODY_SECTION"></span>
+<div class=3D"yiv4965634218yqt3887209840" id=3D"yiv4965634218yqt98261">
+<div style=3D"font-family:Arial; font-size:12pt; text-align:left; color:bla=
+ck; border-width:1pt medium medium; border-style:solid none none; padding:3=
+pt 0in 0in; border-top-color:rgb(181,196,223)">
+<span style=3D"font-weight:bold">From: </span>Glyn Threadgold &lt;<a rel=3D=
+"nofollow" shape=3D"rect" href=3D"mailto:protechdm@yahoo.com" target=3D"_bl=
+ank">protechdm@yahoo.com</a>&gt;<br clear=3D"none">
+<span style=3D"font-weight:bold">Reply-To: </span>Glyn Threadgold &lt;<a re=
+l=3D"nofollow" shape=3D"rect" href=3D"mailto:protechdm@yahoo.com" target=3D=
+"_blank">protechdm@yahoo.com</a>&gt;<br clear=3D"none">
+<span style=3D"font-weight:bold">Date: </span>Thursday, 14 August 2014 14:5=
+2<br clear=3D"none">
+<span style=3D"font-weight:bold">To: </span>Wilson Miller &lt;<a rel=3D"nof=
+ollow" shape=3D"rect" href=3D"mailto:dmurray@wilsonmiller.co.uk" target=3D"=
+_blank">dmurray@wilsonmiller.co.uk</a>&gt;, &quot;Glyn (BT-SO2 BT)&quot; &l=
+t;<a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:protechdm@btopenworld.c=
+om" target=3D"_blank">protechdm@btopenworld.com</a>&gt;<br clear=3D"none">
+<span style=3D"font-weight:bold">Cc: </span>Gary Gould &lt;<a rel=3D"nofoll=
+ow" shape=3D"rect" href=3D"mailto:GGould@wilsonmiller.co.uk" target=3D"_bla=
+nk">GGould@wilsonmiller.co.uk</a>&gt;<br clear=3D"none">
+<span style=3D"font-weight:bold">Subject: </span>Re: CCW<br clear=3D"none">
+</div>
+<div><br clear=3D"none">
+</div>
+<div>
+<div>
+<div style=3D"color:rgb(0,0,0); font-family:HelveticaNeue,'Helvetica Neue',=
+Helvetica,Arial,'Lucida Grande',sans-serif; font-size:10pt; background-colo=
+r:rgb(255,255,255)">
+<div><span>Dan can you give me the exact location of the sales button with =
+respect to the other buttons in the line?</span></div>
+<div class=3D"yiv4965634218qtdSeparateBR"><br clear=3D"none">
+<br clear=3D"none">
+</div>
+<div class=3D"yiv4965634218yahoo_quoted" style=3D"display:block">
+<div style=3D"font-family:HelveticaNeue,'Helvetica Neue',Helvetica,Arial,'L=
+ucida Grande',sans-serif; font-size:10pt">
+<div style=3D"font-family:HelveticaNeue,'Helvetica Neue',Helvetica,Arial,'L=
+ucida Grande',sans-serif; font-size:12pt">
+<div dir=3D"ltr"><font face=3D"Arial" size=3D"2">On Thursday, 14 August 201=
+4, 12:34, Dan Murray &lt;<a rel=3D"nofollow" shape=3D"rect" href=3D"mailto:=
+DMurray@wilsonmiller.co.uk" target=3D"_blank">DMurray@wilsonmiller.co.uk</a=
+>&gt; wrote:<br clear=3D"none">
+</font></div>
+<br clear=3D"none">
+<br clear=3D"none">
+<div class=3D"yiv4965634218y_msg_container">
+<div id=3D"yiv4965634218">
+<div>
+<div>Hi glyn,</div>
+<div><br clear=3D"none">
+</div>
+<div>Attached is a revised set of navigation buttons (the top line hasn=92t=
+ changed, although I have sorted the issue of the rounded corners, all the =
+files names are the same, so I wasnt sure wether you can do a straightforwa=
+rd replace)</div>
+<div><br clear=3D"none">
+</div>
+<div>The second line of navigation does have a change (our fault! We missed=
+ off =91Sales=92) so the obvisouly affects the px length of all the other b=
+uttons on the same line.</div>
+<div><br clear=3D"none">
+</div>
+<div>'Sales' button will need to link to the same page as the others (Thank=
+s for coming in here=85)</div>
+<div><br clear=3D"none">
+</div>
+<div>Also attached is a screen grab of something Andrew picked up, there se=
+ems to be a overhang of box that doesn=92t align with the right hand side o=
+f the 3rd/last tab (I have highlighted the overhang with a red ring)</div>
+<div><br clear=3D"none">
+</div>
+<div>FYI =96 Rich should have the video ready for tomorrow, so I will forwa=
+rd over what you need for that.</div>
+<div><br clear=3D"none">
+</div>
+<div><br clear=3D"none">
+</div>
+<div>Call me if you have any questions</div>
+<div><br clear=3D"none">
+</div>
+<div>Regards</div>
+<div>Dan</div>
+</div>
+</div>
+<br clear=3D"none">
+<br clear=3D"none">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+--_000_87DB76011B6E124E92B7465F74FD36A8011BC6A18CWMServerwilso_--
