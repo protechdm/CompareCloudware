@@ -1,0 +1,40 @@
+http://localhost:3785/Home.mvc/SearchPage?categoryID=3&numberOfUsers=1&useCachedData=False
+
+http://192.168.0.12:3785/Home.mvc/SearchPage?categoryID=3&numberOfUsers=1&useCachedData=False
+
+http://cc-staging.wilsonmiller.co.uk/
+
+<video id="movie" width="320" height="240" preload controls>
+  <source src="pr6.webm" type="video/webm; codecs=vp8,vorbis" />
+  <source src="pr6.ogv" type="video/ogg; codecs=theora,vorbis" />
+  <source src="pr6.mp4" />
+  <object width="320" height="240" type="application/x-shockwave-flash"
+    data="flowplayer-3.2.1.swf">
+    <param name="movie" value="flowplayer-3.2.1.swf" />
+    <param name="allowfullscreen" value="true" />
+    <param name="flashvars" value="config={'clip': {'url': 'http://wearehugh.com/dih5/pr6.mp4', 'autoPlay':false, 'autoBuffering':true}}" />
+    <p>Download video as <a href="pr6.mp4">MP4</a>, <a href="pr6.webm">WebM</a>, or <a href="pr6.ogv">Ogg</a>.</p>
+  </object>
+</video>
+<script>
+  var v = document.getElementById("movie");
+  v.onclick = function() {
+    if (v.paused) {
+      v.play();
+    } else {
+      v.pause();
+    }
+  };
+</script>
+
+
+http://www.youtube.com/embed/gk696L6s3Ek?autoplay=1
+http://www.youtube.com/v/gk696L6s3Ek?autoplay=1
+http://s.ytimg.com/yts/swfbin/watch_as3-vfleaa5GT.swf
+
+
+URI:http://www.comparecloudware.com/home.mvc/CloudApplication?cloudApplicationID=324&scripting=False USER HOST ADDRESS:66.249.75.32 USER AGENT:Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)
+
+http://www.code-magazine.com/articleprint.aspx?quickid=0907071&printmode=true
+
+http://www.kianryan.co.uk/2013/03/orphaned-child/

@@ -1,0 +1,27 @@
+FTP 
+
+Host: 94.126.43.196
+Port: 21
+User: ftp.comparecloudware.com|comparecloudware
+Password: Dr4inpip3
+
+ 
+
+Remote Desktop
+
+Host: 94.126.43.196
+Port: 3389
+User: server21\wm-admin
+Password: Her0sandwich=2k8
+
+ 
+
+MS SQL
+
+Host: 94.126.43.196
+Port: 1433
+Windows User: server21\wm-admin
+Windows Password: Her0sandwich=2k8
+SQL User: sa
+Sql Password: Her0sandwich=sql
+

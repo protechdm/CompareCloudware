@@ -1,0 +1,26 @@
+Product Review 1
+  
+Product Review hyperlink: 
+ http://www.crn.com/reviews/cloud/229200068/review-hyperoffice-a-great-solution-for-cloud-based-collaboration.htm
+ 
+Name of Publisher:
+ crn.com
+ 
+Title of product review:
+ Review: HyperOffice a Great Solution for Cloud-based Collaboration
+ 
+  
+Product Review 2
+  
+Product Review hyperlink: 
+ http://www.zdnet.com/blog/google/can-hyperoffice-out-simplify-google-apps/2167
+ 
+Name of Publisher:
+ ZDNet
+ 
+Title of product review:
+ Can HyperOffice out-simplify Google Apps?
+ 
+
+ 
+

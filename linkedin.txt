@@ -1,0 +1,31 @@
+
+    Company:
+
+    CloadCompare
+    Application Name:
+
+    CloudCompare
+    API Key:
+
+    euxq0ly6paev
+    Secret Key:
+
+    boMb1TvGuQ72hVYW
+    OAuth User Token:
+
+    4588651a-9776-4bd2-8260-6e4c6c349478
+    OAuth User Secret:
+
+    c62c7516-fe72-41c2-9cf2-048109bcd9a3
+
+
+
+
+http://www.linkedin.com/groups?gid=4017248&trk=group-name
+
+ 
+
+http://twitter.com/compcloudware
+
+https://www.facebook.com/compare.cloudware?ref=ts&fref=ts
+
