@@ -1,0 +1,9 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationModelAlternative
+@using CompareCloudware.Web.Models
+
+@{var href = "#" + Model.CloudApplicationCategoryTag + "/" + Model.CloudApplicationShopTag ;}
+
+@*@Html.ActionLink(@Model.ServiceName, @href, null, new { @class = "font-normal-13px-black" })*@
+@*@Html.RouteLink(@Model.ServiceName, "RandomShop", new { url = @href }, new { @class = "font-normal-13px-black" })*@
+@Html.RouteLink(@Model.ServiceName, "RandomShop", new { theShop  = @Model.CloudApplicationShopTag }, new { @class = "font-normal-13px-black" })
+<br />

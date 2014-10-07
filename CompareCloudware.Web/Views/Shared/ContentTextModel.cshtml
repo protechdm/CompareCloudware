@@ -1,0 +1,31 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+
+<div class="content-text">
+<table style="width: 100%;">
+    <tr>
+    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+    {
+        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().StartsWith("TITLE"))
+        {
+        <td style="width: 100%;">
+            <label class="font-normal-22px-purple">@Model.ContentTexts[td-1].ContentTextData</label>
+        </td>
+            break;
+        }
+    }
+    </tr>
+
+    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+    {
+        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().StartsWith("BODY"))
+        {
+        <tr>
+            <td style="width: 100%;">
+                <label class="font-normal-11px-black">@Model.ContentTexts[td-1].ContentTextData</label>
+            </td>
+        </tr>
+        }
+    }
+
+</table>
+</div>

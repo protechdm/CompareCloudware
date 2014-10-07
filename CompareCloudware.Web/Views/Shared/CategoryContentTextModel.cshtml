@@ -1,0 +1,99 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+
+@{
+    var h1Title = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE")).FirstOrDefault();
+    var h1Body = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_BODY")).OrderBy(x => x.BodyOrder).ToList();
+    var h2_1Title = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE")).FirstOrDefault();
+    var h2_1Body = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_BODY")).OrderBy(x => x.BodyOrder).ToList();
+    var h2_2Title = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_TITLE")).FirstOrDefault();
+    var h2_2Body = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_BODY")).OrderBy(x => x.BodyOrder).ToList();
+}
+<div class="content-text">
+<table style="width: 100%;">
+    <tr>
+@*    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+    {
+        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("TITLE"))
+        {
+        <td style="width: 100%;">
+            <label class="font-normal-22px-purple">@Model.ContentTexts[td-1].ContentTextData</label>
+        </td>
+            break;
+        }
+    }*@
+        <td style="width: 100%;">
+            <h1>@h1Title.ContentTextData</h1>
+        </td>
+    </tr>
+
+@*    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+    {
+        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("BODY"))
+        {
+        <tr>
+            <td style="width: 100%;">
+                <label class="font-normal-12px-black line-height-17px">@Model.ContentTexts[td-1].ContentTextData</label>
+                <p></p>
+                @if(td < Model.ContentTexts.Count)
+                {
+                    <br />
+                }
+            </td>
+        </tr>
+        }
+    }*@
+
+    @for (int td = 1; td <= h1Body.Count; td++)
+    {
+        <tr>
+            <td style="width: 100%;">
+                <label class="font-normal-12px-black line-height-17px">@h1Body[td-1].ContentTextData</label>
+                <p></p>
+                @if(td < Model.ContentTexts.Count)
+                {
+                    <br />
+                }
+            </td>
+        </tr>
+    }
+
+    <tr>
+        <td style="width: 100%;">
+            <h1>@h2_1Title.ContentTextData</h1>
+        </td>
+    </tr>
+    @for (int td = 1; td <= h2_1Body.Count; td++)
+    {
+        <tr>
+            <td style="width: 100%;">
+                <label class="font-normal-12px-black line-height-17px">@h2_1Body[td-1].ContentTextData</label>
+                <p></p>
+                @if(td < Model.ContentTexts.Count)
+                {
+                    <br />
+                }
+            </td>
+        </tr>
+    }
+
+        <tr>
+        <td style="width: 100%;">
+            <h1>@h2_2Title.ContentTextData</h1>
+        </td>
+    </tr>
+    @for (int td = 1; td <= h2_2Body.Count; td++)
+    {
+        <tr>
+            <td style="width: 100%;">
+                <label class="font-normal-12px-black line-height-17px">@h2_2Body[td-1].ContentTextData</label>
+                <p></p>
+                @if(td < Model.ContentTexts.Count)
+                {
+                    <br />
+                }
+            </td>
+        </tr>
+    }
+
+</table>
+</div>

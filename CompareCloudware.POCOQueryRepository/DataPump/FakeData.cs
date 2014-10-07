@@ -964,5 +964,35 @@ namespace CompareCloudware.POCOQueryRepository
         }
         #endregion
 
+        #region LoadAvastLogo
+        public void LoadAvastLogo(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            retVal = SecurityProductionData.PumpAvastLogo(repository);
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtection
+        public void LoadAvastEndpointProtection(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            retVal = SecurityProductionData.PumpAvastEndpointProtection(repository);
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionPlus
+        public void LoadAvastEndpointProtectionPlus(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            retVal = SecurityProductionData.PumpAvastEndpointProtectionPlus(repository);
+        }
+        #endregion
+
     }
 }

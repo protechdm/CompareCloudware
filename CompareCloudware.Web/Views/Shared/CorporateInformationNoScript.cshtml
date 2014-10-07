@@ -1,0 +1,541 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+@using System.Text.RegularExpressions;
+<link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />
+<style type="text/css" media="screen">
+    .table
+    {
+        /*border: 1px dashed red;*/
+        table-layout: fixed;
+        border-spacing: 0px;
+    }
+    .tr
+    {
+        clear: both;
+    }
+    
+    .td
+    {
+        position: relative;
+        float: left;
+        width: 150px;
+        /*height: 1.5em;*/
+        /*border-width: 1px 5px 1px 0;*/
+        /*border-style: solid;*/
+        /*border-color: orange;*/
+        overflow: visible;
+        white-space: normal;
+        height:35px;
+        /*line-height:15px;*/
+    }
+    .text
+    {
+        position: absolute;
+        background: #D5FFFF;
+        overflow: visible;
+        /*padding: 20px 20px 20px 20px ;*/
+        width: 600px;
+    }
+    .front
+    {
+        position: relative;
+        /*z-index: 100;*/
+    }
+</style>
+@{
+    int maxBodyNumber = 0;
+}
+
+    <div class="corporate-page-menubar">
+        <label class="font-bold-13px-white">
+            Corporate Information</label>
+    </div>
+
+<div class="table" id="tabstripmain-corporate">
+@*    <div class="tr">
+        <div class="td front">
+            <span class="text">Title</span></div>
+        <div class="td">
+            &nbsp;</div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            &nbsp;</div>
+        <div class="td front">
+            <span class="text">This is a really really really really really really reallylong title
+            </span>
+        </div>
+    </div>*@
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox1">
+                        About us</label>
+                </div>
+            </div>
+        </div>
+        <div class="td front">
+            <input class="nojavascript-tabcheckbox" checked="checked" type="radio" name="onlyone"
+                id="the-checkbox1" value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container">
+            <div id="tabs-1" class="text" title="results">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("ABOUTUS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("ABOUTUS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @if (Model.ContentTexts[td - 1].IsBold)
+                                    {
+                                        <label class="font-bold-11px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="font-normal-11px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox2">
+                        Management team</label>
+                </div>
+            </div>
+        </div>
+        <div class="td">
+            <input class="nojavascript-tabcheckbox" type="radio" name="onlyone" id="the-checkbox2"
+                value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container" style="top:-35px;">
+            <div id="tabs-2" class="text" title="results">
+                @{
+                    maxBodyNumber = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE")).Select(y => y.BodyOrder).Max();
+                }
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("MANAGEMENTTEAM_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= maxBodyNumber; td++)
+                        {
+                            var sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td).FirstOrDefault();
+                            var sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td).FirstOrDefault();
+                            //if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("MANAGEMENTTEAM_SECTION_TITLE"))
+                            //{
+                            <tr>
+                                <td style="width: 100%;">
+                                    <table>
+                                        <tr>
+                                            @if (sectionTitle.ContentTextGraphic != null)
+                                            {
+                                                <td style="width: 140px;">
+                                                    <img src='@Url.Action("ShowPortrait", "Home", new { contentTextID = sectionTitle.ContentTextID })' class="search-result-image" />
+                                                </td>
+                                                <td style="vertical-align: top;">
+                                                    <table>
+                                                        <tr>
+                                                            <td style="width: 100%;">
+                                                                <label class="font-bold-11px-black">@sectionTitle.ContentTextData</label>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <label class="font-normal-11px-black">@sectionBody.ContentTextData</label>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            }
+                                            else
+                                            {
+                                                <td colspan="2" style="vertical-align: top;">
+                                                    <label class="font-normal-11px-black">@sectionTitle.ContentTextData</label>
+                                                </td>
+                                            
+                                            }
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+@*                        }
+*@                    }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox3">
+                        Vision</label>
+                </div>
+            </div>
+        </div>
+        <div class="td">
+            <input class="nojavascript-tabcheckbox" type="radio" name="onlyone" id="the-checkbox3"
+                value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container" style="top:-70px;">
+            <div id="tabs-3" class="text" title="results">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("VISION_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("VISION_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    <label class="font-normal-11px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox4">
+                        FAQs</label>
+                </div>
+            </div>
+        </div>
+        <div class="td">
+            <input class="nojavascript-tabcheckbox" type="radio" name="onlyone" id="the-checkbox4"
+                value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container" style="top:-105px;">
+            <div id="tabs-4" class="text" title="results">
+                @{
+                    maxBodyNumber = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE")).Select(y => y.BodyOrder).Max();
+                }
+                <div class="content-text">
+                    <table>
+                        <tr>
+                            <td>
+                                @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                                {
+                                    if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().StartsWith("FAQS_TITLE"))
+                                    {
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                        break;
+                                    }
+                                }
+                            </td>
+                        </tr>
+                    </table>
+                    <table>
+                        @for (int td = 1; td <= maxBodyNumber; td++)
+                        {
+                            var sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE") && x.BodyOrder == td).FirstOrDefault();
+                            var sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_BODY") && x.BodyOrder == td).FirstOrDefault();
+                            <tr>
+                                <td style="width: 100%;">
+                                    <div class="content-data-header">
+                                        <label class="font-bold-11px-black">@sectionTitle.ContentTextData</label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 100%;">
+                                    <label class="font-normal-11px-black">@sectionBody.ContentTextData</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="font-normal-11px-black">
+                                    <hr class="dashed" />
+                                </td>
+                            </tr>
+                
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox5">
+                        Careers</label>
+                </div>
+            </div>
+        </div>
+        <div class="td">
+            <input class="nojavascript-tabcheckbox" type="radio" name="onlyone" id="the-checkbox5"
+                value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container" style="top:-140px;">
+            <div id="tabs-5" class="text" title="results">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CAREERS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CAREERS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                                      if (textToInsert.Contains("#EMAIL"))
+                                      {
+                                          string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                          string firstPart = eMail[0];
+                                          string secondPart = eMail[1];
+                                          string thirdPart = eMail[2];
+                                          //textToInsert = firstPart + secondPart + thirdPart;   
+                                        <label class="font-normal-11px-black">@firstPart</label>
+                                        <a href="mailto: @secondPart">@secondPart</a>
+                                        <label class="font-normal-11px-black">@thirdPart</label>
+                                      }
+                                      else
+                                      {
+                                        <label class="font-normal-11px-black">@textToInsert</label>
+                                      }
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox6">
+                        Press</label>
+                </div>
+            </div>
+        </div>
+        <div class="td">
+            <input class="nojavascript-tabcheckbox" type="radio" name="onlyone" id="the-checkbox6"
+                value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container" style="top:-175px;">
+            <div id="tabs-6" class="text" title="results">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @{string fontClass;
+                                      string fontStyle = "";
+                                      if (Model.ContentTexts[td - 1].IsBold)
+                                      {
+                                          fontClass = "font-bold-11px-purple";
+                                      }
+                                      else
+                                      {
+                                          fontClass = "font-normal-11px-black";
+                                      }
+                                      if (Model.ContentTexts[td - 1].IsUnderline)
+                                      {
+                                          fontStyle = "text-decoration: underline;";
+                                      }
+                            
+                            
+                            
+                                    }
+                                    @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                                      if (textToInsert.Contains("#EMAIL"))
+                                      {
+                                          string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                          string firstPart = eMail[0];
+                                          string secondPart = eMail[1];
+                                          string thirdPart = eMail[2];
+                                          //textToInsert = firstPart + secondPart + thirdPart;   
+                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                
+                                
+                                
+                                        <a href="mailto: @secondPart">@secondPart</a>
+                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                      }
+                                      else
+                                      {
+                                        <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                      }
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="tabtitle">
+                    <label class="nojavascript-label font-normal-13px-black" for="the-checkbox7">
+                        Contact us</label>
+                </div>
+            </div>
+        </div>
+        <div class="td">
+            <input class="nojavascript-tabcheckbox" type="radio" name="onlyone" id="the-checkbox7"
+                value="" />
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <div class="content-text-container" style="top:-210px;">
+            <div id="tabs-7" class="text" title="results">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CONTACTUS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CONTACTUS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @{string fontClass;
+                                      string fontStyle = "";
+                                      if (Model.ContentTexts[td - 1].IsBold)
+                                      {
+                                          fontClass = "font-bold-11px-purple";
+                                      }
+                                      else
+                                      {
+                                          fontClass = "font-normal-11px-black";
+                                      }
+                                      if (Model.ContentTexts[td - 1].IsUnderline)
+                                      {
+                                          fontStyle = "text-decoration: underline;";
+                                      }
+                            
+                            
+                            
+                                    }
+                                    @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                                      if (textToInsert.Contains("#EMAIL"))
+                                      {
+                                          string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                          string firstPart = eMail[0];
+                                          string secondPart = eMail[1];
+                                          string thirdPart = eMail[2];
+                                          //textToInsert = firstPart + secondPart + thirdPart;   
+                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                
+                                
+                                
+                                        <a href="mailto: @secondPart">@secondPart</a>
+                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                      }
+                                      else
+                                      {
+                                        <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                      }
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

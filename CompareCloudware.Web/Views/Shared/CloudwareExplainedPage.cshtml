@@ -1,0 +1,41 @@
+﻿@model CompareCloudware.Web.Models.CloudwareExplainedPageModel
+
+@using Microsoft.Web.Helpers
+
+<script>
+    $(document).ready(function () {
+        //collapseCloudwareExplained();
+    })
+</script>    
+    <div class="cloudware-explained-content-container">
+        <div class="cloudware-explained-content-heading">
+            <div class="cloudware-explained-content-heading-text">
+                <span class="font-normal-22px-purple line-height-28px">@Model.CloudwareExplainedHeading</span>
+             </div>
+            <div class="cloudware-explained-content-heading-video">
+                 @Html.EditorFor(x => x.Video)
+             </div>
+        </div>
+
+        <div style="clear:both;height:20px;"></div>
+
+        <div class="xcategory-page-content" style="width:65%;float:left;">
+            @Html.DisplayFor(x => x.TabbedOnpageOptimisationModel)
+        </div>
+        <div class="homepage-socal-container" style="width:35%;float:left">
+            <div class="homepage-social-carousel-container">
+            @{
+                Html.RenderPartial("CarouselSocialModel", @Model.CarouselSocial);
+            }
+            <div style="clear:both;height:20px;"></div>
+            <div class="cloudware-explained-content-graphic">
+                    <img src="@Url.Content("~/Images/CCW_Explained_Bug.gif")" />
+            </div>
+        </div>
+    </div>
+
+    <div style="clear:both"></div>
+
+
+    </div>
+}

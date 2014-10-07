@@ -45,7 +45,7 @@ namespace CompareCloudware.Console
             //Logs();
             //return;
             //LoadContextTextTypesForTabs(); //RUN ONCE!!!!!
-            ContentTextData();
+            //ContentTextData();
             //LoadSkyscrapersMPUs();
             //return;
 
@@ -105,10 +105,14 @@ namespace CompareCloudware.Console
             //LoadShopURLTagData();
             //LoadContentPageData();
             //LoadContextTextTypesForH1H2(); DONT'T NEED FOR LIVE
-            LoadContextTextDataForH1H2();
+            //LoadContextTextDataForH1H2();
 
             //LoadCarboniteBusinessPlus();
             //LoadSecondCategories();
+
+            LoadAvastLogo();
+            LoadAvastEndpointProtection();
+            LoadAvastEndpointProtectionPlus();
         }
 
         #region InsertVendor
@@ -2133,6 +2137,108 @@ namespace CompareCloudware.Console
             var context = new CompareCloudwareContext();
 
             data.LoadContextTextTypesForTabs(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region LoadAvastLogo
+        private static void LoadAvastLogo()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            data.LoadAvastLogo(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtection
+        private static void LoadAvastEndpointProtection()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            data.LoadAvastEndpointProtection(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionPlus
+        private static void LoadAvastEndpointProtectionPlus()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            data.LoadAvastEndpointProtectionPlus(context);
             try
             {
                 context.SaveChanges();

@@ -1,0 +1,80 @@
+﻿@model CompareCloudware.Web.Models.HomePageModel
+@using CompareCloudware.Web.Helpers
+
+<!--[if IE]>
+	<link rel="stylesheet" type="text/css" href="all-ie-only.css" />
+<![endif]-->
+<!--[if !IE]>
+	<link rel="stylesheet" type="text/css" href="not-ie.css" />
+<![endif]-->
+<!--[if IE 7]>
+	<link rel="stylesheet" type="text/css" href="ie7.css">
+<![endif]-->
+<!--[if IE 6]>
+	<link rel="stylesheet" type="text/css" href="ie6.css" />
+<![endif]-->
+<!--[if lt IE 9]>
+	<link rel="stylesheet" type="text/css" href="ie8-and-down.css" />
+<![endif]-->
+<!--[if lte IE 8]>
+	<link rel="stylesheet" type="text/css" href="ie8-and-down.css" />
+<![endif]-->
+<!--[if gt IE 6]>
+	<link rel="stylesheet" type="text/css" href="ie7-and-up.css" />
+<![endif]-->
+<!--[if gte IE 7]>
+	<link rel="stylesheet" type="text/css" href="ie7-and-up.css" />
+<![endif]-->
+
+    <link href="@Url.Content("~/Content/EnabledJavaScript/simple-search-input.css")" rel="stylesheet" type="text/css" />    
+
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "InsertCaseForm" }))
+{
+    
+    <div id="searchinput">
+    <div id="imagediv">
+    <img src="@Url.Content("~/Images/Cloud-icon-16x32.png")" />
+    </div>
+    <div id="searchinputdata">
+        <div id="title" class="add-margins">
+            <label class="large-white-text">Compare cloudware</label>
+        </div>
+        <div id="criteria" class="add-margins">
+            <div class="simple-search-first-column">
+                <div class="add-margins">
+                    @Html.TextBoxFor(x => x.Name)
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="styled-select">
+                    @Html.DropDownListForCulture(x => x.ChosenCategoryID,
+                       new SelectList(Model.Categories, "CategoryID", "CategoryName", Model.ChosenCategoryID)
+                       , Model.Categories
+                    )
+                </div>
+            </div>
+            <div class="simple-search-second-column">
+                <div class="add-margins">
+                    @Html.TextBoxFor(x => x.EMailAddress)
+                    @Html.ValidationMessageFor(model => model.EMailAddress)
+                </div>
+                <div class="styled-select add-margins">
+                    @Html.DropDownListForCulture2(x => x.ChosenOperatingSystemID,
+                       new SelectList(Model.OperatingSystems, "OperatingSystemID", "OperatingSystemName", Model.ChosenOperatingSystemID)
+                       , Model.OperatingSystems
+                    )
+                </div>
+                <div class="add-margins">
+                    <input type="submit" value="Compare Cloudware" />
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+    <div style="clear:both; display:block;">
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    </div>
+}

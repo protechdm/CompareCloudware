@@ -1,0 +1,763 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+@using System.Text.RegularExpressions;
+@using CompareCloudware.Web.Models;
+
+<script>
+    $(function () {
+        $("#corporateTabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+        $("#corporateTabs li").removeClass("ui-corner-top").addClass("ui-corner-left");
+
+        $("#corporatePressTabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
+
+        debugger;
+        var activeTab = @(Model.ActiveTab);
+        $("#corporateTabs").tabs("select", activeTab);
+
+
+    });
+
+    $(document).ready(function () {
+        //collapseAllPressReleases();
+
+        function collapseAllPressReleases() {
+            //debugger;
+            var pressReleases = $('.press-header');
+            $(pressReleases).each(function () {
+                collapsePressRelease(this);
+            })
+        }
+
+        function collapsePressRelease(theObject) {
+            //debugger;
+            var t = $(theObject).parent().next();
+            $(t).slideToggle('fast');
+
+        }
+
+        $('body').on('click', '.press-header', function () {
+            //$('div.search-filters-container-inner:eq(0)> div.search-filter-group-header').click(function () {
+            //alert("click");
+            //debugger;
+            //var t = $(this).parent().next();
+            //$(t).slideToggle('fast');
+            //collapsePressRelease(this);
+
+            //$(t).next().slideToggle('fast');
+        });
+
+    });
+</script>
+<div class="corporate-page-content">
+    <div class="corporate-page-menubar">
+        <label class="font-bold-13px-white">
+            Corporate Information</label>
+    </div>
+    <div id="corporateTabs">
+        <ul>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-1" class="font-normal-13px-black">About us</a>
+            </li>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-2" class="font-normal-13px-black">Management team</a>
+            </li>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-3" class="font-normal-13px-black">Vision</a>
+            </li>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-4" class="font-normal-13px-black">FAQs</a>
+            </li>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-5" class="font-normal-13px-black">Careers</a>
+            </li>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-6" class="font-normal-13px-black">Press</a>
+            </li>
+            <li>
+                <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
+                <a href="#tabs-7" class="font-normal-13px-black">Contact us</a>
+            </li>
+        </ul>
+        <div id="tabs-1">
+            <div class="content-text">
+                <table style="width: 100%;">
+                    <tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("ABOUTUS_TITLE"))
+                            {
+                            <td style="width: 100%;">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("ABOUTUS_SECTION_BODY"))
+                        {
+                        <tr>
+                            <td style="width: 100%;" class="line-height-20px">
+                            @if (Model.ContentTexts[td - 1].IsBold)
+                            {
+                                <label class="font-bold-12px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            }
+                            else
+                            {
+                                <label class="font-normal-12px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            }
+                            </td>
+                        
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        <div id="tabs-2">
+            @{
+                int maxBodyNumber = 0;
+                if (Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE")).Count() > 0)
+                {
+                    maxBodyNumber = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE")).Select(y => y.BodyOrder).Max();
+                }
+                            //maxBodyNumber = 5;
+            }
+            <div class="content-text">
+                <table style="width: 100%;">
+                    <tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("MANAGEMENTTEAM_TITLE"))
+                            {
+                            <td style="width: 100%;">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>
+                    @for (int td = 1; td <= maxBodyNumber; td++)
+                    {
+                        var sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td).FirstOrDefault();
+                        var sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td).FirstOrDefault();
+                        //if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("MANAGEMENTTEAM_SECTION_TITLE"))
+                        //{
+                        if (sectionTitle != null && sectionBody != null)
+                        {
+                        <tr>
+                            <td style="width: 100%;">
+                                <table>
+                                    <tr>
+                                        @if (sectionTitle.ContentTextGraphic != null)
+                                        {
+                                            <td style="width:140px;">
+                                                <img src='@Url.Action("ShowPortrait", "Home", new { contentTextID = sectionTitle.ContentTextID })' class="search-result-image" />
+                                            </td>
+                                            <td style="vertical-align:top;" class="line-height-20px">
+                                                <table>
+                                                    <tr>
+                                                        <td style="width:100%;">
+                                                            <label class="font-bold-12px-black">@sectionTitle.ContentTextData</label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                                                        </td>
+                                                    </tr>
+                                                    @{
+                                            sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td + 1).FirstOrDefault();
+                                            sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td + 1).FirstOrDefault();
+                                            while (sectionBody != null && sectionTitle == null)
+                                            {
+                                                    <tr>
+                                                        <td class="line-height-20px">
+                                                            <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                                                        </td>
+                                                    </tr>
+                                                td++;
+                                                sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td + 1).FirstOrDefault();
+                                                sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td + 1).FirstOrDefault();
+                                            }
+                                                    }
+
+                                                </table>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                        <td colspan="2" style="vertical-align:top; class="line-height-20px"">
+                                            <label class="font-normal-12px-black">@sectionTitle.ContentTextData</label>
+                                        </td>
+                                            
+                                        }
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        }
+                        else if (sectionBody != null)
+                        {
+                        <tr>
+                            <td class="line-height-20px">
+                                <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+@*                        }
+*@                    }
+                </table>
+            </div>
+        </div>
+        <div id="tabs-3">
+            <div class="content-text">
+                <table style="width: 100%;">
+                    <tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("VISION_TITLE"))
+                            {
+                            <td style="width: 100%;" class="line-height-20px">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("VISION_SECTION_BODY"))
+                        {
+                        <tr>
+                            <td style="width: 100%;">
+                                <label class="font-normal-12px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        <div id="tabs-4">
+            @{
+                if (Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE")).Count() > 0)
+                {
+
+                    maxBodyNumber = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE")).Select(y => y.BodyOrder).Max();
+                }
+                else
+                {
+                    maxBodyNumber = 0;
+                }
+            }
+            <div class="content-text">
+        <table>
+            <tr>
+                <td class="line-height-20px">
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().StartsWith("FAQS_TITLE"))
+                        {
+                        <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            break;
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+        <table>
+            @for (int td = 1; td <= maxBodyNumber; td++)
+            {
+                var sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE") && x.BodyOrder == td).FirstOrDefault();
+                var sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_BODY") && x.BodyOrder == td).FirstOrDefault();
+                if (sectionTitle != null && sectionBody != null)
+                {
+                <tr>
+                    <td style="width: 100%;">
+                        <div class="content-data-header line-height-20px"">
+                            <label class="font-bold-12px-black">@sectionTitle.ContentTextData</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100%;" class="line-height-20px">
+                        <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-normal-12px-black line-height-20px"">
+                        <hr class="dashed" />
+                    </td>
+                </tr>
+                }
+            }
+        </table>
+            </div>
+        </div>
+        <div id="tabs-5">
+            <div class="content-text">
+                <table style="width: 100%;">
+                    <tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CAREERS_TITLE"))
+                            {
+                            <td style="width: 100%;" class="line-height-20px">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CAREERS_SECTION_BODY"))
+                        {
+                        <tr>
+                            <td style="width: 100%;" class="line-height-20px">
+                            @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                              if (textToInsert.Contains("#EMAIL"))
+                              {
+                                  string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                  string firstPart = eMail[0];
+                                  string secondPart = eMail[1];
+                                  string thirdPart = eMail[2];
+                                  //textToInsert = firstPart + secondPart + thirdPart;   
+                                <label class="font-normal-12px-black">@firstPart</label>
+                                <a href="mailto: @secondPart">@secondPart</a>
+                                <label class="font-normal-12px-black">@thirdPart</label>
+                              }
+                              else
+                              {
+                                <label class="font-normal-12px-black">@textToInsert</label>
+                              }
+                            }
+                            </td>
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+        <div id="tabs-6">
+
+
+            @{ List<ContentTextModel> pressTabs = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE").OrderBy(x => x.BodyOrder).ToList();}
+            @{ List<ContentTextModel> pressTabDates = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_DATE").OrderByDescending(x => Convert.ToDateTime(x.ContentTextData)).ToList();}
+            @{ List<ContentTextModel> pressTabPublishers = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_PUBLISHER").ToList();}
+            <div id="corporatePressTabs">
+                <ul>
+                    <li>
+                        <label class="font-normal-22px-purple">Press</label>
+                    </li>
+                @foreach (ContentTextModel ctm in pressTabDates)
+                {
+                    string pressTab = pressTabs.Find(x => x.CompositeID == ctm.CompositeID).ContentTextData;
+                    string pressTabPublisher = pressTabPublishers.Find(x => x.CompositeID == ctm.CompositeID).ContentTextData;
+                    <li>
+@*                        <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>*@
+                        <div style="position:relative;overflow:hidden;width:100%;">
+                            <a href="#tabs-press-@ctm.CompositeID" class="font-normal-12px-black xwrap-anchor">
+                                <label class="font-normal-12px-black">@ctm.ContentTextData</label>
+                                <br />
+                                @{int maxLabelLength = 30;}
+@*                                @{int lastSpace = 0;}*@
+                                @{int startPos = 0;}
+                                @{string pressTabText = "";}
+                                @for (int i = 0; i < pressTab.Length; i++)
+                                {
+                                    if (pressTab.Substring(i, 1).Trim().Length == 0)
+                                    {
+                                        //lastSpace = i;
+                                    }
+                                    pressTabText += i < pressTab.Length ? pressTab.Substring(i, 1) : "";
+                                    if (pressTabText.Length > maxLabelLength)
+                                    {
+                                        //pressTabText = pressTabText.Substring(0, pressTabText.LastIndexOf(" ")+1);
+                                        <label class="font-bold-12px-black wrap-anchor">@pressTabText.Substring(0, pressTabText.LastIndexOf(" ") + 1)</label>
+                                        pressTabText = pressTabText.Substring(pressTabText.LastIndexOf(" ") - 0);
+                                        <br />
+                                    }
+                                }
+                                <label class="font-bold-12px-black wrap-anchor">@pressTabText</label>
+                            </a>
+@*                            <a href="#tabs-press-@ctm.CompositeID" class="font-bold-13px-black wrap-anchor">@ctm.ContentTextData</a>*@
+                        </div>
+                    </li>
+                }
+                </ul>
+                @foreach (ContentTextModel ctm in pressTabs)
+                {
+                    List<CompareCloudware.Web.Models.ContentTextModel> pressArticle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_DATE" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_PUBLISHER" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_BODY").OrderBy(x => x.BodyOrder).Where(y => y.CompositeID == ctm.CompositeID).ToList();
+
+            <div id="tabs-press-@ctm.CompositeID" class="content-text">
+                <table style="width: 100%;">
+@*                    <tr>
+                        @for (int td = 0; td < Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_TITLE"))
+                            {
+                            <td style="width: 100%;">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>*@
+                    @{maxBodyNumber = 0;}
+@*                    @for (int td = 0; td < Model.ContentTexts.Count; td++)*@
+                    @for (int td = 0; td < pressArticle.Count; td++)
+                    {
+                        if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_TITLE"))
+                        {
+                        <tr>
+                            <td style="width: 100%;padding:0px;" class="press-header">
+@*                                <label class="font-bold-11px-purple">@Model.ContentTexts[td].ContentTextData</label>*@
+                                <label class="font-bold-12px-purple">@pressArticle[td].ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+                    }
+                    @for (int td = 0; td < pressArticle.Count; td++)
+                    {
+                        if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_TITLE_DATE"))
+                        {
+                            string pressPublisher = pressArticle.Find(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_PUBLISHER").ContentTextData;
+                        <tr>
+                            <td style="width: 100%;padding:0px;" class="xpress-header">
+@*                                <label class="font-bold-11px-purple">@Model.ContentTexts[td].ContentTextData</label>*@
+                                <label class="font-normal-12px-black">@pressArticle[td].ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+                    }
+                    @for (int td = 0; td < pressArticle.Count; td++)
+                    {
+                        //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                        if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                        {
+                            <tr>
+                                <td>
+                                    <div>
+                                        @do
+                                        {
+                                            //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                                            if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                                            {
+                                            <table style="width:100%;">
+                                            <tr>
+                                                <td style="width: 100%;">
+                                                @{
+                                                string fontClass;
+                                                string fontStyle = "";
+                                                //if (Model.ContentTexts[td].IsBold)
+                                                if (pressArticle[td].IsBold)
+                                                {
+                                                    fontClass = "font-bold-12px-purple";
+                                                }
+                                                else
+                                                {
+                                                    fontClass = "font-normal-12px-black";
+                                                }
+                                                //if (Model.ContentTexts[td].IsUnderline)
+                                                if (pressArticle[td].IsUnderline)
+                                                {
+                                                    fontStyle = "text-decoration: underline;";
+                                                }
+                                                }
+
+                                                @{
+                                                //var textToInsert = Model.ContentTexts[td].ContentTextData;
+                                                var textToInsert = pressArticle[td].ContentTextData;
+                                                if (textToInsert.Contains("#EMAILTEXT"))
+                                                {
+                                                    string firstPart = null;
+                                                    string secondPart = null;
+                                                    string thirdPart = null;
+                                                    string emailAddress = null;
+                                                    string[] eMail = null;
+                                                    eMail = Regex.Split(textToInsert, "#EMAILADDRESS");
+                                                    emailAddress = eMail[1];
+                                                    textToInsert = textToInsert.Replace("#EMAILADDRESS", "");
+
+                                                    eMail = Regex.Split(textToInsert, "#EMAILTEXT");
+                                                    secondPart = eMail[1];
+                                                    textToInsert = textToInsert.Replace("#EMAILTEXT", "");
+
+                                                    eMail = Regex.Split(textToInsert, "#EMAIL");
+                                                    firstPart = eMail[0];
+                                                    thirdPart = eMail[2];
+
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="mailto: @emailAddress">@secondPart</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else if (textToInsert.Contains("#EMAIL"))
+                                                {
+                                                    string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                                    string firstPart = eMail[0];
+                                                    string secondPart = eMail[1];
+                                                    string thirdPart = eMail[2];
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="mailto: @secondPart">@secondPart</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else if (textToInsert.Contains("#URL"))
+                                                {
+                                                    string[] url = Regex.Split(textToInsert, "#URL");
+                                                    string firstPart = url[0];
+                                                    string secondPart = url[1];
+                                                    string secondPartAsDisplay = secondPart.Replace("https://", "").Replace("http://", ""); ;
+                                                    
+                                                    string thirdPart = url[2];
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="@secondPart">@secondPartAsDisplay</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else
+                                                {
+                                                    if (pressArticle[td].IsNumbered)
+                                                    {
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td style="vertical-align:top;width:5%;">
+                                                                    <label class="@fontClass" style="@fontStyle">@pressArticle[td].NumberOrder@pressArticle[td].NumberSuffix</label>
+                                                                </td>
+                                                                <td style="vertical-align:top;width:95%;">
+                                                                    <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    }
+                                                    else if (pressArticle[td].IsBulleted)
+                                                    {
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td style="vertical-align:top;width:5%;">
+                                                                    <label class="@fontClass" style="@fontStyle">&bull;</label>
+                                                                </td>
+                                                                <td style="vertical-align:top;width:95%;">
+                                                                    <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                    }
+
+                                                }
+                                                }
+                                                </td>
+                                            </tr>
+                                            </table>
+                                                td++;
+                                            }
+                                            else
+                                            {
+
+                                                break;
+                                            }
+                                        } while (td < pressArticle.Count);
+                                    </div>
+                                </td>
+                            </tr>
+                                        td--;
+
+                        }
+                    }
+                </table>
+            </div>
+                }
+
+            </div>
+
+
+        </div>
+        <div id="tabs-7">
+            <div class="content-text" style="min-height:250px;">
+                <table style="width: 100%;">
+                    <tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CONTACTUS_TITLE"))
+                            {
+                            <td style="width: 100%;">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CONTACTUS_SECTION_BODY"))
+                        {
+                        <tr>
+                            <td style="width: 100%;">
+                            @{string fontClass;
+                              string fontStyle = "";
+                              if (Model.ContentTexts[td - 1].IsBold)
+                              {
+                                  fontClass = "font-bold-12px-purple";
+                              }
+                              else
+                              {
+                                  fontClass = "font-normal-12px-black";
+                              }
+                              if (Model.ContentTexts[td - 1].IsUnderline)
+                              {
+                                  fontStyle = "text-decoration: underline;";
+                              }
+                            
+                            
+                            
+                            }
+
+                            @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                              if (textToInsert.Contains("#EMAIL"))
+                              {
+                                  string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                  string firstPart = eMail[0];
+                                  string secondPart = eMail[1];
+                                  string thirdPart = eMail[2];
+                                  //textToInsert = firstPart + secondPart + thirdPart;   
+                                <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                
+                                
+                                
+                                <a href="mailto: @secondPart">@secondPart</a>
+                                <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                              }
+                              else
+                              {
+                                <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                              }
+                            }
+                            </td>
+                        </tr>
+                        }
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+            @{ List<CompareCloudware.Web.Models.ContentTextModel> press = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_BODY").OrderBy(x => x.BodyOrder).ToList();}
+
+            <div class="content-text">
+                <table style="width: 100%;">
+@*                    <tr>
+                        @for (int td = 0; td < Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_TITLE"))
+                            {
+                            <td style="width: 100%;">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>*@
+                    @{maxBodyNumber = 0;}
+@*                    @for (int td = 0; td < Model.ContentTexts.Count; td++)*@
+                    @for (int td = 0; td < press.Count; td++)
+                    {
+                        //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_TITLE"))
+                        if (press[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_TITLE"))
+                        {
+                        <tr>
+                            <td style="width: 100%;" class="press-header">
+@*                                <label class="font-bold-11px-purple">@Model.ContentTexts[td].ContentTextData</label>*@
+                                <label class="font-bold-11px-purple">@press[td].ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+                        //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                        if (press[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                        {
+                            <tr>
+                                <td>
+                                    <div>
+                                        @do
+                                        {
+                                            //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                                            if (press[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                                            {
+                                            <table>
+                                            <tr>
+                                                <td style="width: 100%;">
+                                                @{
+                                                string fontClass;
+                                                string fontStyle = "";
+                                                //if (Model.ContentTexts[td].IsBold)
+                                                if (press[td].IsBold)
+                                                {
+                                                    fontClass = "font-bold-11px-purple";
+                                                }
+                                                else
+                                                {
+                                                    fontClass = "font-normal-11px-black";
+                                                }
+                                                //if (Model.ContentTexts[td].IsUnderline)
+                                                if (press[td].IsUnderline)
+                                                {
+                                                    fontStyle = "text-decoration: underline;";
+                                                }
+                                                }
+
+                                                @{
+                                                //var textToInsert = Model.ContentTexts[td].ContentTextData;
+                                                var textToInsert = press[td].ContentTextData;
+                                                if (textToInsert.Contains("#EMAIL"))
+                                                {
+                                                    string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                                    string firstPart = eMail[0];
+                                                    string secondPart = eMail[1];
+                                                    string thirdPart = eMail[2];
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="mailto: @secondPart">@secondPart</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else
+                                                {
+                                                        <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                }
+                                                }
+                                                </td>
+                                            </tr>
+                                            </table>
+                                                td++;
+                                            }
+                                            else
+                                            {
+
+                                                break;
+                                            }
+                                        } while (td < press.Count);
+                                    </div>
+                                </td>
+                            </tr>
+                                        td--;
+
+                        }
+                    }
+                </table>
+            </div>
+
+-->

@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+    <script type="text/javascript" src="http://platform.linkedin.com/in.js">
+        api_key: euxq0ly6paev
+    </script>
+</head>
+<body>
+    <script type="IN/Login" data-onAuth="authSuccess">
+    Hello, <?js= firstName ?> <?js= lastName ?>.
+    </script>
+
+    <script>
+        function authSuccess() {
+            var recos_element = $("#recos");
+            IN.API.PeopleSearch().result(function (result) {
+                for (var key in result.values) {
+                    var reco = result.values[key];
+                    recos_element.append($('<p><i><b>' + reco.recommender.firstName + ' ' + reco.recommender.lastName + '</b> says,</i><br>&nbsp;&nbsp;&nbsp;' + reco.recommendationText + '</p>'));
+                }
+            });
+        }
+    </script>
+
+    <ul id="recos"></ul>
+</body>
+</html>

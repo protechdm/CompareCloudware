@@ -1,0 +1,217 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationRegistrationModel
+
+@{
+    //Layout = null;
+}
+
+@*<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+</body>
+</html>*@
+
+    <link href="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/bootstrap.css" rel="stylesheet">  
+    <link href="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/css/example-fluid-layout.css" rel="stylesheet">  
+    <link href="../../Content/twitter-bootstrap/resources/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->  
+    <!--[if lt IE 9]>  
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>  
+    <![endif]-->  
+  
+
+@*    <form class="form-horizontal" id="registerform">  *@
+        
+        <!-- MODAL -->
+@*<form id="registerform" method="post" action="UserReview">*@
+
+        <div class="container">
+            <div class="row">
+                <div class="span8 offset2">
+                    <h1>Popover Error Messages<br ><small>with JQuery Validation and Twitter Bootstrap</small></h1>
+
+                    <form>
+                        <fieldset>
+                            <legend>Test fields</legend>
+                            <div class="row">        
+                                <div class="span4 control-group">
+                                    <label for="textbox">Enter Some Text</label>
+                                    <div class="controls">
+                                        <input type="text" name="textbox" id="textbox" class="span4" title="Error Title"
+                                            data-rule-required="true"
+                                            data-placement="bottom" />
+                                        <ul class="help-block">
+                                            <li>This field is reqired.</li>
+                                            <li>The Popover will appear below ('data-placement' attribute) the text box.</li>
+                                            <li>The title is specified within the 'title' attribute.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="span4 control-group">
+                                    <label for="numbers">Enter Some Numbers (1-10)</label>
+                                    <div class="controls">
+                                        <input type="text" name="numbers" id="numbers" class="span4"
+                                            data-rule-range="[1, 10]" 
+                                            data-rule-required="true" 
+                                            data-title="Number Error"/>
+                                        <ul class="help-block">
+                                            <li>This field is reqired.</li>
+                                            <li>Only numbers between 1 and 10 are allowed.</li>
+                                            <li>The Popover will appear to the right (default) of the text box.</li>
+                                            <li>The title is specified within the 'data-title' attribute.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="span8 form-actions">
+                                    <button type="submit" class="btn btn-primary">Save</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="container">  
+            <h2>Example of creating Modals with Twitter Bootstrap</h2>  
+            <div id="example" class="modal hide fade in" style="display: none; ">  
+                <div class="modal-header">  
+                    <a class="close" data-dismiss="modal">×</a>  
+                    <h3>This is a Modal Heading</h3>  
+                </div>  
+                <div class="modal-body">  
+                    <h4>Text in a modal</h4>  
+                    <p>You can add some text here.</p>                
+
+                    <div class="control-group">  
+
+                        @Html.LabelFor(x => x.Forename)
+                        @Html.EditorFor(x => x.Forename)
+                        @Html.ValidationMessageFor(model => model.Forename)
+
+                    </div>
+
+
+
+                </div>  
+                <div class="modal-footer">  
+                    <a href="#" class="btn btn-success" id="cta">Call to action</a>  
+                    <a href="#" class="btn" data-dismiss="modal">Close</a>  
+                </div>  
+            </div>  
+            <p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Launch demo modal</a></p>  
+        </div>  
+
+@*</form>*@
+
+@*    </form>  *@
+
+    <!-- Le javascript  
+    ================================================== -->  
+    <!-- Placed at the end of the document so the pages load faster -->  
+@*    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/jquery.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-transition.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-alert.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-dropdown.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-scrollspy.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-tab.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-tooltip.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-popover.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-button.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-collapse.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-carousel.js"></script>  
+    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-typeahead.js"></script>  *@
+
+@*    <script src="../../../Content/twitter-bootstrap/twitter-bootstrap-v2/docs/assets/js/bootstrap-modal.js"></script>  *@
+@*    <script src="../../Scripts/bootstrap-MVC-validation.js"></script>  *@
+
+
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../../Content/twitter-bootstrap/resources/js/bootstrap.min.js"></script>
+
+    <script src="../../Content/twitter-bootstrap/resources/js/jquery.validate.js"></script>
+    <script src="../../Content/twitter-bootstrap/resources/js/jquery.validate.bootstrap.js"></script>
+
+    <script>
+        $('#example').on('hidden', function () {
+            //alert('hidden');
+        });
+
+        $('#example').on('shown', function () {
+            //$('form').each(function () {
+//                $(this).find('div.control-group').each(function () {
+//                    debugger;
+//                    if ($(this).find('.field-validation-error').length > 0) {
+//                        $(this).addClass('error');
+//                    }
+//                });
+            //});
+        });
+
+
+        //fires when the submit rating button is clicked
+        $('body').on('click', '#cta', function () {
+            debugger;
+            var theForm = $('#registerform');
+            $.validator.unobtrusive.parse($(theForm));
+            if ($(theForm).valid()) {
+                alert('valid');
+                //                var serialize1 = $('#xmyform').serialize();
+
+                //                setLoading(true);
+
+                //                $.ajax({
+                //                    url: 'UserReview',
+                //                    type: 'POST',
+                //                    data: serialize1,
+
+                //                    //The request was a success.
+                //                    success: function (data) {
+                //                        setLoading(false);
+                //                        $("#dialog-input-review").dialog('close');
+                //                        dlgRatingReviewCreated.DoSomething();
+                //                    },
+                //                    error: function (data) {
+                //                        setLoading(false);
+                //                        alert('Fail on create review');
+                //                    }
+                //                });
+            }
+            else {
+                alert('not valid');
+                $(theForm).find('div.control-group').each(function () {
+                    if ($(this).find('.field-validation-error').length > 0) {
+                        debugger;
+                        $(this).addClass('error');
+                    }
+                });
+            }
+        });
+
+        $(document).ready(function () {
+            $('form').validate();
+        });
+
+//        $(function () {
+//            $('form').each(function () {
+//                debugger;
+//                $(this).find('div.control-group').each(function () {
+//                    if ($(this).find('.field-validation-error').length > 0) {
+//                        $(this).addClass('error');
+//                    }
+//                });
+//            });
+//        });
+    
+    
+    
+    
+    </script>
+
+  

@@ -1,0 +1,98 @@
+@model bool
+
+@using System.Configuration;
+
+@{
+    //Layout = null;
+}
+
+@{
+    string style = @Model ? "" : "display: none";   
+}
+
+@{bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);}
+@{string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"];}
+
+<div class="container">
+    <div id="betaSplash" class="modal xhide fade in modal-splash" style="@style">
+        <div class="modal-header">  
+            <a href="/Home/BetaSplashShownNoScript" class="close" data-dismiss="modal">×</a>  
+        </div>  
+        <div class="modal-body"> 
+            <div class="row">
+            @using (Html.BeginForm("BetaSplashShownNoScript", "Home", FormMethod.Post, new { @id = "betaphasesplash" }))
+            {
+                <div class="span7 xoffset2">
+@*                    <form id="registerform" class="form-inline" method="post">*@
+                    <!-- GRAPHIC -->
+                    <div class="splash sxpan2" style="width:252px;height:199px;float:left;margin-top:30px;">
+                        <img src="@Url.Content("~/Images/bob-in-beta-message.gif")" />
+                    </div>
+                    <!-- HEADER CAPTIONS AND INPUT FIELDS-->
+                    <div id="dummy" class="span4 offset2" style="float:left;">
+                            <div class="span4 register controls-row">
+                                <h1 class="span4 clearfix">A word from Bob about Beta</h1>
+                            </div>
+                            <div class="span4 register controls-row">
+                                <h5 class="span4 clearfix">Compare Cloudware.com is live and in Beta phase. To deliver the best possible user experience, we'll be continuing testing and tweaking. If there's anything you would like us to know about your experience please contact us at <a href="mailto: marketing&#64;comparecloudware.com">marketing&#64;comparecloudware.com</a></h5>
+                            </div>
+                            <div class="span4 xform-actions site-button-container">
+                                <div class="site-button">
+                                    <img    src="@Url.Content("~/Images/Buttons/Close-btn.gif")"
+                                                    name="@Html.Encode("SPLASHCLOSE_BUTTON")"
+                                                    id = "betaSplashCloseButton"
+                                                     />
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- SPACE -->
+                <div class="span4" style="height:15px;"></div>
+
+                @*                    </form>*@
+            }
+            </div>
+        </div>
+    </div>
+
+    <div id="modalconfirmation" class="modal hide fade in modal-cloudware-registration-confirmation">
+        <div class="modal-header">  
+            <a class="close" data-dismiss="modal">×</a>  
+        </div>  
+        <div class="modal-body"> 
+            <div class="row">
+                <div class="sxpan7 xoffset2">
+                    <div class="sxpan7 xoffset2">
+                            <div class="xcontrols-row">
+                                <h5 class="span4 clearfix">We will contact you shortly!</h5>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">  
+            <a href="#" class="btn" data-dismiss="modal">OK</a>
+        </div>
+    </div>                
+
+    <div id="modalconfirmationerror" class="modal hide fade in modal-cloudware-registration-confirmation">
+        <div class="modal-header">  
+            <a class="close" data-dismiss="modal">×</a>  
+        </div>  
+        <div class="modal-body"> 
+            <div class="row">
+                <div class="sxpan7 xoffset2">
+                    <div class="sxpan7 xoffset2">
+                            <div class="xcontrols-row">
+                                <h5 class="span4 clearfix">Unable to service your request at present. Please try later.</h5>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">  
+            <a href="#" class="btn" data-dismiss="modal">OK</a>
+        </div>
+    </div>                
+
+</div>

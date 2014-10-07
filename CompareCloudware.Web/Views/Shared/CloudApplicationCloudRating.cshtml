@@ -1,0 +1,25 @@
+﻿@model decimal
+
+
+@for (decimal i = 1; i <= 5; i += 1)
+{
+    if (Model/20 >= i)
+    {
+        <div id="purple" class="overall-rating-icon-container">
+            <input type="image" disabled="disabled" name="ICON_PURPLE_CLOUD" value="purplecloud" class="cc-ui-rating-icon cc-ui-icon-purple-cloud" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" />
+        </div>
+    }
+    else if ((Model/20) + .5m >= i)
+    {
+        <div id="purpleandblue" class="overall-rating-icon-container">
+            <input type="image" disabled="disabled" name="ICON_PURPLEANDBLUE_CLOUD" value="purpleandbluecloud" class="cc-ui-rating-icon cc-ui-icon-purpleandblue-cloud" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+        </div>
+    }
+    else
+    {
+        <div id="blue" class="overall-rating-icon-container">
+            <input type="image" disabled="disabled" name="ICON_BLUE_CLOUD" value="bluecloud" class="cc-ui-rating-icon cc-ui-icon-blue-cloud" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+        </div>
+    }
+}    
+

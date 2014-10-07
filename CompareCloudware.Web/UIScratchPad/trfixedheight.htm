@@ -1,0 +1,77 @@
+﻿<html>
+
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>divTable</title>
+	<style type="text/css" media="screen">
+		.table {
+			border: 1px dashed red;
+			table-layout: fixed;
+			border-spacing: 0px;	
+		}
+		.tr {
+			clear: both;
+		}
+
+		.td {
+			position: relative;
+			float: left;
+			width: 150px;
+			height: 1.5em;
+			border-width: 1px 5px 1px 0;
+			border-style: solid;
+			border-color: orange;
+			overflow: visible;
+			white-space: nowrap;
+		}
+		.text {	
+			position: absolute;
+			background: white;
+			overflow: visible;
+			padding: 0 5px;
+		}
+		.front {
+			position: relative;
+			z-index: 100;
+		}
+
+	</style>
+	
+</head>
+
+<body>
+	
+
+	
+	<div class="table">
+
+		<div class="tr">
+			<div class="td front"><span class="text">Title</span></div>
+			<div class="td">&nbsp;</div>
+			<div class="td">&nbsp;</div>
+			<div class="td">&nbsp;</div>
+		</div>
+		<div class="tr">
+			<div class="td">&nbsp;</div>
+			<div class="td front"><span class="text">This is a really really really really really really reallylong title </span></div>
+			<div class="td">&nbsp;</div>
+			<div class="td">&nbsp;</div>
+		</div>
+		<div class="tr">
+			<div class="td">&nbsp;</div>
+			<div class="td">&nbsp;</div>
+			<div class="td">&nbsp;</div>
+			<div class="td">&nbsp;</div>
+		</div>
+		
+
+		<div style="clear: both">
+			
+		</div>
+		
+	</div>
+	
+	
+</body>
+
+</html>

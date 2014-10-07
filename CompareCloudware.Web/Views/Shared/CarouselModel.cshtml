@@ -1,0 +1,585 @@
+﻿@model CompareCloudware.Web.Models.CarouselModel
+
+@using System.Configuration
+
+@{
+    string image1 = "";
+    string image2 = "";
+    string image3 = "";
+    string image4 = "";
+    string image5 = null;
+
+    string ID1 = "";
+    string ID2 = "";
+    string ID3 = "";
+    string ID4 = "";
+    string ID5 = "";
+
+    string URLSuffix1 = Url.Content("CloudApplication?cloudApplicationID=");
+    string URLSuffix2 = "";
+    
+    string linkRef1 = "";
+    string linkRef2 = "";
+    string linkRef3 = "";
+    string linkRef4 = "";
+    string linkRef5 = "";
+    }
+@{
+    switch (Model.SelectedCategoryID ?? 0)
+    {
+        case 0 :
+            image1 = ConfigurationManager.AppSettings["CarouselHomeImage1"]; 
+            image2 = ConfigurationManager.AppSettings["CarouselHomeImage2"]; 
+            image3 = ConfigurationManager.AppSettings["CarouselHomeImage3"]; 
+            image4 = ConfigurationManager.AppSettings["CarouselHomeImage4"]; 
+            image5 = ConfigurationManager.AppSettings["CarouselHomeImage5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselHomeID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselHomeID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselHomeID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselHomeID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselHomeID5"];
+            break;
+        case 1:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryPhone1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryPhone2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryPhone3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryPhone4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryPhone5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID5"];
+            break;
+        case 2:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID5"];
+            break;
+        case 3:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryConferencing1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryConferencing2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryConferencing3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryConferencing4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryConferencing5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryConferencingID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryConferencingID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryConferencingID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryConferencingID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryConferencingID5"];
+            break;
+        case 4:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryEMail1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryEMail2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryEMail3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryEMail4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryEMail5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryEMailID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryEMailID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryEMailID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryEMailID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryEMailID5"];
+            break;
+        case 5:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryOffice1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryOffice2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryOffice3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryOffice4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryOffice5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryOfficeID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryOfficeID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryOfficeID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryOfficeID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryOfficeID5"];
+            break;
+        case 6:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackup1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackup2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackup3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackup4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackup5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackupID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackupID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackupID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackupID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryStorageAndBackupID5"];
+            break;
+        case 7:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagement1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagement2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagement3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagement4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagement5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagementID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagementID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagementID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagementID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryProjectManagementID5"];
+            break;
+        case 8:
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryFinancial1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryFinancial2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryFinancial3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryFinancial4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryFinancial5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryFinancialID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryFinancialID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryFinancialID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryFinancialID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryFinancialID5"];
+            break;
+        case 9:
+            image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+            break;
+    }
+    
+    if (Model.SelectedCategoryID >= 0)
+    {
+    if (ID1 != "#")
+    {
+        linkRef1 = URLSuffix1 + ID1 + URLSuffix2;
+    }
+    if (ID2 != "#")
+    {
+        linkRef2 = URLSuffix1 + ID2 + URLSuffix2;
+    }
+    if (ID3 != "#")
+    {
+        linkRef3 = URLSuffix1 + ID3 + URLSuffix2;
+        //linkRef3 = req Url.Action("GetShopURL",new { cloudApplicationID = ID3});
+    }
+    if (ID4 != "#")
+    {
+        linkRef4 = URLSuffix1 + ID4 + URLSuffix2;
+    }
+    if (ID5 != "#")
+    {
+        linkRef5 = URLSuffix1 + ID5 + URLSuffix2;
+    }
+    }
+}
+
+
+<!--<script type="text/javascript" src="../Scripts/jquery.js"></script>
+-->
+<!--    <script src="../../Scripts/jquery-1.8.1.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery-ui-1.8.23.min.js" type="text/javascript"></script>
+
+
+    <script src="../../Scripts/jquery.validate.min.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.ui.widget.js" type="text/javascript"></script>
+    <script src="../../Scripts/jquery.more-show.js" type="text/javascript"></script>
+
+
+    <script src="../../Content/modernizr-1.7.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.corner.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.carousel.min.js"></script>
+-->
+<script type="text/javascript">
+
+//$.ajax({
+//    url: '/Home/Index',
+//    type: 'POST',
+//    data: JSON.stringify("jsonData"),
+//    dataType: 'html',
+//    contentType: 'application/json',
+
+//    //The request was a success. Repopulate the div with new result set.
+//    success: function (data) {
+//        $("#Content").empty();
+//        $(data).hide().appendTo('#Content').slideDown();
+//        alert("SUCCESS");
+//    },
+//    error: function (data) {
+//        alert('Fail');
+//    }
+//});
+
+    var timer;
+    //options( 1 - ON , 0 - OFF)
+    var auto_slide = 1;
+    var hover_pause = 1;
+    var key_slide = 1;
+
+    //speed of auto slide(
+    var auto_slide_seconds = 5000;
+    /* IMPORTANT: i know the variable is called ...seconds but it's 
+    in milliseconds ( multiplied with 1000) '*/
+
+    $(document).ready(function () {
+
+
+
+
+
+
+        $("#carousel-image-button-1").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(timer)
+            $("#carousel-image-div-1").removeClass("cc-ui-icon-carousel-one-grey");
+            $("#carousel-image-div-1").addClass("cc-ui-icon-carousel-one-blue");
+        });
+
+        $("#carousel-image-button-1").mouseout(function () {
+            //alert("hovered 1");
+            timer = setInterval('slide("right",1)', auto_slide_seconds);
+            $("#carousel-image-div-1").removeClass("cc-ui-icon-carousel-one-blue");
+            $("#carousel-image-div-1").addClass("cc-ui-icon-carousel-one-grey");
+        });
+
+        $("#carousel-image-button-2").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(timer)
+            $("#carousel-image-div-2").removeClass("cc-ui-icon-carousel-two-grey");
+            $("#carousel-image-div-2").addClass("cc-ui-icon-carousel-two-blue");
+        });
+
+        $("#carousel-image-button-2").mouseout(function () {
+            //alert("hovered 1");
+            timer = setInterval('slide("right",1)', auto_slide_seconds);
+            $("#carousel-image-div-2").removeClass("cc-ui-icon-carousel-two-blue");
+            $("#carousel-image-div-2").addClass("cc-ui-icon-carousel-two-grey");
+        });
+
+        $("#carousel-image-button-3").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(timer)
+            $("#carousel-image-div-3").removeClass("cc-ui-icon-carousel-three-grey");
+            $("#carousel-image-div-3").addClass("cc-ui-icon-carousel-three-blue");
+        });
+
+        $("#carousel-image-button-3").mouseout(function () {
+            //alert("hovered 1");
+            timer = setInterval('slide("right",1)', auto_slide_seconds);
+            $("#carousel-image-div-3").removeClass("cc-ui-icon-carousel-three-blue");
+            $("#carousel-image-div-3").addClass("cc-ui-icon-carousel-three-grey");
+        });
+
+        $("#carousel-image-button-4").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(timer)
+            $("#carousel-image-div-4").removeClass("cc-ui-icon-carousel-four-grey");
+            $("#carousel-image-div-4").addClass("cc-ui-icon-carousel-four-blue");
+        });
+
+        $("#carousel-image-button-4").mouseout(function () {
+            //alert("hovered 1");
+            timer = setInterval('slide("right",1)', auto_slide_seconds);
+            $("#carousel-image-div-4").removeClass("cc-ui-icon-carousel-four-blue");
+            $("#carousel-image-div-4").addClass("cc-ui-icon-carousel-four-grey");
+        });
+
+
+
+
+
+        $('.carousel_ul').hover(function () {
+            //stop the interval
+            //clearInterval(timer)
+        }, function () {
+            //and when mouseout start it again
+            //timer = setInterval('slide("right",1)', auto_slide_seconds);
+        });
+
+        // Using multiple unit types within one animation.
+        //        $("#go").click(function () {
+        //            $("#block").animate({
+        //                width: "10%",
+        //                opacity: 0.4,
+        //                marginLeft: "0.0in",
+        //                fontSize: "30px",
+        //                borderWidth: "10px",
+        //                top: "300px",
+        //                left: "300px",
+        //            }, 1500);
+        //        });
+
+
+
+
+
+
+        /*move he last list item before the first item. The purpose of this is 
+        if the user clicks to slide left he will be able to see the last item.*/
+        $('.carousel_ul li:first').before($('.carousel_ul li:last'));
+
+        //check if auto sliding is enabled
+        if (auto_slide == 1) {
+            /*set the interval (loop) to call function slide with option 'right' 
+            and set the interval time to the variable we declared previously */
+            //var timer = setInterval('slide("right",1)', auto_slide_seconds);
+            timer = setInterval('slide("right",1)', auto_slide_seconds);
+
+            /*and change the value of our hidden field that hold info about
+            the interval, setting it to the number of milliseconds we declared previously*/
+            $('#hidden_auto_slide_seconds').val(auto_slide_seconds);
+        }
+
+        //check if hover pause is enabled
+        if (hover_pause == 1) {
+            //when hovered over the list 
+            $('.carousel_ul').hover(function () {
+                //stop the interval
+                clearInterval(timer)
+            }, function () {
+                //and when mouseout start it again
+                timer = setInterval('slide("right",1)', auto_slide_seconds);
+            });
+
+        }
+
+        //check if key sliding is enabled
+        if (key_slide == 1) {
+
+            //binding keypress function
+            $(document).bind('keypress', function (e) {
+                //keyCode for left arrow is 37 and for right it's 39 '
+                if (e.keyCode == 37) {
+                    //initialize the slide to left function
+                    slide('left', 1);
+                } else if (e.keyCode == 39) {
+                    //initialize the slide to right function
+                    slide('right', 1);
+                }
+            });
+
+        }
+
+        $("#currentImage").val($(".carousel_ul li:eq(1)").attr("id"));
+
+        $("#carousel-image-button-1").click(function () {
+            //clearInterval(timer)
+            var currentImageNumber = $("#currentImage").val().substring($("#currentImage").val().length - 1);
+            if (currentImageNumber > 1) {
+                slide('left', currentImageNumber - 1);
+            }
+            if (currentImageNumber < 1) {
+                slide('right', 1 - currentImageNumber);
+            }
+        });
+
+        $("#carousel-image-button-2").click(function () {
+            //clearInterval(timer)
+            var currentImageNumber = $("#currentImage").val().substring($("#currentImage").val().length - 1);
+            if (currentImageNumber > 2) {
+                slide('left', currentImageNumber - 2);
+            }
+            if (currentImageNumber < 2) {
+                slide('right', 2 - currentImageNumber);
+            }
+        });
+
+        $("#carousel-image-button-3").click(function () {
+            //clearInterval(timer)
+            var currentImageNumber = $("#currentImage").val().substring($("#currentImage").val().length - 1);
+            if (currentImageNumber > 3) {
+                slide('left', currentImageNumber - 3);
+            }
+            if (currentImageNumber < 3) {
+                slide('right', 3 - currentImageNumber);
+            }
+        });
+
+        $("#carousel-image-button-4").click(function () {
+            //clearInterval(timer)
+            var currentImageNumber = $("#currentImage").val().substring($("#currentImage").val().length - 1);
+            if (currentImageNumber > 4) {
+                slide('left', currentImageNumber - 4);
+            }
+            if (currentImageNumber < 4) {
+                slide('right', 4 - currentImageNumber);
+            }
+        });
+
+    });
+
+
+
+
+
+    //FUNCTIONS BELLOW
+
+    //slide function  
+    function slide(where,loopCount) {
+        //return false;
+        //get the item width
+        //var item_width = $('#carousel_ul li').outerWidth() + 10;
+        var item_width = $('.carousel_ul li').outerWidth();
+
+        /* using a if statement and the where variable check 
+        we will check where the user wants to slide (left or right)*/
+        if (where == 'left') {
+            //...calculating the new left indent of the unordered list (ul) for left sliding
+            var left_indent = parseInt($('.carousel_ul').css('left')) + item_width;
+        } else {
+            //...calculating the new left indent of the unordered list (ul) for right sliding
+            var left_indent = parseInt($('.carousel_ul').css('left')) - item_width;
+
+        }
+
+        //make the sliding effect using jQuery's animate function... '
+
+
+        $('.carousel_ul:not(:animated)').queue(function () {
+            for (i = 0; i < loopCount; i++) {
+                $('.carousel_ul:not(:animated)').animate({ 'left': left_indent }, 500, function () {
+
+                    /* when the animation finishes use the if statement again, and make an illusion
+                    of infinity by changing place of last or first item*/
+                    if (where == 'left') {
+                        //...and if it slided to left we put the last item before the first item
+                        $('.carousel_ul li:first').before($('.carousel_ul li:last'));
+                    } else {
+                        //...and if it slided to right we put the first item after the last item
+                        $('.carousel_ul li:last').after($('.carousel_ul li:first'));
+                    }
+
+                    //...and then just get back the default left indent
+                    $('.carousel_ul').css({ 'left': '-976px' });
+                    $("#currentImage").val($(".carousel_ul li:eq(1)").attr("id"));
+                });
+            }
+            $(this).dequeue();
+            //timer = setInterval('slide("right",1)', auto_slide_seconds);
+        });
+
+
+    }
+  
+</script>
+<style type="text/css">
+
+</style>
+<!--<button id="go">» Run</button>
+-->
+<!--
+- auto slide<br />
+- hover pause<br />
+- keyboard arrows slide(left and right)<br /><br />
+-->
+<div class="carousel_container">
+    <!--    <div id='left_scroll'>
+        <a href='javascript:slide("left");'>
+            <img src="../Images/left.png" />
+         </a>
+    </div>
+-->
+    <div class="carousel_inner">
+        <ul class="carousel_ul">
+            @if (Model.SelectedCategoryID==0)
+            {
+            <li id="image1">
+                <a href='@Model.LinkRef1'>
+                    <img src="@Url.Content(@Model.Image1)" />
+                </a>
+            </li>
+            <li id="image2">
+                <a href='@Model.LinkRef2'>
+                    <img src="@Url.Content(@Model.Image2)" />
+                </a>
+            </li>
+            <li id="image3">
+                <a href='@Model.LinkRef3'>
+                    <img src="@Url.Content(@Model.Image3)" />
+                </a>
+            </li>
+            <li id="image4">
+                <a href='@Model.LinkRef4'>
+                    <img src="@Url.Content(@Model.Image4)" />
+                </a>
+            </li>
+            }
+            else
+            {
+            <li id="image1">
+                <a href='@Model.LinkRef1'>
+                    <img src="@Url.Content(@Model.Image1)" />
+                </a>
+            </li>
+            <li id="image2">
+                <a href='@Model.LinkRef2'>
+                    <img src="@Url.Content(@Model.Image2)" />
+                </a>
+            </li>
+            <li id="image3">
+                <a href='@Model.LinkRef3'>
+                    <img src="@Url.Content(@Model.Image3)" />
+                </a>
+            </li>
+            <li id="image4">
+                <a href='@Model.LinkRef4'>
+                    <img src="@Url.Content(@Model.Image4)" />
+                </a>
+            </li>
+                if (image5 != null)
+                {
+            <li id="image5">
+                <a href='@Model.LinkRef5'>
+                    <img src="@Url.Content(@Model.Image5)" />
+                </a>
+            </li>
+            }
+            }
+            
+        </ul>
+    </div>
+    
+    <div style="clear:both;"></div>
+
+    <div class="carousel-icons-container">
+        <div class="carousel-icon-container">
+            <div id="carousel-image-div-1" class="cc-carousel-icon cc-ui-icon-carousel-one-grey">
+                <a id="carousel-image-button-1"></a>
+            </div>
+        </div>
+        <div class="carousel-icon-container">
+            <div id="carousel-image-div-2" class="cc-carousel-icon cc-ui-icon-carousel-two-grey">
+                <a id="carousel-image-button-2"></a>
+            </div>
+        </div>
+        <div class="carousel-icon-container">
+            <div id="carousel-image-div-3" class="cc-carousel-icon cc-ui-icon-carousel-three-grey">
+                <a id="carousel-image-button-3"></a>
+            </div>
+        </div>
+        <div class="carousel-icon-container">
+            <div id="carousel-image-div-4" class="cc-carousel-icon cc-ui-icon-carousel-four-grey">
+                <a id="carousel-image-button-4"></a>
+           </div>
+        </div>
+        <div><input id="currentImage" type="hidden" /></div>
+    </div>
+
+@*    <div class='right_scroll'>
+    </div>
+*@
+    <input type='hidden' id='hidden_auto_slide_seconds' value="0" />
+</div>
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<title>Infinite Carousel Tutorial</title>
+</body>
+</html>
+-->
+<div style="clear: both;">
+</div>
+

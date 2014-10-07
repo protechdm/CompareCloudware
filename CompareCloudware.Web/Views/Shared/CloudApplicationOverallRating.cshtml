@@ -1,0 +1,59 @@
+﻿@model CompareCloudware.Web.Models.CloudApplicationModel
+@using CompareCloudware.Domain.Models
+@*home display TEST template
+*@
+<div class="product-overall-rating">
+    <div style="float: left; width: 100%;">
+        <table width="100%">
+            <tr>
+                <td class="product-overall-rating-header" colspan="2">
+                    <label class="font-normal-22px-purple">User ratings</label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="font-bold-11px-black">
+                        Overall rating:</label>
+                    <div class="overall-rating-container">
+                        @*                        <label class="font-bold-11px-black">@Model.AverageOverallRating</label>
+*@
+                        @{Html.RenderPartial("CloudApplicationCloudRating", Model.AverageOverallRating);}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="font-bold-11px-black">
+                        Ease of use:</label>
+                    <div class="overall-rating-container">
+                        @*                        <label class="font-bold-11px-black">@Model.AverageEaseOfUse</label>
+*@
+                        @{Html.RenderPartial("CloudApplicationCloudRating", Model.AverageEaseOfUse);}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="font-bold-11px-black">
+                        Value for money:</label>
+                    <div class="overall-rating-container">
+                        @*                        <label class="font-bold-11px-black">@Model.AverageValueForMoney</label>
+*@
+                        @{Html.RenderPartial("CloudApplicationCloudRating", Model.AverageValueForMoney);}
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="font-bold-11px-black">
+                        Functionality:</label>
+                    <div class="overall-rating-container">
+                        @*                        <label class="font-bold-11px-black">@Model.AverageFunctionality</label>
+*@
+                        @{Html.RenderPartial("CloudApplicationCloudRating", Model.AverageFunctionality);}
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

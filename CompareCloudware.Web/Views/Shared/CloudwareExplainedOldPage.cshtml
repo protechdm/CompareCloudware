@@ -1,0 +1,237 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+
+@using Microsoft.Web.Helpers
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#cloudwareExplainedTabs").tabs();
+//            $("#tabsdemo").tabs();
+        });    
+	</script>
+
+    <div class="cloudware-explained-page-container" id="cloudwareExplainedTabs">
+	    <ul>
+		    <li id="tab-1" style="width:22%;">
+                <div class="tabs-container">
+@*                    <a href="#CloudwareExplained" class="font-normal-15px-white">Cloudware explained</a>*@
+                    <a href="#tabs-4" class="font-normal-15px-white">Cloudware explained</a>
+@*                    @Html.RouteLink("Cloudware explainewd", "CloudwareExplainedPartial", null, new { @class = "font-normal-15px-white" })*@
+@*                    @Html.ActionLink("Cloudware explaineddd","CloudwareExplainedPartial")*@
+@*                    <div class="tabs-icon-container">
+                        <div class="cc-ui-icon cc-ui-icon-cloud-white">
+                        
+                        </div>
+                    </div>*@
+                </div>
+               
+            </li>
+		    <li id="tab-2" style="width:31%;">
+                <div class="tabs-container">
+                    <a href="#tabs-5" class="font-normal-15px-white">10 reasons for using cloudware
+                    </a>
+@*                    <div class="tabs-icon-container">
+                        <div class="cc-ui-icon cc-ui-icon-cloud-white">
+                        
+                        </div>
+                    </div>*@
+                </div>
+            </li>
+		    <li id="tab-3" style="width:44%;">
+                <div class="tabs-container">
+                <a href="#tabs-6" class="font-normal-15px-white">What does my business need to run cloudware?
+                </a>
+@*                    <div class="tabs-icon-container">
+                        <div class="cc-ui-icon cc-ui-icon-cloud-white">
+                        
+                        </div>
+                    </div>*@
+                </div>
+            </li>
+	    </ul>
+	    <div id="tabs-4" class="box-shadow">
+            @{Html.RenderPartial("CloudwareExplainedPartial", @Model);}
+	    </div>
+	    <div id="tabs-5" class="box-shadow">
+	        @{Html.RenderPartial("10ReasonsForUsingCloudware", @Model);}
+	    </div>
+	    <div id="tabs-6" class="box-shadow">
+	        @{Html.RenderPartial("WhatDoesMyBusinessNeedToRunCloudware", @Model);}
+	    </div>
+    </div>    
+@*            <label class="font-bold-11px-black">WMV</label>
+            @Video.MediaPlayer(path: "/Images/Videos/intro.wmv",
+                     width: "230",
+                     height: "600",
+                     autoStart: true,
+                     playCount: 2,
+                     uiMode:  "full",
+                     stretchToFit: false,
+                     enableContextMenu: false,
+                     mute: false,
+                     volume: 75)
+
+            <label class="font-bold-11px-black">AVI</label>
+            @Video.MediaPlayer(path: "/Images/Videos/smartwhite48.avi",
+                     width: "230",
+                     height: "600",
+                     autoStart: true,
+                     playCount: 2,
+                     uiMode:  "full",
+                     stretchToFit: false,
+                     enableContextMenu: false,
+                     mute: false,
+                     volume: 75)*@
+
+@*            <label class="font-bold-11px-black">MOV WITH HELPER</label>
+            @Video.MediaPlayer(path: "/Images/Videos/sample_itunes.mov",
+                     width: "230",
+                     height: "600",
+                     autoStart: true,
+                     playCount: 2,
+                     uiMode:  "full",
+                     stretchToFit: false,
+                     enableContextMenu: false,
+                     mute: false,
+                     volume: 75)*@
+
+
+@*<script src="http://www.apple.com/library/quicktime/scripts/ac_quicktime.js" language="JavaScript"
+    type="text/javascript"></script>
+<script src="http://www.apple.com/library/quicktime/scripts/qtp_library.js" language="JavaScript"
+    type="text/javascript"></script>*@
+
+@*<label class="font-bold-11px-black">MOV JAVASCRIPT</label>
+<script type="text/javascript"><!--
+    QT_WritePoster_XHTML('Click to Play', '/Images/Videos/sample_itunes.mov',
+        '/Images/Videos/sample_itunes.mov',
+        '520', '296', '',
+        'controller', 'true',
+        'autoplay', 'true',
+        'bgcolor', 'black',
+        'scale', 'aspect');
+//-->
+</script>*@
+<noscript></noscript>
+
+@*    <label class="font-bold-11px-black">MOV NON JAVASCRIPT</label>
+        <object width="520" height="296" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+            <param name="src" value="/Images/Videos/sample_itunes.mov" />
+            <param name="href" value="/Images/Videos/sample_itunes.mov" />
+            <param name="target" value="myself" />
+            <param name="controller" value="true" />
+            <param name="autoplay" value="true" />
+            <param name="scale" value="aspect" />
+            <embed width="720" height="496" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"
+                src="/Images/Videos/sample_itunes.mov" href="/Images/Videos/sample_itunes.mov" target="myself"
+                controller="true" autoplay="true" scale="aspect">
+            </embed>
+        </object>
+
+        <object width="520" height="296" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+            codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+            <param name="src" value="/Images/Videos/albright.mov" />
+            <param name="href" value="/Images/Videos/albright.mov" />
+            <param name="target" value="myself" />
+            <param name="controller" value="true" />
+            <param name="autoplay" value="true" />
+            <param name="scale" value="aspect" />
+            <embed width="720" height="496" type="video/quicktime" pluginspage="http://www.apple.com/quicktime/download/"
+                src="/Images/Videos/albright.mov" href="/Images/Videos/albright.mov" target="myself"
+                controller="true" autoplay="true" scale="aspect">
+            </embed>
+        </object>*@
+
+@*        <video controls="" src="/Images/Videos/albright.mov" tabindex="0"> </video>*@
+@*        <OBJECT CLASSID="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B" 
+CODEBASE="http://www.apple.com/qtactivex/qtplugin.cab" WIDTH="160" HEIGHT="136" >
+<PARAM NAME="src" VALUE="videofilename_mp4.mov" >
+<PARAM NAME="autoplay" VALUE="true" >
+<EMBED SRC="videofilename_mp4.mov" TYPE="image/x-macpaint" 
+PLUGINSPAGE="http://www.apple.com/quicktime/download" WIDTH="160" HEIGHT="136" AUTOPLAY="true"></EMBED>
+</OBJECT>*@
+
+@*<label class="font-bold-11px-black">FLASH YOUTUBE</label>
+        @Video.Flash(path: "http://www.youtube.com/v/MrMNHwmd9Hc",
+                     width: "230",
+                     height: "600",
+                     play: true,
+                     loop: true,
+                     menu:  false,
+                     bgColor: "red",
+                     quality: "medium",
+                     scale: "exactfit",
+                     windowMode: "transparent")
+
+<label class="font-bold-11px-black">FLASH SWF</label>
+        @Video.Flash(path: "/Images/Videos/win_98b.swf",
+                     width: "230",
+                     height: "600",
+                     play: true,
+                     loop: true,
+                     menu:  true,
+                     bgColor: "red",
+                     quality: "medium",
+                     scale: "exactfit",
+                     windowMode: "transparent")*@
+
+    <script type="text/javascript">
+        if (!Modernizr.borderradius) {
+            try {
+                                //alert("xNO RADIUS");
+                //                $.getScript("/Scripts/jquery.corner.js", function () {
+                //                    $("#tabs-4").corner();
+                //                    $("#tabs-5").corner();
+                //                    alert("CORNERED");
+                //                });
+
+                //$('div.demo, div.inner, li').each(function () {
+                $('li').each(function () {
+                    var t = $('p', this).text();
+                    //eval(t);
+                    //$(this).corner();
+                    //alert("Programmatically rounding corners for " + $(this).id);
+                });
+
+            }
+            catch (e) {
+                alert("ERROR");
+
+            }
+        }
+    </script>
+
+
+
+
+@*<label class="font-bold-11px-black">MP4 WITH VIDEO TAG #1</label>*@
+@*<object width="320" height="240" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" type="application/x-shockwave-flash">
+    <param value="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf" name="movie">
+    <param value="true" name="allowfullscreen">
+    <param value="config={'clip':{'url':'http://cc-staging.wilsonmiller.co.uk/Images/Videos/pr6.mp4','autoPlay':false,'autoBuffering':true}}" name="flashvars">
+    <p>Download video as <a href="i/pr6.mp4">MP4</a>, <a href="i/pr6.webm">WebM</a>, or <a href="i/pr6.ogv">Ogg</a>.</p>
+  </object>*@
+
+@*<label class="font-bold-11px-black">MP4 WITH VIDEO TAG #2</label>*@
+@*<video id="movie" width="320" height="240" preload controls>
+    <source src="/Images/Videos/pr6.mp4" />
+        <object width="320" height="240" type="application/x-shockwave-flash" data="http://releases.flowplayer.org/swf/flowplayer-3.2.1.swf">
+            <param name="movie" value="flowplayer-3.2.1.swf" />
+            <param name="allowfullscreen" value="true" />
+            <param name="flashvars" value="config={'clip': {'url': '/Images/Videos/pr6.mp4', 'autoPlay':false, 'autoBuffering':true}}" />*@
+@*            <p>Download video as 
+            <a href="pr6.mp4">MP4</a>, 
+            <a href="pr6.webm">WebM</a>, or 
+            <a href="pr6.ogv">Ogg</a>.</p>*@
+@*        </object>
+    </video>*@
+<script>
+//    var v = document.getElementById("movie");
+//    v.onclick = function () {
+//        if (v.paused) {
+//            v.play();
+//        } else {
+//            v.pause();
+//        }
+//    };
+</script>

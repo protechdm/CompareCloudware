@@ -1,0 +1,71 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+@using CompareCloudware.Web.Models
+@using System.Web.Mvc
+@using System.Configuration;
+<!-- FEATURES -->
+    <table>
+        <tr>
+            <td>
+                <label class="font-bold-11px-purple search-result-header line-height-150">
+                    Features:</label>
+            </td>
+        </tr>
+        @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures.Count > 0)
+        {
+            int i = 0;
+            int featureCount;
+            string stringFeatureCountSuffix;
+            string stringFeatureCount;
+            bool includeAtExtraCost;
+            do
+            {
+                featureCount = (int)Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Count;
+                stringFeatureCountSuffix = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].CountSuffix;
+                if (featureCount == 16384)
+                {
+                    stringFeatureCount = "Unlimited ";
+                }
+                else if (featureCount == 0)
+                {
+                    stringFeatureCount = "";
+                }
+                else
+                {
+                    stringFeatureCount = featureCount.ToString() + " " + stringFeatureCountSuffix + " ";
+                }
+                includeAtExtraCost = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].IncludeExtraCost;
+                                
+                @:<tr>
+                    <td style="padding-right:20px;"> 
+                        <label class="font-normal-11px-black search-result-header line-height-150">
+                            @(stringFeatureCount) @Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Feature.FeatureName
+                            @(includeAtExtraCost ? "(at extra cost)" : "") 
+                        </label> 
+                    </td> 
+                    i++; 
+                    if (i < Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures.Count)
+                    { 
+                        featureCount = (int)Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Count;
+                        stringFeatureCountSuffix = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].CountSuffix;
+                        if (featureCount == 16384) 
+                        { 
+                            stringFeatureCount = "Unlimited "; 
+                        } 
+                        else if (featureCount == 0) 
+                        { 
+                            stringFeatureCount = ""; 
+                        } 
+                        else 
+                        { 
+                            stringFeatureCount = featureCount.ToString() + " " + stringFeatureCountSuffix + " "; 
+                        } 
+                        includeAtExtraCost = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].IncludeExtraCost;
+                        @:<td style="margin-right:0px;"> 
+                            <label class="font-normal-11px-black search-result-header line-height-150"> @(stringFeatureCount) @Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures[i].Feature.FeatureName @(includeAtExtraCost ? "(at extra cost)" : "") </label> 
+                        @:</td> 
+                    } 
+                    i++; 
+                @:</tr>
+            } while (i < Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationFeatures.Count);
+        }
+    </table>

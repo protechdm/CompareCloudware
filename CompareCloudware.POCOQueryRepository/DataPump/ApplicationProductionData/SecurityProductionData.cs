@@ -6055,5 +6055,283 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
         }
         #endregion
 
+        #region PumpAvastLogo
+        public static bool PumpAvastLogo(QueryRepository repository)
+        {
+            bool retVal = true;
+            Vendor v = new Vendor()
+            {
+                VendorName = "Avast",
+                VendorLogoFileName = "kaspersky.jpg",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Project Management\\liquidplanner logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/Security//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Security\\New Logos\\kaspersky.jpg"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+            return retVal;
+        }
+        #endregion
+
+        #region PumpAvastEndpointProtection
+        public static bool PumpAvastEndpointProtection(QueryRepository repository)
+        {
+            bool retVal = true;
+            CloudApplication ca;
+            int categoryID = repository.FindCategoryByName("SECURITY").CategoryID;
+
+            #region AVASTENDPOINTPROTECTION
+            ca = new CloudApplication()
+            {
+                Brand = "Avast",
+                ServiceName = "Endpoint Protection",
+                CompanyURL = "http://www.avast.com",
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("WIN XP"),
+                    repository.FindOperatingSystemByName("WIN VISTA"),
+                    repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    repository.FindBrowserByName("IE6"),
+                    repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    //repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                    repository.FindBrowserByName("CHROME"),
+                },
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(50),
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    //repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("EMAIL"),
+                    //repository.FindSupportTypeByName("COMMUNITY")
+                },
+                //SupportHours = repository.FindSupportHoursByName("24 HOURS"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                SupportTerritories = new List<SupportTerritory>()
+                {
+                    repository.FindSupportTerritoryByName("UK"),
+                },
+                VideoTrainingSupport = false,
+                //MaximumMeetingAttendees = 50,
+                //MaximumWebinarAttendees = 0,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("CLOUD-CENTRIC SERVICE DELIVERY"),
+                    repository.FindFeatureByName("CLOUD-BASED THREAT DETECTION/INTERCEPTION"),
+                    repository.FindFeatureByName("CLOUD-BASED UPDATES"),
+                    repository.FindFeatureByName("ANTIVIRUS PROTECTION"),
+                    repository.FindFeatureByName("MALWARE PROTECTION"),
+                    repository.FindFeatureByName("SPAM PROTECTION"),
+                    repository.FindFeatureByName("ROOTKIT PROTECTION"),
+                    repository.FindFeatureByName("SPYWARE PROTECTION"),
+                    repository.FindFeatureByName("ADDITIONAL FIREWALL SECURITY"),
+                    repository.FindFeatureByName("WEB BROWSING RESTRICTION"),
+                    repository.FindFeatureByName("WEB BROWSING CONTROL"),
+                    repository.FindFeatureByName("WEB BROWSING PROTECTION"),
+                    //repository.FindFeatureByName("USB, PORT, CD/DVD CONTROL"),
+                    //repository.FindFeatureByName("CREATE BOOTABLE RESCUE DRIVES"),
+                    repository.FindFeatureByName("CENTRAL, REMOTE ADMINISTRATION"),
+                    //repository.FindFeatureByName("ACCESS REGISTRATION TO PROTECT SENSITIVE CONTENT"),
+                    //repository.FindFeatureByName("OUTBOUND EMAIL & DOCUMENT CONTROL"),
+                    //repository.FindFeatureByName("OUTBOUND EMAIL ENCRYPTION"),
+                    //repository.FindFeatureByName("IMAGE/ATTACHMENT CONTROL"),
+                    repository.FindFeatureByName("USER LEVEL WEB BROWSER REPORTING"),
+                    //repository.FindFeatureByName("OFFLINE END-POINT PROTECTION"),
+                    //repository.FindFeatureByName("THREAT SANDBOXING"),
+                    repository.FindFeatureByName("INTRUSION PREVENTION SYSTEM"),
+                    //repository.FindFeatureByName("DEVICE LOCATION MAP"),
+                    //repository.FindFeatureByName("MOBILE BLUETOOTH HACKING"),
+                    //repository.FindFeatureByName("MOBILE REMOTE DATA WIPE"),
+                    //repository.FindFeatureByName("QUANTANTINE MOBILE INFILTRATIONS"),
+                    //repository.FindFeatureByName("SMS SPAM PROTECTION"),
+                },
+                ApplicationCostPerMonth = 0.00M,
+                ApplicationCostPerAnnumFrom = 49.99M,
+                //Options = "Email Encryption",
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = true,
+                ApplicationCostPerAnnumAvailable = true,
+                //ApplicationCostPerAnnumPOA = true,
+                CloudApplicationCurrency = repository.GetCurrencyBySymbol("£"),
+                //CallsPackageCostPerMonth = 0M,
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                MinimumContract = repository.FindMinimumContractByName("12"),
+                PaymentFrequency = repository.FindPaymentFrequencyByName("MONTHLY"),
+                PaymentOptions = new List<PaymentOption>()
+                {
+                    repository.FindPaymentOptionByName("CREDIT CARD"),
+                    repository.FindPaymentOptionByName("DEBIT CARD"),
+                },
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                Vendor = repository.FindVendorByName("AVAST"),
+                Description = "Award-winning avast! endpoint protection, now customized for small-business needs. Basic and reliable security for great value for money!",
+                AddDate = DateTime.Now,
+                LinkedInCompanyID = 0,
+                TwitterName = "",
+                FacebookName = "",
+                BuyURL = "www.comparecloudware.com",
+                TryURL = "www.comparecloudware.com",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            return retVal;
+
+        }
+        #endregion
+
+        #region PumpAvastEndpointProtectionPlus
+        public static bool PumpAvastEndpointProtectionPlus(QueryRepository repository)
+        {
+            bool retVal = true;
+            CloudApplication ca;
+            int categoryID = repository.FindCategoryByName("SECURITY").CategoryID;
+
+            #region AVASTENDPOINTPROTECTION
+            ca = new CloudApplication()
+            {
+                Brand = "Avast",
+                ServiceName = "Endpoint Protection Plus",
+                CompanyURL = "http://www.avast.com",
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("WIN XP"),
+                    repository.FindOperatingSystemByName("WIN VISTA"),
+                    repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    repository.FindBrowserByName("IE6"),
+                    repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    //repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                    repository.FindBrowserByName("CHROME"),
+                },
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(50),
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    //repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("EMAIL"),
+                    //repository.FindSupportTypeByName("COMMUNITY")
+                },
+                //SupportHours = repository.FindSupportHoursByName("24 HOURS"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                SupportTerritories = new List<SupportTerritory>()
+                {
+                    repository.FindSupportTerritoryByName("UK"),
+                },
+                VideoTrainingSupport = false,
+                //MaximumMeetingAttendees = 50,
+                //MaximumWebinarAttendees = 0,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("CLOUD-CENTRIC SERVICE DELIVERY"),
+                    repository.FindFeatureByName("CLOUD-BASED THREAT DETECTION/INTERCEPTION"),
+                    repository.FindFeatureByName("CLOUD-BASED UPDATES"),
+                    repository.FindFeatureByName("ANTIVIRUS PROTECTION"),
+                    repository.FindFeatureByName("MALWARE PROTECTION"),
+                    repository.FindFeatureByName("SPAM PROTECTION"),
+                    repository.FindFeatureByName("ROOTKIT PROTECTION"),
+                    repository.FindFeatureByName("SPYWARE PROTECTION"),
+                    repository.FindFeatureByName("ADDITIONAL FIREWALL SECURITY"),
+                    repository.FindFeatureByName("WEB BROWSING RESTRICTION"),
+                    repository.FindFeatureByName("WEB BROWSING CONTROL"),
+                    repository.FindFeatureByName("WEB BROWSING PROTECTION"),
+                    //repository.FindFeatureByName("USB, PORT, CD/DVD CONTROL"),
+                    //repository.FindFeatureByName("CREATE BOOTABLE RESCUE DRIVES"),
+                    repository.FindFeatureByName("CENTRAL, REMOTE ADMINISTRATION"),
+                    //repository.FindFeatureByName("ACCESS REGISTRATION TO PROTECT SENSITIVE CONTENT"),
+                    //repository.FindFeatureByName("OUTBOUND EMAIL & DOCUMENT CONTROL"),
+                    //repository.FindFeatureByName("OUTBOUND EMAIL ENCRYPTION"),
+                    //repository.FindFeatureByName("IMAGE/ATTACHMENT CONTROL"),
+                    repository.FindFeatureByName("USER LEVEL WEB BROWSER REPORTING"),
+                    //repository.FindFeatureByName("OFFLINE END-POINT PROTECTION"),
+                    //repository.FindFeatureByName("THREAT SANDBOXING"),
+                    repository.FindFeatureByName("INTRUSION PREVENTION SYSTEM"),
+                    //repository.FindFeatureByName("DEVICE LOCATION MAP"),
+                    //repository.FindFeatureByName("MOBILE BLUETOOTH HACKING"),
+                    //repository.FindFeatureByName("MOBILE REMOTE DATA WIPE"),
+                    //repository.FindFeatureByName("QUANTANTINE MOBILE INFILTRATIONS"),
+                    //repository.FindFeatureByName("SMS SPAM PROTECTION"),
+                },
+                ApplicationCostPerMonth = 0.00M,
+                ApplicationCostPerAnnumFrom = 49.99M,
+                //Options = "Email Encryption",
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = true,
+                ApplicationCostPerAnnumAvailable = true,
+                //ApplicationCostPerAnnumPOA = true,
+                CloudApplicationCurrency = repository.GetCurrencyBySymbol("£"),
+                //CallsPackageCostPerMonth = 0M,
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                MinimumContract = repository.FindMinimumContractByName("12"),
+                PaymentFrequency = repository.FindPaymentFrequencyByName("MONTHLY"),
+                PaymentOptions = new List<PaymentOption>()
+                {
+                    repository.FindPaymentOptionByName("CREDIT CARD"),
+                    repository.FindPaymentOptionByName("DEBIT CARD"),
+                },
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                Vendor = repository.FindVendorByName("AVAST"),
+                Description = "Award-winning avast! endpoint protection, now customized for small-business needs. Basic and reliable security for great value for money!",
+                AddDate = DateTime.Now,
+                LinkedInCompanyID = 0,
+                TwitterName = "",
+                FacebookName = "",
+                BuyURL = "www.comparecloudware.com",
+                TryURL = "www.comparecloudware.com",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            return retVal;
+
+        }
+        #endregion
+
     }
 }

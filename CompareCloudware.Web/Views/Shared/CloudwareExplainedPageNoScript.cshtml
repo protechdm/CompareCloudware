@@ -1,0 +1,83 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+           
+@*@using Microsoft.Web.Helpers*@
+
+    <link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />    
+
+    <div class="cloudware-explained-tabstripmain">
+        <div class="nojavascript-tab">
+            <div class="nojavascript-divforlabel" title="@(Model.CloudwareExplainedVisible ? "active" : "tabtitle")">
+                @if (!Model.CloudwareExplainedVisible)
+                {
+                <a class="tab-anchor" href='@Url.Action("CloudwareExplainedPageNoScript", "Home", new { showPage = @Html.Encode("TAB_CLOUDWARE_EXPLAINED"), scripting=false })' id="@Html.Encode("TAB_CLOUDWARE_EXPLAINED")">
+                    <span class="nojavascript-label font-normal-15px-white">Cloudware explained</span>
+                </a>
+                }
+                else
+                {
+                    <label class="nojavascript-label font-normal-15px-white">Cloudware explained</label>
+                }
+            </div>
+            <div class="nojavascript-results" title="nojavascript-results" style="@(Model.CloudwareExplainedVisible ? "display:inline" : "display:none;")">
+            @{Html.RenderPartial("CloudwareExplained", @Model);}
+            </div>
+        </div>
+        <div class="nojavascript-tab">
+            <div class="nojavascript-divforlabel" title="@(Model.TenReasonsForUsingCloudwareVisible ? "active" : "tabtitle")">
+                @if (!Model.TenReasonsForUsingCloudwareVisible)
+                {
+                <a class="tab-anchor" href='@Url.Action("CloudwareExplainedPageNoScript", "Home", new { showPage = @Html.Encode("TAB_10_REASONS_FOR_USING_CLOUDWARE"), scripting = false })' id="@Html.Encode("TAB_10_REASONS_FOR_USING_CLOUDWARE")">
+                    <span class="nojavascript-label font-normal-15px-white">10 reasons for using cloudware</span>
+                </a>
+                }
+                else
+                {
+                    <label class="nojavascript-label font-normal-15px-white">10 reasons for using cloudware</label>
+                }
+            </div>
+            <div class="nojavascript-results" title="nojavascript-results" style="left:-101%; @(Model.TenReasonsForUsingCloudwareVisible ? "display:inline" : "display:none;")">
+	        @{Html.RenderPartial("10ReasonsForUsingCloudware", @Model);}
+            </div>
+        </div>
+        <div class="nojavascript-tab">
+            <div class="nojavascript-divforlabel" title="@(Model.WhatDoesMyBusinessNeedToRunCloudwareVisible ? "active" : "tabtitle")">
+                @if (!Model.WhatDoesMyBusinessNeedToRunCloudwareVisible)
+                {
+                <a class="tab-anchor" href='@Url.Action("CloudwareExplainedPageNoScript", "Home", new { showPage = @Html.Encode("TAB_WHAT_DOES_MY_BUSINESS_NEED_TO_RUN_CLOUDWARE"), scripting = false })' id="@Html.Encode("TAB_WHAT_DOES_MY_BUSINESS_NEED_TO_RUN_CLOUDWARE")">
+                    <span class="nojavascript-label font-normal-15px-white">What does my business need to run cloudware?</span>
+                </a>
+                }
+                else
+                {
+                    <label class="nojavascript-label font-normal-15px-white">What does my business need to run cloudware?</label>
+                }
+            </div>
+
+            <div class="nojavascript-results" title="nojavascript-results" style="left:-202%; @(Model.WhatDoesMyBusinessNeedToRunCloudwareVisible ? "display:inline" : "display:none;")">
+	        @{Html.RenderPartial("WhatDoesMyBusinessNeedToRunCloudware", @Model);}
+            </div>
+        </div>
+    </div>
+
+    @*            @Video.MediaPlayer(path: "/Images/Videos/intro.wmv",
+                     width: "230",
+                     height: "600",
+                     autoStart: true,
+                     playCount: 2,
+                     uiMode:  "full",
+                     stretchToFit: false,
+                     enableContextMenu: false,
+                     mute: false,
+                     volume: 75)
+
+
+        @Video.Flash(path: "http://www.youtube.com/v/MrMNHwmd9Hc",
+                     width: "230",
+                     height: "600",
+                     play: true,
+                     loop: true,
+                     menu:  false,
+                     bgColor: "red",
+                     quality: "medium",
+                     scale: "exactfit",
+                     windowMode: "transparent")*@

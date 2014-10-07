@@ -1,0 +1,48 @@
+﻿@*@model CompareCloudware.Web.Models.SearchPageModel*@
+@model List<LanguageModel>
+@using CompareCloudware.Web.Models
+@using System.Web.Mvc
+@using System.Configuration;
+
+<!-- LANGUAGES -->
+@*@if (Model.ContainerModel.ChosenCloudApplicationModel.Languages.Count > 0)*@
+@if (Model.Count > 0)
+{
+    int i = 0;
+    //int languageCount = Model.ContainerModel.ChosenCloudApplicationModel.Languages.Count;
+    int languageCount = Model.Count;
+    int columnCount = 3;
+    <tr>
+        <td>
+                <label class="font-bold-11px-purple search-result-header line-height-150">Language:</label>
+        </td>
+    </tr>
+    do
+    {
+        //i++;
+    <tr>
+        <td style="width:@(100 / columnCount)%">
+@*            <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.Languages[i].LanguageName</label>*@
+                <label class="font-normal-11px-black search-result-header line-height-150">@Model[i].LanguageName</label>
+            @{i++;}
+        </td>
+        @if (i < languageCount)
+        {
+        <td style="width:@(100 / columnCount)%">
+@*            <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.Languages[i].LanguageName</label>*@
+                <label class="font-normal-11px-black search-result-header line-height-150">@Model[i].LanguageName</label>
+            @{i++;}
+        </td>
+        }
+        @if (i < languageCount)
+        {
+        <td style="width:@(100 / columnCount)%">
+@*            <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.Languages[i].LanguageName</label>*@
+                <label class="font-normal-11px-black search-result-header line-height-150">@Model[i].LanguageName</label>
+            @{i++;}
+        </td>
+        }
+    </tr>
+
+    } while (i < languageCount);
+}        

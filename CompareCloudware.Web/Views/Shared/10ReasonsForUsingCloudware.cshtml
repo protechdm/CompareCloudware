@@ -1,0 +1,58 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+<div class="cloudware-explained-page-content">
+@*    <div class="cloudware-explained-menubar">
+        <label class="font-bold-13px-white">Cloudware Explained</label>
+    </div>
+*@    
+    <div class="cloudware-explained-page-content-text">
+        <table>
+            <tr>
+                <td style="width: 100%;">
+@*                    <div class="cloudware-explained-logo">*@
+                    <div class="cloudware-explained-page-container-10-reasons-logo">
+                        <img src="@Url.Content("~/Images/10-reasons.gif")" />
+                    </div>
+                </td>
+@*                <td>
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().StartsWith("10REASONSFORUSINGCLOUDWARE_TITLE"))
+                        {
+                        <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            break;
+                        }
+                    }
+                </td>
+*@            </tr>
+        </table>
+        <table>
+            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+            {
+                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant() == "10REASONSFORUSINGCLOUDWARE_SECTION_TITLE")
+                {
+                <tr>
+                    <td style="width: 100%;">
+                        <div class="content-data-header">
+                            <label class="font-bold-12px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                        </div>
+                    </td>
+                </tr>
+                }
+                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_BODY"))
+                {
+                <tr>
+                    <td style="width: 100%;">
+                        <label class="font-normal-12px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-normal-12px-black">
+                        <hr class="dashed" />
+                    </td>
+                </tr>
+                
+                }
+            }
+        </table>
+    </div>
+</div>

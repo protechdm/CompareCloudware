@@ -1,0 +1,833 @@
+﻿@model CompareCloudware.Web.Models.ContentTextsModel
+@using System.Text.RegularExpressions;
+@using CompareCloudware.Web.Models;
+
+<link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />
+<style type="text/css" media="screen">
+    .table
+    {
+        /*border: 1px dashed red;*/
+        table-layout: fixed;
+        border-spacing: 0px;
+    }
+    .tr
+    {
+        clear: both;
+    }
+    
+    .td
+    {
+        position: relative;
+        float: left;
+        width: 150px;
+        /*height: 1.5em;*/
+        /*border-width: 1px 5px 1px 0;*/
+        /*border-style: solid;*/
+        /*border-color: orange;*/
+        overflow: visible;
+        white-space: normal;
+        height:35px;
+        /*line-height:15px;*/
+    }
+    .text
+    {
+        position: absolute;
+        background: #D5FFFF;
+        overflow: visible;
+        /*padding: 20px 20px 20px 20px ;*/
+        width: 820px;
+    }
+    .front
+    {
+        position: relative;
+        /*z-index: 100;*/
+    }
+</style>
+@{
+    int maxBodyNumber = 0;
+}
+
+    <div class="corporate-page-menubar">
+        <label class="font-bold-13px-white">
+            Corporate Information</label>
+    </div>
+
+<div class="table" id="tabstripmain-corporate">
+@*    <div class="tr">
+        <div class="td front">
+            <span class="text">Title</span></div>
+        <div class="td">
+            &nbsp;</div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            &nbsp;</div>
+        <div class="td front">
+            <span class="text">This is a really really really really really really reallylong title
+            </span>
+        </div>
+    </div>*@
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.AboutUsVisible ? "active" : "tabtitle")">
+                    @if (!Model.AboutUsVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_ABOUT_US"), scripting = false })' id="@Html.Encode("TAB_ABOUT_US")">
+                        <span class="nojavascript-label font-normal-13px-black">About Us</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">About Us</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td front">
+            <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.AboutUsVisible ? "displayicon" : "")"></div>
+            <div class="content-text-container">
+                
+                <div id="tabs-1" class="text" title="nojavascript-results" style="@(Model.AboutUsVisible ? "display:inline" : "display:none;")">
+
+                    <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("ABOUTUS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("ABOUTUS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @if (Model.ContentTexts[td - 1].IsBold)
+                                    {
+                                        <label class="font-bold-11px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                    }
+                                    else
+                                    {
+                                        <label class="font-normal-11px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.ManagementTeamVisible ? "active" : "tabtitle")">
+                    @if (!Model.ManagementTeamVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_MANAGEMENT_TEAM"), scripting = false })' id="@Html.Encode("TAB_MANAGEMENT_TEAM")">
+                        <span class="nojavascript-label font-normal-13px-black">Management Team</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">Management Team</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td">
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.ManagementTeamVisible ? "displayicon" : "")"></div>
+                <div class="content-text-container" style="top:-35px;">
+            <div id="tabs-2" class="text" title="nojavascript-results" style="@(Model.ManagementTeamVisible ? "display:inline" : "display:none;")">
+                @{
+                    maxBodyNumber = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE")).Select(y => y.BodyOrder).Max();
+                }
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("MANAGEMENTTEAM_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= maxBodyNumber; td++)
+                        {
+                            var sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td).FirstOrDefault();
+                            var sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td).FirstOrDefault();
+                            //if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("MANAGEMENTTEAM_SECTION_TITLE"))
+                            //{
+                        if (sectionTitle != null && sectionBody != null)
+                        {
+                        <tr>
+                            <td style="width: 100%;">
+                                <table>
+                                    <tr>
+                                        @if (sectionTitle.ContentTextGraphic != null)
+                                        {
+                                            <td style="width:140px;">
+                                                <img src='@Url.Action("ShowPortrait", "Home", new { contentTextID = sectionTitle.ContentTextID })' class="search-result-image" />
+                                            </td>
+                                            <td style="vertical-align:top;" class="line-height-20px">
+                                                <table>
+                                                    <tr>
+                                                        <td style="width:100%;">
+                                                            <label class="font-bold-12px-black">@sectionTitle.ContentTextData</label>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                                                        </td>
+                                                    </tr>
+                                                    @{
+                                            sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td + 1).FirstOrDefault();
+                                            sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td + 1).FirstOrDefault();
+                                            while (sectionBody != null && sectionTitle == null)
+                                            {
+                                                    <tr>
+                                                        <td class="line-height-20px">
+                                                            <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                                                        </td>
+                                                    </tr>
+                                                td++;
+                                                sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_BODY") && x.BodyOrder == td + 1).FirstOrDefault();
+                                                sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("MANAGEMENTTEAM_SECTION_TITLE") && x.BodyOrder == td + 1).FirstOrDefault();
+                                            }
+                                                    }
+
+                                                </table>
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                        <td colspan="2" style="vertical-align:top; class="line-height-20px"">
+                                            <label class="font-normal-12px-black">@sectionTitle.ContentTextData</label>
+                                        </td>
+                                            
+                                        }
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        }
+                        else if (sectionBody != null)
+                        {
+                        <tr>
+                            <td class="line-height-20px">
+                                <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+@*                        }
+*@                    }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.VisionVisible ? "active" : "tabtitle")">
+                    @if (!Model.VisionVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_VISION"), scripting = false })' id="@Html.Encode("TAB_VISION")">
+                        <span class="nojavascript-label font-normal-13px-black">Vision</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">Vision</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td">
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.VisionVisible ? "displayicon" : "")"></div>
+                <div class="content-text-container" style="top:-70px;">
+            <div id="tabs-3" class="text" title="nojavascript-results" style="@(Model.VisionVisible ? "display:inline" : "display:none;")">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("VISION_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("VISION_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    <label class="font-normal-11px-black">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.FAQsVisible ? "active" : "tabtitle")">
+                    @if (!Model.FAQsVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_FAQS"), scripting = false })' id="@Html.Encode("TAB_FAQS")">
+                        <span class="nojavascript-label font-normal-13px-black">FAQs</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">FAQs</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td">
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.FAQsVisible ? "displayicon" : "")"></div>
+                <div class="content-text-container" style="top:-105px;">
+            <div id="tabs-4" class="text" title="nojavascript-results" style="@(Model.FAQsVisible ? "display:inline" : "display:none;")">
+                @{
+                    if (Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE")).Count() > 0)
+                    {
+
+                        maxBodyNumber = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE")).Select(y => y.BodyOrder).Max();
+                    }
+                    else
+                    {
+                        maxBodyNumber = 0;
+                    }
+                }
+                <div class="content-text">
+        <table>
+            <tr>
+                <td class="line-height-20px">
+                    @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                    {
+                        if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().StartsWith("FAQS_TITLE"))
+                        {
+                        <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                            break;
+                        }
+                    }
+                </td>
+            </tr>
+        </table>
+        <table>
+            @for (int td = 1; td <= maxBodyNumber; td++)
+            {
+                var sectionTitle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_TITLE") && x.BodyOrder == td).FirstOrDefault();
+                var sectionBody = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("FAQS_SECTION_BODY") && x.BodyOrder == td).FirstOrDefault();
+                if (sectionTitle != null && sectionBody != null)
+                {
+                <tr>
+                    <td style="width: 100%;">
+                        <div class="content-data-header line-height-20px"">
+                            <label class="font-bold-12px-black">@sectionTitle.ContentTextData</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100%;" class="line-height-20px">
+                        <label class="font-normal-12px-black">@sectionBody.ContentTextData</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="font-normal-12px-black line-height-20px"">
+                        <hr class="dashed" />
+                    </td>
+                </tr>
+                }
+            }
+        </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.CareersVisible ? "active" : "tabtitle")">
+                    @if (!Model.CareersVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_CAREERS"), scripting = false })' id="@Html.Encode("TAB_CAREERS")">
+                        <span class="nojavascript-label font-normal-13px-black">Careers</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">Careers</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td">
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.CareersVisible ? "displayicon" : "")"></div>
+                <div class="content-text-container" style="top:-140px;">
+            <div id="tabs-5" class="text" title="nojavascript-results" style="@(Model.CareersVisible ? "display:inline" : "display:none;")">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CAREERS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CAREERS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                                      if (textToInsert.Contains("#EMAIL"))
+                                      {
+                                          string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                          string firstPart = eMail[0];
+                                          string secondPart = eMail[1];
+                                          string thirdPart = eMail[2];
+                                          //textToInsert = firstPart + secondPart + thirdPart;   
+                                        <label class="font-normal-11px-black">@firstPart</label>
+                                        <a href="mailto: @secondPart">@secondPart</a>
+                                        <label class="font-normal-11px-black">@thirdPart</label>
+                                      }
+                                      else
+                                      {
+                                        <label class="font-normal-11px-black">@textToInsert</label>
+                                      }
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.PressVisible ? "active" : "tabtitle")">
+                    @if (!Model.PressVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_PRESS"), scripting = false })' id="@Html.Encode("TAB_PRESS")">
+                        <span class="nojavascript-label font-normal-13px-black">Press</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">Press</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td">
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.PressVisible ? "displayicon" : "")"></div>
+                <div class="content-text-container" style="top:-175px;">
+            <div id="tabs-6" class="text" title="nojavascript-results" style="@(Model.PressVisible ? "display:inline" : "display:none;")">
+                
+                
+                
+                
+                
+                
+                
+            @{ List<ContentTextModel> pressTabs = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE").OrderBy(x => x.BodyOrder).ToList();}
+            @{ List<ContentTextModel> pressTabDates = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_DATE").OrderByDescending(x => Convert.ToDateTime(x.ContentTextData)).ToList();}
+            @{ List<ContentTextModel> pressTabPublishers = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_PUBLISHER").ToList();}
+            <div id="corporatePressTabs">
+                <div id="corporatePressTabsLinks">
+                <ul>
+                    <li>
+                        <label class="font-normal-22px-purple">Press</label>
+                    </li>
+                @foreach (ContentTextModel ctm in pressTabDates)
+                {
+                    string pressTab = pressTabs.Find(x => x.CompositeID == ctm.CompositeID).ContentTextData;
+                    string pressTabPublisher = pressTabPublishers.Find(x => x.CompositeID == ctm.CompositeID).ContentTextData;
+                    string font = null;
+                    string fontBold = null;
+                    if (ctm.IsVisible)
+                    {
+                        font = "font-normal-12px-purple";
+                        fontBold = "font-bold-12px-purple";
+                    }
+                    else
+                    {
+                        font = "font-normal-12px-black";
+                        fontBold = "font-bold-12px-black";
+                    }
+                    <li>
+@*                        <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>*@
+                        <div style="position:relative;overflow:hidden;width:100%;z-index:1000;">
+@*                            <a href="#tabs-press-@ctm.CompositeID" class="font-normal-12px-black xwrap-anchor">*@
+                            <a href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_PRESS"), scripting = false, compositeID = @ctm.CompositeID })' class="font-normal-12px-black xwrap-anchor">
+                                <label class="@font">@ctm.ContentTextData</label>
+                                <br />
+                                @{int maxLabelLength = 30;}
+@*                                @{int lastSpace = 0;}*@
+                                @{int startPos = 0;}
+                                @{string pressTabText = "";}
+                                @for (int i = 0; i < pressTab.Length; i++)
+                                {
+                                    if (pressTab.Substring(i, 1).Trim().Length == 0)
+                                    {
+                                        //lastSpace = i;
+                                    }
+                                    pressTabText += i < pressTab.Length ? pressTab.Substring(i, 1) : "";
+                                    if (pressTabText.Length > maxLabelLength)
+                                    {
+                                        //pressTabText = pressTabText.Substring(0, pressTabText.LastIndexOf(" ")+1);
+                                        <label class="@fontBold wrap-anchor">@pressTabText.Substring(0, pressTabText.LastIndexOf(" ") + 1)</label>
+                                        pressTabText = pressTabText.Substring(pressTabText.LastIndexOf(" ") - 0);
+                                        <br />
+                                    }
+                                }
+                                <label class="@fontBold wrap-anchor">@pressTabText</label>
+                            </a>
+@*                            <a href="#tabs-press-@ctm.CompositeID" class="font-bold-13px-black wrap-anchor">@ctm.ContentTextData</a>*@
+                        </div>
+                    </li>
+                    <br />
+                }
+                </ul>
+                </div>
+
+                <div id="corporatePressTabsText">
+                @foreach (ContentTextModel ctm in pressTabs)
+                {
+                    if (ctm.IsVisible)
+                    {
+                        List<CompareCloudware.Web.Models.ContentTextModel> pressArticle = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_DATE" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_PUBLISHER" || x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_BODY").OrderBy(x => x.BodyOrder).Where(y => y.CompositeID == ctm.CompositeID).ToList();
+
+            <div id="tabs-press-@ctm.CompositeID" class="content-text">
+                <table style="width: 100%;">
+@*                    <tr>
+                        @for (int td = 0; td < Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_TITLE"))
+                            {
+                            <td style="width: 100%;">
+                                <label class="font-normal-22px-purple">@Model.ContentTexts[td].ContentTextData</label>
+                            </td>
+                                break;
+                            }
+                        }
+                    </tr>*@
+                    @{maxBodyNumber = 0;}
+@*                    @for (int td = 0; td < Model.ContentTexts.Count; td++)*@
+                    @for (int td = 0; td < pressArticle.Count; td++)
+                    {
+                        if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_TITLE"))
+                        {
+                        <tr>
+                            <td style="width: 100%;padding:0px;" class="press-header">
+@*                                <label class="font-bold-11px-purple">@Model.ContentTexts[td].ContentTextData</label>*@
+                                <label class="font-bold-12px-purple">@pressArticle[td].ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+                    }
+                    @for (int td = 0; td < pressArticle.Count; td++)
+                    {
+                        if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_TITLE_DATE"))
+                        {
+                            string pressPublisher = pressArticle.Find(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE_PUBLISHER").ContentTextData;
+                        <tr>
+                            <td style="width: 100%;padding:0px;" class="xpress-header">
+@*                                <label class="font-bold-11px-purple">@Model.ContentTexts[td].ContentTextData</label>*@
+                                <label class="font-normal-12px-black">@pressArticle[td].ContentTextData</label>
+                            </td>
+                        </tr>
+                        }
+                    }
+                    @for (int td = 0; td < pressArticle.Count; td++)
+                    {
+                        //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                        if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                        {
+                            <tr>
+                                <td>
+                                    <div>
+                                        @do
+                                        {
+                                            //if (Model.ContentTexts[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                                            if (pressArticle[td].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("PRESS_SECTION_BODY"))
+                                            {
+                                            <table style="width:100%;">
+                                            <tr>
+                                                <td style="width: 100%;">
+                                                @{
+                                                string fontClass;
+                                                string fontStyle = "";
+                                                //if (Model.ContentTexts[td].IsBold)
+                                                if (pressArticle[td].IsBold)
+                                                {
+                                                    fontClass = "font-bold-12px-purple";
+                                                }
+                                                else
+                                                {
+                                                    fontClass = "font-normal-12px-black";
+                                                }
+                                                //if (Model.ContentTexts[td].IsUnderline)
+                                                if (pressArticle[td].IsUnderline)
+                                                {
+                                                    fontStyle = "text-decoration: underline;";
+                                                }
+                                                }
+
+                                                @{
+                                                //var textToInsert = Model.ContentTexts[td].ContentTextData;
+                                                var textToInsert = pressArticle[td].ContentTextData;
+                                                if (textToInsert.Contains("#EMAILTEXT"))
+                                                {
+                                                    string firstPart = null;
+                                                    string secondPart = null;
+                                                    string thirdPart = null;
+                                                    string emailAddress = null;
+                                                    string[] eMail = null;
+                                                    eMail = Regex.Split(textToInsert, "#EMAILADDRESS");
+                                                    emailAddress = eMail[1];
+                                                    textToInsert = textToInsert.Replace("#EMAILADDRESS", "");
+
+                                                    eMail = Regex.Split(textToInsert, "#EMAILTEXT");
+                                                    secondPart = eMail[1];
+                                                    textToInsert = textToInsert.Replace("#EMAILTEXT", "");
+
+                                                    eMail = Regex.Split(textToInsert, "#EMAIL");
+                                                    firstPart = eMail[0];
+                                                    thirdPart = eMail[2];
+
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="mailto: @emailAddress">@secondPart</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else if (textToInsert.Contains("#EMAIL"))
+                                                {
+                                                    string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                                    string firstPart = eMail[0];
+                                                    string secondPart = eMail[1];
+                                                    string thirdPart = eMail[2];
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="mailto: @secondPart">@secondPart</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else if (textToInsert.Contains("#URL"))
+                                                {
+                                                    string[] url = Regex.Split(textToInsert, "#URL");
+                                                    string firstPart = url[0];
+                                                    string secondPart = url[1];
+                                                    string secondPartAsDisplay = secondPart.Replace("https://", "").Replace("http://", ""); ;
+
+                                                    string thirdPart = url[2];
+                                                    //textToInsert = firstPart + secondPart + thirdPart;   
+                                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                                        <a href="@secondPart">@secondPartAsDisplay</a>
+                                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                                }
+                                                else
+                                                {
+                                                    if (pressArticle[td].IsNumbered)
+                                                    {
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td style="vertical-align:top;width:5%;">
+                                                                    <label class="@fontClass" style="@fontStyle">@pressArticle[td].NumberOrder@pressArticle[td].NumberSuffix</label>
+                                                                </td>
+                                                                <td style="vertical-align:top;width:95%;">
+                                                                    <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    }
+                                                    else if (pressArticle[td].IsBulleted)
+                                                    {
+                                                        <table style="width:100%">
+                                                            <tr>
+                                                                <td style="vertical-align:top;width:5%;">
+                                                                    <label class="@fontClass" style="@fontStyle">&bull;</label>
+                                                                </td>
+                                                                <td style="vertical-align:top;width:95%;">
+                                                                    <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    }
+                                                    else
+                                                    {
+                                                        <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                                    }
+
+                                                }
+                                                }
+                                                </td>
+                                            </tr>
+                                            </table>
+                                                td++;
+                                            }
+                                            else
+                                            {
+
+                                                break;
+                                            }
+                                        } while (td < pressArticle.Count);
+                                    </div>
+                                </td>
+                            </tr>
+                                        td--;
+
+                        }
+                    }
+                </table>
+            </div>
+                    }
+                }
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            </div>
+                </div>
+        </div>
+    </div>
+    <div class="tr">
+        <div class="td">
+            <div class="nojavascript-tab">
+                <div class="nojavascript-divforlabel" title="@(Model.ContactUsVisible ? "active" : "tabtitle")">
+                    @if (!Model.ContactUsVisible)
+                    {
+                    <a class="tab-anchor" href='@Url.Action("CorporateInformationPageNoScript", "Home", new { showPage = @Html.Encode("TAB_CONTACT_US"), scripting = false })' id="@Html.Encode("TAB_CONTACT_US")">
+                        <span class="nojavascript-label font-normal-13px-black">Contact us</span>
+                    </a>
+                    }
+                    else
+                    {
+                        <label class="nojavascript-label font-normal-13px-black">Contact us</label>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="td">
+                <div style="float:left;" class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab" title="@(Model.ContactUsVisible ? "displayicon" : "")"></div>
+                <div class="content-text-container" style="top:-210px;">
+            <div id="tabs-7" class="text" title="nojavascript-results" style="@(Model.ContactUsVisible ? "display:inline" : "display:none;")">
+                <div class="content-text">
+                    <table style="width: 100%;">
+                        <tr>
+                            @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                            {
+                                if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CONTACTUS_TITLE"))
+                                {
+                                <td style="width: 100%;">
+                                    <label class="font-normal-22px-purple">@Model.ContentTexts[td - 1].ContentTextData</label>
+                                </td>
+                                    break;
+                                }
+                            }
+                        </tr>
+                        @for (int td = 1; td <= Model.ContentTexts.Count; td++)
+                        {
+                            if (Model.ContentTexts[td - 1].ContentTextType.ContentTextTypeName.ToUpperInvariant().EndsWith("CONTACTUS_SECTION_BODY"))
+                            {
+                            <tr>
+                                <td style="width: 100%;">
+                                    @{string fontClass;
+                                      string fontStyle = "";
+                                      if (Model.ContentTexts[td - 1].IsBold)
+                                      {
+                                          fontClass = "font-bold-11px-purple";
+                                      }
+                                      else
+                                      {
+                                          fontClass = "font-normal-11px-black";
+                                      }
+                                      if (Model.ContentTexts[td - 1].IsUnderline)
+                                      {
+                                          fontStyle = "text-decoration: underline;";
+                                      }
+                            
+                            
+                            
+                                    }
+                                    @{var textToInsert = Model.ContentTexts[td - 1].ContentTextData;
+                                      if (textToInsert.Contains("#EMAIL"))
+                                      {
+                                          string[] eMail = Regex.Split(textToInsert, "#EMAIL");
+                                          string firstPart = eMail[0];
+                                          string secondPart = eMail[1];
+                                          string thirdPart = eMail[2];
+                                          //textToInsert = firstPart + secondPart + thirdPart;   
+                                        <label class="@fontClass" style="@fontStyle">@firstPart</label>
+                                
+                                
+                                
+                                        <a href="mailto: @secondPart">@secondPart</a>
+                                        <label class="@fontClass" style="@fontStyle">@thirdPart</label>
+                                      }
+                                      else
+                                      {
+                                        <label class="@fontClass" style="@fontStyle">@textToInsert</label>
+                                      }
+                                    }
+                                </td>
+                            </tr>
+                            }
+                        }
+                        <tr><td>&nbsp;</td></tr>
+                    </table>
+                </div>
+            </div>
+                </div>
+        </div>
+    </div>
+    <div style="clear: both">
+    </div>
+</div>

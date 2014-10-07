@@ -1,0 +1,260 @@
+@*@model CompareCloudware.Web.Models.CloudApplicationRegistrationAndUpdateModel*@
+
+@{
+    //Layout = null;
+}
+
+@{this.ViewContext.FormContext = new FormContext();}
+
+<div class="container">
+    <div id="betaSplash" class="modal hide fade in modal-splash" style="xdisplay: none; ">
+        <div class="modal-header">  
+            <a class="close" data-dismiss="modal">×</a>  
+        </div>  
+        <div class="modal-body"> 
+            <div class="row">
+            @using (Html.BeginForm("splash", "Home", FormMethod.Post, new { @id = "betaphasesplash" }))
+            {
+                <div class="span7 xoffset2">
+@*                    <form id="registerform" class="form-inline" method="post">*@
+                    <!-- GRAPHIC -->
+                    <div class="splash sxpan2" style="width:252px;height:199px;float:left;margin-top:30px;">
+                        <img src="@Url.Content("~/Images/bob-in-beta-message.gif")" />
+                    </div>
+                    <!-- HEADER CAPTIONS AND INPUT FIELDS-->
+                    <div id="dummy" class="span4 offset2" style="float:left;">
+                            <div class="span4 register controls-row">
+                                <h1 class="span4 clearfix">A word from Bob about Beta</h1>
+                            </div>
+                            <div class="span4 register controls-row">
+                                <h5 class="span4 clearfix">Compare Cloudware.com is live and in Beta phase. To deliver the best possible user experience, we'll be continuing testing and tweaking. If there's anything you would like us to know about your experience please contact us at <a href="mailto: marketing&#64;comparecloudware.com">marketing&#64;comparecloudware.com</a></h5>
+                            </div>
+                            <div class="span4 xform-actions site-button-container">
+                                <div class="site-button">
+                                    <img    src="@Url.Content("~/Images/Buttons/Close-btn.gif")"
+                                                    name="@Html.Encode("SPLASHCLOSE_BUTTON")"
+                                                    id = "betaSplashCloseButton"
+                                                     />
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- SPACE -->
+                <div class="span4" style="height:15px;"></div>
+
+                @*                    </form>*@
+            }
+            </div>
+        </div>
+    </div>
+
+    <div id="modalconfirmation" class="modal hide fade in modal-cloudware-registration-confirmation">
+        <div class="modal-header">  
+            <a class="close" data-dismiss="modal">×</a>  
+        </div>  
+        <div class="modal-body"> 
+            <div class="row">
+                <div class="sxpan7 xoffset2">
+                    <div class="sxpan7 xoffset2">
+                            <div class="xcontrols-row">
+                                <h5 class="span4 clearfix">We will contact you shortly!</h5>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">  
+            <a href="#" class="btn" data-dismiss="modal">OK</a>
+        </div>
+    </div>                
+
+    <div id="modalconfirmationerror" class="modal hide fade in modal-cloudware-registration-confirmation">
+        <div class="modal-header">  
+            <a class="close" data-dismiss="modal">×</a>  
+        </div>  
+        <div class="modal-body"> 
+            <div class="row">
+                <div class="sxpan7 xoffset2">
+                    <div class="sxpan7 xoffset2">
+                            <div class="xcontrols-row">
+                                <h5 class="span4 clearfix">Unable to service your request at present. Please try later.</h5>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">  
+            <a href="#" class="btn" data-dismiss="modal">OK</a>
+        </div>
+    </div>                
+
+</div>
+        
+@*        <p><a data-toggle="modal" href="#example" class="btn btn-primary btn-large">Launch demo modal</a></p>  *@
+
+
+
+@*        <script src="http://code.jquery.com/jquery-latest.js"></script>*@
+
+@*        <script src="@Url.Content("~/Scripts/jquery.validate.js")" type="text/javascript"></script>*@
+@*        <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>*@
+
+<!-- COMMENTED -->
+@*        <script src="../../Content/twitter-bootstrap/resources/js/bootstrap.min.js"></script>*@
+
+@*        <script src="../../Content/twitter-bootstrap/resources/js/jquery.validate.js"></script>*@
+<!-- COMMENTED -->
+@*        <script src="../../Content/twitter-bootstrap/resources/js/jquery.validate.bootstrap.js"></script>*@
+       
+@*           @Html.Partial("TCDialog")*@
+
+        <script>
+            $(document).ready(function () {
+                //debugger;
+                //$('#registerform').validate();
+                $.validator.unobtrusive.adapters.addBool("mandatory", "required");
+
+                $('#betaSplash').modal(
+                {
+                    backdrop: 'static',
+                    keyboard: true,
+                    show: false
+                }
+                );
+
+                //$('#betaSplash').modal('show');
+            });
+
+            $('.register-or-update').on('click', function (e) {
+                var test = e.target;
+                var modalType = $(this).data('id').toUpperCase();
+                //debugger;
+
+                $('#modalinput').find('div.control-group').each(function () {
+                    var control = $(this).find('.input-validation-error')[0];
+                    if (control != null) {
+                        //debugger;
+                        $(control).popover('hide');
+                    }
+                    //if ($(this).find('span.field-validation-error').length == 0) {
+                    //$(this).removeClass('error');
+                    //$(this).popover('hide');
+                    //}
+                });
+
+                RefreshElements(modalType);
+            });
+
+            function RefreshElements(modalType) {
+                var isCloudwareUpdate = $('#IsCloudwareUpdate');
+
+                $('#modalinput [placeholder]').each(function () {
+                    //debugger;
+                    $(this).val('');
+                });
+
+                switch (modalType) {
+                    case "REGISTER":
+                        $('.update').each(function () {
+                            //$(this).css("visibility", "hidden");
+                            //debugger;
+                            $(this).css("display", "none");
+                        });
+                        $('.register').each(function () {
+                            //debugger;
+                            $(this).css("display", "");
+                        });
+                        //debugger;
+                        $(isCloudwareUpdate).val('False');
+
+                        var updateDetails = $('#CloudApplicationUpdateDetails')[0];
+                        if (updateDetails != null) {
+                            //$(updateDetails).text('null');
+                            $(updateDetails).val('null');
+                        }
+                        else {
+                            alert('Cannot find update details!')
+                        }
+
+                        break;
+                    case "UPDATE":
+                        $('.register').each(function () {
+                            //$(this).css("visibility", "hidden");
+                            //debugger;
+                            $(this).css("display", "none");
+                        });
+                        $('.update').each(function () {
+                            //debugger;
+                            $(this).css("display", "");
+                        });
+                        //debugger;
+                        $(isCloudwareUpdate).val('True');
+                        break;
+                }
+            }
+
+            $('#modalinput').on('show', function () {
+                //debugger;
+                var test = $(this).data('id');
+                var test2 = $(this).data('id');
+                //$('form').each(function () {
+                //                $(this).find('div.control-group').each(function () {
+                //                    debugger;
+                //                    if ($(this).find('.field-validation-error').length > 0) {
+                //                        $(this).addClass('error');
+                //                    }
+                //                });
+                //});
+            });
+
+            $('#modalinput').on('hidden', function () {
+                //alert("hidden");
+                //$('#modalconfirmation').modal('show');
+                //debugger;
+                //var test = $(this).data('id');
+                //var test2 = $(this).data('id');
+                //$('form').each(function () {
+                //                $(this).find('div.control-group').each(function () {
+                //                    debugger;
+                //                    if ($(this).find('.field-validation-error').length > 0) {
+                //                        $(this).addClass('error');
+                //                    }
+                //                });
+                //});
+            });
+
+
+            $('#betaSplash').on('click', '#betaSplashCloseButton', function () {
+                //debugger;
+                $.ajax({
+                    url: 'BetaSplashShown',
+                    type: 'POST',
+
+                    //The request was a success.
+                    success: function (data) {
+                        $('#betaSplash').modal('hide');
+                    },
+                    error: function (data) {
+                        $('#betaSplash').modal('hide');
+                    }
+                });
+            });
+
+            $('#betaSplash').on('click', '.close', function () {
+                //debugger;
+                $.ajax({
+                    url: 'BetaSplashShown',
+                    type: 'POST',
+
+                    //The request was a success.
+                    success: function (data) {
+                        $('#betaSplash').modal('hide');
+                    },
+                    error: function (data) {
+                        $('#betaSplash').modal('hide');
+                    }
+                });
+            });
+
+
+       </script>

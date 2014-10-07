@@ -1,0 +1,428 @@
+﻿@model CompareCloudware.Web.Models.CarouselModel
+
+@using System.Configuration
+
+<script type="text/javascript">
+
+
+    var carousel_social_timer;
+    //options( 1 - ON , 0 - OFF)
+    var carousel_social_auto_slide = 1;
+    var carousel_social_hover_pause = 1;
+    var carousel_social_key_slide = 1;
+
+    //speed of auto slide(
+    var carousel_social_auto_slide_seconds = 5000;
+    /* IMPORTANT: i know the variable is called ...seconds but it's 
+    in milliseconds ( multiplied with 1000) '*/
+
+    $(document).ready(function () {
+
+
+
+
+
+
+        $("#carousel-social-image-button-1").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(carousel_social_timer)
+            $("#carousel-social-image-div-1").removeClass("cc-ui-icon-carousel-social-one-grey");
+            $("#carousel-social-image-div-1").addClass("cc-ui-icon-carousel-social-one-blue");
+        });
+
+        $("#carousel-social-image-button-1").mouseout(function () {
+            //alert("hovered 1");
+            carousel_social_timer = setInterval('carousel_social_slide("right",1)', carousel_social_auto_slide_seconds);
+            $("#carousel-social-image-div-1").removeClass("cc-ui-icon-carousel-social-one-blue");
+            $("#carousel-social-image-div-1").addClass("cc-ui-icon-carousel-social-one-grey");
+        });
+
+        $("#carousel-social-image-button-2").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(carousel_social_timer)
+            $("#carousel-social-image-div-2").removeClass("cc-ui-icon-carousel-social-two-grey");
+            $("#carousel-social-image-div-2").addClass("cc-ui-icon-carousel-social-two-blue");
+        });
+
+        $("#carousel-social-image-button-2").mouseout(function () {
+            //alert("hovered 1");
+            carousel_social_timer = setInterval('carousel_social_slide("right",1)', carousel_social_auto_slide_seconds);
+            $("#carousel-social-image-div-2").removeClass("cc-ui-icon-carousel-social-two-blue");
+            $("#carousel-social-image-div-2").addClass("cc-ui-icon-carousel-social-two-grey");
+        });
+
+        $("#carousel-social-image-button-3").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(carousel_social_timer)
+            $("#carousel-social-image-div-3").removeClass("cc-ui-icon-carousel-social-three-grey");
+            $("#carousel-social-image-div-3").addClass("cc-ui-icon-carousel-social-three-blue");
+        });
+
+        $("#carousel-social-image-button-3").mouseout(function () {
+            //alert("hovered 1");
+            carousel_social_timer = setInterval('carousel_social_slide("right",1)', carousel_social_auto_slide_seconds);
+            $("#carousel-social-image-div-3").removeClass("cc-ui-icon-carousel-social-three-blue");
+            $("#carousel-social-image-div-3").addClass("cc-ui-icon-carousel-social-three-grey");
+        });
+
+        $("#carousel-social-image-button-4").mouseover(function () {
+            //alert("hovered 1");
+            clearInterval(carousel_social_timer)
+            $("#carousel-social-image-div-4").removeClass("cc-ui-icon-carousel-social-four-grey");
+            $("#carousel-social-image-div-4").addClass("cc-ui-icon-carousel-social-four-blue");
+        });
+
+        $("#carousel-social-image-button-4").mouseout(function () {
+            //alert("hovered 1");
+            carousel_social_timer = setInterval('carousel_social_slide("right",1)', carousel_social_auto_slide_seconds);
+            $("#carousel-social-image-div-4").removeClass("cc-ui-icon-carousel-social-four-blue");
+            $("#carousel-social-image-div-4").addClass("cc-ui-icon-carousel-social-four-grey");
+        });
+
+
+
+
+
+        $('.carousel-social_ul').hover(function () {
+            //stop the interval
+            //clearInterval(timer)
+        }, function () {
+            //and when mouseout start it again
+            //timer = setInterval('slide("right",1)', auto_slide_seconds);
+        });
+
+        // Using multiple unit types within one animation.
+        //        $("#go").click(function () {
+        //            $("#block").animate({
+        //                width: "10%",
+        //                opacity: 0.4,
+        //                marginLeft: "0.0in",
+        //                fontSize: "30px",
+        //                borderWidth: "10px",
+        //                top: "300px",
+        //                left: "300px",
+        //            }, 1500);
+        //        });
+
+
+
+
+
+
+        /*move he last list item before the first item. The purpose of this is 
+        if the user clicks to slide left he will be able to see the last item.*/
+        
+        $('.carousel-social_ul li:first').before($('.carousel-social_ul li:last'));
+
+        //check if auto sliding is enabled
+        if (carousel_social_auto_slide == 1) {
+            /*set the interval (loop) to call function slide with option 'right' 
+            and set the interval time to the variable we declared previously */
+            //var timer = setInterval('slide("right",1)', auto_slide_seconds);
+            carousel_social_timer = setInterval('carousel_social_slide("right",1)', carousel_social_auto_slide_seconds);
+
+            /*and change the value of our hidden field that hold info about
+            the interval, setting it to the number of milliseconds we declared previously*/
+            $('#hidden_carousel_social_auto_slide_seconds').val(carousel_social_auto_slide_seconds);
+        }
+
+        //check if hover pause is enabled
+        if (carousel_social_hover_pause == 1) {
+            //when hovered over the list 
+            $('.carousel-social_ul').hover(function () {
+                //stop the interval
+                clearInterval(carousel_social_timer)
+            }, function () {
+                //and when mouseout start it again
+                carousel_social_timer = setInterval('carousel_social_slide("right",1)', carousel_social_auto_slide_seconds);
+            });
+
+        }
+
+        //check if key sliding is enabled
+        if (carousel_social_key_slide == 1) {
+
+            //binding keypress function
+            $(document).bind('keypress', function (e) {
+                //keyCode for left arrow is 37 and for right it's 39 '
+                if (e.keyCode == 37) {
+                    //initialize the slide to left function
+                    carousel_social_slide('left', 1);
+                } else if (e.keyCode == 39) {
+                    //initialize the slide to right function
+                    carousel_social_slide('right', 1);
+                }
+            });
+
+        }
+
+        $("#currentCarouselSocialImage").val($(".carousel-social_ul li:eq(1)").attr("id"));
+
+        $("#carousel-social-image-button-1").click(function () {
+            //clearInterval(timer)
+            var currentCarouselSocialImageNumber = $("#currentCarouselSocialImage").val().substring($("#currentCarouselSocialImage").val().length - 1);
+            if (currentCarouselSocialImageNumber > 1) {
+                carousel_social_slide('left', currentCarouselSocialImageNumber - 1);
+            }
+            if (currentCarouselSocialImageNumber < 1) {
+                carousel_social_slide('right', 1 - currentCarouselSocialImageNumber);
+            }
+        });
+
+        $("#carousel-social-image-button-2").click(function () {
+            //clearInterval(timer)
+            var currentCarouselSocialImageNumber = $("#currentCarouselSocialImage").val().substring($("#currentCarouselSocialImage").val().length - 1);
+            if (currentCarouselSocialImageNumber > 2) {
+                carousel_social_slide('left', currentCarouselSocialImageNumber - 2);
+            }
+            if (currentCarouselSocialImageNumber < 2) {
+                carousel_social_slide('right', 2 - currentCarouselSocialImageNumber);
+            }
+        });
+
+        $("#carousel-social-image-button-3").click(function () {
+            //clearInterval(timer)
+            var currentCarouselSocialImageNumber = $("#currentCarouselSocialImage").val().substring($("#currentCarouselSocialImage").val().length - 1);
+            if (currentCarouselSocialImageNumber > 3) {
+                carousel_social_slide('left', currentCarouselSocialImageNumber - 3);
+            }
+            if (currentCarouselSocialImageNumber < 3) {
+                carousel_social_slide('right', 3 - currentCarouselSocialImageNumber);
+            }
+        });
+
+        $("#carousel-social-image-button-4").click(function () {
+            //clearInterval(timer)
+            var currentCarouselSocialImageNumber = $("#currentCarouselSocialImage").val().substring($("#currentCarouselSocialImage").val().length - 1);
+            if (currentCarouselSocialImageNumber > 4) {
+                carousel_social_slide('left', currentCarouselSocialImageNumber - 4);
+            }
+            if (currentCarouselSocialImageNumber < 4) {
+                carousel_social_slide('right', 4 - currentCarouselSocialImageNumber);
+            }
+        });
+
+    });
+
+
+
+
+
+    //FUNCTIONS BELOW
+
+    //slide function  
+    //function carousel_social_slide(where, loopCount) {
+    //    //return false;
+    //    //get the item width
+    //    //var item_width = $('#carousel_ul li').outerWidth() + 10;
+    //    var item_width = $('.carousel-social_ul li').outerWidth();
+
+    //    /* using a if statement and the where variable check 
+    //    we will check where the user wants to slide (left or right)*/
+    //    if (where == 'left') {
+    //        //...calculating the new left indent of the unordered list (ul) for left sliding
+    //        var left_indent = parseInt($('.carousel-social_ul').css('left')) + item_width;
+    //    } else {
+    //        //...calculating the new left indent of the unordered list (ul) for right sliding
+    //        var left_indent = parseInt($('.carousel-social_ul').css('left')) - item_width;
+
+    //    }
+
+    //    //make the sliding effect using jQuery's animate function... '
+
+
+    //    $('.carousel-social_ul:not(:animated)').queue(function () {
+    //        for (i = 0; i < loopCount; i++) {
+    //            $('.carousel-social_ul:not(:animated)').animate({ 'left': left_indent }, 500, function () {
+
+    //                /* when the animation finishes use the if statement again, and make an illusion
+    //                of infinity by changing place of last or first item*/
+    //                if (where == 'left') {
+    //                    //...and if it slided to left we put the last item before the first item
+    //                    $('.carousel-social_ul li:first').before($('.carousel-social_ul li:last'));
+    //                } else {
+    //                    //...and if it slided to right we put the first item after the last item
+    //                    $('.carousel-social_ul li:last').after($('.carousel-social_ul li:first'));
+    //                }
+
+    //                //...and then just get back the default left indent
+    //                $('.carousel-social_ul').css({ 'left': '-304px' }); //304*179
+    //                $("#currentCarouselSocialImage").val($(".carousel-social_ul li:eq(1)").attr("id"));
+    //            });
+    //        }
+    //        $(this).dequeue();
+    //        //timer = setInterval('slide("right",1)', auto_slide_seconds);
+    //    });
+
+
+    //}
+
+
+    function carousel_social_slide(where, loopCount) {
+        //return false;
+        //get the item width
+        //debugger;
+        var item_width = $('.carousel-social_ul li').outerWidth();
+
+        //get the item height
+        var item_height = $('.carousel-social_ul li').outerHeight();
+
+        /* using a if statement and the where variable check 
+        we will check where the user wants to slide (left or right)*/
+        if (where == 'left') {
+            //...calculating the new left indent of the unordered list (ul) for left sliding
+            var left_indent = parseInt($('.carousel-social_ul').css('left')) + item_width;
+            var bottom_indent = parseInt($('.carousel-social_ul').css('bottom')) + item_height;
+        } else {
+            //...calculating the new left indent of the unordered list (ul) for right sliding
+            var left_indent = parseInt($('.carousel-social_ul').css('left')) - item_width;
+            var bottom_indent = parseInt($('.carousel-social_ul').css('bottom')) - item_height;
+
+        }
+
+        //make the sliding effect using jQuery's animate function... '
+
+
+        $('.carousel-social_ul:not(:animated)').queue(function () {
+            for (i = 0; i < loopCount; i++) {
+                //debugger;
+                //$('.carousel-social_ul:not(:animated)').animate({ 'left': left_indent }, 500, function () {
+                $('.carousel-social_ul:not(:animated)').animate({ 'top': bottom_indent }, 500, function () {
+
+                    //debugger;
+                    /* when the animation finishes use the if statement again, and make an illusion
+                    of infinity by changing place of last or first item*/
+                    if (where == 'right') {
+                        //...and if it slided to left we put the last item before the first item
+                        $('.carousel-social_ul li:first').before($('.carousel-social_ul li:last'));
+                    } else {
+                        //...and if it slided to right we put the first item after the last item
+                        $('.carousel-social_ul li:last').after($('.carousel-social_ul li:first'));
+                    }
+
+                    //...and then just get back the default left indent
+                    //$('.carousel-social_ul').css({ 'left': '-304px' }); //304*179
+                    $('.carousel-social_ul').css({ 'top': '-179px' }); //304*179
+                    $("#currentCarouselSocialImage").val($(".carousel-social_ul li:eq(1)").attr("id"));
+                });
+            }
+            $(this).dequeue();
+            //timer = setInterval('slide("right",1)', auto_slide_seconds);
+        });
+
+
+    }
+
+</script>
+<style type="text/css">
+
+</style>
+<!--<button id="go">» Run</button>
+-->
+<!--
+- auto slide<br />
+- hover pause<br />
+- keyboard arrows slide(left and right)<br /><br />
+-->
+<div class="carousel-social_container">
+    <!--    <div id='left_scroll'>
+        <a href='javascript:slide("left");'>
+            <img src="../Images/left.png" />
+         </a>
+    </div>
+-->
+    <div class="carousel-social_inner">
+        <ul class="carousel-social_ul">
+            @if (Model.SelectedCategoryID==0)
+            {
+            <li id="CarouselSocialImage1">
+                <a href='@Model.LinkRef1' target="_blank">
+                    <img src="@Url.Content(@Model.Image1)" />
+                </a>
+            </li>
+            <li id="CarouselSocialImage2">
+                <a href='@Model.LinkRef2' target="_blank">
+                    <img src="@Url.Content(@Model.Image2)" />
+                </a>
+            </li>
+            <li id="CarouselSocialImage3">
+                <a href='@Model.LinkRef3' target="_blank">
+                    <img src="@Url.Content(@Model.Image3)" />
+                </a>
+            </li>
+            <li id="CarouselSocialImage4">
+                <a href='@Model.LinkRef4' target="_blank">
+                    <img src="@Url.Content(@Model.Image4)" />
+                </a>
+            </li>
+            }
+            else
+            {
+            <li id="CarouselSocialImage1">
+                <a href='@Model.LinkRef1'>
+                    <img src="@Url.Content(@Model.Image1)" />
+                </a>
+            </li>
+            <li id="CarouselSocialImage2">
+                <a href='@Model.LinkRef2'>
+                    <img src="@Url.Content(@Model.Image2)" />
+                </a>
+            </li>
+            <li id="CarouselSocialImage3">
+                <a href='@Model.LinkRef3'>
+                    <img src="@Url.Content(@Model.Image3)" />
+                </a>
+            </li>
+            <li id="CarouselSocialImage4">
+                <a href='@Model.LinkRef4'>
+                    <img src="@Url.Content(@Model.Image4)" />
+                </a>
+            </li>
+            }
+            
+        </ul>
+    </div>
+    
+@*    <div style="clear:both;"></div>
+
+    <div class="carousel-social-icons-container">
+        <div class="carousel-social-icon-container">
+            <div id="carousel-social-image-div-1" class="cc-carousel-social-icon cc-ui-icon-carousel-social-one-grey">
+                <a id="carousel-social-image-button-1"></a>
+            </div>
+        </div>
+        <div class="carousel-social-icon-container">
+            <div id="carousel-social-image-div-2" class="cc-carousel-social-icon cc-ui-icon-carousel-social-two-grey">
+                <a id="carousel-social-image-button-2"></a>
+            </div>
+        </div>
+        <div class="carousel-social-icon-container">
+            <div id="carousel-social-image-div-3" class="cc-carousel-social-icon cc-ui-icon-carousel-social-three-grey">
+                <a id="carousel-social-image-button-3"></a>
+            </div>
+        </div>
+        <div class="carousel-social-icon-container">
+            <div id="carousel-social-image-div-4" class="cc-carousel-social-icon cc-ui-icon-carousel-social-four-grey">
+                <a id="carousel-social-image-button-4"></a>
+           </div>
+        </div>
+        <div><input id="currentCarouselSocialImage" type="hidden" /></div>
+    </div>*@
+
+@*    <div class='right_scroll'>
+    </div>
+*@
+    <input type='hidden' id='hidden_carousel_social_auto_slide_seconds' value="0" />
+</div>
+<!--<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<title>Infinite Carousel Tutorial</title>
+</body>
+</html>
+-->
+<div style="clear: both;">
+</div>
+

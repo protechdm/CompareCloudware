@@ -1,0 +1,338 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+@using CompareCloudware.Web.Models
+
+@using System.Web.Mvc
+@using System.Configuration;
+
+<div class="search-result-page-div font-normal-11px">
+    <div class="search-result-div">
+        @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationSearchResultModel)
+        <div class="search-header-result-container">
+        <div class="cloud-application-search-result-table-outer">
+    
+@*            <hr />*@
+            <br />
+    
+            <table class="box-shadow" style="width:93%;margin-left:3px;border:3px solid" >
+                <tr>
+                    <td style="width:100%;text-align:left;" >
+                        <label class="font-normal-22px-purple search-result-header">Summary</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 60%;">
+                        <div id="main3" style="overflow: hidden; height: auto; width: 100%;">
+                    <div class="search-result-summary-div">
+                        <table>
+                            <!-- OPERATING SYSTEMS -->
+                            <tr>
+                                <td>
+                                    <label class="font-bold-11px-purple search-result-header line-height-150">Operating system:</label>
+                                </td>
+                            </tr>
+                            @foreach (OperatingSystemModel os in Model.ContainerModel.ChosenCloudApplicationModel.OperatingSystems)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header line-height-150">@os.OperatingSystemName</label>
+                                    </td>
+                                </tr>
+                            }
+                            <!-- SUPPORT TYPES -->
+                            <tr>
+                                <td>
+                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support type:</label>
+                                </td>
+                            </tr>
+                            @foreach (SupportTypeModel st in Model.ContainerModel.ChosenCloudApplicationModel.SupportTypes)
+                            {
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header line-height-150">@st.SupportTypeName</label>
+                                    </td>
+                                </tr>
+                            }
+                            <!-- SUPPORT DAYS -->
+                            <tr>
+                                <td>
+                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support days:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName</label>
+                                </td>
+                            </tr>
+                            <!-- SUPPORT HOURS -->
+                            <tr>
+                                <td>
+                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support hours:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName</label>
+                                </td>
+                            </tr>
+                            <!-- SUPPORT TERRITORIES -->
+                            @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories != null)
+                            {
+                            <tr>
+                                <td>
+                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support territory:</label>
+                                </td>
+                            </tr>
+                                foreach (SupportTerritoryModel stm in Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories)
+                                {
+                                <tr>
+                                    <td>
+                                        <label class="font-normal-11px-black search-result-header line-height-150">@stm.SupportTerritoryName</label>
+                                    </td>
+                                </tr>
+                                }
+                            }
+                            <!-- VIDEO TRAINING -->
+                            <tr>
+                                <td>
+                                    <label class="font-bold-11px-purple search-result-header line-height-150">Video Training:</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label class="font-normal-11px-black search-result-header line-height-150">@(Model.ContainerModel.ChosenCloudApplicationModel.VideoTrainingSupport ? "Yes" : "No")</label>
+                                </td>
+                            </tr>
+                            <!-- LANGUAGES -->
+                            @Html.Partial("CloudApplicationLanguages", Model.ContainerModel.ChosenCloudApplicationModel.Languages);
+                        </table>
+                    </div>
+                    <div class="search-result-summary-div">
+
+                    <!-- FEATURES -->
+                    @Html.Partial("CloudApplicationFeatures", Model);
+                    <div style="clear:both"></div>
+                    <!-- APPLICATIONS -->
+                    @Html.Partial("CloudApplicationApplications", Model);
+
+                    </div>
+                </div>
+                    </td>
+                </tr>
+            </table>
+
+@*            <hr />*@
+            <br />
+
+            <!-- THUMBNAIL DOCUMENTS -->
+            <table class="box-shadow" style="width:93%;margin-left:3px;border:3px solid">
+                <tr>
+                    <td style="width:100%;text-align:left;" >
+                        <label class="font-normal-22px-purple search-result-header">Discover more about @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName</label>
+                    </td>                    
+                </tr>
+                <!-- CASE STUDIES -->
+                <tr>
+                    <td>
+                        <label class="font-bold-11px-purple search-result-header">Case Studies</label>
+                    </td>
+                </tr>
+                 @{int documentID;}
+                <tr>
+                    <td>
+                        <div class="thumbnail-documents" style="float: left;">
+
+                        @for (int td = 1; td <= Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Count; td++)
+                        {
+                            if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("CASE"))
+                            {
+                                documentID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentID;
+                                <div class="thumbnail-document">
+                                    <div class="thumbnail-document-image">
+                                        <a href="@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID" target="_blank" 
+
+@*        onclick="window.open('{@Url.Action("ShowDocument", "Home", new { thumbnailDocumentID = td })}',this.target,'width=900,height=700');return false;"
+*@
+@*                                            onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/ShowImage?thumbnailDocumentID=")@td');return false;">
+*@                                            onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID');return false;">
+                                            <img src='@Url.Action("ShowImage", "Home", new { documentID = td })' class="thumbnail-image" />
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail-document-text">
+
+                                        <a href="@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID" target="_blank" 
+
+                                            onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID');return false;">
+                                            <label class="font-bold-11px-black">@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentTitle</label>
+                                        </a>
+                                        <br />
+
+@*                                        <a href="http://www.adobe.com" target="_blank" 
+                                        onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectInCloudCompareWebsiteToShowDocument?thumbnailDocumentID=")@td');return false;">
+                                        <label class="font-bold-11px-purple search-result-header">Download now</label>
+                                        </a>
+                                        <a target="_blank" href="@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectInCloudCompareWebsiteToShowDocument?thumbnailDocumentID=")@td">
+                                            <label class="font-bold-11px-purple search-result-header">NO JS</label>
+                                        </a>
+*@
+                                    </div>
+                                </div>
+                            }
+                        }
+                        </div>
+                    </td>
+                </tr>
+                <!-- WHITE PAPERS -->
+                <tr>
+                    <td>
+                        <label class="font-bold-11px-purple search-result-header">White Papers</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+@*                                
+                                <tr>
+                                    <td rowspan="4">
+                                        <a href ='@Url.Action("ShowDocument", "Home", new { thumbnailDocumentID = td })'>
+                                            <img src='@Url.Action("ShowImage", "Home", new { thumbnailDocumentID = td })' height="100px" width="100px" />
+                                        </a>
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("Download file directly", "DownloadFile", new { thumbnailDocumentID = td })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.ActionLink("Redirect to another website to display document", "RedirectToDocumentOwnerWebsiteToShowDocument", new { thumbnailDocumentID = td })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        @Html.ActionLink("Redirect in this website to display document", "RedirectInCloudCompareWebsiteToShowDocument", new { thumbnailDocumentID = td })
+                                    </td>
+                                </tr>
+*@                              
+                            </table>
+
+                        <div class="thumbnail-documents" style="float: left;">
+                            @for (int td = 1; td <= Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments.Count; td++)
+                            {
+                                if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentType.CloudApplicationDocumentTypeName.ToUpperInvariant().StartsWith("WHITE"))
+                                {
+                                    documentID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentID;
+                                <div class="thumbnail-document">
+                                    <div class="thumbnail-document-image">
+                                        <a href="@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID" target="_blank" 
+
+@*        onclick="window.open('{@Url.Action("ShowDocument", "Home", new { thumbnailDocumentID = td })}',this.target,'width=900,height=700');return false;"
+*@
+@*                                            onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/ShowImage?thumbnailDocumentID=")@td');return false;">
+*@                                            onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID');return false;">
+                                            <img src='@Url.Action("ShowImage", "Home", new { documentID = td })' class="thumbnail-image" />
+                                        </a>
+                                    </div>
+                                    <div class="thumbnail-document-text">
+
+                                        <a href="@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID" target="_blank" 
+
+                                            onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectShowDocument?documentID=")@documentID');return false;">
+                                        <label class="font-bold-11px-black">@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationDocuments[td - 1].CloudApplicationDocumentTitle</label>
+                                        </a>
+                                        <br />
+
+@*                                        <a href="http://www.adobe.com" target="_blank" 
+                                        onclick="window.open('@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Home/RedirectInCloudCompareWebsiteToShowDocument?thumbnailDocumentID=")@td');return false;">
+                                        <label class="font-bold-11px-purple search-result-header">Download now</label>
+                                        </a>
+*@
+                                    </div>
+                                </div>
+                                }
+                            }
+                        </div>
+                    </td>
+                </tr>
+
+
+                <!-- VIDEOS -->
+                        @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationVideos.Count > 0)
+                        {
+                <tr>
+                    <td>
+                        <label class="font-bold-11px-purple search-result-header">Videos</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+@*                        @Html.EditorFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationVideos)*@
+                    </td>
+                </tr>
+                        }
+
+                <tr>
+                    <td>
+                    
+                    </td>
+                </tr>
+            </table>
+            
+            @Request.Url.Authority@Request.ApplicationPath
+        </div>
+        </div>
+    </div>
+
+@*    <div class="search-page-title-bar font-normal-11px">
+        @{Html.RenderPartial("SearchResultButtonsTop",Model.CustomSession);}
+    </div>*@
+
+    <div style="clear:both;height:10px;"></div>
+    <label class="font-normal-22px-purple">Product reviews</label>
+
+    <div class="search-result-product-reviews-div">
+        @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews)
+    </div>
+
+    <div style="clear:both;height:10px;"></div>
+@*    @{Html.RenderPartial("SearchResultButtonsBottom", Model.CustomSession);}*@
+
+</div>
+    
+<div class="search-result-product-ratings-div">
+    @if (@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationModelAlternatives.Count > 0)
+    {
+    <div class="search-result-alternatives">
+        <p class="font-bold-13px-purple">Alternative @Model.ContainerModel.ChosenCloudApplicationModel.Category.CategoryName.ToLowerInvariant() applications from @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName</p>
+@*        <br />*@
+        @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationModelAlternatives)
+    </div>
+    }
+    
+    @Html.HiddenFor(x => x.ContainerModel.ChosenCloudApplicationModel.BuyURL)
+    @Html.HiddenFor(x => x.ContainerModel.ChosenCloudApplicationModel.TryURL)
+
+@*    @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow)*@
+
+    @Html.Partial("ReadyToProceed", Model.ContainerModel.ChosenCloudApplicationModel)
+
+    @Html.Partial("SocialFollowers", Model.ContainerModel.ChosenCloudApplicationModel)
+
+    @{Html.RenderPartial("CloudApplicationOverallRating", Model.ContainerModel.ChosenCloudApplicationModel); }
+
+    
+    <div style="clear:both; height:10px;"></div>
+
+    <label class="font-normal-22px-purple">User reviews</label>
+
+    @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationUserReviews)
+
+    <div style="clear:both; height:0px;"></div>
+
+                    <div class="site-button" style="float:left;">
+@*                        <input type="image" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" value="CreateReview" />*@
+                                    <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createReviewButton"/>
+                    </div>
+
+
+</div>
+    
+    
