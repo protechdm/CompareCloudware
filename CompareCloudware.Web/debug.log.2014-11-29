@@ -1,0 +1,907 @@
+2014-11-29 14:16:38,635 DEBUG 5 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 14:17:15,097 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 14:17:18,960 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:17:29,402 FATAL 11 CompareCloudware.Web.Controllers.HomeController - 29/11/2014 14:17:29 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 14:17:38,695 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:17:39,267 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:17:39,281 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 14:17:42,192 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 14:17:42.
+2014-11-29 14:17:42,280 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 14:17:42.
+2014-11-29 14:17:42,426 ERROR 5 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 14:17:43,191 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 14:17:43.
+2014-11-29 14:17:43,711 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 14:17:43.
+2014-11-29 14:17:44,225 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 14:17:44.
+2014-11-29 14:17:44,721 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 14:17:44.
+2014-11-29 14:17:45,239 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 14:17:45.
+2014-11-29 14:17:59,069 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:17:59,069 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:17:59,070 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:17:59,070 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:17:59,070 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:17:59,070 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:17:59,072 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 14:17:59. Reason - Removed
+2014-11-29 14:18:35,003 DEBUG 6 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 14:18:37,395 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 14:18:40,685 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:18:58,541 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:18:59,042 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:18:59,053 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 14:19:01,189 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 14:19:01.
+2014-11-29 14:19:01,241 DEBUG 10 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 14:19:01.
+2014-11-29 14:19:01,273 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 14:19:01.
+2014-11-29 14:19:01,302 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 14:19:01.
+2014-11-29 14:19:01,675 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 14:19:01.
+2014-11-29 14:19:02,190 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 14:19:02.
+2014-11-29 14:19:02,719 ERROR 16 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 14:19:04,223 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 14:19:04.
+2014-11-29 14:19:23,599 FATAL 6 CompareCloudware.Web.Controllers.HomeController - 29/11/2014 14:19:23 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 14:21:56,558 FATAL 10 CompareCloudware.Web.Controllers.HomeController - 29/11/2014 14:21:56 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 14:21:56,655 FATAL 12 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 14:21:56 - Generic Error occured
+System.ArgumentException: The parameters dictionary contains a null entry for parameter 'cloudApplicationRequestId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult BusinessPartner(Int32)' in 'CompareCloudware.Web.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 14:22:24,202 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:24,203 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:24,203 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:24,203 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:24,203 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:24,203 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:24,204 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 14:22:24. Reason - Removed
+2014-11-29 14:22:29,300 DEBUG 12 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 14:22:32,820 DEBUG 12 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 14:22:36,397 DEBUG 12 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:22:43,819 FATAL 15 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 14:22:43 - Generic Error occured
+System.ArgumentException: The parameters dictionary contains a null entry for parameter 'cloudApplicationRequestId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult BusinessPartner(Int32)' in 'CompareCloudware.Web.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 14:22:51,089 DEBUG 12 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:22:51,582 DEBUG 12 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:22:51,597 DEBUG 12 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 14:22:53,390 DEBUG 16 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 14:22:53.
+2014-11-29 14:22:53,725 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 14:22:53.
+2014-11-29 14:22:53,781 ERROR 14 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 14:22:54,382 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 14:22:54.
+2014-11-29 14:22:54,902 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 14:22:54.
+2014-11-29 14:22:55,393 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 14:22:55.
+2014-11-29 14:22:55,911 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 14:22:55.
+2014-11-29 14:22:56,410 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 14:22:56.
+2014-11-29 14:30:32,419 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:30:32,419 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:30:32,419 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:30:32,419 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:30:32,419 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:30:32,420 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:30:32,420 DEBUG 33 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 14:30:32. Reason - Removed
+2014-11-29 14:31:04,078 DEBUG 38 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 14:31:07,978 DEBUG 38 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 14:31:11,350 DEBUG 38 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:31:13,028 DEBUG 38 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:31:13,086 DEBUG 38 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 14:31:13,100 DEBUG 38 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 14:31:13,902 DEBUG 18 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 14:31:13.
+2014-11-29 14:31:13,956 DEBUG 38 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 14:31:13.
+2014-11-29 14:31:14,083 ERROR 23 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 14:31:14,908 DEBUG 37 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 14:31:14.
+2014-11-29 14:31:15,426 DEBUG 39 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 14:31:15.
+2014-11-29 14:31:15,940 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 14:31:15.
+2014-11-29 14:31:16,437 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 14:31:16.
+2014-11-29 14:31:16,952 DEBUG 39 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 14:31:16.
+2014-11-29 14:58:10,572 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 14:58:10,572 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 14:58:10,572 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 14:58:10,572 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 14:58:10,572 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 14:58:10,573 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 14:58:10,574 DEBUG 57 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 14:58:10. Reason - Removed
+2014-11-29 15:00:06,360 FATAL 57 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:00:06 - Generic Error occured
+System.Web.HttpCompileException (0x80004005): c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\EMailBoilerplate.cshtml(56): error CS0103: The name 'media' does not exist in the current context
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName)
+   at ASP._Page_Views_Shared_EMailTemplates_BusinessPartner_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\BusinessPartner.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:00:32,610 DEBUG 57 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 15:03:36,378 FATAL 57 CompareCloudware.Web.Controllers.HomeController - 29/11/2014 15:03:36 - Generic Error occured
+System.Web.HttpCompileException (0x80004005): c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\EMailBoilerplate.cshtml(56): error CS0103: The name 'media' does not exist in the current context
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerWrapper.System.Web.Mvc.IBuildManager.GetCompiledType(String virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName)
+   at ASP._Page_Views_Shared_EMailTemplates_BusinessPartner_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\BusinessPartner.cshtml:line 5
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.RenderPartialExtensions.RenderPartial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   at CompareCloudware.Web.Controllers.RenderRazorView.RenderViewToString(Controller controller, String viewName, Object viewData) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 3704
+   at CompareCloudware.Web.Controllers.HomeController.Index(String id, Nullable`1 showDiagnostics) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 116
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:13:26,005 DEBUG 5 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 15:13:33,104 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 15:13:36,721 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 15:13:57,208 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 15:13:57,715 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 15:13:57,723 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 15:14:01,222 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 15:14:01.
+2014-11-29 15:14:01,275 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 15:14:01.
+2014-11-29 15:14:01,717 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 15:14:01.
+2014-11-29 15:14:02,238 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 15:14:02.
+2014-11-29 15:14:02,752 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 15:14:02.
+2014-11-29 15:14:03,010 ERROR 11 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 15:14:03,264 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 15:14:03.
+2014-11-29 15:14:04,276 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 15:14:04.
+2014-11-29 15:18:50,274 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:18:50,275 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:18:50,275 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:18:50,275 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:18:50,275 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:18:50,276 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:18:50,277 DEBUG 7 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 15:18:50. Reason - Removed
+2014-11-29 15:24:39,182 DEBUG 17 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 15:24:43,500 DEBUG 17 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 15:24:47,173 DEBUG 17 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 15:25:01,930 DEBUG 17 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 15:25:02,190 FATAL 19 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:25:02 - Generic Error occured
+System.ArgumentException: The parameters dictionary contains a null entry for parameter 'cloudApplicationRequestId' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult BusinessPartner(Int32)' in 'CompareCloudware.Web.Controllers.AdminController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.
+Parameter name: parameters
+   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:25:02,438 DEBUG 17 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 15:25:02,449 DEBUG 17 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 15:25:41,101 FATAL 17 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:25:41 - Generic Error occured
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CompareCloudware.Web.Controllers.AdminController.BusinessPartner(Int32 cloudApplicationRequestId) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\AdminController.cs:line 923
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:25:53,015 FATAL 19 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:25:53 - Generic Error occured
+System.Web.HttpException (0x80004005): The "RenderBody" method has not been called for layout page "~/Views/Shared/EMailTemplates/CompareCloudwareEMailLayout.cshtml".
+   at System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:28:55,266 FATAL 10 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:28:55 - Generic Error occured
+System.Web.HttpException (0x80004005): Section not defined: "HeaderSection".
+   at System.Web.WebPages.WebPageBase.RenderSection(String name, Boolean required)
+   at System.Web.WebPages.WebPageBase.RenderSection(String name)
+   at ASP._Page_Views_Shared_EMailTemplates_CompareCloudwareEMailLayout_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\CompareCloudwareEMailLayout.cshtml:line 146
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:30:51,668 FATAL 6 CompareCloudware.Web.Controllers.HomeController - 29/11/2014 15:30:51 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:36:54,830 FATAL 26 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:36:54 - Generic Error occured
+System.Web.HttpException (0x80004005): The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/EMailTemplates/CompareCloudwareEMailLayout.cshtml": "FooterSection".
+   at System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:37:36,684 FATAL 26 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:37:36 - Generic Error occured
+System.Web.HttpException (0x80004005): The following sections have been defined but have not been rendered for the layout page "~/Views/Shared/EMailTemplates/CompareCloudwareEMailLayout.cshtml": "FooterSection".
+   at System.Web.WebPages.WebPageBase.VerifyRenderedBodyOrSections()
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:38:21,982 FATAL 29 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:38:21 - Generic Error occured
+System.Web.HttpException (0x80004005): Error executing child request for handler 'System.Web.Mvc.HttpHandlerUtil+ServerExecuteHttpHandlerAsyncWrapper'. ---> System.Web.HttpException (0x80004005): Execution of the child request failed. Please examine the InnerException for more information. ---> System.Web.HttpException (0x80004005): A public action method 'EMailTemplates/FooterModel' was not found on controller 'CompareCloudware.Web.Controllers.AdminController'.
+   at System.Web.Mvc.Controller.HandleUnknownAction(String actionName)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.<BeginExecute>b__15(IAsyncResult asyncResult, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__5(IAsyncResult asyncResult, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerAsyncWrapper.<>c__DisplayClassa.<EndProcessRequest>b__9()
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.<>c__DisplayClass4.<Wrap>b__3()
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap(Action action)
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerAsyncWrapper.EndProcessRequest(IAsyncResult result)
+   at System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   at System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   at System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   at System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   at System.Web.Mvc.Html.ChildActionExtensions.RenderAction(HtmlHelper htmlHelper, String actionName)
+   at ASP._Page_Views_Shared_EMailTemplates__Layout_cshtml.<Execute>b__0() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\_Layout.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared_EMailTemplates_CompareCloudwareEMailLayout_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\CompareCloudwareEMailLayout.cshtml:line 150
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 15:38:52,904 FATAL 24 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 15:38:52 - Generic Error occured
+System.Reflection.AmbiguousMatchException: The current request for action 'FooterModel' on controller type 'AdminController' is ambiguous between the following action methods:
+System.Web.Mvc.ActionResult FooterModel() on type CompareCloudware.Web.Controllers.AdminController
+System.Web.Mvc.ActionResult FooterModel(CompareCloudware.Web.Models.HeaderModel) on type CompareCloudware.Web.Controllers.BaseController
+   at System.Web.Mvc.ActionMethodSelectorBase.FindActionMethod(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.Async.ReflectedAsyncControllerDescriptor.FindAction(ControllerContext controllerContext, String actionName)
+   at System.Web.Mvc.ControllerActionInvoker.FindAction(ControllerContext controllerContext, ControllerDescriptor controllerDescriptor, String actionName)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.BeginInvokeAction(ControllerContext controllerContext, String actionName, AsyncCallback callback, Object state)
+   at System.Web.Mvc.Controller.<BeginExecuteCore>b__1c(AsyncCallback asyncCallback, Object asyncState, ExecuteCoreState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   at System.Web.Mvc.Controller.BeginExecuteCore(AsyncCallback callback, Object state)
+   at System.Web.Mvc.Controller.<BeginExecute>b__14(AsyncCallback asyncCallback, Object callbackState, Controller controller)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   at System.Web.Mvc.Controller.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.BeginExecute(RequestContext requestContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.<BeginProcessRequest>b__4(AsyncCallback asyncCallback, Object asyncState, ProcessRequestState innerState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallBeginDelegate(AsyncCallback callback, Object callbackState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.Begin(AsyncCallback callback, Object state, Int32 timeout)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)
+   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerAsyncWrapper.<>c__DisplayClass7.<BeginProcessRequest>b__6()
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)
+   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerAsyncWrapper.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)
+   at System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)
+   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)
+   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   at System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)
+   at System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)
+   at System.Web.Mvc.Html.ChildActionExtensions.RenderAction(HtmlHelper htmlHelper, String actionName)
+   at ASP._Page_Views_Shared_EMailTemplates__Layout_cshtml.<Execute>b__0() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\_Layout.cshtml:line 14
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared_EMailTemplates_CompareCloudwareEMailLayout_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\CompareCloudwareEMailLayout.cshtml:line 150
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 16:24:23,700 DEBUG 81 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 16:24:29,511 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 16:24:33,421 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 16:24:49,733 FATAL 75 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 16:24:49 - Generic Error occured
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'CompareCloudware.Web.Models.EMailTemplateModels.BusinessPartnerModel' does not contain a definition for 'CustomSession'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_Shared_EMailTemplates__Layout_cshtml.<Execute>b__2() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\_Layout.cshtml:line 7
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass7.<RenderSection>b__5(TextWriter tw)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at ASP._Page_Views_Shared_EMailTemplates_CompareCloudwareEMailLayout_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\EMailTemplates\CompareCloudwareEMailLayout.cshtml:line 145
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer)
+   at System.Web.WebPages.WebPageBase.<>c__DisplayClass3.<RenderPageCore>b__2(TextWriter writer)
+   at System.Web.WebPages.HelperResult.WriteTo(TextWriter writer)
+   at System.Web.WebPages.WebPageExecutingBase.WriteTo(TextWriter writer, HelperResult content)
+   at System.Web.WebPages.WebPageBase.Write(HelperResult result)
+   at System.Web.WebPages.WebPageBase.RenderSurrounding(String partialViewName, Action`1 body)
+   at System.Web.WebPages.WebPageBase.PopContext()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 16:25:01,387 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 16:25:01,923 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 16:25:01,931 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 16:25:05,200 DEBUG 79 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 16:25:05.
+2014-11-29 16:25:05,245 DEBUG 24 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 16:25:05.
+2014-11-29 16:25:05,681 DEBUG 79 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 16:25:05.
+2014-11-29 16:25:06,192 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 16:25:06.
+2014-11-29 16:25:06,509 ERROR 11 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 16:25:06,709 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 16:25:06.
+2014-11-29 16:25:08,229 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 16:25:08.
+2014-11-29 16:25:08,735 DEBUG 13 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 16:25:08.
+2014-11-29 16:25:58,856 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:25:58,856 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:25:58,856 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:25:58,856 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:25:58,856 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:25:58,857 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:25:58,859 DEBUG 25 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 16:25:58. Reason - Removed
+2014-11-29 16:26:04,251 DEBUG 11 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 16:26:14,355 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 16:26:16,696 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 16:26:35,136 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 16:26:35,647 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 16:26:35,683 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 16:26:40,049 DEBUG 20 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 16:26:40.
+2014-11-29 16:26:40,106 DEBUG 76 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 16:26:40.
+2014-11-29 16:26:40,382 ERROR 13 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 16:26:41,418 DEBUG 26 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 16:26:41.
+2014-11-29 16:26:41,929 DEBUG 30 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 16:26:41.
+2014-11-29 16:26:42,429 DEBUG 78 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 16:26:42.
+2014-11-29 16:26:42,942 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 16:26:42.
+2014-11-29 16:26:43,445 DEBUG 24 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 16:26:43.
+2014-11-29 17:30:20,437 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 17:30:20,437 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 17:30:20,438 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 17:30:20,438 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 17:30:20,438 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 17:30:20,438 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 17:30:20,441 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 17:30:20. Reason - Removed
+2014-11-29 18:32:46,298 FATAL 63 CompareCloudware.Web.Controllers.HomeController - 29/11/2014 18:32:46 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 18:36:38,372 DEBUG 4 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 18:36:48,621 DEBUG 4 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 18:36:52,045 DEBUG 4 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 18:37:00,857 FATAL 6 CompareCloudware.Web.Controllers.AdminController - 29/11/2014 18:37:00 - Generic Error occured
+System.InvalidOperationException: The model item passed into the dictionary is of type 'CompareCloudware.Web.Models.EMailTemplateModels.StrategicPartnerModel', but this dictionary requires a model item of type 'CompareCloudware.Web.Models.EMailTemplateModels.BusinessPartnerModel'.
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary.set_Model(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.ViewDataDictionary`1..ctor(ViewDataDictionary viewDataDictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.WebViewPage.set_ViewData(ViewDataDictionary value)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-29 18:37:06,825 DEBUG 4 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 18:37:07,348 DEBUG 4 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 18:37:07,361 DEBUG 4 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 18:37:11,596 DEBUG 6 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 18:37:11.
+2014-11-29 18:37:11,757 DEBUG 12 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 18:37:11.
+2014-11-29 18:37:11,823 ERROR 6 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 18:37:12,579 DEBUG 4 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 18:37:12.
+2014-11-29 18:37:13,086 DEBUG 12 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 18:37:13.
+2014-11-29 18:37:13,602 DEBUG 4 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 18:37:13.
+2014-11-29 18:37:14,115 DEBUG 4 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 18:37:14.
+2014-11-29 18:37:14,640 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 18:37:14.
+2014-11-29 22:04:50,724 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:04:50,725 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:04:50,725 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:04:50,725 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:04:50,725 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:04:50,725 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:04:50,726 DEBUG 106 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 22:04:50. Reason - Removed
+2014-11-29 22:51:53,635 DEBUG 103 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 22:51:54,247 DEBUG 103 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 22:51:57,475 DEBUG 103 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:09,235 DEBUG 10 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 22:52:09,236 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 22:52:09,298 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:10,790 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:10,790 DEBUG 103 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:11,921 DEBUG 103 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:11,921 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:11,935 DEBUG 103 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 22:52:11,935 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 22:52:14,543 DEBUG 10 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 22:52:14.
+2014-11-29 22:52:15,039 DEBUG 94 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 22:52:15.
+2014-11-29 22:52:15,269 DEBUG 98 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 22:52:15.
+2014-11-29 22:52:15,332 DEBUG 103 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 22:52:15.
+2014-11-29 22:52:15,560 DEBUG 94 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 22:52:15.
+2014-11-29 22:52:16,234 DEBUG 18 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 22:52:16.
+2014-11-29 22:52:16,600 DEBUG 18 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 22:52:16.
+2014-11-29 22:52:16,781 DEBUG 101 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 22:52:19,567 DEBUG 101 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 22:52:19,595 ERROR 94 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 22:52:19,601 ERROR 10 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 22:52:19,653 DEBUG 101 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:20,029 DEBUG 101 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:20,060 DEBUG 101 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 22:52:20,066 DEBUG 101 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:51:57,820 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:51:57,820 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:51:57,823 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:51:57,823 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:51:57,824 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:51:57,824 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:51:57,825 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 29/11/2014 23:51:57. Reason - Removed
+2014-11-29 23:52:04,194 DEBUG 82 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 23:52:04,206 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 23:52:07,657 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:52:22,513 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:52:23,016 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:52:23,023 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:52:27,445 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 29/11/2014 23:52:27.
+2014-11-29 23:52:27,834 ERROR 15 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:52:28,893 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 29/11/2014 23:52:28.
+2014-11-29 23:52:28,946 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 29/11/2014 23:52:28.
+2014-11-29 23:52:29,416 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 29/11/2014 23:52:29.
+2014-11-29 23:52:29,440 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 29/11/2014 23:52:29.
+2014-11-29 23:52:29,955 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 29/11/2014 23:52:29.
+2014-11-29 23:52:30,457 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 29/11/2014 23:52:30.
+2014-11-29 23:52:41,546 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:52:41,591 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:52:41,600 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:52:42,142 ERROR 23 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:52:46,294 ERROR 15 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:53:15,944 DEBUG 106 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-29 23:53:16,087 DEBUG 19 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:16,129 DEBUG 19 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:16,136 DEBUG 19 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:53:24,753 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:25,491 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - SKYSCRAPER_IMAGECOUNT at 29/11/2014 23:53:25.
+2014-11-29 23:53:25,505 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_IMAGECOUNT at 29/11/2014 23:53:25.
+2014-11-29 23:53:25,505 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 7
+2014-11-29 23:53:25,762 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_762 at 29/11/2014 23:53:25.
+2014-11-29 23:53:25,816 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - 29/11/2014 23:53:25 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-29 23:53:25,940 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - 29/11/2014 23:53:25 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-29 23:53:25,982 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 7
+2014-11-29 23:53:26,029 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_768 at 29/11/2014 23:53:26.
+2014-11-29 23:53:26,049 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - 29/11/2014 23:53:26 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-29 23:53:26,252 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - 29/11/2014 23:53:26 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-29 23:53:29,149 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:30,307 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:30,315 DEBUG 23 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:53:30,469 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_124 at 29/11/2014 23:53:30.
+2014-11-29 23:53:30,548 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_118 at 29/11/2014 23:53:30.
+2014-11-29 23:53:30,580 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_131 at 29/11/2014 23:53:30.
+2014-11-29 23:53:30,609 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_130 at 29/11/2014 23:53:30.
+2014-11-29 23:53:30,638 DEBUG 18 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_129 at 29/11/2014 23:53:30.
+2014-11-29 23:53:30,854 ERROR 18 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:53:31,498 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_128 at 29/11/2014 23:53:31.
+2014-11-29 23:53:32,016 DEBUG 23 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_111 at 29/11/2014 23:53:32.
+2014-11-29 23:53:32,534 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_125 at 29/11/2014 23:53:32.
+2014-11-29 23:53:41,245 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #1
+2014-11-29 23:53:41,247 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #2
+2014-11-29 23:53:41,252 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application IN
+2014-11-29 23:53:41,292 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing context
+2014-11-29 23:53:41,510 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing languages
+2014-11-29 23:53:41,586 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing browsers
+2014-11-29 23:53:41,685 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing videos
+2014-11-29 23:53:41,785 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing mobile platforms
+2014-11-29 23:53:41,844 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing operating systems
+2014-11-29 23:53:41,920 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing payment options
+2014-11-29 23:53:41,970 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing support territories
+2014-11-29 23:53:42,060 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing support types
+2014-11-29 23:53:42,224 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing cloud application features
+2014-11-29 23:53:42,409 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing documents
+2014-11-29 23:53:42,664 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing product reviews
+2014-11-29 23:53:42,947 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing user reviews
+2014-11-29 23:53:43,092 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing cloud application applications
+2014-11-29 23:53:43,092 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing LinkedIn
+2014-11-29 23:53:43,415 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing Facebook
+2014-11-29 23:53:44,032 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Updating social networking stats for cloud application ID : 313
+2014-11-29 23:53:44,032 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - 29/11/2014 23:53:44 - Update(1):System.Data.Entity.DynamicProxies.CloudApplication_7B40A0E9F1F47AADEDD23CF332C72265821EDF20421C3005B1472933F68B55CB
+2014-11-29 23:53:44,139 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - TOLIST()
+2014-11-29 23:53:44,312 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - LIVEONLY TOLIST()
+2014-11-29 23:53:44,901 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application OUT
+2014-11-29 23:53:44,901 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #2.5
+2014-11-29 23:53:44,916 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud applications by vendor IN
+2014-11-29 23:53:45,001 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud applications by vendor OUT
+2014-11-29 23:53:45,001 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #3
+2014-11-29 23:53:45,518 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #4
+2014-11-29 23:53:45,553 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #5
+2014-11-29 23:53:45,554 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - CheckForBrokenLinks IN
+2014-11-29 23:53:45,554 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - CheckForBrokenLinks OUT
+2014-11-29 23:53:45,554 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #6
+2014-11-29 23:53:45,555 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategoryParameters()
+2014-11-29 23:53:45,604 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #4
+2014-11-29 23:53:45,686 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #5
+2014-11-29 23:53:45,686 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Sending request for cloud application : 313
+2014-11-29 23:53:45,687 FATAL 15 CompareCloudware.Web.Controllers.HomeController - Cloud application 313 contains 0videos
+2014-11-29 23:53:45,689 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 313 step #6
+2014-11-29 23:53:56,697 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:56,732 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:53:56,739 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:54:11,013 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:54:11,050 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:54:11,059 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:54:11,503 ERROR 15 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:54:13,799 ERROR 23 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:54:14,795 ERROR 18 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-29 23:56:19,791 DEBUG 82 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-29 23:56:19,793 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-29 23:56:19,843 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:56:20,494 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:56:20,528 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-29 23:56:20,537 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-29 23:56:21,210 ERROR 102 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782

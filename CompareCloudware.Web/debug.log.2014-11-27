@@ -1,0 +1,96 @@
+2014-11-27 22:27:49,922 DEBUG 623 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 0 step #1
+2014-11-27 22:27:49,927 DEBUG 623 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 0 step #2
+2014-11-27 22:27:49,933 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application IN
+2014-11-27 22:27:53,163 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing context
+2014-11-27 22:27:53,171 FATAL 623 CompareCloudware.Web.Controllers.HomeController - 27/11/2014 22:27:53 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-27 22:29:37,163 DEBUG 623 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-27 22:29:54,415 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-27 22:29:54,827 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-27 22:30:10,606 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-27 22:30:11,104 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-27 22:30:11,113 DEBUG 623 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-27 22:30:15,631 DEBUG 631 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 27/11/2014 22:30:15.
+2014-11-27 22:30:15,880 DEBUG 623 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 27/11/2014 22:30:15.
+2014-11-27 22:30:15,977 ERROR 42 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2782
+2014-11-27 22:30:16,116 DEBUG 631 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 27/11/2014 22:30:16.
+2014-11-27 22:30:17,661 DEBUG 630 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_164 at 27/11/2014 22:30:17.
+2014-11-27 22:30:18,178 DEBUG 42 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 27/11/2014 22:30:18.
+2014-11-27 22:30:18,672 DEBUG 631 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 27/11/2014 22:30:18.
+2014-11-27 22:30:19,296 DEBUG 623 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 27/11/2014 22:30:19.
+2014-11-27 22:38:38,521 DEBUG 629 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 0 step #1
+2014-11-27 22:38:38,521 DEBUG 629 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 0 step #2
+2014-11-27 22:38:38,521 DEBUG 629 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application IN
+2014-11-27 22:38:38,760 DEBUG 629 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing context
+2014-11-27 22:38:38,765 FATAL 629 CompareCloudware.Web.Controllers.HomeController - 27/11/2014 22:38:38 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-27 22:39:39,215 DEBUG 624 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 0 step #1
+2014-11-27 22:39:39,215 DEBUG 624 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 0 step #2
+2014-11-27 22:39:39,215 DEBUG 624 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application IN
+2014-11-27 22:39:39,257 DEBUG 624 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing context
+2014-11-27 22:39:39,259 FATAL 624 CompareCloudware.Web.Controllers.HomeController - 27/11/2014 22:39:39 - Generic Error occured
+CompareCloudware.Web.Helpers.ShopNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.ShopNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Shop(String category, String shop, Nullable`1 cloudApplicationID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 225
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)

@@ -1,0 +1,7 @@
+2014-11-28 22:30:16,961 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 28/11/2014 22:30:16. Reason - Expired
+2014-11-28 22:30:16,961 DEBUG 52 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 28/11/2014 22:30:16. Reason - Expired
+2014-11-28 22:30:16,965 DEBUG 52 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 28/11/2014 22:30:16. Reason - Expired
+2014-11-28 22:30:36,959 DEBUG 52 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 28/11/2014 22:30:36. Reason - Expired
+2014-11-28 22:30:36,959 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 28/11/2014 22:30:36. Reason - Expired
+2014-11-28 22:30:36,959 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 28/11/2014 22:30:36. Reason - Expired
+2014-11-28 22:30:36,959 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_164 at 28/11/2014 22:30:36. Reason - Expired

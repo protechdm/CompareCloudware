@@ -1,0 +1,740 @@
+2014-11-25 00:00:07,266 DEBUG 74 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:00:17,816 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:00:17,883 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:00:17,910 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:01:12,109 DEBUG 94 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:01:12,165 DEBUG 94 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:01:12,199 DEBUG 94 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:01:14,955 ERROR 88 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:01:17,888 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:01:17,942 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:01:17,969 DEBUG 6 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:01:20,296 ERROR 88 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:01:22,056 ERROR 88 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:01:32,416 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:01:36,399 DEBUG 84 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:01:36,455 DEBUG 84 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:01:36,486 DEBUG 84 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:05:20,488 DEBUG 70 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 00:05:20. Reason - Removed
+2014-11-25 00:05:20,488 DEBUG 70 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 00:05:20. Reason - Removed
+2014-11-25 00:05:20,488 DEBUG 70 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 00:05:20. Reason - Removed
+2014-11-25 00:05:20,488 DEBUG 70 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 00:05:20. Reason - Removed
+2014-11-25 00:05:20,489 DEBUG 70 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 00:05:20. Reason - Removed
+2014-11-25 00:05:25,913 DEBUG 70 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 00:05:25,925 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 00:05:29,443 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:05:45,212 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:05:45,733 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:05:45,760 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:05:48,505 DEBUG 73 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 00:05:48.
+2014-11-25 00:05:48,982 DEBUG 94 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 00:05:48.
+2014-11-25 00:05:49,497 DEBUG 94 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 00:05:49.
+2014-11-25 00:05:50,009 DEBUG 70 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 00:05:50.
+2014-11-25 00:05:50,512 DEBUG 84 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 00:05:50.
+2014-11-25 00:05:52,569 ERROR 84 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:05:59,280 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:05:59,338 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:05:59,362 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:06:01,398 ERROR 72 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:06:03,189 ERROR 82 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:06:09,608 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:06:09,664 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:06:09,691 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:06:20,130 DEBUG 82 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:06:25,137 DEBUG 84 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:06:25,193 DEBUG 84 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:06:25,220 DEBUG 84 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:07:40,713 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:07:40,767 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:07:40,797 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:07:49,173 DEBUG 66 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:07:51,917 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:07:51,974 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:07:52,001 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:10:41,272 DEBUG 93 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:10:41,344 DEBUG 93 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:10:41,368 DEBUG 93 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:10:44,040 ERROR 93 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:10:48,773 ERROR 81 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:10:55,884 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:10:57,958 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:10:58,013 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:10:58,043 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:12:02,799 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:12:02,853 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:12:02,878 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:12:05,476 ERROR 75 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:12:12,952 ERROR 15 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:12:17,455 DEBUG 75 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:12:18,757 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:12:18,810 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:12:18,834 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:12:44,852 DEBUG 95 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:12:46,640 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:12:46,698 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:12:46,724 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:14:34,814 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 00:14:34. Reason - Removed
+2014-11-25 00:14:34,814 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 00:14:34. Reason - Removed
+2014-11-25 00:14:34,814 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 00:14:34. Reason - Removed
+2014-11-25 00:14:34,815 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 00:14:34. Reason - Removed
+2014-11-25 00:14:34,816 DEBUG 15 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 00:14:34. Reason - Removed
+2014-11-25 00:25:55,914 DEBUG 15 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 00:25:55,927 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 00:25:59,496 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:26:14,851 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:26:15,366 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:26:15,395 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:26:18,078 DEBUG 60 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 00:26:18.
+2014-11-25 00:26:18,536 DEBUG 91 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 00:26:18.
+2014-11-25 00:26:20,064 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 00:26:20.
+2014-11-25 00:26:20,587 DEBUG 13 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 00:26:20.
+2014-11-25 00:26:20,656 ERROR 91 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:26:21,083 DEBUG 65 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 00:26:21.
+2014-11-25 00:26:26,887 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:26:26,951 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:26:26,978 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:26:27,610 ERROR 78 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:28:00,094 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:28:00,149 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:28:00,175 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:28:02,572 ERROR 18 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:28:05,716 ERROR 62 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:28:17,461 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:28:19,225 DEBUG 13 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:28:19,286 DEBUG 13 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:28:19,312 DEBUG 13 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:29:22,524 DEBUG 18 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:29:22,581 DEBUG 18 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:29:22,605 DEBUG 18 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:29:24,950 ERROR 91 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:29:29,012 ERROR 60 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:29:34,263 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:29:35,839 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:29:35,893 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:29:35,924 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:32:40,481 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:32:40,538 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:32:40,569 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:32:43,361 ERROR 62 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:33:52,868 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 00:33:52,870 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 00:33:53,036 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:33:54,597 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:33:54,650 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:33:54,684 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:33:56,965 ERROR 87 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:34:04,379 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:34:04,434 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:34:04,462 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:34:07,731 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - SearchPage#1 - 00:34:07.7311521
+2014-11-25 00:34:07,731 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:34:07,782 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportDays()
+2014-11-25 00:34:07,852 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportHours()
+2014-11-25 00:34:08,146 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetTimeZones()
+2014-11-25 00:34:08,312 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - SearchPage#2 - 00:34:08.3121853
+2014-11-25 00:34:08,328 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSearchFilters()
+2014-11-25 00:34:08,531 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetTimeZones()
+2014-11-25 00:34:08,577 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportHours()
+2014-11-25 00:34:08,633 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetOperatingSystems()
+2014-11-25 00:34:08,735 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetBrowsers()
+2014-11-25 00:34:08,827 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportTypes()
+2014-11-25 00:34:08,922 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetDevices()
+2014-11-25 00:34:09,002 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportDays()
+2014-11-25 00:34:09,076 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetLanguages()
+2014-11-25 00:34:09,218 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - SearchPage#3 - 00:34:09.2182372
+2014-11-25 00:34:09,219 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - GetSearchResults#1 - 00:34:09.2192372
+2014-11-25 00:34:12,623 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - GetSearchResults#2 - 00:34:12.6234319
+2014-11-25 00:34:12,623 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - GetSearchResults#3 - 00:34:12.6234319
+2014-11-25 00:34:14,561 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategoryParameters()
+2014-11-25 00:34:14,642 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - SearchPage#4 - 00:34:14.6425474
+2014-11-25 00:34:14,649 DEBUG 86 CompareCloudware.Web.Controllers.HomeController - SearchPage#5 - 00:34:14.6495478
+2014-11-25 00:34:14,751 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - SKYSCRAPER_IMAGECOUNT at 25/11/2014 00:34:14.
+2014-11-25 00:34:14,777 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_IMAGECOUNT at 25/11/2014 00:34:14.
+2014-11-25 00:34:14,777 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 1
+2014-11-25 00:34:15,084 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_873 at 25/11/2014 00:34:15.
+2014-11-25 00:34:15,158 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:15 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:15,421 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:15 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:15,600 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 1
+2014-11-25 00:34:15,766 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_898 at 25/11/2014 00:34:15.
+2014-11-25 00:34:15,836 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:15 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:15,954 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:15 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:16,133 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for SKYSCRAPER in category ID 1
+2014-11-25 00:34:16,328 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - SKYSCRAPER_920 at 25/11/2014 00:34:16.
+2014-11-25 00:34:16,391 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:16 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:16,682 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:16 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:16,858 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for SKYSCRAPER in category ID 1
+2014-11-25 00:34:17,021 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - SKYSCRAPER_945 at 25/11/2014 00:34:17.
+2014-11-25 00:34:17,092 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:17 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:17,242 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:34:17 - Update(1):System.Data.Entity.DynamicProxies.AdvertisingImageServ_154657613F54D039AD9E322D57CC0B1B704A67BCF4F035352107448AA32DF611
+2014-11-25 00:34:26,028 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_5 at 25/11/2014 00:34:26.
+2014-11-25 00:34:26,122 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_7 at 25/11/2014 00:34:26.
+2014-11-25 00:34:26,217 DEBUG 85 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_12 at 25/11/2014 00:34:26.
+2014-11-25 00:34:26,299 DEBUG 87 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_14 at 25/11/2014 00:34:26.
+2014-11-25 00:34:26,360 DEBUG 16 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_18 at 25/11/2014 00:34:26.
+2014-11-25 00:34:27,056 DEBUG 17 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_2 at 25/11/2014 00:34:27.
+2014-11-25 00:34:27,572 DEBUG 87 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_1 at 25/11/2014 00:34:27.
+2014-11-25 00:34:28,085 DEBUG 16 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_3 at 25/11/2014 00:34:28.
+2014-11-25 00:34:28,591 DEBUG 62 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_13 at 25/11/2014 00:34:28.
+2014-11-25 00:34:29,103 DEBUG 86 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_10 at 25/11/2014 00:34:29.
+2014-11-25 00:34:40,200 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:34:41,363 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:34:41,387 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:40:50,315 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #1
+2014-11-25 00:40:50,317 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #2
+2014-11-25 00:40:50,321 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application IN
+2014-11-25 00:40:50,378 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing context
+2014-11-25 00:40:50,530 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing languages
+2014-11-25 00:40:50,613 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing browsers
+2014-11-25 00:40:50,704 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing videos
+2014-11-25 00:40:50,789 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing mobile platforms
+2014-11-25 00:40:50,825 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing operating systems
+2014-11-25 00:40:50,907 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing payment options
+2014-11-25 00:40:50,994 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing support territories
+2014-11-25 00:40:51,063 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing support types
+2014-11-25 00:40:51,144 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing cloud application features
+2014-11-25 00:40:51,263 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing documents
+2014-11-25 00:40:51,388 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing product reviews
+2014-11-25 00:40:51,520 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing user reviews
+2014-11-25 00:40:51,643 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing cloud application applications
+2014-11-25 00:40:51,644 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing LinkedIn
+2014-11-25 00:40:51,950 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing Facebook
+2014-11-25 00:40:52,402 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Updating social networking stats for cloud application ID : 221
+2014-11-25 00:40:52,402 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - 25/11/2014 00:40:52 - Update(1):System.Data.Entity.DynamicProxies.CloudApplication_7B40A0E9F1F47AADEDD23CF332C72265821EDF20421C3005B1472933F68B55CB
+2014-11-25 00:40:52,550 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - TOLIST()
+2014-11-25 00:40:53,134 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - LIVEONLY TOLIST()
+2014-11-25 00:40:55,008 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application OUT
+2014-11-25 00:40:55,008 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #2.5
+2014-11-25 00:40:55,079 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud applications by vendor IN
+2014-11-25 00:40:55,139 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud applications by vendor OUT
+2014-11-25 00:40:55,139 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #3
+2014-11-25 00:40:55,828 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #4
+2014-11-25 00:40:55,905 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #5
+2014-11-25 00:40:55,906 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - CheckForBrokenLinks IN
+2014-11-25 00:40:55,906 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - CheckForBrokenLinks OUT
+2014-11-25 00:40:55,906 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #6
+2014-11-25 00:40:55,906 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategoryParameters()
+2014-11-25 00:40:55,938 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #4
+2014-11-25 00:40:56,101 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #5
+2014-11-25 00:40:56,101 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Sending request for cloud application : 221
+2014-11-25 00:40:56,101 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 221 step #6
+2014-11-25 00:41:06,402 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:41:06,462 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:41:06,491 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:41:16,698 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:41:16,755 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:41:16,786 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:41:19,031 ERROR 83 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:41:22,000 ERROR 91 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:41:32,416 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:41:35,293 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:41:35,350 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:41:35,379 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:42:57,328 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:42:57,388 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:42:57,419 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:43:00,024 ERROR 80 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:43:06,790 ERROR 80 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:43:10,178 DEBUG 64 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:43:12,801 DEBUG 80 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:43:12,860 DEBUG 80 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:43:12,886 DEBUG 80 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:44:49,599 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:44:49,654 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:44:49,681 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:44:52,482 ERROR 80 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:44:55,593 ERROR 80 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:45:04,743 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:45:06,276 DEBUG 64 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:45:06,333 DEBUG 64 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:45:06,364 DEBUG 64 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_7 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_2 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_1 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_12 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_3 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_5 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - SKYSCRAPER_IMAGECOUNT at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,599 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - MPU_898 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,600 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - MPU_873 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,600 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - SKYSCRAPER_920 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,600 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - MPU_IMAGECOUNT at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,600 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,601 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_18 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,601 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_10 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,601 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_14 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,601 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - SKYSCRAPER_945 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:47,601 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_13 at 25/11/2014 00:48:47. Reason - Removed
+2014-11-25 00:48:50,650 DEBUG 85 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 00:48:50,663 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 00:48:54,471 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:48:57,287 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:48:57,437 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:48:57,466 DEBUG 85 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:48:58,523 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 00:48:58.
+2014-11-25 00:48:59,031 DEBUG 85 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 00:48:59.
+2014-11-25 00:48:59,520 DEBUG 85 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 00:48:59.
+2014-11-25 00:49:00,033 DEBUG 65 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 00:49:00.
+2014-11-25 00:49:01,552 DEBUG 61 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 00:49:01.
+2014-11-25 00:49:02,092 ERROR 90 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:49:04,971 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:49:05,025 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:49:05,052 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:49:05,975 ERROR 87 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:49:07,960 ERROR 65 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:49:17,310 DEBUG 80 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:49:19,149 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:49:19,208 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:49:19,233 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:49:31,365 ERROR 63 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:49:33,830 ERROR 63 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:49:54,421 ERROR 61 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:55:42,363 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 00:55:42. Reason - Removed
+2014-11-25 00:55:42,363 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 00:55:42. Reason - Removed
+2014-11-25 00:55:42,363 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 00:55:42. Reason - Removed
+2014-11-25 00:55:42,363 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 00:55:42. Reason - Removed
+2014-11-25 00:55:42,364 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 00:55:42. Reason - Removed
+2014-11-25 00:55:47,806 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 00:55:47,818 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 00:55:51,520 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:07,074 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:07,584 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:07,624 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:56:10,324 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 00:56:10.
+2014-11-25 00:56:10,798 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 00:56:10.
+2014-11-25 00:56:11,329 DEBUG 88 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 00:56:11.
+2014-11-25 00:56:11,838 DEBUG 88 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 00:56:11.
+2014-11-25 00:56:12,349 DEBUG 88 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 00:56:12.
+2014-11-25 00:56:14,401 ERROR 83 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:56:22,857 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:22,913 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:22,942 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:56:25,143 ERROR 89 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:56:29,921 ERROR 5 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 00:56:59,324 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:59,382 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:56:59,409 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:57:56,212 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 00:57:56,405 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:57:56,464 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:57:56,490 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 00:58:25,006 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:58:25,064 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 00:58:25,092 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:00:13,330 DEBUG 61 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:00:13,385 DEBUG 61 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:00:13,415 DEBUG 61 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:00:16,159 ERROR 63 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:00:22,113 ERROR 15 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:00:27,162 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:00:27,219 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:00:27,249 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:01:12,629 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:01:12,685 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:01:12,714 DEBUG 88 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:01:39,678 DEBUG 62 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:01:39,737 DEBUG 62 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:01:39,762 DEBUG 62 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:01:56,971 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 01:01:57,148 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:01:57,210 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:01:57,237 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:02:28,452 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:02:28,508 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:02:28,539 DEBUG 15 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:02:48,533 DEBUG 62 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 01:02:48,710 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:02:48,766 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:02:48,792 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:03:29,050 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:03:29,107 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:03:29,136 DEBUG 5 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:03:40,672 ERROR 5 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:03:41,758 ERROR 5 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:03:42,670 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:03:42,722 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:03:42,755 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:03:43,994 ERROR 63 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:03:46,409 ERROR 63 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:03:53,096 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:03:53,153 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:03:53,179 DEBUG 16 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:04:07,517 DEBUG 11 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 01:04:08,164 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:04:08,218 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:04:08,244 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:04:18,817 ERROR 64 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:04:52,223 DEBUG 77 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 01:04:52,360 DEBUG 93 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:04:52,415 DEBUG 93 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:04:52,443 DEBUG 93 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:05:01,056 DEBUG 90 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 01:05:01,057 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 01:05:01,192 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:05:02,608 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:05:02,666 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:05:02,692 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:05:03,227 ERROR 90 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:05:23,638 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 01:05:23. Reason - Removed
+2014-11-25 01:05:23,638 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 01:05:23. Reason - Removed
+2014-11-25 01:05:23,639 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 01:05:23. Reason - Removed
+2014-11-25 01:05:23,639 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 01:05:23. Reason - Removed
+2014-11-25 01:05:23,640 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 01:05:23. Reason - Removed
+2014-11-25 01:14:53,790 DEBUG 90 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 01:14:53,803 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 01:14:57,297 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:15:00,073 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:15:00,168 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:15:00,198 DEBUG 90 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:15:01,384 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 01:15:01.
+2014-11-25 01:15:01,871 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 01:15:01.
+2014-11-25 01:15:02,150 ERROR 11 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:15:02,384 DEBUG 11 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 01:15:02.
+2014-11-25 01:15:04,419 DEBUG 77 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 01:15:04.
+2014-11-25 01:15:04,922 DEBUG 67 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 01:15:04.
+2014-11-25 01:15:07,793 DEBUG 67 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:15:07,894 DEBUG 67 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:15:07,921 DEBUG 67 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:15:08,728 ERROR 90 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:21:00,598 DEBUG 60 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 01:21:00. Reason - Removed
+2014-11-25 01:21:00,598 DEBUG 60 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 01:21:00. Reason - Removed
+2014-11-25 01:21:00,598 DEBUG 60 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 01:21:00. Reason - Removed
+2014-11-25 01:21:00,598 DEBUG 60 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 01:21:00. Reason - Removed
+2014-11-25 01:21:00,599 DEBUG 60 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 01:21:00. Reason - Removed
+2014-11-25 01:21:07,095 DEBUG 87 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 01:21:07,107 DEBUG 87 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 01:21:09,892 DEBUG 87 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:21:12,705 DEBUG 87 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:21:12,787 DEBUG 87 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:21:12,818 DEBUG 87 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:21:13,325 DEBUG 18 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 01:21:13.
+2014-11-25 01:21:13,505 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 01:21:13.
+2014-11-25 01:21:13,717 ERROR 65 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:21:15,400 DEBUG 87 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 01:21:15.
+2014-11-25 01:21:15,899 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 01:21:15.
+2014-11-25 01:21:16,411 DEBUG 18 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 01:21:16.
+2014-11-25 01:21:26,095 FATAL 64 CompareCloudware.Web.Controllers.HomeController - 25/11/2014 01:21:26 - Generic Error occured
+System.InvalidOperationException: The model item passed into the dictionary is of type 'CompareCloudware.Web.Models.PartnerProgrammeModel', but this dictionary requires a model item of type 'System.String'.
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary.set_Model(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.ViewDataDictionary`1..ctor(ViewDataDictionary viewDataDictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.WebViewPage.set_ViewData(ViewDataDictionary value)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.HtmlHelper.RenderPartialInternal(String partialViewName, ViewDataDictionary viewData, Object model, TextWriter writer, ViewEngineCollection viewEngineCollection)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model)
+   at ASP._Page_Views_Shared_PartnerProgrammePage_cshtml.Execute() in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Views\Shared\PartnerProgrammePage.cshtml:line 34
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.RunPage()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-11-25 01:21:44,375 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:21:44,432 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:21:44,459 DEBUG 91 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 01:21:45,371 ERROR 65 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1522
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:21:51,527 ERROR 87 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 01:22:18,149 DEBUG 63 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 01:22:18,347 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:22:18,406 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 01:22:18,433 DEBUG 65 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 20:46:32,669 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 20:46:32. Reason - Removed
+2014-11-25 20:46:32,669 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 20:46:32. Reason - Removed
+2014-11-25 20:46:32,669 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 20:46:32. Reason - Removed
+2014-11-25 20:46:32,669 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 20:46:32. Reason - Removed
+2014-11-25 20:46:32,670 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 20:46:32. Reason - Removed
+2014-11-25 20:46:38,751 DEBUG 59 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 20:46:38,764 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 20:46:42,336 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:46:58,512 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:46:59,019 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:46:59,056 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 20:47:03,837 DEBUG 83 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 20:47:03.
+2014-11-25 20:47:04,340 DEBUG 81 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 20:47:04.
+2014-11-25 20:47:04,820 ERROR 81 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 20:47:06,889 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 20:47:06.
+2014-11-25 20:47:07,398 DEBUG 83 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 20:47:07.
+2014-11-25 20:47:07,913 DEBUG 83 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 20:47:07.
+2014-11-25 20:47:14,683 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 20:47:14. Reason - Removed
+2014-11-25 20:47:14,683 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 20:47:14. Reason - Removed
+2014-11-25 20:47:14,683 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 20:47:14. Reason - Removed
+2014-11-25 20:47:14,683 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 20:47:14. Reason - Removed
+2014-11-25 20:47:14,684 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 20:47:14. Reason - Removed
+2014-11-25 20:47:21,018 DEBUG 59 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 20:47:21,030 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 20:47:24,755 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:47:41,210 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:47:41,738 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:47:41,772 DEBUG 59 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 20:47:43,981 DEBUG 81 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 20:47:43.
+2014-11-25 20:47:44,081 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 20:47:44.
+2014-11-25 20:47:44,467 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 20:47:44.
+2014-11-25 20:47:47,026 DEBUG 59 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 20:47:47.
+2014-11-25 20:47:47,523 ERROR 81 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 20:47:48,061 DEBUG 81 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 20:47:48.
+2014-11-25 20:47:51,588 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:47:51,653 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:47:51,683 DEBUG 81 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 20:47:52,455 ERROR 83 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 20:47:54,921 ERROR 59 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 20:48:11,892 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 20:48:12,102 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:48:12,161 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 20:48:12,190 DEBUG 89 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 21:40:01,508 DEBUG 136 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 21:40:01. Reason - Removed
+2014-11-25 21:40:01,508 DEBUG 136 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 21:40:01. Reason - Removed
+2014-11-25 21:40:01,508 DEBUG 136 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 21:40:01. Reason - Removed
+2014-11-25 21:40:01,508 DEBUG 136 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 21:40:01. Reason - Removed
+2014-11-25 21:40:01,509 DEBUG 136 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 21:40:01. Reason - Removed
+2014-11-25 21:40:08,107 DEBUG 119 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 21:40:08,119 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 21:40:12,026 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:40:29,400 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:40:29,980 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:40:30,038 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 21:40:33,550 DEBUG 119 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 21:40:33.
+2014-11-25 21:40:34,029 DEBUG 129 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 21:40:34.
+2014-11-25 21:40:34,548 DEBUG 119 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 21:40:34.
+2014-11-25 21:40:34,791 ERROR 119 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 21:40:37,594 DEBUG 119 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 21:40:37.
+2014-11-25 21:40:38,116 DEBUG 129 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 21:40:38.
+2014-11-25 21:40:44,203 DEBUG 129 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:40:44,289 DEBUG 129 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:40:44,357 DEBUG 129 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 21:40:46,512 ERROR 129 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 21:40:49,234 ERROR 119 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 21:41:24,389 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 21:41:24,689 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:41:24,772 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:41:24,831 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 21:43:43,306 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:43:43,386 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:43:43,444 DEBUG 119 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 21:43:46,603 ERROR 72 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 21:43:50,810 ERROR 119 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 21:44:12,787 DEBUG 136 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 21:44:13,040 DEBUG 136 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:44:13,124 DEBUG 136 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 21:44:13,178 DEBUG 136 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:31:48,104 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:31:49,167 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:31:50,244 DEBUG 10 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:31:51,714 ERROR 5 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:32:17,720 ERROR 5 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:32:23,304 ERROR 10 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:37:12,998 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:37:14,049 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:37:15,360 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:37:17,050 ERROR 83 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:45:40,246 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 22:45:40. Reason - Removed
+2014-11-25 22:45:40,247 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 22:45:40. Reason - Removed
+2014-11-25 22:45:40,247 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 22:45:40. Reason - Removed
+2014-11-25 22:45:40,247 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 22:45:40. Reason - Removed
+2014-11-25 22:45:40,248 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 22:45:40. Reason - Removed
+2014-11-25 22:45:44,058 DEBUG 92 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 22:45:44,070 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 22:45:47,542 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:45:50,380 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:45:50,458 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:45:50,489 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:45:52,239 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 22:45:52.
+2014-11-25 22:45:52,723 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 22:45:52.
+2014-11-25 22:45:52,915 ERROR 139 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:45:53,230 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 22:45:53.
+2014-11-25 22:45:55,262 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 22:45:55.
+2014-11-25 22:45:55,760 DEBUG 114 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 22:45:55.
+2014-11-25 22:46:00,697 DEBUG 114 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:46:00,753 DEBUG 114 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:46:00,782 DEBUG 114 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:46:03,764 ERROR 114 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:46:06,480 ERROR 84 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:46:20,183 DEBUG 70 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 22:46:20,390 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:46:20,447 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:46:20,472 DEBUG 92 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:48:26,939 ERROR 82 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:55:27,551 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 22:55:27. Reason - Removed
+2014-11-25 22:55:27,551 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 22:55:27. Reason - Removed
+2014-11-25 22:55:27,551 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 22:55:27. Reason - Removed
+2014-11-25 22:55:27,551 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 22:55:27. Reason - Removed
+2014-11-25 22:55:27,552 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 22:55:27. Reason - Removed
+2014-11-25 22:55:33,820 DEBUG 139 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 22:55:33,832 DEBUG 139 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 22:55:37,411 DEBUG 139 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:55:52,877 DEBUG 139 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:55:53,388 DEBUG 139 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:55:53,419 DEBUG 139 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:55:58,084 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_163 at 25/11/2014 22:55:58.
+2014-11-25 22:55:58,549 DEBUG 14 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_162 at 25/11/2014 22:55:58.
+2014-11-25 22:55:59,060 DEBUG 54 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_84 at 25/11/2014 22:55:59.
+2014-11-25 22:55:59,566 DEBUG 74 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 25/11/2014 22:55:59.
+2014-11-25 22:56:00,077 DEBUG 139 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 25/11/2014 22:56:00.
+2014-11-25 22:56:02,132 ERROR 54 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:56:51,637 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:56:51,693 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:56:51,727 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:56:52,311 ERROR 14 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:56:55,052 ERROR 54 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Input string was not in a correct format.. Stack trace :    at System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer& number, NumberFormatInfo info, Boolean parseDecimal)
+   at System.Number.ParseInt32(String s, NumberStyles style, NumberFormatInfo info)
+   at System.Int32.Parse(String s)
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:57:06,161 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:57:06,221 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:57:06,249 DEBUG 86 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:57:10,019 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:57:10,076 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:57:10,107 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:57:44,575 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.CloudApplicationRequest):
+2014-11-25 22:57:44,770 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:57:44,825 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:57:44,853 DEBUG 14 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:58:00,532 DEBUG 83 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-11-25 22:58:00,533 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-11-25 22:58:00,688 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:58:02,090 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:58:02,144 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-11-25 22:58:02,171 DEBUG 83 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-11-25 22:58:02,845 ERROR 83 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1525
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2779
+2014-11-25 22:58:38,988 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 25/11/2014 22:58:38. Reason - Removed
+2014-11-25 22:58:38,988 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 25/11/2014 22:58:38. Reason - Removed
+2014-11-25 22:58:38,988 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_162 at 25/11/2014 22:58:38. Reason - Removed
+2014-11-25 22:58:38,988 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_163 at 25/11/2014 22:58:38. Reason - Removed
+2014-11-25 22:58:38,989 DEBUG 82 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_84 at 25/11/2014 22:58:38. Reason - Removed

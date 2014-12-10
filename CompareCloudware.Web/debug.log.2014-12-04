@@ -1,0 +1,305 @@
+2014-12-04 21:34:48,718 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_168 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,724 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_264 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_263 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_261 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_262 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_169 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_260 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,725 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - SKYSCRAPER_IMAGECOUNT at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,726 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_167 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,726 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_266 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,726 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_166 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,726 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_265 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,726 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,726 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - MPU_IMAGECOUNT at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_170 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_172 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_171 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_175 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_174 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 21:34:48,728 DEBUG 66 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_173 at 04/12/2014 21:34:48. Reason - Removed
+2014-12-04 22:35:13,558 DEBUG 8 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-12-04 22:35:13,573 DEBUG 8 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-12-04 22:35:17,146 DEBUG 8 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 22:35:32,231 DEBUG 8 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 22:35:32,712 DEBUG 8 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 22:35:32,722 DEBUG 8 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-12-04 22:35:35,195 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 04/12/2014 22:35:35.
+2014-12-04 22:35:35,427 DEBUG 8 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_264 at 04/12/2014 22:35:35.
+2014-12-04 22:35:35,699 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 04/12/2014 22:35:35.
+2014-12-04 22:35:35,909 ERROR 8 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1539
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2818
+2014-12-04 22:35:36,686 DEBUG 8 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_262 at 04/12/2014 22:35:36.
+2014-12-04 22:35:36,719 DEBUG 8 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_261 at 04/12/2014 22:35:36.
+2014-12-04 22:35:36,759 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_260 at 04/12/2014 22:35:36.
+2014-12-04 22:35:37,004 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_263 at 04/12/2014 22:35:37.
+2014-12-04 22:35:37,237 DEBUG 9 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_265 at 04/12/2014 22:35:37.
+2014-12-04 22:35:37,752 DEBUG 8 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_266 at 04/12/2014 22:35:37.
+2014-12-04 22:35:38,265 DEBUG 5 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 04/12/2014 22:35:38.
+2014-12-04 22:35:38,769 DEBUG 8 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 04/12/2014 22:35:38.
+2014-12-04 23:19:19,158 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:19:20,246 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:19:20,253 DEBUG 54 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-12-04 23:20:00,351 DEBUG 50 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:20:02,144 DEBUG 50 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - SKYSCRAPER_IMAGECOUNT at 04/12/2014 23:20:02.
+2014-12-04 23:20:02,160 DEBUG 50 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_IMAGECOUNT at 04/12/2014 23:20:02.
+2014-12-04 23:20:02,160 DEBUG 50 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:20:02,422 DEBUG 50 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:20:32,958 FATAL 50 CompareCloudware.Web.Controllers.HomeController - 04/12/2014 23:20:32 - Generic Error occured
+CompareCloudware.Web.Helpers.CategoryNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.CategoryNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Category(String category) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 176
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-12-04 23:20:50,995 DEBUG 51 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:20:52,681 DEBUG 51 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:20:53,108 DEBUG 51 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:21:56,907 FATAL 51 CompareCloudware.Web.Controllers.HomeController - 04/12/2014 23:21:56 - Generic Error occured
+CompareCloudware.Web.Helpers.CategoryNotFoundException: Exception of type 'CompareCloudware.Web.Helpers.CategoryNotFoundException' was thrown.
+   at CompareCloudware.Web.Controllers.HomeController.Category(String category) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 176
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-12-04 23:23:10,447 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_266 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,447 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - SKYSCRAPER_IMAGECOUNT at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,447 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_263 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,447 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_264 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_265 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_262 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_261 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_6 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_96 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_260 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - MPU_IMAGECOUNT at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,448 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_113 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:10,449 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Removed item from cache - VENDOR_133 at 04/12/2014 23:23:10. Reason - Removed
+2014-12-04 23:23:13,949 DEBUG 48 CompareCloudware.Web.Controllers.HomeController - Entered site through IndexCustom
+2014-12-04 23:23:13,961 DEBUG 48 CompareCloudware.POCOQueryRepository.QueryRepository - Insert(CompareCloudware.Domain.Models.SiteActivity):
+2014-12-04 23:23:17,371 DEBUG 48 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:31,703 DEBUG 48 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:32,190 DEBUG 48 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:32,197 DEBUG 48 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-12-04 23:23:34,083 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_133 at 04/12/2014 23:23:34.
+2014-12-04 23:23:34,141 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_264 at 04/12/2014 23:23:34.
+2014-12-04 23:23:34,171 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_263 at 04/12/2014 23:23:34.
+2014-12-04 23:23:34,357 ERROR 48 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1539
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2818
+2014-12-04 23:23:34,957 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_262 at 04/12/2014 23:23:34.
+2014-12-04 23:23:35,021 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_261 at 04/12/2014 23:23:35.
+2014-12-04 23:23:35,056 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_260 at 04/12/2014 23:23:35.
+2014-12-04 23:23:35,599 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_265 at 04/12/2014 23:23:35.
+2014-12-04 23:23:36,109 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_266 at 04/12/2014 23:23:36.
+2014-12-04 23:23:36,609 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_113 at 04/12/2014 23:23:36.
+2014-12-04 23:23:37,121 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_96 at 04/12/2014 23:23:37.
+2014-12-04 23:23:37,623 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_6 at 04/12/2014 23:23:37.
+2014-12-04 23:23:40,586 DEBUG 43 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:41,752 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - SKYSCRAPER_IMAGECOUNT at 04/12/2014 23:23:41.
+2014-12-04 23:23:41,759 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - MPU_IMAGECOUNT at 04/12/2014 23:23:41.
+2014-12-04 23:23:41,759 DEBUG 43 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:23:41,964 DEBUG 43 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:23:45,873 DEBUG 43 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:47,152 DEBUG 43 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:47,159 DEBUG 43 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-12-04 23:23:49,348 FATAL 51 CompareCloudware.Web.Controllers.HomeController - 04/12/2014 23:23:49 - Generic Error occured
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CompareCloudware.Web.Controllers.HomeController.ShowSkyScraper(Int32 advertisingImageID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2323
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-12-04 23:23:49,384 ERROR 55 CompareCloudware.Web.Controllers.HomeController - Couldn't log search results tab. The error was : Object reference not set to an instance of an object.. Stack trace :    at CompareCloudware.Web.Helpers.ModelHelpers.LogTabbedSearchResultsModelSiteAnalytic(TabbedSearchResultsModel tsrm, Int32 whichTab, ISiteAnalyticsLogger siteAnalyticsLogger, ICustomSession customSession, ICompareCloudwareRepository repository) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Helpers\ModelHelpers.cs:line 1539
+   at CompareCloudware.Web.Controllers.HomeController.SearchResultsTabChanged(String whichTab, HomePageModel model) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2818
+2014-12-04 23:23:49,971 DEBUG 49 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_256 at 04/12/2014 23:23:49.
+2014-12-04 23:23:49,999 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_255 at 04/12/2014 23:23:49.
+2014-12-04 23:23:50,030 DEBUG 52 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_254 at 04/12/2014 23:23:50.
+2014-12-04 23:23:50,056 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_253 at 04/12/2014 23:23:50.
+2014-12-04 23:23:50,083 DEBUG 46 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_252 at 04/12/2014 23:23:50.
+2014-12-04 23:23:50,367 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_239 at 04/12/2014 23:23:50.
+2014-12-04 23:23:50,881 DEBUG 55 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_237 at 04/12/2014 23:23:50.
+2014-12-04 23:23:51,395 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_238 at 04/12/2014 23:23:51.
+2014-12-04 23:23:51,895 DEBUG 56 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_235 at 04/12/2014 23:23:51.
+2014-12-04 23:23:52,409 DEBUG 49 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_240 at 04/12/2014 23:23:52.
+2014-12-04 23:23:58,646 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:58,685 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:23:58,694 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-12-04 23:24:00,428 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - SearchPage#1 - 23:24:00.4281487
+2014-12-04 23:24:00,429 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:24:00,445 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportDays()
+2014-12-04 23:24:00,477 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportHours()
+2014-12-04 23:24:00,760 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetTimeZones()
+2014-12-04 23:24:00,937 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - SearchPage#2 - 23:24:00.9371778
+2014-12-04 23:24:00,953 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSearchFilters()
+2014-12-04 23:24:01,167 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetTimeZones()
+2014-12-04 23:24:01,186 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportHours()
+2014-12-04 23:24:01,212 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetOperatingSystems()
+2014-12-04 23:24:01,385 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetBrowsers()
+2014-12-04 23:24:01,556 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportTypes()
+2014-12-04 23:24:01,699 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetDevices()
+2014-12-04 23:24:01,878 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportDays()
+2014-12-04 23:24:01,942 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetLanguages()
+2014-12-04 23:24:02,106 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - SearchPage#3 - 23:24:02.1062447
+2014-12-04 23:24:02,106 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - GetSearchResults#1 - 23:24:02.1062447
+2014-12-04 23:24:05,648 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - GetSearchResults#2 - 23:24:05.6484473
+2014-12-04 23:24:05,648 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - GetSearchResults#3 - 23:24:05.6484473
+2014-12-04 23:24:06,137 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategoryParameters()
+2014-12-04 23:24:06,224 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - SearchPage#4 - 23:24:06.2244803
+2014-12-04 23:24:06,231 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - SearchPage#5 - 23:24:06.2314807
+2014-12-04 23:24:06,322 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:24:06,451 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for MPU in category ID 10
+2014-12-04 23:24:06,581 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for SKYSCRAPER in category ID 10
+2014-12-04 23:24:06,708 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting advertising image ID 0 for SKYSCRAPER in category ID 10
+2014-12-04 23:24:14,621 DEBUG 46 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_243 at 04/12/2014 23:24:14.
+2014-12-04 23:24:14,654 DEBUG 48 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_245 at 04/12/2014 23:24:14.
+2014-12-04 23:24:14,680 DEBUG 46 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_246 at 04/12/2014 23:24:14.
+2014-12-04 23:24:14,715 DEBUG 43 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_247 at 04/12/2014 23:24:14.
+2014-12-04 23:24:14,742 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_248 at 04/12/2014 23:24:14.
+2014-12-04 23:24:14,772 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_249 at 04/12/2014 23:24:14.
+2014-12-04 23:24:26,691 FATAL 43 CompareCloudware.Web.Controllers.HomeController - 04/12/2014 23:24:26 - Generic Error occured
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CompareCloudware.Web.Controllers.HomeController.ShowMPU(Int32 advertisingImageID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2313
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-12-04 23:24:27,718 FATAL 46 CompareCloudware.Web.Controllers.HomeController - 04/12/2014 23:24:27 - Generic Error occured
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at CompareCloudware.Web.Controllers.HomeController.ShowSkyScraper(Int32 advertisingImageID) in c:\Development\CompareCloudwareVideo\CompareCloudware.Web\Controllers\HomeController.cs:line 2323
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.ActionInvocation.InvokeSynchronousActionMethod()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass33.<BeginInvokeActionMethodWithFilters>b__32(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()
+   at System.Web.Mvc.Async.AsyncResultWrapper.End[TResult](IAsyncResult asyncResult, Object tag)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+2014-12-04 23:24:28,213 DEBUG 46 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_244 at 04/12/2014 23:24:28.
+2014-12-04 23:24:28,728 DEBUG 46 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_242 at 04/12/2014 23:24:28.
+2014-12-04 23:24:29,229 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_103 at 04/12/2014 23:24:29.
+2014-12-04 23:24:29,745 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_241 at 04/12/2014 23:24:29.
+2014-12-04 23:24:30,241 DEBUG 51 CompareCloudware.POCOQueryRepository.Caching.DefaultCacheProvider - Added item to cache - VENDOR_250 at 04/12/2014 23:24:30.
+2014-12-04 23:24:59,839 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:24:59,877 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:24:59,884 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
+2014-12-04 23:25:02,151 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #1
+2014-12-04 23:25:02,152 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #2
+2014-12-04 23:25:02,157 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application IN
+2014-12-04 23:25:02,188 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing context
+2014-12-04 23:25:02,305 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing languages
+2014-12-04 23:25:02,352 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing browsers
+2014-12-04 23:25:02,467 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing videos
+2014-12-04 23:25:02,501 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing mobile platforms
+2014-12-04 23:25:02,521 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing operating systems
+2014-12-04 23:25:02,589 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing payment options
+2014-12-04 23:25:02,671 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing support territories
+2014-12-04 23:25:02,693 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing support types
+2014-12-04 23:25:02,754 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing cloud application features
+2014-12-04 23:25:02,901 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing documents
+2014-12-04 23:25:03,163 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing product reviews
+2014-12-04 23:25:03,416 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing user reviews
+2014-12-04 23:25:03,560 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing cloud application applications
+2014-12-04 23:25:03,560 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing LinkedIn
+2014-12-04 23:25:03,878 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Refreshing Facebook
+2014-12-04 23:25:04,381 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Updating social networking stats for cloud application ID : 618
+2014-12-04 23:25:04,383 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - 04/12/2014 23:25:04 - Update(1):System.Data.Entity.DynamicProxies.CloudApplication_7B40A0E9F1F47AADEDD23CF332C72265821EDF20421C3005B1472933F68B55CB
+2014-12-04 23:25:04,512 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - TOLIST()
+2014-12-04 23:25:04,672 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - LIVEONLY TOLIST()
+2014-12-04 23:25:04,801 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud application OUT
+2014-12-04 23:25:04,801 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #2.5
+2014-12-04 23:25:04,812 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - Getting cloud applications by vendor IN
+2014-12-04 23:25:04,851 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud applications by vendor OUT
+2014-12-04 23:25:04,851 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #3
+2014-12-04 23:25:05,170 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #4
+2014-12-04 23:25:05,211 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #5
+2014-12-04 23:25:05,212 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - CheckForBrokenLinks IN
+2014-12-04 23:25:05,212 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - CheckForBrokenLinks OUT
+2014-12-04 23:25:05,212 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - ConstructCloudApplication : step #6
+2014-12-04 23:25:05,212 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategoryParameters()
+2014-12-04 23:25:05,229 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #4
+2014-12-04 23:25:05,302 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #5
+2014-12-04 23:25:05,302 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Sending request for cloud application : 618
+2014-12-04 23:25:05,302 FATAL 46 CompareCloudware.Web.Controllers.HomeController - Cloud application 618 contains 0videos
+2014-12-04 23:25:05,303 DEBUG 46 CompareCloudware.Web.Controllers.HomeController - Getting cloud application : 618 step #6
+2014-12-04 23:25:15,479 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:25:15,519 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetCategories()
+2014-12-04 23:25:15,526 DEBUG 46 CompareCloudware.POCOQueryRepository.QueryRepository - GetSupportCategories()
