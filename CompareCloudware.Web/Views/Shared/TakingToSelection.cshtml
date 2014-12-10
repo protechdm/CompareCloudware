@@ -1,0 +1,22 @@
+﻿@using System.Configuration
+@{var loadingImage = ConfigurationManager.AppSettings["TakingToSelectionImage"];}
+
+<div id="taking-to-selection" class="modal hide fade in" data-width="900">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="taking-to-selection">
+                    <div class="taking-to-selection-image">
+                        <img src="@Url.Content(loadingImage)" />
+                    </div>
+                    <div class="taking-to-selection-text">
+                        <label class="font-normal-64px-purple">Taking you to your selection.</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

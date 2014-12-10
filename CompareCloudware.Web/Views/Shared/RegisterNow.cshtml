@@ -1,0 +1,146 @@
+﻿@model CompareCloudware.Web.Models.RegisterNowModel
+@using Recaptcha.Web.Mvc;
+
+@using (Html.BeginForm("PartnerProgrammePage", "Home", FormMethod.Post))
+{
+    <div style="clear: both;height:30px;"></div>
+    <div class="partner-programme-container">
+        @Html.HiddenFor(x => x.IsRegistered, new { @class="is-registered"})
+        @Html.HiddenFor(x => x.PartnerProgrammeType)
+        @Html.HiddenFor(x => x.HeaderStrap)
+        @Html.HiddenFor(x => x.HasPresentationVideo)
+        @Html.HiddenFor(x => x.ShowVideo, new { @class="show-partner-programme-video"})
+        @Html.Partial("PartnerProgrammeHeaderStrapPartial",Model.HeaderStrap)
+        @if (Model.ShowHeaderStrapImage)
+        {
+            <div style="position:absolute;top:-40px;right:0px;height:111px;width:111px;background:url(../Images/CCW_PP_PinkCircle.png) no-repeat"></div>
+        }
+        <div class="partner-programme-input-container">
+            <div class="partner-programme-input-container-left">
+                <div class="partner-programme-object-container">
+                    <div class="partner-programme-object-label">
+                        @Html.LabelFor(x => x.Forename, new { @class = "font-normal-12px-black", @placeholder = "First name" })
+                    </div>
+                    <div class="partner-programme-object-data control-group">
+@*                        @Html.EditorFor(x => x.Forename, new { @class = "font-normal-12px-black", @placeholder = "First name", @placement = "right" })*@
+                        @Html.TextBoxFor(x => x.Forename, new { @data_placement = "right", @placeholder = "First name", @class="register-now-forename", @autocomplete="off", @autocorrect="off", @autocapitalize="off", @spellcheck="false"})
+                    </div>
+                </div>
+                <div class="partner-programme-object-container">
+
+                    <div class="partner-programme-object-label">
+                        @Html.LabelFor(x => x.Surname, new { @class = "font-normal-12px-black", @placeholder = "Surname" })
+                    </div>
+                    <div class="partner-programme-object-data control-group">
+@*                        @Html.EditorFor(x => x.Surname, new { @class = "font-normal-12px-black", @placeholder = "Surname" })*@
+                        @Html.TextBoxFor(x => x.Surname, new { @data_placement = "right", @placeholder = "Surname", @autocomplete="off", @autocorrect="off", @autocapitalize="off", @spellcheck="false" })
+                    </div>
+                </div>
+                <div class="partner-programme-object-container">
+                    <div class="partner-programme-object-label">
+                        @Html.LabelFor(x => x.JobTitle, new { @class = "font-normal-12px-black", @placeholder = "Job title" })
+                    </div>
+                    <div class="partner-programme-object-data control-group">
+@*                        @Html.EditorFor(x => x.JobTitle, new { @class = "font-normal-12px-black", @placeholder = "Job title" })*@
+                        @Html.TextBoxFor(x => x.JobTitle, new { @data_placement = "right", @placeholder = "Job title", @autocomplete="off", @autocorrect="off", @autocapitalize="off", @spellcheck="false" })
+                    </div>
+                </div>
+                <div class="partner-programme-object-container">
+                    <div class="partner-programme-object-label">
+                        @Html.LabelFor(x => x.Company, new { @class = "font-normal-12px-black", @placeholder = "Company" })
+                    </div>
+                    <div class="partner-programme-object-data control-group">
+@*                        @Html.EditorFor(x => x.Company, new { @class = "font-normal-12px-black", @placeholder = "Company" })*@
+                        @Html.TextBoxFor(x => x.Company, new { @data_placement = "right", @placeholder = "Company", @autocomplete="off", @autocorrect="off", @autocapitalize="off", @spellcheck="false" })
+                    </div>
+                </div>
+                <div class="partner-programme-object-container">
+
+                    <div class="partner-programme-object-label">
+                        @Html.LabelFor(x => x.EMailAddress, new { @class = "font-normal-12px-black", @placeholder = "Email" })
+                    </div>
+                    <div class="partner-programme-object-data control-group">
+@*                        @Html.EditorFor(x => x.EMailAddress, new { @class = "font-normal-12px-black", @placeholder = "Email" })*@
+                        @Html.TextBoxFor(x => x.EMailAddress, new { @data_placement = "right", @placeholder = "Email", @autocomplete="off", @autocorrect="off", @autocapitalize="off", @spellcheck="false" })
+                    </div>
+                </div>
+                <div class="partner-programme-object-container">
+
+                    <div class="partner-programme-object-label">
+                        @Html.LabelFor(x => x.Telephone, new { @class = "font-normal-12px-black", @placeholder = "Telephone" })
+                    </div>
+                    <div class="partner-programme-object-data control-group">
+@*                        @Html.EditorFor(x => x.Telephone, new { @class = "font-normal-12px-black", @placeholder = "Telephone" })*@
+                        @Html.TextBoxFor(x => x.Telephone, new { @data_placement = "right", @placeholder = "Telephone", @autocomplete="off", @autocorrect="off", @autocapitalize="off", @spellcheck="false" })
+                    </div>
+                </div>
+
+                <div class="partner-programme-object-container">
+                    <div class="partner-programme-object-label">
+@*                        @Html.LabelFor(x => x.TermsAndConditions, new { @class = "font-normal-12px-black", @placeholder = "Colleague email" })*@
+                    </div>
+                    <div class="partner-programme-object-data control-group" style="width:100%;">
+@*                        @Html.EditorFor(x => x.DataOptIn, new { @class = "font-normal-12px-black", @placeholder = "Colleague email" })*@
+                          @Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "font-13px-white partner-programme-terms", @data_placement = "right" })
+                          @Html.Partial("TermsAndConditions","font-normal-13px-black")
+                    </div>
+                </div>
+                <div style="clear: both;height:10px;"></div>
+
+                <div class="partner-programme-object-container">
+
+                    <div class="partner-programme-object-label">
+                    </div>
+                    <div class="partner-programme-object-data control-group recaptcha-object-data">
+        @Html.ValidationMessage("recaptcha")
+                       
+                    </div>
+                </div>
+            </div>
+    <div class="partner-programme-input-container-right">
+        <div class="partner-programme-object-container">
+            <div class="partner-programme-object-data video-object-data">
+            @if(Model.HasPresentationVideo)
+            {
+                if(Model.ShowVideo)
+                {
+                    @Html.EditorFor(x => x.Video)
+                }
+                else
+                {
+                
+                    //string takeToSelection = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("TakeToSelection/") + Model.CloudApplicationID.ToString()  ;
+                    string takeToSelection = "#";
+                
+                    <a href="@takeToSelection">
+                        <img src="~/Images/CCW_PP_Video.gif" />
+                    </a>
+                }
+            }
+            </div>
+        </div>
+        
+        <div class="partner-programme-button">
+@*            <button type="button" value="PartnerProgrammeButton" id="PartnerProgrammeButton" class="PartnerProgrammeButton" xclass="terms-checked users-chosen show-search-splash" />*@
+@*                            <input type="image" 
+                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
+                                    value="PartnerProgrammeButton" xclass="terms-checked users-chosen show-search-splash"/>*@
+        </div>
+
+    </div>
+        </div>
+
+    </div>
+
+
+    
+    
+    
+    
+    
+
+    <!-- Render recaptcha control with Clean theme. -->
+    // @Html.Recaptcha(theme: Recaptcha.Web.RecaptchaTheme.Clean)
+   
+}
+

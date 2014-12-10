@@ -1,0 +1,15 @@
+﻿@{
+    Layout = "~/Views/Shared/EMailTemplates/CompareCloudwareEMailLayout.cshtml";
+}
+
+@section HeaderSection {
+@*@RenderSection("Styles", false)*@
+    @{Html.RenderAction("EMailHeaderModel");}
+}
+
+
+@RenderBody()
+
+@section FooterSection {
+    @{Html.RenderAction("EMailFooterModel");}
+}

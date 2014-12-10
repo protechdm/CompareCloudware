@@ -1,0 +1,92 @@
+﻿@model CompareCloudware.Web.Models.EMailCloudApplicationModel
+
+<script>
+    $(document).ready(function () {
+        $('#taking-to-selection-with-prompt').modal('show');
+
+    });
+
+</script>
+@using System.Configuration
+@{var loadingImage = ConfigurationManager.AppSettings["TakingToSelectionImage"];}
+<div id="taking-to-selection-with-prompt" class="modal hide in fade" data-backdrop="static" data-keyboard="false" data-width="600">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*        <div class="modal-header"></div>*@
+            <div class="modal-body">
+
+                <div class="taking-to-selection-with-prompt">
+                    <table class="taking-to-selection-header">
+                        <tr>
+                            <td>
+                                <div class="taking-to-selection-with-prompt-image">
+                                    <img src="@Url.Content(loadingImage)" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="taking-to-selection-with-prompt-text">
+                                    <label class="font-normal-64px-purple">Taking you to your selection.</label>
+                                </div>
+                            </td>
+                        </tr>
+                        @*        <tr>
+            <td>
+                <div class="taking-to-selection-text">
+                    <label class="font-normal-32px-grey">Would you also like your results...</label>
+                </div>
+            </td>
+        </tr>*@
+                    </table>
+                    @*    <table class="taking-to-selection-email">
+        <tr>
+            <td>
+                <div class="taking-to-selection-text">
+                    @Html.LabelFor(x => x.EMailAddress, new { @class = "font-normal-22px-purple" })
+                </div>
+            </td>
+            <td>
+                <div class="taking-to-selection-text">
+                    @Html.EditorFor(x => x.EMailAddress)
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table class="taking-to-selection-proceed">
+        <tr>
+            <td>
+                <div class="yes-please-button">
+                    <a href="@Model.CloudApplicationURL" class="site-button-proceed">
+                        <img src="~/Images/Buttons/CCW_Proceed.png" />
+                    </a>
+                </div>
+            </td>
+            <td>
+                <div class="no-thanks-button">
+                    <a href="@Model.CloudApplicationURL" class="site-button-proceed">
+                        <img src="~/Images/Buttons/CCW_Proceed.png" />
+                    </a>
+                </div>
+            </td>
+        </tr>
+    </table>*@
+                    <table class="taking-to-selection-proceed">
+                        <tr>
+                            <td>
+                                <div class="continue-button-link">
+                                    @{string href = "/" + Model.CloudApplicationURL;}
+                                    <a href="@href">
+                                        <img src="~/Images/Buttons/SearchResults_ContinueButton_Normal.png" />
+
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

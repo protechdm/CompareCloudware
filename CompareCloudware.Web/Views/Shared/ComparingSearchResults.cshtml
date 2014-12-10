@@ -1,0 +1,59 @@
+﻿@model CompareCloudware.Web.Models.BaseModel
+
+@using System.Configuration
+@{var comparingImage = ConfigurationManager.AppSettings["ComparingImage1"];}
+<div id="comparing-search-results" class="modal hide fade in" data-width="780" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">  
+    <div class="comparing-search-results-content">
+        <div class="comparing-search-results-image">
+            <div class="comparing-search-results-progress">
+                <div class="comparing-search-results-searching">
+                    <label class="font-normal-32px-white">searching...</label>
+                </div>
+                <br />
+                <div class="comparing-search-results-found" style="display:none;">
+                    <label class="font-normal-56px-white comparing-search-results-found-number"></label>
+                    <br />
+                    <div style="clear:both; height:20px;"></div>
+                    <label class="font-normal-32px-white">results found</label>
+                </div>
+            </div>
+        </div>
+
+        <div style="position:relative; width: 10px; height:100%; float:left;"></div>
+
+        <div class="comparing-search-results-dialogue">
+            <label class="comparing-search-results-dialogue-contacting font-normal-32px-purple" style="display:none;">@Model.CustomSession.Forename, we're now contacting all our providers.</label>
+            <label class="comparing-search-results-dialogue-preparing font-normal-32px-purple" style="display:none;">
+                Thanks @Model.CustomSession.Forename, we're almost there, just checking over
+            </label>
+            <label class="comparing-search-results-dialogue-preparing comparing-search-results-found-number font-normal-32px-purple" style="display:none;">
+            </label>
+            <label class="comparing-search-results-dialogue-preparing font-normal-32px-purple" style="display:none;">
+                services for you.
+            <br />
+            <br />
+            </label>
+            <label class="comparing-search-results-dialogue-preparing font-normal-32px-grey" style="display:none;">
+                You're seconds away from independent and unbiased results!
+            </label>
+
+            <label class="comparing-search-results-dialogue-prepared font-normal-32px-purple" style="display:none;">Thanks for your patience @Model.CustomSession.Forename, we've got your results ready!</label>
+        </div>
+        <div class="see-search-results" style="display:none;">
+                                <div class="site-button-50">
+@*                                    <img  
+                                    id="@Html.Encode("SEE_SEARCH_RESULTS_BUTTON")"
+                                    src="@Url.Content("~/Images/Buttons/See-results-button_Normal.png")"
+                                    class="see-search-results-button"/>*@
+                                </div>
+        </div>
+
+    </div>
+            </div>  
+        </div>
+    </div>
+</div>
+

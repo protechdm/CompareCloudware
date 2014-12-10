@@ -1,0 +1,68 @@
+﻿@using CompareCloudware.Web.Models;
+@using System.Configuration;
+
+@{
+bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+testMode = false;
+string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"];
+}
+
+<table>
+    <tr>
+        <td>
+                <a href="@homePageURL">
+                    <img src="@Url.Content(homePageURL + "/Images/CCW_Logo.png")" />
+                </a>
+        </td>
+        <td>
+
+
+            <div class="social-icons">
+                <div style="float:right;">
+                    <div class="social-icon-container">
+                        <a href="https://plus.google.com/115329372152705294043" target="_blank">
+                            <img name="ICON_GOOGLE" class="cc-ui-icon cc-ui-icon-google" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                        </a>
+                    </div>
+                </div>
+                <div style="float:right;">
+                    <div class="social-icon-container">
+                        <a href="http://www.linkedin.com/groups?gid=4017248&trk=group-name" target="_blank">
+                            <img name="ICON_LINKEDIN" class="cc-ui-icon cc-ui-icon-linkedin" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                        </a>
+                    </div>
+                </div>
+                <div style="float:right;">
+                    <div class="social-icon-container">
+                        <a href="http://www.youtube.com/user/CompareCloudwareTV" target="_blank">
+                            <img name="ICON_YOUTUBE" class="cc-ui-icon cc-ui-icon-youtube" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                        </a>
+                    </div>
+                </div>
+                <div style="float:right;">
+                    <div class="social-icon-container">
+                        <a href="https://www.facebook.com/comparecloudware1" target="_blank">
+                            <img name="ICON_FACEBOOK" class="cc-ui-icon cc-ui-icon-facebook" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                        </a>
+                    </div>
+                </div>
+                <div style="float:right;">
+                    <div class="social-icon-container">
+                        <a href="http://twitter.com/compcloudware" target="_blank">
+                            <img name="ICON_TWITTER" class="cc-ui-icon cc-ui-icon-twitter" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                        </a>
+                    </div>
+                </div>
+                <div style="clear: both;">
+                </div>
+            </div>
+
+
+
+
+
+        </td>
+    </tr>
+
+</table>
+ 

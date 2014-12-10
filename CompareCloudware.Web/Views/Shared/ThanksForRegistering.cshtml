@@ -1,0 +1,54 @@
+﻿@model string
+
+<script>
+    //$(document).ready(function () {
+    //    $('#taking-to-selection-with-prompt').modal('show');
+
+    //});
+
+</script>
+@using System.Configuration
+@{var loadingImage = ConfigurationManager.AppSettings["TakingToSelectionImage"];}
+<div id="thanks-for-registering" class="modal hide in fade" data-backdrop="static" data-keyboard="false" data-width="600">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*        <div class="modal-header"></div>*@
+            <div class="modal-body">
+
+                <div class="thanks-for-registering">
+                    <table class="thanks-for-registering-header">
+                        <tr>
+                            <td>
+                                <div class="thanks-for-registering-image">
+                                    <img src="@Url.Content(loadingImage)" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="thanks-for-registering-text">
+                                    <label class="font-normal-64px-purple">Thanks for registering,&nbsp;</label>
+                                    <label class="font-normal-64px-purple thanks-for-registering-name">@Model</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="thanks-for-registering-proceed">
+                        <tr>
+                            <td>
+                                <div class="continue-button-link">
+@*                                    @{string href = "/" + Model.CloudApplicationURL;}
+                                    <a href="@href">
+                                        <img src="~/Images/Buttons/SearchResults_ContinueButton_Normal.png" />
+
+                                    </a>*@
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

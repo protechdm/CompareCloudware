@@ -1,0 +1,42 @@
+﻿@model CompareCloudware.Web.Models.PartnerProgrammeModel
+@using Recaptcha.Web.Mvc;
+
+
+
+<div class="partner-programme-content-container">
+
+@*    <div class="partner-programme-content-heading">
+        <div class="partner-programme-content-heading-video">
+            @Html.EditorFor(x => x.Video)
+        </div>
+    </div>*@
+
+    <div class="xcategory-page-content" style="width: 65%; float: left;">
+        @Html.DisplayFor(x => x.TabbedOnpageOptimisationModel)
+    </div>
+    <div class="homepage-socal-container" style="width: 35%; float: left">
+        <div class="homepage-social-carousel-container">
+            @{
+    Html.RenderPartial("CarouselSocialModel", @Model.CarouselSocial);
+            }
+            <div style="clear: both; height: 20px;"></div>
+            <div class="partner-programme-content-graphic">
+                @*                    <img src="@Url.Content("~/Images/CCW_Explained_Bug.gif")" />*@
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both"></div>
+
+    <div class="recaptcha-object" style="display:none;">
+        @Html.Recaptcha(theme: Recaptcha.Web.RecaptchaTheme.Clean)
+    </div>
+    @Html.Partial("ThanksForRegistering",Model.CustomSession.Forename ?? "")
+
+</div>
+
+<script>
+    $(document).ready(function () {
+        $.validator.unobtrusive.adapters.addBool("mandatory", "required");
+    });
+</script>

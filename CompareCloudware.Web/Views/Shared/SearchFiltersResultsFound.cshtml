@@ -1,0 +1,20 @@
+﻿@model CompareCloudware.Web.Models.SearchPageModel
+<div class="search-filters-results-found">
+    <img src="@Url.Content("~/Images/SearchResults_Cloud.png")" />
+    <div class="search-filters-results-found-text">
+        <div class="search-filters-results-found-text-number">
+            <label class="font-normal-56px-white" id="searchResultsCount">
+                @Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults.Count()
+            </label>
+        </div>
+        <div class="search-filters-results-found-text-description">
+            <label class="font-normal-32px-white">
+                results found</label>
+        </div>
+@*        <div class="creature-right-text-full-summary-button">
+            @Html.Partial("FullSummaryButton", Model)
+        </div>*@
+    </div>
+</div>
+<div style="clear: both;">
+</div>

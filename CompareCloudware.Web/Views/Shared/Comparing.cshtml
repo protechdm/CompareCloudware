@@ -1,0 +1,233 @@
+﻿@*@model CloudCompare.Web.Models.SearchFiltersModel
+*@
+@model CompareCloudware.Web.Models.SearchPageModel
+@using CompareCloudware.Web.Models;
+@*@using (Html.BeginForm("SearchPage1", "Home", FormMethod.Post, new { id = "InsertCaseForm" }))
+*@
+@*<link href="@Url.Content("~/Content/search-page.css")" rel="stylesheet" type="text/css" />*@
+@using (Html.BeginForm("SearchPage", "Home", new { buttonID = "", categoryID = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.ChosenCategoryID, numberOfUsers=Model.CustomSession.NumberOfUsers, useCachedData=false}, FormMethod.Post))
+{
+
+
+    <style>
+        /* IE has layout issues when sorting (see #5413) */
+        .group
+        {
+            zoom: 1;
+        }
+    </style>
+    
+
+
+    <script type="text/javascript">
+        //var loaded = false;
+        function setLoadingSearchResults(visibility) {
+
+            if (visibility) {
+                $('.comparing-search-results').css("visibility", "visible");
+            }
+            else {
+                $('.comparing-search-results').css("visibility", "hidden");
+            }
+        }
+
+        $(document).ready(function () {
+            //$('.comparing-search-results').css("visibility", "visible");
+            //$('.footer-container').css("visibility", "hidden");
+            //$('#header').css("visibility", "hidden");
+            $('#comparing-search-results').modal('show');
+        });
+
+        $(window).load(function () {
+        });
+
+        window.onload = function () {
+            getSearchResultsCount();
+            getSearchPagePartial();
+        };
+
+        function getSearchResultsCount() {
+            var category = $('#category').val();
+            var numberOfUsers = $('#numberOfUsers').val();
+            $.ajax({
+                url: '/SearchResultsCount',
+                type: 'GET',
+                data: "&categoryID=" + category + "&numberofusers=" + numberOfUsers,
+
+                //The request was a success. Repopulate the div with new result set.
+                success: function (data) {
+                    var searchResultsNumber = $("#comparing-search-results .comparing-search-results-found-number");
+
+                    $(searchResultsNumber).each(function (obj, index) {
+                        //$(searchResultsNumber).text(data);
+                        $(this).text(data);
+                    });
+
+                    var searchResultsSearching = $("#comparing-search-results .comparing-search-results-searching");
+                    $(searchResultsSearching).css("display", "none");
+                    searchResultsSearching = $("#comparing-search-results .comparing-search-results-found");
+                    $(searchResultsSearching).css("display", "");
+
+                    var searchResultsDialogue = $("#comparing-search-results .comparing-search-results-dialogue-contacting");
+                    $(searchResultsDialogue).css("display", "none");
+                    searchResultsSearching = $("#comparing-search-results .comparing-search-results-dialogue-preparing");
+                    $(searchResultsSearching).css("display", "");
+
+                },
+                error: function (data) {
+                    setLoadingSearchResults(false);
+                    alert('Fail on search navigate');
+                }
+            });
+        }
+
+        function getSearchPagePartial() {
+            var category = $('#category').val();
+            var numberOfUsers = $('#numberOfUsers').val();
+            $.ajax({
+                url: '/SearchPagePartial',
+                type: 'GET',
+                data: "&categoryID=" + category + "&numberofusers=" + numberOfUsers + "&usecacheddata=false",
+
+                //The request was a success. Repopulate the div with new result set.
+                success: function (data) {
+
+                    $(".search-page-container").empty();
+                    $(".search-results-container-outer").css("display", "none");
+
+
+                    //var loaddata = $(data);
+                    var loaddata = $($(jQuery.parseHTML(data)));
+                    $(loaddata).appendTo(".search-page-container");
+                    var canDisplay = false;
+
+                    var check = function(){
+                        if(!canDisplay){
+                            // run when condition is met
+                            checkImagesAreLoaded();
+                        }
+                        else {
+                            var searchResultsSearchingDialogue = $("#comparing-search-results .comparing-search-results-dialogue-preparing");
+                            $(searchResultsSearchingDialogue).css("display", "none");
+                            searchResultsSearchingDialogue = $("#comparing-search-results .comparing-search-results-dialogue-prepared");
+                            $(searchResultsSearchingDialogue).css("display", "");
+
+                            var seeResultsButton = $(".see-search-results");
+                            $(seeResultsButton).css("display", "");
+                            //setLoadingSearchResults(false);
+
+                        }
+                    }
+                    console.log("Running check for first time");
+                    check();
+
+                    function checkImagesAreLoaded() {
+                        //alert("checking");
+                        console.log("Checking");
+                        var images = document.querySelectorAll("img");
+                        canDisplay = true;
+                        $(images).each(function (index, value) {
+                            if (!value.complete) {
+                                //alert("Not complete");
+                                console.log("Cannot display");
+                                canDisplay = false;
+                                //check();
+                                return false;
+                            }
+                        });
+                        console.log("Can Display");
+                        setTimeout(check, 1000); // check again in a second
+                    }
+
+                },
+                error: function (data) {
+                    setLoadingSearchResults(false);
+                    alert('Fail on search navigate');
+                }
+            });
+
+            function IsImageLoaded() {
+                //create image to preload:
+                var imgPreload = new Image();
+                $(imgPreload).attr({
+                    src: photoUrl
+                });
+
+                //check if the image is already loaded (cached):
+                if (imgPreload.complete || imgPreload.readyState === 4) {
+
+                    //image loaded:
+                    //your code here to insert image into page
+
+                } else {
+                    //go fetch the image:
+                    $(imgPreload).load(function (response, status, xhr) {
+                        if (status == 'error') {
+
+                            //image could not be loaded:
+
+                        } else {
+
+                            //image loaded:
+                            //your code here to insert image into page
+
+                        }
+                    });
+                }
+            }
+
+            var searchInputContainerContext = $('.see-search-results');
+            $('.site-button-50', searchInputContainerContext).click(function (evt) {
+
+                $(".search-page-container").css("visibility", "");
+                $('#comparing-search-results').modal('hide');
+
+                $("#searchResultsCount").text($("#searchResultsCountHidden").val());
+
+                if ($('#displayAsSummary').attr("value").toUpperCase() == "TRUE") {
+                    $('#resultsFull').css("visibility", "hidden");
+                    $('#resultsSummary').css("visibility", "visible");
+                }
+                else {
+                    $('#resultsFull').css("visibility", "visible");
+                    $('#resultsSummary').css("visibility", "hidden");
+                }
+
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
+                $(".search-results-container-outer").css("display", "");
+
+                $('.footer-container').css("visibility", "visible");
+                $('#header').css("visibility", "visible");
+
+            });
+
+
+        }
+
+
+
+    </script>
+
+@*    <noscript>
+        <input type="submit" value="Compare Cloudware" id="noScriptFilterRefresh" name="noScriptFilterRefresh" />
+    </noscript>*@
+
+    @Html.Partial("ComparingSearchResults")
+    @Html.Partial("SortingSearchResults")
+    @Html.Partial("PagingSearchResults")
+    @Html.Partial("FilteringSearchResults")
+    @Html.Partial("TakingToSelection")
+
+@*    @Html.Partial("LoadingSearchResultsVisible") *@
+    
+    <div id="searchPageContainer" class="search-page-container font-normal-11px" style="visibility:hidden">
+    @Html.HiddenFor(x => x.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, new { @id = "category" })
+    @Html.HiddenFor(x => x.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers, new { @id = "numberOfUsers" })
+@*        @{Html.RenderPartial("SearchPageContainerModel", Model);}*@
+
+    </div>
+    if (Model.ShowConfirmationDialog)
+    {
+        @Html.Partial("NoScriptDialog", Model)
+    }
+}

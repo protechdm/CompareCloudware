@@ -1,0 +1,19 @@
+﻿@using System.Configuration
+@{var loadingImage = ConfigurationManager.AppSettings["LoadingImage5"];}
+
+<div id="paging-search-results" class="modal hide fade in" data-width="600">  
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">  
+                <div class="paging-search-results">
+                    <div class="paging-search-results-text">
+                        <label class="font-normal-64px-purple">We're getting the requested page of your comparison results</label>
+                    </div>
+                    <div class="paging-search-results-text">
+                        <img src="@Url.Content(loadingImage)" />
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>  

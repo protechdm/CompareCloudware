@@ -1,0 +1,237 @@
+﻿@model CompareCloudware.Web.Models.SocialShareModel
+
+@using System.Configuration
+@{var comparingImage = ConfigurationManager.AppSettings["ComparingImage1"];}
+<script>
+    window.fbAsyncInit = function () {
+        FB.init({
+            appId: '354378121311673', status: true, cookie: true,
+            xfbml: true
+        });
+    };
+
+    (function () {
+
+    }());
+
+</script>
+
+<script language="javascript" type="text/javascript">
+    function OpenPopupCenter(pageURL, title, w, h) {
+        var left = (screen.width - w) / 2;
+        var top = (screen.height - h) / 4;  // for 25% - devide by 4  |  for 33% - devide by 3
+        var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+    }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var socialShareText = $('#SocialShareText').val();
+
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+
+        $('.share-on-facebook-button').click(function (e) {
+            e.preventDefault();
+            FB.ui(
+            {
+                method: 'feed',
+                name: 'CompareCloudware',
+                link: 'http://www.comparecloudware.com',
+                picture: 'http://www.comparecloudware.com/images/facebook image posting.jpg',
+                caption: 'CompareCloudware.com',
+                //description: 'I’ve just found a great deal on comparecloudware.com. Compare and choose from over 600 business software and services #cloudware',
+                description: socialShareText,
+                message: 'test message',
+                redirect_uri: 'https://www.facebook.com/comparecloudware1/',
+                display: 'popup'
+            });
+        });
+
+
+
+        $(".share-on-linkedin-button").click(function (e) {
+            e.preventDefault();
+            //var articleUrl = encodeURIComponent('http://comparecloudware.com');
+            var articleUrl = encodeURIComponent('http://comparecloudware.com');
+            var articleImage = 'Linkedin image posting.jpg';
+            var articleTitle = encodeURIComponent('Compare Cloudware');// (TITLE)
+            var articleSummary = encodeURIComponent('Compare Cloudware');// (ARTICLE SUMMARY)
+            var articleSource = encodeURIComponent('Compare Cloudware');// (SOURCE)
+            //var articleComment = encodeURIComponent('Compare, Choose and Go to one of over 600 cloud software and services with Compare Cloudware. The first free and dynamic comparison site for cloud delivered services for home workers and small businesses.');
+            var articleComment = encodeURIComponent(socialShareText);
+
+            var goto = 'http://www.linkedin.com/shareArticle?mini=true' +
+                '&url=' + articleUrl +
+                '&title=' + articleTitle +
+                '&summary=' + articleSummary +
+                '&source=' + articleSource +
+                '&comment=' + articleComment
+            ;
+
+            OpenPopupCenter(goto, 'TEST!?', 660, 400);
+            //window.open(goto, "LinkedIn", "width=660,height=400,scrollbars=no;resizable=no");
+            return false;
+        });
+
+        $(".share-on-twitter-button").click(function (e) {
+            e.preventDefault();
+            //var tweetText = encodeURIComponent('I’ve just found a great deal on comparecloudware.com. Compare and choose from over 600 business software and services #cloudware');
+            var tweetText = encodeURIComponent(socialShareText);
+            //var tweetURL = encodeURIComponent('http://www.comparecloudware.com');
+            var tweetURL = encodeURIComponent('');
+            //var tweetHashTags = encodeURIComponent('#storage #backup');
+            var tweetHashTags = encodeURIComponent('');
+            //var tweetVia = encodeURIComponent('');
+            //var tweetRelated = encodeURIComponent('');
+            var tweetInReplyTo = encodeURIComponent('');
+
+            var goto = 'https://twitter.com/intent/tweet?' +
+                'text=' + tweetText +
+                '&url=' + tweetURL +
+                '&hashtags=' + tweetHashTags +
+                //'&via=' + tweetVia +
+                //'&related=' + tweetRelated +
+                //'&in-reply-to=' + tweetInReplyTo 
+                ''
+            ;
+
+            OpenPopupCenter(goto, 'TEST!?', 660, 250);
+            //window.open(goto, "Twitter Title", "width=660,height=250,scrollbars=no;resizable=no");
+            return false;
+        });
+
+        $(".share-on-google-button").click(function (e) {
+            e.preventDefault();
+            var googleURL = encodeURIComponent('http://www.comparecloudware.com');
+            //var message = 'Compare, Choose and Go to one of over 600 cloud software and services with Compare Cloudware. The first free and dynamic comparison site for cloud delivered services for home workers and small businesses.';
+            var message = socialShareText;
+            var goto = 'http://plus.google.com/share?' +
+                //'text=' + tweetText +
+                'url=' + googleURL +
+                //'&hashtags=' + tweetHashTags +
+                //'&via=' + tweetVia +
+                //'&related=' + tweetRelated +
+                //'&in-reply-to=' + tweetInReplyTo 
+                ''
+            ;
+
+            OpenPopupCenter(goto, 'TEST!?', 660, 250);
+            //window.open(goto, "Twitter Title", "width=660,height=250,scrollbars=no;resizable=no");
+            return false;
+        });
+
+
+    });
+</script>
+
+<script type="text/javascript">
+    window.twttr = (function (d, s, id) { var t, js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) { return } js = d.createElement(s); js.id = id; js.src = "https://platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } }) }(document, "script", "twitter-wjs"));
+</script>
+
+<!-- NOTE: be sure to set onLoad = onLinkedInLoad -->
+<script type="text/javascript">
+    function onLinkedInLoad() {
+        IN.Event.on(IN, "auth", function () { onLinkedInLogin(); });
+        IN.Event.on(IN, "logout", function () { onLinkedInLogout(); });
+    }
+
+    function onLinkedInLogout() {
+        // do nothing
+    }
+
+    function onLinkedInLogin() {
+        IN.Event.on("shareAPI", "click", doSharingTest);
+    }
+
+    function doSharingTest() {
+        IN.API.Raw("/people/~/shares")
+          .method("POST")
+          .body(JSON.stringify({
+              "content": {
+                  "submitted-url": "http://www.comparecloudware.com",
+                  "title": "CompareCloudware",
+                  "description": "The first IT and communications comparison website where you can choose, compare, review, try and buy a range of market leading services. CompareCloudware.com",
+                  "submitted-image-url": "http://www.comparecloudware.com/images/carousel/home/Home_Page_carousel_frame_1.gif"
+              },
+              "visibility": {
+                  "code": "anyone"
+              },
+              "comment": "test message"
+          })
+          )
+          .result(function (r) {
+              alert("POST OK");
+          })
+          .error(function (r) {
+              alert("POST FAIL");
+          });
+    }
+
+
+</script>
+
+<div id="fb-root"></div>
+<div id="social-share-container" class="social-share-container modal hide fade in" data-backdrop="static" data-keyboard="false" data-width="716">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="social-share-container-content">
+                    @Html.HiddenFor(x => x.SocialShareText)
+                    <div class="social-share-container-text">
+                        <label class="font-normal-32px-purple">
+                            Thank you for using Compare Cloudware, we would love you to give us a shout on the following social networks.
+                        </label>
+                    </div>
+
+                    <div style="clear: both; margin-top: 20px;"></div>
+
+                    <table class="social-share-container-buttons">
+                        <tr>
+                            <td>
+                                <div class="social-share-container-button">
+                                    <div class="share-on-twitter-button">
+                                        <button type="button" value="ShareOnTwitterButton" id="ShareOnTwitterButton" class="ShareOnTwitterButton" xclass="terms-checked users-chosen show-search-splash" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="social-share-container-button">
+                                    <div class="share-on-google-button">
+                                        <button type="button" value="ShareOnGoogleButton" id="ShareOnGoogleButton" class="ShareOnGoogleButton" xclass="terms-checked users-chosen show-search-splash" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="social-share-container-button">
+                                    <div class="share-on-facebook-button">
+                                        <button type="button" value="ShareOnFacebookButton" id="ShareOnFacebookButton" class="ShareOnFacebookButton" xclass="terms-checked users-chosen show-search-splash" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="social-share-container-button">
+                                    <div class="share-on-linkedin-button">
+                                        <button type="button" value="ShareOnLinkedInButton" id="ShareOnLinkedInButton" class="ShareOnLinkedInButton" xclass="terms-checked users-chosen show-search-splash" />
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="social-share-container-button">
+                                    <div class="skip-social-share-button">
+                                        <button type="button" value="SkipSocialShareButton" id="SkipSocialShareButton" class="SkipSocialShareButton" xclass="terms-checked users-chosen show-search-splash" />
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

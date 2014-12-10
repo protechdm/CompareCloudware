@@ -1,0 +1,11 @@
+﻿@using CompareCloudware.Web.Helpers
+@using CompareCloudware.Web.Models
+
+@{    
+    var tc = new TC();
+    string tcText = tc.DisplayName;
+    <label class = "font-normal-11px-white">I accept Compare Cloudware </label>
+    @Html.ActionLink("terms & conditions ","UserTermsOfUsePage",null,new { @class = "font-normal-11px-white" })
+    <label class = "font-normal-11px-white">and </label>
+    @Html.ActionLink("data privacy policies", "PrivacyPolicyPage", null, new { @class = "font-normal-11px-white" })
+    }

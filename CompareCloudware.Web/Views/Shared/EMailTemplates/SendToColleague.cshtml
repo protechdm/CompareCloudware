@@ -1,0 +1,65 @@
+﻿@model CompareCloudware.Web.Models.EMailTemplateModels.SendToColleagueModel
+
+@using System.Configuration;
+
+@{
+bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+testMode = false;
+string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"] : ConfigurationManager.AppSettings["HomePageURLLive"];
+}
+
+<table class="font-normal-14px-black">
+    <tr>
+        <td>
+            <label>Dear @Model.ColleagueForename @Model.ColleagueSurname</label>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label>Colleague EMail address : @Model.ColleagueEmail</label>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="font-normal-14px-black">
+    <tr>
+        <td>
+            <label>@Model.RecommenderForename @Model.RecommenderSurname compared and found @Model.CloudApplicationName on Comparecloudware.com and thought you would also be interested.</label>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="font-normal-14px-black">
+    <tr>
+        <td>
+            <label>Click the link below to have a look:</label>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="font-normal-14px-black">
+    <tr>
+        <td>
+            <label><a href="@Model.CloudApplicationURL">@Model.CloudApplicationURL</a></label>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="font-normal-14px-black">
+    <tr>
+        <td>
+            <label><a href="http://www.comparecloudware.com">comparecloudware.com</a>&nbsp;is the first IT and Communications comparison website where you can choose, compare, review, try and buy a range of market leading services.</label>
+        </td>
+    </tr>
+</table>
+<br />
+<table class="font-normal-14px-black">
+    <tr>
+        <td>
+           <a href="@homePageURL">
+               <img src="@Url.Content(homePageURL + "/Images/Carousel/Home/Home_Page_carousel_frame_1.gif")" />
+           </a>
+        </td>
+    </tr>
+</table>
+<br />

@@ -1,0 +1,53 @@
+﻿@model string
+
+<script>
+    //$(document).ready(function () {
+    //    $('#taking-to-selection-with-prompt').modal('show');
+
+    //});
+
+</script>
+@using System.Configuration
+@{var loadingImage = ConfigurationManager.AppSettings["TakingToSelectionImage"];}
+<div id="email-sent" class="modal hide in fade" data-backdrop="static" data-keyboard="false" data-width="600">
+
+    <div class="modal-dialog">
+        <div class="modal-content">
+            @*        <div class="modal-header"></div>*@
+            <div class="modal-body">
+
+                <div class="email-sent">
+                    <table class="email-sent-header">
+                        <tr>
+                            <td>
+                                <div class="email-sent-image">
+                                    <img src="@Url.Content(loadingImage)" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="email-sent-text">
+                                    <label class="font-normal-64px-purple">Thanks, an email has been sent</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="email-sent-proceed">
+                        <tr>
+                            <td>
+                                <div class="continue-button-link">
+@*                                    @{string href = "/" + Model.CloudApplicationURL;}
+                                    <a href="@href">
+                                        <img src="~/Images/Buttons/SearchResults_ContinueButton_Normal.png" />
+
+                                    </a>*@
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
