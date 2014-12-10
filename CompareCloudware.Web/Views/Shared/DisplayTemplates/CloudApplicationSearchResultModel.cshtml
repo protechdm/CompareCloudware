@@ -440,6 +440,12 @@
                 </div>
             </td>
         </tr>
+        @if (Model.GetType() == typeof(CloudApplicationSearchResultShopModel))
+        {
+            @:</table>
+            @Html.Partial("ShopSectionHeaderPartial","Product review of " + @Model.VendorName + " " + @Model.ServiceName)
+            @:<table id="dataTable" class="cloud-application-search-result-table-inner box-shadow" style="width: 93%;margin-left:3px;border:3px solid;margin-top:3px;">
+        }
         <tr>
             @Html.HiddenFor(x => x.ServiceName)
             <td class="font-bold-13px-purple" style="width: 70%; border-bottom: 0px solid black;"

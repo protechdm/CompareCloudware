@@ -2,9 +2,17 @@
 {
     using System;
     using System.Runtime.CompilerServices;
+    using System.Configuration;
 
     public class CustomSession : ICustomSession
     {
+        public CustomSession()
+        {
+            if (ConfigurationManager.AppSettings["TestMode"] != null)
+            {
+                TestMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"].ToString());
+            }
+        }
         public string DetectedBrowser { get; set; }
 
         public string DetectedBrowserID { get; set; }
@@ -15,7 +23,7 @@
         public string EMail { get; set; }
         public string Forename { get; set; }
         public string Surname { get; set; }
-        public int NumberOfUsers { get; set; }
+        public int? NumberOfUsers { get; set; }
 
         public bool HasSearchResults { get; set; }
 
@@ -45,6 +53,8 @@
         public string SelectedCategoryName { get; set; }
 
         public bool ShowSearchTextBox { get; set; }
+
+        public bool TestMode { get; set; }
 
     }
 }

@@ -120,6 +120,12 @@ namespace CompareCloudware.Web
             );
 
             routes.MapRoute(
+                "EMailApplicationRequest", // Route name
+                "{anything}/EMailApplicationRequest", // URL with parameters
+                new { controller = "Home", action = "EMailApplicationRequest", whichTab = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
                 "SearchResultsTabChanged", // Route name
                 "Home/SearchResultsTabChanged/{whichTab}", // URL with parameters
                 new { controller = "Home", action = "SearchResultsTabChanged", whichTab = UrlParameter.Optional } // Parameter defaults
@@ -229,9 +235,45 @@ namespace CompareCloudware.Web
             );
 
             routes.MapRoute(
+                "HomePageFirstTime", // Route name
+                "HomePageFirstTime", // URL with parameters
+                new { controller = "Home", action = "HomePageFirstTime" } // Parameter defaults
+            );
+
+            routes.MapRoute(
                 "SearchPage", // Route name
                 "SearchPage", // URL with parameters
                 new { controller = "Home", action = "SearchPage" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                "SearchPagePartial", // Route name
+                "SearchPagePartial", // URL with parameters
+                new { controller = "Home", action = "SearchPagePartial" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                "Comparing", // Route name
+                "Comparing", // URL with parameters
+                new { controller = "Home", action = "Comparing" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                "TakingToSelectionWithPrompt", // Route name
+                "TakingToSelectionWithPrompt", // URL with parameters
+                new { controller = "Home", action = "TakingToSelectionWithPrompt" } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                name: "TakeToSelection", // Route name
+                url: "TakeToSelection/{cloudApplicationID}", // URL with parameters
+                defaults:new { controller = "Home", action = "TakeToSelection", cloudApplicationID = UrlParameter.Optional } // Parameter defaults
+            );
+
+            routes.MapRoute(
+                "SearchResultsCount", // Route name
+                "SearchResultsCount", // URL with parameters
+                new { controller = "Home", action = "SearchResultsCount" } // Parameter defaults
             );
 
             routes.MapRoute(
@@ -476,14 +518,75 @@ namespace CompareCloudware.Web
                         model = UrlParameter.Optional
                     }
 
-        );
+            );
+
+            routes.MapRoute(
+                    "PartnerProgramme", // Route name
+                //"thanksforcoming/{categoryname}", // URL with parameters
+                    "partnerprogramme", // URL with parameters
+                    new
+                    {
+                        controller = "Home",
+                        action = "PartnerProgrammePage"
+                        ,
+                        model = UrlParameter.Optional
+                    }
+
+            );
 
 
 
+            routes.MapRoute(
+                    "BusinessPartner", // Route name
+                    "admin/businesspartner", // URL with parameters
+                    new
+                    {
+                        controller = "Admin",
+                        action = "BusinessPartner"
+                        ,
+                        cloudApplicationRequestId = UrlParameter.Optional
+                    }
 
+            );
 
+            routes.MapRoute(
+                    "StrategicPartner", // Route name
+                    "admin/strategicpartner", // URL with parameters
+                    new
+                    {
+                        controller = "Admin",
+                        action = "StrategicPartner"
+                        ,
+                        cloudApplicationRequestId = UrlParameter.Optional
+                    }
 
+            );
 
+            routes.MapRoute(
+                    "ReferRewardr", // Route name
+                    "admin/referreward", // URL with parameters
+                    new
+                    {
+                        controller = "Admin",
+                        action = "ReferReward"
+                        ,
+                        cloudApplicationRequestId = UrlParameter.Optional
+                    }
+
+            );
+
+            routes.MapRoute(
+                    "SendToColleague", // Route name
+                    "admin/sendtocolleague", // URL with parameters
+                    new
+                    {
+                        controller = "Admin",
+                        action = "SendToColleague"
+                        ,
+                        cloudApplicationRequestId = UrlParameter.Optional
+                    }
+
+            );
 
             routes.MapRoute(
                 "Shop", // Route name

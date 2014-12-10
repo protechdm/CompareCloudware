@@ -27,7 +27,7 @@
         public ContentTextsModel ContentTextsModel { get; set; }
 
         public CarouselModel Carousel { get; set; }
-        public ContentTextsModel H1H2ContentText { get; set; }
+    public ContentTextsModel H1H2ContentText { get; set; }
 
         public CompareCloudware.Web.Models.TabbedOnpageOptimisationModel TabbedOnpageOptimisationModel { get; set; }
 

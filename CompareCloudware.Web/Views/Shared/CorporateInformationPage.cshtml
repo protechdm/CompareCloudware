@@ -9,18 +9,15 @@
 
         $("#corporatePressTabs").tabs().addClass("ui-tabs-vertical ui-helper-clearfix");
 
-        debugger;
         var activeTab = @(Model.ActiveTab);
-        $("#corporateTabs").tabs("select", activeTab);
-
+        //$("#corporateTabs").tabs("select", activeTab);
+        $("#corporateTabs").tabs( "option", "active", activeTab );
 
     });
-
     $(document).ready(function () {
         //collapseAllPressReleases();
 
         function collapseAllPressReleases() {
-            //debugger;
             var pressReleases = $('.press-header');
             $(pressReleases).each(function () {
                 collapsePressRelease(this);
@@ -28,7 +25,6 @@
         }
 
         function collapsePressRelease(theObject) {
-            //debugger;
             var t = $(theObject).parent().next();
             $(t).slideToggle('fast');
 
@@ -37,7 +33,6 @@
         $('body').on('click', '.press-header', function () {
             //$('div.search-filters-container-inner:eq(0)> div.search-filter-group-header').click(function () {
             //alert("click");
-            //debugger;
             //var t = $(this).parent().next();
             //$(t).slideToggle('fast');
             //collapsePressRelease(this);
@@ -74,10 +69,10 @@
                 <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
                 <a href="#tabs-5" class="font-normal-13px-black">Careers</a>
             </li>
-            <li>
+@*            <li>
                 <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
                 <a href="#tabs-6" class="font-normal-13px-black">Press</a>
-            </li>
+            </li>*@
             <li>
                 <div class="cc-ui-selected-tab-icon cc-ui-icon-selected-tab"></div>
                 <a href="#tabs-7" class="font-normal-13px-black">Contact us</a>
@@ -346,7 +341,7 @@
                 </table>
             </div>
         </div>
-        <div id="tabs-6">
+        <div id="tabs-6" style="display:none;">
 
 
             @{ List<ContentTextModel> pressTabs = Model.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName == "PRESS_SECTION_TITLE").OrderBy(x => x.BodyOrder).ToList();}

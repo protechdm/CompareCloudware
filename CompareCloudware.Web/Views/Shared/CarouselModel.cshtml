@@ -52,16 +52,16 @@
             ID5 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID5"];
             break;
         case 2:
-            image1 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement1"];
-            image2 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement2"];
-            image3 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement3"];
-            image4 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement4"];
-            image5 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement5"];
-            ID1 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID1"];
-            ID2 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID2"];
-            ID3 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID3"];
-            ID4 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID4"];
-            ID5 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID5"];
+            image1 = ConfigurationManager.AppSettings["CarouselCategoryCRM1"];
+            image2 = ConfigurationManager.AppSettings["CarouselCategoryCRM2"];
+            image3 = ConfigurationManager.AppSettings["CarouselCategoryCRM3"];
+            image4 = ConfigurationManager.AppSettings["CarouselCategoryCRM4"];
+            image5 = ConfigurationManager.AppSettings["CarouselCategoryCRM5"];
+            ID1 = ConfigurationManager.AppSettings["CarouselCategoryCRMID1"];
+            ID2 = ConfigurationManager.AppSettings["CarouselCategoryCRMID2"];
+            ID3 = ConfigurationManager.AppSettings["CarouselCategoryCRMID3"];
+            ID4 = ConfigurationManager.AppSettings["CarouselCategoryCRMID4"];
+            ID5 = ConfigurationManager.AppSettings["CarouselCategoryCRMID5"];
             break;
         case 3:
             image1 = ConfigurationManager.AppSettings["CarouselCategoryConferencing1"];
@@ -218,7 +218,8 @@
     var key_slide = 1;
 
     //speed of auto slide(
-    var auto_slide_seconds = 5000;
+    //var auto_slide_seconds = 5000;
+    var auto_slide_seconds = @(Model.DisplayTime1);
     /* IMPORTANT: i know the variable is called ...seconds but it's 
     in milliseconds ( multiplied with 1000) '*/
 
@@ -294,7 +295,6 @@
             //clearInterval(timer)
         }, function () {
             //and when mouseout start it again
-            //timer = setInterval('slide("right",1)', auto_slide_seconds);
         });
 
         // Using multiple unit types within one animation.
@@ -323,7 +323,6 @@
         if (auto_slide == 1) {
             /*set the interval (loop) to call function slide with option 'right' 
             and set the interval time to the variable we declared previously */
-            //var timer = setInterval('slide("right",1)', auto_slide_seconds);
             timer = setInterval('slide("right",1)', auto_slide_seconds);
 
             /*and change the value of our hidden field that hold info about
@@ -453,10 +452,18 @@
                     //...and then just get back the default left indent
                     $('.carousel_ul').css({ 'left': '-976px' });
                     $("#currentImage").val($(".carousel_ul li:eq(1)").attr("id"));
+
+                    //debugger;
+                    var currentImage = $("#currentImage").val();
+                    var seconds = $(".displaytime", $("#"+currentImage)).val();
+                    //console.log(currentImage);
+                    //console.log(seconds);
+                    auto_slide_seconds = seconds;
+                    clearInterval(timer)
+                    timer = setInterval('slide("right",1)', auto_slide_seconds);
                 });
             }
             $(this).dequeue();
-            //timer = setInterval('slide("right",1)', auto_slide_seconds);
         });
 
 
@@ -485,21 +492,25 @@
             @if (Model.SelectedCategoryID==0)
             {
             <li id="image1">
+                @Html.HiddenFor(x => x.DisplayTime1, new { @class = "displaytime" })
                 <a href='@Model.LinkRef1'>
                     <img src="@Url.Content(@Model.Image1)" />
                 </a>
             </li>
             <li id="image2">
+                @Html.HiddenFor(x => x.DisplayTime2, new { @class = "displaytime" })
                 <a href='@Model.LinkRef2'>
                     <img src="@Url.Content(@Model.Image2)" />
                 </a>
             </li>
             <li id="image3">
+                @Html.HiddenFor(x => x.DisplayTime3, new { @class = "displaytime" })
                 <a href='@Model.LinkRef3'>
                     <img src="@Url.Content(@Model.Image3)" />
                 </a>
             </li>
             <li id="image4">
+                @Html.HiddenFor(x => x.DisplayTime4, new { @class = "displaytime" })
                 <a href='@Model.LinkRef4'>
                     <img src="@Url.Content(@Model.Image4)" />
                 </a>
@@ -508,21 +519,25 @@
             else
             {
             <li id="image1">
+                @Html.HiddenFor(x => x.DisplayTime1, new { @class = "displaytime" })
                 <a href='@Model.LinkRef1'>
                     <img src="@Url.Content(@Model.Image1)" />
                 </a>
             </li>
             <li id="image2">
+                @Html.HiddenFor(x => x.DisplayTime2, new { @class = "displaytime" })
                 <a href='@Model.LinkRef2'>
                     <img src="@Url.Content(@Model.Image2)" />
                 </a>
             </li>
             <li id="image3">
+                @Html.HiddenFor(x => x.DisplayTime3, new { @class = "displaytime" })
                 <a href='@Model.LinkRef3'>
                     <img src="@Url.Content(@Model.Image3)" />
                 </a>
             </li>
             <li id="image4">
+                @Html.HiddenFor(x => x.DisplayTime4, new { @class = "displaytime" })
                 <a href='@Model.LinkRef4'>
                     <img src="@Url.Content(@Model.Image4)" />
                 </a>
@@ -530,6 +545,7 @@
                 if (image5 != null)
                 {
             <li id="image5">
+                @Html.HiddenFor(x => x.DisplayTime5, new { @class = "displaytime" })
                 <a href='@Model.LinkRef5'>
                     <img src="@Url.Content(@Model.Image5)" />
                 </a>

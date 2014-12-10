@@ -308,11 +308,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddTag(t);
             #endregion
 
-            #region CUSTOMER MANAGEMENT PRIMARY
+            #region CRM PRIMARY
             t = new Tag()
             {
                 TagName = "CRM",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PRIMARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -321,7 +321,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Relationship",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PRIMARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -329,7 +329,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Software",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PRIMARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -338,7 +338,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Businesses",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PRIMARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -346,7 +346,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Sales",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PRIMARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -354,7 +354,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Database",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PRIMARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -683,11 +683,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddTag(t);
             #endregion
 
-            #region CUSTOMER MANAGEMENT SECONDARY
+            #region CRM SECONDARY
             t = new Tag()
             {
                 TagName = "Contact",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("SECONDARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -696,7 +696,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Support",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("SECONDARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -704,7 +704,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Reseach",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("SECONDARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -713,7 +713,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Leads",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("SECONDARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -721,7 +721,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Marketing",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("SECONDARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -729,7 +729,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Client",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("SECONDARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1002,11 +1002,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddTag(t);
             #endregion
 
-            #region CUSTOMER MANAGEMENT TERTIARY
+            #region CRM TERTIARY
             t = new Tag()
             {
                 TagName = "Management",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("TERTIARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1015,7 +1015,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Forecasting",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("TERTIARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1023,7 +1023,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Chart",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("TERTIARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1032,7 +1032,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Information",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("TERTIARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1040,7 +1040,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Demand",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("TERTIARY"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1265,11 +1265,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region CUSTOMER MANAGEMENT PHRASES
+            #region CRM PHRASES
             t = new Tag()
             {
                 TagName = "Customer Relationship Management",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PHRASE"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1278,7 +1278,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Customer Services",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PHRASE"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1286,7 +1286,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Salesforce Automation",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PHRASE"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1295,7 +1295,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Trouble Ticket",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PHRASE"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -1303,7 +1303,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Contact Management",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("PHRASE"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2080,11 +2080,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region CUSTOMER MANAGEMENT VERNACULAR
+            #region CRM VERNACULAR
             t = new Tag()
             {
                 TagName = "Online client management",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2093,7 +2093,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "manage",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2101,7 +2101,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Web CRM Systems",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2110,7 +2110,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Online CRM",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2118,7 +2118,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Hosted CRM",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2126,7 +2126,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Service management",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2135,15 +2135,15 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "On-Demand CRM solutions",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddTag(t);
             t = new Tag()
             {
-                TagName = "Customer management solutions",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                TagName = "CRM solutions",
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2152,7 +2152,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Customer Intelligence",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2160,7 +2160,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Feedback Solutions",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2168,7 +2168,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Cloud based",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2177,7 +2177,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "CRM online cloud",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2185,7 +2185,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "Web based CRM software",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("VERNACULAR"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2757,11 +2757,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddTag(t);
             #endregion
 
-            #region CUSTOMER MANAGEMENT
+            #region CRM
             t = new Tag()
             {
                 TagName = "crm",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("CATEGORY URL"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2770,7 +2770,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "crm-software",
-                Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                Category = repository.FindCategoryByName("CRM"),
                 TagType = repository.FindTagTypeByName("CATEGORY URL"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2871,8 +2871,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #region INTELLIGENCE & REPORTING
             t = new Tag()
             {
-                TagName = "intelligence-and-reporting",
-                Category = repository.FindCategoryByName("INTELLIGENCE & REPORTING"),
+                TagName = "business-intelligence-reporting",
+                Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 TagType = repository.FindTagTypeByName("CATEGORY URL"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };
@@ -2997,7 +2997,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 t = new Tag()
                 {
                     //TagName = ca.Vendor.VendorName.Trim().ToLower() + "-" + ca.ServiceName.ToLower().Replace(" ","-"),
-                    TagName = ca.Vendor.VendorName.Trim().ToLower().Replace(" ", "-").Replace(":", "-").Replace("&", "AND") + "-" + ca.ServiceName.ToLower().Replace(" ", "-"),
+                    TagName = (ca.Vendor.VendorName.Trim().ToLower().Replace(" ", "-").Replace(":", "-").Replace("&", "-and-").Replace("+", "-plus-").Replace(".", "-dot-") + "-" + ca.ServiceName.ToLower().Replace(" ", "-")).Replace("--", "-"),
                     Category = category,
                     TagType = tagType,
                     TagStatus = tagStatus,
@@ -3377,6 +3377,43 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddTag(t);
             #endregion
 
+            return retVal;
+        }
+
+        public static bool PumpCategoryURL(QueryRepository repository, CloudApplication ca)
+        {
+            bool retVal = true;
+            Tag t;
+
+                //var categoryTag = repository.FindCategoryTag(ca.Category.CategoryID == 1 ? 6 : ca.Category.CategoryID);
+                var categoryTag = repository.FindCategoryTag(ca.Category.CategoryID);
+                ca.CloudApplicationCategoryTag = categoryTag;
+                repository.Update<CloudApplication>("1", ca);
+            return retVal;
+        }
+
+        public static bool PumpShopURL(QueryRepository repository, CloudApplication ca)
+        {
+            bool retVal = true;
+            Tag t;
+
+
+                var category = repository.FindCategoryByID(ca.Category.CategoryID);
+                var tagType = repository.FindTagTypeByName("SHOP URL");
+                var tagStatus = repository.FindStatusByName("LIVE");
+
+                t = new Tag()
+                {
+                    //TagName = ca.Vendor.VendorName.Trim().ToLower() + "-" + ca.ServiceName.ToLower().Replace(" ","-"),
+                    TagName = ca.Vendor.VendorName.Trim().ToLower().Replace(" ", "-").Replace(":", "-").Replace("&", "AND") + "-" + ca.ServiceName.ToLower().Replace(" ", "-"),
+                    Category = category,
+                    TagType = tagType,
+                    TagStatus = tagStatus,
+                };
+                repository.Insert<Tag>(t, true);
+
+                ca.CloudApplicationShopTag = t;
+                repository.Update<CloudApplication>("1", ca);
             return retVal;
         }
 

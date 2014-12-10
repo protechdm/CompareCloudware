@@ -1,4 +1,86 @@
-﻿@model CompareCloudware.Domain.Models.TabbedSearchResults
+﻿@model CompareCloudware.Web.Models.HomePageModel
+
+@{
+    //Layout = null;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<select></select>
+
+
+
+<script>
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '354378121311673',
+                status: true,
+                cookie: true,
+                xfbml: true,
+                version: 'v2.0'
+            });
+        };
+        var socialShareText = "test";
+
+        var e = document.createElement('script'); e.async = true;
+        e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+        document.getElementById('fb-root').appendChild(e);
+
+        debugger;
+
+
+        //setTimeout(5000, postit());
+
+            function postit() {
+                FB.ui(
+                {
+                    method: 'share',
+                    href: 'http://comparecloudware.com'
+                });
+
+            }
+
+
+    });
+</script>
+
+
+<div id="fb-root"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @{
     ViewBag.Title = "Home Page";

@@ -88,6 +88,84 @@ namespace CompareCloudware.Web.Validation
             return base.IsValid(value);
         }
     }
+
+    
+    #endregion
+
+    #region ValidateEMailTakingToSelectionWithPromptAttribute
+    public class ValidateEMailTakingToSelectionWithPromptAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            List<string> Errors = new List<string>();
+
+            var freeTrialBuyNowModel = (EMailCloudApplicationModel)validationContext.ObjectInstance;
+            if (freeTrialBuyNowModel.EMailAddress == ViewModelHelpers.EMAIL_ERROR_MESSAGE)
+            {
+                ErrorMessage = ViewModelHelpers.EMAIL_ERROR_MESSAGE;
+                Errors.Add(ErrorMessage);
+            }
+
+            if (Errors.Count > 0)
+            {
+                return new ValidationResult(ErrorMessage, Errors);
+            }
+            else
+            {
+                return ValidationResult.Success;
+            }
+        }
+
+        public override bool IsValid(object value)
+        {
+            return base.IsValid(value);
+        }
+    }
+
+
+    #endregion
+
+    #region ValidateEMailRegisterNowAttribute
+    public class ValidateEMailRegisterNowAttribute : ValidationAttribute
+    {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            List<string> Errors = new List<string>();
+
+            var partnerProgrammeModel = (RegisterNowModel)validationContext.ObjectInstance;
+            if (partnerProgrammeModel.EMailAddress == ViewModelHelpers.EMAIL_ERROR_MESSAGE)
+            {
+                ErrorMessage = ViewModelHelpers.EMAIL_ERROR_MESSAGE;
+                //return new ValidationResult(ErrorMessage);
+                Errors.Add(ErrorMessage);
+            }
+
+            if (Errors.Count > 0)
+            {
+                return new ValidationResult(ErrorMessage, Errors);
+            }
+            else
+            {
+                return ValidationResult.Success;
+            }
+            //return ValidationResult.Success;
+            //if (value != null)
+            //{
+            //    return GetValidationResult(value,validationContext);
+            //}
+            //else
+            //{
+            //    return new ValidationResult(null);
+            //}
+        }
+
+        public override bool IsValid(object value)
+        {
+            return base.IsValid(value);
+        }
+    }
+
+
     #endregion
 
 }

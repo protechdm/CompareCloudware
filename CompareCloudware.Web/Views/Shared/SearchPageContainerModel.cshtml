@@ -3,61 +3,32 @@
 
 <script>
     $(document).ready(function () {
-
         function RefreshActiveSupport() {
-            //debugger;
-            //$('input.filterParameter').change(function () {
-            //alert("postback");
-            //$(this).parent('form:first').submit();
-            //$('#main form').submit();
-            //debugger;
             var serialize1 = $('.search-filter-support-types :input').serialize();
-            //var serialize2 = JSON.stringify($('#main'));
-            //var serialize3 = $('#main form').serializeArray();
-            //var sortColumn = $('#currentSortOrder').val();
-            //var currentSortOrder = $('#currentSortOrder').val();
-
-            //setLoadingSearchResults(true);
-
             $.ajax({
                 url: '/HasActiveSupport',
                 type: 'POST',
-                //data: JSON.stringify("jsonData"),
-                //dataType: 'json',
-                //contentType: 'application/json; charset=utf-8',
                 data: serialize1,
 
                 //The request was a success. Repopulate the div with new result set.
                 success: function (data) {
-                    //debugger;
                     if (data.toUpperCase() == "TRUE") {
-                        //$('.search-filter-support-days').removeAttr('disabled');
                         $('.search-filter-support-days select').removeAttr('disabled');
-                        //$('.search-filter-support-hours').removeAttr('disabled');
                         $('.search-filter-support-hours select').removeAttr('disabled');
-                        //$('.search-filter-timezones').removeAttr('disabled');
                         $('.search-filter-timezones select').removeAttr('disabled');
                     }
                     else {
-                        //$('.search-filter-support-days').attr('disabled', true);
                         $('.search-filter-support-days select').attr('disabled', true);
                         $('.search-filter-support-days select').val('1')
-                        //debugger;
-                        //$('.search-filter-support-hours').attr('disabled', true);
                         $('.search-filter-support-hours select').attr('disabled', true);
                         $('.search-filter-support-hours select').val('1')
-                        //$('.search-filter-timezones').attr('disabled', true);
                         $('.search-filter-timezones select').attr('disabled', true);
                         $('.search-filter-timezones select').val('1')
                     }
                 },
                 error: function (data) {
-                    //setLoadingSearchResults(false);
-                    //debugger;
-                    //alert('Fail on refreshing active support');
                 }
             });
-
         }
 
         RefreshActiveSupport();
@@ -68,12 +39,29 @@
             RefreshActiveSupport();
         });
 
+        function setResultsDisplay()
+        {
+            var theButton = $('#displayAsSummary');
+            var theValue = theButton.attr("value");
+            if (theValue != null) {
+                if ($('#displayAsSummary').attr("value").toUpperCase() == "TRUE") {
+                    $('#resultsFull').css("visibility", "hidden");
+                    $('#resultsSummary').css("visibility", "visible");
+                }
+                else {
+                    $('#resultsFull').css("visibility", "visible");
+                    $('#resultsSummary').css("visibility", "hidden");
+                }
+            }
+        }
+
+        setResultsDisplay();
     });
 </script>
 
 @{
-    var href1 = "/" + Model.SkyScraperAdvertisingImageCategoryTag1 + "/" + Model.SkyScraperAdvertisingImageShopTag1;
-    var href2 = "/" + Model.SkyScraperAdvertisingImageCategoryTag2 + "/" + Model.SkyScraperAdvertisingImageShopTag2;
+    var href1 = "/" + Model.ContainerModel.SkyScraperAdvertisingImageCategoryTag1 + "/" + Model.ContainerModel.SkyScraperAdvertisingImageShopTag1;
+    var href2 = "/" + Model.ContainerModel.SkyScraperAdvertisingImageCategoryTag2 + "/" + Model.ContainerModel.SkyScraperAdvertisingImageShopTag2;
 }   
 
 @*    <div class="search-page-title-bar font-normal-11px">
@@ -84,6 +72,12 @@
 @*            @{Html.RenderPartial("SearchFilters", Model);}
 *@            
             @{Html.RenderPartial("SearchFiltersModel", Model);}
+@Html.HiddenFor(x => x.ContainerModel.MPUAdvertisingImageID1)
+@Html.HiddenFor(x => x.ContainerModel.MPUAdvertisingImageID2)
+@Html.HiddenFor(x => x.MonthlyPriceColumnHeader)
+@Html.HiddenFor(x => x.AnnualPriceColumnHeader)
+
+
         </div>
     </div>
     <div class="search-results-container-outer">
@@ -94,41 +88,43 @@
     <div class="skyscrapers-container">
         <div class="skyscraper-image-container">
 @*            <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">*@
-            @Html.HiddenFor(x=>x.SkyscraperAdvertisingImageID1)
-            @if (Model.SkyscraperCloudApplicationID1 > 0)
+            @Html.HiddenFor(x=>x.ContainerModel.SkyscraperAdvertisingImageID1)
+            @if (Model.ContainerModel.SkyscraperCloudApplicationID1 > 0)
             {
             <a href='@href1'>
 @*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = 10 })' class="advertising-image" />*@
-                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID1 })' class="advertising-image" />
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.ContainerModel.SkyscraperAdvertisingImageID1 })' class="advertising-image" />
             </a>
             }
             else
             {
             <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
 @*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
-                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID1 })' class="advertising-image" />
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.ContainerModel.SkyscraperAdvertisingImageID1 })' class="advertising-image" />
             </a>
             }
             
         </div>
         <div class="skyscraper-image-container">
-            @Html.HiddenFor(x=>x.SkyscraperAdvertisingImageID2)
-                    @if (Model.SkyscraperCloudApplicationID2 > 0)
+            @Html.HiddenFor(x=>x.ContainerModel.SkyscraperAdvertisingImageID2)
+                    @if (Model.ContainerModel.SkyscraperCloudApplicationID2 > 0)
                     {
 
 @*            <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">*@
             <a href='@href2'>
 @*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = 11 })' class="advertising-image" />*@
-                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID2 })' class="advertising-image" />
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.ContainerModel.SkyscraperAdvertisingImageID2 })' class="advertising-image" />
             </a>
                     }
                     else
                     {
             <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
 @*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
-                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.SkyscraperAdvertisingImageID2 })' class="advertising-image" />
+                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.ContainerModel.SkyscraperAdvertisingImageID2 })' class="advertising-image" />
             </a>
                     }
         </div>
     </div>
+
+
 

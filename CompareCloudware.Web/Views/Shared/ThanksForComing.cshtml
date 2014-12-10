@@ -1,14 +1,71 @@
 ﻿@model CompareCloudware.Web.Models.BaseModel
 
-<div style="width:100%;position:relative;background-color:#f6f6f6;height:433px;">
-<div class="thanks-for-coming-image"></div>
-<div class="thanks-for-coming-text font-normal-25px-purple">
-<span>Thanks for coming in here. We’re in the process of on-boarding all the new cloud providers at the moment and will be launching this category very soon.</span>
-<br />
-<br />
-<span>If you’re a cloud provider and you want to come and join the party then we’d love to hear from you - so please</span>
-@*<a href="mailto:partner@comparecloudware.com?subject=@(Model.CustomSession.SelectedCategoryName) CLOUDWARE">click here</a>*@
-<a data-toggle="modal" data-id="register" href="#modalinput" class="register-or-update">click here</a>
+@{string webConferencingURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("web-conferencing");}
+@{string projectManagementURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("project-management");}
+@{string CRMURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("crm");}
+@{string financialURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("financial");}
+@{string officeURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("office");}
+@{string communicationsURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("communications");}
+@{string storageAndBackupURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("storage");}
+@{string eMailURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("email");}
+@{string securityURL = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("security");}
 
+
+
+<div style="width: 100%; position: relative; background-color: #f6f6f6; height: 433px;">
+    <div class="thanks-for-coming-image"></div>
+    <div class="thanks-for-coming-text font-normal-25px-purple">
+<span>
+We’re building this service category now for
+launch in December 2014. In the meantime,
+you can Compare, Choose and Go if you’re
+looking for:
+<a href="@webConferencingURL">Conferencing</a>
+,
+<a href="@projectManagementURL">Project management</a>
+,
+<a href="@CRMURL">CRM</a>
+,
+<a href="@financialURL">Financial</a>
+,
+<a href="@officeURL">Office</a>
+,
+<a href="@communicationsURL">Communications</a>
+,
+<a href="@storageAndBackupURL">Storage & back-up</a>
+,
+<a href="@eMailURL">Email</a>
+and
+<a href="@securityURL">Security</a>
+.
+If you’re a cloud provider for this category,
+why not 
+<a data-toggle="modal" data-id="register" href="#modalinput" class="register-or-update">join us?</a>
+</span>
+
+    </div>
 </div>
-</div>
+
+
+
+
+
+<!--
+        <span>
+
+            We’re building this service category now for
+launch in December 2014. In the meantime,
+you can Compare, Choose and Go if you’re
+looking for:
+Conferencing, Project management,
+CRM, Financial, Office, Communications,
+Storage & back-up, Email and Security.
+If you’re a cloud provider for this category,
+why not join us?</span>
+        <br />
+        <br />
+        <span>If you’re a cloud provider and you want to come and join the party then we’d love to hear from you - so please</span>
+        @*<a href="mailto:partner@comparecloudware.com?subject=@(Model.CustomSession.SelectedCategoryName) CLOUDWARE">click here</a>*@
+        <a data-toggle="modal" data-id="register" href="#modalinput" class="register-or-update">click here</a>
+
+-->

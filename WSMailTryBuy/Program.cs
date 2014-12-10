@@ -13,7 +13,7 @@ namespace WSMailTryBuy
             ServiceBase[] ServicesToRun;
             ServicesToRun = new ServiceBase[] 
 			{ 
-				new MailTryBuy() 
+				new MailApplicationRequestsService() 
 			};
             ServiceBase.Run(ServicesToRun);
         }

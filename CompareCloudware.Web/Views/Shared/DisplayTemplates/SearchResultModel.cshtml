@@ -13,7 +13,7 @@
 @*            <img src="@Model.VendorLogoURL" class="search-result-image"/>
 *@
             @{href = Model.CloudApplicationCategoryTag + "/" + Model.CloudApplicationShopTag ;}
-            <a href="@href">
+            <a href="@href" class="tabbed-search-result-logo">
                 <img src='@Url.Action("ShowLogo", "Home", new { vendorID = Model.VendorID })' class="search-result-image" />
             </a>
             @Html.HiddenFor(x => x.CloudApplicationID)

@@ -15,7 +15,7 @@
         string Surname { get; set; }
         string Company { get; set; }
         string Telephone { get; set; }
-        int NumberOfUsers { get; set; }
+        int? NumberOfUsers { get; set; }
 
         bool HasSearchResults { get; set; }
 
@@ -41,6 +41,8 @@
         string SelectedCategoryName { get; set; }
 
         bool ShowSearchTextBox { get; set; }
+
+        bool TestMode { get; set; }
 
     }
 }

@@ -1,7 +1,7 @@
 ﻿@model string
 <div class="input-box-left"></div>
 <div class="input-box-centre">
-@Html.TextBoxFor(x => x, new { @class = "input-text-box font-normal-13px-white required" })
+@Html.TextBoxFor(x => x, new { @class = "input-text-box font-normal-13px-black required", @data_placement = ViewData["placement"], @placeholder = ViewData["placeholder"] })
 </div>
 <div class="input-box-right"></div>
 <div style="clear:both"></div>

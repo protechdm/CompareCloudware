@@ -39,7 +39,17 @@ namespace CompareCloudware.Web.Models
 
         public SearchInputModel(ICustomSession session)
         {
+            
             base.CustomSession = session;
+            if (session.TestMode)
+            {
+                this.ChosenCategoryID = 1;
+                this.ChosenNumberOfUsers = "1";
+                this.Forename = "w";
+                this.Surname = "w";
+                this.EMail = "w@w.co.uk";
+                this.TermsAndConditions = true;
+            }
         }
 
         private void Test()

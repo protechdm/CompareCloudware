@@ -63,8 +63,17 @@ namespace WindowsServiceWrapper
             //return;
 
             //MAIL TRY/BUY
-            MailTryBuy ms = new MailTryBuy();
-            ms.ServiceMail();
+            //MailTryBuy ms = new MailTryBuy();
+            //ms.ServiceMail();
+
+            //MAIL PARTNER PROGRAMME
+            //MailApplicationRequestsService ms = new MailApplicationRequestsService();
+            //ms.ServicePartnerProgramme();
+
+            //MAIL SEND TO COLLEAGUE
+            MailApplicationRequestsService ms = new MailApplicationRequestsService();
+            ms.ServiceSendToColleague();
+            
             return;
 
             System.Threading.Mutex appSingleTon = new Mutex(false, "Service Monitor");

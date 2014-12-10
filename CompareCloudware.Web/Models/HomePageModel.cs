@@ -22,6 +22,7 @@
         }
 
         public CompareCloudware.Web.Models.SearchInputModel SearchInputModel { get; set; }
+        public CompareCloudware.Web.Models.SearchInputModel SearchInputModelFirstTime { get; set; }
 
         public CompareCloudware.Web.Models.TabbedSearchResultsModel TabbedSearchResultsModel { get; set; }
         public ContentTextsModel ContentTextsModel { get; set; }
@@ -39,6 +40,8 @@
         public CarouselModel CarouselSocial { get; set; }
 
         public CloudApplicationVideoModel Video { get; set; }
+
+        public bool IsFirstTimeVisit { get; set; }
 
     }
 }

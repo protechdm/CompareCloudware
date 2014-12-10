@@ -7,6 +7,7 @@
 
     @{ int days = -1;
        bool isDays = int.TryParse(Model.FreeTrialPeriod,out days);
+       string notAvailable = "";
     }
 
 <div class="search-header-results-container">
@@ -151,7 +152,7 @@
                                 }
                                 else
                                 {
-                                    @("Not available")
+                                    @notAvailable
                                 }
                                 </label>
                             </td>
@@ -265,7 +266,7 @@
                                 }*@
                                 else
                                 {
-                                    @("Not available")
+                                    @notAvailable
                                 }
                                 </label>
                             </td>
@@ -445,12 +446,12 @@
     {
 
 
-                                <div class="site-button">
+                                @*<div class="site-button">
                                     <img  
                                     id="@Html.Encode("MOREINFO_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
                                     src="@Url.Content("~/Images/Buttons/CCW_MoreInfo.png")"
                                     />
-                                </div>
+                                </div>*@
     }
                             </td>
                         </tr>
@@ -463,20 +464,26 @@
     @if (Model.ResultDisplayFormat == SearchResultDisplayFormat.Multiple)
     {
 
-        <!--
-                                <div class="site-button">
-                                  <input type="image" 
-                                    name="@Html.Encode("PROCEED_BUTTON_APPLICATION_ID_" + Model.CloudApplicationID.ToString())"
-                                    src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
-                                    value="Proceed" />
+        
+                                <div class="continue-button-link">
+                                    @{string takeToSelection = "http://" + Request.Url.Authority + Request.ApplicationPath + Html.Encode("TakeToSelection/") + Model.CloudApplicationID.ToString()  ;}
+                                    <a href="@takeToSelection">
+                                        <img src="~/Images/Buttons/SearchResults_ContinueButton_Normal.png" />
+                                    </a>
                                 </div>
-        -->
-                                <div class="site-button">
+        
+                                <!--<div class="site-button">
                                     <a href="@href" class="site-button-proceed">
                                         <img src="~/Images/Buttons/CCW_Proceed.png" />
                                     </a>
-                                </div>
+                                </div>-->
 
+                       @*<div class="continue-button">
+                           <button type="button" value="ContinueButton" />
+                        </div>*@
+        
+        
+        
     }
                             </td>
                         </tr>

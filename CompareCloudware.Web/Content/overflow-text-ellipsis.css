@@ -166,7 +166,7 @@
 .ellipsify-15px-8-lines
 {
     font-size: inherit;
-    line-height: 15px;
+    line-height: 15px !important;
     xheight: 120px; /*  8x line height */
     max-height: 120px; /* 8x line height */
     height:auto;

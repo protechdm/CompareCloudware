@@ -23,6 +23,8 @@
     @Html.HiddenFor(x => x.IsYouTubeStream)
     @Html.HiddenFor(x => x.ReadyToPlay)
     @Html.HiddenFor(x => x.CloudApplicationVideoStatus)
+    @Html.HiddenFor(x => x.Width)
+    @Html.HiddenFor(x => x.AspectRatio)
 
     @if (Model.CloudApplicationVideoStatus.ToUpper() == "LIVE" || (Model.CloudApplicationVideoStatus.ToUpper() == "ADDED" && Model.ReadyToPlay))
     {

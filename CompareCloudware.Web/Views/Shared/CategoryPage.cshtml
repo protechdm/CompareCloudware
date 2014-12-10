@@ -1,92 +1,73 @@
 ﻿@model CompareCloudware.Web.Models.CategoryPageModel
-
-@*@using Microsoft.Web.Helpers*@
-
-@*    @{ Html.RenderPartial("Carousel"); }
-*@
-@*@using (Html.BeginForm())*@
-@using (Html.BeginForm("CategoryPage", "Home", new { categoryID = Model.SearchInputModel.ChosenCategoryID}, FormMethod.Post))
+@using (Html.BeginForm("CategoryPage", "Home", new { categoryID = Model.SearchInputModel.ChosenCategoryID }, FormMethod.Post))
 {
-
-        Html.RenderPartial("CarouselModel", Model.Carousel);
-    
-    
-    
-                var href1 = Model.MPUAdvertisingImageCategoryTag1 + "/" + Model.MPUAdvertisingImageShopTag1;
-                var href2 = Model.MPUAdvertisingImageCategoryTag2 + "/" + Model.MPUAdvertisingImageShopTag2;
-           
-    
-    
-    
-    
-    
-    
+    Html.RenderPartial("CarouselModel", Model.Carousel);
+    var href1 = Model.MPUAdvertisingImageCategoryTag1 + "/" + Model.MPUAdvertisingImageShopTag1;
+    var href2 = Model.MPUAdvertisingImageCategoryTag2 + "/" + Model.MPUAdvertisingImageShopTag2;
     <div class="category-page-container">
         <div class="category-page-search-input-and-text">
             <div class="search-input-category-page">
                 @Html.DisplayFor(x => x.SearchInputModel)
             </div>
             <div class="overview-category-page">
-@*                @Html.Partial("CategoryContentTextModel", @Model.ContentTextsModel)*@
-@*                @Html.Partial("CategoryContentTextModel", @Model.H1H2ContentText)*@
-    <div class="overview-category-page-content">
-        @Html.DisplayFor(x => x.TabbedOnpageOptimisationModel)
-    </div>
+                <div class="overview-category-page-content">
+                    @Html.DisplayFor(x => x.TabbedOnpageOptimisationModel)
+                </div>
             </div>
         </div>
         <div class="category-advertising-images-container">
             <div class="advertising-image-container">
-            @if (Model.MPUCloudApplicationID1 > 0)
-            {
+                @if (Model.MPUCloudApplicationID1 > 0)
+                {
 @*                <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">*@
 
                 
                 
-            <a href="@href1">
+                    <a href="@href1">
 
-@*                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 3 })' class="advertising-image" />*@
-                    <img src='@Url.RouteUrl("ShowMPU", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />
-@*                    <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />*@
-                </a>
-            }
-            else
-            {
-            <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
-@*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
-@*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />*@
-                    <img src='@Url.RouteUrl("ShowSkyScraper", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />
-            </a>
-            }
+                        @*                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 3 })' class="advertising-image" />*@
+                        <img src='@Url.RouteUrl("ShowMPU", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />
+                        @*                    <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />*@
+                    </a>
+                }
+                else
+                {
+                    <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
+                        @*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
+                        @*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />*@
+                        <img src='@Url.RouteUrl("ShowSkyScraper", new { advertisingImageID = @Model.MPUAdvertisingImageID1 })' class="advertising-image" />
+                    </a>
+                }
 
             </div>
-            <div style="position:relative;float:none;height:5px;clear:both;"></div>
+            <div style="position: relative; float: none; height: 5px; clear: both;"></div>
             <div class="advertising-image-container">
 
-            @if (Model.MPUCloudApplicationID2 > 0)
-            {
+                @if (Model.MPUCloudApplicationID2 > 0)
+                {
 
 @*                <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">*@
-            <a href="@href2">
-@*                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 4 })' class="advertising-image" />*@
-@*                    <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />*@
-                    <img src='@Url.RouteUrl("ShowMPU", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />
-                </a>
-            }
-            else
-            {
-            <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
-@*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
-@*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />*@
-                    <img src='@Url.RouteUrl("ShowSkyScraper", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />
-            </a>
-            }
-            
+                    <a href="@href2">
+                        @*                    <img src='@Url.Action("ShowAdvertisingImage", "Home", new { advertisingImageID = 4 })' class="advertising-image" />*@
+                        @*                    <img src='@Url.Action("ShowMPU", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />*@
+                        <img src='@Url.RouteUrl("ShowMPU", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />
+                    </a>
+                }
+                else
+                {
+                    <a data-toggle="modal" data-id="register" href="#modalinput" class="font-normal-13px-purple register-or-update">
+                        @*            <a href='@Url.Action("CategoryPage", "Home", new { categoryID = @Model.CustomSession.SelectedCategoryID })'>*@
+                        @*                <img src='@Url.Action("ShowSkyScraper", "Home", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />*@
+                        <img src='@Url.RouteUrl("ShowSkyScraper", new { advertisingImageID = @Model.MPUAdvertisingImageID2 })' class="advertising-image" />
+                    </a>
+                }
+
             </div>
         </div>
 
     </div>
     
-            <div style="clear:both;height:20px;"></div>
+    <div style="clear: both; height: 20px;"></div>
 
     <div class="category-page-content">
         @Html.DisplayFor(x => x.TabbedSearchResultsModel)
@@ -99,19 +80,4 @@
     
 }
 
-<script>
-    $(document).ready(function () {
-        //debugger;
-        //var theForm = $(this).closest('form');
-        $(this).submit(function (evt) {
-
-            //function CheckShowCompare(theForm) {
-            //debugger;
-            //ShowCompare(this);
-            //        if ($(theForm).valid()) {
-            //            setLoadingSearchResults(true);
-            //        }
-            //}
-        });
-    });
-</script>
+@Html.Partial("TakingToSelection")

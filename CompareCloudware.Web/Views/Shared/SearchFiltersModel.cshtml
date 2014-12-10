@@ -1,24 +1,66 @@
 ﻿@model CompareCloudware.Web.Models.SearchPageModel
 
-<table id="searchFiltersHeader" class="search-header-filters-table" style="width: 100%;">
+<table id="searchFiltersInfoBar" class="search-header-filters-infobar" style="width: 100%;">
     <tr>
-        <td style="width: 50%;">
-            <label class="font-normal-11px-white">Customise search</label>
+        <td style="width: 20%;">
+            <div class="search-filters-infobar-icon">
+                <div class="social-icon-container">
+                        <img name="ICON_GOOGLE" class="cc-ui-icon cc-ui-icon-large-circle-arrow" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                </div>
+            </div>
         </td>
-@*        <td style="width: 10%;">
-            @Html.CheckBoxFor(x => x.ContainerModel.SearchFiltersModel.DisplayAsSummary, new { @id = "displayAsSummaryx" })
+        <td style="width: 80%;">
+            <div class="search-filters-infobar-text">
+                <label class="font-normal-15px-white">We've discovered this many services</label>
+            </div>
         </td>
-        <td style="width: 40%;">
-            @Html.Label("Summary", "Summary")
+    </tr>
+</table>
+
+@{string viewType = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "Full view" : "Summary view";}
+@Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary, new { @id = "displayAsSummary" })
+
+@*@{string visibilityFullView = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "visibility:visible;display:block;" : "visibility:hidden;display:none;";}
+@{string visibilitySummaryView = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "visibility:hidden;display:none;" : "visibility:visible;display:block;";}*@
+
+@{string visibilityFullView = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "display:block;" : "display:none;";}
+@{string visibilitySummaryView = Model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary ? "display:none;" : "display:block;";}
+
+<table id="searchFiltersHeaderFull" class="search-header-filters-table site-button-full" style="width: 100%;@visibilityFullView">
+    <tr>
+        <td>
+            <label class="font-normal-11px-white" style="width: 100%;">Full view</label>
         </td>
-*@    </tr>
+    </tr>
+</table>
+
+<table id="searchFiltersHeaderSummary" class="search-header-filters-table site-button-summary" style="width: 100%;@visibilitySummaryView">
+    <tr>
+        <td>
+            <label class="font-normal-11px-white" style="width: 100%;">Summary view</label>
+        </td>
+    </tr>
 </table>
 
 @*@Html.Partial("FullSummaryButton", Model)*@
 
-@{Html.RenderPartial("CreatureWithTextOnRight", Model);}
+@*@{Html.RenderPartial("CreatureWithTextOnRight", Model);}*@
 
-<div class="search-filter-group-header header-categories">
+@{Html.RenderPartial("SearchFiltersResultsFound", Model);}
+
+<div class="search-filters-refine-search">
+    <div class="search-filters-refine-search-text">
+        <label class="font-normal-15px-white">Refine your search</label>
+    </div>
+    <div class="search-filters-refine-search-icon">
+        <div class="social-icon-container">
+                <img name="ICON_GOOGLE" class="cc-ui-icon cc-ui-icon-small-circle-arrow" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+        </div>
+    </div>
+</div>
+<div style="clear: both;"></div>
+
+@*<div class="search-filter-group-header header-categories">
     <div class="search-filter-group-header-icon">
         <div class="ui-icon-triangle-1-s ui-icon">
         </div>
@@ -36,8 +78,9 @@
     @Html.DropDownListFor(x => x.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID,
                        new SelectList(Model.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.Categories, "CategoryID", "CategoryName", Model.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.PreviouslyChosenCategoryID)
                              , new { @class = "set-combo-width filterParameter", @id = "chosenCategoryID" })
-</div>
-
+</div>*@
+@Html.HiddenFor(x => x.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.PreviouslyChosenCategoryID, new { @id = "previouslyChosenCategoryID" })
+@Html.HiddenFor(x => x.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID)
 
 <div class="search-filter-group-header header-users">
     <div class="search-filter-group-header-icon">

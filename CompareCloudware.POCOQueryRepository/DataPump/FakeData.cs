@@ -84,6 +84,44 @@ namespace CompareCloudware.POCOQueryRepository
         }
         #endregion
 
+        #region LoadFakeReferencePhase2Data
+        //[TestMethod]
+        public void LoadFakeReferencePhase2Data(ICompareCloudwareContext context)
+        {
+            //set the context to a fake stub
+            //this.FakeContext = new FakeCloudCompareContext();
+            this.FakeContext = context;
+
+            //_context = new StationEntities();
+
+            //now use this fake stub as the repository
+            var repository = new QueryRepository(this.FakeContext);
+
+            //add our sample fake station entities to the repository
+            CloudApplicationDocument td;
+            AdvertisingImage ai;
+            Tag t;
+            ContentText ct;
+
+            //categories already in DB
+            //retVal = ReferenceData.PumpLevel1ReferencePhase2Data(repository);
+            //this.FakeContext.SaveChanges();
+
+            retVal = ReferenceData.PumpLevel2Phase2ReferenceData(repository);
+            this.FakeContext.SaveChanges();
+
+            //// Mock the Products Repository using Moq
+            //Mock<ICloudCompareContext> mockCloudCompareRepository = new Mock<ICloudCompareContext>();
+
+            //// Try finding a product by id
+            //CloudApplication testCloudApplication = mockCloudCompareRepository.Object.FindById(2);
+
+            //Assert.IsNotNull(testCloudApplication); // Test if null
+            //Assert.IsInstanceOfType(typeof(CloudApplication),testCloudApplication); // Test type
+            //Assert.AreEqual("TITLE", testCloudApplication.Title); // Verify it is the right product
+        }
+        #endregion
+
         #region LoadFakeProductionData
         public void LoadFakeProductionData(ICompareCloudwareContext context)
         {
@@ -95,7 +133,7 @@ namespace CompareCloudware.POCOQueryRepository
 
             //retVal = ApplicationProductionData.PumpApplicationData(repository);
 
-            retVal = CustomerManagementProductionData.PumpCustomerManagementData(repository); //DONE
+            retVal = CRMProductionData.PumpCRMData(repository); //DONE
             retVal = EmailProductionData.PumpEmailData(repository); //DONE
             retVal = FinancialProductionData.PumpFinancialData(repository); //DONE
             retVal = OfficeProductionData.PumpOfficeData(repository); //DONE
@@ -111,6 +149,29 @@ namespace CompareCloudware.POCOQueryRepository
             retVal = TermsAndConditionsData.PumpTermsConditionsData(repository);
             retVal = TermsAndConditionsData.PumpPrivacyPolicyData(repository);
 
+        }
+        #endregion
+
+        #region LoadFakeProductionPhase2Data
+        public void LoadFakeProductionPhase2Data(ICompareCloudwareContext context)
+        {
+            #region VENDORS SCRATCHPAD
+            #endregion
+
+            this.FakeContext = context;
+
+            //now use this fake stub as the repository
+            var repository = new QueryRepository(this.FakeContext);
+
+            retVal = PaymentsProductionData.PumpPaymentsData(repository);
+            retVal = WebsiteProductionData.PumpWebsiteData(repository);
+            retVal = HostingProductionData.PumpHostingData(repository);
+            retVal = SalesProductionData.PumpSalesData(repository);
+            retVal = MarketingProductionData.PumpMarketingData(repository);
+            retVal = HRProductionData.PumpHrData(repository);
+            retVal = CreativeProductionData.PumpCreativeData(repository);
+            retVal = BusinessAndOperationsProductionData.PumpBusinessAndOperationsData(repository);
+            retVal = BIRProductionData.PumpBIRData(repository);
         }
         #endregion
 
@@ -486,7 +547,7 @@ namespace CompareCloudware.POCOQueryRepository
             this.FakeContext = context;
 
             var repository = new QueryRepository(this.FakeContext);
-            retVal = CustomerManagementProductionData.PumpCommence(repository);
+            retVal = CRMProductionData.PumpCommence(repository);
         }
         #endregion
 
@@ -566,7 +627,7 @@ namespace CompareCloudware.POCOQueryRepository
             this.FakeContext = context;
 
             var repository = new QueryRepository(this.FakeContext);
-            retVal = CustomerManagementProductionData.PumpCommenceLogo(repository);
+            retVal = CRMProductionData.PumpCommenceLogo(repository);
         }
         #endregion
 
@@ -576,7 +637,7 @@ namespace CompareCloudware.POCOQueryRepository
             this.FakeContext = context;
 
             var repository = new QueryRepository(this.FakeContext);
-            retVal = CustomerManagementProductionData.PumpCommence(repository);
+            retVal = CRMProductionData.PumpCommence(repository);
         }
         #endregion
 
@@ -975,22 +1036,94 @@ namespace CompareCloudware.POCOQueryRepository
         #endregion
 
         #region LoadAvastEndpointProtection
-        public void LoadAvastEndpointProtection(ICompareCloudwareContext context)
+        public CloudApplication LoadAvastEndpointProtection(ICompareCloudwareContext context)
         {
             this.FakeContext = context;
 
             var repository = new QueryRepository(this.FakeContext);
-            retVal = SecurityProductionData.PumpAvastEndpointProtection(repository);
+            CloudApplication ca = SecurityProductionData.PumpAvastEndpointProtection(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionCategoryShopURL
+        public bool LoadAvastEndpointProtectionCategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
         }
         #endregion
 
         #region LoadAvastEndpointProtectionPlus
-        public void LoadAvastEndpointProtectionPlus(ICompareCloudwareContext context)
+        public CloudApplication LoadAvastEndpointProtectionPlus(ICompareCloudwareContext context)
         {
             this.FakeContext = context;
 
             var repository = new QueryRepository(this.FakeContext);
-            retVal = SecurityProductionData.PumpAvastEndpointProtectionPlus(repository);
+            CloudApplication ca = SecurityProductionData.PumpAvastEndpointProtectionPlus(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionPlusCategoryShopURL
+        public bool LoadAvastEndpointProtectionPlusCategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionSuite
+        public CloudApplication LoadAvastEndpointProtectionSuite(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            CloudApplication ca = SecurityProductionData.PumpAvastEndpointProtectionSuite(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionSuiteCategoryShopURL
+        public bool LoadAvastEndpointProtectionSuiteCategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionSuitePlus
+        public CloudApplication LoadAvastEndpointProtectionSuitePlus(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            CloudApplication ca = SecurityProductionData.PumpAvastEndpointProtectionSuitePlus(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionSuitePlusCategoryShopURL
+        public bool LoadAvastEndpointProtectionSuitePlusCategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
         }
         #endregion
 

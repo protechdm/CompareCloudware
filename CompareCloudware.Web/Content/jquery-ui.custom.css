@@ -988,3 +988,20 @@
 {
     padding:0px 0px 0px 0px;   
 }
+
+
+
+
+
+/* PARTNER PROGRAMME*/
+.partner-programme-content-container #onpageoptimisation-tabs .ui-tabs-nav li
+{
+    width: 24.86%;
+    height: 50px;
+    background-image:none;
+    background-repeat: no-repeat;
+    background-position: left;
+    /*background-image: url(/images/CCW_Iconography.png); */
+    /*background-position: background-position: -298 -10;*/
+    white-space:normal;
+}

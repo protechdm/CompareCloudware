@@ -107,7 +107,6 @@
             //            },
             //            setCachedData: function (term, data) {
             //                if (term.length > 1) {
-            //                    //debugger;
             //                    logIt("term:" + term + " is cached!")
             //                    this.cache[term] = data;
             //                }

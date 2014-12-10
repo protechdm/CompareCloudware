@@ -18,7 +18,7 @@ using PagedList;
 using System.Configuration;
 using System.Collections;
 using System.Net;
-using System.Data.Objects;
+//using System.Data.Objects;
 using System.Text;
 //using System.Web.WebPages;
 //using Omu.AwesomeMvc;
@@ -47,7 +47,7 @@ namespace CompareCloudware.Web.Controllers
         const string FILTER_TIMEZONES = "TIMEZONES";
 
         const int CATEGORY_ID_PHONE = 1;
-        const int CATEGORY_ID_CUSTOMER_MANAGEMENT = 2;
+        const int CATEGORY_ID_CRM = 2;
         const int CATEGORY_ID_WEB_CONFERENCING = 3;
         const int CATEGORY_ID_EMAIL = 4;
         const int CATEGORY_ID_OFFICE = 5;
@@ -409,7 +409,7 @@ namespace CompareCloudware.Web.Controllers
             };
 
             #region CloudApplicationSearchResultModel
-            cam.CloudApplicationSearchResultModel = new CloudApplicationSearchResultModel(CustomSession)
+            cam.CloudApplicationSearchResultModel = new CloudApplicationSearchResultShopModel(CustomSession)
             {
                 ApplicationCostOneOff = ca.ApplicationCostOneOff,
                 ApplicationCostPerAnnum = ca.ApplicationCostPerAnnum,
@@ -912,6 +912,96 @@ namespace CompareCloudware.Web.Controllers
             return RedirectToAction("RedirectShowDocument", "Home", new { documentID = documentID });
         }
         #endregion
+
+        #region Header
+        public virtual ActionResult EMailHeaderModel()
+        {
+            return PartialView("EMailTemplates/HeaderModel");
+        }
+        #endregion
+
+        #region Footer
+        public virtual ActionResult EMailFooterModel()
+        {
+            return PartialView("EMailTemplates/FooterModel");
+        }
+        #endregion
+
+        #region BusinessPartner
+        public ActionResult BusinessPartner(int cloudApplicationRequestId)
+        {
+            var car = _repository.GetCloudApplicationRequest(cloudApplicationRequestId);
+            var person = _repository.GetPersonByPersonID(car.PersonID);
+
+            CompareCloudware.Web.Models.EMailTemplateModels.BusinessPartnerModel model = new Models.EMailTemplateModels.BusinessPartnerModel();
+            model.Forename = person.Forename;
+            model.Surname = person.Surname;
+            model.Vendorname = person.Company;
+            model.Email = person.EMail;
+            //return View("EMailTemplates/BusinessPartner", model);
+            return View("EMailTemplates/become-a-BP-auto-respond", model);
+            //return PartialView("EMailTemplates/EMailBoilerplate");
+        }
+        #endregion
+
+        #region StrategicPartner
+        public ActionResult StrategicPartner(int cloudApplicationRequestId)
+        {
+            var car = _repository.GetCloudApplicationRequest(cloudApplicationRequestId);
+            var person = _repository.GetPersonByPersonID(car.PersonID);
+
+            CompareCloudware.Web.Models.EMailTemplateModels.StrategicPartnerModel model = new Models.EMailTemplateModels.StrategicPartnerModel();
+            model.Forename = person.Forename;
+            model.Surname = person.Surname;
+            model.Vendorname = person.Company;
+            model.Email = person.EMail;
+            //return View("EMailTemplates/StrategicPartner", model);
+            return View("EMailTemplates/BP-SP_email_auto-respond", model);
+            
+            //return PartialView("EMailTemplates/EMailBoilerplate");
+        }
+        #endregion
+
+        #region ReferRewardPartner
+        public ActionResult ReferReward(int cloudApplicationRequestId)
+        {
+            var car = _repository.GetCloudApplicationRequest(cloudApplicationRequestId);
+            var person = _repository.GetPersonByPersonID(car.PersonID);
+
+            CompareCloudware.Web.Models.EMailTemplateModels.StrategicPartnerModel model = new Models.EMailTemplateModels.StrategicPartnerModel();
+            model.Forename = person.Forename;
+            model.Surname = person.Surname;
+            model.Vendorname = person.Company;
+            model.Email = person.EMail;
+            return View("EMailTemplates/ReferRewardPartner", model);
+            //return PartialView("EMailTemplates/EMailBoilerplate");
+        }
+        #endregion
+
+        #region SendToColleague
+        public ActionResult SendToColleague(int cloudApplicationRequestId)
+        {
+            var car = _repository.GetCloudApplicationRequest(cloudApplicationRequestId);
+            var person = _repository.GetPersonByPersonID(car.PersonID);
+            var ca = _repository.GetCloudApplicationAsReadOnly(car.CloudApplicationID);
+            var colleague = _repository.FindRecommender(person.PersonID);
+            string homePageURL = ConfigurationManager.AppSettings["HomePageURLLive"];
+
+            CompareCloudware.Web.Models.EMailTemplateModels.SendToColleagueModel model = new Models.EMailTemplateModels.SendToColleagueModel();
+            model.CloudApplicationName = ca.ServiceName;
+            model.CloudApplicationURL = homePageURL + _repository.GetShopURL(ca.CloudApplicationID);
+            model.ColleagueEmail = person.EMail;
+            model.ColleagueForename = person.Forename;
+            model.ColleagueSurname = person.Surname;
+            model.RecommenderForename = colleague.Introducer.Forename;
+            model.RecommenderSurname = colleague.Introducer.Surname;
+            model.Message = car.RequestData;
+            //return View("EMailTemplates/SendToColleague", model);
+            return View("EMailTemplates/forward-to-a-colleague", model);
+            //return PartialView("EMailTemplates/EMailBoilerplate");
+        }
+        #endregion
+
     }
 
 }

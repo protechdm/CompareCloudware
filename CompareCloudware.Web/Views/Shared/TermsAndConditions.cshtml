@@ -1,15 +1,23 @@
-﻿@using CompareCloudware.Web.Helpers
+﻿@model string
+
+@using CompareCloudware.Web.Helpers
 @using CompareCloudware.Web.Models
 
-@*@Html.LabelFor(x => x, new { @class = "font-normal-13px-white" })*@
-
-@*<add key="TermsAndConditions" value="I accept Compare Cloudware terms &amp; conditions and data privacy policies"/>*@
-
-@{    
+@*@{    
     var tc = new TC();
     string tcText = tc.DisplayName;
     <label class = "font-normal-13px-white">I accept Compare Cloudware </label>
     @Html.ActionLink("terms & conditions ","UserTermsOfUsePage",null,new { @class = "font-normal-13px-white" })
     <label class = "font-normal-13px-white">and </label>
     @Html.ActionLink("data privacy policies", "PrivacyPolicyPage", null, new { @class = "font-normal-13px-white" })
-    }
+}*@
+
+
+@{    
+    var tc = new TC();
+    string tcText = tc.DisplayName;
+    <label class = "@Model">&nbsp;I accept Compare Cloudware </label>
+    @Html.ActionLink("terms & conditions ","UserTermsOfUsePage",null,new { @class = @Model })
+    <label class = "@Model">and </label>
+    @Html.ActionLink("data privacy policies", "PrivacyPolicyPage", null, new { @class = @Model })
+}

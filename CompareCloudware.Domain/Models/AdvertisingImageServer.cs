@@ -13,7 +13,7 @@ namespace CompareCloudware.Domain.Models
         public virtual int? NextSkyscraperID { get; set; }
         public virtual int? NextCarouselHomeID { get; set; }
         
-        public virtual int? NextMPUCustomerManagementID { get; set; }
+        public virtual int? NextMPUCRMID { get; set; }
         public virtual int? NextMPUEMailID { get; set; }
         public virtual int? NextMPUFinancialID { get; set; }
         public virtual int? NextMPUOfficeID { get; set; }
@@ -23,7 +23,7 @@ namespace CompareCloudware.Domain.Models
         public virtual int? NextMPUVoiceID { get; set; }
         public virtual int? NextMPUWebConferencingID { get; set; }
 
-        public virtual int? NextSkyscraperCustomerManagementID { get; set; }
+        public virtual int? NextSkyscraperCRMID { get; set; }
         public virtual int? NextSkyscraperEMailID { get; set; }
         public virtual int? NextSkyscraperFinancialID { get; set; }
         public virtual int? NextSkyscraperOfficeID { get; set; }
@@ -32,6 +32,26 @@ namespace CompareCloudware.Domain.Models
         public virtual int? NextSkyscraperStorageAndBackupID { get; set; }
         public virtual int? NextSkyscraperVoiceID { get; set; }
         public virtual int? NextSkyscraperWebConferencingID { get; set; }
+
+        public virtual int? NextMPUMarketingID { get; set; }
+        public virtual int? NextMPUWebsiteID { get; set; }
+        public virtual int? NextMPUCreativeID { get; set; }
+        public virtual int? NextMPUBusinessIntelligenceReportingID { get; set; }
+        public virtual int? NextMPUHostingID { get; set; }
+        public virtual int? NextMPUHRID { get; set; }
+        public virtual int? NextMPUPaymentsID { get; set; }
+        public virtual int? NextMPUBusinessAndOperationsID { get; set; }
+        public virtual int? NextMPUSalesID { get; set; }
+
+        public virtual int? NextSkyscraperMarketingID { get; set; }
+        public virtual int? NextSkyscraperWebsiteID { get; set; }
+        public virtual int? NextSkyscraperCreativeID { get; set; }
+        public virtual int? NextSkyscraperBusinessIntelligenceReportingID { get; set; }
+        public virtual int? NextSkyscraperHostingID { get; set; }
+        public virtual int? NextSkyscraperHRID { get; set; }
+        public virtual int? NextSkyscraperPaymentsID { get; set; }
+        public virtual int? NextSkyscraperBusinessAndOperationsID { get; set; }
+        public virtual int? NextSkyscraperSalesID { get; set; }
 
         public virtual bool? IsServing { get; set; }
 

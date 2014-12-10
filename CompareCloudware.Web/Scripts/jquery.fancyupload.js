@@ -154,7 +154,10 @@
         $('#uploadLogoFULLButton').attr('disabled', false);
         $('#uploadLogoFULLButton').css("visibility", "visible");
         //$('.file').val(f);
-        reader.onload = function (e) { preview.attr('src', e.target.result); };
+        reader.onload = function (e)
+        {
+            preview.attr('src', e.target.result);
+        };
         reader.readAsDataURL(f);
         LocalFileSource = f;
     });

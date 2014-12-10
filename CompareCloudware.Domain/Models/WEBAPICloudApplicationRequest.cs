@@ -14,7 +14,7 @@ namespace CompareCloudware.Domain.Models
         public virtual string EMail { get; set; }
         public virtual string Telephone { get; set; }
         public virtual string Company { get; set; }
-        public virtual int NumberOfEmployees { get; set; }
+        public virtual int? NumberOfEmployees { get; set; }
         public virtual string Position { get; set; }
         public virtual string UserName { get; set; }
         //public virtual string Password { get; set; }

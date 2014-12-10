@@ -15,6 +15,8 @@ using ManagedWinapi;
 using GhostscriptSharp;
 using System.Configuration;
 
+using CompareCloudware.POCOQueryRepository.DataPump;
+
 namespace CompareCloudware.Console
 {
     class Program
@@ -45,11 +47,15 @@ namespace CompareCloudware.Console
             //Logs();
             //return;
             //LoadContextTextTypesForTabs(); //RUN ONCE!!!!!
+
+            //CONTENT TEXT MINUS H1-H2 DATA
             //ContentTextData();
+
             //LoadSkyscrapersMPUs();
             //return;
 
             //StageData();
+            StagePhase2Data();
             //return;
             //LoadMissingLogos();
             //LoadRatings();
@@ -99,20 +105,29 @@ namespace CompareCloudware.Console
             //LoadKasperskyTargetedSecuritySolutions();
             //LoadKasperskySmallOfficeSecurity();
 
+            //TAGS
             //LoadURLTagTypeData();//RUN ONCE
-            //LoadTagData();
-            //LoadCategorytURLTagData();
-            //LoadShopURLTagData();
-            //LoadContentPageData();
+            LoadTagData();
+            LoadCategorytURLTagData();
+            LoadShopURLTagData();
+
+            //CONTENT PAGES - DEPENDS ON SHOP TAGS
+            LoadContentPageData();
+
             //LoadContextTextTypesForH1H2(); DONT'T NEED FOR LIVE
+            
+            //CONTENT TEXT FOR H1-H2
             //LoadContextTextDataForH1H2();
 
             //LoadCarboniteBusinessPlus();
             //LoadSecondCategories();
 
-            LoadAvastLogo();
-            LoadAvastEndpointProtection();
-            LoadAvastEndpointProtectionPlus();
+            //LoadAvastLogo();
+            //LoadAvastEndpointProtection();
+            //LoadAvastEndpointProtectionPlus();
+
+            //LoadAvastEndpointProtectionSuite();
+            //LoadAvastEndpointProtectionSuitePlus();
         }
 
         #region InsertVendor
@@ -196,6 +211,108 @@ namespace CompareCloudware.Console
 
         
         
+            //LoadRatings();
+            //LoadApplicationWeightings();
+            //LoadTwitterFollowers();
+            //LoadFacebookFans();
+
+
+        }
+        #endregion
+
+        #region StagePhase2Data
+        private static void StagePhase2Data()
+        {
+            var data = new FakeData();
+            //var context = new FakeCloudCompareContext();
+            //var context = new CloudCompareContext();
+            //string conn = ConfigurationManager.ConnectionStrings["CompareCloudware.POCOQueryRepository.CloudCompareContext"].ConnectionString;
+            var context = new CompareCloudwareContext();
+            data.LoadFakeReferencePhase2Data(context);
+
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationErrors.Property, validationErrors.ErrorMessage);
+                    }
+                }
+            }
+
+
+            data.LoadFakeProductionPhase2Data(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationErrors.Property, validationErrors.ErrorMessage);
+                    }
+                }
+            }
+
+            return;
+
+            data.LoadFakeProductionData(context);
+            //data.SetLiveStatuses(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+
+
+
             //LoadRatings();
             //LoadApplicationWeightings();
             //LoadTwitterFollowers();
@@ -2204,7 +2321,7 @@ namespace CompareCloudware.Console
             var data = new FakeData();
             var context = new CompareCloudwareContext();
 
-            data.LoadAvastEndpointProtection(context);
+            CloudApplication ca = data.LoadAvastEndpointProtection(context);
             try
             {
                 context.SaveChanges();
@@ -2229,6 +2346,8 @@ namespace CompareCloudware.Console
                     }
                 }
             }
+
+            data.LoadAvastEndpointProtectionCategoryShopURL(context, ca);
         }
         #endregion
 
@@ -2238,7 +2357,7 @@ namespace CompareCloudware.Console
             var data = new FakeData();
             var context = new CompareCloudwareContext();
 
-            data.LoadAvastEndpointProtectionPlus(context);
+            CloudApplication ca = data.LoadAvastEndpointProtectionPlus(context);
             try
             {
                 context.SaveChanges();
@@ -2263,6 +2382,78 @@ namespace CompareCloudware.Console
                     }
                 }
             }
+            data.LoadAvastEndpointProtectionPlusCategoryShopURL(context, ca);
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionSuite
+        private static void LoadAvastEndpointProtectionSuite()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            CloudApplication ca = data.LoadAvastEndpointProtectionSuite(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+
+            data.LoadAvastEndpointProtectionSuiteCategoryShopURL(context, ca);
+        }
+        #endregion
+
+        #region LoadAvastEndpointProtectionSuitePlus
+        private static void LoadAvastEndpointProtectionSuitePlus()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            CloudApplication ca = data.LoadAvastEndpointProtectionSuitePlus(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            data.LoadAvastEndpointProtectionSuitePlusCategoryShopURL(context, ca);
         }
         #endregion
 

@@ -857,6 +857,61 @@ namespace CompareCloudware.Web.Controllers
         }
         #endregion
 
+
+        #region PartnerProgramme
+        public ActionResult PartnerProgrammePage()
+        {
+
+            try
+            {
+                //ContentTextsModel testModel = new ContentTextsModel();
+                //testModel.ContentTexts = new List<ContentTextModel>();
+                //var ctmww = new ContentTextModelWithWidget<PartnerProgrammeModel>();
+                //var cttm = new ContentTextTypeModel();
+                //cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+                //string data = "";
+                //ctmww = new ContentTextModelWithWidget<PartnerProgrammeModel>(new PartnerProgrammeModel() { Forename="forename"},CustomSession)
+                //{
+                //    BodyOrder = 1,
+                //    //CompositeID,
+                //    NiceName = "",
+                //    ContentTextType = cttm,
+                //    ContentTextData = data,
+                //    //FontStyle = "font-normal-13px-black",
+                //    ContentDataPage = ContentDataPage.PartnerProgramme,
+                //    //LineBreakAfter = true,
+                //    IsWidget = true,
+                //    WidgetName = "RegisterNow",
+                //};
+                //testModel.ContentTexts.Add(ctmww);
+
+                //ContentTextModelWithWidget<PartnerProgrammeModel> newModel = (ContentTextModelWithWidget<PartnerProgrammeModel>)testModel.ContentTexts[0];
+                //PartnerProgrammeModel ppm = newModel.GetModel();
+                //return View("RegisterNow",ppm);
+
+                //var widgetModel = Model.GetType().GenericTypeArguments[0];
+
+                CustomSession.VisitedViaCategory = false;
+                CustomSession.ShowSearchTextBox = false;
+                //var model = ModelHelpers.ConstructPartnerProgrammeModel(new PartnerProgrammeModel(CustomSession, ModelHelpers.ConvertContentPageToContentPageModel(_repository.GetContentPage("CloudwareExplained")))
+                var model = ModelHelpers.ConstructPartnerProgrammeModel(new PartnerProgrammeModel(CustomSession)
+                , this.CustomSession, _repository, Request);
+                return View(model);
+            }
+            catch (Exception ex)
+            {
+                Logger.Fatal("CloudwareExplainedPage exception. The exception was :" + ex.Message + ". Stacktrace : " + ex.StackTrace);
+                //throw new Exception();
+                return null;
+            }
+            //return View("Index");
+
+
+
+
+        }
+        #endregion
+
         #region CloudwareExplainedPartial
         public ActionResult CloudwareExplainedPartial()
         {
@@ -883,7 +938,7 @@ namespace CompareCloudware.Web.Controllers
         {
             try
             {
-                Person p = ModelHelpers.AddPerson(carm.Forename, carm.Surname, carm.Position, carm.Company, carm.EMail, carm.Telephone, carm.Country, carm.JoinUserGroup, _repository);
+                Person p = ModelHelpers.AddPerson(PersonTypeEnum.ProspectVendor, carm.Forename, carm.Surname, carm.Position, carm.Company, carm.EMail, carm.Telephone, carm.Country, carm.JoinUserGroup, _repository);
                 SupportAreaQA qa = new SupportAreaQA();
                 qa.SubmittedPerson = p;
                 qa.QAStatus = _repository.GetQAStatus("UNASSIGNED");
@@ -967,7 +1022,7 @@ namespace CompareCloudware.Web.Controllers
             }
             if (ModelState.IsValid)
             {
-                Person p = ModelHelpers.AddPerson(carm.Forename, carm.Surname, carm.Position, carm.Company, carm.EMail, carm.Telephone, carm.Country, carm.JoinUserGroup, _repository);
+                Person p = ModelHelpers.AddPerson(PersonTypeEnum.ProspectVendor, carm.Forename, carm.Surname, carm.Position, carm.Company, carm.EMail, carm.Telephone, carm.Country, carm.JoinUserGroup, _repository);
                 SupportAreaQA qa = new SupportAreaQA();
                 qa.SubmittedPerson = p;
                 qa.QAStatus = _repository.GetQAStatus("UNASSIGNED");

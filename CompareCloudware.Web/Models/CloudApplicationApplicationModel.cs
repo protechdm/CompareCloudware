@@ -5,6 +5,8 @@ namespace CompareCloudware.Web.Models
 {
     public class CloudApplicationApplicationModel
     {
+        public CloudApplicationApplicationModel() { }
+
         public int CloudApplicationFeatureID { get; set; }
         public decimal Cost { get; set; }
 

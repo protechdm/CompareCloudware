@@ -53,6 +53,9 @@ namespace CompareCloudware.Web
                 configuration.For<HomeController>(x => x.RedisplayBetaSplashShownNoScript()).Ignore();
                 configuration.For<HomeController>(x => x.Search(default(HeaderModel),default(System.Web.Mvc.FormCollection))).Ignore();
                 configuration.For<HomeController>(x => x.ThanksForComing(default(BaseModel))).Ignore();
+                configuration.For<HomeController>(x => x.PartnerProgrammePage(default(RegisterNowModel))).Ignore();
+                configuration.For<HomeController>(x => x.PartnerProgrammePage()).Ignore();
+                configuration.For<HomeController>(x => x.TakeToSelection(default(int))).Ignore();
 
                 configuration.For<AccountController>(ac => ac.LogOn()).Ignore();
                 configuration.For<AccountController>(ac => ac.HeaderModel(default(HeaderModel),default(CustomSession))).DenyAnonymousAccess();
@@ -77,7 +80,11 @@ namespace CompareCloudware.Web
                 configuration.For<VendorController>(x => x.SiteMapPage()).DenyAnonymousAccess();
                 configuration.For<VendorController>(x => x.CorporateInformationPageNoScript(default(string), default(bool), default(string))).DenyAnonymousAccess();
                 configuration.For<VendorController>(x => x.CloudApplicationRegistrationOrUpdateNoScript(default(bool), default(bool))).DenyAnonymousAccess();
+
                 configuration.For<AdminController>().Ignore();
+                configuration.For<AdminController>(x => x.BusinessPartner(default(int))).Ignore();
+                configuration.For<AdminController>(x => x.StrategicPartner(default(int))).Ignore();
+                configuration.For<AdminController>(x => x.SendToColleague(default(int))).Ignore();
 
                 configuration.For<SiteController>().Ignore();
 

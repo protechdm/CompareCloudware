@@ -1,6 +1,6 @@
 ﻿@model CompareCloudware.Web.Models.TabbedSearchResultsModel
 
-    <link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />    
+@*    <link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />    *@
 
 @*    <script src="@Url.Content("~/Scripts/jquery.ui.widget.js")" type="text/javascript"></script>
     <script src="@Url.Content("~/Scripts/jquery.ui.tabs.js")" type="text/javascript"></script>
@@ -23,32 +23,26 @@
             //$("#tab-1").corner();
             //$("#tab-2").corner();
             //$("#tab-3").corner();
-            //debugger;
             var tabsContext = $("#tabs");
             $('.tabs-container').on('click', tabsContext, function () {
-                debugger;
                 //CallController("FEATURED");
             });
 
             //$(function () {
             var tabs = $("#tabs").tabs({
                 select: function (e, i) {
-                    //debugger;
                     CallController(i.index);
                     //selected_tab = i.index;
                 },
                 show: function (e, i) {
-                    //debugger;
                     //CallController(i.index);
                     //selected_tab = i.index;
                 },
                 load: function (e, i) {
-                    //debugger;
                     CallController(i.index);
                     //selected_tab = i.index;
                 },
                 create: function (e, i) {
-                    //debugger;
                     CallController(0);
                     //selected_tab = i.index;
                 }
@@ -65,7 +59,6 @@
                 serialize1 = $('#tabs :input').serialize();
                 var context = $('.search-homepage-container');
 
-                //debugger;
                 $.ajax({
                     //url: '/Home/SearchFiltersPartial',
                     url: '/Home/SearchResultsTabChanged',
@@ -80,7 +73,6 @@
 
                     //The request was a success. Repopulate the div with new result set.
                     success: function (data) {
-                        //debugger;
                         //$(tagToRefresh).empty();
                         //$(data).appendTo(tagToRefresh);
                         //setResultsDisplay();
@@ -89,7 +81,6 @@
                         //setLoadingSearchResults(false);
                     },
                     error: function (data) {
-                        //debugger;
                         //setLoadingSearchResults(false);
                         //alert('Fail on dropdown');
                     }
@@ -100,7 +91,6 @@
             $("#tabs").tabs();
 
             //selected_tab = $("[id$=selected_tab]").val() != "" ? parseInt($("[id$=selected_tab]").val()) : 0;
-            //debugger;
             //tabs.tabs('select', selected_tab);
             //tabs.tabs('select', 0);
 

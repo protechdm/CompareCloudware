@@ -41,6 +41,33 @@ namespace CompareCloudware.Web.Models
         public ContentDataPage ContentDataPage { get; set; }
         public bool LineBreakBefore { get; set; }
         public bool LineBreakAfter { get; set; }
+        public string FontStyle { get; set; }
+        public bool IsWidget { get; set; }
+        public string WidgetName { get; set; }
+        public bool IsImage { get; set; }
+        public string ImageURL { get; set; }
+        public bool ParagraphBreakAfter { get; set; }
+
+    }
+
+    public class ContentTextModelWithWidget<T> : ContentTextModel
+    {
+        private T _theModel;
+
+        public ContentTextModelWithWidget()
+        {
+        }
+
+        public ContentTextModelWithWidget(T theModel, ICustomSession session)
+        {
+            base.CustomSession = session;
+            _theModel = theModel;
+        }
+
+        public T GetModel()
+        {
+            return _theModel;
+        }
     }
 }
 

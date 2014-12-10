@@ -11,6 +11,42 @@
 @Html.Hidden("annualPriceColumnHeader",@Model.AnnualPriceColumnHeader)
 @Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.CurrentSortOrder)
 @Html.HiddenFor(x => x.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.DisplayAsSummary)
+
+
+
+<table id="searchResultsInfoBar" class="search-header-results-infobar" style="width: 100%;">
+    <tr>
+        <td style="width: 20%;">
+            <div class="search-results-infobar-icon-left">
+                <div class="social-icon-container">
+                        <img name="ICON_GOOGLE" class="cc-ui-icon cc-ui-icon-large-circle-arrow" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: 60%;">
+            <div class="search-results-infobar-text">
+                <label class="font-normal-15px-white">These results are unbiased - please feel free to sort</label>
+            </div>
+        </td>
+        <td style="width: 10%;">
+            <div class="search-results-infobar-icon-right">
+                <div class="social-icon-container">
+                        <img name="ICON_GOOGLE" class="cc-ui-icon cc-ui-icon-large-circle-arrow" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"/>
+                </div>
+            </div>
+        </td>
+        <td style="width: 10%;">
+            <div class="search-results-infobar-close">
+                <a class="font-bold-11px-white">X Close</a>
+            </div>
+        </td>
+    </tr>
+</table>
+
+
+
+
+
 <table id="xheader" class="search-header-results-table-inner" style="width: 100%;">
     <tr>
         <td style="width: 27%;" class="search-results-sort-column font-normal-11px-white">
@@ -24,7 +60,7 @@
                 <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
                 }
         </td>
-        <td style="width: 20%;" class="search-results-sort-column font-normal-11px-white">
+        <td style="width: 21%;" class="search-results-sort-column font-normal-11px-white">
             <label id="MonthlyPrice">@Model.MonthlyPriceColumnHeader</label>
                 @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "MONTHLYPRICE ASC")
                 {
@@ -57,7 +93,7 @@
                 <div class="cc-column-sort-icon cc-ui-icon-order-descending"></div>
                 }
         </td>
-        <td style="width: 17%;" class="search-results-sort-column font-normal-11px-white">
+        <td style="width: 16%;" class="search-results-sort-column font-normal-11px-white">
             <label id="FreeTrial">Free trial</label>
                 @if (Model.ContainerModel.SearchResultsModel.CurrentSortOrder == "FREETRIAL ASC")
                 {

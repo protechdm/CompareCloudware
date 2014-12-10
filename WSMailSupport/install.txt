@@ -3,8 +3,10 @@ H:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\installutil /u /logtoconsole=false
 
 REM INSTALL:-
 H:\WINDOWS\Microsoft.NET\Framework\v4.0.30319\installutil J:\CompareCloudwareVideo\WSMailPDF\bin\Debug\WSMailPDF.exe
-
+installutil "C:\Program Files (x86)\Default Company Name\WSMailTryBuySetup\WSMailTryBuy.exe"
+installutil "C:\Development\CompareCloudwareVideo\WSMailTryBuy\bin\x64\Debug\WSMailTryBuy.exe"
 DEVELOPMENT\GLYN
+I5\GLYN
 
 OR
 

@@ -7,7 +7,11 @@ using System.Data.Entity;
 using CompareCloudware.Domain.Contracts.Repositories;
 using CompareCloudware.Domain.Models;
 
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Data.Entity.Core;
+
 using System.Data.Entity.Infrastructure;
 
 namespace CompareCloudware.POCOQueryRepository
@@ -49,6 +53,8 @@ namespace CompareCloudware.POCOQueryRepository
         private FakeObjectSet<ContentText> _contentText;
         private FakeObjectSet<ContentTextType> _contentTextTypes;
         private FakeObjectSet<Person> _persons;
+        private FakeObjectSet<PersonType> _personTypes;
+        private FakeObjectSet<Colleague> _colleagues;
         private FakeObjectSet<CloudApplicationRequest> _cloudApplicationRequests;
         private FakeObjectSet<Device> _devices;
         private FakeObjectSet<SiteActivity> _siteActivity;
@@ -492,6 +498,30 @@ namespace CompareCloudware.POCOQueryRepository
             }
         }
 
+        public IDbSet<PersonType> PersonTypes
+        {
+            get
+            {
+                return _personTypes ?? (_personTypes = new FakeObjectSet<PersonType>());
+            }
+            set
+            {
+                _personTypes = value as FakeObjectSet<PersonType>;
+            }
+        }
+
+        public IDbSet<Colleague> Colleagues
+        {
+            get
+            {
+                return _colleagues ?? (_colleagues = new FakeObjectSet<Colleague>());
+            }
+            set
+            {
+                _colleagues = value as FakeObjectSet<Colleague>;
+            }
+        }
+
         public IDbSet<CloudApplicationRequest> CloudApplicationRequests
         {
             get
@@ -861,7 +891,7 @@ namespace CompareCloudware.POCOQueryRepository
 
 
 
-        public System.Data.Objects.ObjectContext ObjectContext()
+        public ObjectContext ObjectContext()
         {
             return (this as IObjectContextAdapter).ObjectContext;
         }

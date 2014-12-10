@@ -1,5 +1,7 @@
 ﻿@model CompareCloudware.Web.Models.ContentTextModel
 
+@using CompareCloudware.Web.Models;
+
 @{
     var isBold = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE");
     //var classValue = Model.IsBold ? "content-data-header" : null;
@@ -8,6 +10,8 @@
     var isNewSection = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE");
     var isFirstInCollection = Model.ContentTextType.ContentTextTypeName.EndsWith("TITLE");
     var isTabHeader = Model.ContentTextType.ContentTextTypeName.EndsWith("TAB_HEADER");
+    var fontStyle = Model.FontStyle != null ? (Model.FontStyle.Length == 0 ? "font-normal-13px-black line-height-17px" : Model.FontStyle) : "";
+    var bullet = Model.IsBulleted ? "&bull; " : "";
 }
 
 
@@ -64,7 +68,7 @@
                 @:<table id="dataTable" style="width: 100%;">
                     @:<tr>
                         @:<td style="width: 100%; padding:0px; height:25px;" class="font-bold-12px-purple content-text @groupHeader">
-                            @:<div class="@classValue">
+                            @:<div class="@classValue @Model.FontStyle">
 
                                  <div class="plusminus">
 
@@ -108,7 +112,7 @@
                             @:<div class="cloudware-explained-text">
             }
         }
-        else
+        else 
         {
             if(Model.LineBreakBefore)
             {
@@ -149,6 +153,191 @@
     }
 
 }
+
+else if(Model.ContentDataPage == ContentDataPage.PartnerProgramme)
+{
+    if (isTabHeader)
+    {
+        //open all
+        @:<tr>
+           @:<td style="width:50%">
+                @:<table id="dataTable" style="width: 100%;">
+                    @:<tr>
+                        @:<td style="width: 100%;" class="xcontent-text @groupHeader">
+                            @:<div class="@classValue">
+                            if (isBold)
+                            {
+                                if (Model.HeaderTagType == HeaderTagType.H1)
+                                {
+                                <h1>@Model.ContentTextData</h1>   
+                                }
+                                else
+                                {
+                                <h2>@Model.ContentTextData</h2>   
+                                }
+                            }
+                            else
+                            {
+                                <span class="@fontStyle">@Html.Raw(@bullet)@Html.Raw(Model.ContentTextData)</span>
+                            }
+                            if (Model.ParagraphBreakAfter)
+                            {
+                                <p>&nbsp;</p>
+                            }
+                            @:</div>
+                        @:</td>
+                    @:</tr>
+                @:</table>
+            @:</td>
+        @:</tr>
+
+    }
+    else
+    {
+        if(isNewSection)
+        {
+            if (!Model.IsFirstInCollection)
+            {
+                    //new title so close div from previous body + new div + open div for next body
+                                    @:</div>
+                                @:</td>
+                            @:</tr>
+                        @:</table>
+                    @:</td>
+                @:</tr>
+                <tr>
+                    <td>
+                        <hr />
+                    </td>
+                </tr>
+            }
+            @:<tr>
+                @:<td style="width:50%">
+                @:<table id="dataTable" style="width: 100%;">
+                    @:<tr>
+                        @:<td style="width: 100%; padding:0px; height:25px;" class="font-bold-12px-purple xcontent-text @groupHeader">
+                            @:<div class="@classValue @Model.FontStyle">
+@*
+                                 <div class="plusminus"></div>*@
+                            if(!Model.IsImage)
+                            {
+                                if (isBold)
+                                {
+                                    if (Model.HeaderTagType == HeaderTagType.H1)
+                                    {
+                                    <h1>@Model.ContentTextData</h1>   
+                                    }
+                                    else
+                                    {
+                                    <h2 class="@Model.FontStyle">@Model.ContentTextData</h2>   
+                                    }
+                                }
+                                else
+                                {
+                                    <span class="@fontStyle">@Html.Raw(@bullet)@Html.Raw(Model.ContentTextData)</span>
+                                }
+                                if (Model.ParagraphBreakAfter)
+                                {
+                                    <p>&nbsp;</p>
+                                }
+                            }
+                            else
+                            {
+                                <img src="@Model.ImageURL" />   
+                            }
+                            @:</div>
+                        @:</td>
+                    @:</tr>
+                @:</table>
+            @:</td>
+            @:</tr>
+
+            if(Model.LineBreakAfter)
+            {
+                <!--
+                <tr>
+                    <td>bollocks</td>
+                </tr>   
+                -->
+            }
+            
+            if(isNewSection)
+            {
+            @:<tr>
+            @:<td style="width:50%">
+                @:<table id="dataTable" style="width: 100%;">
+                    @:<tr>
+                        @:<td style="width: 100%;" class="font-bold-12px-purple content-text ">
+                            @:<div class="cloudware-explained-text">
+            }
+        }
+        else
+        {
+            if(Model.LineBreakBefore)
+            {
+                <br />   
+            }
+
+            
+            
+            if (Model.IsWidget)
+            {
+                ContentTextModelWithWidget<RegisterNowModel> newModel = (ContentTextModelWithWidget<RegisterNowModel>)Model;
+                RegisterNowModel rnm = newModel.GetModel();
+           
+                
+                     @Html.Partial(Model.WidgetName, rnm)
+            }
+            else    
+            {
+                if(!Model.IsImage)
+                {
+                    if (isBold)
+                    {
+                        if (Model.HeaderTagType == HeaderTagType.H1)
+                        {
+                            <h1>@Model.ContentTextData</h1>   
+                        }
+                        else
+                        {
+                            <h2>@Model.ContentTextData</h2>   
+                        }
+                    }
+                    else
+                    {
+                        <span class="@fontStyle">
+                     @Html.Raw(@bullet)@Html.Raw(@Model.ContentTextData)
+                        </span>
+                    }
+                }
+                else
+                {
+                    <img src="@Html.Encode("http://")@Request.Url.Authority@Request.ApplicationPath@Html.Encode("Images/" + Model.ImageURL)" />   
+                }
+                if(Model.LineBreakAfter)
+                {
+                    <br />
+                }
+                if (Model.ParagraphBreakAfter)
+                {
+                    <p>&nbsp;</p>   
+                }
+            }
+        }
+    }
+    if (Model.IsLastInCollection)
+    {
+                                    @:</div>
+                                @:</td>
+                            @:</tr>
+                        @:</table>
+                    @:</td>
+                @:</tr>
+
+    }
+
+}
+
 else
 {
     <tr>
@@ -195,7 +384,10 @@ else
                         }
                         else
                         {
-                        <span class="font-normal-13px-black line-height-17px">@Model.ContentTextData</span>
+                        <span class="font-normal-13px-black line-height-17px">
+                            @Model.ContentTextData
+
+                        </span>
                         }
                         <br />
                     }

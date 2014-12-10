@@ -8,7 +8,10 @@ using CompareCloudware.Domain.Models;
 using CompareCloudware.Domain.Contracts.Repositories;
 using CompareCloudware.POCOQueryRepository.Configurations;
 
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Core;
+
 using System.Data.Entity.Infrastructure;
 
 namespace CompareCloudware.POCOQueryRepository
@@ -54,6 +57,8 @@ namespace CompareCloudware.POCOQueryRepository
         public IDbSet<ContentText> ContentText { get; set; }
         public IDbSet<ContentTextType> ContentTextTypes { get; set; }
         public IDbSet<Person> Persons { get; set; }
+        public IDbSet<PersonType> PersonTypes { get; set; }
+        public IDbSet<Colleague> Colleagues { get; set; }
         public IDbSet<CloudApplicationRequest> CloudApplicationRequests { get; set; }
         public IDbSet<Device> Devices { get; set; }
         public IDbSet<SiteActivity> SiteActivity { get; set; }
@@ -141,6 +146,7 @@ namespace CompareCloudware.POCOQueryRepository
             modelBuilder.Configurations.Add(new ContentTextConfiguration());
             modelBuilder.Configurations.Add(new ContentTextTypeConfiguration());
             modelBuilder.Configurations.Add(new PersonConfiguration());
+            modelBuilder.Configurations.Add(new PersonTypeConfiguration());
             modelBuilder.Configurations.Add(new CloudApplicationRequestConfiguration());
             modelBuilder.Configurations.Add(new DeviceConfiguration());
             modelBuilder.Configurations.Add(new SiteActivityConfiguration());

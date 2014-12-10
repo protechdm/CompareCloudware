@@ -3,12 +3,10 @@
 //function ShowCompare(theForm) {
 //    //if ($(theForm).valid()) {
 //        setLoadingSearchResults(true);
-//        debugger;
 //        //}
 //}
 
 //var testShowCompare = function (theForm) {
-//    debugger;
 //    ShowCompare(theForm);
 //}
 
@@ -39,10 +37,50 @@ $(document).ready(function () {
         if (visibility) {
             //alert("checked");
             $('.loading-search-results').css("visibility", "visible");
+            $('.comparing-search-results').css("visibility", "visible");
         }
         else {
             //alert("not checked");
             $('.loading-search-results').css("visibility", "hidden");
+            $('.comparing-search-results').css("visibility", "hidden");
+        }
+    }
+
+    function setFilteringSearchResults(visibility) {
+        if (visibility) {
+            $('#filtering-search-results').modal('show');
+        }
+        else {
+            $('#filtering-search-results').modal('hide');
+        }
+    }
+
+    function setSortingSearchResults(visibility) {
+        if (visibility) {
+            $('#sorting-search-results').modal('show');
+        }
+        else {
+            $('#sorting-search-results').modal('hide');
+        }
+    }
+
+    function setPagingSearchResults(visibility) {
+
+        if (visibility) {
+            $('#paging-search-results').modal('show');
+        }
+        else {
+            $('#paging-search-results').modal('hide');
+        }
+    }
+
+    function setTakingToSelection(visibility) {
+
+        if (visibility) {
+            $('#taking-to-selection').modal('show');
+        }
+        else {
+            $('#taking-to-selection').modal('hide');
         }
     }
 
@@ -51,14 +89,16 @@ $(document).ready(function () {
     var searchInputContainerContext = $('.search-input-container');
     var searchInputContainerCategoryContext = $('.search-input-container-category');
     $('.show-search-splash', searchInputContainerContext).click(function (evt) {
-        debugger;
         //setLoadingSearchResults(true);
         var theObject = this;
         var formContext = $(theObject).closest("form");
+
+
         if ($(formContext).valid()) {
             var terms = $(".terms", formContext);
             var isChecked = terms.prop("checked");
-            var users = $("#SearchInputModel_ChosenNumberOfUsers")[0];
+            //var users = $("#SearchInputModel_ChosenNumberOfUsers")[0];
+            var users = $(".chosenNumberOfUsers",formContext)[0];
             var selectedIndex = users.selectedIndex;
             var text = users.options[selectedIndex].text;
 
@@ -75,7 +115,6 @@ $(document).ready(function () {
     });
 
     $('.show-search-splash', searchInputContainerCategoryContext).click(function (evt) {
-        debugger;
         //setLoadingSearchResults(true);
         var theObject = this;
         var formContext = $(theObject).closest("form");
@@ -98,11 +137,16 @@ $(document).ready(function () {
 
     });
 
+    var tabbedSearchResultsContainerContext = $('.home-page-content');
+    var tabbedSearchResultsContainerCategoryContext = $('.tabbed-search-results-container-category');
+    //$('.tabbed-search-result-logo', tabbedSearchResultsContainerContext).click(function (evt) {
+        $('.tabbed-search-result-logo img').click(function (evt) {
+                setTakingToSelection(true);
+    });
 
 
 
-
-    setResultsDisplay();
+    //setResultsDisplay();
     //    collapseFilterGroups($('.header-categories'), 'true');
     //    collapseFilterGroups($('.header-users'), 'true');
     //    collapseFilterGroups($('.header-operating-systems'), 'true');
@@ -121,8 +165,12 @@ $(document).ready(function () {
     //RefreshActiveSupport();
 
     //    $(document).ready(function () {
-    setLoading(false);
-    setLoadingSearchResults(false);
+    //setLoading(false);
+
+    
+    //setLoadingSearchResults(false);
+
+
     //$.validator.unobtrusive.parse('#dialog-input-review');
     //$.validator.unobtrusive.parse('form');
 
@@ -196,13 +244,34 @@ $(document).ready(function () {
         }
     }
 
+    function collapseObject(objectToCollapse) {
+        var collapse = ($(objectToCollapse).css("display") == "block");
+        if (collapse == true) {
+            $(objectToCollapse).hide();
+        }
+        else {
+            $(objectToCollapse).show();
+        }
+    }
+
+    function setObjectVisibility(theObject, visibility) {
+
+        if (visibility) {
+            $(theObject).css("visibility", "visible");
+        }
+        else {
+            $(theObject).css("visibility", "hidden");
+        }
+    }
+
     function toggleResults(obj) {
         //$('#displayAsSummary').click(function () {
         //alert("clicked");
         var classValue = $(obj).attr("class");
         //alert(classValue);
         var displayAsSummary = $('#displayAsSummary');
-        if (classValue == "site-button-full") {
+        //if (classValue.contains("site-button-full")) {
+        if (classValue.indexOf("site-button-full") > -1) {
             //alert("clicked full");
             $('#resultsFull').css("visibility", "visible");
             $('#resultsSummary').css("visibility", "hidden");
@@ -216,8 +285,9 @@ $(document).ready(function () {
             $('#displayAsSummary').removeAttr("checked");
             $('#displayAsSummary').attr("value", "false");
         }
-        if (classValue == "site-button-summary") {
-            //alert("clicked summary");
+        //if (classValue.contains("site-button-summary")) {
+        if (classValue.indexOf("site-button-summary") > -1) {
+                //alert("clicked summary");
             $('#resultsFull').css("visibility", "hidden");
             $('#resultsSummary').css("visibility", "visible");
 
@@ -253,7 +323,6 @@ $(document).ready(function () {
     });
 
     $('body').on('click', 'div.content-data-header', function () {
-        //debugger;
         //$('div.search-filters-container-inner:eq(0)> div.search-filter-group-header').click(function () {
         //alert("click");
         var t = $(this).parent().parent().next();
@@ -263,10 +332,8 @@ $(document).ready(function () {
     });
 
     $('.cloudware-explained-content-container').on('click', 'div.content-data-header', function () {
-        //debugger;
         var t = $('div', $(this).parent().parent().parent().parent().parent().parent().next())
         //$('div', $(this).parent().parent().parent().parent().next())
-        //debugger;
         var test = $(t).css("display");
 
         var selected = ($(t).css("display") != "block");
@@ -286,22 +353,18 @@ $(document).ready(function () {
     collapseCloudwareExplained();
 
     function collapseCloudwareExplained() {
-        //debugger;
         collapseCloudwareExplainedAccordion($('.cloudware-explained-content-container .cloudware-explained-text'), $('.search-filter-categories'));
     }
 
     function collapseCloudwareExplainedAccordion(objectsToCollapse, filtersToCollapse)
     {
-        //debugger;
         $.each(objectsToCollapse
 
 
 
                 , function (index, objectToCollapse) {
-                    //debugger;
                     //var isCollapsed = $(objectToCollapse).attr("value");
                     var t = $('div', $(this).parent().parent().parent().parent().parent().parent().prev())
-                    //debugger;
                     var test = $(t).css("display");
                     //var test = $(objectToCollapse).css("display");
                     var collapse = ($(objectToCollapse).css("display") == "block");
@@ -339,12 +402,17 @@ $(document).ready(function () {
         toggleResults(this);
     });
 
+    $('body').on('click', '.search-results-infobar-close', function () {
+        $('#searchFiltersInfoBar').css("display", "none");
+        $('#searchResultsInfoBar').css("display", "none");
+    });
+
     $('body').on('click', '.terms-checked', function () {
         return HaveTermsBeenChecked(this);
     });
 
     $('body').on('click', '.users-chosen', function () {
-        return HasUsersBeenChosen();
+        return HasUsersBeenChosen(this);
     });
 
     $('body').on('click', '.rating-review-terms-checked', function () {
@@ -352,8 +420,6 @@ $(document).ready(function () {
     });
 
     function HaveTermsBeenChecked(theObject) {
-        //alert('terms');
-        //debugger;
         var formContext = $(theObject).closest("form");
         var terms = $(".terms", formContext);
         var isChecked = terms.prop("checked");
@@ -366,11 +432,9 @@ $(document).ready(function () {
         }
     }
 
-    function HasUsersBeenChosen() {
-        //alert('terms');
-
-        //debugger;
-        var users = $("#SearchInputModel_ChosenNumberOfUsers")[0];
+    function HasUsersBeenChosen(theObject) {
+        var formContext = $(theObject).closest("form");
+        var users = $(".chosenNumberOfUsers", formContext)[0];
         var selectedIndex = users.selectedIndex;
         var text = users.options[selectedIndex].text;
         if (text == 'User numbers') {
@@ -395,112 +459,71 @@ $(document).ready(function () {
         }
     }
 
-    function AlertToCheckTCs() {
-        //alert("Please accept the terms & conditions to proceed");
-        dlgTC.DoSomething();
+    function AlertToCheckTCs()
+    {
+        $('#dialog-message-tc').modal('show');
     }
 
-    var dlgTC = {
-        DoSomething: function () {
-            $("#dialog-message-tc").dialog("open");
-        }
+    //var dlgTC = {
+    //    DoSomething: function () {
+    //        $("#dialog-message-tc").dialog("open");
+    //    }
+    //}
+
+    //// Initialize my dialog
+    //$("#dialog-message-tc").dialog({
+    //    autoOpen: false,
+    //    modal: true,
+    //    resizable: false,
+    //    closeText: null,
+    //    buttons: {
+    //        "OK": function (event, ui) {
+    //            $(this).dialog("close");
+    //        }
+    //    }
+    //});
+
+
+    function AlertToChooseUsers()
+    {
+        $('#dialog-message-number-of-users').modal('show');
     }
 
-    // Initialize my dialog
-    $("#dialog-message-tc").dialog({
-        autoOpen: false,
-        modal: true,
-        resizable: false,
-        closeText: null,
-        buttons: {
-            //"???": function () {
-            //$(this).dialog("close");
-            //window.location.href = "SearchPage";
-            //$.post("BackToSearchResults");
-            //},
-            //"Cancel": function() { $(this).dialog("close"); }
-            "OK": function (event, ui) {
-                $(this).dialog("close");
-                //window.location.href = "BackToSearchResults";
-            }
-        }
+    //var dlgNumberOfUsers = {
+    //    DoSomething: function () {
+    //        $("#dialog-message-number-of-users").dialog("open");
+    //    }
+    //}
 
-        //        buttons: [
-        //            {
-        //                text: "Ok"
-        //                //, click: function () { $(this).dialog("close"); } 
-        //            } 
-        //        ]
-    });
-
-
-    function AlertToChooseUsers() {
-        dlgNumberOfUsers.DoSomething();
-    }
-
-    var dlgNumberOfUsers = {
-        DoSomething: function () {
-            $("#dialog-message-number-of-users").dialog("open");
-        }
-    }
-
-    // Initialize my dialog
-    $("#dialog-message-number-of-users").dialog({
-        autoOpen: false,
-        modal: true,
-        resizable: false,
-        closeText: null,
-        buttons: {
-            //"???": function () {
-            //$(this).dialog("close");
-            //window.location.href = "SearchPage";
-            //$.post("BackToSearchResults");
-            //},
-            //"Cancel": function() { $(this).dialog("close"); }
-            "OK": function (event, ui) {
-                $(this).dialog("close");
-                //window.location.href = "BackToSearchResults";
-            }
-        }
-
-        //        buttons: [
-        //            {
-        //                text: "Ok"
-        //                //, click: function () { $(this).dialog("close"); } 
-        //            } 
-        //        ]
-    });
+    //// Initialize my dialog
+    //$("#dialog-message-number-of-users").dialog({
+    //    autoOpen: false,
+    //    modal: true,
+    //    resizable: false,
+    //    closeText: null,
+    //    buttons: {
+    //        "OK": function (event, ui) {
+    //            $(this).dialog("close");
+    //        }
+    //    }
+    //});
 
     var filtersContext = $('search-filters-container-inner');
 
     //fires when a dropdown filter is changed
     $('body').on('change', 'select.filterParameter', function () {
-        //$('select.filterParameter').change(function () {
-
-        setLoadingSearchResults(true);
+        setFilteringSearchResults(true);
         var text = this.options[this.selectedIndex].text;
-        //alert(text);
-        //alert(this.selectedIndex);
-        //alert($('#chosenCategoryID option[this.selectedIndex]').attr("value"));
-        //alert($('#previouslyChosenCategoryID').attr("value"));
-        //alert($('#chosenCategoryID option:selected').attr("value"));
-        //$(this).parent('form:first').submit();
-        //$('#main form').submit();
-        //return;
-
         var previouslyChosenCategoryID = $('#previouslyChosenCategoryID').attr("value");
         var chosenCategoryID = $('#chosenCategoryID option:selected').attr("value");
         var tagToRefresh;
-        //alert(previouslyChosenCategoryID);
-        //alert(chosenCategoryID);
         var refresh;
-        //if (previouslyChosenCategoryID != chosenCategoryID) {
         refresh = true;
         var sortColumn = $('#currentSortOrder').val();
         var currentSortOrder = $('#currentSortOrder').val();
-        //tagToRefresh = ".search-filters-container-inner";
         tagToRefresh = ".search-page-container";
-        var serialize1 = $('#main form').serialize();
+        //var serialize1 = $('#main form :input').serialize();
+        var serialize1 = $('#main form .search-filters-container-inner input,#main form .search-filters-container-inner select').serialize();
         $.ajax({
             //url: '/Home/SearchFiltersPartial',
             url: '/SearchFiltersPartial',
@@ -516,14 +539,15 @@ $(document).ready(function () {
             //The request was a success. Repopulate the div with new result set.
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 setResultsDisplay();
                 //collapseFilterGroups("true");
                 collapseAllFilterGroups();
-                setLoadingSearchResults(false);
+                setFilteringSearchResults(false);
             },
             error: function (data) {
-                setLoadingSearchResults(false);
+                setFilteringSearchResults(false);
                 alert('Fail on dropdown');
             }
         });
@@ -532,121 +556,74 @@ $(document).ready(function () {
 
     //fires when a checkbox filter is changed
     $('body').on('change', 'input.filterParameter', function () {
-        //$('input.filterParameter').change(function () {
-        //alert("postback");
-        //$(this).parent('form:first').submit();
-        //$('#main form').submit();
-        //debugger;
-        var serialize1 = $('#main form').serialize();
-        //var serialize2 = JSON.stringify($('#main'));
-        //var serialize3 = $('#main form').serializeArray();
-        //var sortColumn = $('#currentSortOrder').val();
-        //var currentSortOrder = $('#currentSortOrder').val();
-
-        setLoadingSearchResults(true);
+        //var serialize1 = $('#main form').serialize();
+        var serialize1 = $('#main form .search-filters-container-inner input').serialize();
+        debugger;
+        setFilteringSearchResults(true);
 
         $.ajax({
-            //url: '/Home/SearchResultsPartial',
             url: '/SearchResultsPartial',
-            //url: 'TestJSON',
             type: 'POST',
-            //data: JSON.stringify("jsonData"),
-            //data: $('#main form').serialize(),
-            //data: "{ model: " + serialize2 + "}",
-            //data: serialize1,
-            //data: JSON.stringify(serialize1),
-            //dataType: 'json',
-            //contentType: 'application/json; charset=utf-8',
-            //data: "{ model: " + serialize1 + ", sortColumn: sortColumn, currentSortOrder: currentSortOrder }",
-            //data: { model: serialize1, sortColumn: sortColumn, currentSortOrder: currentSortOrder },
             data: serialize1,
 
             //The request was a success. Repopulate the div with new result set.
             success: function (data) {
-                //$("#Content").empty();
-                //$(data).hide().appendTo('#Content').slideDown();
                 $(".search-results-container-outer").empty();
-                $(data).appendTo(".search-results-container-outer");
+                $(jQuery.parseHTML(data)).appendTo(".search-results-container-outer");
 
                 $("#searchResultsCount").text($("#searchResultsCountHidden").val());
-                //alert($("#searchResultsCount").val());
 
                 if ($('#displayAsSummary').attr("checked") == "checked") {
-                    //alert("checked");
                     $('#resultsFull').css("visibility", "hidden");
                     $('#resultsSummary').css("visibility", "visible");
                 }
                 else {
-                    //alert("not checked");
                     $('#resultsFull').css("visibility", "visible");
                     $('#resultsSummary').css("visibility", "hidden");
                 }
-                setLoadingSearchResults(false);
+                setFilteringSearchResults(false);
 
             },
             error: function (data) {
-                setLoadingSearchResults(false);
+                setFilteringSearchResults(false);
                 alert('Fail on checkbox');
             }
         });
     });
 
-
-
+    $('.filtering-search-results').on('shown.bs.modal', function (e) {
+        //alert("in");
+    });
 
 
     //fires when a sort column is clicked
     $('body').on('click', '.search-results-sort-column label', function () {
-        //$('input.filterParameter').change(function () {
-        //alert("postback");
-        //$(this).parent('form:first').submit();
-        //$('#main form').submit();
-
-        setLoadingSearchResults(true);
+        setSortingSearchResults(true);
         var sortColumn = $(this).attr("id");
         var currentSortOrder = $('#currentSortOrder').val();
-        var serialize1 = $('#main form').serialize();
+        //var serialize1 = $('#main form').serialize();
+        var serialize1 = $('#main form .search-filters-container-inner input,#main form .search-filters-container-inner select').serialize();
         var refresh = false;
         $.ajax({
-            //url: '/Home/SearchResultsPartial',
             url: '/SearchResultsPartial',
             type: 'POST',
-            //data: JSON.stringify("jsonData"),
-            //data: $('#main form').serialize(),
-            //data: { sortColumn: sortColumn, currentSortOrder: currentSortOrder },
             data: serialize1 + "&refreshResults=" + refresh + "&sortColumn=" + sortColumn + "&currentSortOrder=" + currentSortOrder,
-            //dataType: 'html',
-            //contentType: 'application/json',
 
             //The request was a success. Repopulate the div with new result set.
             success: function (data) {
-                //$("#Content").empty();
-                //$(data).hide().appendTo('#Content').slideDown();
-
                 $(".search-results-container-outer").empty();
-                $(data).appendTo(".search-results-container-outer");
+                //$(data).appendTo(".search-results-container-outer");
+                $(jQuery.parseHTML(data)).appendTo(".search-results-container-outer");
 
                 $("#searchResultsCount").text($("#searchResultsCountHidden").val());
-                //alert($("#searchResultsCount").val());
 
                 setResultsDisplay();
 
-                //                //if ($('#displayAsSummary').attr("checked") == "checked") {
-                //                if ($('#displayAsSummary').attr("value") == "True") {
-                //                    //alert("checked");
-                //                    $('#resultsFull').css("visibility", "hidden");
-                //                    $('#resultsSummary').css("visibility", "visible");
-                //                }
-                //                else {
-                //                    //alert("not checked");
-                //                    $('#resultsFull').css("visibility", "visible");
-                //                    $('#resultsSummary').css("visibility", "hidden");
-                //                }
-                setLoadingSearchResults(false);
+                setSortingSearchResults(false);
 
             },
             error: function (data) {
-                setLoadingSearchResults(false);
+                setSortingSearchResults(false);
                 alert('Fail on checkbox');
             }
         });
@@ -659,13 +636,14 @@ $(document).ready(function () {
     //fires when a search navigation button is clicked
     $('body').on('click', '.navigate-search-results', function () {
 
-        setLoadingSearchResults(true);
+        setPagingSearchResults(true);
         var pageCount = $('#pageCount').val();
         var currentPageNumber = parseInt($('#currentPageNumber').val());
         var nextPageToRequest;
         var previousPageNumber = currentPageNumber - 1;
         var nextPageNumber = currentPageNumber + 1;
-        var serialize1 = $('#main form').serialize();
+        //var serialize1 = $('#main form').serialize();
+        var serialize1 = $('#main form .search-filters-container-inner input,#main form .search-filters-container-inner select').serialize();
         var thisObject = $(this).text();
         switch (thisObject) {
             case "<< First":
@@ -686,7 +664,6 @@ $(document).ready(function () {
         }
 
         if (nextPageToRequest != currentPageNumber && nextPageToRequest > 0 && nextPageToRequest <= pageCount) {
-            debugger;
             $.ajax({
                 url: '/GetNextSearchResultsPage',
                 type: 'POST',
@@ -695,7 +672,8 @@ $(document).ready(function () {
                 //The request was a success. Repopulate the div with new result set.
                 success: function (data) {
                     $(".search-results-container-outer").empty();
-                    $(data).appendTo(".search-results-container-outer");
+                    //$(data).appendTo(".search-results-container-outer");
+                    $(jQuery.parseHTML(data)).appendTo(".search-results-container-outer");
                     $("#searchResultsCount").text($("#searchResultsCountHidden").val());
                     //if ($('#displayAsSummary').attr("checked") == "checked") {
                     if ($('#displayAsSummary').attr("value").toUpperCase() == "TRUE") {
@@ -706,17 +684,17 @@ $(document).ready(function () {
                         $('#resultsFull').css("visibility", "visible");
                         $('#resultsSummary').css("visibility", "hidden");
                     }
-                    setLoadingSearchResults(false);
+                    setPagingSearchResults(false);
                     $('html, body').animate({ scrollTop: 0 }, 'fast');
                 },
                 error: function (data) {
-                    setLoadingSearchResults(false);
+                    setPagingSearchResults(false);
                     alert('Fail on search navigate');
                 }
             });
         }
         else {
-            setLoadingSearchResults(false);
+            setPagingSearchResults(false);
             //alert("Same page");
         }
     });
@@ -728,7 +706,7 @@ $(document).ready(function () {
     //fires when a GLOBAL search navigation button is clicked
     $('body').on('click', '.navigate-global-search-results', function () {
 
-        setLoadingSearchResults(true);
+        setPagingSearchResults(true);
         var pageCount = $('#pageCount').val();
         var currentPageNumber = parseInt($('#currentPageNumber').val());
         var nextPageToRequest;
@@ -753,7 +731,6 @@ $(document).ready(function () {
                 nextPageToRequest = parseInt(thisObject);
                 break;
         }
-        debugger;
         $.ajax({
             url: '/GetNextGlobalSearchResultsPage',
             type: 'POST',
@@ -772,11 +749,11 @@ $(document).ready(function () {
                 //                    $('#resultsFull').css("visibility", "visible");
                 //                    $('#resultsSummary').css("visibility", "hidden");
                 //                }
-                setLoadingSearchResults(false);
+                setPagingSearchResults(false);
                 $('html, body').animate({ scrollTop: 0 }, 'fast');
             },
             error: function (data) {
-                setLoadingSearchResults(false);
+                setPagingSearchResults(false);
                 alert('Fail on search navigate');
             }
         });
@@ -791,52 +768,39 @@ $(document).ready(function () {
     $.validator.unobtrusive.parse($('#main'));
 
     //fires when the application request (Free Trial/Buy Now) button is clicked
-    $('body').on('click', '#applicationRequestButton', function () {
-        //$('input.filterParameter').change(function () {
-        //alert("postback");
-        //$(this).parent('form:first').submit();
-        //$('#main form').submit();
-        //var x = $('#main').validate().form();
-
-        //        if ($('#myform').valid()) {
-        //debugger;
+    //$('body').on('click', '#ApplicationRequestButton', function () {
+    $('.ApplicationRequestButton','.free-trial-container-inner').off('click').on('click', function () {
         if (!HaveTermsBeenChecked(this)) {
             //AlertToCheckTCs();
             return false;
         }
-        if ($('#main form').valid()) {
+        debugger;
+        var form = $(this).closest('form');
+        if ($(form).valid()) {
+            var BuyNow = 1;
+            var EMail = 2;
+            var FreeTrial = 3;
+            var freeTrialOffered = ($("#ContainerModel_ChosenCloudApplicationModel_FreeTrialBuyNow_FreeTrial").val().toUpperCase() == "TRUE");
+            if (freeTrialOffered) {
+                requestType = FreeTrial;
+            }
+            else {
+                requestType = BuyNow;
+            }
 
-            var serialize1 = $('#main form').serialize();
-            //var serialize2 = JSON.stringify($('#main'));
-            //var serialize3 = $('#main form').serializeArray();
-            var sortColumn = $('#currentSortOrder').val();
-            var currentSortOrder = $('#currentSortOrder').val();
-
-            setLoading(true);
-            debugger;
+            //var serialize = $('#main form .free-trial-details :input').serialize();
+            var serialize = $('#main form').serialize();
+            var theButton = this;
             $.ajax({
-                //url: '/Home/SearchResultsPartial',
                 url: 'InsertApplicationRequest',
-                //url: 'TestJSON',
                 type: 'POST',
-                //data: JSON.stringify("jsonData"),
-                //data: $('#main form').serialize(),
-                //data: "{ model: " + serialize2 + "}",
-                //data: serialize1,
-                //data: JSON.stringify(serialize1),
-                //dataType: 'json',
-                //contentType: 'application/json; charset=utf-8',
-                //data: "{ model: " + serialize1 + ", sortColumn: sortColumn, currentSortOrder: currentSortOrder }",
-                //data: { model: serialize1, sortColumn: sortColumn, currentSortOrder: currentSortOrder },
-                data: serialize1,
+                data: serialize,
 
                 //The request was a success.
                 success: function (data) {
-                    setLoading(false);
-                    dlgApplicationSubmit.DoSomething();
+                    dlgApplicationSubmit.DoSomething(theButton);
                 },
                 error: function (data) {
-                    setLoading(false);
                     alert('Fail on application request');
                 }
             });
@@ -845,41 +809,152 @@ $(document).ready(function () {
 
     var windowToOpenOnTryBuy;
     var dlgApplicationSubmit = {
-        DoSomething: function () {
-            //debugger;
-            var BuyNow = "2";
-            var EMail = "3";
-            var FreeTrial = "1";
+        DoSomething: function (theButton) {
+            var BuyNow = 1;
+            var EMail = 2;
+            var FreeTrial = 3;
+            var freeTrialOffered = ($("#ContainerModel_ChosenCloudApplicationModel_FreeTrialBuyNow_FreeTrial").val().toUpperCase() == "TRUE");
 
-            //var requestType1 = $(".request-types option[selected='selected']");
-            var requestType2 = $(".request-types").val();
+            var buttonPressed = $(theButton).attr("value");
+            var requestType;
 
-            //var requestType3 = $(".request-types option:eq(" + requestType2 + ")").val();
+            if (buttonPressed != "SendToColleagueButton") {
+                if (freeTrialOffered)
+                {
+                    requestType = FreeTrial;
+                }
+                else
+                {
+                    requestType = BuyNow;
+                }
+            }
+            else
+            {
+                requestType = EMail;
+            }
 
-
-            switch (requestType2) {
+            switch (requestType) {
                 case BuyNow:
-                    $("#ui-dialog-title-dialog-message-application-submission-complete").text('Request buy now complete');
+                    //$("#ui-dialog-title-dialog-message-application-submission-complete").text('Request buy now complete');
                     windowToOpenOnTryBuy = $("#ContainerModel_ChosenCloudApplicationModel_BuyURL").val();
-                    //$("#dialog-message-application-submission-complete").attr('title', 'Request buy now complete');
+
+                    $('.social-share-container').off('hidden.bs.modal').on('hidden.bs.modal', function () {
+                        //window.open(windowToOpenOnTryBuy, "_blank");
+                        //OpenNewTab(windowToOpenOnTryBuy);
+                    })
+
+                    $('.social-share-container').modal('show');
                     break;
                 case EMail:
-                    var test = $("#ui-dialog-title-dialog-message-application-submission-complete").text();
-                    $("#ui-dialog-title-dialog-message-application-submission-complete").text('Request Email complete');
+                    //var test = $("#ui-dialog-title-dialog-message-application-submission-complete").text();
+                    //$("#ui-dialog-title-dialog-message-application-submission-complete").text('Request Email complete');
                     windowToOpenOnTryBuy = null;
-                    //$("#dialog-message-application-submission-complete").attr('title', 'Request Email complete');
+
+
+                    var serialize = $('#main form').serialize();
+                    var theButton = this;
+                    $.ajax({
+                        url: 'InsertApplicationRequest',
+                        type: 'POST',
+                        data: serialize + '&sendToColleague=true',
+
+                        //The request was a success.
+                        success: function (data) {
+                            dlgApplicationSubmit.DoSomething(theButton);
+                        },
+                        error: function (data) {
+                            alert('Fail on application request');
+                        }
+                    });
+
+
+
+
+
                     break;
                 case FreeTrial:
-                    $("#ui-dialog-title-dialog-message-application-submission-complete").text('Request free trial complete');
+                    //$("#ui-dialog-title-dialog-message-application-submission-complete").text('Request free trial complete');
                     windowToOpenOnTryBuy = $("#ContainerModel_ChosenCloudApplicationModel_TryURL").val();
-                    //$("#dialog-message-application-submission-complete").attr('title', 'Request free trial complete');
+
+                    $('.social-share-container').off('hidden.bs.modal').on('hidden.bs.modal', function () {
+                        //window.open(windowToOpenOnTryBuy, "_blank");
+                        //OpenNewTab(windowToOpenOnTryBuy);
+                    })
+
+                    $('#social-share-container').modal('show');
                     break;
             }
 
-            $("#dialog-message-application-submission-complete").dialog("open");
-            //debugger;
+            //$("#dialog-message-application-submission-complete").dialog("open");
         }
     }
+
+
+
+
+
+
+    //fires when the EMail colleague button is clicked
+    //$('body').on('click', '#ApplicationRequestButton', function () {
+    $('.EMailColleagueButton', '.free-trial-container-inner').off('click').on('click', function () {
+        //var form = $(this).closest('form');
+        var form = $('form .send-to-colleague-container input:text,textarea');
+
+        if ($(form).valid()) {
+            var serialize = $('#main form').serialize();
+            var theButton = this;
+            $.ajax({
+                url: 'InsertApplicationRequest',
+                type: 'POST',
+                data: serialize + '&sendToColleague=true',
+
+                //The request was a success.
+                success: function (data) {
+                    $('.continue-button-link', $('#email-sent')).off('click').on('click', function () {
+                        $('#email-sent').modal('hide')
+                    });
+                    $('#email-sent').modal('show')
+                },
+                error: function (data) {
+                    alert('Fail on application request');
+                }
+            });
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function OpenNewTab(href) {
+        //alert("Attempting to open trybuy window");
+        window.open(href, "_blank");
+        document.getElementById('linkDynamic').href = href;
+        //document.getElementById('linkDynamic').click();
+    }
+
+    $('.SkipSocialShareButton').off('click').on('click', function () {
+        $('.social-share-container').modal('hide');
+        //OpenNewTab('http://www.bbc.co.uk');
+        OpenNewTab(windowToOpenOnTryBuy);
+        //window.open('http://www.bbc.co.uk', "_blank");
+    });
 
     // Initialize my dialog
     $("#dialog-message-application-submission-complete").dialog({
@@ -887,23 +962,12 @@ $(document).ready(function () {
         modal: true,
         closeText: null,
         buttons: {
-            //"???": function () {
-            //$(this).dialog("close");
-            //window.location.href = "SearchPage";
-            //$.post("BackToSearchResults");
-            //},
-            //"Cancel": function() { $(this).dialog("close"); }
             "OK": function (event, ui) {
                 $(this).dialog("close");
-                //debugger;
-                //window.location.href = "BackToSearchResults";
             }
         },
         close: function () {
             if (windowToOpenOnTryBuy != null) {
-                debugger;
-                //var url = "http://" + windowToOpenOnTryBuy;
-                //var url = "/WindowToOpenOnTryBuy/" + windowToOpenOnTryBuy;
                 var url = windowToOpenOnTryBuy;
                 window.open(url, "_blank");
             }
@@ -920,29 +984,25 @@ $(document).ready(function () {
 
 
     //fires when the email page button is clicked
-    $('body').on('click', '#emailApplicationButton', function () {
+    $('.EMailRequestButton','.free-trial-container-inner').off('click').on('click', function () {
 
-        //alert("Hit email button");
-        if (!HaveTermsBeenChecked(this)) {
-            //AlertToCheckTCs();
-            return false;
-        }
-        //debugger;
-        if ($('#main form').valid()) {
+        var form = $(this).closest('form');
+        if ($(form).valid()) {
 
-            var serialize1 = $('#main form').serialize();
+            var serialize = $('#main form').serialize();
+            var theButton = this;
 
             setLoading(true);
 
             $.ajax({
                 url: 'EmailApplicationRequest',
                 type: 'POST',
-                data: serialize1,
+                data: serialize,
 
                 //The request was a success.
                 success: function (data) {
                     setLoading(false);
-                    dlgApplicationEmail.DoSomething();
+                    dlgApplicationEmail.DoSomething(theButton);
                 },
                 error: function (data) {
                     setLoading(false);
@@ -950,16 +1010,16 @@ $(document).ready(function () {
                 }
             });
         }
-        else {
-            $(".input-validation-error:first").focus();
-            $(".request-types option[value='3']").attr("selected", "selected");
+        //else {
+        //    $(".input-validation-error:first").focus();
+        //    $(".request-types option[value='3']").attr("selected", "selected");
 
-        }
+        //}
     });
 
 
     var dlgApplicationEmail = {
-        DoSomething: function () {
+        DoSomething: function (theButton) {
             $("#dialog-message-application-email-complete").dialog("open");
         }
     }
@@ -970,18 +1030,10 @@ $(document).ready(function () {
         modal: true,
         closeText: null,
         buttons: {
-            //"???": function () {
-            //$(this).dialog("close");
-            //window.location.href = "SearchPage";
-            //$.post("BackToSearchResults");
-            //},
-            //"Cancel": function() { $(this).dialog("close"); }
-            "Compare Again": function (event, ui) {
+            "OK": function (event, ui) {
                 $(this).dialog("close");
-                window.location.href = "BackToSearchResults";
             }
-            //close: function (event, ui) { window.location.href = "SearchPage"; 
-        }
+        },
     });
 
 
@@ -997,14 +1049,14 @@ $(document).ready(function () {
 
 
     //fires when the create review button is clicked
-    $('body').on('click', '#createReviewButton', function () {
+    $('body').on('click', '#CreateUserReviewButton', function () {
         dlgInputReview.DoSomething();
     });
 
 
     var dlgInputReview = {
         DoSomething: function () {
-            $("#dialog-input-review").dialog("open");
+            $("#dialog-input-review").modal("show");
         }
     }
 
@@ -1078,7 +1130,6 @@ $(document).ready(function () {
 
         //var $jQval = $.validator;
         //$jQval.unobtrusive.parse($('#dialog-input-review'));
-        //debugger;
         //var a = $('#xmyform').validate().form();
         //var b = $('#CloudApplicationRatingReviewerTitle').validate().valid();
         //var c = $.validator.unobtrusive.parse($('#xmyform'));
@@ -1090,7 +1141,6 @@ $(document).ready(function () {
         if ($('#xmyform').valid()) {
             var serialize1 = $('#xmyform').serialize();
 
-            debugger;
             setLoading(true);
             $.ajax({
                 url: '/UserReview',
@@ -1478,7 +1528,6 @@ $(document).ready(function () {
 
     //BETA TAB
     $('.header-pinned-beta-container').on('click', function () {
-        //debugger;
         $('#betaSplash').modal('show');
         //        $.ajax({
         //            url: 'BetaSplashShown',
@@ -1495,12 +1544,92 @@ $(document).ready(function () {
     });
 
 
+    $('.send-to-colleague-header-button').off('click').on('click', function () {
+        collapseObject($('.send-to-colleague-input-container'));
+    });
+
+    $('.free-trial-edit-details').off('click').on('click', function () {
+        collapseObject($('.free-trial-details'));
+        collapseObject($('.free-trial-summary'));
+    });
+
+    $('.partner-programme-button').off('click').on('click', function () {
+        var formContext = $(this).closest('form');
+
+        formContext.removeData('validator');
+        formContext.removeData('unobtrusiveValidation');
+        $.validator.unobtrusive.parse($(formContext));
+
+        if ($(formContext).valid()) {
+
+            var serialize = $(formContext).serializeArray();
+
+            $(serialize).each(function (index) {
+                //debugger;
+                this.name = this.name.substring(this.name.lastIndexOf('.') + 1)
+                console.log(index + ": " + $(this).text());
+            });
+
+            $.ajax({
+                url: '/PartnerProgramme',
+                type: 'POST',
+                data: serialize,
+
+                //The request was a success.
+                success: function (data) {
+                    var existingData = $('.recaptcha-object-data', formContext);
+                    var newData = $('.recaptcha-object-data', data);
+
+                    var tagToRefresh = existingData;
+                    //$(tagToRefresh).empty();
+                    //$(jQuery.parseHTML(newData)).appendTo(tagToRefresh);
+                    var recaptchaError = $('.field-validation-error', newData)
+
+                    var oldRecaptchaError = $('.field-validation-error', existingData)
+                    $(oldRecaptchaError).remove();
+
+                    $(recaptchaError).appendTo(tagToRefresh);
 
 
+                    Recaptcha.reload();
 
 
+                    var showVideo = $('.show-partner-programme-video',data).val().toUpperCase();
+                    if (showVideo == 'TRUE')
+                    {
+                        var videoContainer = $('.videoContainer', data);
+                        existingData = $('.video-object-data', formContext);
+                        existingData.empty();
+                        $(videoContainer).appendTo(existingData);
+                    }
 
+                    var isRegistered = $('.is-registered',data).val().toUpperCase();
+                    if (isRegistered == 'TRUE') {
 
+                        $('.continue-button-link', $('#thanks-for-registering')).off('click').on('click', function () {
+                            $('#thanks-for-registering').modal('hide')
+                        });
+                        var registeredForename = $(".register-now-forename",data).val();
+                        var thanksForRegisteringName = $(".thanks-for-registering-name");
+                        $(thanksForRegisteringName).html(registeredForename);
+                        $('#thanks-for-registering').modal('show')
+                    }
+                },
+                error: function (data) {
+                    debugger;
+                    var x = "";
+                }
+            });
+        }
+        else {
+            //alert('not valid');
+            $(formContext).find('div.control-group').each(function () {
+                if ($(this).find('.field-validation-error').length > 0) {
+                    $(this).addClass('error');
+                }
+            });
+        }
+    });
 
 
 
@@ -1533,7 +1662,6 @@ $(document).ready(function () {
 
     //    //fires when the upload video button is clicked
     //    $('body').on('click', '#uploadVideoButton', function () {
-    //        //debugger;
     //        dlgUploadVideo.DoSomething();
     //    });
 
@@ -1574,7 +1702,6 @@ $(document).ready(function () {
     //    $('body').on('click', '#uploadVideoAJAXButton', function () {
 
     //        //alert("IN");
-    //        //debugger;
     //        //if ($('#dialog-upload-image').valid()) {
     //        //var test = $('#dialog-upload-image');
     //        //var serialize1 = $('#dialog-upload-image').serialize();
@@ -1593,14 +1720,12 @@ $(document).ready(function () {
     //            //contentType: 'multipart/form-data',
     //            //The request was a success.
     //            success: function (data) {
-    //                //debugger;
     //                //setLoading(false);
 
 
     //                $("#dialog-upload-video").dialog('close');
     //                //dlgRatingReviewCreated.DoSomething();
 
-    //                //debugger;
     //                $(".application-video").empty();
     //                $(data).appendTo($(".application-video"));
 
@@ -1634,7 +1759,6 @@ $(document).ready(function () {
     //    //var isBrokenLink = $('#IsBrokenLink');
     //    //What happens if the File changes?
     //    $('#playVideoButton', videoUploadContext).click(function (evt) {
-    //        //debugger;
     //        var serialize = videoUploadContext.serialize();
     //        var url = this.value;
     //        var tagToRefresh = $('#video-cut', videoUploadContext);
@@ -1646,7 +1770,6 @@ $(document).ready(function () {
     //            //The request was a success.
     //            success: function (data) {
     //                //setLoading(false);
-    //                //debugger;
     //                $(tagToRefresh).empty();
     //                $(data).appendTo(tagToRefresh);
 
@@ -1666,7 +1789,6 @@ $(document).ready(function () {
     //                //                    }
     //            },
     //            error: function (data) {
-    //                debugger;
     //                //setLoading(false);
     //                alert('Fail on playing video');
     //            }
@@ -1682,7 +1804,6 @@ $(document).ready(function () {
     //    $('.xradCustomRadioButtonList', videoUploadContext).click(function (evt) {
 
 
-    //        debugger;
     //        var serialize = videoUploadContext.serialize();
     //        var url = this.value;
     //        var tagToRefresh = $('#video-cut', videoUploadContext);
@@ -1694,7 +1815,6 @@ $(document).ready(function () {
     //            //The request was a success.
     //            success: function (data) {
     //                //setLoading(false);
-    //                debugger;
     //                $(tagToRefresh).empty();
     //                $(data).appendTo(tagToRefresh);
 
@@ -1714,7 +1834,6 @@ $(document).ready(function () {
     //                //                    }
     //            },
     //            error: function (data) {
-    //                debugger;
     //                //setLoading(false);
     //                alert('Fail on uploading video');
     //            }
@@ -1758,7 +1877,6 @@ $(document).ready(function () {
     //        //        $('#CloudApplicationReviewPublisherName').attr('value', '');
     //        //        $('#CloudApplicationReviewText').attr('value', '');
     //        //        $('#CloudApplicationReviewURL').attr('value', '');
-    //        debugger;
     //        RefreshUploadUserReview();
     //        dlgUploadUserReview.DoSomething();
     //    });
@@ -1767,7 +1885,6 @@ $(document).ready(function () {
     //    $(document).on('click', '.user-reviews-container td:has(label)', function () {
     //        //$('body').on('click', '.user-reviews-container tr', function () {
     //        //$('.product-reviews-container tr').click(function () {
-    //        debugger;
     //        //var href = $(this).find("a").attr("href");
     //        var href = $(this).parent().find("a");
     //        if (href) {
@@ -1776,7 +1893,6 @@ $(document).ready(function () {
     //            //alert(rowID);
 
 
-    //            //debugger;
 
 
     //            var tagToRefresh = "#dialog-upload-user-review";
@@ -1805,7 +1921,6 @@ $(document).ready(function () {
     //    });
 
     //    $(document).on('click', '.cloudApplicationUserReviewDelete', function () {
-    //        debugger;
     //        var rowID = $(this).attr("id");
 
 
@@ -1889,7 +2004,6 @@ $(document).ready(function () {
     //        //setLoading(true);
 
 
-    //        debugger;
     //        //var a = $('#uploadUserReviewForm').validate().form();
     //        //var b = $('#CloudApplicationRatingReviewerTitle').validate().valid();
     //        //var c = $.validator.unobtrusive.parse($('#uploadUserReviewForm'));
@@ -1930,7 +2044,6 @@ $(document).ready(function () {
 
     //            //The request was a success.
     //            success: function (data) {
-    //                //debugger;
     //                //setLoading(false);
     //                $(tagToRefresh).empty();
     //                $(data).appendTo(tagToRefresh);
@@ -1962,7 +2075,6 @@ $(document).ready(function () {
     //    //$('#newDocumentButton', documentsContainerContext).click(function () {
     //    $(document).on('click', '#newDocumentButton', function () {
     //        //$('body').on('click', '#newDocumentButton', function () {
-    //        //debugger;
     //        RefreshUploadDocument();
     //        dlgUploadDocument.DoSomething();
     //    });
@@ -2001,7 +2113,6 @@ $(document).ready(function () {
     //    });
 
     //    $(document).on('click', '.cloudApplicationDocumentDelete', function () {
-    //        debugger;
     //        var rowID = $(this).attr("id");
 
 
@@ -2069,7 +2180,6 @@ $(document).ready(function () {
 
     //    //UPLOAD DOCUMENT BUTTON CLICK
     //    $(document).on('click', '#uploadDocumentFULLButton', function () {
-    //        //debugger;
     //        var postedFile = $('#PostedFile');
     //        if (postedFile[0].value != "") {
     //            return true;
@@ -2091,7 +2201,6 @@ $(document).ready(function () {
     //    $(document).on('click', '#uploadDocumentAJAXButton', function () {
     //        //$('body').on('click', '#uploadDocumentAJAXButton', function () {
 
-    //        //debugger;
 
     //        //if ($('#dialog-upload-image').valid()) {
     //        //var test = $('#dialog-upload-product-review');
@@ -2144,7 +2253,6 @@ $(document).ready(function () {
 
     //            //The request was a success.
     //            success: function (data) {
-    //                //debugger;
     //                //setLoading(false);
     //                $(tagToRefresh).empty();
     //                $(data).appendTo(tagToRefresh);
@@ -2178,7 +2286,6 @@ $(document).ready(function () {
 
     //    $(document).on('click', '#newProductReviewButton', function () {
     //        //$('body').on('click', '#newProductReviewButton', function () {
-    //        debugger;
     //        RefreshUploadProductReview();
     //        dlgUploadProductReview.DoSomething();
     //    });
@@ -2217,7 +2324,6 @@ $(document).ready(function () {
 
 
     //    $(document).on('click', '.cloudApplicationProductReviewDelete', function () {
-    //        debugger;
     //        var rowID = $(this).attr("id");
 
 
@@ -2285,7 +2391,6 @@ $(document).ready(function () {
     //    //$('body').on('click', '#uploadProductReviewAJAXButton', function () {
     //    $(document).on('click', '#uploadProductReviewAJAXButton', function () {
 
-    //        //debugger;
 
     //        //if ($('#dialog-upload-image').valid()) {
     //        //var test = $('#dialog-upload-product-review');
@@ -2338,7 +2443,6 @@ $(document).ready(function () {
 
     //            //The request was a success.
     //            success: function (data) {
-    //                //debugger;
     //                //setLoading(false);
     //                $(tagToRefresh).empty();
     //                $(data).appendTo(tagToRefresh);
@@ -2353,12 +2457,11 @@ $(document).ready(function () {
 
     //fires when the VX dummy mode checkbox is changed
     $('body').on('change', '.dummyVXMode', function () {
-        //debugger;
         var dummyVXMode = $('.dummyVXMode');
-        var dummyVXModeIsChecked = $(dummyVXMode).attr("checked");
+        var dummyVXModeIsChecked = $(dummyVXMode).prop("checked");
         var dummyVXModeIsChecked2 = $(dummyVXMode).val();
         var dummyVXModeValue = (dummyVXModeIsChecked != null);
-
+        dummyVXModeValue = dummyVXModeIsChecked;
         $.ajax({
             url: '/SetDummyVXMode',
             type: 'POST',

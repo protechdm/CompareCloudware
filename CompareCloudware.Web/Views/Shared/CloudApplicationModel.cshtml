@@ -4,8 +4,6 @@
 @using System.Web.Mvc
 @using System.Configuration;
 
-@*home display TEST template
-*@
 <script language="javascript" type="text/javascript">
     $(document).ready(function () {
         //function detectAcrobat() {
@@ -57,17 +55,17 @@
             catch (e) { }
 
         }
-        //alert(acrobat.installed);
-        //alert(acrobat.version);
 
-        //}
+        var social = function () {
+            $('.social-share-container').modal('show');
+        }
+
+
     });
 </script>
-<div class="search-page-title-bar font-normal-11px">
-</div>
-@Html.Partial("Loading")
+<div class="search-page-title-bar font-normal-11px"></div>
+@*@Html.Partial("Loading")*@
 
-@*@using (Html.BeginForm("CloudApplication", "Home", FormMethod.Post, new { @id = "myform" }))*@
 @using (Html.BeginForm("CloudApplication", "Home", new { @cloudApplicationID = Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationID }, FormMethod.Post ))
 {
 <div class="search-result-page-div font-normal-11px">
@@ -76,166 +74,177 @@
         <div class="search-header-result-container">
         <div class="cloud-application-search-result-table-outer">
     
-@*            <hr />*@
             <br />
     
-            <table class="box-shadow" style="width:93%;margin-left:3px;border:3px solid" >
-                <tr>
-                    <td style="width:100%;text-align:left;" >
-                        <label class="font-normal-22px-purple search-result-header">Summary</label>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 60%;">
-                        <div id="main3" style="overflow: hidden; height: auto; width: 100%;">
-                    <div class="search-result-summary-div">
-                        <table>
-                            <!-- OPERATING SYSTEMS -->
-                            <tr>
-                                <td>
-                                    <label class="font-bold-11px-purple search-result-header line-height-150">Operating system:</label>
-                                </td>
-                            </tr>
-                            @if (Model.ContainerModel.ChosenCloudApplicationModel.OperatingSystems.Count == 0)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
-                                    </td>
-                                </tr>
-                            }
-                            @foreach (OperatingSystemModel os in Model.ContainerModel.ChosenCloudApplicationModel.OperatingSystems)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">@os.OperatingSystemName</label>
-                                    </td>
-                                </tr>
-                            }
-                            <!-- SUPPORT TYPES -->
-                            <tr>
-                                <td>
-                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support type:</label>
-                                </td>
-                            </tr>
-                            @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTypes.Count == 0)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
-                                    </td>
-                                </tr>
-                            }
-                            @foreach (SupportTypeModel st in Model.ContainerModel.ChosenCloudApplicationModel.SupportTypes)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">@st.SupportTypeName</label>
-                                    </td>
-                                </tr>
-                            }
-                            <!-- SUPPORT DAYS -->
-                            <tr>
-                                <td>
-                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support days:</label>
-                                </td>
-                            </tr>
-                            @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName.Length == 0)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
-                                    </td>
-                                </tr>
-                            }
-                            <tr>
-                                <td>
-                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName</label>
-                                </td>
-                            </tr>
-                            <!-- SUPPORT HOURS -->
-                            <tr>
-                                <td>
-                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support hours:</label>
-                                </td>
-                            </tr>
-                            @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName.Length == 0)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
-                                    </td>
-                                </tr>
-                            }
-                            <tr>
-                                <td>
-                                    <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName</label>
-                                </td>
-                            </tr>
-                            <!-- SUPPORT TERRITORIES -->
-                            @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories != null)
-                            {
-                            <tr>
-                                <td>
-                                    <label class="font-bold-11px-purple search-result-header line-height-150">Support territory:</label>
-                                </td>
-                            </tr>
-                            if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories.Count == 0)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
-                                    </td>
-                                </tr>
-                            }
-                            foreach (SupportTerritoryModel stm in Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories)
-                            {
-                                <tr>
-                                    <td>
-                                        <label class="font-normal-11px-black search-result-header line-height-150">@stm.SupportTerritoryName</label>
-                                    </td>
-                                </tr>
-                            }
-                            }
-                            <!-- VIDEO TRAINING -->
-                            <tr>
-                                <td>
-                                    <label class="font-bold-11px-purple search-result-header line-height-150">Video Training:</label>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <label class="font-normal-11px-black search-result-header line-height-150">@(Model.ContainerModel.ChosenCloudApplicationModel.VideoTrainingSupport ? "Yes" : "No")</label>
-                                </td>
-                            </tr>
-                            <!-- LANGUAGES -->
-                            @Html.Partial("CloudApplicationLanguages", Model.ContainerModel.ChosenCloudApplicationModel.Languages);
-                        </table>
-                    </div>
-                    <div class="search-result-summary-div">
+            @Html.Partial("ShopSectionHeaderPartial","Features of " + @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName + " " + @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName)
 
-                    <!-- FEATURES -->
-                    @Html.Partial("CloudApplicationFeatures", Model);
-                    <div style="clear:both"></div>
-                    <!-- APPLICATIONS -->
-                    @Html.Partial("CloudApplicationApplications", Model);
-
-                    </div>
-                </div>
+            <table class="box-shadow shop-section-details">
+                <tr>
+                    <td style="width:25%">
+                        <div id="main3" class="shop-features">
+                                <table>
+                                    <!-- OPERATING SYSTEMS -->
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Operating system:</label>
+                                        </td>
+                                    </tr>
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.OperatingSystems.Count == 0)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
+                                            </td>
+                                        </tr>
+                                    }
+                                    @foreach (OperatingSystemModel os in Model.ContainerModel.ChosenCloudApplicationModel.OperatingSystems)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">@os.OperatingSystemName</label>
+                                            </td>
+                                        </tr>
+                                    }
+                                </table>
+                        </div>
                     </td>
+                    <td style="width:25%">
+                        <div id="main3" class="shop-features">
+                                <table>
+                                    <!-- SUPPORT TYPES -->
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support type:</label>
+                                        </td>
+                                    </tr>
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTypes.Count == 0)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
+                                            </td>
+                                        </tr>
+                                    }
+                                    @foreach (SupportTypeModel st in Model.ContainerModel.ChosenCloudApplicationModel.SupportTypes)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">@st.SupportTypeName</label>
+                                            </td>
+                                        </tr>
+                                    }
+                                    <!-- SUPPORT DAYS -->
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support days:</label>
+                                        </td>
+                                    </tr>
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName.Length == 0)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
+                                            </td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td>
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.SupportDays.SupportDaysName</label>
+                                        </td>
+                                    </tr>
+                                    <!-- SUPPORT HOURS -->
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support hours:</label>
+                                        </td>
+                                    </tr>
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName.Length == 0)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
+                                            </td>
+                                        </tr>
+                                    }
+                                    <tr>
+                                        <td>
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@Model.ContainerModel.ChosenCloudApplicationModel.SupportHours.SupportHoursName</label>
+                                        </td>
+                                    </tr>
+                                    <!-- SUPPORT TERRITORIES -->
+                                    @if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories != null)
+                                    {
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Support territory:</label>
+                                        </td>
+                                    </tr>
+                                        if (Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories.Count == 0)
+                                        {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">Not currently available</label>
+                                            </td>
+                                        </tr>
+                                        }
+                                        foreach (SupportTerritoryModel stm in Model.ContainerModel.ChosenCloudApplicationModel.SupportTerritories)
+                                        {
+                                        <tr>
+                                            <td>
+                                                <label class="font-normal-11px-black search-result-header line-height-150">@stm.SupportTerritoryName</label>
+                                            </td>
+                                        </tr>
+                                        }
+                                    }
+                                    <!-- VIDEO TRAINING -->
+                                    <tr>
+                                        <td>
+                                            <label class="font-bold-11px-purple search-result-header line-height-150">Video Training:</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label class="font-normal-11px-black search-result-header line-height-150">@(Model.ContainerModel.ChosenCloudApplicationModel.VideoTrainingSupport ? "Yes" : "No")</label>
+                                        </td>
+                                    </tr>
+
+                                </table>
+                        </div>
+                    </td>
+                    <td style="width:25%">
+                        <div id="main3" class="shop-features">
+                                <table>
+                                    <!-- LANGUAGES -->
+                                    @Html.Partial("CloudApplicationLanguages", Model.ContainerModel.ChosenCloudApplicationModel.Languages)
+
+                                </table>
+                        </div>
+                    </td>
+                    <td style="width:25%">
+                        <div id="main3" class="shop-features">
+
+                                <!-- FEATURES -->
+                                @Html.Partial("CloudApplicationFeatures", Model);
+                                <div style="clear:both"></div>
+                                <!-- APPLICATIONS -->
+                                @Html.Partial("CloudApplicationApplications", Model);
+                        </div>
+                    </td>
+
+
                 </tr>
             </table>
 
-@*            <hr />*@
             <br />
 
             <!-- THUMBNAIL DOCUMENTS -->
+            @Html.Partial("ShopSectionHeaderPartial", "Using " + @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName + " " + @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName)
             <table class="box-shadow" style="width:93%;margin-left:3px;border:3px solid">
-                <tr>
+@*                <tr>
                     <td style="width:100%;text-align:left;" >
                         <label class="font-normal-22px-purple search-result-header">Discover more about @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName</label>
                     </td>                    
-                </tr>
+                </tr>*@
                 <tr><td>&nbsp;</td></tr>
                 <!-- CASE STUDIES -->
                 <tr>
@@ -402,19 +411,27 @@
         </div>
     </div>
 
-@*    <div class="search-page-title-bar font-normal-11px">
-        @{Html.RenderPartial("SearchResultButtonsTop",Model.CustomSession);}
-    </div>*@
+
+    @Html.Partial("ShopSectionHeaderPartial", "User reviews of " + @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName + " " + @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName)
+
+    @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationUserReviews)
+
+    <div class="create-user-review-button">
+        <button type="button" value="CreateUserReviewButton" id="CreateUserReviewButton" class="CreateUserReviewButton" xclass="terms-checked users-chosen show-search-splash"/>
+    </div>
+
+    @Html.Partial("ShopSectionHeaderPartial", @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName + " " + @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName + " Social Community")
+
+    @Html.Partial("SocialFollowers", Model.ContainerModel.ChosenCloudApplicationModel)
 
     <div style="clear:both;height:10px;"></div>
-    <label class="font-normal-22px-purple">Product reviews</label>
-
 
     <div class="search-result-product-reviews-div">
         @if (Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews.Count == 0)
         {
             <label class="font-bold-11px-black">Currently not available</label>
         }
+        @Html.Partial("ShopSectionHeaderPartial", "Media Reviews of " + @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName + " " + @Model.ContainerModel.ChosenCloudApplicationModel.ServiceName)
         @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationProductReviews)
     </div>
 
@@ -423,44 +440,24 @@
 
 </div>
 
-                        var topMargin = "0px;";
-                        if (Model.CustomSession.HasSearchResults)
-                        {
-                            topMargin = "37px;";
-                        }
+        var topMargin = "0px;";
+        if (Model.CustomSession.HasSearchResults)
+        {
+            topMargin = "0px;";
+        }
     
 <div class="search-result-product-ratings-div" style="margin-top:@topMargin">
-    @if (@Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationModelAlternatives.Count > 0)
-    {
-    <div class="search-result-alternatives">
-        <p class="font-bold-13px-purple">Alternative @Model.ContainerModel.ChosenCloudApplicationModel.Category.CategoryName.ToLowerInvariant() applications from @Model.ContainerModel.ChosenCloudApplicationModel.Vendor.VendorName</p>
-@*        <br />*@
-        @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationModelAlternatives)
-    </div>
-    }
     
     @Html.HiddenFor(x => x.ContainerModel.ChosenCloudApplicationModel.BuyURL)
     @Html.HiddenFor(x => x.ContainerModel.ChosenCloudApplicationModel.TryURL)
 
     @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow)
 
-    @Html.Partial("SocialFollowers", Model.ContainerModel.ChosenCloudApplicationModel)
-
-    @{Html.RenderPartial("CloudApplicationOverallRating", Model.ContainerModel.ChosenCloudApplicationModel); }
-
-    
     <div style="clear:both; height:10px;"></div>
 
-    <label class="font-normal-22px-purple">User reviews</label>
-
-    @Html.DisplayFor(x => x.ContainerModel.ChosenCloudApplicationModel.CloudApplicationUserReviews)
 
     <div style="clear:both; height:0px;"></div>
 
-                    <div class="site-button" style="float:left;">
-@*                        <input type="image" src="@Url.Content("~/Images/Buttons/1x1-transparent.png")" value="CreateReview" />*@
-                                    <img src="@Url.Content("~/Images/Buttons/CCW_CreateReview.png")" name="@Html.Encode("CREATEREVIEW_BUTTON")" id = "createReviewButton"/>
-                    </div>
 
 
 </div>
@@ -468,19 +465,6 @@
     
 }
 
-@*<script>
-    $(function () {
-        $("#dialog-message").dialog({
-            modal: true,
-            buttons: {
-                Ok: function () {
-                    $(this).dialog("close");
-                }
-            }
-        });
-    });
-</script>
-*@
 
 <div id="dialog-message-application-submission-complete" title="Request free trial complete">
     <table>
@@ -491,7 +475,7 @@
                 </p>
             </td>
             <td valign="top">
-                <label class="font-normal-13px-black">Thank you for your request. Somebody will be in touch with you shortly.</label>
+                <label class="font-normal-13px-black">Thank you for using Compare Cloudware. Press OK to go to your chosen provider.</label>
             </td>
         </tr>
     </table>
@@ -549,3 +533,8 @@
     @Html.Partial("UserReview", Model.ContainerModel.ChosenCloudApplicationModel.CloudApplicationUserReviewModel)
     @Html.Partial("TCDialog")
     @Html.Partial("NumberOfUsersDialog")
+
+    @Html.Partial("SocialShare", Model.ContainerModel.ChosenCloudApplicationModel.SocialShareModel)
+
+<a id="linkDynamic" target="_blank" href="#"></a>
+

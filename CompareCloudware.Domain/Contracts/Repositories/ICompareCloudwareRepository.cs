@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using CompareCloudware.Domain.Models;
 using System.Web;
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Data.Entity.Core;
 
 namespace CompareCloudware.Domain.Contracts.Repositories
 {
@@ -71,13 +74,16 @@ namespace CompareCloudware.Domain.Contracts.Repositories
         IList<ContentText> GetContentData(string[] IDs);
         IList<TermCondition> GetTermsOfUseData(string policyType);
         ContentText FindContentTextByID(int contentTextID);
-        
+        ContentTextType FindContentTextTypeByName(string contentTextTypeName);
+
         Person GetPersonByEMail(string eMail);
         Person GetPersonByPersonID(int personID);
         Person GetPerson(string forename, string surname, string eMail, int numberOfUsers);
         Person GetPerson(string forename, string surname, string eMail, int numberOfUsers, string telephone, string company, string position);
         Person GetPerson(string forename, string surname, string eMail, string country, string telephone, string company, string position, bool isInUserGroup);
-        
+        Person GetPerson(string eMail, bool isInUserGroup);
+
+        CloudApplicationRequest GetCloudApplicationRequest(int cloudApplicationRequestID);
         CloudApplicationRequest GetCloudApplicationRequestByPersonID(int personID);
         bool LogSiteActivity(HttpRequestBase request);
         //bool LogError(string message);
@@ -85,6 +91,8 @@ namespace CompareCloudware.Domain.Contracts.Repositories
         //bool AddPerson(Person person);
         IList<RequestType> GetRequestTypes();
         bool AddRequestType(RequestType rt);
+        RequestType GetRequestTypeByRequestTypeName(string requestTypeName);
+
         bool AddIndustry(Industry i);
         IList<Industry> GetIndustries();
         Industry GetIndustry(int industryID);
@@ -92,6 +100,11 @@ namespace CompareCloudware.Domain.Contracts.Repositories
         IList<CloudApplicationRequest> GetUnservicedCloudApplicationRequests();
         IList<CloudApplicationRequest> GetUnservicedCloudApplicationPDFRequests();
         IList<CloudApplicationRequest> GetUnservicedCloudApplicationTryBuyRequests();
+        IList<CloudApplicationRequest> GetUnservicedBusinessPartnerRequests();
+        IList<CloudApplicationRequest> GetUnservicedStrategicPartnerRequests();
+        IList<CloudApplicationRequest> GetUnservicedReferRewardRequests();
+        IList<CloudApplicationRequest> GetUnservicedSendToColleagueRequests();
+        Colleague FindRecommender(int colleaguePersonID);
         IList<WEBAPICloudApplicationRequest> GetWEBAPICloudApplicationRequests(DateTime startDate, DateTime endDate);
 
         bool MarkCloudApplicationRequestAsServiced(int cloudApplicationRequestID);
@@ -262,5 +275,12 @@ namespace CompareCloudware.Domain.Contracts.Repositories
         ContentPage GetContentPage(string route);
 
         void ClearCache();
+
+        int GetSearchResultsCount(System.Linq.Expressions.Expression<Func<CloudApplication, bool>> predicate, bool liveApplicationsOnly);
+
+        PersonType GetPersonTypeByPersonTypeID(int personTypeID);
+        PersonType GetPersonTypeByPersonTypeName(string personTypeName);
+        bool AddColleagueLink(Colleague c);
+
     }
 }

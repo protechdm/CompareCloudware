@@ -1,11 +1,4 @@
 ﻿@model CompareCloudware.Web.Models.HomePageModel
-@*    @{ Html.RenderPartial("Carousel"); }
-*@
-
-@*@using System.Web.WebPages
-@using Microsoft.Web.Mvc.Html*@
-
-@*@using (Html.BeginForm())*@
 @using (Html.BeginForm("HomePage", "Home", FormMethod.Post))
 {
 
@@ -13,10 +6,6 @@
     Model.CustomSession.ShowSearchTextBox = false;
     
         Html.RenderPartial("CarouselModel", @Model.Carousel);
-@*    <div style="clear:both;"></div>
-    <div style="background-color:#EBEBEB;">
-    </div>
-*@    
     
     <div class="homepage-container">
         <div class="search-homepage-container">
@@ -46,21 +35,50 @@
         </div>
 
     </div>
+
+
 }
 
-<script>
-//    $(document).ready(function () {
-//        debugger;
-//        var theForm = $(this).closest('form');
-//        $(this).submit(function (evt) {
+@using (Html.BeginForm("HomePageFirstTime", "Home", FormMethod.Post))
+{
+    @*<div id="compare-first-visit" title="Product Review">*@
+    @*<div id="comparefirstvisit" class="modal hide fade in modal-first-time-visit" style="display: none; ">*@
+    
+    if(Model.IsFirstTimeVisit)
+    {
+    <div id="comparefirstvisit" class="modal fade modal-first-time-visit">
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+        </div>
+        <div class="modal-body">
+            @Html.DisplayFor(x => x.SearchInputModelFirstTime)
+        </div>
+    </div>
+    }
+}
 
-//            //function CheckShowCompare(theForm) {
-//            //debugger;
-//            ShowCompare(this);
-//            //        if ($(theForm).valid()) {
-//            //            setLoadingSearchResults(true);
-//            //        }
-//            //}
-//        });
-//    });
+@Html.Partial("TakingToSelection")
+
+<script>
+
+
+    $(document).ready(function () {
+
+        var firstTime = function () {
+            var s1 = $(".search-homepage-container");
+            var s2 = $("#comparefirstvisit");
+            var searchPageContainerPos = $(s1).position();
+            $(s2).position().top = searchPageContainerPos.top - 10;
+            $(s2).position().left = searchPageContainerPos.left;
+            $("#comparefirstvisit").offset({ top: searchPageContainerPos.top - 12, left: searchPageContainerPos.left + 2 });
+            $('#comparefirstvisit').modal('show');
+        }
+
+        var firstTimeVisit = @Model.IsFirstTimeVisit.ToString().ToLower();
+        if (firstTimeVisit == true)
+        {
+            //setTimeout(firstTime, 5000);
+        }
+        //setTimeout(social, 100);
+    });
 </script>

@@ -126,14 +126,12 @@
 
         var autocompleteRows = $.parseJSON('@(ViewData["autocompleteRows"]??"[]")');
         //$.ui.searchboxautocomplete.separator = ": ";
-
         $("#search")
             .setSearchText(autocompleteRows)
             .searchboxautocomplete({
                 autocompleteRows: autocompleteRows,
                 source: function (request, response) {
                     var term = $.ui.searchboxautocomplete.extractLast(request.term);
-                    //debugger;
                     var dummyVXMode = $('.dummyVXMode');
                     var dummyVXModeIsChecked = $(dummyVXMode).attr("checked");
                     var liveApplicationsOnly = dummyVXModeIsChecked == null;
@@ -165,8 +163,8 @@
                     // custom minLength
                     var term = $.trim($.ui.searchboxautocomplete.extractLast(this.value));
                     logIt("search: custom minLength=>" + term + "<=");
-                    if ($(this).data("searchboxautocomplete").menu.element.is(":visible"))
-                        $(this).data("searchboxautocomplete").close(null);
+                    if ($(this).data("uiSearchboxautocomplete").menu.element.is(":visible"))
+                        $(this).data("uiSearchboxautocomplete").close(null);
                     if (term.length < 3) {
                         return false;
                     }
@@ -180,17 +178,15 @@
                 },
                 select: function (event, ui)
                 {
-                    debugger;
                     window.location = "/" + ui.item.tagModel.CloudApplicationModel.CategoryTag + "/" + ui.item.tagModel.CloudApplicationModel.ShopTag;
                     //window.location = "/" + ui.item.tagModel.CloudApplicationModel.CategoryTag + "/" + ui.item.tagModel.CloudApplicationModel.ShopTagURL;
                 }
 
             })
 
-        .data("searchboxautocomplete")._renderItem = function (ul, item) {
+        .data("uiSearchboxautocomplete")._renderItem = function (ul, item) {
             //return $("<li>" + "<img src='GetThumbnail?vendorID=" + item.vendorID + "'/>" + "</li>")
 
-            debugger;
             return $("<li>"
 
             //+ "<a href='AutoCompleteResultRedirect?id="
@@ -213,7 +209,7 @@
             + "</a>"
 
             + "</li>")
-        .data("item.autocomplete", item)
+        .data("ui-autocomplete-item", item)
 
             //        .append($("<a href='AutoCompleteResultRedirect?id="
             //            + item.tagModel.CloudApplicationModel.CloudApplicationID 
@@ -222,14 +218,14 @@
             //            + "</a>")
 
             //.append($(item).text(item.labelShort + " (" + item.value + ")"))
-        .appendTo(ul);
+                //.attr("data-value", item.value)
+                .appendTo(ul);
         };
 
         // hijack the form submit 
         $('#searchbox').submit(function (e) {
-            alert("submit");
-            debugger;
-            var rows = $("#search").data("searchboxautocomplete").options.autocompleteRows;
+            //alert("submit");
+            var rows = $("#search").data("uiSearchboxautocomplete").options.autocompleteRows;
             $('#selectedAutocompleteRows').val(JSON.stringify(rows));
             $('#separator').val($.ui.searchboxautocomplete.separator);
             //alert($('#selectedAutocompleteRows').val()); e.preventDefault(); return false;

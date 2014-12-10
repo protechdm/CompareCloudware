@@ -1,6 +1,6 @@
 ﻿@model CompareCloudware.Web.Models.TabbedOnpageOptimisationModel
 
-    <link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />    
+@*    <link href="../../../Content/DisabledJavaScript/site-tabs.css" rel="stylesheet" type="text/css" />    *@
 <style>
 
     .wrapped {
@@ -30,28 +30,37 @@ list-style-image: none;
         $(document).ready(function () {
             var tabsContext = $("#onpageoptimisation-tabs");
             $('.tabs-container').on('click', tabsContext, function () {
-                debugger;
                 //CallController("FEATURED");
             });
 
             var tabs = $("#onpageoptimisation-tabs").tabs({
-                select: function (e, i) {
-                    //debugger;
-                    CallController(i.index);
-                    //selected_tab = i.index;
+                //select: function (e, i) {
+
+
+                beforeActivate: function (e, i) {
+                    var newTab = $('.recaptcha-object-data', $('#' + i.newTab.attr('aria-controls')));
+                    if (newTab.length > 0) {
+                        var widgetDiv = $('#recaptcha_widget_div');
+                        $(widgetDiv).remove();
+                        //alert("adding");
+                        $(widgetDiv).appendTo(newTab);
+                    }
+                },
+
+
+                activate: function (e, i) {
+                   CallController(i.index);
                 },
                 show: function (e, i) {
-                    //debugger;
                     //CallController(i.index);
                     //selected_tab = i.index;
                 },
                 load: function (e, i) {
-                    //debugger;
+                    alert("loaded");
                     CallController(i.index);
                     //selected_tab = i.index;
                 },
                 create: function (e, i) {
-                    //debugger;
                     CallController(0);
                     //selected_tab = i.index;
                 }
@@ -76,7 +85,6 @@ list-style-image: none;
 
                     //The request was a success. Repopulate the div with new result set.
                     success: function (data) {
-                        //debugger;
                         //$(tagToRefresh).empty();
                         //$(data).appendTo(tagToRefresh);
                         //setResultsDisplay();
@@ -85,7 +93,6 @@ list-style-image: none;
                         //setLoadingSearchResults(false);
                     },
                     error: function (data) {
-                        //debugger;
                         //setLoadingSearchResults(false);
                         //alert('Fail on dropdown');
                     }
@@ -123,6 +130,16 @@ list-style-image: none;
              </a>
          </div>
     </li>
+    @if(Model.OnpageOptimisationTab4 != null)
+    {
+    <li id="onpageoptimisation-tab-4">
+         <div class="wrapped">
+             <a href="#onpageoptimisation-tabs-7" class="font-normal-15px-white">
+                 @Model.Tab4Title
+             </a>
+         </div>
+    </li>
+    }
 </ul>
 	    <div id="onpageoptimisation-tabs-4" class="box-shadow">
             @Html.DisplayFor(x => x.OnpageOptimisationTab1)
@@ -132,6 +149,9 @@ list-style-image: none;
 	    </div>
 	    <div id="onpageoptimisation-tabs-6" class="box-shadow">
             @Html.DisplayFor(x => x.OnpageOptimisationTab3)
+	    </div>
+	    <div id="onpageoptimisation-tabs-7" class="box-shadow">
+            @Html.DisplayFor(x => x.OnpageOptimisationTab4)
 	    </div>
 </div>
 

@@ -38,7 +38,7 @@ $.validator.setDefaults({
                 template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
             });
 
-            pop.data('popover').options.content = value.message;
+            pop.data('bs.popover').options.content = value.message;
 
             $(value.element).popover('show');
 

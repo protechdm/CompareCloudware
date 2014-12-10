@@ -20,7 +20,7 @@ namespace CompareCloudware.Domain.Models
         public virtual DateTime? Serviced { get; set; }
 
         public bool? Servicing { get; set; }
-
+        public virtual string RequestData { get; set; }
     }
     #endregion
 

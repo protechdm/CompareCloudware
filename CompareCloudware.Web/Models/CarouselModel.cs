@@ -20,6 +20,13 @@
             this.URLSuffix1 = "CloudApplication?cloudApplicationID=";
             this.SelectedCategoryID = session.SelectedCategoryID;
             this.CarouselType = carouselType;
+            int carouselDefaultDisplayTime = int.Parse(ConfigurationManager.AppSettings["CarouselDefaultDisplayTime"].ToString());
+
+            DisplayTime1 = carouselDefaultDisplayTime;
+            DisplayTime2 = carouselDefaultDisplayTime;
+            DisplayTime3 = carouselDefaultDisplayTime;
+            DisplayTime4 = carouselDefaultDisplayTime;
+            DisplayTime5 = carouselDefaultDisplayTime;
 
             switch (carouselType)
             {
@@ -40,6 +47,11 @@
                             ID3 = ConfigurationManager.AppSettings["CarouselHomeID3"];
                             ID4 = ConfigurationManager.AppSettings["CarouselHomeID4"];
                             ID5 = ConfigurationManager.AppSettings["CarouselHomeID5"];
+                            DisplayTime1 = ConfigurationManager.AppSettings["CarouselHomeImage1DisplayTime"] != null ? int.Parse(ConfigurationManager.AppSettings["CarouselHomeImage1DisplayTime"].ToString()) : carouselDefaultDisplayTime;
+                            DisplayTime2 = ConfigurationManager.AppSettings["CarouselHomeImage2DisplayTime"] != null ? int.Parse(ConfigurationManager.AppSettings["CarouselHomeImage2DisplayTime"].ToString()) : carouselDefaultDisplayTime;
+                            DisplayTime3 = ConfigurationManager.AppSettings["CarouselHomeImage3DisplayTime"] != null ? int.Parse(ConfigurationManager.AppSettings["CarouselHomeImage3DisplayTime"].ToString()) : carouselDefaultDisplayTime;
+                            DisplayTime4 = ConfigurationManager.AppSettings["CarouselHomeImage4DisplayTime"] != null ? int.Parse(ConfigurationManager.AppSettings["CarouselHomeImage4DisplayTime"].ToString()) : carouselDefaultDisplayTime;
+                            DisplayTime5 = ConfigurationManager.AppSettings["CarouselHomeImage5DisplayTime"] != null ? int.Parse(ConfigurationManager.AppSettings["CarouselHomeImage5DisplayTime"].ToString()) : carouselDefaultDisplayTime;
                             break;
                         case 1:
                         case 19:
@@ -55,16 +67,16 @@
                             ID5 = ConfigurationManager.AppSettings["CarouselCategoryPhoneID5"];
                             break;
                         case 2:
-                            Image1 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement1"];
-                            Image2 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement2"];
-                            Image3 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement3"];
-                            Image4 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement4"];
-                            Image5 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagement5"];
-                            ID1 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID1"];
-                            ID2 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID2"];
-                            ID3 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID3"];
-                            ID4 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID4"];
-                            ID5 = ConfigurationManager.AppSettings["CarouselCategoryCustomerManagementID5"];
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategoryCRM1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategoryCRM2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategoryCRM3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategoryCRM4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategoryCRM5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategoryCRMID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategoryCRMID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategoryCRMID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategoryCRMID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategoryCRMID5"];
                             break;
                         case 3:
                             Image1 = ConfigurationManager.AppSettings["CarouselCategoryConferencing1"];
@@ -150,6 +162,114 @@
                             ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
                             ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
                             break;
+                        case 10:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 11:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 12:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 13:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 14:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 15:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 16:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 17:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
+                        case 18:
+                            Image1 = ConfigurationManager.AppSettings["CarouselCategorySecurity1"];
+                            Image2 = ConfigurationManager.AppSettings["CarouselCategorySecurity2"];
+                            Image3 = ConfigurationManager.AppSettings["CarouselCategorySecurity3"];
+                            Image4 = ConfigurationManager.AppSettings["CarouselCategorySecurity4"];
+                            Image5 = ConfigurationManager.AppSettings["CarouselCategorySecurity5"];
+                            ID1 = ConfigurationManager.AppSettings["CarouselCategorySecurityID1"];
+                            ID2 = ConfigurationManager.AppSettings["CarouselCategorySecurityID2"];
+                            ID3 = ConfigurationManager.AppSettings["CarouselCategorySecurityID3"];
+                            ID4 = ConfigurationManager.AppSettings["CarouselCategorySecurityID4"];
+                            ID5 = ConfigurationManager.AppSettings["CarouselCategorySecurityID5"];
+                            break;
                     }
                     #endregion
                     break;
@@ -216,6 +336,11 @@
         public string LinkRef3 { get; set; }
         public string LinkRef4 { get; set; }
         public string LinkRef5 { get; set; }
+        public int DisplayTime1 { get; set; }
+        public int DisplayTime2 { get; set; }
+        public int DisplayTime3 { get; set; }
+        public int DisplayTime4 { get; set; }
+        public int DisplayTime5 { get; set; }
 
         public CarouselType CarouselType { get; set; }
     }

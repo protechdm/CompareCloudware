@@ -5,6 +5,7 @@
 // Update-Database -ConnectionStringName "CompareCloudware.POCOQueryRepository.CompareCloudwareContext"
 // Update-Database –TargetMigration: Add_AdvertisingImage_CloudApplicationID
 // Update-Database –TargetMigration: AddURLTagsToCloudApplication
+//AddAdvertisingImageServerPhase2Categories
 namespace CompareCloudware.POCOQueryRepository.Migrations
 {
     using System;

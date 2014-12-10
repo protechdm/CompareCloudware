@@ -22,17 +22,14 @@
             //$("#tab-1").corner();
             //$("#tab-2").corner();
             //$("#tab-3").corner();
-            //debugger;
             var tabsContext = $("#tabs");
             $('.tabs-container').on('click', tabsContext, function () {
-                debugger;
                 CallController("FEATURED");
             });
 
             //$(function () {
             var tabs = $("#tabs").tabs({
                 select: function (e, i) {
-                    //debugger;
                     CallController(i.index);
                     //selected_tab = i.index;
 
@@ -49,7 +46,6 @@
 
             function CallController(whichTab) {
                 var serialize1 = $('.search-homepage-container').serialize();
-                debugger;
                 $.ajax({
                     //url: '/Home/SearchFiltersPartial',
                     url: '/Home/SearchResultsTabChanged',
@@ -64,7 +60,6 @@
 
                     //The request was a success. Repopulate the div with new result set.
                     success: function (data) {
-                        debugger;
                         //$(tagToRefresh).empty();
                         //$(data).appendTo(tagToRefresh);
                         //setResultsDisplay();
@@ -73,7 +68,6 @@
                         //setLoadingSearchResults(false);
                     },
                     error: function (data) {
-                        debugger;
                         //setLoadingSearchResults(false);
                         //alert('Fail on dropdown');
                     }

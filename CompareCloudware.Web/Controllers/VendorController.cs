@@ -14,7 +14,10 @@ using System.Drawing.Drawing2D;
 using CompareCloudware.Domain.Models;
 using CompareCloudware.SocialNetworking;
 using System.Configuration;
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Data.Entity.Core;
 
 using System.Web;
 

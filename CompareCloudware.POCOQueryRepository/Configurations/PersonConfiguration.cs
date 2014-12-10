@@ -15,8 +15,8 @@ namespace CompareCloudware.POCOQueryRepository.Configurations
             Property(d => d.EMail).IsRequired();
             Property(d => d.EMail).HasMaxLength(105);
             Property(d => d.RowVersion).IsRowVersion();
-            Property(d => d.Forename).IsRequired();
-            Property(d => d.NumberOfEmployees).IsRequired();
+            //Property(d => d.Forename).IsRequired();
+            //Property(d => d.NumberOfEmployees).IsRequired();
             //Property(d => d.PersonStatus).IsRequired();
             this.HasRequired(x => x.PersonStatus);
         }

@@ -18,12 +18,12 @@
                             }
                         </td>
                         <td style="width:50%" class="font-normal-11px-black">
-                            @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName)
+                            @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName, new { @class = "filterLabel font-normal-11px-black" })
                         </td>
                         <td style="width:40%">
                             @Html.DropDownListFor(x => x.Col1Value,
                             new SelectList(Model.Col1Values, "ModelValue", "DisplayValue", Model.Col1Value)
-                             , new { @class = "set-combo-width filterParameter" })
+                             , new { @class = "set-combo-width-parameter filterParameter font-normal-11px-black" })
                         </td>
                         <td style="width:0%">
                             @Html.HiddenFor(x => x.IsValueBased)
@@ -49,12 +49,12 @@
                         <td style="width:10%">
                         </td>
                         <td style="width:50%" class="font-normal-11px-black">
-                            @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName)
+                            @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName, new { @class = "filterLabel font-normal-11px-black" })
                         </td>
                         <td style="width:40%">
                             @Html.DropDownListFor(x => x.Col1Value,
                             new SelectList(Model.Col1Values, "ModelValue", "DisplayValue", Model.Col1Value)
-                             , new { @class = "set-combo-width filterParameter" })
+                             , new { @class = "set-combo-width-parameter filterParameter font-normal-11px-black" })
                         </td>
                         <td style="width:0%">
                             @Html.HiddenFor(x => x.IsValueBased)
@@ -80,7 +80,7 @@
                             }
                         </td>
                         <td style="width:90%" class="font-normal-11px-black">
-                            @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName)
+                            @Html.LabelFor(x => x.Col1SearchFilterName, Model.Col1SearchFilterName, new { @class = "filterLabel font-normal-11px-black" })
                         </td>
                         <td style="width:0%">
                             @Html.HiddenFor(x => x.Col1SearchFilterName)

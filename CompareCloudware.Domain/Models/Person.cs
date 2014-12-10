@@ -14,7 +14,7 @@ namespace CompareCloudware.Domain.Models
         public virtual string EMail { get; set; }
         public virtual string Telephone { get; set; }
         public virtual string Company { get; set; }
-        public virtual int NumberOfEmployees { get; set; }
+        public virtual int? NumberOfEmployees { get; set; }
         public virtual string Position { get; set; }
         public virtual string UserName { get; set; }
         public virtual string Password { get; set; }
@@ -30,6 +30,7 @@ namespace CompareCloudware.Domain.Models
         public virtual bool? IsFinanceContact { get; set; }
         public virtual bool? IsInUserGroup { get; set; }
         public virtual Status PersonStatus { get; set; }
+        public virtual PersonType PersonType { get; set; }
         public virtual byte[] RowVersion { get; set; }
     }
     #endregion

@@ -1,5 +1,9 @@
 ﻿using System;
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Data.Entity.Core;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -45,6 +49,8 @@ namespace CompareCloudware.Domain.Contracts.Repositories
         IDbSet<ContentText> ContentText { get; }
         IDbSet<ContentTextType> ContentTextTypes { get; }
         IDbSet<Person> Persons { get; }
+        IDbSet<PersonType> PersonTypes { get; }
+        IDbSet<Colleague> Colleagues { get; }
         IDbSet<CloudApplicationRequest> CloudApplicationRequests { get; }
         IDbSet<Device> Devices { get; }
         IDbSet<SiteActivity> SiteActivity { get; }

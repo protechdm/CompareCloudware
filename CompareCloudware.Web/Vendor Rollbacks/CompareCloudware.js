@@ -51,7 +51,7 @@ $(document).ready(function () {
 
 
     function setResultsDisplay() {
-
+        debugger;
         var theButton = $('#displayAsSummary');
         var checked = theButton.attr("checked");
         var theValue = theButton.attr("value");

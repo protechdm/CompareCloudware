@@ -29,7 +29,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddCategory(c);
             c = new Category()
             {
-                CategoryName = "Customer Management",
+                CategoryName = "CRM",
                 CategoryStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddCategory(c);
@@ -350,7 +350,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             c = new Category()
             {
-                CategoryName = "Customer Management",
+                CategoryName = "CRM",
                 CategoryStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddCategory(c);
@@ -884,206 +884,206 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddFeature(f);
             #endregion
 
-            #region CUSTOMER MANAGEMENT FEATURES
+            #region CRM FEATURES
             f = new Feature()
             {
                 FeatureName = "Unlimited Contacts",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Storage Included (for Documents, PPTs, PDFs)",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Sales Opportunity Management",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Sales Forecasting",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Web to Lead Form",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Email Marketing",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Campaign Tracking and Management",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Email Integration",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Customer Helpdesk",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Case Queueing & Tracking",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Unlimited Cases",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Document Management",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Custom Reports",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Full SSL Security",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Mobile Integration",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Invoice Creation & Management",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Inventory & Order Management",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Open API/3rd Party Integration",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "Social Media Integration",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             f = new Feature()
             {
                 FeatureName = "User Customization",
                 Categories = new List<Category>(),
-                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                //Category = repository.FindCategoryByName("CRM"),
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("CUSTOMER MANAGEMENT"));
+            f.Categories.Add(repository.FindCategoryByName("CRM"));
             repository.AddFeature(f);
             #endregion
 
@@ -4637,11 +4637,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Salesforce",
                 VendorLogoFileName = "salesforce_logo.jpeg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\salesforce_logo.jpeg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\salesforce_logo.jpeg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\salesforce_logo.jpeg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\salesforce_logo.jpeg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4651,11 +4651,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "SUGARCRM",
                 VendorLogoFileName = "sugar crm logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\sugar crm logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\sugar crm logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\sugar crm logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\sugar crm logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4665,11 +4665,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "ZOHOCRM",
                 VendorLogoFileName = "zoho logo.gif",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\zoho logo.gif"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\zoho logo.gif"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\zoho logo.gif"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\zoho logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4679,11 +4679,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Workbooks.com",
                 VendorLogoFileName = "workbooks logo.png",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\workbooks logo.png"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\workbooks logo.png"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\workbooks logo.png"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\workbooks logo.png"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4693,11 +4693,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Microsoft Dynamics",
                 VendorLogoFileName = "microsoft dynamics logo.png",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\microsoft dynamics logo.png"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\microsoft dynamics logo.png"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\microsoft dynamics logo.png"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\microsoft dynamics logo.png"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4707,11 +4707,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Maximizer",
                 VendorLogoFileName = "maximizer logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\maximizer logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\maximizer logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\maximizer logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\maximizer logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4721,11 +4721,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "opencrm",
                 VendorLogoFileName = "open crm logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\open crm logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\open crm logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\open crm logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\open crm logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4735,11 +4735,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "TactileCRM",
                 VendorLogoFileName = "tactile_crm.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\tactile_crm.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\tactile_crm.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\tactile_crm.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\tactile_crm.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4749,11 +4749,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "wecandobiz",
                 VendorLogoFileName = "we can do biz logo.png",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\we can do biz logo.png"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\we can do biz logo.png"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\we can do biz logo.png"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\we can do biz logo.png"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4763,11 +4763,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Buddy",
                 VendorLogoFileName = "buddy crm logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\buddy crm logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\buddy crm logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\buddy crm logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\buddy crm logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4777,11 +4777,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "sage",
                 VendorLogoFileName = "sage crm logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\sage crm logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\sage crm logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\sage crm logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\sage crm logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4791,11 +4791,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "webCRM",
                 VendorLogoFileName = "web crm logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\web crm logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\web crm logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\web crm logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\web crm logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4805,11 +4805,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "capsule",
                 VendorLogoFileName = "capsule crm logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\capsule crm logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\capsule crm logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\capsule crm logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\capsule crm logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4819,11 +4819,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "SohoOS",
                 VendorLogoFileName = "soho os logo.jpg",
-                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\soho os logo.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\soho os logo.jpg"),
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\soho os logo.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\soho os logo.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4834,10 +4834,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "Planet Soho",
                 VendorLogoFileName = "planet-soho.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\planet-soho.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\planet-soho.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4848,10 +4848,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "Brightpearl",
                 VendorLogoFileName = "brightpearl.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\brightpearl.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\brightpearl.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4862,10 +4862,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "Batchbook",
                 VendorLogoFileName = "batchbook.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\batchbook.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\batchbook.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4876,10 +4876,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "WORKetc",
                 VendorLogoFileName = "worketc.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\worketc.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\worketc.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4890,10 +4890,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "AppShore",
                 VendorLogoFileName = "appshore.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\appshore.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\appshore.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4904,10 +4904,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "PipelineDeals",
                 VendorLogoFileName = "pipelinedeals.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\pipelinedeals.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\pipelinedeals.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4918,10 +4918,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "SuperOffice",
                 VendorLogoFileName = "superoffice.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\superoffice.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\superoffice.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -4932,10 +4932,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorName = "salesboom",
                 VendorLogoFileName = "salesboom.jpg",
                 //VendorLogo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Security\\zscaler.jpg"),
-                VendorLogoFullURL = "//Images//Logos/Customer Management//",
+                VendorLogoFullURL = "//Images//Logos/CRM//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\Customer Management\\salesboom.jpg"),
+                    Logo = File.ReadAllBytes("J:\\CompareCloudware\\CompareCloudware.Web\\Images\\Logos\\CRM\\salesboom.jpg"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -6705,7 +6705,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_CATEGORY_TITLE",
+                ContentTextTypeName = "CRM_CATEGORY_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
@@ -6760,7 +6760,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_CATEGORY_BODY",
+                ContentTextTypeName = "CRM_CATEGORY_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
@@ -7457,6 +7457,4631 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
         }
         #endregion
 
+
+        #region PumpLevel2Phase2ReferenceData
+        public static bool PumpLevel2Phase2ReferenceData(QueryRepository repository)
+        {
+            bool retVal = true;
+            Feature f;
+            Feature parentFeature;
+            CompareCloudware.Domain.Models.OperatingSystem o;
+            MobilePlatform mp;
+            Browser b;
+            LicenceTypeMinimum ltMin;
+            LicenceTypeMaximum ltMax;
+            Language l;
+            SupportType st;
+            SupportDays sd;
+            SupportHours sh;
+            SupportTerritory sterritory;
+            MinimumContract mc;
+            PaymentFrequency pf;
+            SetupFee sf;
+            PaymentOption po;
+            FreeTrialPeriod ftp;
+            Vendor v;
+            CloudApplicationDocumentType dt;
+            CloudApplicationDocumentFormat df;
+            AdvertisingImageType ait;
+            TagType tt;
+            ContentTextType ctt;
+            Device d;
+            RequestType rt;
+            CompareCloudware.Domain.Models.TimeZone tz;
+            //CloudApplicationApplication caa;
+
+            #region Browsers
+            b = new Browser()
+            {
+                BrowserName = "IE10",
+                BrowserStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddBrowser(b);
+            b = new Browser()
+            {
+                BrowserName = "IE11",
+                BrowserStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddBrowser(b);
+            #endregion
+
+            #region SetUp Fees
+
+            ftp = new FreeTrialPeriod()
+            {
+                FreeTrialPeriodName = "Demo",
+                FreeTrialPeriodStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddFreeTrialPeriod(ftp);
+
+            ftp = new FreeTrialPeriod()
+            {
+                FreeTrialPeriodName = "21",
+                FreeTrialPeriodStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddFreeTrialPeriod(ftp);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "282.99",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "500",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "499.00",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "54.99",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "629.00",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "61.99",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "46.99",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "799.00",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "89.99",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "399 to 2499",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "1000",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "1500",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "3000",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "45.00",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+            sf = new SetupFee()
+            {
+                SetupFeeName = "195.00",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            sf = new SetupFee()
+            {
+                SetupFeeName = "99.00",
+                SetupFeeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddSetupFee(sf);
+
+            #endregion
+
+            tz = new Domain.Models.TimeZone
+            {
+                TimeZoneName = "MST",
+                GMTDifference = -7,
+                TimeZoneStatus = repository.FindStatusByName("LIVE")
+
+            };
+
+            repository.AddTimeZone(tz);
+
+            ltMax = new LicenceTypeMaximum()
+            {
+                LicenceTypeMaximumName = 200,
+                LicenceTypeMaximumStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddLicenceTypeMaximum(ltMax);
+
+            ltMax = new LicenceTypeMaximum()
+            {
+                LicenceTypeMaximumName = 19,
+                LicenceTypeMaximumStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddLicenceTypeMaximum(ltMax);
+
+            ltMax = new LicenceTypeMaximum()
+            {
+                LicenceTypeMaximumName = 101,
+                LicenceTypeMaximumStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddLicenceTypeMaximum(ltMax);
+
+            ltMin = new LicenceTypeMinimum
+            {
+                LicenceTypeMinimumName = 51,
+                LicenceTypeMinimumStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddLicenceTypeMinimum(ltMin);
+
+            ltMin = new LicenceTypeMinimum
+            {
+                LicenceTypeMinimumName = 101,
+                LicenceTypeMinimumStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddLicenceTypeMinimum(ltMin);
+
+            ltMin = new LicenceTypeMinimum
+            {
+                LicenceTypeMinimumName = 20,
+                LicenceTypeMinimumStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddLicenceTypeMinimum(ltMin);
+
+            l = new Language
+            {
+                LanguageName = "Mandarin",
+                LanguageStatus = repository.FindStatusByName("LIVE")
+            };
+            repository.AddLanguage(l);
+
+            l = new Language
+            {
+                LanguageName = "Hindi",
+                LanguageStatus = repository.FindStatusByName("LIVE")
+            };
+            repository.AddLanguage(l);
+
+            l = new Language
+            {
+                LanguageName = "Bengali",
+                LanguageStatus = repository.FindStatusByName("LIVE")
+            };
+            repository.AddLanguage(l);
+
+            #region FEATURES
+
+            #region PAYMENTS FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Inclusive Transactions (Per Month)",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = false,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE")
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Transaction Cost",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = true,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "All Credit Cards / Debit Cards",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "PayPal Acceptance",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Mail & Phone Payments",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Local / Alternative Payments",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Mobile Payments",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Free Refunds",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Reporting",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Instant Mass Payouts",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "3rd Party Integration (APIs)",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "1-Click Payments",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Multi-Currency Payments",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Fraud Screening",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Integrated Checkout",
+                Categories = new List<Category>(),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("PAYMENTS"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region HOSTING FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Number of Websites",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = false,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "SQL Databases",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = false,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Bandwidth",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = true,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Storage",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = true,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Website Sub Domains",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = false,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Email Accounts",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = false,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Virtual Data Centre Services",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Wesbite Security (SSL Certificate)",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Site Analytics & Reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Web Tool Integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "3rd Party Integration (APIs)",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Web Apps Library (Widgets)",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "eCommerce",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Programming Tools",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Mobile Website",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Uptime Guarantee",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HOSTING"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region WEBSITE FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Bandwidth",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = true,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Storage",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = true,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Free Template Themes",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Mobile Responsive",
+                Categories = new List<Category>(),
+                IsDataDriven = true,
+                OutputDisplayType = "INT",
+                OutputDisplayDescriptor = null,
+                IsDataCeilingDriven = true,
+                HasCount = true,
+                HasCountSuffix = false,
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Social Media Integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Blog Integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Site Analytics/Reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "SSL Certificate",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Store/Shop Creation",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "SEO Service",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Google Ads Integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Live Chat Integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Web Design Tools",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Photo & Video Editing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Uptime Guarantee",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("WEBSITE"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region HR FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Holiday/Sickness Tracking",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Appraisal Performance",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Expenses",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Self-Service Portal",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Document Library",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Recruitment",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Workforce Management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Training & Development",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Compliance, Health & Safety",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "3rd Party Integration (APIs)",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Timesheets",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Payroll",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Case Management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Email / Memos",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+
+            f = new Feature()
+            {
+                FeatureName = "Uptime Guarantee",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("HR"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region SALES FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Deal Management / Tracking",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Contact Management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Mobile Access",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Set Goals / Targets",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Sales Activity Reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Import Data / Contacts",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Lead Scoring / Routing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Customised Interface",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Social Marketing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Email Marketing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "3rd Party Integration (APIs)",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Document Storage",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Web Visitor Analytics",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Telephone Integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Lead Age Management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+
+            f = new Feature()
+            {
+                FeatureName = "Uptime Guarantee",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("SALES"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region BUSINESS & OPERATIONS FEATURES
+            f = new Feature()
+            {
+                FeatureName = "API integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Business performance reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Business planning",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Contact management/CRM",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Electronic signature",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Field service management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Helpdesk",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Inventory management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Invoice management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Order management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Purchasing management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Quote management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Resource scheduling",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Service dispatch",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Supply chain management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+
+            f = new Feature()
+            {
+                FeatureName = "Time & attendance",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region MARKETING FEATURES
+            f = new Feature()
+            {
+                FeatureName = "A/B testing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "API integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Automated email",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Ad tracking",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Email campaign management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Event management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Integrated contact management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Invite/registration management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Landing page management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Campaign reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Search management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Social media management",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Social sharing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Surveys",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Telemarketing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+
+            f = new Feature()
+            {
+                FeatureName = "Webinar platform",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("MARKETING"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region Business Intelligence Reporting FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Ad hoc analysis",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Ad hoc query",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Ad hoc reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "API integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Custom dashboard",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Custom reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Drag and drop visualisations",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Export data to Excel",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Forecasting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Interactive dashboard/reporting",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Key performance indicators",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Multi source data integration",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Trend indicators",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Visual data presentation",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "OLAP",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #region CREATIVE FEATURES
+            f = new Feature()
+            {
+                FeatureName = "Animated images",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "App design",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Audio editing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "3D/CAD",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Content library",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Diagram design",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "eBook publishing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Graphics tools",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Photo editing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Interactive animation",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Presentation creation",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Publishing tools",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Video creation",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Video editing",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+            f = new Feature()
+            {
+                FeatureName = "Website design",
+                Categories = new List<Category>(),
+                //Category = repository.FindCategoryByName("CUSTOMER MANAGEMENT"),
+                FeatureType = repository.FindFeatureTypeByName("FEATURE"),
+                FeatureStatus = repository.FindStatusByName("LIVE"),
+            };
+            f.Categories.Add(repository.FindCategoryByName("CREATIVE"));
+            repository.AddFeature(f);
+
+            #endregion
+
+            #endregion
+
+            //#region APPLICATIONFEATURES
+
+            ////WORD PARENT
+            //f = new Feature()
+            //{
+            //    FeatureName = "Word Processor",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //parentFeature = f;
+
+            ////WORD CHILDREN
+            //f = new Feature()
+            //{
+            //    FeatureName = "Advanced Proofing & Editing",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Advanced Referencing & Editing",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Mailing Features",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //parentFeature = f;
+
+
+            ////SPREADSHEET PARENT            
+            //f = new Feature()
+            //{
+            //    FeatureName = "Spreadsheet",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+            ////SPREADSHEET CHILDREN
+            //f = new Feature()
+            //{
+            //    FeatureName = "Formula Management",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Data Management",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Advanced Charting & Tables",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+
+            ////PRESENTATION PARENT
+            //f = new Feature()
+            //{
+            //    FeatureName = "Presentation",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //parentFeature = f;
+
+            ////PRESENTATION CHILDREN
+            //f = new Feature()
+            //{
+            //    FeatureName = "Advanced Design & Animation",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Real-Time Collaboration",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Automatic Version Management",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Large Video Files >50MB",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Own Branding",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+
+            ////CONFERENCING PARENT
+            //f = new Feature()
+            //{
+            //    FeatureName = "Conferencing",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //parentFeature = f;
+
+            ////CONFERENCING CHILDREN
+            //f = new Feature()
+            //{
+            //    FeatureName = "Desktop sharing",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Instant messaging",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Desktop video conferencing",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Desktop VoIP",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Presence tools",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+
+            ////NOTES PARENT
+            //f = new Feature()
+            //{
+            //    FeatureName = "Notes",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //parentFeature = f;
+
+            ////NOTES CHILDREN
+            //f = new Feature()
+            //{
+            //    FeatureName = "Read & Edit",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Save Web Content",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Image Capture",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Automatic Sync (for use on other devices)",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+            ////WEB PUBLISHING PARENT
+            //f = new Feature()
+            //{
+            //    FeatureName = "Web publishing",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //parentFeature = f;
+
+            ////WEB PUBLISHING CHILDREN
+            //f = new Feature()
+            //{
+            //    FeatureName = "Web Publishing e.g. Blog",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Social Media Integration",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Internal Website (Intranet)",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "External Customer Website (Extranet)",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    SuppressFilterBehaviour = true,
+            //    ParentFeature = parentFeature,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+            //f = new Feature()
+            //{
+            //    FeatureName = "Email (comprehensive client)",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Email security & anti-spam",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Email storage limit per user",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    IsDataDriven = true,
+            //    //DataDrivenField = "THIS",
+            //    OutputDisplayType = "INT",
+            //    OutputDisplayDescriptor = "BYTES",
+            //    IsDataCeilingDriven = true,
+            //    HasCount = true,
+            //    HasCountSuffix = true,
+            //    CanBeBooleanAndDataDriven = true,
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Email content translation",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Contact Management",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Shared Calendar",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Project Management / Task Manager",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Document Collaboration (real-time)",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Collaborative diagramming/mapping",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+            //f = new Feature()
+            //{
+            //    FeatureName = "Document consumption analytics",
+            //    Categories = new List<Category>(),
+            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
+            //    FeatureStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
+            //repository.AddFeature(f);
+
+            //#endregion
+
+
+            #region VENDORS
+
+            #region PAYMENTS VENDORS
+            v = new Vendor()
+            {
+                VendorName = "SagePay",
+                VendorLogoFileName = "Sage_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Sage_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+            v = new Vendor()
+            {
+                VendorName = "PayPal",
+                VendorLogoFileName = "PayPal_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\PayPal_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Skrill",
+                VendorLogoFileName = "Skrill_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Skrill_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Real Ex",
+                VendorLogoFileName = "Realex_Payments_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Realex_Payments_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "eWay",
+                VendorLogoFileName = "eWay_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\eWay_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Authorize.Net",
+                VendorLogoFileName = "Authorize_net_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Authorize_net_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "BT-SafePay",
+                VendorLogoFileName = "BT_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\BT_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Cashflows",
+                VendorLogoFileName = "CashFlows_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\CashFlows_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Digital River",
+                VendorLogoFileName = "DigitalRiver_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\DigitalRiver_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Kounta",
+                VendorLogoFileName = "Kounta_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Kounta_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #region HOSTING VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "BT#2",
+                VendorLogoFileName = "BT_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\BT_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "1&1#2",
+                VendorLogoFileName = "1and1_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\1and1_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Gradwell Cloud",
+                VendorLogoFileName = "Gradwell_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\Gradwell_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "GoDaddy",
+                VendorLogoFileName = "GoDaddy_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\GoDaddy_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+            v = new Vendor()
+            {
+                VendorName = "123-Reg",
+                VendorLogoFileName = "123Reg_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\123Reg_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Optimal Hosting",
+                VendorLogoFileName = "Optimal_Hosting_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\Optimal_Hosting_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Heart Internet",
+                VendorLogoFileName = "HeartInternet_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\HeartInternet_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "UK2",
+                VendorLogoFileName = "EasySpace_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hosting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\EasySpace_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "EasySpace",
+                VendorLogoFileName = "Authorize_net_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Payments//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Authorize_net_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "DreamHost",
+                VendorLogoFileName = "DreamHost_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//P//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\DreamHost_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #region WEBSITE VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "1&1#3",
+                VendorLogoFileName = "1and1_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\1and1_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "GoDaddy#2",
+                VendorLogoFileName = "GoDaddy_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\GoDaddy_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Zoho Sites",
+                VendorLogoFileName = "Zoho_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Zoho_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "123-Reg#2",
+                VendorLogoFileName = "123Reg_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\123Reg_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "HighWire",
+                VendorLogoFileName = "HighWire_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\HighWire_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Shopio",
+                VendorLogoFileName = "Shopio_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Shopio_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Weebly",
+                VendorLogoFileName = "Weebly_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Weebly_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Serif",
+                VendorLogoFileName = "Serif_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Serif_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Wix",
+                VendorLogoFileName = "Wix_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Wix_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Shopify",
+                VendorLogoFileName = "Shopify_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Shopify_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Volusion",
+                VendorLogoFileName = "Volusion_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Website//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Volusion_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #region HR VENDORS
+            v = new Vendor()
+            {
+                VendorName = "Breathe HR",
+                VendorLogoFileName = "BreatheHR_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\BreatheHR_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "People HR",
+                VendorLogoFileName = "PeopleHR_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\PeopleHR_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "SMB Partners",
+                VendorLogoFileName = "SMB_Partners_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\SMB_Partners_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "You Manage",
+                VendorLogoFileName = "YouManage_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\YouManage_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Staff Squared",
+                VendorLogoFileName = "Staff_Squared_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Staff_Squared_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "My HR Toolkit",
+                VendorLogoFileName = "My_HR_Toolkit_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\My_HR_Toolkit_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Bamboo HR",
+                VendorLogoFileName = "BambooHR_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\BambooHR_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Cezanne HR",
+                VendorLogoFileName = "Cezanne_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Cezanne_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Access Group",
+                VendorLogoFileName = "Access_HR_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Access_HR_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Moore Pay",
+                VendorLogoFileName = "Moorepay_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Moorepay_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Zoho People",
+                VendorLogoFileName = "Zoho_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Hr//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Zoho_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+
+
+            #endregion
+
+            #region SALES VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "Pipeline Deals#2",
+                VendorLogoFileName = "PipelineDeals_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\PipelineDeals_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Pipedrive",
+                VendorLogoFileName = "PipeDrive_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\PipeDrive_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Zoho CRM#2",
+                VendorLogoFileName = "Zoho_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Zoho_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Ambassador",
+                VendorLogoFileName = "Ambassador_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Ambassador_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Pipeliner",
+                VendorLogoFileName = "Pipeliner_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Pipeliner_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Salesforce Pardot",
+                VendorLogoFileName = "Pardot_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Pardot_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Call Pro",
+                VendorLogoFileName = "CallPro_CRM_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\CallPro_CRM_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Base",
+                VendorLogoFileName = "BaseSales_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\BaseSales_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Hatchbuck",
+                VendorLogoFileName = "Hatchbuck_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Hatchbuck_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Insightly",
+                VendorLogoFileName = "Insightly_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Insightly_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Capsule CRM",
+                VendorLogoFileName = "Capsule_CRM_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Sales//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Capsule_CRM_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #region BUSINESS & OPERATIONS VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "Deputy",
+                VendorLogoFileName = "Deputy_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Deputy_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "LivePlan",
+                VendorLogoFileName = "LivePlan_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\LivePlan_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Megaventory",
+                VendorLogoFileName = "Megaventory_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Megaventory_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Timely",
+                VendorLogoFileName = "Timely_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Timely_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Tradegecko",
+                VendorLogoFileName = "TradeGecko_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\TradeGecko_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Workflowmax",
+                VendorLogoFileName = "Workflow_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Workflow_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "BrightPearl#2",
+                VendorLogoFileName = "brightpearl_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\brightpearl_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "DocuSign",
+                VendorLogoFileName = "DocuSign_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\DocuSign_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "OpenBravo",
+                VendorLogoFileName = "Openbravo_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Openbravo_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "SignNow",
+                VendorLogoFileName = "SignNow_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\SignNow_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Workday",
+                VendorLogoFileName = "Workday_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Workday_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Zendesk",
+                VendorLogoFileName = "Zendesk_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Zendesk_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Freshdesk",
+                VendorLogoFileName = "FreshDesk_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\FreshDesk_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Frontrange",
+                VendorLogoFileName = "FrontRange-logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\FrontRange-logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Stratpad",
+                VendorLogoFileName = "StratPad_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\StratPad_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Adobe",
+                VendorLogoFileName = "Adobe_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Adobe_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            //v = new Vendor()
+            //{
+            //    VendorName = "Unleashed",
+            //    VendorLogoFileName = "Unleashed_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        //NS - need logo!!
+            //        Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Unleashed_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
+
+            //v = new Vendor()
+            //{
+            //    VendorName = "Jobber",
+            //    //NS - need logo!!
+            //    VendorLogoFileName = "Jobber_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Jobber_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
+
+            #endregion
+
+            #region MARKETING VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "Constant Contact",
+                VendorLogoFileName = "ConstantContact_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\ConstantContact_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "ClickWebinar",
+                VendorLogoFileName = "ClickWebinar_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\ClickWebinar_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Dotmailer",
+                VendorLogoFileName = "DotMailer_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\DotMailer_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Hootsuite",
+                VendorLogoFileName = "HootSuite_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\HootSuite_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Zoho Marketing",
+                VendorLogoFileName = "Zoho_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Zoho_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Campaign Monitor",
+                VendorLogoFileName = "CampaignMonitor_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\CampaignMonitor_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Instapage",
+                VendorLogoFileName = "InstaPage_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\InstaPage_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Marketo",
+                VendorLogoFileName = "Marketo_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Marketo_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Hubspot",
+                VendorLogoFileName = "HunSpot_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\HunSpot_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Pardot",
+                VendorLogoFileName = "Pardot_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Pardot_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Act-On",
+                VendorLogoFileName = "Act-On_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Act-On_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Marin",
+                VendorLogoFileName = "MarinsSoftware_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\MarinsSoftware_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Cvent",
+                VendorLogoFileName = "Cvent_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Cvent_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "FluidSurveys",
+                VendorLogoFileName = "FluidSurveys_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\FluidSurveys_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Vocus",
+                VendorLogoFileName = "Vocus_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Vocus_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "OutMarket",
+                VendorLogoFileName = "OutMarket_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\OutMarket_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Moz",
+                VendorLogoFileName = "Moz_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Moz_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Adobe#2",
+                VendorLogoFileName = "Adobe_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Adobe_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Citrix",
+                VendorLogoFileName = "Citrix_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Citrix_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Vocalcom",
+                VendorLogoFileName = "Vocalcom_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Vocalcom_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "VanillaSoft",
+                VendorLogoFileName = "VanillaSoft_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\VanillaSoft_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "New Voice Media",
+                VendorLogoFileName = "NewVoiceMedia_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Marketing//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\NewVoiceMedia_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #region BUSINESS INTELLIGENCE REPORTING VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "Bime",
+                VendorLogoFileName = "Bime_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Bime_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Zoho Reports",
+                VendorLogoFileName = "Zoho_Logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Zoho_Logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Qlik",
+                VendorLogoFileName = "Qlik_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Qlik_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Birst",
+                VendorLogoFileName = "Birst_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Birst_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "SiSense",
+                VendorLogoFileName = "SiSense_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\SiSense_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Tableau",
+                VendorLogoFileName = "Tableay_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Tableay_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Looker",
+                VendorLogoFileName = "Looker_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Looker_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Roambi",
+                VendorLogoFileName = "Roambi_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Roambi_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "MicroStrategy",
+                VendorLogoFileName = "MicroStrategy_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\MicroStrategy_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Adaptive Insights",
+                VendorLogoFileName = "Adaptive_Insights_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Adaptive_Insights_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #region CREATIVE VENDORS
+
+            v = new Vendor()
+            {
+                VendorName = "Adobe#3",
+                VendorLogoFileName = "Adobe_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Adobe_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Corel",
+                VendorLogoFileName = "Coral_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Coral_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Quark",
+                VendorLogoFileName = "Quark_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Quark_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Gliffy#2",
+                VendorLogoFileName = "Gliffy_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Gliffy_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Creately#2",
+                VendorLogoFileName = "Creately_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Creately_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "GoAnimate",
+                VendorLogoFileName = "GoAnimate_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\GoAnimate_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Serif#2",
+                VendorLogoFileName = "Serif_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Serif_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Moovly",
+                VendorLogoFileName = "Moovly_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Moovly_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Magisto",
+                VendorLogoFileName = "Magisto_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Magisto_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "WeVideo",
+                VendorLogoFileName = "WeVideo_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\WeVideo_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Animoto",
+                VendorLogoFileName = "Animoto_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Animoto_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Como",
+                VendorLogoFileName = "Como_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Como_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Knack",
+                VendorLogoFileName = "Knack_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Knack_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Mobile Roadie",
+                VendorLogoFileName = "Mobile_Roadie_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Mobile_Roadie_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            v = new Vendor()
+            {
+                VendorName = "Mobincube",
+                VendorLogoFileName = "Monincube_logo.gif",
+                VendorLogoFullURL = "//Images//Logos//Creative//",
+                VendorLogo = new VendorLogo()
+                {
+                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Monincube_logo.gif"),
+                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
+                },
+                VendorStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddVendor(v);
+
+            #endregion
+
+            #endregion
+
+            //#region CONTENTTEXTTYPES
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CONFERENCING_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PROJECTMANAGEMENT_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "STORAGEANDBACKUP_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "EMAIL_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "FINANCIAL_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "OFFICE_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PHONE_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CUSTOMERMANAGEMENT_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "SECURITY_CATEGORY_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CONFERENCING_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PROJECTMANAGEMENT_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "STORAGEANDBACKUP_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "EMAIL_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "FINANCIAL_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "OFFICE_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PHONE_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CUSTOMERMANAGEMENT_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "SECURITY_CATEGORY_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CLOUDWAREEXPLAINED_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CLOUDWAREEXPLAINED_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CLOUDWAREEXPLAINED_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "10REASONSFORUSINGCLOUDWARE_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "10REASONSFORUSINGCLOUDWARE_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "10REASONSFORUSINGCLOUDWARE_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SUBTITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "ABOUTUS_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "ABOUTUS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "ABOUTUS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "MANAGEMENTTEAM_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "MANAGEMENTTEAM_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "MANAGEMENTTEAM_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "VISION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "VISION_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "VISION_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "FAQS_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "FAQS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "FAQS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CAREERS_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CAREERS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CAREERS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PRESS_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PRESS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PRESS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CONTACTUS_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CONTACTUS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "CONTACTUS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_TOU_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_TOU_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_GENERAL_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_GENERAL_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_SERVICES_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_SERVICES_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_CONTENT_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_CONTENT_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_THIRD_PARTY_SITES_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_THIRD_PARTY_SITES_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_USER_OBLIGATIONS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_USER_OBLIGATIONS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_IPR_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_IPR_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_LIABILITY_DISCLAIMERS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_LIABILITY_DISCLAIMERS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_NO_WARRANTY_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_NO_WARRANTY_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_INDEMNITY_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_INDEMNITY_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_SITE_AVAILABILITY_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_SITE_AVAILABILITY_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_MISC_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "TOU_MISC_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+
+
+
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_PP_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_PP_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_BACKGROUND_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_BACKGROUND_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DEFINITIONS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DEFINITIONS_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DEFINITIONS_MEANINGS_SECTION_BODY_TERM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DEFINITIONS_MEANINGS_SECTION_BODY_MEANING",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_COLLECTED_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_COLLECTED_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_COLLECTED_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_COLLECTED_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_USE_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_USE_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_USE_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_THIRD_PARTY_SERVICES_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_THIRD_PARTY_SERVICES_SECTION_BODY",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COB_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COB_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COB_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COB_FOOTER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_ACCESS_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_ACCESS_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_DATA_ACCESS_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_WITHHOLD_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_WITHHOLD_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_WITHHOLD_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_OWNDATA_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_OWNDATA_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_OWNDATA_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_SECURITY_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_SECURITY_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_SECURITY_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COOKIES_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COOKIES_ITEMS_SECTION_BODY_NUMBER",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_COOKIES_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_CHANGES_SECTION_TITLE",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+            //ctt = new ContentTextType()
+            //{
+            //    ContentTextTypeName = "PP_CHANGES_ITEMS_SECTION_BODY_ITEM",
+            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddContentTextType(ctt);
+
+            //#endregion
+
+            return retVal;
+        }
+        #endregion
+
         #region PUMPMISSINGLOGOS
         public static bool PumpMissingLogos(QueryRepository repository)
         {
@@ -7887,37 +12512,37 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H1_TITLE",
+                ContentTextTypeName = "CRM_H1_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H1_BODY",
+                ContentTextTypeName = "CRM_H1_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H2_1_TITLE",
+                ContentTextTypeName = "CRM_H2_1_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H2_1_BODY",
+                ContentTextTypeName = "CRM_H2_1_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H2_2_TITLE",
+                ContentTextTypeName = "CRM_H2_2_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H2_2_BODY",
+                ContentTextTypeName = "CRM_H2_2_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
@@ -8149,21 +12774,21 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H1_TABTITLE",
+                ContentTextTypeName = "CRM_H1_TABTITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
 
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H1_TABTITLE",
+                ContentTextTypeName = "CRM_H1_TABTITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
 
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "CUSTOMERMANAGEMENT_H1_TABTITLE",
+                ContentTextTypeName = "CRM_H1_TABTITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);

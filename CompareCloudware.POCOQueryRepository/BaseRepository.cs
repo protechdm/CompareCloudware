@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using Castle.Core.Logging;
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Data.Entity.Core;
 
 namespace CompareCloudware.POCOQueryRepository
 {
@@ -43,7 +46,7 @@ namespace CompareCloudware.POCOQueryRepository
                 //_requestLifeTimeContext.ObjectContext().Refresh(RefreshMode.StoreWins, model);
                 //throw new Exception("Unable to save - ");
             }
-            catch (System.Data.OptimisticConcurrencyException ex)
+            catch (OptimisticConcurrencyException ex)
             {
                 if (Logger != null)
                 {

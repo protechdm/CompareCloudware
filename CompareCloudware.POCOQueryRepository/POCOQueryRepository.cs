@@ -11,7 +11,10 @@ using CompareCloudware.POCOQueryRepository.Helpers;
 using CompareCloudware.POCOQueryRepository.Caching;
 using System.Configuration;
 using CompareCloudware.SocialNetworking;
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity.Core;
+
 using System.Transactions;
 
 using System.Data.Entity.Infrastructure;
@@ -42,7 +45,7 @@ namespace CompareCloudware.POCOQueryRepository
         const string FILTER_TIMEZONES = "TIMEZONE";
 
         const int CATEGORY_ID_PHONE = 1;
-        const int CATEGORY_ID_CUSTOMER_MANAGEMENT = 2;
+        const int CATEGORY_ID_CRM = 2;
         const int CATEGORY_ID_WEB_CONFERENCING = 3;
         const int CATEGORY_ID_EMAIL = 4;
         const int CATEGORY_ID_OFFICE = 5;
@@ -51,6 +54,16 @@ namespace CompareCloudware.POCOQueryRepository
         const int CATEGORY_ID_FINANCIAL = 8;
         const int CATEGORY_ID_SECURITY = 9;
         const int CATEGORY_ID_COMMUNICATIONS = 19;
+
+        const int CATEGORY_ID_MARKETING = 10;
+        const int CATEGORY_ID_WEBSITE = 11;
+        const int CATEGORY_ID_CREATIVE = 12;
+        const int CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING = 13;
+        const int CATEGORY_ID_HOSTING = 14;
+        const int CATEGORY_ID_HR = 15;
+        const int CATEGORY_ID_PAYMENTS = 16;
+        const int CATEGORY_ID_BUSINESS_AND_OPERATIONS = 17;
+        const int CATEGORY_ID_SALES = 18;
 
         const string TAG_CATEGORY_URL = "CATEGORY URL";
         const string TAG_SHOP_URL = "SHOP URL";
@@ -177,7 +190,7 @@ namespace CompareCloudware.POCOQueryRepository
             //var modified3 = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Modified).OfType<CloudApplication>();
             //var modified4 = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Unchanged).OfType<CloudApplication>();
 
-            var modified5 = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Added).Select(e => e.Entity).OfType<CloudApplication>();
+            var modified5 = objectContext.ObjectStateManager.GetObjectStateEntries(EntityState.Added).Select(e => e.Entity).OfType<CloudApplication>();
             
             //var modified6 = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Deleted);
             //var modified7 = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Modified);
@@ -193,7 +206,7 @@ namespace CompareCloudware.POCOQueryRepository
             //var retVal2 = (from ca in _context.CloudApplications select ca).FirstOrDefault();
             //var objectContext = ((IObjectContextAdapter)this).ObjectContext;
             var objectContext = _context.ObjectContext();
-            var added = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Added).Select(e => e.Entity).OfType<CloudApplication>().FirstOrDefault();
+            var added = objectContext.ObjectStateManager.GetObjectStateEntries(EntityState.Added).Select(e => e.Entity).OfType<CloudApplication>().FirstOrDefault();
             //return retVal2;
             return added;
         }
@@ -206,7 +219,7 @@ namespace CompareCloudware.POCOQueryRepository
             //var retVal2 = (from ca in _context.CloudApplications select ca).FirstOrDefault();
             //var objectContext = ((IObjectContextAdapter)this).ObjectContext;
             var objectContext = _context.ObjectContext();
-            var modified = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Modified).Select(e => e.Entity).OfType<CloudApplication>().FirstOrDefault();
+            var modified = objectContext.ObjectStateManager.GetObjectStateEntries(EntityState.Modified).Select(e => e.Entity).OfType<CloudApplication>().FirstOrDefault();
             //return retVal2;
             return modified;
         }
@@ -219,7 +232,7 @@ namespace CompareCloudware.POCOQueryRepository
             //var retVal2 = (from ca in _context.CloudApplications select ca).FirstOrDefault();
             //var objectContext = ((IObjectContextAdapter)this).ObjectContext;
             var objectContext = _context.ObjectContext();
-            var modified = objectContext.ObjectStateManager.GetObjectStateEntries(System.Data.EntityState.Unchanged).Select(e => e.Entity).OfType<CloudApplication>()
+            var modified = objectContext.ObjectStateManager.GetObjectStateEntries(EntityState.Unchanged).Select(e => e.Entity).OfType<CloudApplication>()
                 .ToList();
                 //.FirstOrDefault();
             //return retVal2;
@@ -460,6 +473,31 @@ namespace CompareCloudware.POCOQueryRepository
         public void AddTermCondition(TermCondition tc)
         {
             _context.TermsConditions.Add(tc);
+        }
+        #endregion
+
+        #region AddColleagueLink
+        public bool AddColleagueLink(Colleague c)
+        {
+            _context.Colleagues.Add(c);
+            int retVal = _context.SaveChanges();
+            return retVal >= 1;
+        }
+        #endregion
+
+        #region FindRecommender
+        public Colleague FindRecommender(int colleaguePersonID)
+        {
+            Colleague c1 = _context.Colleagues.Where(x => x.ColleagueOfIntroducer.PersonID == colleaguePersonID).FirstOrDefault();
+            Colleague c2 = (from cf in _context.Colleagues
+                                  where cf.ColleagueOfIntroducer.PersonID == colleaguePersonID
+                                  select cf).FirstOrDefault();
+
+            if (c2 == null)
+            {
+                throw new Exception("Cannot find colleague");
+            }
+            return c2;
         }
         #endregion
 
@@ -3269,45 +3307,37 @@ namespace CompareCloudware.POCOQueryRepository
         {
             Logger.Debug("GetSearchFilters()");
             //IList<SearchFeature> list = null;
+
+            var test = (
+    from x
+    in _context.Features
+    //where x.Category.CategoryID == categoryID
+    where x.Categories.Any(y => y.CategoryID == categoryID)
+    && x.FeatureType.FeatureTypeName.ToUpper() == "FEATURE"
+    && x.FeatureStatus.StatusName.ToUpper() == "LIVE"
+    select new SearchFilterTwoColumn()
+    {
+        CategoryCol1 = x.Categories.FirstOrDefault(z => z.CategoryID == categoryID),
+        //CategoryCol1 = x.Categories.AsQueryable().FirstOrDefault(z => z.CategoryID == FindCategoryByName),
+        SearchFilterID = x.FeatureID,
+        SearchFilterParentID = 0,
+        SearchFilterNameCol1 = x.FeatureName,
+        SearchFilterTypeNameCol1 = FILTER_FEATURES,
+        DataDrivenFieldCol1 = x.DataDrivenField,
+        IsDataDrivenCol1 = x.IsDataDriven,
+        IsDataFloorDrivenCol1 = x.IsDataFloorDriven,
+        IsDataCeilingDrivenCol1 = x.IsDataCeilingDriven,
+        SuppressFilterBehaviour = x.SuppressFilterBehaviour,
+        CanBeBooleanAndDataDriven = x.CanBeBooleanAndDataDriven
+    }
+);
+
+            var test2 = test.ToList();
+            
             try
             {
-                #region CRAP
-                //var listTemp = (
-                //    from x
-                //    in _context.Features
-                //    //where x.Category.CategoryID == categoryID
-                //    where x.Categories.Any(y => y.CategoryID == categoryID)
-                //    select new SearchFilterTwoColumn()
-                //    {
-                //        CategoryCol1 = x.Categories.FirstOrDefault(z => z.CategoryID == categoryID),
-                //        //CategoryCol1 = x.Categories.AsQueryable().FirstOrDefault(z => z.CategoryID == FindCategoryByName),
-                //        SearchFilterID = x.FeatureID,
-                //        SearchFilterNameCol1 = x.FeatureName,
-                //        SearchFilterTypeNameCol1 = FILTER_FEATURES,
-                //        DataDrivenFieldCol1 = x.DataDrivenField,
-                //        IsDataDrivenCol1 = x.IsDataDriven,
-                //        IsDataFloorDrivenCol1 = x.IsDataFloorDriven,
-                //        IsDataCeilingDrivenCol1 = x.IsDataCeilingDriven,
-                //    }
-                //).ToList();
-                #endregion
-
-
                 var list = (
-                    //from x 
-                    //    in _context.Features
-                    //    //where x.Category.CategoryID == categoryID
-                    //where x.Categories.Any(y => y.CategoryID == categoryID)
-                    //select new SearchFilterTwoColumn()
-                    //{
-                    //    //CategoryCol1 = x.Category,
-                    //    SearchFilterID = x.FeatureID,
-                    //    SearchFilterNameCol1 = x.FeatureName,
-                    //    SearchFilterTypeNameCol1 = FILTER_FEATURES,
-                    //}
-                    //)
-
-                                        from x
+                    from x
                     in _context.Features
                                         //where x.Category.CategoryID == categoryID
                                         where x.Categories.Any(y => y.CategoryID == categoryID)
@@ -3360,77 +3390,8 @@ namespace CompareCloudware.POCOQueryRepository
 
                 #endregion
 
-                #region UNION OPERATING SYSTEMS
 
-                    //.Union(
-                    //from x
-                    //    in _context.OperatingSystems
-                    ////where x.Category.CategoryID == categoryID
-                    //select new SearchFilterTwoColumn()
-                    //{
-                    //    CategoryCol1 = null,
-                    //    SearchFilterID = x.OperatingSystemID,
-                    //    SearchFilterParentID = 0,
-                    //    SearchFilterNameCol1 = x.OperatingSystemName,
-                    //    SearchFilterTypeNameCol1 = FILTER_OPERATINGSYSTEMS,
-                    //    DataDrivenFieldCol1 = null,
-                    //    IsDataDrivenCol1 = false,
-                    //    IsDataFloorDrivenCol1 = false,
-                    //    IsDataCeilingDrivenCol1 = false,
-                    //    SuppressFilterBehaviour = false,
-                    //    CanBeBooleanAndDataDriven = false,
-                    //}
-                    //)
 
-                #endregion
-
-                #region UNION DEVICES
-
-                    //.Union(
-                    //from x
-                    //    in _context.Devices
-                    ////where x.Category.CategoryID == categoryID
-                    //select new SearchFilterTwoColumn()
-                    //{
-                    //    CategoryCol1 = null,
-                    //    SearchFilterID = x.DeviceID,
-                    //    SearchFilterParentID = 0,
-                    //    SearchFilterNameCol1 = x.DeviceName,
-                    //    SearchFilterTypeNameCol1 = FILTER_DEVICES,
-                    //    DataDrivenFieldCol1 = null,
-                    //    IsDataDrivenCol1 = false,
-                    //    IsDataFloorDrivenCol1 = false,
-                    //    IsDataCeilingDrivenCol1 = false,
-                    //    SuppressFilterBehaviour = false,
-                    //    CanBeBooleanAndDataDriven = false,
-                    //}
-                    //)
-
-                #endregion
-
-                #region UNION BROWSERS
-
-                    //.Union(
-                    //from x
-                    //    in _context.Browsers
-                    ////where x.Category.CategoryID == categoryID
-                    //select new SearchFilterTwoColumn()
-                    //{
-                    //    CategoryCol1 = null,
-                    //    SearchFilterID = x.BrowserID,
-                    //    SearchFilterParentID = 0,
-                    //    SearchFilterNameCol1 = x.BrowserName,
-                    //    SearchFilterTypeNameCol1 = FILTER_BROWSERS,
-                    //    DataDrivenFieldCol1 = null,
-                    //    IsDataDrivenCol1 = false,
-                    //    IsDataFloorDrivenCol1 = false,
-                    //    IsDataCeilingDrivenCol1 = false,
-                    //    SuppressFilterBehaviour = false,
-                    //    CanBeBooleanAndDataDriven = false,
-                    //}
-                    //)
-
-                #endregion
 
                 #region UNION MOBILE PLATFORMS
 
@@ -3832,7 +3793,28 @@ namespace CompareCloudware.POCOQueryRepository
 
             //var test1 = retVal1.ToList();
             //var test2 = retVal2.ToList();
-            return retVal2.ToList();
+            return retVal2.OrderByDescending(x => x.SearchResultWeighting).ToList();
+        }
+        #endregion
+
+        #region GetSearchResultsCount
+        public int GetSearchResultsCount(System.Linq.Expressions.Expression<Func<CloudApplication, bool>> predicate, bool liveApplicationsOnly)
+        {
+
+            var retVal2 = _context.CloudApplications
+                .Include(p => p.Vendor)
+                .Include(p => p.FreeTrialPeriod)
+                .Include(p => p.SetupFee)
+                .Include(p => p.OperatingSystems)
+                .Include(p => p.Devices)
+                .Include(p => p.SupportTypes)
+                .Include(p => p.SupportDays)
+                .Include(p => p.SupportHours)
+                .Include(p => p.Languages)
+                .Include(p => p.CloudApplicationFeatures)
+                .AsExpandable().Where(predicate.Expand());
+
+            return retVal2.Count();
         }
         #endregion
 
@@ -3857,7 +3839,7 @@ namespace CompareCloudware.POCOQueryRepository
 
             var objectStateEntries = this._context.ObjectContext()
                              .ObjectStateManager
-                             .GetObjectStateEntries(System.Data.EntityState.Unchanged);
+                             .GetObjectStateEntries(EntityState.Unchanged);
 
             IList<CloudApplication> objectStateEntries2 = this.GetCloudApplicationContextUnchanged();
 
@@ -4486,8 +4468,8 @@ namespace CompareCloudware.POCOQueryRepository
                     case CATEGORY_ID_COMMUNICATIONS:
                         retVal = ais.NextMPUVoiceID;
                         break;
-                    case CATEGORY_ID_CUSTOMER_MANAGEMENT:
-                        retVal = ais.NextMPUCustomerManagementID;
+                    case CATEGORY_ID_CRM:
+                        retVal = ais.NextMPUCRMID;
                         break;
                     case CATEGORY_ID_WEB_CONFERENCING:
                         retVal = ais.NextMPUWebConferencingID;
@@ -4510,6 +4492,33 @@ namespace CompareCloudware.POCOQueryRepository
                     case CATEGORY_ID_SECURITY:
                         retVal = ais.NextMPUSecurityID;
                         break;
+                    case CATEGORY_ID_MARKETING:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_WEBSITE:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_CREATIVE:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_HOSTING:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_HR:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_PAYMENTS:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
+                    case CATEGORY_ID_SALES:
+                        retVal = ais.NextMPUSecurityID;
+                        break;
                 }
             }
             if (advertisingImageType == "SKYSCRAPER")
@@ -4520,8 +4529,8 @@ namespace CompareCloudware.POCOQueryRepository
                     case CATEGORY_ID_COMMUNICATIONS:
                         retVal = ais.NextSkyscraperVoiceID;
                         break;
-                    case CATEGORY_ID_CUSTOMER_MANAGEMENT:
-                        retVal = ais.NextSkyscraperCustomerManagementID;
+                    case CATEGORY_ID_CRM:
+                        retVal = ais.NextSkyscraperCRMID;
                         break;
                     case CATEGORY_ID_WEB_CONFERENCING:
                         retVal = ais.NextSkyscraperWebConferencingID;
@@ -4542,6 +4551,33 @@ namespace CompareCloudware.POCOQueryRepository
                         retVal = ais.NextSkyscraperFinancialID;
                         break;
                     case CATEGORY_ID_SECURITY:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_MARKETING:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_WEBSITE:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_CREATIVE:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_HOSTING:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_HR:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_PAYMENTS:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
+                        retVal = ais.NextSkyscraperSecurityID;
+                        break;
+                    case CATEGORY_ID_SALES:
                         retVal = ais.NextSkyscraperSecurityID;
                         break;
                 }
@@ -4617,8 +4653,8 @@ namespace CompareCloudware.POCOQueryRepository
                             case CATEGORY_ID_COMMUNICATIONS:
                                 ais.NextMPUVoiceID = images.AdvertisingImageID;
                                 break;
-                            case CATEGORY_ID_CUSTOMER_MANAGEMENT:
-                                ais.NextMPUCustomerManagementID = images.AdvertisingImageID;
+                            case CATEGORY_ID_CRM:
+                                ais.NextMPUCRMID = images.AdvertisingImageID;
                                 break;
                             case CATEGORY_ID_WEB_CONFERENCING:
                                 ais.NextMPUWebConferencingID = images.AdvertisingImageID;
@@ -4641,6 +4677,33 @@ namespace CompareCloudware.POCOQueryRepository
                             case CATEGORY_ID_SECURITY:
                                 ais.NextMPUSecurityID = images.AdvertisingImageID;
                                 break;
+                            case CATEGORY_ID_MARKETING:
+                                ais.NextMPUMarketingID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_WEBSITE:
+                                ais.NextMPUWebsiteID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_CREATIVE:
+                                ais.NextMPUCreativeID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
+                                ais.NextMPUBusinessIntelligenceReportingID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_HOSTING:
+                                ais.NextMPUHostingID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_HR:
+                                ais.NextMPUHRID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_PAYMENTS:
+                                ais.NextMPUPaymentsID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
+                                ais.NextMPUBusinessAndOperationsID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_SALES:
+                                ais.NextMPUSalesID = images.AdvertisingImageID;
+                                break;
                         }
                     }
                     #endregion
@@ -4654,8 +4717,8 @@ namespace CompareCloudware.POCOQueryRepository
                             case CATEGORY_ID_COMMUNICATIONS:
                                 ais.NextSkyscraperVoiceID = images.AdvertisingImageID;
                                 break;
-                            case CATEGORY_ID_CUSTOMER_MANAGEMENT:
-                                ais.NextSkyscraperCustomerManagementID = images.AdvertisingImageID;
+                            case CATEGORY_ID_CRM:
+                                ais.NextSkyscraperCRMID = images.AdvertisingImageID;
                                 break;
                             case CATEGORY_ID_WEB_CONFERENCING:
                                 ais.NextSkyscraperWebConferencingID = images.AdvertisingImageID;
@@ -4677,6 +4740,33 @@ namespace CompareCloudware.POCOQueryRepository
                                 break;
                             case CATEGORY_ID_SECURITY:
                                 ais.NextSkyscraperSecurityID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_MARKETING:
+                                ais.NextSkyscraperMarketingID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_WEBSITE:
+                                ais.NextSkyscraperWebsiteID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_CREATIVE:
+                                ais.NextSkyscraperCreativeID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
+                                ais.NextSkyscraperBusinessIntelligenceReportingID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_HOSTING:
+                                ais.NextSkyscraperHostingID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_HR:
+                                ais.NextSkyscraperHRID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_PAYMENTS:
+                                ais.NextSkyscraperPaymentsID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
+                                ais.NextSkyscraperBusinessAndOperationsID = images.AdvertisingImageID;
+                                break;
+                            case CATEGORY_ID_SALES:
+                                ais.NextSkyscraperSalesID = images.AdvertisingImageID;
                                 break;
                         }
                     }
@@ -5122,6 +5212,24 @@ namespace CompareCloudware.POCOQueryRepository
         }
         #endregion
 
+        #region GetPersonTypeByPersonTypeID
+        public PersonType GetPersonTypeByPersonTypeID(int personTypeID)
+        {
+            var retVal1 = _context.PersonTypes.Where(x => x.PersonTypeID == personTypeID);
+            var retVal2 = (from ca in _context.PersonTypes where ca.PersonTypeID == personTypeID select ca).FirstOrDefault();
+            return retVal2;
+        }
+        #endregion
+
+        #region GetPersonTypeByPersonTypeName
+        public PersonType GetPersonTypeByPersonTypeName(string personTypeName)
+        {
+            var retVal1 = _context.PersonTypes.Where(x => x.PersonTypeName.Trim().ToUpper() == personTypeName.Trim().ToUpper());
+            var retVal2 = (from ca in _context.PersonTypes where ca.PersonTypeName.Trim().ToUpper() == personTypeName.Trim().ToUpper() select ca).FirstOrDefault();
+            return retVal2;
+        }
+        #endregion
+
         #region GetPerson
         public Person GetPerson(string forename, string surname, string eMail, int numberOfUsers)
         {
@@ -5143,13 +5251,13 @@ namespace CompareCloudware.POCOQueryRepository
             var retVal2 = (
                 from ca
                 in _context.Persons
-                where ca.Forename.ToUpper() == forename.ToUpper()
-                && ca.Surname.ToUpper() == surname.ToUpper()
-                && ca.EMail.ToUpper() == eMail.ToUpper()
+                where (forename == null ? ca.Forename == null : ca.Forename.ToUpper() == forename.ToUpper())
+                && (surname == null ? ca.Surname == null : ca.Surname.ToUpper() == surname.ToUpper())
+                && (eMail == null ? ca.EMail == null : ca.EMail.ToUpper() == eMail.ToUpper())
                 && ca.NumberOfEmployees == numberOfUsers
-                && ca.Telephone.ToUpper() == telephone.ToUpper()
-                && ca.Company.ToUpper() == company.ToUpper()
-                && ca.Position.ToUpper() == position.ToUpper()
+                && (telephone == null ? ca.Telephone == null : ca.Telephone.ToUpper() == telephone.ToUpper())
+                && (company == null ? ca.Company == null : ca.Company.ToUpper() == company.ToUpper())
+                && (position == null ? ca.Position == null : ca.Position.ToUpper() == position.ToUpper())
                 select ca
                 ).FirstOrDefault();
             return retVal2;
@@ -5171,6 +5279,30 @@ namespace CompareCloudware.POCOQueryRepository
                 && ca.IsInUserGroup == isInUserGroup
                 select ca
                 ).FirstOrDefault();
+            return retVal2;
+
+        }
+
+        public Person GetPerson(string eMail, bool isInUserGroup)
+        {
+            var retVal2 = (
+                from ca
+                in _context.Persons
+                where ca.EMail.ToUpper() == eMail.ToUpper()
+                && ca.IsInUserGroup == isInUserGroup
+                select ca
+                ).FirstOrDefault();
+            return retVal2;
+
+        }
+
+        #endregion
+
+        #region GetCloudApplicationRequest
+        public CloudApplicationRequest GetCloudApplicationRequest(int cloudApplicationRequestID)
+        {
+            //var retVal1 = _context.CloudApplicationRequests.Where(x => x.CloudApplicationRequestID == cloudApplicationRequestID);
+            var retVal2 = (from ca in _context.CloudApplicationRequests where ca.CloudApplicationRequestID == cloudApplicationRequestID select ca).FirstOrDefault();
             return retVal2;
 
         }
@@ -5255,6 +5387,15 @@ namespace CompareCloudware.POCOQueryRepository
                 Logger.Error(ex.Message, ex);
             }
             return list;
+        }
+        #endregion
+
+        #region GetRequestTypeByRequestTypeName
+        public RequestType GetRequestTypeByRequestTypeName(string requestTypeName)
+        {
+            var retVal1 = _context.RequestTypes.Where(x => x.RequestTypeName.Trim().ToUpper() == requestTypeName.Trim().ToUpper());
+            var retVal2 = (from ca in _context.RequestTypes where ca.RequestTypeName.Trim().ToUpper() == requestTypeName.Trim().ToUpper() select ca).FirstOrDefault();
+            return retVal2;
         }
         #endregion
 
@@ -5404,6 +5545,150 @@ namespace CompareCloudware.POCOQueryRepository
             catch (Exception ex)
             {
                 throw new Exception("Error fetching repository unserviced TRY/BUY requests : " + ex.Message, ex);
+                //Logger.Error(ex.Message, ex);
+            }
+            return list;
+
+        }
+        #endregion
+
+        #region GetUnservicedBusinessPartnerRequests
+        public IList<CloudApplicationRequest> GetUnservicedBusinessPartnerRequests()
+        {
+            //Logger.Debug("GetUnservicedCloudApplicationRequests()");
+            IList<CloudApplicationRequest> list = null;
+            try
+            {
+
+                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.RepeatableRead }))
+                {
+                    list = (from x in _context.CloudApplicationRequests
+                            where x.Serviced == null
+                                //&& x.EMail == true
+                            && (x.RequestTypeID == 4)
+                            && (x.Servicing == null || x.Servicing == false)
+                            select x)
+                            .OrderBy(x => x.CloudApplicationRequestID)
+                        .ToList();
+
+                    foreach (CloudApplicationRequest car in list)
+                    {
+                        MarkCloudApplicationRequestAsServicing(car.CloudApplicationRequestID);
+                    }
+                    scope.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error fetching repository unserviced BUSINESS PARTNER requests : " + ex.Message, ex);
+                //Logger.Error(ex.Message, ex);
+            }
+            return list;
+
+        }
+        #endregion
+
+        #region GetUnservicedStrategicPartnerRequests
+        public IList<CloudApplicationRequest> GetUnservicedStrategicPartnerRequests()
+        {
+            //Logger.Debug("GetUnservicedCloudApplicationRequests()");
+            IList<CloudApplicationRequest> list = null;
+            try
+            {
+
+                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.RepeatableRead }))
+                {
+                    list = (from x in _context.CloudApplicationRequests
+                            where x.Serviced == null
+                                //&& x.EMail == true
+                            && (x.RequestTypeID == 5)
+                            && (x.Servicing == null || x.Servicing == false)
+                            select x)
+                            .OrderBy(x => x.CloudApplicationRequestID)
+                        .ToList();
+
+                    foreach (CloudApplicationRequest car in list)
+                    {
+                        MarkCloudApplicationRequestAsServicing(car.CloudApplicationRequestID);
+                    }
+                    scope.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error fetching repository unserviced BUSINESS PARTNER requests : " + ex.Message, ex);
+                //Logger.Error(ex.Message, ex);
+            }
+            return list;
+
+        }
+        #endregion
+
+        #region GetUnservicedReferRewardRequests
+        public IList<CloudApplicationRequest> GetUnservicedReferRewardRequests()
+        {
+            //Logger.Debug("GetUnservicedCloudApplicationRequests()");
+            IList<CloudApplicationRequest> list = null;
+            try
+            {
+
+                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.RepeatableRead }))
+                {
+                    list = (from x in _context.CloudApplicationRequests
+                            where x.Serviced == null
+                                //&& x.EMail == true
+                            && (x.RequestTypeID == 6)
+                            && (x.Servicing == null || x.Servicing == false)
+                            select x)
+                            .OrderBy(x => x.CloudApplicationRequestID)
+                        .ToList();
+
+                    foreach (CloudApplicationRequest car in list)
+                    {
+                        MarkCloudApplicationRequestAsServicing(car.CloudApplicationRequestID);
+                    }
+                    scope.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error fetching repository unserviced BUSINESS PARTNER requests : " + ex.Message, ex);
+                //Logger.Error(ex.Message, ex);
+            }
+            return list;
+
+        }
+        #endregion
+
+        #region GetUnservicedMailColleagueRequests
+        public IList<CloudApplicationRequest> GetUnservicedSendToColleagueRequests()
+        {
+            //Logger.Debug("GetUnservicedCloudApplicationRequests()");
+            IList<CloudApplicationRequest> list = null;
+            try
+            {
+
+                using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Required, new TransactionOptions { IsolationLevel = IsolationLevel.RepeatableRead }))
+                {
+                    list = (from x in _context.CloudApplicationRequests
+                            where x.Serviced == null
+                                //&& x.EMail == true
+                            && (x.RequestTypeID == 7)
+                            && (x.Servicing == null || x.Servicing == false)
+                            select x)
+                            .OrderBy(x => x.CloudApplicationRequestID)
+                        .ToList();
+
+                    foreach (CloudApplicationRequest car in list)
+                    {
+                        MarkCloudApplicationRequestAsServicing(car.CloudApplicationRequestID);
+                    }
+                    scope.Complete();
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error fetching repository unserviced BUSINESS PARTNER requests : " + ex.Message, ex);
                 //Logger.Error(ex.Message, ex);
             }
             return list;
@@ -6130,7 +6415,7 @@ namespace CompareCloudware.POCOQueryRepository
                     //s.SiteAnalyticType = db.SiteAnalyticTypes.Where(x => x.SiteAnalyticTypeID == siteAnalyticTypeID).AsNoTracking().FirstOrDefault();
                     s.SiteAnalyticType = db.SiteAnalyticTypes.Where(x => x.SiteAnalyticTypeID == siteAnalyticTypeID).FirstOrDefault();
                     //s.SiteAnalyticType = FindSiteAnalyticType(siteAnalyticTypeID);
-                    db.Entry(s).State = System.Data.EntityState.Added;
+                    db.Entry(s).State = EntityState.Added;
                     db.SaveChanges();
                     return true;
                 }

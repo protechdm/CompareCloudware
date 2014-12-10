@@ -79,5 +79,17 @@ namespace CompareCloudware.Web.Models
 
         public bool OutputMarkupForPDF { get; set; }
     }
+
+
+    public class CloudApplicationSearchResultShopModel : CloudApplicationSearchResultModel
+    {
+        public CloudApplicationSearchResultShopModel() { }
+
+        public CloudApplicationSearchResultShopModel(ICustomSession session)
+            :base(session)
+        {
+        }
+
+    }
 }
 

@@ -1,0 +1,25 @@
+﻿@model CompareCloudware.Web.Models.OnpageOptimisationTabModel
+@using CompareCloudware.Web.Models;
+
+<table style="width:100%;">
+@*@{int i = 0;}
+@foreach (SearchResultModel sr in @Model.FeaturedCloudware)
+{
+    if (i % 2 == 0)    { 
+        @: <tr> 
+        }
+        <td style="width:50%">
+            @{Html.RenderPartial("TabbedSearchResult", sr);}
+        </td>
+    if (i % 2 == 1)    { 
+        @: </tr> 
+        }
+    i += 1;
+}*@
+
+<div class="opening">
+@Html.DisplayFor(x => x.OnpageOptimisationTabData)
+</div>
+</table>
+
+

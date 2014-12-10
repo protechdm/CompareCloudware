@@ -76,7 +76,7 @@ namespace CompareCloudware.Web.Models
         [Display(Name = "Reviews:")]
         public List<CloudApplicationProductReviewModel> CloudApplicationProductReviews { get; set; }
         public virtual byte[] RowVersion { get; set; }
-        public CloudApplicationSearchResultModel CloudApplicationSearchResultModel { get; set; }
+        public CloudApplicationSearchResultShopModel CloudApplicationSearchResultModel { get; set; }
         //[Display(Name = "Service name:"), MaxLength(5)]
         public string ServiceName { get; set; }
         [Display(Name = "Setup fee:"), MaxLength(5)]
@@ -129,6 +129,7 @@ namespace CompareCloudware.Web.Models
         public string TryURL { get; set; }
         public string BuyURL { get; set; }
 
+        public SocialShareModel SocialShareModel;
     }
 }
 

@@ -65,17 +65,15 @@
         <div class="search-site-plus-social-icons">
             @if(Model.CustomSession.ShowSearchTextBox)
             {
+            
             <div class="search-site">
-                @*                @Html.Partial("SearchBox")
-                *@ @Html.EditorFor(x => x.SearchText, new { @class = ".ui-icon-search .ui-icon tb11" })
+                 @Html.EditorFor(x => x.SearchText, new { @class = ".ui-icon-search .ui-icon tb11" })
                 <div>
-                    @*                    <div style="float: right;">
-                        <span class="ui-icon-search ui-icon">&nbsp;</span>
-                    </div>
-*@
                 </div>
             </div>
+            
             }
+
             <div class="cloudware-explained-container">
                 @*<input type="image" name="ICON_CLOUDWARE_EXPLAINED" class="cc-ui-icon cc-ui-icon-linkedin" />*@
 
@@ -201,15 +199,15 @@
                                 <a class="nav-button-payments" href="http://@Request.Url.Authority/payments"></a>
                                 <a class="nav-button-sales" href="http://@Request.Url.Authority/sales"></a>
                                 <a class="nav-button-business-and-operations" href="http://@Request.Url.Authority/business-and-operations"></a>*@
-                                <a class="nav-button-marketing" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-website" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-creative" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-intelligence-and-reporting" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-hosting" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-hr" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-payments" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-sales" href="http://@Request.Url.Authority/thanksforcoming"></a>
-                                <a class="nav-button-business-and-operations" href="http://@Request.Url.Authority/thanksforcoming"></a>
+                                <a class="nav-button-marketing" href="http://@Request.Url.Authority/marketing"></a>
+                                <a class="nav-button-website" href="http://@Request.Url.Authority/website"></a>
+                                <a class="nav-button-creative" href="http://@Request.Url.Authority/creative"></a>
+                                <a class="nav-button-intelligence-and-reporting" href="http://@Request.Url.Authority/intelligence-and-reporting"></a>
+                                <a class="nav-button-hosting" href="http://@Request.Url.Authority/hosting"></a>
+                                <a class="nav-button-hr" href="http://@Request.Url.Authority/hr"></a>
+                                <a class="nav-button-payments" href="http://@Request.Url.Authority/payments"></a>
+                                <a class="nav-button-sales" href="http://@Request.Url.Authority/sales"></a>
+                                <a class="nav-button-business-and-operations" href="http://@Request.Url.Authority/business-and-operations"></a>
                             </td>
                         </tr>
                     </table>
@@ -345,7 +343,7 @@
                             
                             </td>
                             <td>
-                    <input type="button" value="Customer management" />
+                    <input type="button" value="CRM" />
                             
                             </td>
                             <td>

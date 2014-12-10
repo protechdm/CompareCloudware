@@ -117,7 +117,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "Title for Customer management",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_CATEGORY_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_CATEGORY_TITLE"),
                 ContentTextData = data,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
             };
@@ -397,7 +397,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "Title for Customer Management",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_CATEGORY_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_CATEGORY_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 1,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -408,7 +408,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "Body for Customer Management",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_CATEGORY_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_CATEGORY_BODY"),
                 ContentTextData = data,
                 BodyOrder = 1,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -419,7 +419,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "Body for Customer Management",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_CATEGORY_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_CATEGORY_BODY"),
                 ContentTextData = data,
                 BodyOrder = 2,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -430,7 +430,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "Body for Customer Management",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_CATEGORY_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_CATEGORY_BODY"),
                 ContentTextData = data,
                 BodyOrder = 3,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -2655,7 +2655,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextData = data,
                 BodyOrder = 66,
                 IsBold = false,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
                 IsDate = true,
             };
@@ -2669,7 +2669,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 BodyOrder = 67,
                 IsBold = true,
                 IsHyperLink = true,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2680,7 +2680,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 68,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2693,7 +2693,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 BodyOrder = 69,
                 //IsUnderline = true,
                 //IsBold = true,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2704,7 +2704,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 70,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2715,7 +2715,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 71,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2727,7 +2727,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextData = data,
                 BodyOrder = 72,
                 IsBulleted = true,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2739,7 +2739,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextData = data,
                 BodyOrder = 73,
                 IsBulleted = true,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2751,7 +2751,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextData = data,
                 BodyOrder = 74,
                 IsBulleted = true,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2763,7 +2763,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextData = data,
                 BodyOrder = 75,
                 IsBulleted = true,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2774,7 +2774,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 76,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2785,7 +2785,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 77,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2796,7 +2796,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 78,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2807,7 +2807,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 79,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2818,7 +2818,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 80,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2829,7 +2829,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 81,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -2840,7 +2840,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextType = repository.FindContentTextTypeByName("PRESS_SECTION_BODY"),
                 ContentTextData = data,
                 BodyOrder = 82,
-                ContentTextStatus = repository.FindStatusByName("LIVE"),
+                ContentTextStatus = repository.FindStatusByName("SUSPENDED"),
                 CompositeID = compositeID,
             };
             repository.AddContentText(ct);
@@ -6510,12 +6510,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region CUSTOMERMANAGEMENT H1 etc
+            #region CRM H1 etc
             data = "Introduction to CRM";
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H1_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H1_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 78,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6526,7 +6526,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 79,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6537,7 +6537,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 80,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6548,7 +6548,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 81,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6559,7 +6559,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_1_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_1_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 82,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6570,7 +6570,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 83,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6581,7 +6581,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 84,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6592,7 +6592,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_2_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_2_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 85,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6603,7 +6603,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 86,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6614,7 +6614,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 87,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -6625,7 +6625,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("CUSTOMERMANAGEMENT_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("CRM_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 88,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),

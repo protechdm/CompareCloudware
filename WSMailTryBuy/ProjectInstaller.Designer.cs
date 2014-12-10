@@ -33,11 +33,13 @@
             // 
             // serviceInstaller
             // 
-            this.serviceInstaller.DisplayName = "COMPARE CLOUDWARE TRYBUY EMAILER";
-            this.serviceInstaller.ServiceName = "COMPARE CLOUDWARE TRYBUY EMAILER";
+            this.serviceInstaller.DisplayName = "COMPARE CLOUDWARE APPLICATION REQUESTS EMAILER";
+            this.serviceInstaller.ServiceName = "COMPARE CLOUDWARE APPLICATION REQUESTS EMAILER";
+            this.serviceInstaller.StartType = System.ServiceProcess.ServiceStartMode.Manual;
             // 
             // serviceProcessInstaller
             // 
+            //this.serviceProcessInstaller.Account = System.ServiceProcess.ServiceAccount.User;
             this.serviceProcessInstaller.Password = null;
             this.serviceProcessInstaller.Username = null;
             // 

@@ -13,7 +13,11 @@ using System.Net;
 using System.Web.Mvc;
 using LinqKit;
 using System.IO;
-using System.Data.Objects;
+//using System.Data.Objects;
+using System.Data.Entity.Core.Objects;
+using System.Data.Entity;
+using System.Data.Entity.Core;
+using CompareCloudware.Web.Helpers;
 
 namespace CompareCloudware.Web.Helpers
 {
@@ -27,7 +31,7 @@ namespace CompareCloudware.Web.Helpers
         static int SEARCH_RESULTS_PER_PAGE_CATEGORY_PAGE_TOP10 = int.Parse(ConfigurationManager.AppSettings["SearchResultsPerPageCategoryPageTop10"]);
 
         const int CATEGORY_ID_PHONE = 1;
-        const int CATEGORY_ID_CUSTOMER_MANAGEMENT = 2;
+        const int CATEGORY_ID_CRM = 2;
         const int CATEGORY_ID_WEB_CONFERENCING = 3;
         const int CATEGORY_ID_EMAIL = 4;
         const int CATEGORY_ID_OFFICE = 5;
@@ -36,6 +40,16 @@ namespace CompareCloudware.Web.Helpers
         const int CATEGORY_ID_FINANCIAL = 8;
         const int CATEGORY_ID_SECURITY = 9;
         const int CATEGORY_ID_COMMUNICATIONS = 19;
+        
+        const int CATEGORY_ID_MARKETING = 10;
+        const int CATEGORY_ID_WEBSITE = 11;
+        const int CATEGORY_ID_CREATIVE = 12;
+        const int CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING = 13;
+        const int CATEGORY_ID_HOSTING = 14;
+        const int CATEGORY_ID_HR = 15;
+        const int CATEGORY_ID_PAYMENTS = 16;
+        const int CATEGORY_ID_BUSINESS_AND_OPERATIONS = 17;
+        const int CATEGORY_ID_SALES = 18;
 
         const string FILTER_CATEGORIES = "CATEGORY";
         const string FILTER_USERS = "USERS";
@@ -55,7 +69,7 @@ namespace CompareCloudware.Web.Helpers
         static int GLOBAL_SEARCH_RESULTS_PER_PAGE = int.Parse(ConfigurationManager.AppSettings["GlobalSearchResultsPerPage"]);
 
         #region ConstructHomePageModel
-        public static HomePageModel ConstructHomePageModel(HomePageModel model, ICustomSession customSession, ICompareCloudwareRepository repository, HttpRequestBase request)
+        public static HomePageModel ConstructHomePageModel(HomePageModel model, ICustomSession customSession, ICompareCloudwareRepository repository, HttpRequestBase request, HttpResponseBase response)
         {
 
             //Logger.Debug("ConstructHomePageModel #1");
@@ -66,12 +80,19 @@ namespace CompareCloudware.Web.Helpers
             model.SearchInputModel.NumberOfUsers = AddNumberOfUsersToList(model.SearchInputModel.NumberOfUsers, "User numbers");
             //model.SearchInputModel.ChosenNumberOfUsers = 1;
             //Logger.Debug("ConstructHomePageModel #4");
-            model.SearchInputModel.ChosenNumberOfUsers = "User numbers";
-            model.SearchInputModel.ChosenCategoryID = 6;
-            model.SearchInputModel.Forename = customSession.Forename ?? "First Name";
-            model.SearchInputModel.Surname = customSession.Surname ?? "Surname";
-            model.SearchInputModel.EMail = customSession.EMail ?? "Email";
+
+            if (!customSession.TestMode)
+            {
+                model.SearchInputModel.ChosenNumberOfUsers = "User numbers";
+                model.SearchInputModel.ChosenCategoryID = 6;
+                model.SearchInputModel.Forename = customSession.Forename ?? "First Name";
+                model.SearchInputModel.Surname = customSession.Surname ?? "Surname";
+                model.SearchInputModel.EMail = customSession.EMail ?? "Email";
+            }
             model.SearchInputModel.DisplayStyle = SearchInputModelStyle.HomePage;
+
+
+            model.SearchInputModelFirstTime = model.SearchInputModel;
 
             //Logger.Debug("ConstructHomePageModel #5");
             //OLD TABS
@@ -111,12 +132,12 @@ namespace CompareCloudware.Web.Helpers
 
             model.TabbedOnpageOptimisationModel = new TabbedOnpageOptimisationModel(customSession);
 
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H1_BODY")).OrderBy(x => x.BodyOrder).ToList();
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_BODY")).OrderBy(x => x.BodyOrder).ToList(); ;
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_BODY")).OrderBy(x => x.BodyOrder).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H1_BODY")).OrderBy(x => x.BodyOrder).ToList();
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_BODY")).OrderBy(x => x.BodyOrder).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_BODY")).OrderBy(x => x.BodyOrder).ToList(); ;
 
             model.TabbedOnpageOptimisationModel.Tab1Title = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE")).FirstOrDefault().ContentTextData;
             model.TabbedOnpageOptimisationModel.Tab2Title = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE")).FirstOrDefault().ContentTextData;
@@ -143,6 +164,7 @@ namespace CompareCloudware.Web.Helpers
             };
             #endregion
 
+            model.IsFirstTimeVisit = IsFirstTimeVisit(request, response);
             return model;
         }
         #endregion
@@ -490,6 +512,928 @@ namespace CompareCloudware.Web.Helpers
         }
         #endregion
 
+        #region GetPartnerProgrammeData
+        public static ContentTextsModel GetPartnerProgrammeData(ContentTextsModel model, ICompareCloudwareRepository repository, ICustomSession customSession, HttpRequestBase request)
+        {
+            model.ContentTexts = new List<ContentTextModel>();
+            ContentTextModel ctm = new ContentTextModel();
+            ContentTextTypeModel cttm = new ContentTextTypeModel();
+            string data;
+
+            #region PROGRAMME OVERVIEW
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMMEPAGE_TITLE";
+            data = "THE TITLE!!!!";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_TAB_TITLE";
+            data = "Overview";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_TAB_HEADER";
+            data = "Programme Overview";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_TITLE";
+            data = "Compare Cloudware operates a partner programme to accommodate all cloud providers on the platform.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-17px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "The programme is open to software-as-a-service, hosted software and cloud services providers who are looking to build their business with contemporary digital channels to market. There are two tiers to the programme, dependent on the level of lead visibility, on-site promotion, performance reporting and member marketing required.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-15px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                ParagraphBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "Both levels of partner benefit from a unique sales channel:";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<strong>Always-on</strong> – providing 24x7x365 opportunity, unlike traditional channels";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<strong>Automated</strong> – with efficient and streamlined workflows";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<strong>As-you-go</strong> – delivering performance-based demand generation";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<strong>Active buyers</strong> – appealing to ‘in-mode’ buyers who are in the market for purchase";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<strong>Accountable</strong> – providing a high level of lead transparency";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_TITLE";
+            data = "How do partners use Compare Cloudware?";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-17px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                //ParagraphBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "Partners typically use the platform in a couple of different ways:";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<b>A new digital channel partner.</b> Cloud providers can use Compare Cloudware as a contemporary addition to their routes to market, driving leads for the business to service themselves (direct model). This works well for brands which have a direct sales team but want to expand their reach and increase their sales funnel.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_BODY";
+            data = "<b>A new way to drive leads for partners.</b> Cloud providers can use Compare Cloudware to generate leads to pass to their traditional channel partners. This can work well for organisations that are looking to motivate existing sales channels with additional SMB opportunities.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                IsBulleted = true,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_OVERVIEW_SECTION_TITLE";
+            data = "Discover more about becoming a Business Partner, Strategic Partner – or a Refer & Reward Partner";
+            data = "";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-15px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+            #endregion
+
+            #region BUSINESS PARTNER
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_TAB_TITLE";
+            data = "Business Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                //ContentTextType = repository.FindContentTextTypeByName("CLOUDWAREEXPLAINEDPAGE_TITLE"),
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_TAB_HEADER";
+            data = "Business Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_TITLE";
+            data = "There are already hundreds of Business Partners that benefit from representation on Compare Cloudware. What unifies them is their desire to target SMBs (the largest addressable market for cloud services) – and the efficiency of an automated platform to drive demand.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-17px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            data = "Becoming a Compare Cloudware Business Partner requires very little resource overhead to get started. It avoids the cost associated with accreditation, training and sales enablement - let alone the ongoing maintenance and optimisations costs of underperforming partners.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+                ParagraphBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            data = "What’s more it’s free - and involves no risk whatsoever. So why wait any longer? Take a look at the Business Partner presentation to discover more in 3 easy steps:";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            data = "1) The Compare Cloudware Difference";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            data = "2) Benefits of partnering with Compare Cloudware";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            data = "3) How to become a Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            //ctm = new ContentTextModel();
+            //cttm = new ContentTextTypeModel();
+            //cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            //data = "Register to view the Business Partner presentation now.";
+            //ctm = new ContentTextModel()
+            //{
+            //    BodyOrder = 1,
+            //    //CompositeID,
+            //    NiceName = "",
+            //    ContentTextType = cttm,
+            //    ContentTextData = data,
+            //    FontStyle = "font-normal-13px-black",
+            //    ContentDataPage = ContentDataPage.PartnerProgramme,
+            //    LineBreakAfter = true,
+            //};
+            //model.ContentTexts.Add(ctm);
+
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY";
+            data = "";
+            var ctmww = new ContentTextModelWithWidget<RegisterNowModel>(new RegisterNowModel() 
+            { 
+                Forename = customSession.Forename,
+                Surname = customSession.Surname,
+                EMailAddress = customSession.EMail,
+                HeaderStrap = "Register to view the Business Partner presentation now.",
+                ShowHeaderStrapImage = true,
+                PartnerProgrammeType = PartnerProgrammeTypeEnum.BusinessPartner,
+                HasPresentationVideo = true,
+                ShowVideo = false,
+                Video = new CloudApplicationVideoModel(customSession, request)
+                {
+                    //CloudApplicationVideoFileFormat = "MP4",
+                    //CloudApplicationVideoFileName = "CCW Provider Demo 1.mp4",
+                    //CloudApplicationVideoID = x.CloudApplicationVideoID,
+                    //CloudApplicationVideoURL = "https://www.youtube.com/v/-YH7LDC15rE",
+                    //CloudApplicationVideoURL = "https://www.youtube.com/embed/-YH7LDC15rE",
+                    //CloudApplicationVideoURL = "//player.vimeo.com/video/103524492?title=0&amp;byline=0&amp;portrait=0",
+                    CloudApplicationVideoURL = "//player.vimeo.com/video/112796483?title=0&amp;byline=0&amp;portrait=0&amp;color=786caf&amp;autoplay=1",
+                    //width="900" height="506" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen​",
+
+                    //IsLive = x.CloudApplicationVideoStatus.StatusName == "LIVE",
+                    //IsLocalDomain = true,
+                    IsYouTubeStream = true,
+                    ReadyToPlay = true,
+                    CloudApplicationVideoStatus = "LIVE",
+                    Width = 304,
+                    AspectRatio = AspectRatio.Ratio16x9,
+                },
+            }, customSession)
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                //FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                //LineBreakAfter = true,
+                IsWidget = true,
+                WidgetName = "RegisterNow",
+            };
+            model.ContentTexts.Add(ctmww);
+            
+            
+            
+            #endregion
+
+
+            #region STRATEGIC PARTNER
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_TAB_TITLE";
+            data = "Strategic Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_TAB_HEADER";
+            data = "Strategic Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_TITLE";
+            data = "Compare Cloudware Strategic Partner status gives cloud providers a greater profile and representation across the platform.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-17px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_BODY";
+            data = "Strategic Partners can choose the marketing package that best suits their requirements around lead visibility and frequency of performance reporting. Additionally, this partner level provides enhanced exposure offered through member marketing and social communications.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_BODY";
+            data = "";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+                IsImage = true,
+                ImageURL = "CCW_PP_CloudDiagram.jpg",
+                
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_BODY";
+            data = "We’d be happy to do a personalised Strategic Partner presentation, once you’ve been approved as a Business Partner.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            //ctm = new ContentTextModel();
+            //cttm = new ContentTextTypeModel();
+            //cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_BODY";
+            //data = "Register for your personalised Strategic Partner presentation.";
+            //ctm = new ContentTextModel()
+            //{
+            //    BodyOrder = 1,
+            //    //CompositeID,
+            //    NiceName = "",
+            //    ContentTextType = cttm,
+            //    ContentTextData = data,
+            //    FontStyle = "font-normal-13px-black",
+            //    ContentDataPage = ContentDataPage.PartnerProgramme,
+            //    LineBreakAfter = true,
+            //};
+            //model.ContentTexts.Add(ctm);
+
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_BODY";
+            data = "";
+            ctmww = new ContentTextModelWithWidget<RegisterNowModel>(new RegisterNowModel()
+            {
+                Forename = customSession.Forename,
+                Surname = customSession.Surname,
+                EMailAddress = customSession.EMail,
+                HeaderStrap = "Register for your personalised Strategic Partner presentation.",
+                ShowHeaderStrapImage = false,
+                PartnerProgrammeType = PartnerProgrammeTypeEnum.StrategicPartner,
+                //Video = new CloudApplicationVideoModel(customSession, request)
+                //{
+                //    //CloudApplicationVideoFileFormat = "MP4",
+                //    //CloudApplicationVideoFileName = "CCW Provider Demo 1.mp4",
+                //    //CloudApplicationVideoID = x.CloudApplicationVideoID,
+                //    //CloudApplicationVideoURL = "https://www.youtube.com/v/-YH7LDC15rE",
+                //    //CloudApplicationVideoURL = "https://www.youtube.com/embed/-YH7LDC15rE",
+                //    CloudApplicationVideoURL = "//player.vimeo.com/video/103524492?title=0&amp;byline=0&amp;portrait=0",
+                //    //IsLive = x.CloudApplicationVideoStatus.StatusName == "LIVE",
+                //    //IsLocalDomain = true,
+                //    IsYouTubeStream = true,
+                //    ReadyToPlay = true,
+                //    CloudApplicationVideoStatus = "LIVE",
+                //    Width = 304,
+                //    AspectRatio = AspectRatio.Ratio16x9,
+                //},
+            }, customSession)
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                //FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                //LineBreakAfter = true,
+                IsWidget = true,
+                WidgetName = "RegisterNow",
+            };
+            model.ContentTexts.Add(ctmww);
+            
+            
+            
+            
+            
+            #endregion
+
+            #region REFER AND REWARD PARTNER
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_TAB_TITLE";
+            data = "Refer & Reward Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_TAB_HEADER";
+            data = "Refer & Reward Partner";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-22px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_TITLE";
+            data = "The Compare Cloudware Refer & Reward Programme is aimed at advisors who see value in increasing the sales opportunity for their cloud provider clients, contacts and partners.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-17px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "Compare Cloudware recognises the business performance advantages of cloud services - and the transformation opportunities created for the growing business. Our ambition is to drive faster and greater adoption within SMBs.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+                ParagraphBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "We have a network of introduction partners who believe in our cause, the value it creates for the entrepreneurial community and the stimulus it generates for the broader environment. We work collaboratively with these partners to convert cloud providers who support us.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+                ParagraphBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "This Refer & Reward programme is designed to be easy to understand and use. It’s easy to align with partner business needs and resource investments – from ad-hoc referrals to comprehensive sales closure.";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+                ParagraphBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "Who can join?";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-normal-17px-purple",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "Advisors and suppliers to cloud service providers";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                IsBulleted = true,
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "Cloud providers referring fellow ecosystem partner providers";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                IsBulleted = true,
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            ctm = new ContentTextModel();
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "Professionals within cloud providers who are not part of the sales & marketing team";
+            ctm = new ContentTextModel()
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                FontStyle = "font-bold-13px-black",
+                IsBulleted = true,
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                LineBreakAfter = true,
+            };
+            model.ContentTexts.Add(ctm);
+
+            //ctm = new ContentTextModel();
+            //cttm = new ContentTextTypeModel();
+            //cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            //data = "Register now for our Refer & Reward programme";
+            //ctm = new ContentTextModel()
+            //{
+            //    BodyOrder = 1,
+            //    //CompositeID,
+            //    NiceName = "",
+            //    ContentTextType = cttm,
+            //    ContentTextData = data,
+            //    FontStyle = "font-normal-13px-black",
+            //    ContentDataPage = ContentDataPage.PartnerProgramme,
+            //    LineBreakAfter = true,
+            //};
+            //model.ContentTexts.Add(ctm);
+
+            cttm = new ContentTextTypeModel();
+            cttm.ContentTextTypeName = "PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY";
+            data = "";
+            ctmww = new ContentTextModelWithWidget<RegisterNowModel>(new RegisterNowModel()
+            {
+                Forename = customSession.Forename,
+                Surname = customSession.Surname,
+                EMailAddress = customSession.EMail,
+                HeaderStrap = "Register now for our Refer & Reward programme",
+                ShowHeaderStrapImage = false,
+                PartnerProgrammeType = PartnerProgrammeTypeEnum.ReferRewardPartner,
+                //Video = new CloudApplicationVideoModel(customSession, request)
+                //{
+                //    //CloudApplicationVideoFileFormat = "MP4",
+                //    //CloudApplicationVideoFileName = "CCW Provider Demo 1.mp4",
+                //    //CloudApplicationVideoID = x.CloudApplicationVideoID,
+                //    //CloudApplicationVideoURL = "https://www.youtube.com/v/-YH7LDC15rE",
+                //    //CloudApplicationVideoURL = "https://www.youtube.com/embed/-YH7LDC15rE",
+                //    CloudApplicationVideoURL = "//player.vimeo.com/video/103524492?title=0&amp;byline=0&amp;portrait=0",
+                //    //IsLive = x.CloudApplicationVideoStatus.StatusName == "LIVE",
+                //    //IsLocalDomain = true,
+                //    IsYouTubeStream = true,
+                //    ReadyToPlay = true,
+                //    CloudApplicationVideoStatus = "LIVE",
+                //    Width = 304,
+                //    AspectRatio = AspectRatio.Ratio16x9,
+                //},
+            }, customSession)
+            {
+                BodyOrder = 1,
+                //CompositeID,
+                NiceName = "",
+                ContentTextType = cttm,
+                ContentTextData = data,
+                //FontStyle = "font-normal-13px-black",
+                ContentDataPage = ContentDataPage.PartnerProgramme,
+                //LineBreakAfter = true,
+                IsWidget = true,
+                WidgetName = "RegisterNow",
+            };
+            model.ContentTexts.Add(ctmww);
+
+
+            #endregion
+
+
+            return model;
+        }
+        #endregion
+
+
         //#region GetH1H2Data
         //public static ContentTextsModel GetH1H2Data(ContentTextsModel model, ICompareCloudwareRepository repository)
         //{
@@ -671,15 +1615,23 @@ namespace CompareCloudware.Web.Helpers
 
                 AdvertisingImage ai1 = GetMPU(customSession,repository);
                 AdvertisingImage ai2 = GetMPU(customSession,repository);
-                model.MPUAdvertisingImageID1 = ai1.AdvertisingImageID;
-                model.MPUAdvertisingImageID2 = ai2.AdvertisingImageID;
-                model.MPUCloudApplicationID1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationID : 0;
-                model.MPUCloudApplicationID2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationID : 0;
 
-                model.MPUAdvertisingImageCategoryTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationCategoryTag.TagName : null;
-                model.MPUAdvertisingImageShopTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationShopTag.TagName : null;
-                model.MPUAdvertisingImageCategoryTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationCategoryTag.TagName : null;
-                model.MPUAdvertisingImageShopTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationShopTag.TagName : null;
+                if (ai1 != null)
+                {
+                    model.MPUAdvertisingImageID1 = ai1.AdvertisingImageID;
+                    model.MPUCloudApplicationID1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationID : 0;
+                    model.MPUAdvertisingImageCategoryTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationCategoryTag.TagName : null;
+                    model.MPUAdvertisingImageShopTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationShopTag.TagName : null;
+                }
+
+                if (ai2 != null)
+                {
+                    model.MPUAdvertisingImageID2 = ai2.AdvertisingImageID;
+                    model.MPUCloudApplicationID2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationID : 0;
+                    model.MPUAdvertisingImageCategoryTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationCategoryTag.TagName : null;
+                    model.MPUAdvertisingImageShopTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationShopTag.TagName : null;
+                }
+
                 //return View(model);
                 model.Carousel = new CarouselModel(customSession, repository,CarouselType.Category);
                 
@@ -749,11 +1701,11 @@ namespace CompareCloudware.Web.Helpers
                     model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "PHONE_CATEGORY_TITLE", "PHONE_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
                     model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "PHONE_H1_TITLE", "PHONE_H1_BODY", "PHONE_H2_1_TITLE", "PHONE_H2_1_BODY", "PHONE_H2_2_TITLE", "PHONE_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
-                case CATEGORY_ID_CUSTOMER_MANAGEMENT:
+                case CATEGORY_ID_CRM:
                     //IDs = new[] { 8, 32, 33, 34 };
                     //model.ContentTextsModel.ContentTexts = ConvertContentText(_repository.GetContentData(IDs)).ToList();
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CUSTOMERMANAGEMENT_CATEGORY_TITLE", "CUSTOMERMANAGEMENT_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CUSTOMERMANAGEMENT_H1_TITLE", "CUSTOMERMANAGEMENT_H1_BODY", "CUSTOMERMANAGEMENT_H2_1_TITLE", "CUSTOMERMANAGEMENT_H2_1_BODY", "CUSTOMERMANAGEMENT_H2_2_TITLE", "CUSTOMERMANAGEMENT_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CRM_CATEGORY_TITLE", "CRM_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CRM_H1_TITLE", "CRM_H1_BODY", "CRM_H2_1_TITLE", "CRM_H2_1_BODY", "CRM_H2_2_TITLE", "CRM_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_WEB_CONFERENCING:
                     model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CONFERENCING_CATEGORY_TITLE", "CONFERENCING_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
@@ -795,14 +1747,50 @@ namespace CompareCloudware.Web.Helpers
                     model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
                     model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
+                case CATEGORY_ID_MARKETING:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_WEBSITE:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_CREATIVE:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_HOSTING:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_HR:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_PAYMENTS:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
+                case CATEGORY_ID_SALES:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    break;
             }
 
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H1_BODY")).ToList();
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_BODY")).ToList(); ;
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_BODY")).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H1_BODY")).ToList();
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_BODY")).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("H2_2_BODY")).ToList(); ;
 
             model.TabbedOnpageOptimisationModel.Tab1Title = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H1_TITLE")).FirstOrDefault().ContentTextData;
             model.TabbedOnpageOptimisationModel.Tab2Title = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("H2_1_TITLE")).FirstOrDefault().ContentTextData;
@@ -855,7 +1843,7 @@ namespace CompareCloudware.Web.Helpers
                 CloudApplicationCategoryTag = ca.CloudApplicationCategoryTag.TagName,
                 CloudApplicationShopTag = ca.CloudApplicationShopTag.TagName,
 
-                Currency = new CurrencyModel()
+                Currency = ca.CloudApplicationCurrency != null ? new CurrencyModel()
                 {
                     CurrencyID = ca.CloudApplicationCurrency.CurrencyID,
                     CurrencyName = ca.CloudApplicationCurrency.CurrencyName,
@@ -863,7 +1851,7 @@ namespace CompareCloudware.Web.Helpers
                     CurrencySymbol = ca.CloudApplicationCurrency.CurrencySymbol,
                     ExchangeRateSterling = ca.CloudApplicationCurrency.ExchangeRateSterling,
                     UseExchangeRateForSorting = useExchangeRateForSorting,
-                }
+                } : null
             };
             return gsrm;
         }
@@ -931,7 +1919,7 @@ namespace CompareCloudware.Web.Helpers
 
             model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Forename = customSession.Forename;
             model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Surname = customSession.Surname;
-            model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.NumberOfEmployees = customSession.NumberOfUsers;
+            model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.NumberOfEmployees = customSession.NumberOfUsers ?? 0;
             model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress = customSession.EMail;
             model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Company = customSession.Company;
             model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Telephone = customSession.Telephone;
@@ -1060,12 +2048,14 @@ namespace CompareCloudware.Web.Helpers
                 TwitterFollowers = ca.TwitterFollowers,
                 TwitterURL = ca.TwitterURL,
                 VideoTrainingSupport = ca.VideoTrainingSupport,
+
+                SocialShareModel = new SocialShareModel(customSession,ca.Category.CategoryID),
             };
 
             //Logger.Debug("ConstructCloudApplication : step #3");
 
             #region CloudApplicationSearchResultModel
-            cam.CloudApplicationSearchResultModel = new CloudApplicationSearchResultModel(customSession)
+            cam.CloudApplicationSearchResultModel = new CloudApplicationSearchResultShopModel(customSession)
             {
                 ApplicationCostOneOff = ca.ApplicationCostOneOff,
                 ApplicationCostPerAnnum = ca.ApplicationCostPerAnnum,
@@ -1298,11 +2288,14 @@ namespace CompareCloudware.Web.Helpers
                 Forename = customSession != null ? customSession.Forename : "",
                 Surname = customSession != null ? customSession.Surname : "",
                 EMailAddress = customSession != null ? customSession.EMail : "",
-                RequestTypes = ModelHelpers.GetRequestTypes(ca, "free trial", customSession, repository),
-                FreeTrial = ca.FreeTrialPeriod != null,
+                //RequestTypes = ModelHelpers.GetRequestTypes(ca, "free trial", customSession, repository),
+                FreeTrial = ca.FreeTrialPeriod != null ? ca.FreeTrialPeriod.FreeTrialPeriodName.ToUpper() != "NO" : false,
                 CategoryID = ca.Category.CategoryID,
+                CloudApplicationName = string.Format("{0} {1}",ca.Vendor.VendorName,ca.ServiceName),
+                CloudApplicationNumberOfUsers = string.Format("{0}-{1} users",ca.LicenceTypeMinimum.LicenceTypeMinimumName,ca.LicenceTypeMaximum.LicenceTypeMaximumName),
+                TermsAndConditions = (customSession.Forename != null && customSession.Surname != null && customSession.EMail != null && customSession.NumberOfUsers > 0),
             };
-            cam.FreeTrialBuyNow.RequestTypeID = cam.FreeTrialBuyNow.RequestTypes.Where(x => x.Selected).FirstOrDefault().RequestTypeID;
+            //cam.FreeTrialBuyNow.RequestTypeID = cam.FreeTrialBuyNow.RequestTypes.Where(x => x.Selected).FirstOrDefault().RequestTypeID;
             #endregion
 
             //Logger.Debug("ConstructCloudApplication : step #18");
@@ -1559,46 +2552,49 @@ namespace CompareCloudware.Web.Helpers
         public static CloudApplicationModel CheckForBrokenLinks(CloudApplicationModel cam, bool removeFromList, ILogger Logger)
         {
             Logger.Debug("CheckForBrokenLinks IN");
-            if (cam.CloudApplicationProductReviews != null)
+            if (Convert.ToBoolean(System.Configuration.ConfigurationManager.AppSettings["CheckForBrokenLinks"].ToString()) == true)
             {
-                foreach (CloudApplicationProductReviewModel carm in cam.CloudApplicationProductReviews)
+                if (cam.CloudApplicationProductReviews != null)
                 {
-                    Logger.Debug("Checking Broken Link...");
-                    if (carm.CloudApplicationProductReviewURL != null)
+                    foreach (CloudApplicationProductReviewModel carm in cam.CloudApplicationProductReviews)
                     {
-                        // Create a new 'HttpWebRequest' Object to the mentioned URL.
-                        //HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.samplepdf.com/zzzzzzzz.pdf");
-                        //HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.swiftview.com/tech/letterlegal5.doc");
+                        Logger.Debug("Checking Broken Link...");
+                        if (carm.CloudApplicationProductReviewURL != null)
+                        {
+                            // Create a new 'HttpWebRequest' Object to the mentioned URL.
+                            //HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.samplepdf.com/zzzzzzzz.pdf");
+                            //HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create("http://www.swiftview.com/tech/letterlegal5.doc");
 
 
-                        // Assign the response object of 'HttpWebRequest' to a 'HttpWebResponse' variable.
-                        HttpWebResponse myHttpWebResponse;
-                        try
-                        {
-                            HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(carm.CloudApplicationProductReviewURL);
-                            myHttpWebRequest.Method = "HEAD";
-                            myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
-                            HttpStatusCode statusCode = myHttpWebResponse.StatusCode;
-                        }
-                        catch (WebException we)
-                        {
-                            carm.IsBrokenLink = true;
-                            Logger.Error("BROKEN REVIEW LINK ( WEB EXCEPTION ) FOR : " + carm.CloudApplicationProductReviewURL + " CLOUD APPLICATION ID : " + carm.CloudApplicationID.ToString(), we);
-                            //cam.Reviews.Remove(carm);
-                        }
-                        catch (UriFormatException ue)
-                        {
-                            carm.IsBrokenLink = true;
-                            //Logger.Error("BROKEN REVIEW LINK", ue);
-                            Logger.Error("BROKEN REVIEW LINK ( URI FORMAT EXCEPTION ) FOR : " + carm.CloudApplicationProductReviewURL + " CLOUD APPLICATION ID : " + carm.CloudApplicationID.ToString(), ue);
-                            //cam.Reviews.Remove(carm);
+                            // Assign the response object of 'HttpWebRequest' to a 'HttpWebResponse' variable.
+                            HttpWebResponse myHttpWebResponse;
+                            try
+                            {
+                                HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(carm.CloudApplicationProductReviewURL);
+                                myHttpWebRequest.Method = "HEAD";
+                                myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse();
+                                HttpStatusCode statusCode = myHttpWebResponse.StatusCode;
+                            }
+                            catch (WebException we)
+                            {
+                                carm.IsBrokenLink = true;
+                                Logger.Error("BROKEN REVIEW LINK ( WEB EXCEPTION ) FOR : " + carm.CloudApplicationProductReviewURL + " CLOUD APPLICATION ID : " + carm.CloudApplicationID.ToString(), we);
+                                //cam.Reviews.Remove(carm);
+                            }
+                            catch (UriFormatException ue)
+                            {
+                                carm.IsBrokenLink = true;
+                                //Logger.Error("BROKEN REVIEW LINK", ue);
+                                Logger.Error("BROKEN REVIEW LINK ( URI FORMAT EXCEPTION ) FOR : " + carm.CloudApplicationProductReviewURL + " CLOUD APPLICATION ID : " + carm.CloudApplicationID.ToString(), ue);
+                                //cam.Reviews.Remove(carm);
+                            }
                         }
                     }
-                }
 
-                if (removeFromList)
-                {
-                    cam.CloudApplicationProductReviews = cam.CloudApplicationProductReviews.Where(x => !x.IsBrokenLink).ToList();
+                    if (removeFromList)
+                    {
+                        cam.CloudApplicationProductReviews = cam.CloudApplicationProductReviews.Where(x => !x.IsBrokenLink).ToList();
+                    }
                 }
             }
             Logger.Debug("CheckForBrokenLinks OUT");
@@ -2643,8 +3639,11 @@ namespace CompareCloudware.Web.Helpers
             //model.SearchFilters.ToList().ForEach(x => action(x,x.SearchFilterName));
             //model.SearchFilters.ForEachMatch(s => s.SearchFilterType.StartsWith("a"), s => Console.WriteLine(s));
 
-            InsertCategoryFilterClause(model.ChosenCategoryID, ref categoryPredicate);
-            InsertNumberOfUsersFilterClause(model.ChosenNumberOfUsers, (int)model.ChosenCategoryID, ref categoryPredicate);
+            if (model.ChosenCategoryID != null)
+            {
+                InsertCategoryFilterClause(model.ChosenCategoryID, ref categoryPredicate);
+                InsertNumberOfUsersFilterClause(model.ChosenNumberOfUsers, (int)model.ChosenCategoryID, ref categoryPredicate);
+            }
 
             model.SearchFiltersBrowsers.Where(x => x.Col1Selected == true).ForEachMatch(x => x.Col1SearchFilterType.StartsWith("BROWSERS"), x => InsertBrowserFilterClause(x, ref browsersPredicate));
 
@@ -2814,6 +3813,186 @@ namespace CompareCloudware.Web.Helpers
 
 
 
+
+            return retVal;
+            //return dataContext.Products.Where(predicate);
+        }
+        #endregion
+
+        #region SearchProductsCount
+        //IQueryable<CompareCloudware.Domain.Models.CloudApplication> SearchProducts(SearchFiltersModelOneColumn model, params string[] keywords)
+        public static int SearchProductsCount(SearchFiltersModelOneColumn model, ICustomSession customSession, ICompareCloudwareRepository repository, ISiteAnalyticsLogger siteAnalyticsLogger, params string[] keywords)
+        {
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> allPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> categoryPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> browsersPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> featuresPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> operatingSystemsPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> devicesPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> supportTypesPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> supportDaysPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> supportHoursPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> languagesPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> mobilePlatformsPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> numberOfUsersPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> applicationFeaturesPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> timezonesPredicate;
+            System.Linq.Expressions.Expression<Func<CloudApplication, bool>> cloudApplicationsPredicate;
+            bool anyFilterSelected = false;
+            //if (
+
+            //    model.SearchFiltersBrowsers.All(x => x.Col1Selected == false) &
+            //    //model.SearchFiltersFeatures.FeatureFilters.All(x => x.Selected == false) &
+            //    model.SearchFiltersFeatures.All(x => x.Col1Selected == false) &
+            //    !model.SearchFiltersFeatures.Any(x => (x.Col1Value != null && x.Col1Value != "UNLIMITED")) &
+            //    model.SearchFiltersLanguages.All(x => x.Col1Selected == false) &
+            //    //model.SearchFiltersMobilePlatforms.All(x => x.Col1Selected == false) &
+            //    model.SearchFiltersOperatingSystems.All(x => x.Col1Selected == false) &
+            //    (model.SearchFiltersDevices == null ? true : model.SearchFiltersDevices.All(x => x.Col1Selected == false)) &
+            //    //model.SearchFiltersSupportDays.All(x => x.Col1Selected == false) &
+            //    model.SearchFiltersSupportHours.Where(s => s.Col1SearchFilterName != "ALL").All(x => x.Col1Selected == false) &
+            //    model.SearchFiltersSupportTypes.All(x => x.Col1Selected == false) &
+            //    (model.SearchFiltersApplicationFeatures == null ? true : model.SearchFiltersApplicationFeatures.All(x => x.Col1Selected == false)) &
+            //    (model.SearchFiltersApplicationFeatures == null ? true : !model.SearchFiltersApplicationFeatures.Any(x => (x.Col1Value != null && x.Col1Value != "UNLIMITED"))) &
+            //    model.SearchFiltersTimeZones.Where(s => s.Col1SearchFilterName != "ALL").All(x => x.Col1Selected == false)
+            //    )
+            //{
+                //not a single search filter has been selected
+                allPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                browsersPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                categoryPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                featuresPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                operatingSystemsPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                devicesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                supportTypesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                supportDaysPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                supportHoursPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                languagesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                mobilePlatformsPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                numberOfUsersPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                applicationFeaturesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+                timezonesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //}
+            //else
+            //{
+            //    anyFilterSelected = true;
+            //    //one of the filters has been selected
+            //    allPredicate = LinqKit.PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    categoryPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    if (model.SearchFiltersBrowsers.Where(x => x.Col1Selected == true).Any(x => x.Col1SearchFilterType.StartsWith("BROWSERS")))
+            //    {
+            //        browsersPredicate = PredicateBuilder.False<CompareCloudware.Domain.Models.CloudApplication>();
+            //    }
+            //    else
+            //    {
+            //        browsersPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    }
+
+            //    //if (model.SearchFiltersFeatures.FeatureFilters.Where(x => x.Selected == true).Any(x => x.SearchFilterType.StartsWith("FEATURES")))
+            //    if (model.SearchFiltersFeatures.Where(x => x.Col1Selected == true).Any(x => x.Col1SearchFilterType.StartsWith("FEATURES")))
+            //    //if (model.SearchFiltersFeatures.Where(x => (x.Col1Selected == true && !x.IsValueBased)).Any(x => x.Col1SearchFilterType.StartsWith("FEATURES")))
+            //    {
+            //        featuresPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    }
+            //    else
+            //    {
+            //        featuresPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    }
+
+            //    if (model.SearchFiltersApplicationFeatures != null)
+            //    {
+            //        if (model.SearchFiltersApplicationFeatures.Where(x => x.Col1Selected == true).Any(x => x.Col1SearchFilterType.StartsWith("APPLICATIONFEATURES")))
+            //        //if (model.SearchFiltersFeatures.Where(x => (x.Col1Selected == true && !x.IsValueBased)).Any(x => x.Col1SearchFilterType.StartsWith("FEATURES")))
+            //        {
+            //            applicationFeaturesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //        }
+            //        else
+            //        {
+            //            applicationFeaturesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        applicationFeaturesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    }
+
+            //    operatingSystemsPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    devicesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    supportTypesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    supportDaysPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    supportHoursPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    languagesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    mobilePlatformsPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    numberOfUsersPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //    timezonesPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+            //}
+
+            cloudApplicationsPredicate = PredicateBuilder.True<CompareCloudware.Domain.Models.CloudApplication>();
+
+
+            InsertCategoryFilterClause(model.ChosenCategoryID, ref categoryPredicate);
+            InsertNumberOfUsersFilterClause(model.ChosenNumberOfUsers, (int)model.ChosenCategoryID, ref categoryPredicate);
+
+            //model.SearchFiltersBrowsers.Where(x => x.Col1Selected == true).ForEachMatch(x => x.Col1SearchFilterType.StartsWith("BROWSERS"), x => InsertBrowserFilterClause(x, ref browsersPredicate));
+
+            //model.SearchFiltersFeatures.Where(x => (x.Col1Selected == true && x.CanBeBooleanAndDataDriven)).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_FEATURES), x => InsertFeatureFilterClause(x, ref applicationFeaturesPredicate));
+            //model.SearchFiltersFeatures.Where(x => (x.Col1Selected == true && !x.IsValueBased)).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_FEATURES), x => InsertFeatureFilterClause(x, ref featuresPredicate));
+            //model.SearchFiltersFeatures.Where(x => (x.Col1Value != "UNLIMITED" && x.IsValueBased == true)).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_FEATURES), x => InsertFeatureLimitClause(x, ref featuresPredicate));
+
+            //if (model.SearchFiltersApplicationFeatures != null)
+            //{
+            //    model.SearchFiltersApplicationFeatures.Where(x => (x.Col1Selected == true && x.CanBeBooleanAndDataDriven)).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_APPLICATIONFEATURES), x => InsertApplicationFeatureFilterClause(x, ref applicationFeaturesPredicate));
+            //    model.SearchFiltersApplicationFeatures.Where(x => (x.Col1Selected == true && !x.IsValueBased)).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_APPLICATIONFEATURES), x => InsertApplicationFeatureFilterClause(x, ref applicationFeaturesPredicate));
+            //    model.SearchFiltersApplicationFeatures.Where(x => (x.Col1Value != "UNLIMITED" && x.IsValueBased == true)).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_APPLICATIONFEATURES), x => InsertApplicationFeatureFilterClause(x, ref applicationFeaturesPredicate));
+            //}
+
+            //model.SearchFiltersOperatingSystems.Where(x => x.Col1Selected == true).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_OPERATINGSYSTEMS), x => InsertOperatingSystemFilterClause(x, ref operatingSystemsPredicate));
+            //if (model.SearchFiltersDevices != null)
+            //{
+            //    model.SearchFiltersDevices.Where(x => x.Col1Selected == true).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_DEVICES), x => InsertDeviceFilterClause(x, ref devicesPredicate));
+            //}
+            //model.SearchFiltersSupportTypes.Where(x => x.Col1Selected == true).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_SUPPORTTYPES), x => InsertSupportTypeFilterClause(x, ref supportHoursPredicate));
+
+            //bool includeSupportInSearchFilter = HaveAnyActiveSupportTypesBeenSelected(model.SearchFiltersSupportTypes.Where(x => x.Col1Selected == true), repository);
+
+            //if (IsChosenSupportDaysAPredicate(model.ChosenSupportDays, repository) && includeSupportInSearchFilter)
+            //{
+            //    InsertSupportDaysFilterClause(model.ChosenSupportDays, ref supportDaysPredicate);
+            //}
+            //if (IsChosenSupportHoursAPredicate(model.ChosenSupportHours, repository) && includeSupportInSearchFilter)
+            //{
+            //    InsertSupportHoursFilterClause(model.ChosenSupportHours, ref supportHoursPredicate, repository);
+            //}
+            //model.SearchFiltersLanguages.Where(x => x.Col1Selected == true).ForEachMatch(x => x.Col1SearchFilterType.StartsWith(FILTER_LANGUAGES), x => InsertLanguageFilterClause(x, ref languagesPredicate));
+            //if (IsChosenTimeZoneAPredicate(model.ChosenTimeZone, repository) && includeSupportInSearchFilter)
+            //{
+            //    InsertTimeZoneFilterClause(model.ChosenTimeZone, ref timezonesPredicate);
+            //}
+
+            bool liveApplicationsOnly = ModelHelpers.LiveApplicationsOnly(customSession);
+            if (liveApplicationsOnly)
+            {
+                InsertStatusFilterClause(ref cloudApplicationsPredicate);
+            }
+
+            allPredicate = allPredicate.And(categoryPredicate.Expand());
+            allPredicate = allPredicate.And(numberOfUsersPredicate.Expand());
+
+            allPredicate = allPredicate.And(browsersPredicate.Expand());
+
+            allPredicate = allPredicate.And(featuresPredicate.Expand());
+            allPredicate = allPredicate.And(applicationFeaturesPredicate.Expand());
+            allPredicate = allPredicate.And(operatingSystemsPredicate.Expand());
+            allPredicate = allPredicate.And(devicesPredicate.Expand());
+            allPredicate = allPredicate.And(supportTypesPredicate.Expand());
+            allPredicate = allPredicate.And(supportDaysPredicate.Expand());
+            allPredicate = allPredicate.And(supportHoursPredicate.Expand());
+            allPredicate = allPredicate.And(languagesPredicate.Expand());
+            //allPredicate = allPredicate.And(mobilePlatformsPredicate.Expand());
+            allPredicate = allPredicate.And(timezonesPredicate.Expand());
+            allPredicate = allPredicate.And(cloudApplicationsPredicate.Expand());
+
+            var retVal = repository.GetSearchResultsCount(allPredicate, liveApplicationsOnly);
 
             return retVal;
             //return dataContext.Products.Where(predicate);
@@ -3359,7 +4538,7 @@ namespace CompareCloudware.Web.Helpers
         #endregion
 
         #region AddPerson
-        public static Person AddPerson(string forename, string surname, string eMail, int numberOfUsers, ICompareCloudwareRepository repository)
+        public static Person AddPerson(PersonTypeEnum personType, string forename, string surname, string eMail, int numberOfUsers, ICompareCloudwareRepository repository)
         {
             //Person person = _repository.GetPersonByEMail(eMail);
             Person person = repository.GetPerson(forename, surname, eMail, numberOfUsers);
@@ -3371,6 +4550,7 @@ namespace CompareCloudware.Web.Helpers
                 person.EMail = eMail;
                 person.NumberOfEmployees = numberOfUsers;
                 person.PersonStatus = repository.FindStatusByName("LIVE");
+                person.PersonType = repository.GetPersonTypeByPersonTypeName(Enum.GetName(typeof(PersonTypeEnum), personType));
                 repository.AddPerson(person);
                 //_repository.Insert<Person>(person);
                 //person = _repository.GetPersonByEMail(eMail);
@@ -3379,7 +4559,7 @@ namespace CompareCloudware.Web.Helpers
             return person;
         }
 
-        public static Person AddPerson(string forename, string surname, string eMail, int numberOfUsers, string telephone, string company, string position, ICompareCloudwareRepository repository)
+        public static Person AddPerson(PersonTypeEnum personType, string forename, string surname, string eMail, int numberOfUsers, string telephone, string company, string position, ICompareCloudwareRepository repository)
         {
             //Person person = _repository.GetPersonByEMail(eMail);
             Person person = repository.GetPerson(forename, surname, eMail, numberOfUsers, telephone, company, position);
@@ -3394,6 +4574,7 @@ namespace CompareCloudware.Web.Helpers
                 person.Position = position;
                 person.Company = company;
                 person.PersonStatus = repository.FindStatusByName("LIVE");
+                person.PersonType = repository.GetPersonTypeByPersonTypeName(Enum.GetName(typeof(PersonTypeEnum), personType));
                 repository.AddPerson(person);
                 //_repository.Insert<Person>(person);
                 //person = _repository.GetPersonByEMail(eMail);
@@ -3402,7 +4583,7 @@ namespace CompareCloudware.Web.Helpers
             return person;
         }
 
-        public static Person AddPerson(string forename, string surname, string position, string company, string eMail, string telephone, string country, bool joinUserGroup, ICompareCloudwareRepository repository)
+        public static Person AddPerson(PersonTypeEnum personType, string forename, string surname, string position, string company, string eMail, string telephone, string country, bool joinUserGroup, ICompareCloudwareRepository repository)
         {
             //Person person = _repository.GetPersonByEMail(eMail);
             Person person = repository.GetPerson(forename, surname, eMail, country, telephone, company, position, joinUserGroup);
@@ -3418,6 +4599,7 @@ namespace CompareCloudware.Web.Helpers
                 person.Company = company;
                 person.PersonStatus = repository.FindStatusByName("LIVE");
                 person.IsInUserGroup = joinUserGroup;
+                person.PersonType = repository.GetPersonTypeByPersonTypeName(Enum.GetName(typeof(PersonTypeEnum), personType));
                 repository.AddPerson(person);
                 //_repository.Insert<Person>(person);
                 //person = _repository.GetPersonByEMail(eMail);
@@ -3426,6 +4608,42 @@ namespace CompareCloudware.Web.Helpers
             return person;
         }
 
+        public static Person AddPerson(PersonTypeEnum personType, string eMail, bool joinUserGroup, ICompareCloudwareRepository repository)
+        {
+            //Person person = _repository.GetPersonByEMail(eMail);
+            Person person = repository.GetPerson(eMail, joinUserGroup);
+            if (person == null)
+            {
+                person = new Person();
+                person.EMail = eMail;
+                person.PersonStatus = repository.FindStatusByName("LIVE");
+                person.IsInUserGroup = joinUserGroup;
+                person.PersonType = repository.GetPersonTypeByPersonTypeName(Enum.GetName(typeof(PersonTypeEnum), personType));
+                repository.AddPerson(person);
+                //_repository.Insert<Person>(person);
+                //person = _repository.GetPersonByEMail(eMail);
+                person = repository.GetPerson(eMail, joinUserGroup);
+            }
+            return person;
+        }
+
+        #endregion
+
+        #region AddColleague
+        public static bool AddColleagueLink(Person colleaguePerson, string eMailIntroducer, ICompareCloudwareRepository repository)
+        {
+            //Person person = _repository.GetPersonByEMail(eMail);
+            Colleague colleague = new Colleague();
+            colleague.Introducer = repository.GetPersonByEMail(eMailIntroducer);
+            colleague.Introducer.PersonStatus = repository.FindStatusByName("LIVE");
+            colleague.ColleagueOfIntroducer = colleaguePerson;
+            colleague.ColleagueOfIntroducer.PersonStatus = repository.FindStatusByName("LIVE");
+
+            //bool retVal = repository.Insert<Colleague>(colleague);
+            bool retVal = repository.AddColleagueLink(colleague);
+
+            return retVal;
+        }
         #endregion
 
         #region FormatDataStorageValueForBytes
@@ -3777,32 +4995,38 @@ namespace CompareCloudware.Web.Helpers
         #region GetAdvertisingImages
         public static SearchPageModel GetAdvertisingImages(SearchPageModel searchModel, ICustomSession customSession, ICompareCloudwareRepository repository)
         {
-            AdvertisingImage ai1 = ModelHelpers.GetMPU(customSession, repository);
-            AdvertisingImage ai2 = ModelHelpers.GetMPU(customSession, repository);
-            AdvertisingImage ai3 = ModelHelpers.GetSkyscraper(customSession, repository);
-            AdvertisingImage ai4 = ModelHelpers.GetSkyscraper(customSession, repository);
-            searchModel.MPUAdvertisingImageID1 = ai1.AdvertisingImageID;
-            searchModel.MPUCloudApplicationID1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationID : 0;
+            try
+            {
+                AdvertisingImage ai1 = ModelHelpers.GetMPU(customSession, repository);
+                AdvertisingImage ai2 = ModelHelpers.GetMPU(customSession, repository);
+                AdvertisingImage ai3 = ModelHelpers.GetSkyscraper(customSession, repository);
+                AdvertisingImage ai4 = ModelHelpers.GetSkyscraper(customSession, repository);
+                searchModel.ContainerModel.MPUAdvertisingImageID1 = ai1.AdvertisingImageID;
+                searchModel.ContainerModel.MPUCloudApplicationID1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationID : 0;
 
-            searchModel.MPUAdvertisingImageID2 = ai2.AdvertisingImageID;
-            searchModel.MPUCloudApplicationID2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationID : 0;
+                searchModel.ContainerModel.MPUAdvertisingImageID2 = ai2.AdvertisingImageID;
+                searchModel.ContainerModel.MPUCloudApplicationID2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationID : 0;
 
-            searchModel.SkyscraperAdvertisingImageID1 = ai3.AdvertisingImageID;
-            searchModel.SkyscraperCloudApplicationID1 = ai3.CloudApplication != null ? ai3.CloudApplication.CloudApplicationID : 0;
+                searchModel.ContainerModel.SkyscraperAdvertisingImageID1 = ai3.AdvertisingImageID;
+                searchModel.ContainerModel.SkyscraperCloudApplicationID1 = ai3.CloudApplication != null ? ai3.CloudApplication.CloudApplicationID : 0;
 
-            searchModel.SkyscraperAdvertisingImageID2 = ai4.AdvertisingImageID;
-            searchModel.SkyscraperCloudApplicationID2 = ai4.CloudApplication != null ? ai4.CloudApplication.CloudApplicationID : 0;
+                searchModel.ContainerModel.SkyscraperAdvertisingImageID2 = ai4.AdvertisingImageID;
+                searchModel.ContainerModel.SkyscraperCloudApplicationID2 = ai4.CloudApplication != null ? ai4.CloudApplication.CloudApplicationID : 0;
 
-            searchModel.MPUAdvertisingImageCategoryTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationCategoryTag.TagName : null;
-            searchModel.MPUAdvertisingImageShopTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationShopTag.TagName : null;
-            searchModel.MPUAdvertisingImageCategoryTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationCategoryTag.TagName : null;
-            searchModel.MPUAdvertisingImageShopTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationShopTag.TagName : null;
+                searchModel.ContainerModel.MPUAdvertisingImageCategoryTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationCategoryTag.TagName : null;
+                searchModel.ContainerModel.MPUAdvertisingImageShopTag1 = ai1.CloudApplication != null ? ai1.CloudApplication.CloudApplicationShopTag.TagName : null;
+                searchModel.ContainerModel.MPUAdvertisingImageCategoryTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationCategoryTag.TagName : null;
+                searchModel.ContainerModel.MPUAdvertisingImageShopTag2 = ai2.CloudApplication != null ? ai2.CloudApplication.CloudApplicationShopTag.TagName : null;
 
-            searchModel.SkyScraperAdvertisingImageCategoryTag1 = ai3.CloudApplication != null ? ai3.CloudApplication.CloudApplicationCategoryTag.TagName : null;
-            searchModel.SkyScraperAdvertisingImageShopTag1 = ai3.CloudApplication != null ? ai3.CloudApplication.CloudApplicationShopTag.TagName : null;
-            searchModel.SkyScraperAdvertisingImageCategoryTag2 = ai4.CloudApplication != null ? ai4.CloudApplication.CloudApplicationCategoryTag.TagName : null;
-            searchModel.SkyScraperAdvertisingImageShopTag2 = ai4.CloudApplication != null ? ai4.CloudApplication.CloudApplicationShopTag.TagName : null;
+                searchModel.ContainerModel.SkyScraperAdvertisingImageCategoryTag1 = ai3.CloudApplication != null ? ai3.CloudApplication.CloudApplicationCategoryTag.TagName : null;
+                searchModel.ContainerModel.SkyScraperAdvertisingImageShopTag1 = ai3.CloudApplication != null ? ai3.CloudApplication.CloudApplicationShopTag.TagName : null;
+                searchModel.ContainerModel.SkyScraperAdvertisingImageCategoryTag2 = ai4.CloudApplication != null ? ai4.CloudApplication.CloudApplicationCategoryTag.TagName : null;
+                searchModel.ContainerModel.SkyScraperAdvertisingImageShopTag2 = ai4.CloudApplication != null ? ai4.CloudApplication.CloudApplicationShopTag.TagName : null;
+            }
+            catch (Exception e)
+            {
 
+            }
             return searchModel;
         }
 
@@ -3843,7 +5067,14 @@ namespace CompareCloudware.Web.Helpers
         {
             //advertisingImageID = new Random().Next(12, 15);
             AdvertisingImage ai = null;
-            ai = repository.GetAdvertisingImage(0, "MPU", customSession.SelectedCategoryID, true);
+            try
+            {
+                ai = repository.GetAdvertisingImage(0, "MPU", customSession.SelectedCategoryID, true);
+            }
+            catch (Exception e)
+            {
+
+            }
             return ai;
         }
         #endregion
@@ -3853,7 +5084,14 @@ namespace CompareCloudware.Web.Helpers
         {
             //advertisingImageID = new Random().Next(12, 15);
             AdvertisingImage ai = null;
-            ai = repository.GetAdvertisingImage(0, "SKYSCRAPER", customSession.SelectedCategoryID, true);
+            try
+            {
+                ai = repository.GetAdvertisingImage(0, "SKYSCRAPER", customSession.SelectedCategoryID, true);
+            }
+            catch (Exception e)
+            {
+
+            }
             return ai;
         }
         #endregion
@@ -3966,12 +5204,12 @@ namespace CompareCloudware.Web.Helpers
 
             model.TabbedOnpageOptimisationModel = new TabbedOnpageOptimisationModel(customSession);
 
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTab1Model(customSession);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_TAB_HEADER")).ToList();
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_TAB_HEADER")).ToList(); ;
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTab1 = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SUBTITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TAB_HEADER")).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_TAB_HEADER")).ToList();
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_TAB_HEADER")).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SUBTITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TAB_HEADER")).ToList(); ;
 
             var cloudwareExplainedTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINEDPAGE_TITLE")).FirstOrDefault();
             var cloudwareExplainedTabTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_TAB_TITLE")).FirstOrDefault();
@@ -3984,14 +5222,14 @@ namespace CompareCloudware.Web.Helpers
             model.TabbedOnpageOptimisationModel.Tab3Title = whatDoesMyBusinessTabTitle.ContentTextData;
 
 
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1.Remove(cloudwareExplainedTitle);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1.Remove(cloudwareExplainedTabTitle);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1.Remove(tenReasonsTabTitle);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1.Remove(whatDoesMyBusinessTabTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(cloudwareExplainedTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(cloudwareExplainedTabTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(tenReasonsTabTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(whatDoesMyBusinessTabTitle);
 
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTab1.ForEach(x => x.IsCollapsible = true);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTab1.ForEach(x => x.IsCollapsible = true);
-            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTab1.ForEach(x => x.IsCollapsible = true);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
 
             SetFirstAndLastInCollection(model.TabbedOnpageOptimisationModel);
 
@@ -4018,34 +5256,229 @@ namespace CompareCloudware.Web.Helpers
         }
         #endregion
 
+        #region ConstructPartnerProgrammeModel
+        public static PartnerProgrammeModel ConstructPartnerProgrammeModel(PartnerProgrammeModel model, ICustomSession customSession, ICompareCloudwareRepository repository, HttpRequestBase request)
+        {
+
+
+            model.CustomSession = customSession;
+            model.CustomSession.SelectedCategoryID = 0;
+            //model.CarouselSocial = new CarouselModel(customSession, repository, CarouselType.Social);
+
+            model.H1H2ContentText = new ContentTextsModel(customSession);
+            //model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "HOMEPAGE_H1_TITLE", "HOMEPAGE_H1_BODY", "HOMEPAGE_H2_1_TITLE", "HOMEPAGE_H2_1_BODY", "HOMEPAGE_H2_2_TITLE", "HOMEPAGE_H2_2_BODY" })).ToList();
+            model.ContentTextsModel = new ContentTextsModel();
+            //model.H1H2ContentText = ModelHelpers.GetCloudwareExplainedData(model.ContentTextsModel, repository);
+            model.H1H2ContentText = ModelHelpers.GetPartnerProgrammeData(new ContentTextsModel(customSession), repository, customSession,request);
+
+            model.TabbedOnpageOptimisationModel = new TabbedOnpageOptimisationModel(customSession);
+
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3 = new OnpageOptimisationTabModel(customSession);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab4 = new OnpageOptimisationTabModel(customSession);
+
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData = 
+                model.H1H2ContentText.ContentTexts
+                .Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_TITLE")
+                    //|| x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_TAB_TITLE")
+                    //|| x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SUBTITLE1")
+                    //|| x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SUBTITLE2")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SECTION_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SECTION_BODY")
+                    //|| x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_TAB_HEADER")
+                    ).ToList();
+
+
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData = 
+                model.H1H2ContentText.ContentTexts
+                .Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_TITLE") 
+                || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SECTION_TITLE") 
+                || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SECTION_BODY") 
+                || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_TAB_HEADER")
+                ).ToList();
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData = 
+                model.H1H2ContentText.ContentTexts
+                .Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_BUSINESSPARTNER_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_BODY")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_BUSINESSPARTNER_TAB_HEADER")
+                    ).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData = 
+                model.H1H2ContentText.ContentTexts
+                .Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_SUBTITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_BODY")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_TAB_HEADER")
+                    ).ToList(); ;
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab4.OnpageOptimisationTabData =
+                model.H1H2ContentText.ContentTexts
+                .Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_SUBTITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_TITLE")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_BODY")
+                    || x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_TAB_HEADER")
+                    ).ToList(); ;
+
+            
+            //model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_TAB_HEADER")).ToList(); ;
+            //model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SUBTITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_BODY") || x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TAB_HEADER")).ToList(); ;
+
+            var cloudwareExplainedTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMMEPAGE_TITLE")).FirstOrDefault();
+            var cloudwareExplainedTabTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_TAB_TITLE")).FirstOrDefault();
+            var tenReasonsTabTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_BUSINESSPARTNER_TAB_TITLE")).FirstOrDefault();
+            var whatDoesMyBusinessTabTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_TAB_TITLE")).FirstOrDefault();
+            var referRewardTabTitle = model.H1H2ContentText.ContentTexts.Where(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_TAB_TITLE")).FirstOrDefault();
+
+
+            model.TabbedOnpageOptimisationModel.Tab1Title = cloudwareExplainedTabTitle.ContentTextData;
+            model.TabbedOnpageOptimisationModel.Tab2Title = tenReasonsTabTitle.ContentTextData;
+            model.TabbedOnpageOptimisationModel.Tab3Title = whatDoesMyBusinessTabTitle.ContentTextData;
+            model.TabbedOnpageOptimisationModel.Tab4Title = referRewardTabTitle.ContentTextData;
+
+
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(cloudwareExplainedTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(cloudwareExplainedTabTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(tenReasonsTabTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(whatDoesMyBusinessTabTitle);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.Remove(referRewardTabTitle);
+
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab1.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab2.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab3.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
+            model.TabbedOnpageOptimisationModel.OnpageOptimisationTab4.OnpageOptimisationTabData.ForEach(x => x.IsCollapsible = true);
+
+            SetFirstAndLastInCollectionPP(model.TabbedOnpageOptimisationModel);
+            
+            model.CarouselSocial = new CarouselModel(customSession, repository, CarouselType.Social);
+
+
+            return model;
+        }
+        #endregion
+
         #region SetFirstAndLastInCollection
         private static void SetFirstAndLastInCollection(TabbedOnpageOptimisationModel model)
         {
             ContentTextModel ctt;
-            ctt = model.OnpageOptimisationTab1.OnpageOptimisationTab1.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_SECTION_TITLE"));
+            ctt = model.OnpageOptimisationTab1.OnpageOptimisationTabData
+                .FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("CLOUDWAREEXPLAINED_SECTION_TITLE"));
             if (ctt != null)
             {
                 ctt.IsFirstInCollection = true;
             }
+            model.OnpageOptimisationTab1.OnpageOptimisationTabData.Last().IsLastInCollection = true;
 
-            ctt = model.OnpageOptimisationTab2.OnpageOptimisationTab1.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_TITLE"));
-            if (ctt != null)
+            if (model.OnpageOptimisationTab2.OnpageOptimisationTabData != null)
             {
-                ctt.IsFirstInCollection = true;
+                ctt = model.OnpageOptimisationTab2.OnpageOptimisationTabData.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("10REASONSFORUSINGCLOUDWARE_SECTION_TITLE"));
+                if (ctt != null)
+                {
+                    ctt.IsFirstInCollection = true;
+                }
+                model.OnpageOptimisationTab2.OnpageOptimisationTabData.Last().IsLastInCollection = true;
             }
 
-            ctt = model.OnpageOptimisationTab3.OnpageOptimisationTab1.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE"));
-            if (ctt != null)
+            if (model.OnpageOptimisationTab3.OnpageOptimisationTabData != null)
             {
-                ctt.IsFirstInCollection = true;
+                ctt = model.OnpageOptimisationTab3.OnpageOptimisationTabData.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE"));
+                if (ctt != null)
+                {
+                    ctt.IsFirstInCollection = true;
+                }
+                model.OnpageOptimisationTab3.OnpageOptimisationTabData.Last().IsLastInCollection = true;
             }
 
-            model.OnpageOptimisationTab1.OnpageOptimisationTab1.Last().IsLastInCollection = true;
-            model.OnpageOptimisationTab2.OnpageOptimisationTab1.Last().IsLastInCollection = true;
-            model.OnpageOptimisationTab3.OnpageOptimisationTab1.Last().IsLastInCollection = true;
+            if (model.OnpageOptimisationTab4 != null)
+            {
+                if (model.OnpageOptimisationTab4.OnpageOptimisationTabData != null)
+                {
+                    ctt = model.OnpageOptimisationTab4.OnpageOptimisationTabData.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE"));
+                    if (ctt != null)
+                    {
+                        ctt.IsFirstInCollection = true;
+                    }
+                    model.OnpageOptimisationTab4.OnpageOptimisationTabData.Last().IsLastInCollection = true;
+                }
+            }
+            
+            
 
         }
 
         #endregion
+
+        #region SetFirstAndLastInCollectionPP
+        private static void SetFirstAndLastInCollectionPP(TabbedOnpageOptimisationModel model)
+        {
+            ContentTextModel ctt;
+            ctt = model.OnpageOptimisationTab1.OnpageOptimisationTabData
+                .FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_OVERVIEW_SECTION_TITLE"));
+            if (ctt != null)
+            {
+                ctt.IsFirstInCollection = true;
+            }
+            model.OnpageOptimisationTab1.OnpageOptimisationTabData.Last().IsLastInCollection = true;
+
+            if (model.OnpageOptimisationTab2.OnpageOptimisationTabData != null)
+            {
+                ctt = model.OnpageOptimisationTab2.OnpageOptimisationTabData.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_BUSINESSPARTNER_SECTION_TITLE"));
+                if (ctt != null)
+                {
+                    ctt.IsFirstInCollection = true;
+                }
+                model.OnpageOptimisationTab2.OnpageOptimisationTabData.Last().IsLastInCollection = true;
+            }
+
+            if (model.OnpageOptimisationTab3.OnpageOptimisationTabData != null)
+            {
+                ctt = model.OnpageOptimisationTab3.OnpageOptimisationTabData.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_STRATEGICPARTNER_SECTION_TITLE"));
+                if (ctt != null)
+                {
+                    ctt.IsFirstInCollection = true;
+                }
+                model.OnpageOptimisationTab3.OnpageOptimisationTabData.Last().IsLastInCollection = true;
+            }
+
+            if (model.OnpageOptimisationTab4 != null)
+            {
+                if (model.OnpageOptimisationTab4.OnpageOptimisationTabData != null)
+                {
+                    ctt = model.OnpageOptimisationTab4.OnpageOptimisationTabData.FirstOrDefault(x => x.ContentTextType.ContentTextTypeName.EndsWith("PARTNERPROGRAMME_REFERREWARDPARTNER_SECTION_TITLE"));
+                    if (ctt != null)
+                    {
+                        ctt.IsFirstInCollection = true;
+                    }
+                    model.OnpageOptimisationTab4.OnpageOptimisationTabData.Last().IsLastInCollection = true;
+                }
+            }
+
+
+
+        }
+
+        #endregion
+
+        #region IsFirstTimeVisit
+        public static bool IsFirstTimeVisit(HttpRequestBase request, HttpResponseBase response)
+        {
+            // check if cookie exists and if yes update
+            HttpCookie existingCookie = request.Cookies["CCW_FirstTimeVisit"];
+            if (existingCookie != null)
+            {
+                return false;
+            }
+            else
+            {
+                // create a cookie
+                HttpCookie newCookie = new HttpCookie("CCW_FirstTimeVisit", DateTime.Now.ToString());
+                newCookie.Expires = DateTime.Today.AddMonths(12);
+                response.Cookies.Add(newCookie);
+                return true;
+            }
+        }
+        #endregion
+
     }
 }

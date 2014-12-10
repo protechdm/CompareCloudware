@@ -9,6 +9,7 @@ using CompareCloudware.POCOQueryRepository.Helpers;
 using CompareCloudware.Domain.Contracts.Repositories;
 using CompareCloudware.Domain.Models;
 using CompareCloudware.Web.Models;
+using CompareCloudware.Web.Models.EMailTemplateModels;
 using CompareCloudware.Web.Helpers;
 using System.Data.Entity;
 using LinqKit;
@@ -18,11 +19,14 @@ using PagedList;
 using System.Configuration;
 using System.Collections;
 using System.Net;
-using System.Data.Objects;
+//using System.Data.Objects;
 using System.Text;
 //using System.Web.WebPages;
 //using Omu.AwesomeMvc;
 //using System.Web.Routing;
+using Recaptcha.Web;
+using Recaptcha.Web.Mvc;
+using System.Threading.Tasks;
 
 namespace CompareCloudware.Web.Controllers
 {
@@ -91,6 +95,8 @@ namespace CompareCloudware.Web.Controllers
         //[SessionExpireFilter]
         public ActionResult Index(string id, bool? showDiagnostics)
         {
+            //return View("Index", new HomePageModel(CustomSession));
+            //return View("index2",new HomePageModel(CustomSession));
             Logger.Debug("Entered site through IndexCustom");
 
             CustomSession.DummyVXMode = false;
@@ -98,6 +104,17 @@ namespace CompareCloudware.Web.Controllers
             CustomSession.ShowSearchTextBox = false;
 
             bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+            if (testMode)
+            {
+                CustomSession.Forename = "test";
+                CustomSession.Surname = "test";
+                CustomSession.EMail = "w@w.co";
+                CustomSession.NumberOfUsers = 99;
+            }
+            //return RedirectToAction("PartnerProgrammePage");
+            //var httpRequest = new HttpRequest("EMailTemplates/BusinessPartner", "http://localhost:81/businesspartner", null);
+            //string x = RenderRazorView.RenderViewToString(this, "EMailTemplates/BusinessPartner", new BusinessPartnerModel() { Forename = "f", Surname = "s", Vendorname = "v" });
+
             if (showDiagnostics == null)
             {
                 CustomSession.ShowDiagnostics = false;
@@ -116,7 +133,7 @@ namespace CompareCloudware.Web.Controllers
             var model = ModelHelpers.ConstructHomePageModel(new HomePageModel(CustomSession, ModelHelpers.ConvertContentPageToContentPageModel(_repository.GetContentPage("Home")))
             {
                 SearchInputModel = new SearchInputModel(CustomSession)
-            }, this.CustomSession, _repository,Request);
+            }, this.CustomSession, _repository,Request, this.HttpContext.Response);
             ViewBag.VisibleResultsTab = 1;
             return MetaDataView("HomePage",model);
 
@@ -240,8 +257,9 @@ namespace CompareCloudware.Web.Controllers
                 CustomSession.ShowSearchTextBox = false;
                 var model = ModelHelpers.ConstructHomePageModel(new HomePageModel(CustomSession,ModelHelpers.ConvertContentPageToContentPageModel(_repository.GetContentPage("Home"))) 
                 { 
-                    SearchInputModel = new SearchInputModel(CustomSession) 
-                },this.CustomSession,_repository,Request);
+                    SearchInputModel = new SearchInputModel(CustomSession),
+                    SearchInputModelFirstTime = new SearchInputModel(CustomSession),
+                }, this.CustomSession, _repository, Request, this.HttpContext.Response);
                 ViewBag.VisibleResultsTab = 1;
                 return View(model);
             }
@@ -258,22 +276,29 @@ namespace CompareCloudware.Web.Controllers
         #region HomePage POST
         [HttpPost]
         public ActionResult HomePage(HomePageModel model)
-        //public ActionResult HomePage(HomePageModel model)
-        //public ActionResult HomePage()
         {
+            return HomePagePost(model);
+        }
+        #endregion
 
-            //HomePageModel model = new HomePageModel();
+        #region HomePageFirstTime
+        [HttpPost]
+        public ActionResult HomePageFirstTime(HomePageModel model)
+        {
+            model.SearchInputModel = model.SearchInputModelFirstTime;
+            return HomePagePost(model);
+        }
+        #endregion
 
+        #region HomePagePost
+        private ActionResult HomePagePost(HomePageModel model)
+        {
             if (!model.SearchInputModel.TermsAndConditions)
             {
-                //ModelState.Clear();
-                //ModelState["ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID"] = null;
-                //ModelState.Remove("ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID");
                 model.ShowConfirmationDialog = true;
                 model.ConfirmationDialogTitle = "Terms & Conditions";
                 model.ConfirmationDialogMessage1 = "Please accept the terms & conditions to proceed";
-                return View(ModelHelpers.ConstructHomePageModel(model,this.CustomSession,_repository,Request));
-
+                return View(ModelHelpers.ConstructHomePageModel(model, this.CustomSession, _repository, Request, this.HttpContext.Response));
             }
 
             if (model.SearchInputModel.ChosenNumberOfUsers == "User numbers")
@@ -281,35 +306,24 @@ namespace CompareCloudware.Web.Controllers
                 model.ShowConfirmationDialog = true;
                 model.ConfirmationDialogTitle = "User numbers";
                 model.ConfirmationDialogMessage1 = "Please select the User number to proceed";
-                return View(ModelHelpers.ConstructHomePageModel(model,this.CustomSession,_repository,Request));
+                return View(ModelHelpers.ConstructHomePageModel(model, this.CustomSession, _repository, Request, this.HttpContext.Response));
             }
 
             if (ModelState.IsValid)
             {
-                Person person = ModelHelpers.AddPerson(model.SearchInputModel.Forename, model.SearchInputModel.Surname, model.SearchInputModel.EMail, int.Parse(model.SearchInputModel.ChosenNumberOfUsers),_repository);
+                Person person = ModelHelpers.AddPerson(PersonTypeEnum.User, model.SearchInputModel.Forename, model.SearchInputModel.Surname, model.SearchInputModel.EMail, int.Parse(model.SearchInputModel.ChosenNumberOfUsers),_repository);
                 CustomSession.EMail = person.EMail;
                 CustomSession.Forename = person.Forename;
                 CustomSession.Surname = person.Surname;
                 CustomSession.NumberOfUsers = person.NumberOfEmployees;
                 CustomSession.PersonID = person.PersonID;
-                //model.SearchInputModel.Categories = this.GetCategories();
-                //model.SearchInputModel.NumberOfUsers = this.GetNumberOfUsers();
 
                 _siteAnalyticsLogger.Log(_repository, ActionType.ClickHomePageCompare, null, model.SearchInputModel.ChosenCategoryID, person.PersonID);
 
-                return RedirectToAction("SearchPage", new { categoryID = model.SearchInputModel.ChosenCategoryID, numberOfUsers = model.SearchInputModel.ChosenNumberOfUsers, useCachedData = false });
+                return RedirectToAction("Comparing", new { categoryID = model.SearchInputModel.ChosenCategoryID, numberOfUsers = model.SearchInputModel.ChosenNumberOfUsers, useCachedData = false });
             }
             else
             {
-                //model.SearchInputModel.DisplayStyle = SearchInputModelStyle.HomePage;
-
-                //model.TabbedSearchResultsModel = new TabbedSearchResultsModel(CustomSession);
-                //model.TabbedSearchResultsModel.FeaturedCloudware = ConvertSearchResultToSearchResultModel(_repository.GetFeaturedCloudware(SEARCH_RESULTS_PER_PAGE_HOME_PAGE_FEATURED));
-                //model.TabbedSearchResultsModel.TopTenCloudware = ConvertSearchResultToSearchResultModel(_repository.GetTopTenCloudware(SEARCH_RESULTS_PER_PAGE_HOME_PAGE_TOP10));
-                //model.TabbedSearchResultsModel.NewCloudware = ConvertSearchResultToSearchResultModel(_repository.GetNewCloudware(SEARCH_RESULTS_PER_PAGE_HOME_PAGE_NEW));
-
-                //ModelState.Clear();
-
                 if (ModelState["SearchInputModel.Forename"].Errors.Count > 0 || model.SearchInputModel.Forename == ViewModelHelpers.FORENAME_ERROR_MESSAGE)
                 {
                     ModelState["SearchInputModel.Forename"].Value = new ValueProviderResult(ViewModelHelpers.FORENAME_ERROR_MESSAGE, model.SearchInputModel.Forename, System.Globalization.CultureInfo.CurrentCulture);
@@ -327,21 +341,98 @@ namespace CompareCloudware.Web.Controllers
                     }
                     ModelState.AddModelError("SearchInputModel.EMail", "www");
                 }
+                return View(ModelHelpers.ConstructHomePageModel(model, this.CustomSession, _repository, Request, this.HttpContext.Response));
+            }
+        }
+        #endregion
 
-                //ModelState.Clear();
+        #region CategoryPagePost
+        private ActionResult CategoryPagePost(CategoryPageModel model)
+        {
+            if (!model.SearchInputModel.TermsAndConditions)
+            {
+                model.ShowConfirmationDialog = true;
+                model.ConfirmationDialogTitle = "Terms & Conditions";
+                model.ConfirmationDialogMessage1 = "Please accept the terms & conditions to proceed";
+                return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
+            }
 
-                //return View(model);
-                return View(ModelHelpers.ConstructHomePageModel(model,this.CustomSession,_repository,Request));
-                //return RedirectToAction("HomePage");
+            if (model.SearchInputModel.ChosenNumberOfUsers == "User numbers")
+            {
+                model.ShowConfirmationDialog = true;
+                model.ConfirmationDialogTitle = "User numbers";
+                model.ConfirmationDialogMessage1 = "Please select the User number to proceed";
+                return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
+            }
+
+            if (ModelState.IsValid)
+            {
+                Person person = ModelHelpers.AddPerson(PersonTypeEnum.User, model.SearchInputModel.Forename, model.SearchInputModel.Surname, model.SearchInputModel.EMail, int.Parse(model.SearchInputModel.ChosenNumberOfUsers), _repository);
+                CustomSession.EMail = person.EMail;
+                CustomSession.Forename = person.Forename;
+                CustomSession.Surname = person.Surname;
+                CustomSession.NumberOfUsers = person.NumberOfEmployees;
+                CustomSession.PersonID = person.PersonID;
+
+                _siteAnalyticsLogger.Log(_repository, ActionType.ClickHomePageCompare, null, model.SearchInputModel.ChosenCategoryID, person.PersonID);
+
+                return RedirectToAction("Comparing", new { categoryID = model.SearchInputModel.ChosenCategoryID, numberOfUsers = model.SearchInputModel.ChosenNumberOfUsers, useCachedData = false });
+            }
+            else
+            {
+                if (ModelState["SearchInputModel.Forename"].Errors.Count > 0 || model.SearchInputModel.Forename == ViewModelHelpers.FORENAME_ERROR_MESSAGE)
+                {
+                    ModelState["SearchInputModel.Forename"].Value = new ValueProviderResult(ViewModelHelpers.FORENAME_ERROR_MESSAGE, model.SearchInputModel.Forename, System.Globalization.CultureInfo.CurrentCulture);
+                    ModelState.AddModelError("SearchInputModel.Forename", "www");
+                    model.SearchInputModel.Forename = model.SearchInputModel.Forename == null ? "Please enter your name" : model.SearchInputModel.Forename;
+                }
+
+
+                if (ModelState["SearchInputModel.EMail"].Errors.Count > 0)
+                {
+                    if (model.SearchInputModel.EMail == ViewModelHelpers.EMAIL_ERROR_MESSAGE || model.SearchInputModel.EMail == null)
+                    {
+                        ModelState["SearchInputModel.EMail"].Value = new ValueProviderResult(ViewModelHelpers.EMAIL_ERROR_MESSAGE, model.SearchInputModel.EMail, System.Globalization.CultureInfo.CurrentCulture);
+                        model.SearchInputModel.EMail = model.SearchInputModel.EMail == null ? "Please enter your email address" : model.SearchInputModel.EMail;
+                    }
+                    ModelState.AddModelError("SearchInputModel.EMail", "www");
+                }
+                return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
             }
         }
         #endregion
 
 
 
+        #region Comparing
+        public ActionResult Comparing(int categoryID, int numberOfUsers, bool useCachedData)
+        {
+            SearchPageModel searchPageModel = new SearchPageModel(CustomSession);
+            searchPageModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID = categoryID;
+            searchPageModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers = numberOfUsers;
+            return View("Comparing", searchPageModel);
+        }
+        #endregion
 
+        #region SearchResultsCount
+        [HttpGet]
+        public JsonResult SearchResultsCount(int categoryID, int numberOfUsers)
+        {
+            SearchPageModel searchPageModel = new SearchPageModel(CustomSession);
+            searchPageModel.ContainerModel.SearchFiltersModel = new SearchFiltersModel()
+                {
+                    SearchFiltersModelOneColumn = new SearchFiltersModelOneColumn()
+                    {
+                        ChosenCategoryID = categoryID,
+                        ChosenNumberOfUsers = numberOfUsers,
+                    }
+                };
 
-
+            //int searchResults = ModelHelpers.GetSearchResults(searchModel, this.CustomSession, _repository, Logger, _siteAnalyticsLogger)
+            var searchResults = ModelHelpers.SearchProductsCount(searchPageModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn, CustomSession, _repository, _siteAnalyticsLogger, null);
+            return Json(searchResults,JsonRequestBehavior.AllowGet);
+        }
+        #endregion
 
 
         #region SearchPage
@@ -373,7 +464,7 @@ namespace CompareCloudware.Web.Controllers
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersDevicesCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersBrowsersCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersMobilePlatformsCollapsed = true;
-                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = false;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportTypesCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportDaysCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportHoursCollapsed = true;
@@ -411,7 +502,7 @@ namespace CompareCloudware.Web.Controllers
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersBrowsersCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersMobilePlatformsCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersApplicationFeaturesCollapsed = false;
-                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = false;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportTypesCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportDaysCollapsed = true;
                 searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportHoursCollapsed = true;
@@ -423,7 +514,8 @@ namespace CompareCloudware.Web.Controllers
                 if (Convert.ToBoolean(ConfigurationManager.AppSettings["UseWeighting"]))
                 {
                     searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel, this.CustomSession, _repository, Logger, _siteAnalyticsLogger)
-                        .OrderBy(x => x.SearchResultWeighting).ToList();
+                        //.OrderBy(x => x.SearchResultWeighting).ToList()
+                        ;
                 }
                 else
                 {
@@ -531,6 +623,194 @@ namespace CompareCloudware.Web.Controllers
         }
         #endregion
 
+        #region SearchPagePartial
+        [SessionExpireFilter]
+        public ActionResult SearchPagePartial(int categoryID, int numberOfUsers, bool useCachedData)
+        {
+            CustomSession.SelectedCategoryID = categoryID;
+            ModelHelpers.SetSessionVariables(Request, CustomSession);
+            SearchPageModel searchModel = new SearchPageModel(CustomSession);
+
+            if (useCachedData)
+            {
+                ModelHelpers.GetModelFromViewData(searchModel, this);
+
+                if (searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn == null)
+                {
+                    return RedirectToAction("HomePage");
+                }
+
+                categoryID = (int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID;
+                ModelHelpers.SetSearchResultsColumnHeaders(categoryID, searchModel, _repository);
+
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures, categoryID, "UNLIMITED", _repository);
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures, categoryID, "UNLIMITED", _repository);
+
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersCategoriesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersUsersCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersOperatingSystemsCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersDevicesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersBrowsersCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersMobilePlatformsCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportTypesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportDaysCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportHoursCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersLanguagesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersTimeZonesCollapsed = true;
+            }
+            else
+            {
+                Logger.Debug("SearchPage#1 - " + DateTime.Now.TimeOfDay.ToString());
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID = categoryID;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.Categories = ModelHelpers.GetCategories(this.CustomSession, _repository);
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers = numberOfUsers;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.NumberOfUsers = ModelHelpers.GetNumberOfUsers(_repository);
+
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportDays = ModelHelpers.GetSupportDays(_repository);
+
+                int? selectedSupportHours = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenSupportHours;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportHours = ModelHelpers.GetSupportHours(selectedSupportHours, categoryID, this.CustomSession, _repository);
+
+                int? selectedTimeZone = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenTimeZone;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersTimeZones = ModelHelpers.GetTimeZones(selectedTimeZone, categoryID, _repository);
+
+                Logger.Debug("SearchPage#2 - " + DateTime.Now.TimeOfDay.ToString());
+                searchModel = ModelHelpers.GetSearchModelFiltersOneColumn(searchModel, false, true, this.CustomSession, _repository);
+
+                searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.ChosenCategoryID = categoryID;
+
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures, categoryID, "UNLIMITED", _repository);
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures, categoryID, "UNLIMITED", _repository);
+
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersCategoriesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersUsersCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersOperatingSystemsCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersDevicesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersBrowsersCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersMobilePlatformsCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersApplicationFeaturesCollapsed = false;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportTypesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportDaysCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportHoursCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersLanguagesCollapsed = true;
+                searchModel.ContainerModel.SearchFiltersModel.SearchFiltersTimeZonesCollapsed = true;
+
+                Logger.Debug("SearchPage#3 - " + DateTime.Now.TimeOfDay.ToString());
+                //searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = this.GetSearchResults(searchModel).ToList().OrderBy(x => x.VendorName);
+                if (Convert.ToBoolean(ConfigurationManager.AppSettings["UseWeighting"]))
+                {
+                    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel, this.CustomSession, _repository, Logger, _siteAnalyticsLogger)
+                        //.OrderBy(x => x.SearchResultWeighting).ToList()
+                        ;
+                }
+                else
+                {
+                    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel, this.CustomSession, _repository, Logger, _siteAnalyticsLogger).OrderBy(x => x.VendorName).ToList();
+                }
+
+                ModelHelpers.SetSearchResultsColumnHeaders(categoryID, searchModel, _repository);
+
+                Logger.Debug("SearchPage#4 - " + DateTime.Now.TimeOfDay.ToString());
+                searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsSummary =
+                    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults.Select(x => new SearchResultSummaryModel()
+                    {
+                        ApplicationCostOneOff = x.ApplicationCostOneOff,
+                        ApplicationCostPerAnnum = x.ApplicationCostPerAnnum,
+                        ApplicationCostPerAnnumFrom = x.ApplicationCostPerAnnumFrom,
+                        ApplicationCostPerAnnumTo = x.ApplicationCostPerAnnumTo,
+                        ApplicationCostPerAnnumPOA = x.ApplicationCostPerAnnumPOA,
+                        ApplicationCostPerAnnumOffered = x.ApplicationCostPerAnnumOffered,
+                        ApplicationCostPerAnnumFree = x.ApplicationCostPerAnnumFree,
+                        ApplicationCostPerAnnumIsForUnlimitedUsers = x.ApplicationCostPerAnnumIsForUnlimitedUsers,
+                        ApplicationCostPerMonth = x.ApplicationCostPerMonth,
+                        ApplicationCostPerMonthFrom = x.ApplicationCostPerMonthFrom,
+                        ApplicationCostPerMonthTo = x.ApplicationCostPerMonthTo,
+                        ApplicationCostPerMonthPOA = x.ApplicationCostPerMonthPOA,
+                        ApplicationCostPerMonthOffered = x.ApplicationCostPerMonthOffered,
+                        ApplicationCostPerMonthFree = x.ApplicationCostPerMonthFree,
+                        ApplicationCostPerMonthExtra = x.ApplicationCostPerMonthExtra,
+                        ApplicationCostPerMonthIsForUnlimitedUsers = x.ApplicationCostPerMonthIsForUnlimitedUsers,
+                        PayAsYouGo = x.PayAsYouGo,
+                        CallsPackageCostPerMonth = x.CallsPackageCostPerMonth,
+                        CloudApplicationID = x.CloudApplicationID,
+                        Description = x.Description,
+                        FreeTrialPeriod = x.FreeTrialPeriod,
+                        //IsLastInCollection = x.IsLastInCollection,
+                        ResultDisplayFormat = x.ResultDisplayFormat,
+                        SearchResultID = x.SearchResultID,
+                        ServiceName = x.ServiceName,
+                        SetupFee = x.SetupFee,
+                        VendorID = x.VendorID,
+                        VendorLogo = x.VendorLogo,
+                        VendorLogoURL = x.VendorLogoURL,
+                        VendorName = x.VendorName,
+                        CloudApplicationCategoryTag = x.CloudApplicationCategoryTag,
+                        CloudApplicationShopTag = x.CloudApplicationShopTag,
+
+                        OperatingSystems = x.OperatingSystems,
+                        Devices = x.Devices,
+                        SupportTypes = x.SupportTypes,
+                        SupportDays = x.SupportDays,
+                        Languages = x.Languages,
+                        CloudApplicationFeatures = x.CloudApplicationFeatures,
+                        SupportHours = x.SupportHours,
+                        Currency = new CurrencyModel()
+                        {
+                            CurrencyID = x.Currency.CurrencyID,
+                            CurrencyName = x.Currency.CurrencyName,
+                            CurrencyShortName = x.Currency.CurrencyShortName,
+                            CurrencySymbol = x.Currency.CurrencySymbol,
+                            ExchangeRateSterling = x.Currency.ExchangeRateSterling,
+                            UseExchangeRateForSorting = x.Currency.UseExchangeRateForSorting,
+                        }
+
+                    })
+                    .ToList()
+                    ;
+
+                searchModel.ContainerModel.SearchResultsModel.TestValue = "TEST";
+                searchModel.ContainerModel.CustomSession = CustomSession;
+                searchModel.ContainerModel.SearchResultsModel.CustomSession = CustomSession;
+
+                //searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchFiltersOperatingSystems =
+                //    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersOperatingSystems;
+                //searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchResults =
+                //    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults;
+
+                //ViewBag.SearchFilters = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn;
+                //ViewBag.SearchResults = searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults;
+                //ViewBag.SearchResultsSummary = searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsSummary;
+
+                //searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage =
+                //    (PagedList.IPagedList<SearchResultModelOneColumn>)searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults;
+            }
+            Logger.Debug("SearchPage#5 - " + DateTime.Now.TimeOfDay.ToString());
+            ModelHelpers.SetSearchResultsSortOrder(null, null, searchModel);
+            ModelHelpers.PaginateSearchResults(searchModel, 1);
+
+            //searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage
+            ModelHelpers.FixUpViewData(searchModel, this);
+            //ViewData["SearchResults"] = ViewBag.SearchResults;
+            //ViewData["SearchResultsSummary"] = ViewBag.SearchResultsSummary;
+
+            //TempData["SearchFilters"] = ViewBag.SearchFilters;
+            //TempData["SearchResults"] = ViewBag.SearchResults;
+            //TempData["SearchResultsSummary"] = ViewBag.SearchResultsSummary;
+
+            ViewBag.NameSortParm = "Vendor desc";
+            ViewBag.VisibleResultsTab = 1;
+
+            searchModel.CustomSession.HasSearchResults = true;
+
+            ModelHelpers.GetAdvertisingImages(searchModel, this.CustomSession, _repository);
+
+            ModelHelpers.LogSearchResultModelSiteAnalytic(searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage, categoryID, _siteAnalyticsLogger, this.CustomSession, _repository);
+            //return View("SearchPage", searchModel);
+            return PartialView("SearchPagePartial", searchModel);
+        }
+        #endregion
 
         #region SearchPage POST
         [HttpPost]
@@ -752,6 +1032,15 @@ namespace CompareCloudware.Web.Controllers
 
             //@{href = Model.CloudApplicationCategoryTag + "/" + Model.CloudApplicationShopTag ;}
                     //return RedirectToAction("Shop", new { theCategory = categoryPart, theShop = shopPart });
+
+                    EMailCloudApplicationModel ecam = new EMailCloudApplicationModel(CustomSession)
+                    {
+                        CloudApplicationID = cloudApplicationID,
+                        CloudApplicationURL = shopURL,
+                        EMailAddress = CustomSession.EMail,
+                    };
+
+                    return RedirectToRoute("TakingToSelectionWithPrompt", ecam);
                     return RedirectToRoute("Shop", new { category = categoryPart, shop = shopPart, cloudApplicationID = cloudApplicationID });
                     return RedirectToAction("Shop", new { category = categoryPart, shop = shopPart, cloudApplicationID = cloudApplicationID });
 
@@ -810,6 +1099,32 @@ namespace CompareCloudware.Web.Controllers
         }
         #endregion
 
+
+        #region TakeToSelection
+        public ActionResult TakeToSelection(int cloudApplicationID)
+        {
+            string shopURL = _repository.GetShopURL(cloudApplicationID);
+            string categoryPart = shopURL.Substring(0, shopURL.IndexOf("/"));
+            string shopPart = shopURL.Substring(shopURL.IndexOf("/") + 1);
+
+            EMailCloudApplicationModel ecam = new EMailCloudApplicationModel(CustomSession)
+            {
+                CloudApplicationID = cloudApplicationID,
+                CloudApplicationURL = shopURL,
+                EMailAddress = CustomSession.EMail,
+            };
+            return View("TakingToSelectionWithPrompt", ecam);
+        }
+        #endregion
+
+
+
+        #region TakingToSelectionWithPrompt
+        public ActionResult TakingToSelectionWithPrompt(EMailCloudApplicationModel eMailCloudApplicationModel)
+        {
+            return View("TakingToSelectionWithPrompt", eMailCloudApplicationModel);
+        }
+        #endregion
 
         #region GetNextSearchResultsPage
         public ActionResult GetNextSearchResultsPage(SearchPageModel searchModel, FormCollection formCollection, int page)
@@ -962,38 +1277,11 @@ namespace CompareCloudware.Web.Controllers
                     }).ToList();
 
                     ModelHelpers.SetSearchResultsSortOrder(sortColumn, currentSortOrder, model);
+                    ModelHelpers.SetSearchResultsColumnHeaders((int)model.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, model, _repository);
                     ModelHelpers.PaginateSearchResults(model, 1);
 
                     ModelHelpers.LogSearchResultModelSiteAnalytic(model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage, (int)model.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, _siteAnalyticsLogger, this.CustomSession, _repository);
                     ModelHelpers.FixUpViewData(model,this);
-                    #endregion
-
-
-                    #region crap
-                    //var results = this.SearchProducts(model3.SearchFiltersModel, null).ToList();
-                    ////var temp = results.Where(x => x.SetupFee == null).ToList();
-
-                    ////var results = _repository.GetSearchResults()
-                    //var results2 = results
-                    //    .Select(y => new SearchResultModel()
-                    //    {
-                    //        CloudApplicationID = y.CloudApplicationID,
-                    //        Description = y.Description,
-                    //        SearchResultID = y.CloudApplicationID,
-                    //        ServiceName = y.ServiceName,
-                    //        VendorLogoURL = y.Vendor.VendorLogoURL.AddImagePath(),
-                    //        VendorName = y.Vendor.VendorName,
-                    //        ApplicationCostOneOff = y.ApplicationCostOneOff,
-                    //        ApplicationCostPerAnnum = y.ApplicationCostPerAnnum,
-                    //        ApplicationCostPerMonth = y.ApplicationCostPerMonth,
-                    //        ApplicationCostPerMonthExtra = y.ApplicationCostPerMonthExtra,
-                    //        CallsPackageCostPerMonth = y.CallsPackageCostPerMonth,
-                    //        FreeTrialPeriod = y.FreeTrialPeriod.FreeTrialPeriodName,
-                    //        SetupFee = y.SetupFee != null ? y.SetupFee.SetupFeeName : null,
-
-                    //    }
-                    //);
-                    //model3.SearchResultsModel.SearchResults = results2.ToList();
                     #endregion
                 }
                 else
@@ -1173,6 +1461,7 @@ namespace CompareCloudware.Web.Controllers
 
                 ModelHelpers.SetSearchResultsSortOrder(sortColumn, currentSortOrder, model);
                 ModelHelpers.PaginateSearchResults(model, 1);
+                ModelHelpers.GetAdvertisingImages(model, this.CustomSession, _repository);
 
                 ModelHelpers.LogSearchResultModelSiteAnalytic(model.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage, (int)newCategory, _siteAnalyticsLogger, this.CustomSession, _repository);
 
@@ -1638,12 +1927,12 @@ namespace CompareCloudware.Web.Controllers
 
                 if (ModelState.IsValid)
                 {
-                    var applicationRequestInserted = InsertApplicationRequest(model);
+                    //var applicationRequestInserted = InsertApplicationRequest(model);
 
                     FreeTrialBuyNowModel tempFreeTryBuyNowModel = model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow;
                     ModelHelpers.GetModelFromViewData(model, this);
                     model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow = tempFreeTryBuyNowModel;
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypes = ModelHelpers.GetRequestTypes(this.CustomSession, _repository);
+                    //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypes = ModelHelpers.GetRequestTypes(this.CustomSession, _repository);
                     model.ShowConfirmationDialog = true;
                     if (model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID == 1)
                     {
@@ -1788,27 +2077,77 @@ namespace CompareCloudware.Web.Controllers
         }
         #endregion
 
+        [HttpPost]
+        public ActionResult InsertApplicationRequestFreeTrial(FreeTrialBuyNowModel model)
+        {
+            return null;
+        }
+
         #region InsertApplicationRequest POST
         [HttpPost]
-        public ActionResult InsertApplicationRequest(SearchPageModel model)
+        public ActionResult InsertApplicationRequest(SearchPageModel model, bool sendToColleague = false)
+        //public ActionResult InsertApplicationRequest(FreeTrialBuyNowModel postModel, bool sendToColleague = false)
         {
-            if (ModelState.IsValid)
-            {
+            //SearchPageModel model = new SearchPageModel(CustomSession);
+            //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow = postModel;
+
+            //if (ModelState.IsValid)
+            //{
                 CloudApplicationRequest ar = new CloudApplicationRequest();
 
-                Person p = ModelHelpers.AddPerson(
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Forename,
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Surname,
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress,
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.NumberOfEmployees,
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Telephone,
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Company,
-                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.JobTitle,
-                    _repository
-                    );
+                Person p = null;
+
+                var BuyNow = 2;
+                var EMail = 7;
+                var FreeTrial = 1;
+
+                if (!sendToColleague)
+                {
+                    p = ModelHelpers.AddPerson(
+                        PersonTypeEnum.User,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Forename,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Surname,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.NumberOfEmployees,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Telephone,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Company,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.JobTitle,
+                        _repository
+                        );
+
+                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID =
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.FreeTrial ? FreeTrial : BuyNow;
                 
+                }
+                else
+                {
+                    p = ModelHelpers.AddPerson(
+                        PersonTypeEnum.Colleague,
+                        //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Forename,
+                        //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Surname,
+                        model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddressColleague,
+                        //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.NumberOfEmployees,
+                        //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Telephone,
+                        //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Company,
+                        //model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.JobTitle,
+                        false,
+                        _repository
+                        );
+
+                    ModelHelpers.AddColleagueLink(p, model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress, _repository);
+
+                    model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID = EMail;
+
+                    ar.RequestData = model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.MessageToColleague;
+
+
+
+                }
+
                 ar.PersonID = p.PersonID;
                 ar.CloudApplicationID = model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.CloudApplicationID;
+                
+                
                 //ar.EMail = true;
                 //ar.FreeTrial = model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.FreeTrial;
                 //ar.BuyNow = model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.BuyNow;
@@ -1849,7 +2188,7 @@ namespace CompareCloudware.Web.Controllers
                             _siteAnalyticsLogger.Log(_repository, ActionType.BuyFormSubmission, ar.CloudApplicationID, null, CustomSession.PersonID);
                         }
                         break;
-                    case 3:
+                    case 7:
                         if (CustomSession.VisitedViaCategory)
                         {
                             //_siteAnalyticsLogger.Log(_repository, ActionType.EMailSubmission, ar.CloudApplicationID, model.ContainerModel.ChosenCloudApplicationModel.Category.CategoryID, CustomSession.PersonID);
@@ -1863,7 +2202,12 @@ namespace CompareCloudware.Web.Controllers
 
                 }
                 //return View("SearchPage", model);
-            }
+            //}
+            //else
+            //{
+            //    var errors = ModelState.Select(x => x.Value.Errors.Count > 0).ToList();
+
+            //}
             return null;
             //return retVal;
         }
@@ -1887,6 +2231,7 @@ namespace CompareCloudware.Web.Controllers
             CloudApplicationRequest car = new CloudApplicationRequest();
 
             Person p = ModelHelpers.AddPerson(
+                    PersonTypeEnum.Colleague,
                     model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Forename,
                     model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.Surname,
                     model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress,
@@ -2124,204 +2469,207 @@ namespace CompareCloudware.Web.Controllers
         [HttpPost]
         public ActionResult CategoryPage(CategoryPageModel model)
         {
-            if (!model.SearchInputModel.TermsAndConditions)
-            {
-                //ModelState.Clear();
-                //ModelState["ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID"] = null;
-                //ModelState.Remove("ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID");
-                model.ShowConfirmationDialog = true;
-                model.ConfirmationDialogTitle = "Terms & Conditions";
-                model.ConfirmationDialogMessage1 = "Please accept the terms & conditions to proceed";
-                return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
+            return CategoryPagePost(model);
+            #region DEPRECATED
+        //    if (!model.SearchInputModel.TermsAndConditions)
+        //    {
+        //        //ModelState.Clear();
+        //        //ModelState["ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID"] = null;
+        //        //ModelState.Remove("ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID");
+        //        model.ShowConfirmationDialog = true;
+        //        model.ConfirmationDialogTitle = "Terms & Conditions";
+        //        model.ConfirmationDialogMessage1 = "Please accept the terms & conditions to proceed";
+        //        return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
 
-            }
+        //    }
 
-            if (model.SearchInputModel.ChosenNumberOfUsers == "User numbers")
-            {
-                model.ShowConfirmationDialog = true;
-                model.ConfirmationDialogTitle = "User numbers";
-                model.ConfirmationDialogMessage1 = "Please select the User number to proceed";
-                return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
-            }
+        //    if (model.SearchInputModel.ChosenNumberOfUsers == "User numbers")
+        //    {
+        //        model.ShowConfirmationDialog = true;
+        //        model.ConfirmationDialogTitle = "User numbers";
+        //        model.ConfirmationDialogMessage1 = "Please select the User number to proceed";
+        //        return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
+        //    }
 
-            if (ModelState.IsValid)
-            {
-                #region ISVALID
+        //    if (ModelState.IsValid)
+        //    {
+        //        #region ISVALID
 
-                CustomSession.HasSearchResults = true;
+        //        CustomSession.HasSearchResults = true;
 
-                if (model.SearchInputModel != null)
-                {
-                    Person person = ModelHelpers.AddPerson(model.SearchInputModel.Forename, model.SearchInputModel.Surname, model.SearchInputModel.EMail, int.Parse(model.SearchInputModel.ChosenNumberOfUsers), _repository);
-                    CustomSession.EMail = person.EMail;
-                    CustomSession.Forename = person.Forename;
-                    CustomSession.Surname = person.Surname;
-                    CustomSession.NumberOfUsers = person.NumberOfEmployees;
-                    CustomSession.PersonID = person.PersonID;
+        //        if (model.SearchInputModel != null)
+        //        {
+        //            Person person = ModelHelpers.AddPerson(model.SearchInputModel.Forename, model.SearchInputModel.Surname, model.SearchInputModel.EMail, int.Parse(model.SearchInputModel.ChosenNumberOfUsers), _repository);
+        //            CustomSession.EMail = person.EMail;
+        //            CustomSession.Forename = person.Forename;
+        //            CustomSession.Surname = person.Surname;
+        //            CustomSession.NumberOfUsers = person.NumberOfEmployees;
+        //            CustomSession.PersonID = person.PersonID;
 
-                    model.SearchInputModel.Categories = ModelHelpers.GetCategories(this.CustomSession,_repository);
-                    model.SearchInputModel.NumberOfUsers = ModelHelpers.GetNumberOfUsers(_repository);
-                    model.SearchInputModel.NumberOfUsers = ModelHelpers.AddNumberOfUsersToList(model.SearchInputModel.NumberOfUsers, "User numbers");
+        //            model.SearchInputModel.Categories = ModelHelpers.GetCategories(this.CustomSession,_repository);
+        //            model.SearchInputModel.NumberOfUsers = ModelHelpers.GetNumberOfUsers(_repository);
+        //            model.SearchInputModel.NumberOfUsers = ModelHelpers.AddNumberOfUsersToList(model.SearchInputModel.NumberOfUsers, "User numbers");
 
-                    ViewBag.VisibleResultsTab = 1;
-                    SearchPageModel searchModel = new SearchPageModel(CustomSession);
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID = model.SearchInputModel.ChosenCategoryID;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.Categories = model.SearchInputModel.Categories;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers = int.Parse(model.SearchInputModel.ChosenNumberOfUsers);
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.NumberOfUsers = model.SearchInputModel.NumberOfUsers;
+        //            ViewBag.VisibleResultsTab = 1;
+        //            SearchPageModel searchModel = new SearchPageModel(CustomSession);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID = model.SearchInputModel.ChosenCategoryID;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.Categories = model.SearchInputModel.Categories;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers = int.Parse(model.SearchInputModel.ChosenNumberOfUsers);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.NumberOfUsers = model.SearchInputModel.NumberOfUsers;
 
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportDays = ModelHelpers.GetSupportDays(_repository);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportDays = ModelHelpers.GetSupportDays(_repository);
 
-                    int? selectedSupportHours = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenSupportHours;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportHours = ModelHelpers.GetSupportHours(selectedSupportHours,model.SearchInputModel.ChosenCategoryID,this.CustomSession,_repository);
+        //            int? selectedSupportHours = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenSupportHours;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportHours = ModelHelpers.GetSupportHours(selectedSupportHours,model.SearchInputModel.ChosenCategoryID,this.CustomSession,_repository);
 
-                    int? selectedTimeZone = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenTimeZone;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersTimeZones = ModelHelpers.GetTimeZones(selectedTimeZone, model.SearchInputModel.ChosenCategoryID,_repository);
+        //            int? selectedTimeZone = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenTimeZone;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersTimeZones = ModelHelpers.GetTimeZones(selectedTimeZone, model.SearchInputModel.ChosenCategoryID,_repository);
 
-                    searchModel = ModelHelpers.GetSearchModelFiltersOneColumn(searchModel, false, false, this.CustomSession, _repository);
+        //            searchModel = ModelHelpers.GetSearchModelFiltersOneColumn(searchModel, false, false, this.CustomSession, _repository);
 
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures, (int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, "UNLIMITED",_repository);
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures, (int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, "UNLIMITED",_repository);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersFeatures, (int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, "UNLIMITED",_repository);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures = ModelHelpers.SetComboOptionsFromApplicationFeature(searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersApplicationFeatures, (int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, "UNLIMITED",_repository);
 
-                    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel,this.CustomSession, _repository, Logger, _siteAnalyticsLogger).ToList();
+        //            searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel,this.CustomSession, _repository, Logger, _siteAnalyticsLogger).ToList();
 
-                    ModelHelpers.SetSearchResultsColumnHeaders((int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, searchModel, _repository);
+        //            ModelHelpers.SetSearchResultsColumnHeaders((int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, searchModel, _repository);
 
-                    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsSummary =
-                        searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults.Select(x => new SearchResultSummaryModel()
-                        {
-                            ApplicationCostOneOff = x.ApplicationCostOneOff,
+        //            searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsSummary =
+        //                searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults.Select(x => new SearchResultSummaryModel()
+        //                {
+        //                    ApplicationCostOneOff = x.ApplicationCostOneOff,
 
-                            ApplicationCostPerAnnum = x.ApplicationCostPerAnnum,
-                            ApplicationCostPerAnnumFrom = x.ApplicationCostPerAnnumFrom,
-                            ApplicationCostPerAnnumTo = x.ApplicationCostPerAnnumTo,
-                            ApplicationCostPerAnnumPOA = x.ApplicationCostPerAnnumPOA,
-                            ApplicationCostPerAnnumOffered = x.ApplicationCostPerAnnumOffered,
-                            ApplicationCostPerAnnumFree = x.ApplicationCostPerAnnumFree,
-                            ApplicationCostPerAnnumIsForUnlimitedUsers = x.ApplicationCostPerAnnumIsForUnlimitedUsers,
+        //                    ApplicationCostPerAnnum = x.ApplicationCostPerAnnum,
+        //                    ApplicationCostPerAnnumFrom = x.ApplicationCostPerAnnumFrom,
+        //                    ApplicationCostPerAnnumTo = x.ApplicationCostPerAnnumTo,
+        //                    ApplicationCostPerAnnumPOA = x.ApplicationCostPerAnnumPOA,
+        //                    ApplicationCostPerAnnumOffered = x.ApplicationCostPerAnnumOffered,
+        //                    ApplicationCostPerAnnumFree = x.ApplicationCostPerAnnumFree,
+        //                    ApplicationCostPerAnnumIsForUnlimitedUsers = x.ApplicationCostPerAnnumIsForUnlimitedUsers,
 
-                            ApplicationCostPerMonth = x.ApplicationCostPerMonth,
-                            ApplicationCostPerMonthFrom = x.ApplicationCostPerMonthFrom,
-                            ApplicationCostPerMonthTo = x.ApplicationCostPerMonthTo,
-                            ApplicationCostPerMonthPOA = x.ApplicationCostPerMonthPOA,
-                            ApplicationCostPerMonthExtra = x.ApplicationCostPerMonthExtra,
-                            ApplicationCostPerMonthOffered = x.ApplicationCostPerMonthOffered,
-                            ApplicationCostPerMonthFree = x.ApplicationCostPerMonthFree,
-                            ApplicationCostPerMonthIsForUnlimitedUsers = x.ApplicationCostPerMonthIsForUnlimitedUsers,
+        //                    ApplicationCostPerMonth = x.ApplicationCostPerMonth,
+        //                    ApplicationCostPerMonthFrom = x.ApplicationCostPerMonthFrom,
+        //                    ApplicationCostPerMonthTo = x.ApplicationCostPerMonthTo,
+        //                    ApplicationCostPerMonthPOA = x.ApplicationCostPerMonthPOA,
+        //                    ApplicationCostPerMonthExtra = x.ApplicationCostPerMonthExtra,
+        //                    ApplicationCostPerMonthOffered = x.ApplicationCostPerMonthOffered,
+        //                    ApplicationCostPerMonthFree = x.ApplicationCostPerMonthFree,
+        //                    ApplicationCostPerMonthIsForUnlimitedUsers = x.ApplicationCostPerMonthIsForUnlimitedUsers,
 
-                            PayAsYouGo = x.PayAsYouGo,
+        //                    PayAsYouGo = x.PayAsYouGo,
 
-                            CallsPackageCostPerMonth = x.CallsPackageCostPerMonth,
-                            CloudApplicationID = x.CloudApplicationID,
-                            Description = x.Description,
-                            FreeTrialPeriod = x.FreeTrialPeriod,
-                            //IsLastInCollection = x.IsLastInCollection,
-                            ResultDisplayFormat = x.ResultDisplayFormat,
-                            SearchResultID = x.SearchResultID,
-                            ServiceName = x.ServiceName,
-                            SetupFee = x.SetupFee,
-                            VendorID = x.VendorID,
-                            VendorLogo = x.VendorLogo,
-                            VendorLogoURL = x.VendorLogoURL,
-                            VendorName = x.VendorName,
-                            CloudApplicationCategoryTag = x.CloudApplicationCategoryTag,
-                            CloudApplicationShopTag = x.CloudApplicationShopTag,
+        //                    CallsPackageCostPerMonth = x.CallsPackageCostPerMonth,
+        //                    CloudApplicationID = x.CloudApplicationID,
+        //                    Description = x.Description,
+        //                    FreeTrialPeriod = x.FreeTrialPeriod,
+        //                    //IsLastInCollection = x.IsLastInCollection,
+        //                    ResultDisplayFormat = x.ResultDisplayFormat,
+        //                    SearchResultID = x.SearchResultID,
+        //                    ServiceName = x.ServiceName,
+        //                    SetupFee = x.SetupFee,
+        //                    VendorID = x.VendorID,
+        //                    VendorLogo = x.VendorLogo,
+        //                    VendorLogoURL = x.VendorLogoURL,
+        //                    VendorName = x.VendorName,
+        //                    CloudApplicationCategoryTag = x.CloudApplicationCategoryTag,
+        //                    CloudApplicationShopTag = x.CloudApplicationShopTag,
 
-                            OperatingSystems = x.OperatingSystems,
-                            SupportTypes = x.SupportTypes,
-                            SupportDays = x.SupportDays,
-                            Languages = x.Languages,
-                            CloudApplicationFeatures = x.CloudApplicationFeatures,
-                            Currency = new CurrencyModel()
-                            {
-                                CurrencyID = x.Currency.CurrencyID,
-                                CurrencyName = x.Currency.CurrencyName,
-                                CurrencyShortName = x.Currency.CurrencyShortName,
-                                CurrencySymbol = x.Currency.CurrencySymbol,
-                                ExchangeRateSterling = x.Currency.ExchangeRateSterling,
-                                UseExchangeRateForSorting = x.Currency.UseExchangeRateForSorting,
-                            }
+        //                    OperatingSystems = x.OperatingSystems,
+        //                    SupportTypes = x.SupportTypes,
+        //                    SupportDays = x.SupportDays,
+        //                    Languages = x.Languages,
+        //                    CloudApplicationFeatures = x.CloudApplicationFeatures,
+        //                    Currency = new CurrencyModel()
+        //                    {
+        //                        CurrencyID = x.Currency.CurrencyID,
+        //                        CurrencyName = x.Currency.CurrencyName,
+        //                        CurrencyShortName = x.Currency.CurrencyShortName,
+        //                        CurrencySymbol = x.Currency.CurrencySymbol,
+        //                        ExchangeRateSterling = x.Currency.ExchangeRateSterling,
+        //                        UseExchangeRateForSorting = x.Currency.UseExchangeRateForSorting,
+        //                    }
 
-                        }).ToList();
+        //                }).ToList();
 
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersCategoriesCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersUsersCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersOperatingSystemsCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersDevicesCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersBrowsersCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersMobilePlatformsCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = false;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportTypesCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportDaysCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportHoursCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersLanguagesCollapsed = true;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersTimeZonesCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersCategoriesCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersUsersCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersOperatingSystemsCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersDevicesCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersBrowsersCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersMobilePlatformsCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersFeaturesCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportTypesCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportDaysCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersSupportHoursCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersLanguagesCollapsed = true;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersTimeZonesCollapsed = true;
 
-                    ModelHelpers.SetSearchResultsSortOrder(null, null, searchModel);
-                    ModelHelpers.PaginateSearchResults(searchModel, 1);
-                    ModelHelpers.FixUpViewData(searchModel,this);
+        //            ModelHelpers.SetSearchResultsSortOrder(null, null, searchModel);
+        //            ModelHelpers.PaginateSearchResults(searchModel, 1);
+        //            ModelHelpers.FixUpViewData(searchModel,this);
 
-                    _siteAnalyticsLogger.Log(_repository, ActionType.ClickCategoryPageCompare, null, model.SearchInputModel.ChosenCategoryID, person.PersonID);
-                    ModelHelpers.LogSearchResultModelSiteAnalytic(searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage, model.SearchInputModel.ChosenCategoryID, _siteAnalyticsLogger, this.CustomSession, _repository);
+        //            _siteAnalyticsLogger.Log(_repository, ActionType.ClickCategoryPageCompare, null, model.SearchInputModel.ChosenCategoryID, person.PersonID);
+        //            ModelHelpers.LogSearchResultModelSiteAnalytic(searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResultsPage, model.SearchInputModel.ChosenCategoryID, _siteAnalyticsLogger, this.CustomSession, _repository);
 
-                    ModelHelpers.GetAdvertisingImages(searchModel, this.CustomSession, _repository);
+        //            ModelHelpers.GetAdvertisingImages(searchModel, this.CustomSession, _repository);
 
-                    return View("SearchPage", searchModel);
+        //            return View("SearchPage", searchModel);
 
-                }
-                else
-                {
-                    model.SearchInputModel.Categories = ModelHelpers.GetCategories(this.CustomSession,_repository);
-                    model.SearchInputModel.NumberOfUsers = ModelHelpers.GetNumberOfUsers(_repository);
-                    model.SearchInputModel.NumberOfUsers = ModelHelpers.AddNumberOfUsersToList(model.SearchInputModel.NumberOfUsers, "User numbers");
+        //        }
+        //        else
+        //        {
+        //            model.SearchInputModel.Categories = ModelHelpers.GetCategories(this.CustomSession,_repository);
+        //            model.SearchInputModel.NumberOfUsers = ModelHelpers.GetNumberOfUsers(_repository);
+        //            model.SearchInputModel.NumberOfUsers = ModelHelpers.AddNumberOfUsersToList(model.SearchInputModel.NumberOfUsers, "User numbers");
 
-                    model.SearchInputModel.Forename = CustomSession.Forename;
-                    model.SearchInputModel.Surname = CustomSession.Surname;
-                    model.SearchInputModel.EMail = CustomSession.EMail;
+        //            model.SearchInputModel.Forename = CustomSession.Forename;
+        //            model.SearchInputModel.Surname = CustomSession.Surname;
+        //            model.SearchInputModel.EMail = CustomSession.EMail;
 
-                    ViewBag.VisibleResultsTab = 1;
-                    SearchPageModel searchModel = new SearchPageModel(CustomSession);
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID = model.SearchInputModel.ChosenCategoryID;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.Categories = model.SearchInputModel.Categories;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers = int.Parse(model.SearchInputModel.ChosenNumberOfUsers);
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.NumberOfUsers = model.SearchInputModel.NumberOfUsers;
+        //            ViewBag.VisibleResultsTab = 1;
+        //            SearchPageModel searchModel = new SearchPageModel(CustomSession);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID = model.SearchInputModel.ChosenCategoryID;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.Categories = model.SearchInputModel.Categories;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenNumberOfUsers = int.Parse(model.SearchInputModel.ChosenNumberOfUsers);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.NumberOfUsers = model.SearchInputModel.NumberOfUsers;
 
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportDays = ModelHelpers.GetSupportDays(_repository);
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportDays = ModelHelpers.GetSupportDays(_repository);
 
-                    int? selectedSupportHours = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenSupportHours;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportHours = ModelHelpers.GetSupportHours(selectedSupportHours,model.SearchInputModel.ChosenCategoryID,this.CustomSession,_repository);
+        //            int? selectedSupportHours = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenSupportHours;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersSupportHours = ModelHelpers.GetSupportHours(selectedSupportHours,model.SearchInputModel.ChosenCategoryID,this.CustomSession,_repository);
 
-                    int? selectedTimeZone = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenTimeZone;
-                    searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersTimeZones = ModelHelpers.GetTimeZones(selectedTimeZone, model.SearchInputModel.ChosenCategoryID, _repository);
+        //            int? selectedTimeZone = searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenTimeZone;
+        //            searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.SearchFiltersTimeZones = ModelHelpers.GetTimeZones(selectedTimeZone, model.SearchInputModel.ChosenCategoryID, _repository);
 
-                    searchModel = ModelHelpers.GetSearchModelFiltersOneColumn(searchModel, false, false, this.CustomSession, _repository);
-                    searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel, this.CustomSession, _repository, Logger, _siteAnalyticsLogger).ToList();
+        //            searchModel = ModelHelpers.GetSearchModelFiltersOneColumn(searchModel, false, false, this.CustomSession, _repository);
+        //            searchModel.ContainerModel.SearchResultsModel.SearchResultsModelOneColumn.SearchResults = ModelHelpers.GetSearchResults(searchModel, this.CustomSession, _repository, Logger, _siteAnalyticsLogger).ToList();
 
-                    ModelHelpers.SetSearchResultsColumnHeaders((int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, searchModel, _repository);
+        //            ModelHelpers.SetSearchResultsColumnHeaders((int)searchModel.ContainerModel.SearchFiltersModel.SearchFiltersModelOneColumn.ChosenCategoryID, searchModel, _repository);
 
-                    ModelHelpers.GetAdvertisingImages(searchModel, this.CustomSession, _repository);
+        //            ModelHelpers.GetAdvertisingImages(searchModel, this.CustomSession, _repository);
 
-                    return View("CategoryPage", searchModel);
-                }
-                #endregion
-            }
-            else
-            {
-                if (ModelState["SearchInputModel.Forename"].Errors.Count > 0 || model.SearchInputModel.Forename == ViewModelHelpers.FORENAME_ERROR_MESSAGE)
-                {
-                    ModelState["SearchInputModel.Forename"].Value = new ValueProviderResult(ViewModelHelpers.FORENAME_ERROR_MESSAGE, model.SearchInputModel.Forename, System.Globalization.CultureInfo.CurrentCulture);
-                    ModelState.AddModelError("SearchInputModel.Firstname", "www");
-                }
-                if (ModelState["SearchInputModel.EMail"].Errors.Count > 0)
-                {
-                    if (model.SearchInputModel.EMail == ViewModelHelpers.EMAIL_ERROR_MESSAGE || model.SearchInputModel.EMail == null)
-                    {
-                        ModelState["SearchInputModel.EMail"].Value = new ValueProviderResult(ViewModelHelpers.EMAIL_ERROR_MESSAGE, model.SearchInputModel.EMail, System.Globalization.CultureInfo.CurrentCulture);
-                    }
-                    ModelState.AddModelError("SearchInputModel.EMail", "www");
-                }
-                return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
-            }
+        //            return View("CategoryPage", searchModel);
+        //        }
+        //        #endregion
+        //    }
+        //    else
+        //    {
+        //        if (ModelState["SearchInputModel.Forename"].Errors.Count > 0 || model.SearchInputModel.Forename == ViewModelHelpers.FORENAME_ERROR_MESSAGE)
+        //        {
+        //            ModelState["SearchInputModel.Forename"].Value = new ValueProviderResult(ViewModelHelpers.FORENAME_ERROR_MESSAGE, model.SearchInputModel.Forename, System.Globalization.CultureInfo.CurrentCulture);
+        //            ModelState.AddModelError("SearchInputModel.Firstname", "www");
+        //        }
+        //        if (ModelState["SearchInputModel.EMail"].Errors.Count > 0)
+        //        {
+        //            if (model.SearchInputModel.EMail == ViewModelHelpers.EMAIL_ERROR_MESSAGE || model.SearchInputModel.EMail == null)
+        //            {
+        //                ModelState["SearchInputModel.EMail"].Value = new ValueProviderResult(ViewModelHelpers.EMAIL_ERROR_MESSAGE, model.SearchInputModel.EMail, System.Globalization.CultureInfo.CurrentCulture);
+        //            }
+        //            ModelState.AddModelError("SearchInputModel.EMail", "www");
+        //        }
+        //        return View(ModelHelpers.ConstructCategoryPageModel(model, model.SearchInputModel.ChosenCategoryID, this.CustomSession, _repository));
+        //    }
+            #endregion
         }
         #endregion
 
@@ -2430,7 +2778,7 @@ namespace CompareCloudware.Web.Controllers
             }
             else
             {
-                var model = ModelHelpers.ConstructHomePageModel(new HomePageModel(CustomSession) { SearchInputModel = new SearchInputModel(CustomSession) },this.CustomSession,_repository,Request);
+                var model = ModelHelpers.ConstructHomePageModel(new HomePageModel(CustomSession) { SearchInputModel = new SearchInputModel(CustomSession) }, this.CustomSession, _repository, Request, this.HttpContext.Response);
                 model.TabbedSearchResultsModel.FeaturedCloudwareSearchResultsVisible = (resultsPage == TAB_FEATURED);
                 model.TabbedSearchResultsModel.NewCloudwareSearchResultsVisible = (resultsPage == TAB_NEW);
                 model.TabbedSearchResultsModel.TopTenCloudwareSearchResultsVisible = (resultsPage == TAB_TOPTEN);
@@ -2533,7 +2881,7 @@ namespace CompareCloudware.Web.Controllers
                 //return RedirectToRoute("HomePage");
 
                 CustomSession.VisitedViaCategory = false;
-                var model = ModelHelpers.ConstructHomePageModel(new HomePageModel(CustomSession) { SearchInputModel = new SearchInputModel(CustomSession) }, this.CustomSession, _repository,Request);
+                var model = ModelHelpers.ConstructHomePageModel(new HomePageModel(CustomSession) { SearchInputModel = new SearchInputModel(CustomSession) }, this.CustomSession, _repository, Request, this.HttpContext.Response);
                 ViewBag.VisibleResultsTab = 1;
                 return View("HomePage",model);
 
@@ -2867,8 +3215,75 @@ namespace CompareCloudware.Web.Controllers
             return Redirect("http://www.bbc.co.uk");
         }
         #endregion
-        
 
+
+        #region PartnerProgrammePage
+        [HttpPost]
+        //public async Task<ActionResult> PartnerProgrammePage(TabbedOnpageOptimisationModel model)
+        //public async Task<ActionResult> PartnerProgrammePage(PartnerProgrammeModel model)
+        public async Task<ActionResult> PartnerProgrammePage(RegisterNowModel model)
+        {
+            RecaptchaVerificationHelper recaptchaHelper = this.GetRecaptchaVerificationHelper();
+
+            if (String.IsNullOrEmpty(recaptchaHelper.Response))
+            {
+                ModelState.AddModelError("recaptcha", "Captcha answer cannot be empty.");
+                //return Json(new { capthcaInvalid = true }); 
+                return View("RegisterNow", model);
+                //return null;
+            }
+
+            RecaptchaVerificationResult recaptchaResult = await recaptchaHelper.VerifyRecaptchaResponseTaskAsync();
+
+            if (recaptchaResult != RecaptchaVerificationResult.Success)
+            {
+                ModelState.AddModelError("recaptcha", "Incorrect captcha answer.");
+            }
+            else
+            {
+                Person p = ModelHelpers.AddPerson(
+                        PersonTypeEnum.ProspectVendor,
+                        model.Forename,
+                        model.Surname,
+                        model.EMailAddress,
+                        0,
+                        model.Telephone,
+                        model.Company,
+                        model.JobTitle,
+                        _repository
+                    );
+
+                CloudApplicationRequest ar = new CloudApplicationRequest();
+                ar.PersonID = p.PersonID;
+                ar.RequestTypeID = _repository.GetRequestTypeByRequestTypeName(Enum.GetName(typeof(PartnerProgrammeTypeEnum), model.PartnerProgrammeType)).RequestTypeID;
+
+                bool retVal = _repository.Insert<CloudApplicationRequest>(ar);
+
+                ModelState.Remove("IsRegistered");
+                model.IsRegistered = true;
+
+                if (model.HasPresentationVideo)
+                {
+                    ModelState.Remove("ShowVideo");
+
+                    model.ShowVideo = true;
+                    model.Video = new CloudApplicationVideoModel(CustomSession, Request)
+                    {
+                        CloudApplicationVideoURL = "//player.vimeo.com/video/112796483?title=0&amp;byline=0&amp;portrait=0&amp;color=786caf&amp;autoplay=1",
+                        IsYouTubeStream = true,
+                        ReadyToPlay = true,
+                        CloudApplicationVideoStatus = "LIVE",
+                        Width = 240,
+                        AspectRatio = AspectRatio.Ratio16x9,
+                    };
+                }
+
+            }
+            return View("RegisterNow",model);
+        }
+        #endregion
+
+    
     }
 
     #region FormCollectionExtensions
@@ -3300,8 +3715,10 @@ namespace CompareCloudware.Web.Controllers
             var memWriter = new StringWriter(sb);
 
             string filename = "PrintResult3";
+            filename = "BusinessPartner";
             string url = ConfigurationManager.AppSettings["PDFViewPath"];
-            var httpRequest = new HttpRequest(filename, url, null);
+            url = "http://localhost:81/businesspartner";
+            var httpRequest = new HttpRequest(filename, url, viewData.ToString());
 
             //Create fake http context to render the view
             var fakeResponse = new HttpResponse(memWriter);

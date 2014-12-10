@@ -1,15 +1,5 @@
 ﻿@model CompareCloudware.Web.Models.SearchInputModel
 @using CompareCloudware.Web.Helpers
-@*@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "InsertCaseForm" }))
-{
-}
-*@ @*    <div id="creaturetext">
-        <label>Submit your details below and start comparing cloudware now</label>
-    </div>
-    <div id="imagediv">
-        <img src="../../../Images/creature.png" />
-    </div>
-*@
 @if (Model.DisplayStyle == SearchInputModelStyle.HomePage)
 {
     <div class="search-input-container">
@@ -17,10 +7,6 @@
         <div class="search-input-data-home-page">
 
             <div style="clear: both; height:5px;"></div>
-
-@*            <div>
-                <label class="font-22px-white search-input-data-home-page-header">What do you need?</label>
-            </div>*@
 
             <div style="clear: both; height:20px;"></div>
 
@@ -30,7 +16,7 @@
                         @Html.EditorFor(x => x.Forename, new { @data_placement = "left", @placeholder = "Forename:" })
                         @Html.EditorFor(x => x.Surname, new { @data_placement = "left", @placeholder = "Surname:" })
                     </div>
-                    <div class="input-drop-down-list">
+                    <div class="input-drop-down-list category-list">
                     @Html.DropDownListFor(x => x.ChosenCategoryID,
                        new SelectList(Model.Categories, "CategoryID", "CategoryName", Model.ChosenCategoryID)
                             , new { @class = "font-normal-13px-black" })
@@ -38,33 +24,33 @@
                 </div>
                 <div class="simple-search-second-column">
                 @Html.EditorFor(x => x.EMail)
-                    <div class="input-drop-down-list">
+                    <div class="input-drop-down-list number-of-users-list">
                     @Html.DropDownListFor(x => x.ChosenNumberOfUsers,
                         new SelectList(Model.NumberOfUsers, "UserValue", "UserValue", Model.ChosenNumberOfUsers)
-                            , new { @class = "font-normal-13px-black" })
+                            , new { @class = "font-normal-13px-black chosenNumberOfUsers" })
                     </div>
                 </div>
             </div>
 
-            <div style="clear: both; height:5px;"></div>
+            <div style="clear: both; height:10px;"></div>
 
             <div class="tc-home-object-container criteria-bump-right">
                 <div class="tc-home-object-label">
-                    @Html.Partial("TermsAndConditions")
+                    @Html.Partial("TermsAndConditions","font-normal-13px-white")
                 </div>
                 <div class="tc-home-object-data tc-checkbox">
                     @Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "font-normal-13px-black terms" })
                 </div>
             </div>
 
-            <div style="clear: both; height:5px;"></div>
+@*            <div style="clear: both; height:5px;"></div>*@
 
             <div class="criteria-bump-right">
                 <div class="simple-search-first-column">
                 </div>
                 <div class="simple-search-second-column">
                     <div class="">
-                        <div class="site-button">
+                        <div class="site-button-50">
                             <input type="image" 
                                     src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
                                     value="CompareCloudwareHome" class="terms-checked users-chosen show-search-splash"/>
@@ -98,7 +84,7 @@
                         @Html.EditorFor(x => x.Surname)
                     </div>
 
-                    <div class="input-drop-down-list">
+                    <div class="input-drop-down-list category-list">
                         @Html.DropDownListFor(x => x.ChosenCategoryID,
                        new SelectList(Model.Categories, "CategoryID", "CategoryName", Model.ChosenCategoryID)
                             , new { @class = "font-normal-13px-black" })
@@ -122,10 +108,10 @@
 
 
 
-                    <div class="input-drop-down-list">
+                    <div class="input-drop-down-list number-of-users-list">
                         @Html.DropDownListFor(x => x.ChosenNumberOfUsers,
                         new SelectList(Model.NumberOfUsers, "UserValue", "UserValue", Model.ChosenNumberOfUsers)
-                            , new { @class = "font-normal-13px-black numberOfUsers" })
+                            , new { @class = "font-normal-13px-black chosenNumberOfUsers" })
                     </div>
 
 
@@ -133,11 +119,11 @@
                 </div>
             </div>
 
-            <div style="clear: both; height:5px;"></div>
+@*            <div style="clear: both; height:5px;"></div>*@
 
             <div class="tc-home-object-container criteria-bump-right">
                 <div class="tc-home-object-label">
-                    @Html.Partial("TermsAndConditions")
+                    @Html.Partial("TermsAndConditions","font-normal-13px-white")
                 </div>
                 <div class="tc-home-object-data tc-checkbox">
                     @Html.CheckBoxFor(x => x.TermsAndConditions, new { @class = "font-13px-white terms" })
@@ -151,7 +137,7 @@
                 </div>
                 <div class="simple-search-second-column">
                     <div class="">
-                        <div class="site-button">
+                        <div class="site-button-50">
                             <input type="image" 
                                     src="@Url.Content("~/Images/Buttons/1x1-transparent.png")"
                                     value="CompareCloudwareHome" class="terms-checked users-chosen show-search-splash"/>
@@ -184,7 +170,7 @@
     @Html.Partial("TCDialog")
     @Html.Partial("NumberOfUsersDialog")
 
-    @Html.Partial("LoadingSearchResults")
+    @Html.Partial("ComparingSearchResults")
 
     <script>
         var searchInputContainerHome = $('.search-input-container');

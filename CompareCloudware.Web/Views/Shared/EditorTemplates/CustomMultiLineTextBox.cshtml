@@ -1,2 +1,2 @@
 ﻿@model string
-@Html.TextAreaFor(x => x,4,1, new { @class = "input-text-box-multi-line font-normal-13px-black required", @name="test" })
+@Html.TextAreaFor(x => x,4,1, new { @class = "input-text-box-multi-line font-normal-13px-black required", @name="test", @data_placement = ViewData["placement"], @placeholder = ViewData["placeholder"] })

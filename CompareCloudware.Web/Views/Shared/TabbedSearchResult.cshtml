@@ -4,7 +4,7 @@
         <td style="width: 30%; overflow:hidden; vertical-align:top;" rowspan="2">
 @*            <img src="@Model.VendorLogoURL" class="search-result-image"/>
 *@
-            <a href="CloudApplication?cloudApplicationID=@Model.CloudApplicationID">
+            <a href="CloudApplication?cloudApplicationID=@Model.CloudApplicationID" class="tabbed-search-result-logo">
                 <img src='@Url.Action("ShowLogo", "Home", new { vendorID = Model.VendorID })' class="search-result-image" />
             </a>
             @Html.HiddenFor(x => x.CloudApplicationID)

@@ -30,32 +30,39 @@ namespace CompareCloudware.Web.Models
         //[ValidateFreeTrialBuyNow]
         public bool BuyNow { get; set; }
 
-        [Display(Name="Company"), DataType(DataType.Text), UIHint("CustomTextBox"), Required, DisplayName("Company")]
+        [Display(Name="Company"), DataType(DataType.Text), UIHint("CustomTextBox"), DisplayName("Company")]
         public string Company { get; set; }
 
         //[UIHint("CustomTextBox"), Required, DataType(DataType.EmailAddress), Display(Name="Email"), DisplayName("Email")]
         //[UIHint("EmailTextBox"), Required(ErrorMessage = "EMail Required"), RegularExpression(@"^[A-Za-z0-9_\+-]+(\.[A-Za-z0-9_\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.([A-Za-z]{2,4})$", ErrorMessage = "Not a valid EMail address"), Display(Name = "Email")]
-        [UIHint("CustomTextBox"), Required, DataType(DataType.EmailAddress), RegularExpression(@"^[A-Za-z0-9_\+-]+(\.[A-Za-z0-9_\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.([A-Za-z]{2,4})$", ErrorMessage = "Not a valid EMail address"), Display(Name = "Email"), DisplayName("Email")]
+        [UIHint("CustomTextBox"), DataType(DataType.EmailAddress), RegularExpression(@"^[A-Za-z0-9_\+-]+(\.[A-Za-z0-9_\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.([A-Za-z]{2,4})$", ErrorMessage = "Not a valid EMail address"), Display(Name = "Email"), DisplayName("Email")]
         [ValidateEMailFreeTrial]
         public string EMailAddress { get; set; }
 
-        [Required, UIHint("CustomTextBox"), DisplayName("First Name"), Display(Name="First Name")]
+        [UIHint("CustomTextBox"), DataType(DataType.EmailAddress), RegularExpression(@"^[A-Za-z0-9_\+-]+(\.[A-Za-z0-9_\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.([A-Za-z]{2,4})$", ErrorMessage = "Not a valid EMail address"), Display(Name = "Colleague Email"), DisplayName("Email")]
+        [ValidateEMailFreeTrial]
+        public string EMailAddressColleague { get; set; }
+
+        [UIHint("CustomMultiLineTextBox"), DisplayName("Type your message here"), Display(Name = "Type your message here"),Required]
+        public string MessageToColleague { get; set; }
+
+        [UIHint("CustomTextBox"), DisplayName("First Name"), Display(Name="First Name")]
         public string Forename { get; set; }
 
         [Display(Name = "FREE Trial"), DisplayName("FREE Trial")]
         //[ValidateFreeTrialBuyNow]
         public bool FreeTrial { get; set; }
 
-        [Required, Range(1,9999), DisplayName("Users"), Display(Name="Users"), UIHint("CustomTextBoxInt"), DataType(DataType.Text)]
+        [Range(1,9999), DisplayName("Users"), Display(Name="Users"), UIHint("CustomTextBoxInt"), DataType(DataType.Text)]
         public int NumberOfEmployees { get; set; }
 
-        [DataType(DataType.Text), UIHint("CustomTextBox"), Required, Display(Name="Surname"), DisplayName("Surname")]
+        [DataType(DataType.Text), UIHint("CustomTextBox"), Display(Name="Surname"), DisplayName("Surname")]
         public string Surname { get; set; }
 
-        [Display(Name="Phone"), DataType(DataType.PhoneNumber), UIHint("CustomTextBox"), Required, DisplayName("Phone")]
+        [Display(Name="Phone"), DataType(DataType.PhoneNumber), UIHint("CustomTextBox"), DisplayName("Phone")]
         public string Telephone { get; set; }
 
-        [Display(Name = "Job title"), UIHint("CustomTextBox"), Required, DisplayName("Job title")]
+        [Display(Name = "Job title"), UIHint("CustomTextBox"), DisplayName("Job title")]
         public string JobTitle { get; set; }
 
         //public System.Collections.Generic.IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
@@ -66,8 +73,8 @@ namespace CompareCloudware.Web.Models
         //    }
         //}
 
-        [UIHint("CustomSelectCategory"), Display(Name = "RequestTypes")]
-        public IList<RequestTypeModel> RequestTypes { get; set; }
+        //[UIHint("CustomSelectCategory"), Display(Name = "RequestTypes")]
+        //public IList<RequestTypeModel> RequestTypes { get; set; }
 
         [Display(Name="Request"), DisplayName("Request")]
         public int RequestTypeID { get; set; }
@@ -76,6 +83,12 @@ namespace CompareCloudware.Web.Models
         //[ValidateFreeTrialBuyNow]
         [TC("TermsAndConditions")]
         public bool TermsAndConditions { get; set; }
+
+        public string CloudApplicationName { get; set; }
+
+        public string CloudApplicationNumberOfUsers { get; set; }
+
+
 
     }
 }
