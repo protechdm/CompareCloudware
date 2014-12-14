@@ -68,14 +68,14 @@ namespace WSMailTryBuy
 
             //try
             //{
-                if (!System.Diagnostics.EventLog.SourceExists(eventLogFile))
-                {
+            if (!System.Diagnostics.EventLog.SourceExists(eventLogFile))
+            {
 
-                    System.Diagnostics.EventLog.CreateEventSource(eventLogFile, eventLogFile);
-                }
-                Logger.Source = eventLogFile;
+                System.Diagnostics.EventLog.CreateEventSource(eventLogFile, eventLogFile);
+            }
+            Logger.Source = eventLogFile;
 
-                Logger.WriteEntry("BOLLCOKS");
+            Logger.WriteEntry("BOLLCOKS");
             //}
             //catch (Exception e)
             //{
@@ -402,6 +402,7 @@ namespace WSMailTryBuy
                             {"Telephone", p.Telephone},
                             {"Country", p.PersonCountry},
                             {"CloudApplication", ca.Brand + " - " + ca.ServiceName},
+                            {"NumberOfUsers", ca.LicenceTypeMinimum.LicenceTypeMinimumName + " - " + ca.LicenceTypeMaximum.LicenceTypeMaximumName},
                         }
                     };
 
@@ -511,7 +512,7 @@ namespace WSMailTryBuy
                             .Union(_repository.GetUnservicedReferRewardRequests())
 
                             .ToList();
-                            ;
+                        ;
                         _logger.WriteEntry("Successfully fetched " + requests.Count.ToString() + " PARTNER PROGRAMME EMAILER email requests.");
                     }
                     else
@@ -1056,8 +1057,8 @@ namespace WSMailTryBuy
             }
             return retVal;
         }
-    
-    
+
+
     }
     #endregion
 
