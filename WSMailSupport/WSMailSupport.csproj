@@ -75,13 +75,13 @@
       <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.Domain">
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.Domain.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Domain\bin\Debug\CompareCloudware.Domain.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.POCOQueryRepository">
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.POCOQueryRepository.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\CompareCloudware.POCOQueryRepository.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
-      <HintPath>..\CompareCloudware.Web\bin\EntityFramework.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
