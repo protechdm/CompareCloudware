@@ -3,153 +3,197 @@
 
 
 @{
-Layout = null;
+    Layout = null;
 }
 
 
 @using System.Configuration;
 
 @{
-bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
-testMode = false;
-string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"].Substring(0, ConfigurationManager.AppSettings["HomePageURLDev"].Length - 1) : ConfigurationManager.AppSettings["HomePageURLLive"].Substring(0, ConfigurationManager.AppSettings["HomePageURLLive"].Length - 1);
+    bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+    testMode = false;
+    string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"].Substring(0, ConfigurationManager.AppSettings["HomePageURLDev"].Length - 1) : ConfigurationManager.AppSettings["HomePageURLLive"].Substring(0, ConfigurationManager.AppSettings["HomePageURLLive"].Length - 1);
 }
 
 <style type="text/css">
-Img {border:0;} 
-.body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	line-height: 16px;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	color: #666;
-}
-.largeurl {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 20px;
-	font-style: normal;
-	line-height: 26px;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	color: #5C2A71;
-}
-.bodywhite {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	line-height: 16px;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	color: #FFF;
-}
-a:link {
-	color: #5C2A71;
-}
-a:visited {
-	color: #5C2A71;
-}
-a:hover {
-	color: #5C2A71;
-}
-a:active {
-	color: #5C2A71;
-}
-.Legal {	color: #767676;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	font-size: 10px;
-	line-height: 14px;
-}
-body {
-	background-color: #DBDBDB;
-}
+    Img {
+        border: 0;
+    }
+
+    .body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 16px;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        color: #666;
+    }
+
+    .largeurl {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        font-style: normal;
+        line-height: 26px;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        color: #5C2A71;
+    }
+
+    .bodywhite {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 16px;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        color: #FFF;
+    }
+
+    a:link {
+        color: #5C2A71;
+    }
+
+    a:visited {
+        color: #5C2A71;
+    }
+
+    a:hover {
+        color: #5C2A71;
+    }
+
+    a:active {
+        color: #5C2A71;
+    }
+
+    .Legal {
+        color: #767676;
+        font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    body {
+        background-color: #DBDBDB;
+    }
 </style>
 
 <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr bgcolor="#FFFFFF">
-    <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="600" align="left" valign="top">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="187" height="56" align="left" valign="top"><a href="http://comparecloudware.com/" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/CCW_edm_logo.gif")" alt="CompareCloudware.com" width="249" height="56" class="body" /></a></td>
-            <td width="413" align="right" valign="bottom"><table width="351" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="351" align="right" valign="top"><table width="351" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="156" align="left" valign="bottom">&nbsp;</td>
-                    <td width="195" align="left" valign="bottom"><span class="body">Follow us:</span></td>
-                  </tr>
-                </table></td>
-              </tr>
-              <tr>
-                <td width="351" align="right" valign="top"><table width="300" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="127" align="right" valign="top">&nbsp;</td>
-                    <td width="10" align="right" valign="top"><a href="https://twitter.com/compcloudware" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Twitter_email_icon.gif")" alt="Twitter" width="25" height="34" class="body" /></a></td>
-                    <td width="30" align="right" valign="top"><a href="https://www.facebook.com/comparecloudware1" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Facebbok_email_icon.gif")" alt="Facebook" width="30" height="34" class="body" /></a></td>
-                    <td width="29" align="right" valign="top"><a href="https://www.youtube.com/user/CompareCloudwareTV" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/TouTube_email_icon.gif")" alt="YouTube" width="29" height="34" class="body" /></a></td>
-                    <td width="29" align="right" valign="top"><a href="https://www.linkedin.com/groups/Cloud-Business-Builders-4017248/about?report.success=7zFZWs0ejcaVIA4-lv2YQlOHabaYLn7Lolw8sCrNebS2PL6vPTorjJrHiK1RKMw5WkDyy5tHeSIl-v63Wf6TJ6sRYLRevY83QG5y6zoeMnJRoW3bZTEiCj9NeBIhqY7bWXortuQYiMgCchyKKTsrC5_Ha1eRoWk3P6wrtABhUQYCVxjpP39kg8fxBWeCba3KvpBikEwHeSItPivKbk_ikj_NwbJhoLkGI2FgDc2" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Linkedin_email_icon.gif")" alt="Linkedin" width="29" height="34" class="body" /></a></td>
-                    <td width="81" align="right" valign="top"><a href="https://plus.google.com/115329372152705294043/posts"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Google_email_icon.gif")" alt="Google+" width="81" height="34" class="body" /></a></td>
-                  </tr>
-                </table></td>
-              </tr>
-            </table></td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-            <td width="486" align="left" valign="top"><p class="body">Dear &lt;@Model.ColleagueForename&nbsp;@Model.ColleagueSurname&gt;<br />
-              <br />            
-              @Model.RecommenderForename&nbsp;@Model.RecommenderSurname discovered @Model.CloudApplicationName on Compare Cloudware and t<span class="body">hought you&rsquo;d be interested.</span></p>
-              <p class="body">@Model.Message</p>
-              <p class="body">Clink on the link below to take a look at what&rsquo;s so interesting about this cloudware from @Model.CloudApplicationName </p>
-              <p class="largeurl"><a href="@Model.CloudApplicationURL">@Model.CloudApplicationURL</a><br />
-                <br />
-              </p></td>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-            <td width="486" align="left" valign="top"><a href="http://comparecloudware.com/" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/CCW_email_banner_ad.gif")" alt="The ultimate place to find pay-as-you-go software for your business" width="486" height="172" class="body" /></a></td>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-            <td width="486" align="left" valign="top"><p><span class="body"><br />
-            </span><span class="Legal">
-            <unsubscribe></unsubscribe>
-            © 2014 Compare Cloudware. Registered company number: 7270763 <br />
-Registered address: 145-157 St John Street, London, EC1V 4PY<br />
-            </span><br />
-            </p></td>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-    </table></td>
-  </tr>
+    <tr bgcolor="#FFFFFF">
+        <td width="600" align="left" valign="top">
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="600" align="left" valign="top">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="187" height="56" align="left" valign="top"><a href="http://comparecloudware.com/" target="_blank">
+                                    <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/CCW_edm_logo.gif")" alt="CompareCloudware.com" width="249" height="56" class="body" /></a></td>
+                                <td width="413" align="right" valign="bottom">
+                                    <table width="351" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="351" align="right" valign="top">
+                                                <table width="351" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td width="156" align="left" valign="bottom">&nbsp;</td>
+                                                        <td width="195" align="left" valign="bottom"><span class="body">Follow us:</span></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td width="351" align="right" valign="top">
+                                                <table width="300" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td width="127" align="right" valign="top">&nbsp;</td>
+                                                        <td width="10" align="right" valign="top"><a href="https://twitter.com/compcloudware" target="_blank">
+                                                            <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Twitter_email_icon.gif")" alt="Twitter" width="25" height="34" class="body" /></a></td>
+                                                        <td width="30" align="right" valign="top"><a href="https://www.facebook.com/comparecloudware1" target="_blank">
+                                                            <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Facebbok_email_icon.gif")" alt="Facebook" width="30" height="34" class="body" /></a></td>
+                                                        <td width="29" align="right" valign="top"><a href="https://www.youtube.com/user/CompareCloudwareTV" target="_blank">
+                                                            <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/TouTube_email_icon.gif")" alt="YouTube" width="29" height="34" class="body" /></a></td>
+                                                        <td width="29" align="right" valign="top"><a href="https://www.linkedin.com/groups/Cloud-Business-Builders-4017248/about?report.success=7zFZWs0ejcaVIA4-lv2YQlOHabaYLn7Lolw8sCrNebS2PL6vPTorjJrHiK1RKMw5WkDyy5tHeSIl-v63Wf6TJ6sRYLRevY83QG5y6zoeMnJRoW3bZTEiCj9NeBIhqY7bWXortuQYiMgCchyKKTsrC5_Ha1eRoWk3P6wrtABhUQYCVxjpP39kg8fxBWeCba3KvpBikEwHeSItPivKbk_ikj_NwbJhoLkGI2FgDc2" target="_blank">
+                                                            <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Linkedin_email_icon.gif")" alt="Linkedin" width="29" height="34" class="body" /></a></td>
+                                                        <td width="81" align="right" valign="top"><a href="https://plus.google.com/115329372152705294043/posts">
+                                                            <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/Google_email_icon.gif")" alt="Google+" width="81" height="34" class="body" /></a></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                                <td width="486" align="left" valign="top">
+                                    <p class="body">
+                                        @Model.RecommenderEMail&nbsp;discovered @Model.CloudApplicationName on Compare Cloudware and t<span class="body">hought you&rsquo;d be interested.</span>
+                                    </p>
+                                    <p class="body">@Model.Message</p>
+                                    <p class="body">Clink on the link below to take a look at what&rsquo;s so interesting about this cloudware from @Model.CloudApplicationName </p>
+                                    <p class="largeurl">
+                                        <a href="@Model.CloudApplicationURL">@Model.CloudApplicationURL</a><br />
+                                        <br />
+                                    </p>
+                                </td>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                                <td width="486" align="left" valign="top"><a href="http://comparecloudware.com/" target="_blank">
+                                    <img src="@Url.Content(homePageURL + "/Images/EMails/Colleague/CCW_email_banner_ad.gif")" alt="The ultimate place to find pay-as-you-go software for your business" width="486" height="172" class="body" /></a></td>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                                <td width="486" align="left" valign="top">
+                                    <p>
+                                        <span class="body">
+                                            <br />
+                                        </span><span class="Legal">
+                                            <unsubscribe></unsubscribe>
+                                            &copy; @System.DateTime.Now.Year.ToString() Compare Cloudware. Registered company number: 7270763
+                                            <br />
+                                            Registered address: 145-157 St John Street, London, EC1V 4PY<br />
+                                        </span>
+                                        <br />
+                                    </p>
+                                </td>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
 </table>

@@ -3,152 +3,200 @@
 @using System.Configuration;
 
 @{
-Layout = null;
+    Layout = null;
 }
 
 @{
-bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
-testMode = false;
-string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"].Substring(0, ConfigurationManager.AppSettings["HomePageURLDev"].Length - 1) : ConfigurationManager.AppSettings["HomePageURLLive"].Substring(0, ConfigurationManager.AppSettings["HomePageURLLive"].Length - 1);
+    bool testMode = Convert.ToBoolean(ConfigurationManager.AppSettings["TestMode"]);
+    testMode = false;
+    string homePageURL = testMode ? ConfigurationManager.AppSettings["HomePageURLDev"].Substring(0, ConfigurationManager.AppSettings["HomePageURLDev"].Length - 1) : ConfigurationManager.AppSettings["HomePageURLLive"].Substring(0, ConfigurationManager.AppSettings["HomePageURLLive"].Length - 1);
 }
 
 
 <style type="text/css">
-Img {border:0;} 
-.body {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	line-height: 16px;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	color: #666;
-}
-.bodywhite {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	line-height: 16px;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	color: #FFF;
-}
-a:link {
-	color: #5C2A71;
-}
-a:visited {
-	color: #5C2A71;
-}
-a:hover {
-	color: #5C2A71;
-}
-a:active {
-	color: #5C2A71;
-}
-.Legal {	color: #767676;
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: normal;
-	font-size: 10px;
-	line-height: 14px;
-}
-body {
-	background-color: #DBDBDB;
-}
+    Img {
+        border: 0;
+    }
+
+    .body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 16px;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        color: #666;
+    }
+
+    .bodywhite {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-style: normal;
+        line-height: 16px;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        color: #FFF;
+    }
+
+    a:link {
+        color: #5C2A71;
+    }
+
+    a:visited {
+        color: #5C2A71;
+    }
+
+    a:hover {
+        color: #5C2A71;
+    }
+
+    a:active {
+        color: #5C2A71;
+    }
+
+    .Legal {
+        color: #767676;
+        font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        font-size: 10px;
+        line-height: 14px;
+    }
+
+    body {
+        background-color: #DBDBDB;
+    }
 </style>
 
 <table width="600" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr bgcolor="#FFFFFF">
-    <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="600" align="left" valign="top">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><a href="http://comparecloudware.com/" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Business/CCW_edm_logo.gif")" alt="CompareCloudware.com" width="249" height="56" class="body" /></a></td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top">&nbsp;</td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-            <td width="486" align="left" valign="top"><p class="body">Thanks for registering to watch our Business Partner presentation. We hope you&rsquo;ve now got enough information to sign-up and start driving demand on Compare Cloudware.<br />
-              <br />
-Remember it&rsquo;s free to become a Business Partner - all we require to on-board you is a direct lead agreement and your content. It&rsquo;s as simple as that!<br />
-                <br />
-                Here&rsquo;s a link to watch the <a href="https://www.youtube.com/user/CompareCloudwareTV" target="_blank"><u>Introduction to Business Partners</u></a>video, just in case you missed it, want to watch it again or share it with colleagues.<br />
-                <br />
-We look forward to you joining us on Compare Cloudware.</p>
-              <span class="body"> Regards</span><span class="body"><br />
-                <strong><br />
-                  Partner Development Manager</strong></span><br />  <br /></td>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-            <td width="486" align="left" valign="top"><table width="486" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="234" align="left" valign="top" bgcolor="#DADADA"><table width="234" border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td width="234" align="left" valign="top"><table width="234" border="0" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td width="15" align="left" valign="top" bgcolor="#0D9ADF">&nbsp;</td>
-                        <td width="206" height="25" align="left" valign="middle" bgcolor="#0D9ADF" class="bodywhite">Compare Cloudware TV</td>
-                        <td width="13" align="left" valign="top" bgcolor="#0D9ADF">&nbsp;</td>
-                      </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td width="234" align="left" valign="top"><table width="234" border="0" cellspacing="0" cellpadding="0">
-                      <tr>
-                        <td height="10" colspan="3" align="left" valign="top"></td>
-                        </tr>
-                      <tr>
-                        <td width="15" align="left" valign="top">&nbsp;</td>
-                        <td width="208" align="left" valign="top" class="body">View  our other videos on our <br />
-                          YouTube Channel.</td>
-                        <td width="11" align="left" valign="top">&nbsp;</td>
-                      </tr>
-                      <tr>
-                        <td height="10" colspan="3" align="left" valign="top"></td>
-                        </tr>
-                    </table></td>
-                  </tr>
-                  <tr>
-                    <td width="234" align="center" valign="top" bgcolor="#DADADA"><a href="https://www.youtube.com/user/CompareCloudwareTV" target="_blank"><img src="@Url.Content(homePageURL + "/Images/EMails/Business/CCW.tv_videos.gif")" alt="CompareCloudware TV" width="204" height="53" class="body" /></a></td>
-                  </tr>
-                </table></td>
-                <td width="18" align="left" valign="top">&nbsp;</td>
-                <td width="234" align="right" valign="top"><img src="@Url.Content(homePageURL + "/Images/EMails/Business/Follow_us_on_twitter.gif")" width="234" height="138" alt="Follow us on Twitter" /></td>
-              </tr>
-            </table></td>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-      <tr>
-        <td width="600" align="left" valign="top"><table width="600" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-            <td width="486" align="left" valign="top"><p><span class="body"><br />
-            </span><span class="Legal">
-            <unsubscribe></unsubscribe>
-            © 2014 Compare Cloudware. Registered company number: 7270763 <br />
-Registered address: 145-157 St John Street, London, EC1V 4PY</span><br />
-<br />
-            </p></td>
-            <td width="57" align="left" valign="top">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-    </table></td>
-  </tr>
+    <tr bgcolor="#FFFFFF">
+        <td width="600" align="left" valign="top">
+            <table width="600" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td width="600" align="left" valign="top">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top"><a href="http://comparecloudware.com/" target="_blank">
+                        <img src="@Url.Content(homePageURL + "/Images/EMails/Business/CCW_edm_logo.gif")" alt="CompareCloudware.com" width="249" height="56" class="body" /></a></td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                                <td width="486" align="left" valign="top">
+                                    <p class="body">
+                                        Thanks for registering to watch our Business Partner presentation. We hope you&rsquo;ve now got enough information to sign-up and start driving demand on Compare Cloudware.<br />
+                                        <br />
+                                        Remember it&rsquo;s free to become a Business Partner - all we require to on-board you is a direct lead agreement and your content. It&rsquo;s as simple as that!<br />
+                                        <br />
+                                        Here&rsquo;s a link to watch the <a href="https://www.youtube.com/user/CompareCloudwareTV" target="_blank"><u>Introduction to Business Partners</u></a>&nbsp;video, just in case you missed it, want to watch it again or share it with colleagues.<br />
+                                        <br />
+                                        We look forward to you joining us on Compare Cloudware.
+                                    </p>
+                                    <span class="body">Regards</span><span class="body"><br />
+                                        <strong>
+                                            <br />
+                                            Partner Development Manager</strong></span><br />
+                                    <br />
+                                </td>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                                <td width="486" align="left" valign="top">
+                                    <table width="486" border="0" cellspacing="0" cellpadding="0">
+                                        <tr>
+                                            <td width="234" align="left" valign="top" bgcolor="#DADADA">
+                                                <table width="234" border="0" cellspacing="0" cellpadding="0">
+                                                    <tr>
+                                                        <td width="234" align="left" valign="top">
+                                                            <table width="234" border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td width="15" align="left" valign="top" bgcolor="#0D9ADF">&nbsp;</td>
+                                                                    <td width="206" height="25" align="left" valign="middle" bgcolor="#0D9ADF" class="bodywhite">Compare Cloudware TV</td>
+                                                                    <td width="13" align="left" valign="top" bgcolor="#0D9ADF">&nbsp;</td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="234" align="left" valign="top">
+                                                            <table width="234" border="0" cellspacing="0" cellpadding="0">
+                                                                <tr>
+                                                                    <td height="10" colspan="3" align="left" valign="top"></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td width="15" align="left" valign="top">&nbsp;</td>
+                                                                    <td width="208" align="left" valign="top" class="body">View  our other videos on our
+                                                                        <br />
+                                                                        YouTube Channel.</td>
+                                                                    <td width="11" align="left" valign="top">&nbsp;</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td height="10" colspan="3" align="left" valign="top"></td>
+                                                                </tr>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td width="234" align="center" valign="top" bgcolor="#DADADA">
+                                                            <a href="https://www.youtube.com/user/CompareCloudwareTV" target="_blank">
+                                                                <img src="@Url.Content(homePageURL + "/Images/EMails/Business/CCW.tv_videos.gif")" alt="CompareCloudware TV" width="204" height="53" class="body" />
+                                                            </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                            <td width="18" align="left" valign="top">&nbsp;</td>
+                                            <td width="234" align="right" valign="top">
+                                                <a href="https://twitter.com/compcloudware" target="_blank">
+                                                    <img src="@Url.Content(homePageURL + "/Images/EMails/Business/Follow_us_on_twitter.gif")" width="234" height="138" alt="Follow us on Twitter" />
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="600" align="left" valign="top">
+                        <table width="600" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                                <td width="486" align="left" valign="top">
+                                    <p>
+                                        <span class="body">
+                                            <br />
+                                        </span><span class="Legal">
+                                            <unsubscribe></unsubscribe>
+                                            &copy; @System.DateTime.Now.Year.ToString() Compare Cloudware. Registered company number: 7270763
+                                            <br />
+                                            Registered address: 145-157 St John Street, London, EC1V 4PY</span><br />
+                                        <br />
+                                    </p>
+                                </td>
+                                <td width="57" align="left" valign="top">&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
 </table>
