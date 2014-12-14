@@ -9,6 +9,7 @@ namespace CompareCloudware.Web.Models.EMailTemplateModels
     {
         public string RecommenderForename { get; set; }
         public string RecommenderSurname { get; set; }
+        public string RecommenderEMail { get; set; }
         public string ColleagueForename { get; set; }
         public string ColleagueSurname { get; set; }
         public string ColleagueEmail { get; set; }
