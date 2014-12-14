@@ -84,19 +84,19 @@
     </Reference>
     <Reference Include="CompareCloudware.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.Domain.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Domain\bin\Debug\CompareCloudware.Domain.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.POCOQueryRepository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.POCOQueryRepository.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\CompareCloudware.POCOQueryRepository.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.Web.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Web\bin\CompareCloudware.Web.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\EntityFramework.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="HtmlAgilityPack">
       <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\Net40\HtmlAgilityPack.dll</HintPath>
@@ -116,7 +116,7 @@
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Web\bin\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
