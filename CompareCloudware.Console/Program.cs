@@ -9,8 +9,8 @@ using System.Data.Entity.Validation;
 using System.Data.Entity.Infrastructure;
 using System.Diagnostics;
 
-using Microsoft.WindowsAPICodePack;
-using Microsoft.WindowsAPICodePack.Shell;
+//using Microsoft.WindowsAPICodePack;
+//using Microsoft.WindowsAPICodePack.Shell;
 using ManagedWinapi;
 using GhostscriptSharp;
 using System.Configuration;
@@ -689,10 +689,10 @@ namespace CompareCloudware.Console
         #endregion
 
         #region GetThumbnail
-        private static void GetThumbnail(string fileName)
-        {
-            var document = ShellObject.FromParsingName(fileName);
-        }
+        //private static void GetThumbnail(string fileName)
+        //{
+        //    var document = ShellObject.FromParsingName(fileName);
+        //}
         #endregion
 
         #region LoadSkyscrapersMPUs
