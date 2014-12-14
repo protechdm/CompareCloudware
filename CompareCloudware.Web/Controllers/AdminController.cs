@@ -995,6 +995,7 @@ namespace CompareCloudware.Web.Controllers
             model.ColleagueSurname = person.Surname;
             model.RecommenderForename = colleague.Introducer.Forename;
             model.RecommenderSurname = colleague.Introducer.Surname;
+            model.RecommenderEMail = colleague.Introducer.EMail;
             model.Message = car.RequestData;
             //return View("EMailTemplates/SendToColleague", model);
             return View("EMailTemplates/forward-to-a-colleague", model);
