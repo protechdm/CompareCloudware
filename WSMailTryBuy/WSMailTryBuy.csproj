@@ -97,23 +97,23 @@
       <HintPath>..\packages\Castle.Windsor.3.1.0\lib\net40\Castle.Windsor.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.Domain">
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.Domain.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Domain\bin\Debug\CompareCloudware.Domain.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.POCOQueryRepository">
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.POCOQueryRepository.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\CompareCloudware.POCOQueryRepository.dll</HintPath>
     </Reference>
     <Reference Include="CompareCloudware.Web">
-      <HintPath>..\CompareCloudware.Web\bin\CompareCloudware.Web.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Web\bin\CompareCloudware.Web.dll</HintPath>
     </Reference>
     <Reference Include="CsQuery">
       <HintPath>..\packages\CsQuery.1.3.4\lib\net40\CsQuery.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\EntityFramework.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\CompareCloudware.Web\bin\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.POCOQueryRepository\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -134,7 +134,7 @@
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\CompareCloudware.Web\bin\System.Web.Mvc.dll</HintPath>
+      <HintPath>..\..\CompareCloudware\CompareCloudware.Web\bin\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
