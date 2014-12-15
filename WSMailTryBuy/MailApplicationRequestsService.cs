@@ -618,14 +618,139 @@ namespace WSMailTryBuy
             {
 
 
-                #region CONSTRUCT EMAIL AND EXECUTE EMAIL
+                #region CONSTRUCT EMAIL AND EXECUTE EMAIL TO CC - DEPRECATED
+                //bool useTestEMailAddress = Convert.ToBoolean(ConfigurationManager.AppSettings["UseTestEMailAddress"]);
+                //if (useTestEMailAddress)
+                //{
+                //    _logger.WriteEntry("Using TEST mail address", EventLogEntryType.Warning);
+                //}
+
+                //string mailTo = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPMailTo"] : ConfigurationManager.AppSettings["SMTPMailToTest"];
+
+                //mr = new MailRequest()
+                //{
+                //    MailTo = mailTo,
+                //    SMTPClientHost = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPClientHost"] : ConfigurationManager.AppSettings["SMTPClientHostTest"],
+                //    SMTPClientUserDisplayName = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPClientUserDisplayName"] : ConfigurationManager.AppSettings["SMTPClientUserDisplayNameTest"],
+                //    SMTPClientUserEMailAddress = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPClientUserEMailAddress"] : ConfigurationManager.AppSettings["SMTPClientUserEMailAddressTest"],
+                //    SMTPNetworkCredentialsClientUserID = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserID"] : ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserIDTest"],
+                //    SMTPNetworkCredentialsClientUserPassword = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserPassword"] : ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserPasswordTest"],
+                //    SMTPEnableSSL = !useTestEMailAddress ? Convert.ToBoolean(ConfigurationManager.AppSettings["SMTPEnableSSL"]) : Convert.ToBoolean(ConfigurationManager.AppSettings["SMTPEnableSSLTest"]),
+                //    SMTPPort = !useTestEMailAddress ? int.Parse(ConfigurationManager.AppSettings["SMTPPort"]) : int.Parse(ConfigurationManager.AppSettings["SMTPPortTest"]),
+                //};
+
+                //if (car.RequestTypeID == BusinessPartnerID)
+                //{
+                //    //mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameTry"];
+                //    mr.MailSubject = ConfigurationManager.AppSettings["BusinessPartnerMailSubject"];
+                //}
+                //else if (car.RequestTypeID == StrategicPartnerID)
+                //{
+                //    //mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameBuy"];
+                //    mr.MailSubject = ConfigurationManager.AppSettings["StrategicPartnerMailSubject"];
+                //}
+                //else if (car.RequestTypeID == ReferRewardPartnerID)
+                //{
+                //    //mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameBuy"];
+                //    mr.MailSubject = ConfigurationManager.AppSettings["ReferRewardPartnerMailSubject"];
+                //}
+                //else
+                //{
+                //    throw new Exception("Invalid request type");
+                //}
+
+                //_logger.WriteEntry("Sending email to address : " + mailTo + " for REQUEST ID:" + car.CloudApplicationRequestID.ToString(), EventLogEntryType.Information);
+                //sm.Execute(html, mr);
+                //_logger.WriteEntry("Successfully sent email to address : " + mailTo + " for REQUEST ID:" + car.CloudApplicationRequestID.ToString(), EventLogEntryType.Information);
+
+                //mr = null;
+
+                #endregion
+
                 bool useTestEMailAddress = Convert.ToBoolean(ConfigurationManager.AppSettings["UseTestEMailAddress"]);
+                string mailTo = null;
+
+                #region CONSTRUCT EMAIL AND EXECUTE EMAIL
+                if (car.PersonID != null)
+                {
+                    if (useTestEMailAddress)
+                    {
+                        _logger.WriteEntry("Using TEST mail address", EventLogEntryType.Warning);
+                    }
+
+                    mailTo = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPPartnerProgrammeReceiptMailTo"] : ConfigurationManager.AppSettings["SMTPMailToTest"];
+
+                    Person p = _repository.GetPersonByPersonID(car.PersonID);
+                    if (p == null)
+                    {
+                        throw new Exception("Could not find person in repository with ID : " + car.PersonID.ToString());
+                    }
+
+                    mr = new MailRequest()
+                    {
+                        MailTo = mailTo,
+                        SMTPClientHost = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPClientHost"] : ConfigurationManager.AppSettings["SMTPClientHostTest"],
+                        SMTPClientUserDisplayName = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPClientUserDisplayName"] : ConfigurationManager.AppSettings["SMTPClientUserDisplayNameTest"],
+                        SMTPClientUserEMailAddress = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPClientUserEMailAddress"] : ConfigurationManager.AppSettings["SMTPClientUserEMailAddressTest"],
+                        SMTPNetworkCredentialsClientUserID = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserID"] : ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserIDTest"],
+                        SMTPNetworkCredentialsClientUserPassword = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserPassword"] : ConfigurationManager.AppSettings["SMTPNetworkCredentialsClientUserPasswordTest"],
+                        SMTPEnableSSL = !useTestEMailAddress ? Convert.ToBoolean(ConfigurationManager.AppSettings["SMTPEnableSSL"]) : Convert.ToBoolean(ConfigurationManager.AppSettings["SMTPEnableSSLTest"]),
+                        SMTPPort = !useTestEMailAddress ? int.Parse(ConfigurationManager.AppSettings["SMTPPort"]) : int.Parse(ConfigurationManager.AppSettings["SMTPPortTest"]),
+
+                        MailTemplateResourceTokens = new Dictionary<string, string>()
+                        {
+                            {"FirstName", p.Forename.Trim()},
+                            {"Surname", p.Surname},
+                            {"Position", p.Position},
+                            {"Company", p.Company},
+                            {"EMail", p.EMail},
+                            {"Telephone", p.Telephone},
+                            {"Country", p.PersonCountry},
+                        }
+                    };
+
+                    if (car.RequestTypeID == 4)
+                    {
+                        mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameBusinessPartner"];
+                        mr.MailSubject = ConfigurationManager.AppSettings["BusinessPartnerReceiptMailSubject"];
+                    }
+                    else if (car.RequestTypeID == 5)
+                    {
+                        mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameStrategicPartner"];
+                        mr.MailSubject = ConfigurationManager.AppSettings["StrategicPartnerReceiptMailSubject"];
+                    }
+                    else if (car.RequestTypeID == 6)
+                    {
+                        mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameReferRewardPartner"];
+                        mr.MailSubject = ConfigurationManager.AppSettings["ReferRewardPartnerReceiptMailSubject"];
+                    }
+                    else
+                    {
+                        throw new Exception("Invalid request type");
+                    }
+
+                    _logger.WriteEntry("Sending email to address : " + mailTo + " for REQUEST ID:" + car.CloudApplicationRequestID.ToString(), EventLogEntryType.Information);
+                    sm.Execute(p, mr);
+                    _logger.WriteEntry("Successfully sent email to address : " + mailTo + " for REQUEST ID:" + car.CloudApplicationRequestID.ToString(), EventLogEntryType.Information);
+
+                    p = null;
+                    mr = null;
+
+                }
+                else
+                {
+                    _logger.WriteEntry("Could not locate person ID for request ID " + car.CloudApplicationRequestID.ToString(), EventLogEntryType.Error);
+                }
+                #endregion
+
+                #region CONSTRUCT EMAIL AND EXECUTE EMAIL TO REQUESTOR
+                useTestEMailAddress = Convert.ToBoolean(ConfigurationManager.AppSettings["UseTestEMailAddress"]);
                 if (useTestEMailAddress)
                 {
                     _logger.WriteEntry("Using TEST mail address", EventLogEntryType.Warning);
                 }
 
-                string mailTo = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPMailTo"] : ConfigurationManager.AppSettings["SMTPMailToTest"];
+                mailTo = _repository.GetPersonByPersonID(car.PersonID).EMail;
 
                 mr = new MailRequest()
                 {

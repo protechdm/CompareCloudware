@@ -1,0 +1,10 @@
+﻿A REFER & REWARD PARTNER request has been received
+
+Details are as follows
+
+First name: {%= FirstName %}
+Surname: {%= Surname %}
+Position: {%= Position %}
+Company: {%= Company %}
+Email: {%= EMail %}
+Telephone: {%= Telephone %}

@@ -157,7 +157,9 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\ReferRewardReceipt.txt" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Helpers\TryReceipt.txt" />
     <EmbeddedResource Include="MailApplicationRequestsService.resx">
@@ -175,6 +177,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\BusinessPartnerReceipt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Helpers\StrategicPartnerReceipt.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
