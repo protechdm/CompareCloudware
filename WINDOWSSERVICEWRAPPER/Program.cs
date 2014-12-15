@@ -67,12 +67,12 @@ namespace WindowsServiceWrapper
             //ms.ServiceMail();
 
             //MAIL PARTNER PROGRAMME
-            //MailApplicationRequestsService ms = new MailApplicationRequestsService();
-            //ms.ServicePartnerProgramme();
+            MailApplicationRequestsService ms = new MailApplicationRequestsService();
+            ms.ServicePartnerProgramme();
 
             //MAIL SEND TO COLLEAGUE
-            MailApplicationRequestsService ms = new MailApplicationRequestsService();
-            ms.ServiceSendToColleague();
+            //MailApplicationRequestsService ms = new MailApplicationRequestsService();
+            //ms.ServiceSendToColleague();
             
             return;
 
