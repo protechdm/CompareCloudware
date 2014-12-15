@@ -968,7 +968,7 @@ namespace CompareCloudware.Web.Controllers
             var car = _repository.GetCloudApplicationRequest(cloudApplicationRequestId);
             var person = _repository.GetPersonByPersonID(car.PersonID);
 
-            CompareCloudware.Web.Models.EMailTemplateModels.StrategicPartnerModel model = new Models.EMailTemplateModels.StrategicPartnerModel();
+            CompareCloudware.Web.Models.EMailTemplateModels.ReferRewardPartnerModel model = new Models.EMailTemplateModels.ReferRewardPartnerModel();
             model.Forename = person.Forename;
             model.Surname = person.Surname;
             model.Vendorname = person.Company;
