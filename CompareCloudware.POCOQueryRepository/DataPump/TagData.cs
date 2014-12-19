@@ -2871,8 +2871,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #region INTELLIGENCE & REPORTING
             t = new Tag()
             {
-                TagName = "business-intelligence-reporting",
-                Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
+                TagName = "intelligence-and-reporting",
+                Category = repository.FindCategoryByName("INTELLIGENCE AND REPORTING"),
                 TagType = repository.FindTagTypeByName("CATEGORY URL"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };

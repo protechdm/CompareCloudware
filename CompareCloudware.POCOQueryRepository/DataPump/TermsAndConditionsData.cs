@@ -3730,7 +3730,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddTermCondition(tc);
 
-            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at Shalford Court, 95 Springfield Road, Chelmsford, Essex, CM2 6JL.";
+            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at 145-157 St John Street, London, England, EC1V 4PW.";
             tc = new TermCondition
             {
                 ParentDisplayID = 2,
@@ -7138,7 +7138,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddTermCondition(tc);
 
-            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at Shalford Court, 95 Springfield Road, Chelmsford, Essex, CM2 6JL.";
+            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at 145-157 St John Street, London, England, EC1V 4PW.";
             tc = new TermCondition
             {
                 ParentDisplayID = 0,
@@ -7382,7 +7382,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SectionText2 = "www.comparecloudware.com",
                 SectionText2IsURL = true,
                 SectionText2URL = "www.comparecloudware.com",
-                SectionText3 = ", Compare Cloudware or Compare Cloudware Ltd a company incorporated under the laws of England with its registered office address at Shalford Court, 95 Springfield Road, Chelmsford, Essex, CM2 6JL.",
+                SectionText3 = ", Compare Cloudware or Compare Cloudware Ltd a company incorporated under the laws of England with its registered office address at 145-157 St John Street, London, England, EC1V 4PW.",
                 ColumnSpan = maxCols,
                 Section = 1,
                 TermConditionType = "PRIVACY_POLICY",

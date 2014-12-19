@@ -92,6 +92,26 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             // 9/7/2014
             string MPU_FILE62 = "mm_accountsextra_MPU.jpg"; //FINANCIAL 454
 
+            // 18/12/2014
+            string MPU_FILE63 = "human_resources_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE64 = "conferencing_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE65 = "project_management_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE66 = "crm_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE67 = "financial_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE68 = "office_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE69 = "communications_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE70 = "storage_backup_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE71 = "email_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE72 = "security_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE73 = "marketing_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE74 = "website_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE75 = "creative_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE76 = "intelligence_reporting_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE77 = "hosting_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE78 = "Payments_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE79 = "sales_mpu.gif"; //FINANCIAL 454
+            string MPU_FILE80 = "business_operations_mpu.gif"; //FINANCIAL 454
+
             int MPU_FILE23_CLOUDAPPLICATIONID = 394;
             int MPU_FILE24_CLOUDAPPLICATIONID = 342;
             int MPU_FILE25_CLOUDAPPLICATIONID = 427;
@@ -142,6 +162,26 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             // 30/11/2014
             int MPU_FILE62_CLOUDAPPLICATIONID = 454;
+
+            // 18/12/2014
+            int MPU_FILE63_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE64_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE65_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE66_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE67_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE68_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE69_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE70_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE71_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE72_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE73_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE74_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE75_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE76_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE77_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE78_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE79_CLOUDAPPLICATIONID = 454;
+            int MPU_FILE80_CLOUDAPPLICATIONID = 454;
 
             string SKYSCRAPER_FILEPATH = "C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Skyscrapers\\";
             string SKYSCRAPER_FILE1 = "bamboo.jpg";
@@ -205,6 +245,26 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             //30/11/2014
             string SKYSCRAPER_FILE48 = "mm_accountsextra_skyscraper.jpg"; //FINANCIAL 454
 
+            //18/12/2014
+            string SKYSCRAPER_FILE49 = "human_resources_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE50 = "conferencing_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE51 = "project_management_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE52 = "crm_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE53 = "financial_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE54 = "office_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE55 = "communications_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE56 = "storage_backup_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE57 = "email_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE58 = "security_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE59 = "marketing_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE60 = "website_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE61 = "creative_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE62 = "intelligence_reporting_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE63 = "hosting_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE64 = "Payments_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE65 = "sales_Sky.gif"; //FINANCIAL 454
+            string SKYSCRAPER_FILE66 = "business_operations_Sky.gif"; //FINANCIAL 454
+
             int SKYSCRAPER_FILE9_CLOUDAPPLICATIONID = 394;
             int SKYSCRAPER_FILE10_CLOUDAPPLICATIONID = 342;
             int SKYSCRAPER_FILE11_CLOUDAPPLICATIONID = 427;
@@ -255,6 +315,26 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             // 30/11/2014
             int SKYSCRAPER_FILE48_CLOUDAPPLICATIONID = 454;
+
+            // 18/12/2014
+            int SKYSCRAPER_FILE49_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE50_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE51_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE52_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE53_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE54_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE55_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE56_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE57_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE58_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE59_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE60_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE61_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE62_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE63_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE64_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE65_CLOUDAPPLICATIONID = 454;
+            int SKYSCRAPER_FILE66_CLOUDAPPLICATIONID = 454;
 
             bool retVal = true;
 
@@ -950,6 +1030,206 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddAdvertisingImage(ai);
 
+            // 18/12/2014
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE63,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE63),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("HR"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE63_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE64,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE64),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("WEB CONFERENCING"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE64_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE65,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE65),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("PROJECT MANAGEMENT"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE65_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE66,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE66),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("CRM"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE66_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE67,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE67),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("FINANCIAL"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE67_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE68,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE68),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("OFFICE"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE68_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE69,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE69),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("COMMUNICATIONS"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE69_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE70,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE70),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("STORAGE AND BACKUP"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE70_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE71,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE71),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("EMAIL"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE71_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE72,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE72),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE72_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE73,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE73),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("MARKETING"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE73_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE74,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE74),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("WEBSITE"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE74_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE75,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE75),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE75_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE76,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE76),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE76_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE77,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE77),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("HOSTING"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE77_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE78,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE78),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("PAYMENTS"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE78_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE79,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE79),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("SALES"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE79_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = MPU_FILEPATH,
+                AdvertisingImageFileName = MPU_FILE80,
+                AdvertisingImageBytes = GetImageAsBytes(MPU_FILEPATH + MPU_FILE80),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("MPU"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
+                CloudApplication = repository.GetCloudApplication(MPU_FILE80_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+
             ai = new AdvertisingImage()
             {
                 AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
@@ -1484,6 +1764,206 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
                 Category = repository.FindCategoryByName("FINANCIAL"),
                 CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE48_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+
+            //18/12/2014
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE49,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE49),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("HR"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE49_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE50,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE50),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("WEB CONFERENCING"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE50_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE51,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE51),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("PROJECT MANAGEMENT"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE51_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE52,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE52),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("CRM"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE52_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE53,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE53),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("FINANCIAL"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE53_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE54,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE54),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("OFFICE"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE54_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE55,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE55),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("COMMUNICATIONS"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE55_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE56,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE56),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("STORAGE AND BACKUP"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE56_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE57,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE57),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("EMAIL"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE57_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE58,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE58),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE58_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE59,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE59),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("MARKETING"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE59_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE60,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE60),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("WEBSITE"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE60_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE61,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE61),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE61_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE62,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE62),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE62_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE63,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE63),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("HOSTING"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE63_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE64,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE64),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("PAYMENTS"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE64_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE65,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE65),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("SALES"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE65_CLOUDAPPLICATIONID, false),
+            };
+            repository.AddAdvertisingImage(ai);
+            ai = new AdvertisingImage()
+            {
+                AdvertisingImagePhysicalFilePath = SKYSCRAPER_FILEPATH,
+                AdvertisingImageFileName = SKYSCRAPER_FILE66,
+                AdvertisingImageBytes = GetImageAsBytes(SKYSCRAPER_FILEPATH + SKYSCRAPER_FILE66),
+                AdvertisingImageType = repository.FindAdvertisingImageTypeByName("SKYSCRAPER"),
+                AdvertisingImageStatus = repository.FindStatusByName("LIVE"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
+                CloudApplication = repository.GetCloudApplication(SKYSCRAPER_FILE66_CLOUDAPPLICATIONID, false),
             };
             repository.AddAdvertisingImage(ai);
             #endregion

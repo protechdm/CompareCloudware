@@ -2992,7 +2992,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentText(ct);
-            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at Shalford Court, 95 Springfield Road, Chelmsford, Essex, CM2 6JL. ";
+            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at 145-157 St John Street, London, England, EC1V 4PW. ";
             ct = new ContentText
             {
                 NiceName = "",
@@ -3953,7 +3953,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentText(ct);
-            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at Shalford Court, 95 Springfield Road, Chelmsford, Essex, CM2 6JL. ";
+            data = "Compare Cloudware Ltd, a company incorporated under the laws of England with its registered office address at 145-157 St John Street, London, England, EC1V 4PW. ";
             ct = new ContentText
             {
                 NiceName = "",
@@ -4139,7 +4139,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentText(ct);
-            data = "means www.comparecloudware.com, Compare Cloudware or Compare Cloudware Ltd a company incorporated under the laws of England with its registered office address at Shalford Court, 95 Springfield Road, Chelmsford, Essex, CM2 6JL. ";
+            data = "means www.comparecloudware.com, Compare Cloudware or Compare Cloudware Ltd a company incorporated under the laws of England with its registered office address at 145-157 St John Street, London, England, EC1V 4PW. ";
             ct = new ContentText
             {
                 NiceName = "",
@@ -6859,6 +6859,1715 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddContentText(ct);
             #endregion
 
+            #region HOSTING H1 etc
+            data = "Introduction to Cloud Hosting";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "In the 1970’s if you said the word “hosting” you would think of warming trolleys, fondue sets and Black Forest gateaux. In today’s computer world, ensuring your website is up to the job is a constant battle with new services, third-party apps and plug-ins becoming available to help optimise your online existence. From blogs to full-blown ecommerce platforms, choosing the right hosting partner can ensure you reduce downtime and maximise opportunity. Whilst hosting is not particularly expensive (compared with a bricks and mortar equivalent), it does pay to shop around and look at the features you need, the level of security required and how easy it is to set-up. You might also want to consider the level and type of support you need especially if you don’t have an IT expert in the house (it can often feel like finding a plumber when you need one!). So what are you waiting for? Find out who is the host with the most.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of Hosting";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Most small businesses are not experts in IT and, even for those that are, it pays to have a professional hosting company to take care of your hosting requirements. The 5 critical advantages of cloud based Hosting are: -";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Around the clock monitoring – how much would it cost if your online services were affected?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Reliability – hosting companies deploy the latest technology and equipment which is out-of-reach for most small businesses.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Support – 24/7 customer service is often part of many packages.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Security – military grade security protocols ensure your data and/or website is safe.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 108,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Scalability – no need to buy equipment or predict what you need in the future because you don’t need any infrastructure, it’s all taken care of.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 108,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Cloud Hosting?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Cloud or web hosting allows businesses to benefit from technical support and better security that is not often possible with small businesses. To ensure you have the right service and are getting value for money, it is not always about price. You may want to consider the following: -";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Do you get 24/7 telephone based customer service or perhaps you just need online support?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Got enough storage and bandwidth? Is your service flexible to allow more traffic when you need it?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Virtual Private Services – do you need your own private data centre that is matched to specific requirements rather than a turnkey solution?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Does the provider offer SSL (secure socket layer) to ensure your site encrypts valuable data such as credit card numbers?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Do you need webtool integrations to ensure that your website performs and functions the way you want it to? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "6.	You can easily discover all this and more by using Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HOSTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region WEBSITE H1 etc
+            data = "Introduction to Website services";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Despite having the most internet savvy economy, incredibly around 15 million companies in the good ‘ol USA still don’t have websites! In the UK and the rest of Europe it’s a similar picture. Once the preserve of fast food loving web masters or local ‘Bob down the road’ IT shops, there is now an abundance of cloud based website building software where you can create everything yourself and pick features just like pizza toppings. From a simple ‘share your thoughts’ Blog to a full-blown eCommerce store, there really is no excuse in having a half-baked website. Not only can you have a professional website in just a few minutes, you can have a website that is easy to manage and update. With plenty of migration services available you can easily move to a better suited option rather than rely on Pepperoni Pete to make changes or add an image. Go on, take a slice of the online action today.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantage of Website services";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Let’s face it most of struggle to remember our credit card pin number let alone understand the art and science of computing code. With the latest website building software you can create the perfect website in a matter of minutes. Here are just 5 advantages of why website software is better in the Cloud: -";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Error Free – why waste time writing code that may not work, even if you know some coding languages, a website builder will save time and possible aggravation.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Latest Designs – get beautifully designed templates at a touch of button";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Get Social – integrate social media plug-ins without things getting awkward!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Mobile Friendly – does your current website look good on a small screen?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 108,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Ease of Use – need to update your site regularly? It’s a breeze with website building service.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 108,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Website services?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "All website building services are different with specialisms in specific areas such as ecommerce and blogs. When you choose website building software you may want to consider the following: -";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Can I see analytics and reporting relating to my site visitors?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Can I integrate with 3rd Party applications?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	What design tools can I choose from and does the website builder cater for my industry?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Can I build a storefront that’s accepts credit cards?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Can I link with my social media accounts?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "6.	Is my site compatible with Google Ads?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "7.	Can I improve my search engine results with in-built tools?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "You can discover all this and more when you use Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("WEBSITE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region PAYMENTS H1 etc
+            data = "Introduction to Online Payments";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Cold hard cash will soon be consigned to history or at least be seen as a niche as a writing a cheque. The ability to allow customers to make instant, convenient and safe payments from a PC, laptop or mobile phone will make all the difference for those wanting to run a successful business in the online world. Even in the offline world, cloud based payment systems are revolutionising the way customers receive service from restaurants using tablets to take orders (as well as ensure accurate bills) to buying the latest gadget where paper receipts are frowned upon. From buying a morning coffee with the obligatory blueberry muffin to rare white-label vinyl of a post-punk classic, the world is open for business and you can have a slice of the action for just pennies per day. So welcome to the new world of online payments, you may not be able to barter you’re way to a great deal but using Compare Cloudware you’ll certainly be able to find one that fits the bill!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of Payment Services";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "If you sell stuff on your website, you need a fast and efficient online payment service to improve your site experience, lower overheads and ensure your customers have the best overall experience. Online shoppers now expect to pay for purchases immediately and receiving shipments quickly. Here are the 3 top advantages of using an online payment service:-";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Tighter Security - thanks to security features such as card number encryption and 3D fraud protection, people can buy from you with a high degree of confidence.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Instant Gratification – getting what you want immediately is the primary motivation for shopping online and online payment enables a customer to pay for a product immediately.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Recurring Payments - accepting payments online removes the problems associated with making recurring payments via standing orders, direct debit or even a cheque (remember those?). If you have a subscription-based service, you can store customers' payment information and collect payments automatically each subscription term rather than sending reminders that payments are now due.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Payment Services?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "There are a range of online payment services that specialise in different areas and have very different commercial terms in terms of transactions and cost of handling different payments methods. Depending on where you trade and who you intend to trade with will mean shopping around. Here are some other things to consider:-";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Does the payment service offer check-out cart integration?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Can my customers make payments with all kinds of credit, charge and debit cards?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Does my online payment service include telephone and mail order payments?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Do I get free transaction refunds for incorrect or accidental customer orders?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Can I receive multi-currency payments?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "You can discover all this and more when you use Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("PAYMENTS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region HR H1 etc
+            data = "Introduction to HR Software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Some of you may remember the dreaded Personnel Department? For those that do, it would often strike fear in the hearts of anyone who was invited to attend an interview or meeting. For the most part that has all changed. Today, Human Resources (HR) may sound as though you’ve swallowed a red-coloured reality pill from The Matrix, but it’s essential to ensure your business looks after the most important asset of all, your people. It can also help attract new staff as you grow or ensure you backfill positions quickly. With the advent of cloudware, there are a range HR packages which have streamlined and automated a range of administrative tasks from time-sheets to performance reviews to hiring. Some HR services even actively encourage staff participation and collaboration with self-service access on a smartphone. Now that’s something even Keanu Reeves didn’t see coming!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of Cloud HR";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "One of the biggest advantages HR and recruiting professionals will experience from cloud delivered services is empowering staff to do more. The ability for employees (and potential new recruits) to access information, conduct 365 degree appraisals and apply for positions from anywhere on any device is a strong signal that they are part of (or hoping to join) a progressive company. Of course corporate image and mobile access are not the only advantages, here are our Top 3 reasons why you should head into the cloud with HR:-";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Communications – supercharge you communications by sending information to the right people at the right time without the copy/paste.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Self-Service – with the rise in home and flexible working, accessing cloud based HR systems can mean finding notices quickly and self-service features such as training and development enrolment and expenses.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Compliance – provide easy access to the latest compliance, code of conduct, health and safety documentation.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Cloud HR services? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Depending on size and industry, small to medium size businesses will have different requirements that need focus on certain areas. If you run a field trade organisation then mobile access to safety information or timesheets may be necessary whereas for a sales office it could be that regular performance appraisals are essential. Here are some other reasons you may want to dig deeper when it comes to choosing the right provider:-";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Do you need to store and provide access to a wide range of documentation?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Will you need a recruitment module to manage the interview and selection process?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Do you need automated employment and on-boarding features?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Are you going to run multiple training and development programmes?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Do you have a robust case management system for complaints and disciplinary processes?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "You can discover all this and more when you use Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("HR_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region SALES H1 etc
+            data = "Introduction to Sales software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "If you can’t get leads or close leads that you generate, it’s only going to end badly for you and your business. In the seminal words from the greatest sales movie of all time Glengarry Glen Ross “put that coffee down” and start looking for online sales software which can help organise your team, provide instant deal visibility and accelerate your sales. With cloud based Sales software you can rapidly create the perfect sales dashboard for you and your team providing a visual overview of your sales data divided into different categories, split by products/services and salespeople. You can track activity goals by setting team and individual goals whilst moving deals along to the next stage so that you get the sale in fastest possible time. Today, of course, it’s not just about ‘cold call’ motivation and being more efficient with your sales funnel, it’s also about adopting new techniques such as social selling and using your website to ensure all opportunities are captured properly. Before you know it, using the right sales software will be easy as ABC which means you’ll “Always Be Closing!”";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of Sales software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "If a business doesn’t focus on driving revenue then it won’t be in business for very long. Whilst whiteboards, spreadsheet trackers and even customer relationship management (CRM) applications go so far, they may not be enough to make the difference when it comes to closing the deal. Here are our Top 5 reasons why you should consider dedicated cloud-delivered sales software:-";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Real-Time Reporting – why wait for the weekly sales ‘hotwash’ to see the pipeline, get up to the second reporting instantly.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	Performance Improvements– need a dashboard on who and what is selling?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Activity Metrics – who is performing in terms of activity but not selling?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Increased Productivity – enable your sales team to look up important details on the go allowing mobile access to contacts and deal histories before that critical meeting. ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	See the Future – view ongoing deals arranged by their likely close date next to deals you've already closed.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 107,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Sales software?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Products and services are not built the same and have different sales lifecycles; let’s face it buying a house if different to buying marketing services or a loaf of bread. Selling to consumers is also a completely different kettle of fish to business-to-business sales, so ensuring the right fit is a critical component of buying the right sales software for your business. You may also want to consider the following features when choosing the right sales cloudware provider:-";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "1.	Do you need to track specific deals and manage them over a long period of time?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "2.	What sort of goals and targets will you be setting?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "3.	Do you need to score leads and route them to the right salesperson?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "4.	Do you need telephone integration to manage calling activity?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "5.	Do you need to import and/or export contact information?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "You can discover all this and more when you use Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("SALES_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region INTELLIGENCE & REPORTING H1 etc
+            data = "Introduction to Intelligence & Reporting";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "To some, Business Intelligence may sound like the covert activity undertaken by the likes of the CIA or MI5. For the more cynical amongst us, it may conjure images of the Snowden revelations of government snooping. But for many organisations, Business Intelligence software (or BI as they call it in the trade!) can provide the guidance needed for greater success – as well as the warning signs of failure!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Whatever the size of business, management always need to know essential information – for better or for worse. What sales channels are making money – and which ones are flagging? What products are proving profitable – and what services need retiring? What trends do you need to worry about? Where are tomorrow’s sales and opportunities likely to come from? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Oh, if every business could answer these questions. But all of this is a reality with the right business reporting and intelligence software.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Business Intelligence, analytics and reporting tools are used to convert raw data into meaningful and useful information for business analysis purposes. It’s all a bit complicated under the bonnet, but the goal of BI is to allow the easy interpretation of large amounts of data.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "So, rather than play the role of James Bond, business managers can behave more like Richard Branson - identifying new exciting opportunities for long-term success.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of Intelligence & Reporting";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Imagine having the essential information you need for world domination – all at your fingertips. Just pick up your smart phone, tablet or laptop to see a real-time view of what’s going on, everywhere in your empire. Oh, the power of BI and analytics!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Cloud-based BI can help you achieve this. What’s more, it’s quick to deploy and simple to use. It can be used to support a wide range of business decisions ranging from operational to strategic. Basic operating decisions include product positioning or pricing. Strategic business decisions include priorities, goals and directions at the broadest level.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "BI technologies provide historical, current and predictive views of business operations. Common functions of business intelligence are company reporting, understanding online activities, assessing business performance, benchmarking against competitors and forecasting. It might all sound a bit heavy and technical – but (as they say), no pain no gain.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Intelligence & Reporting? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = " OK, we agree that Business Intelligence tools may not sound the sexiest of subject matters. But, how does increased profit, improved productivity, enhanced cash value sound to you?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "The truth is that BI can make quite an impact. The question is – which Business Intelligence and reporting option is right for your business? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which cloud business intelligence offering has the right forecasting and reporting tools?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which reporting option can you afford?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What business information options can you run on tablets and smart phones?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What solution gives the intelligence dashboard and KPI personalisation you require?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which BI option provides the right level of support?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Just some of the answers that can be provided by Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("INTELLIGENCEANDREPORTING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region MARKETING H1 etc
+            data = "Introduction to Marketing software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Think about marketing and you start to think of those bohemian, creative types with big bright ideas about ‘raising your profile’ and ‘building your brand’. Those guys add great value to your business – but they’ve normally overdosed on caffeine and bring overly-wild ideas to the table.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "As a smaller business you’ve got a choice. Invite these crazy types in for a coffee tea, or have a go yourself. For most organisations, the reality is that they need a blend of both. But, that’s where the wonderful new world of cloud marketing tools gets interesting.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Whether you’re looking to market to new or existing customers, there’s now a rich vein of cloud-based applications to help you. Email broadcast, social marketing, PR, search, telemarketing, survey and webinar management tools – all immediately accessible by the magic of cloud. Often, these are the tools used by the pro’s. Many of them allow great team-working between agency and client – and also between client and agency. This means you can establish imaginative ways to collaborate and co-create.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "So, whether you’re a professional creative type serving clients or a small business looking to ‘fly solo’, Compare Cloudware is the best place to start.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of cloud-based Marketing software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Whether you’re a ‘professional’ or ‘nominated’ marketer, you’ll love the fact that cloud-based marketing tools can be accessed from anywhere. Whether planning a campaign, sending an email, doing social ‘shouts’, creating video content, creating landing pages or carrying out research exercises - you’re not tied to an application that sits on a PC.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "You can even go on your hols and trigger an automated campaign from the hotel’s wifi. As long as there’s a browser and Internet access, you can access your complete marketing toolbox. And remember, if you partner with those crazy agency-types, you can often share tools and resources.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "What’s more, the flexible licensing and rapid availability of industry-leading technology often makes the use of cloud-based marketing tools a ‘no-brainer’.  Whether working directly for clients or within an in-house environment, cloud-delivered marketing services enable lightening-fast, efficient and transparent campaigns.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why compare Marketing software?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = " OK, it’s not brain surgery but communicating with customers and prospects can be a bit risky. Get it right and it can reap big rewards and all seem so easy. But, get it wrong and it can end up costing you goodwill, relationships and money besides. Choosing and selecting the right marketing tools is directly related to your success.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What platforms support marketing across social networks?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	How many providers can help with automated emails?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which marketing software and cloudware can be used for surveys?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What solutions provide landing pages, email broadcast – and integrated reporting?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What webinar package provides the right support?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Whether you’re a professional marketer or have been nominated with the role - discover the best cloud marketing technology options on Compare Cloudware.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("MARKETING_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region BUSINESS OPERATIONS H1 etc
+            data = "Introduction to Business Operations";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "So, who do you think has the business X factor? Global entrepreneurs like Trump or Branson? Tech innovators such as Jobs or Ellison? Or, do you admire the shrewd, savvy type like Sugar? Whoever inspires you most, it takes more than a big character and bright idea to build and grow a successful business.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Now, we don’t want to sound like a boring business strategy book - but it needs systems and processes that encourage company-wide behaviours and decision-making. These should be based on the culture that the leaders want to create. Cue cloud-based business applications.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Cloudware running through all your business operations acts like a digital nervous system – connecting the vital organs of the organisation.  Management know the status of absolutely everything – from field staff utilisation, resources availability, inventory status, online operations, retail outlet figures, customer service metrics – right through to supplier risk and exposure. (OK, we are now we are sounding like a business strategy book!)";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Cloudware has the potential to transform any organisation to a modern business – allowing leaders and manager to know how they’re performing - at any point - and at a moment’s notice.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of cloud-based Business Operations";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "For decades, businesses looking for operations software have been tied to the high cost of licenses and costly support and implementation. This has rendered the growing business a second class user – unable to afford and embrace these tools. But at Compare Cloudware, we think that’s all about to change – with a revolution that’ll allow even the smallest business to trade blows with the big guns.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "The growing business is nimble and often has a workforce spread over office, home and mobile locations. The great news is that cloud applications are a superb fit for today's teleworking and virtual enterprises. What’s more, Cloudware enables innovative and game-changing services that managers could only dream about a few years ago. Nowadays, pretty much any business service can be re-imagined and re-budgeted. The opportunities created from using cloud-based applications across your business cannot be overstated.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "The growing business benefits from blue-chip grade technology, support, security and innovation – but with flexible and cost-effective subscription models and license arrangements. That sounds very tempting doesn’t it? Soon your business could be taking a swipe at Messrs Sugar and co!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Business Operations software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "‘Let’s get some software’. That’s the rally call from many business managers that know they need ‘a system’ to fix their problems. But they don’t know what solutions are out there to fulfil their needs?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What helpdesk software can you afford to help improve customer service?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which purchase order and quote management solution helps with inventory across all sites?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	How do you know what field staff management system can run on smart phones and tablets?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What e-signature solution will work across the whole business?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which workforce management software helps with time and attendance – and project costing?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "We simplify the decision-making process with a simple and intuitive comparison engine that allows you to compare and research what’s on offer from all the leading business and operations management providers. All within a matter of seconds.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "So, what are you waiting for? Let’s get going!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
+
+            #region CREATIVE H1 etc
+            data = "Introduction to Creative and Design";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 99,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "High standards in creative and design used to the reserve of boutique businesses and larger organisations. These were the ones that could afford to bring in the ‘ponytails’ and ‘arty types’ to add some ‘je ne sais quoi’ to a company’s presentation. This would be followed by an explosion of mood boards, concepts and creative brainstorming. But that’s all changed – everyone now sees the power and value of good aesthetics and design.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "We’re all getting more visually aware and literate - whether it’s our houses, electrical goods, interiors, wardrobes or even food. We want things that don’t just carry out their task – but look cracking too! Presentation of the business is no different – whether it’s reports, proposals, emails, newsletters, videos, sales collateral or the website. Customers, suppliers and prospects are more visually savvy and demanding – often making decisions on instant appeal and how professional you look.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "At Compare Cloudware, we’re not trying turn all business owners into the next Mad Men advertising executive. However, many of the design software and creative tools available are the ones used by the pros – and many of them are more straightforward to use than you’d imagine.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 100,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Advantages of Creative and Design cloud software";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_1_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Chances are you already rely on cloud-based services for some of your business’ marketing and networking activity. Many will be using LinkedIn, Twitter, Facebook – or even a blog or web-forms already. But, this is the tip of the iceberg - professional-quality, completely cloud-based creative apps are now a reality too. Wahoo – we can all discover our inner artist!";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Whether you’re a wannabe creative or jeans-wearing design guru, there’s an exciting array of intuitive and feature-rich tools out there. These include video production, app building, graphic design, email broadcast, web page creation, photo-manipulation, diagramming, eBook and animation production. These are all ready and waiting to add some pizazz to your organisations image.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 105,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Furthermore, many of these design software tools are available for free-trial periods, so you can give them a text drive before you let them loose within the unsuspecting organisation.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_1_BODY"),
+                ContentTextData = data,
+                BodyOrder = 106,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Why Compare Creative and Design software? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_TITLE"),
+                ContentTextData = data,
+                BodyOrder = 103,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "So, want to play Art Director, Publisher or Video Producer but not sure where to start? Need to produce business-winning pitches but not sure what tools are right? Or, need to improve clarity of sales and product collateral but not sure what presentation tools are best? Compare Cloudware guides you through the process of deciding what Cloudware is right for you. You tell us the features, browsers and support you require – and we’ll give you the answers.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What cloud software can you afford for video creation?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which cloud platform should be considered for publishing customer newsletters or eBooks?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What’s the right Cloudware for building apps from existing data and content?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	What software options are there for photo retouching?";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "•	Which graphic design software helps produce animations and animated images? ";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            data = "Let Compare Cloudware discover the right video application to help you become the next Steven Spielberg – or the app building tool to make the next Angry Birds.";
+            ct = new ContentText
+            {
+                NiceName = "",
+                ContentTextType = repository.FindContentTextTypeByName("CREATIVE_H2_2_BODY"),
+                ContentTextData = data,
+                BodyOrder = 104,
+                ContentTextStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentText(ct);
+
+            #endregion
 
             return retVal;
 

@@ -12588,6 +12588,384 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSOPERATIONS_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSOPERATIONS_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSOPERATIONS_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSOPERATIONS_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSOPERATIONS_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSOPERATIONS_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+
+
+
+
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_H1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_H1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_H2_1_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_H2_1_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_H2_2_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_H2_2_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
             
             
             
