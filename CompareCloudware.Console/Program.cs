@@ -51,7 +51,7 @@ namespace CompareCloudware.Console
             //CONTENT TEXT MINUS H1-H2 DATA
             //ContentTextData();
 
-            //LoadSkyscrapersMPUs();
+            LoadSkyscrapersMPUs();
             //return;
 
             //StageData();
@@ -114,10 +114,10 @@ namespace CompareCloudware.Console
             //CONTENT PAGES - DEPENDS ON SHOP TAGS
             LoadContentPageData();
 
-            //LoadContextTextTypesForH1H2(); DONT'T NEED FOR LIVE
+            LoadContextTextTypesForH1H2(); //DONT'T NEED FOR LIVE
             
             //CONTENT TEXT FOR H1-H2
-            //LoadContextTextDataForH1H2();
+            LoadContextTextDataForH1H2();
 
             //LoadCarboniteBusinessPlus();
             //LoadSecondCategories();
