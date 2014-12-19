@@ -142,7 +142,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("BIME"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.bimeanalytics.com/pricing.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -253,7 +253,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ZOHO REPORTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/reports/zohoreports-pricing.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -364,7 +364,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ZOHO REPORTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/reports/zohoreports-pricing.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -475,7 +475,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ZOHO REPORTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/reports/zohoreports-pricing.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -586,7 +586,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ZOHO REPORTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/reports/zohoreports-pricing.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -698,7 +698,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("QLIK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.qlik.com/uk/explore/products/free-download",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -810,7 +810,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("BIRST"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.birst.com/learn/try-birst",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -922,7 +922,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("SISENSE"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.sisense.com/demo/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1034,7 +1034,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("TABLEAU"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.tableausoftware.com/products/online",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1147,7 +1147,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("LOOKER"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://try.looker.com/free-trial",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1259,7 +1259,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ROAMBI"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://roambi.com/get-your-free-roambi-business-30-day-trial",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1373,7 +1373,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("MICROSTRATEGY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.microstrategy.com/uk/free/overview",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1487,7 +1487,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ADAPTIVE INSIGHTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.adaptiveinsights.co.uk/services/free-trial/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1601,7 +1601,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ADAPTIVE INSIGHTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.adaptiveinsights.co.uk/services/free-trial/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1715,7 +1715,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ADAPTIVE INSIGHTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.adaptiveinsights.co.uk/services/free-trial/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1829,7 +1829,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS INTELLIGENCE REPORTING"),
                 Vendor = repository.FindVendorByName("ADAPTIVE INSIGHTS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.adaptiveinsights.co.uk/services/free-trial/",
             };
 
             InsertDocumentLinks(repository, ca);

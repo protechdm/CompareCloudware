@@ -133,7 +133,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("Constant Contact"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.constantcontact.com/uk/email-marketing2/overview?s_tnt=61724:14:0",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -234,7 +234,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("Constant Contact"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.constantcontact.com/online-surveys2/overview",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -335,7 +335,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("Constant Contact"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.constantcontact.com/eventspot2/overview",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -436,7 +436,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("Constant Contact"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.constantcontact.com/social-campaigns2/overview",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -537,7 +537,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("Constant Contact"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.clickwebinar.com/pricing.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -642,7 +642,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("DOTMAILER"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.dotmailer.com/trial/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -747,7 +747,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("HOOTSUITE"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://hootsuite.com/create-account?planId=2",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -852,7 +852,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("ZOHO MARKETING"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://campaigns.zoho.com/signup.do?plan=sub",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -957,7 +957,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CAMPAIGN MONITOR"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.campaignmonitor.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1062,7 +1062,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CAMPAIGN MONITOR"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.campaignmonitor.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1170,7 +1170,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("INSTAPAGE"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.instapage.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1278,7 +1278,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("INSTAPAGE"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.instapage.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1386,7 +1386,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("INSTAPAGE"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.instapage.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1494,7 +1494,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MARKETO"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://uk.marketo.com/software/marketing-automation/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1602,7 +1602,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MARKETO"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://uk.marketo.com/software/marketing-automation/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1710,7 +1710,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MARKETO"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://uk.marketo.com/software/marketing-automation/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1818,7 +1818,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("HUBSPOT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.hubspot.com/pricing#?currency=GBP",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1926,7 +1926,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("HUBSPOT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.hubspot.com/pricing#?currency=GBP",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2034,7 +2034,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("HUBSPOT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.hubspot.com/pricing#?currency=GBP",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2142,7 +2142,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("PARDOT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.pardot.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2250,7 +2250,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("PARDOT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.pardot.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2358,7 +2358,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("PARDOT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.pardot.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2467,7 +2467,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("ACT-ON"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.act-on.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2576,7 +2576,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MARIN"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.marinsoftware.co.uk/platform/editions",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2685,7 +2685,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MARIN"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.marinsoftware.co.uk/platform/editions",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2794,7 +2794,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CVENT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.cvent.com/uk/event-management-software/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2903,7 +2903,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CVENT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.cvent.com/uk/online-survey-software/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3016,7 +3016,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("FLUIDSURVEYS"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://fluidsurveys.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3129,7 +3129,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("FLUIDSURVEYS"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://fluidsurveys.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3242,7 +3242,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("FLUIDSURVEYS"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://fluidsurveys.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3355,7 +3355,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("VOCUS"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.vocus.co.uk/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3468,7 +3468,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("VOCUS"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.vocus.co.uk/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3581,7 +3581,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("OUTMARKET"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.outmarket.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3694,7 +3694,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("OUTMARKET"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.outmarket.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3807,7 +3807,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("OUTMARKET"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.outmarket.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3920,7 +3920,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("OUTMARKET"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.outmarket.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4033,7 +4033,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MOZ"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://moz.com/products/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4145,7 +4145,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MOZ"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://moz.com/products/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4257,7 +4257,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("MOZ"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://moz.com/products/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4370,7 +4370,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("ADOBE#2"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.adobe.com/cfusion/adobeconnect/index.cfm?event=trial",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4483,7 +4483,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("ADOBE#2"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.adobe.com/cfusion/adobeconnect/index.cfm?event=trial",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4595,7 +4595,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CITRIX"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://secure.citrixonline.com/buy?execution=e1s1",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4707,7 +4707,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CITRIX"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://secure.citrixonline.com/buy?execution=e1s1",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4819,7 +4819,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("CITRIX"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://secure.citrixonline.com/buy?execution=e1s1",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4931,7 +4931,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("VOCALCOM"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.vocalcom.com/en/request-a-demo",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -5043,7 +5043,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("VANILLASOFT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.vanillasoft.com/products",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -5155,7 +5155,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("VANILLASOFT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.vanillasoft.com/products",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -5267,7 +5267,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("VANILLASOFT"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.vanillasoft.com/products",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -5379,7 +5379,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("MARKETING"),
                 Vendor = repository.FindVendorByName("NEW VOICE MEDIA"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://pages.newvoicemedia.com/request-demonstration.html",
             };
 
             InsertDocumentLinks(repository, ca);

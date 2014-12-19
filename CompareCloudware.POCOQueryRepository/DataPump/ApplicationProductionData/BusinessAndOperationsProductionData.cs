@@ -125,7 +125,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("Deputy"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.deputy.com/pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -219,6 +219,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("Deputy"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.deputy.com/pricing/",
 
             };
 
@@ -313,6 +314,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("Deputy"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.deputy.com/pricing/",
 
             };
 
@@ -407,6 +409,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("Liveplan"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.liveplan.com/pricing",
 
             };
 
@@ -505,7 +508,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("MEGAVENTORY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.megaventory.com/?pricing-plans=1",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -603,7 +606,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("MEGAVENTORY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.megaventory.com/?pricing-plans=1",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -701,7 +704,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("MEGAVENTORY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.megaventory.com/?pricing-plans=1",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -799,7 +802,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TIMELY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.gettimely.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -899,7 +902,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TIMELY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.gettimely.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -999,7 +1002,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TIMELY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.gettimely.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1100,7 +1103,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1201,7 +1204,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1302,7 +1305,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1403,7 +1406,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1505,7 +1508,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.workflowmax.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1607,7 +1610,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.workflowmax.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1709,7 +1712,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.workflowmax.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1811,7 +1814,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.workflowmax.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -1913,7 +1916,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.workflowmax.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2018,7 +2021,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("BRIGHTPEARL#2"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.brightpearl.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2123,7 +2126,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("BRIGHTPEARL#2"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.brightpearl.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2228,7 +2231,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("BRIGHTPEARL#2"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.brightpearl.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2335,7 +2338,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("DOCUSIGN"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.docusign.co.uk/products-and-pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2442,7 +2445,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("DOCUSIGN"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.docusign.co.uk/products-and-pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2549,7 +2552,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("DOCUSIGN"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.docusign.co.uk/products-and-pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2657,7 +2660,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("OPENBRAVO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.openbravo.com/retailers/editions-and-pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2765,7 +2768,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("OPENBRAVO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.openbravo.com/retailers/editions-and-pricing/",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2870,7 +2873,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("SIGNNOW"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.signnow.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -2975,7 +2978,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("SIGNNOW"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.signnow.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3080,7 +3083,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("SIGNNOW"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.signnow.com/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3190,7 +3193,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKDAY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://forms.workday.com/uk/landing_page/product_preview_uk_financial_management_overview_lp.php?camp=70180000000p6X7",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3299,7 +3302,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zendesk.com/product/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3408,7 +3411,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zendesk.com/product/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3517,7 +3520,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zendesk.com/product/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3626,7 +3629,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zendesk.com/product/pricing",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3735,7 +3738,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://freshdesk.com/signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3844,7 +3847,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://freshdesk.com/signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -3953,7 +3956,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://freshdesk.com/signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4062,7 +4065,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://freshdesk.com/signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4171,7 +4174,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRONTRANGE"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://pages.frontrange.com/Cloud-Service-Management-Trial.html",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4280,7 +4283,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("STRATPAD"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://cloud.stratpad.com/index.html#signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4389,7 +4392,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("STRATPAD"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://cloud.stratpad.com/index.html#signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4498,7 +4501,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("STRATPAD"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://cloud.stratpad.com/index.html#signup",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4607,7 +4610,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("ADOBE"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.echosign.adobe.com/en/pricing.html?cs=mktg_topnav",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -4716,7 +4719,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
                 Vendor = repository.FindVendorByName("ADOBE"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.echosign.adobe.com/en/pricing.html?cs=mktg_topnav",
             };
 
             InsertDocumentLinks(repository, ca);

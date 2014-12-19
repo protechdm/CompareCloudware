@@ -133,7 +133,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Adobe#3"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://creative.adobe.com/products/download/illustrator",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -236,7 +236,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("COREL"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.painterartist.com/gb/product/paint-program/?hptrack=mmptr",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -339,7 +339,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("COREL"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.coreldraw.com/gb/product/graphic-design-software/?hptrack=mmcdgs",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -441,7 +441,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Adobe#3"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://creative.adobe.com/products/download/indesign",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -543,7 +543,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Adobe#3"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://creative.adobe.com/products/download/premiere"
             };
 
             InsertDocumentLinks(repository, ca);
@@ -645,7 +645,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Adobe#3"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://creative.adobe.com/products/download/aftereffects",
             };
 
             InsertDocumentLinks(repository, ca);
@@ -749,7 +749,6 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Adobe#3"),
                 AddDate = DateTime.Now,
-
             };
 
             InsertDocumentLinks(repository, ca);
