@@ -59,29 +59,8 @@ namespace WSMailTryBuy
         {
             this.el = new System.Diagnostics.EventLog();
             ((System.ComponentModel.ISupportInitialize)(this.el)).BeginInit();
-            // 
-            // MailApplicationRequestsService
-            // 
-            this.ServiceName = "COMPARE CLOUDWARE APPLICATION REQUESTS EMAILER";
             ((System.ComponentModel.ISupportInitialize)(this.el)).EndInit();
 
-
-            //try
-            //{
-            if (!System.Diagnostics.EventLog.SourceExists(eventLogFile))
-            {
-
-                System.Diagnostics.EventLog.CreateEventSource(eventLogFile, eventLogFile);
-            }
-            Logger.Source = eventLogFile;
-
-            Logger.WriteEntry("BOLLCOKS");
-            //}
-            //catch (Exception e)
-            //{
-            //    eventLogFile = "Application";
-
-            //}
         }
 
         public EventLog Logger
@@ -91,6 +70,10 @@ namespace WSMailTryBuy
                 if (el == null)
                 {
                     el = new System.Diagnostics.EventLog(eventLogFile);
+                    el.Source = eventLogFile;
+                }
+                if (el.Source.Length == 0)
+                {
                     el.Source = eventLogFile;
                 }
                 return el;
@@ -980,7 +963,9 @@ namespace WSMailTryBuy
                     _logger.WriteEntry("Using TEST mail address", EventLogEntryType.Warning);
                 }
 
-                string mailTo = !useTestEMailAddress ? ConfigurationManager.AppSettings["SMTPMailTo"] : ConfigurationManager.AppSettings["SMTPMailToTest"];
+                var person = _repository.GetPersonByPersonID(car.PersonID);
+
+                string mailTo = !useTestEMailAddress ? person.EMail : ConfigurationManager.AppSettings["SMTPMailToTest"];
 
                 mr = new MailRequest()
                 {
@@ -1012,10 +997,11 @@ namespace WSMailTryBuy
                 else if (car.RequestTypeID == MailColleagueID)
                 {
                     //mr.MailTemplateResourceName = ConfigurationManager.AppSettings["MailTemplateResourceNameBuy"];
-                    var person = _repository.GetPersonByPersonID(car.PersonID);
+                    //var person = _repository.GetPersonByPersonID(car.PersonID);
                     var colleague = _repository.FindRecommender(person.PersonID);
 
-                    mr.MailSubject = colleague.Introducer.Forename + " " + colleague.Introducer.Surname + " " + ConfigurationManager.AppSettings["SendToColleagueMailSubject"];
+                    //mr.MailSubject = colleague.Introducer.Forename + " " + colleague.Introducer.Surname + " " + ConfigurationManager.AppSettings["SendToColleagueMailSubject"];
+                    mr.MailSubject = colleague.Introducer.EMail + " " + ConfigurationManager.AppSettings["SendToColleagueMailSubject"];
                 }
                 else
                 {

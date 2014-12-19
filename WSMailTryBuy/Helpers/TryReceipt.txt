@@ -10,3 +10,4 @@ Email: {%= EMail %}
 Telephone: {%= Telephone %}
 Country: {%= Country %}
 Requested cloudware: {%= CloudApplication %}
+Requested license numbers: {%= NumberOfUsers %}
