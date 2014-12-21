@@ -2997,7 +2997,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 t = new Tag()
                 {
                     //TagName = ca.Vendor.VendorName.Trim().ToLower() + "-" + ca.ServiceName.ToLower().Replace(" ","-"),
-                    TagName = (ca.Vendor.VendorName.Trim().ToLower().Replace(" ", "-").Replace(":", "-").Replace("&", "-and-").Replace("+", "-plus-").Replace(".", "-dot-") + "-" + ca.ServiceName.ToLower().Replace(" ", "-")).Replace("--", "-"),
+                    TagName = (
+                        ca.Vendor.VendorName.Trim().ToLower().Replace(" ", "-").Replace(":", "-").Replace("&", "-and-").Replace("+", "-plus-").Replace(".", "-dot-") + "-"
+                    + ca.ServiceName.ToLower().Replace(" ", "-").Replace(":", "-").Replace("&", "-and-").Replace("+", "-plus-").Replace(".", "-dot-")
+                    )
+                    .Replace("--", "-"),
                     Category = category,
                     TagType = tagType,
                     TagStatus = tagStatus,
