@@ -39,11 +39,15 @@ namespace CompareCloudware.Web.Models
         [ValidateEMailFreeTrial]
         public string EMailAddress { get; set; }
 
+        [UIHint("CustomTextBox"), DataType(DataType.EmailAddress), RegularExpression(@"^[A-Za-z0-9_\+-]+(\.[A-Za-z0-9_\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.([A-Za-z]{2,4})$", ErrorMessage = "Not a valid EMail address"), Display(Name = "Email"), DisplayName("Email")]
+        [ValidateEMailFreeTrial]
+        public string EMailAddressIntroducer { get; set; }
+
         [UIHint("CustomTextBox"), DataType(DataType.EmailAddress), RegularExpression(@"^[A-Za-z0-9_\+-]+(\.[A-Za-z0-9_\+-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.([A-Za-z]{2,4})$", ErrorMessage = "Not a valid EMail address"), Display(Name = "Colleague Email"), DisplayName("Email")]
         [ValidateEMailFreeTrial]
         public string EMailAddressColleague { get; set; }
 
-        [UIHint("CustomMultiLineTextBox"), DisplayName("Type your message here"), Display(Name = "Type your message here"),Required]
+        [UIHint("CustomMultiLineTextBox"), DisplayName("Type your message here"), Display(Name = "Type your message here")]
         public string MessageToColleague { get; set; }
 
         [UIHint("CustomTextBox"), DisplayName("First Name"), Display(Name="First Name")]
