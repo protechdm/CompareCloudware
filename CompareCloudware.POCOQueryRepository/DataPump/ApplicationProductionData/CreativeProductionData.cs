@@ -840,7 +840,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 ApplicationCostPerMonth = 3.99M,
                 //ApplicationCostPerAnnum = 59.00M,
                 ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = false,
                 ApplicationCostPerAnnumFree = false,
                 ApplicationCostPerAnnumOffered = false,
