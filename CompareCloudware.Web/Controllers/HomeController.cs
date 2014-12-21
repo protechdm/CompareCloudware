@@ -2134,7 +2134,8 @@ namespace CompareCloudware.Web.Controllers
                         _repository
                         );
 
-                    ModelHelpers.AddColleagueLink(p, model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress, _repository);
+                    //ModelHelpers.AddColleagueLink(p, model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddress, _repository);
+                    ModelHelpers.AddColleagueLink(p, model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.EMailAddressIntroducer, _repository);
 
                     model.ContainerModel.ChosenCloudApplicationModel.FreeTrialBuyNow.RequestTypeID = EMail;
 
