@@ -2916,7 +2916,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             t = new Tag()
             {
                 TagName = "business-and-operations",
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 TagType = repository.FindTagTypeByName("CATEGORY URL"),
                 TagStatus = repository.FindStatusByName("LIVE"),
             };

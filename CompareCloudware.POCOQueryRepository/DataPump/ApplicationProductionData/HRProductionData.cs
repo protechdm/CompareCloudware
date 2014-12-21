@@ -123,10 +123,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Breathe HR"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.breathehr.com/hr-software-prices/",
+                BuyURL = "http://www.breathehr.com/hr-software-prices/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -215,10 +216,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Breathe HR"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.breathehr.com/hr-software-prices/",
+                BuyURL = "http://www.breathehr.com/hr-software-prices/",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -307,10 +310,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Breathe HR"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.breathehr.com/hr-software-prices/",
+                BuyURL = "http://www.breathehr.com/hr-software-prices/",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -399,10 +404,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Breathe HR"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.breathehr.com/hr-software-prices/",
+                BuyURL = "http://www.breathehr.com/hr-software-prices/",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -495,10 +502,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("PEOPLE HR"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.peoplehr.com/price.html",
+                BuyURL = "http://www.peoplehr.com/price.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -591,10 +599,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("PEOPLE HR"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.peoplehr.com/price.html",
+                BuyURL = "http://www.peoplehr.com/price.html",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -687,10 +697,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("PEOPLE HR"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.peoplehr.com/price.html",
+                BuyURL = "http://www.peoplehr.com/price.html",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -771,7 +783,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 20M,
+                ApplicationCostPerMonthFrom = 20M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -784,10 +796,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("SMB PARTNERS"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.smb.co.uk/pricing/",
+                BuyURL = "http://www.smb.co.uk/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -868,7 +881,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 9M,
+                ApplicationCostPerMonthFrom = 9M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -881,7 +894,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("YOU MANAGE"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.youmanage.co.uk/pricing/",
+                BuyURL = "http://www.youmanage.co.uk/pricing/",
             };
 
             ca.CloudApplicationFeatures.Find(x => x.Feature.FeatureName.ToUpper().StartsWith("Appraisal Performance".ToUpper())).IsOptional = true;
@@ -975,7 +989,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 4.5M,
+                ApplicationCostPerMonthFrom = 4.5M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -988,10 +1002,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("STAFF SQUARED"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.staffsquared.com/?a=compa",
+                BuyURL = "http://www.staffsquared.com/?a=compa",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1073,7 +1088,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 15M,
+                ApplicationCostPerMonthFrom = 15M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1086,10 +1101,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("MY HR TOOLKIT"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.myhrtoolkit.com/pricing/",
+                BuyURL = "http://www.myhrtoolkit.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1172,7 +1188,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 69M,
+                ApplicationCostPerMonthFrom = 69M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1185,10 +1201,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("BAMBOO HR"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.bamboohr.com/pricing.php",
+                BuyURL = "https://www.bamboohr.com/pricing.php",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1271,7 +1288,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 100M,
+                ApplicationCostPerMonthFrom = 100M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1284,10 +1301,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("CEZANNE HR"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://cezannehr.com/hr-system-pricing/",
+                BuyURL = "http://cezannehr.com/hr-system-pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1370,7 +1388,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 28M,
+                ApplicationCostPerMonthFrom = 28M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1383,10 +1401,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("ACCESS GROUP"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.accessacloud.com/hr/pricing/",
+                BuyURL = "http://www.accessacloud.com/hr/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1467,7 +1486,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 1.1M,
+                ApplicationCostPerMonthFrom = 1.1M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1480,7 +1499,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Moore Pay"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.moorepay.co.uk/moorepayhr_packages",
+                BuyURL = "http://www.moorepay.co.uk/moorepayhr_packages",
             };
 
             ca.CloudApplicationFeatures.Find(x => x.Feature.FeatureName.ToUpper().StartsWith("Payroll".ToUpper())).IsOptional = true;
@@ -1566,7 +1586,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 1.8M,
+                ApplicationCostPerMonthFrom = 1.8M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1579,6 +1599,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Moore Pay"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.moorepay.co.uk/moorepayhr_packages",
+                BuyURL = "http://www.moorepay.co.uk/moorepayhr_packages",
 
             };
 
@@ -1665,7 +1687,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 2.7M,
+                ApplicationCostPerMonthFrom = 2.7M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1678,6 +1700,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("Moore Pay"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.moorepay.co.uk/moorepayhr_packages",
+                BuyURL = "http://www.moorepay.co.uk/moorepayhr_packages",
 
             };
 
@@ -1766,7 +1790,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 39M,
+                ApplicationCostPerMonthFrom = 39M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1779,10 +1803,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("ZOHO PEOPLE"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/people/zohopeople-pricing.html",
+                BuyURL = "https://www.zoho.com/people/zohopeople-pricing.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1865,7 +1890,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 75M,
+                ApplicationCostPerMonthFrom = 75M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1878,10 +1903,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("ZOHO PEOPLE"),
                 AddDate = DateTime.Now,
+                TryURL = "https://www.zoho.com/people/zohopeople-pricing.html",
+                BuyURL = "https://www.zoho.com/people/zohopeople-pricing.html",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1964,7 +1991,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 },
                 //ApplicationCostPerMonth = 1.80M,
                 //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerAnnumFrom = 99M,
+                ApplicationCostPerMonthFrom = 99M,
                 ApplicationCostPerMonthFree = false,
                 ApplicationCostPerMonthOffered = true,
                 ApplicationCostPerMonthAvailable = true,
@@ -1977,10 +2004,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("HR"),
                 Vendor = repository.FindVendorByName("ZOHO PEOPLE"),
                 AddDate = DateTime.Now,
+                TryURL = "https://www.zoho.com/people/zohopeople-pricing.html",
+                BuyURL = "https://www.zoho.com/people/zohopeople-pricing.html",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 

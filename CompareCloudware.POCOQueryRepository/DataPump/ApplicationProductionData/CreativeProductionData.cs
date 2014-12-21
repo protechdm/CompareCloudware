@@ -40,7 +40,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #region CREATIVE
 
-            #region Adobe#3
+            #region Adobe Illustrator
 
             ca = new CloudApplication()
             {
@@ -131,12 +131,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
+                Vendor = repository.FindVendorByName("Adobe"),
                 AddDate = DateTime.Now,
                 TryURL = "https://creative.adobe.com/products/download/illustrator",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -239,7 +239,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.painterartist.com/gb/product/paint-program/?hptrack=mmptr",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -342,13 +342,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.coreldraw.com/gb/product/graphic-design-software/?hptrack=mmcdgs",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region Adobe#3 Indesign
+            #region Adobe Indesign
 
             ca = new CloudApplication()
             {
@@ -439,18 +439,18 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
+                Vendor = repository.FindVendorByName("Adobe"),
                 AddDate = DateTime.Now,
                 TryURL = "https://creative.adobe.com/products/download/indesign",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region Adobe#3 Premiere
+            #region Adobe Premiere
 
             ca = new CloudApplication()
             {
@@ -541,18 +541,18 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
+                Vendor = repository.FindVendorByName("Adobe"),
                 AddDate = DateTime.Now,
                 TryURL = "https://creative.adobe.com/products/download/premiere"
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region Adobe#3 After Effects
+            #region Adobe After Effects
 
             ca = new CloudApplication()
             {
@@ -643,1150 +643,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
+                Vendor = repository.FindVendorByName("Adobe"),
                 AddDate = DateTime.Now,
                 TryURL = "https://creative.adobe.com/products/download/aftereffects",
             };
 
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Adobe#3 Photoshop
-
-            ca = new CloudApplication()
-            {
-                Brand = "Adobe",
-                ServiceName = "Photoshop",
-                CompanyURL = "http://www.adobe.com/uk/products/photoshop.html",
-                Description = "Adobe Photoshop is the industry standard image editing software. The software allows users to manipulate, crop, resize, and correct color on digital photos. The software is particularly popular amongst professional photographers and graphic designers because of its sophisticated image manipulation and retouching features.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    repository.FindLanguageByName("MANDARIN"),
-                    repository.FindLanguageByName("HINDI"),
-                    repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    repository.FindLanguageByName("PORTUGESE"),
-                    repository.FindLanguageByName("FRENCH"),
-                    repository.FindLanguageByName("GERMAN"),
-                    repository.FindLanguageByName("JAPANESE"),
-                    repository.FindLanguageByName("MALAY"),
-                    repository.FindLanguageByName("INDONESIAN"),
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                ApplicationCostPerMonth = 8.78M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = true,
-                ApplicationCostPerMonthAvailable = true,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-                SetupFee = repository.FindSetupFeeByName("NO"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
-                AddDate = DateTime.Now,
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Adobe#3 Lightroom
-
-            ca = new CloudApplication()
-            {
-                Brand = "Adobe",
-                ServiceName = "Lightroom",
-                CompanyURL = "http://www.adobe.com/uk/products/photoshop-lightroom.html",
-                Description = "Adobe Photoshop Lightroom is a photo editing and management programme. Via a single user interface, it allows the viewing, management, and editing of a large numbers of digital images. Nothing makes working with digital photos smoother than Lightroom.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    repository.FindLanguageByName("RUSSIAN"),
-                    repository.FindLanguageByName("ARABIC"),
-                    repository.FindLanguageByName("PORTUGESE"),
-                    repository.FindLanguageByName("FRENCH"),
-                    repository.FindLanguageByName("GERMAN"),
-                    repository.FindLanguageByName("JAPANESE"),
-                    //repository.FindLanguageByName("MALAY"),
-                    //repository.FindLanguageByName("INDONESIAN"),
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    //repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                ApplicationCostPerMonth = 8.78M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = true,
-                ApplicationCostPerMonthAvailable = true,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-                SetupFee = repository.FindSetupFeeByName("NO"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Adobe#3 Edge Animate
-
-            ca = new CloudApplication()
-            {
-                Brand = "Adobe",
-                ServiceName = "Edge Animate",
-                CompanyURL = "https://creative.adobe.com/products/animate",
-                Description = "Adobe Edge Animate lets web designers create interactive HTML animations for web, digital publishing, rich media advertising and more, reaching both desktop and mobile browsers with ease. Edge Animate allows creatives to push the creative envelope on what can be delivered and presented online.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    repository.FindLanguageByName("FRENCH"),
-                    repository.FindLanguageByName("GERMAN"),
-                    repository.FindLanguageByName("JAPANESE"),
-                    repository.FindLanguageByName("SPANISH"),
-                    //repository.FindLanguageByName("INDONESIAN"),
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    //repository.FindFeatureByName("Photo editing"),
-                    repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                //ApplicationCostPerMonth = 8.78M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
-                ApplicationCostPerMonthAvailable = false,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-                SetupFee = repository.FindSetupFeeByName("NO"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Adobe#3 Edge Muse
-
-            ca = new CloudApplication()
-            {
-                Brand = "Adobe",
-                ServiceName = "Muse",
-                CompanyURL = "http://www.adobe.com/uk/products/muse.html",
-                Description = "Adobe Muse is a web development application. The software is focused on allowing designers to create and publish dynamic websites for desktop and mobile devices that meet the latest web standards — without writing code",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    repository.FindLanguageByName("MANDARIN"),
-                    repository.FindLanguageByName("HINDI"),
-                    repository.FindLanguageByName("RUSSIAN"),
-                    repository.FindLanguageByName("ARABIC"),
-                    repository.FindLanguageByName("PORTUGESE"),
-                    repository.FindLanguageByName("FRENCH"),
-                    repository.FindLanguageByName("GERMAN"),
-                    repository.FindLanguageByName("JAPANESE"),
-                    //repository.FindLanguageByName("SPANISH"),
-                    //repository.FindLanguageByName("INDONESIAN"),
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    //repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    //repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    repository.FindFeatureByName("Website design"),
-                },
-                ApplicationCostPerMonth = 13.67M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = true,
-                ApplicationCostPerMonthAvailable = true,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-                SetupFee = repository.FindSetupFeeByName("NO"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Adobe#3 PhoneGap
-
-            ca = new CloudApplication()
-            {
-                Brand = "Adobe",
-                ServiceName = "PhoneGap",
-                CompanyURL = "https://creative.adobe.com/products/phonegap-build",
-                Description = "Adobe PhoneGap allows you to create mobile apps using the web tools you love - HTML, CSS, and JavaScript - and then easily compile them for multiple platforms in the cloud.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    repository.FindLanguageByName("FRENCH"),
-                    //repository.FindLanguageByName("GERMAN"),
-                    repository.FindLanguageByName("JAPANESE"),
-                    //repository.FindLanguageByName("SPANISH"),
-                    //repository.FindLanguageByName("INDONESIAN"),
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    //repository.FindFeatureByName("Animated images"),
-                    repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    //repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                ApplicationCostPerMonth = 9.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = true,
-                ApplicationCostPerMonthAvailable = true,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
-                SetupFee = repository.FindSetupFeeByName("NO"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Adobe#3 Flash
-
-            ca = new CloudApplication()
-            {
-                Brand = "Adobe",
-                ServiceName = "Flash",
-                CompanyURL = "https://www.adobe.com/products/flash.html",
-                Description = "Adobe Flash software is a development environment for building games and applications. With the new HTML5 Canvas support in Flash Professional CC, you can create modern web content in a familiar authoring environment.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    repository.FindLanguageByName("RUSSIAN"),
-                    repository.FindLanguageByName("ARABIC"),
-                    repository.FindLanguageByName("PORTUGESE"),
-                    repository.FindLanguageByName("FRENCH"),
-                    repository.FindLanguageByName("GERMAN"),
-                    repository.FindLanguageByName("JAPANESE"),
-                    repository.FindLanguageByName("SPANISH"),
-                    //repository.FindLanguageByName("INDONESIAN"),
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    repository.FindFeatureByName("Animated images"),
-                    repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    //repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                ApplicationCostPerMonth = 19.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = true,
-                ApplicationCostPerMonthAvailable = true,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
-                SetupFee = repository.FindSetupFeeByName("NO"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Adobe#3"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Corel Paintshop Pro
-
-            ca = new CloudApplication()
-            {
-                Brand = "Corel",
-                ServiceName = "Paintshop Pro",
-                CompanyURL = "https://store.paintshoppro.com/1184/purl-ATG_PID_HPbanner_PSPproX7ULT?hptrack=gb2mf1",
-                Description = "There are reason why Corel Paintshop Pro is such a hit with users globally. Corel PaintShop Pro X7 Ultimate combines the pro-quality photo-editing tools of PaintShop Pro X7 with powerful image correction technology such as Perfectly Clear, portrait beautifying tools Reallusion FaceFilter3 Standard - together with a rich collection of creative extras. It;s a dream tool for designers and retouchers worldwide.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    //repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    //repository.FindBrowserByName("FIREFOX"),
-                    //repository.FindBrowserByName("CHROME"),
-                    //repository.FindBrowserByName("SAFARI"),
-                    //repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    //repository.FindLanguageByName("FRENCH"),
-                    //repository.FindLanguageByName("GERMAN"),
-                    //repository.FindLanguageByName("JAPANESE")
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                //ApplicationCostPerMonth = 19.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
-                ApplicationCostPerMonthAvailable = false,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-
-                SetupFee = repository.FindSetupFeeByName("54.99"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("COREL"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Corel Aftershot Pro 2
-
-            ca = new CloudApplication()
-            {
-                Brand = "Corel",
-                ServiceName = "Aftershot Pro 2",
-                CompanyURL = "http://www.aftershotpro.com/en/products/aftershot-pro/default.html",
-                Description = "Say hello to the world’s fastest RAW photo-editing software. Corel AfterShot Pro 2 is changing the way the world works with RAW, with 64-bit performance that’s 30% faster than AfterShot Pro 1 and up to 4x faster than the competition. AfterShot Pro 2 is the best way to unlock the freedom and flexibility of shooting RAW.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    //repository.FindBrowserByName("FIREFOX"),
-                    //repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    //repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    //repository.FindLanguageByName("FRENCH"),
-                    //repository.FindLanguageByName("GERMAN"),
-                    //repository.FindLanguageByName("JAPANESE")
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    //repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    //repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                //ApplicationCostPerMonth = 19.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
-                ApplicationCostPerMonthAvailable = false,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-
-                SetupFee = repository.FindSetupFeeByName("49.99"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("COREL"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Corel CorelCAD
-
-            ca = new CloudApplication()
-            {
-                Brand = "Corel",
-                ServiceName = "CorelCAD",
-                CompanyURL = "http://www.coreldraw.com/us/product/cad-software/",
-                Description = "Get powerful and affordable CAD software with industry-standard features and 2D drafting and 3D design tools. Use CorelCAD to improve your design productivity and performance with the new drawing constraints functionality, In-Place text editing, and interactive layout and editing tools. Work in a familiar environment with the enhanced and customizable ribbon UI and other popular CAD features.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    //repository.FindLanguageByName("FRENCH"),
-                    //repository.FindLanguageByName("GERMAN"),
-                    //repository.FindLanguageByName("JAPANESE")
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    //repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    //repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    //repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                //ApplicationCostPerMonth = 19.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
-                ApplicationCostPerMonthAvailable = false,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-
-                SetupFee = repository.FindSetupFeeByName("629.00"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("COREL"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Corel Photo video suite
-
-            ca = new CloudApplication()
-            {
-                Brand = "Corel",
-                ServiceName = "Photo video suite",
-                CompanyURL = "http://www.paintshoppro.com/en/products/photo-video-suite/default.html",
-                Description = "Get everything you need to create your best photos and videos ever, together in one affordable package. Corel Photo Video Suite X7 combines the creative power of PaintShop Pro X7 and Video Studio X7 in one total package. Manage, adjust and edit your photos with the intuitive editing features and fun creative tools in PaintShop Pro X7.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    //repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    //repository.FindLanguageByName("FRENCH"),
-                    //repository.FindLanguageByName("GERMAN"),
-                    //repository.FindLanguageByName("JAPANESE")
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    repository.FindFeatureByName("Video creation"),
-                    //repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                //ApplicationCostPerMonth = 19.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
-                ApplicationCostPerMonthAvailable = false,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-
-                SetupFee = repository.FindSetupFeeByName("61.99"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("COREL"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
-            SetLiveStatuses(ca, repository);
-            repository.AddCloudApplication(ca);
-
-            #endregion
-
-            #region Corel Video studio ultimate
-
-            ca = new CloudApplication()
-            {
-                Brand = "Corel",
-                ServiceName = "Video studio ultimate",
-                CompanyURL = "http://www.videostudiopro.com/en/products/videostudio/ultimate/default.html?x-source=atg_pid&utm_source=ATG&utm_medium=nav&utm_campaign=VideoStudio_Ultimate_X7",
-                Description = "With a bold new 64-bit architecture, including a comprehensive 64-bit premium special effects pack, featuring 7 powerful FX applications, Corel VideoStudio Ultimate X7 is the easiest and most powerful VideoStudio ever. With faster rendering and more pro-quality video-editing tools, all within a simplified interface, VideoStudio Ultimate makes it faster to make the videos you love to create. Explore the benefits of FastFlick, an easy 3-step way to quickly make and share great-looking movies in less time.",
-                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
-                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
-                OperatingSystems = new List<Domain.Models.OperatingSystem>()
-                {
-                    //repository.FindOperatingSystemByName("OSX"),
-                    //repository.FindOperatingSystemByName("WIN XP"),
-                    //repository.FindOperatingSystemByName("WIN VISTA"),
-                    //repository.FindOperatingSystemByName("WIN 7"),
-                    repository.FindOperatingSystemByName("WIN 8"),
-                    //repository.FindOperatingSystemByName("LINUX"),
-                    //repository.FindOperatingSystemByName("APPLE IOS"),
-                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
-                    //repository.FindOperatingSystemByName("ANDROID"),
-                    //repository.FindOperatingSystemByName("BBOS"),
-                },
-                Browsers = new List<Browser>()
-                {
-                    //repository.FindBrowserByName("IE6"),
-                    //repository.FindBrowserByName("IE7"),
-                    repository.FindBrowserByName("IE8"),
-                    repository.FindBrowserByName("IE9"),
-                    repository.FindBrowserByName("FIREFOX"),
-                    repository.FindBrowserByName("CHROME"),
-                    repository.FindBrowserByName("SAFARI"),
-                    repository.FindBrowserByName("OPERA"),
-                },
-
-                Languages = new List<Language>()
-                {
-                    repository.FindLanguageByName("ENGLISH"),
-                    //repository.FindLanguageByName("MANDARIN"),
-                    //repository.FindLanguageByName("HINDI"),
-                    //repository.FindLanguageByName("RUSSIAN"),
-                    //repository.FindLanguageByName("ARABIC"),
-                    //repository.FindLanguageByName("PORTUGESE"),
-                    //repository.FindLanguageByName("FRENCH"),
-                    //repository.FindLanguageByName("GERMAN"),
-                    //repository.FindLanguageByName("JAPANESE")
-                },
-                SupportTypes = new List<SupportType>()
-                {
-                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
-                    repository.FindSupportTypeByName("TELEPHONE"),
-                    //repository.FindSupportTypeByName("CHAT"),
-                    repository.FindSupportTypeByName("EMAIL"),
-                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
-                    repository.FindSupportTypeByName("TROUBLESHOOT")
-                },
-                SupportOffered = false,
-                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
-                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
-                //SupportDays = repository.FindSupportDaysByName("7"),
-                VideoTrainingSupport = false,
-                CloudApplicationFeatures = new List<CloudApplicationFeature>()
-                {
-                    repository.FindFeatureByName("Animated images"),
-                    //repository.FindFeatureByName("App design"),
-                    //repository.FindFeatureByName("Audio editing"),
-                    repository.FindFeatureByName("3D/CAD"),
-                    //repository.FindFeatureByName("Content library"),
-                    //repository.FindFeatureByName("Diagram design"),
-                    //repository.FindFeatureByName("eBook publishing"),
-                    //repository.FindFeatureByName("Graphics tools"),
-                    repository.FindFeatureByName("Photo editing"),
-                    //repository.FindFeatureByName("Interactive animation"),
-                    //repository.FindFeatureByName("Presentation creation"),
-                    //repository.FindFeatureByName("Publishing tools"),
-                    repository.FindFeatureByName("Video creation"),
-                    repository.FindFeatureByName("Video editing"),
-                    //repository.FindFeatureByName("Website design"),
-                },
-                //ApplicationCostPerMonth = 19.99M,
-                //ApplicationCostPerAnnum = 59.00M,
-                ApplicationCostPerMonthFree = false,
-                ApplicationCostPerMonthOffered = false,
-                ApplicationCostPerMonthAvailable = false,
-                ApplicationCostPerAnnumFree = false,
-                ApplicationCostPerAnnumOffered = false,
-                ApplicationCostPerAnnumAvailable = false,
-                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
-
-                SetupFee = repository.FindSetupFeeByName("46.99"),
-                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("COREL"),
-                AddDate = DateTime.Now,
-
-            };
-
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1886,10 +748,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Quark"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.quark.co.uk/en/Products/QuarkXPress/Test_Drive.aspx",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1986,12 +849,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Gliffy#2"),
+                Vendor = repository.FindVendorByName("Gliffy"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.gliffy.com/products/online/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2088,12 +951,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Gliffy#2"),
+                Vendor = repository.FindVendorByName("Gliffy"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.gliffy.com/products/online/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2190,12 +1053,633 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Creately#2"),
+                Vendor = repository.FindVendorByName("Creately"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://creately.com/plans1?utm_expid=10997800-4.jRKOQ4XQRdK8G5E4AYeRUQ.1&utm_referrer=http%3A%2F%2Fcreately.com%2F",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Adobe Photoshop
+
+            ca = new CloudApplication()
+            {
+                Brand = "Adobe",
+                ServiceName = "Photoshop",
+                CompanyURL = "http://www.adobe.com/uk/products/photoshop.html",
+                Description = "Adobe Photoshop is the industry standard image editing software. The software allows users to manipulate, crop, resize, and correct color on digital photos. The software is particularly popular amongst professional photographers and graphic designers because of its sophisticated image manipulation and retouching features.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    repository.FindLanguageByName("MANDARIN"),
+                    repository.FindLanguageByName("HINDI"),
+                    repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    repository.FindLanguageByName("PORTUGESE"),
+                    repository.FindLanguageByName("FRENCH"),
+                    repository.FindLanguageByName("GERMAN"),
+                    repository.FindLanguageByName("JAPANESE"),
+                    repository.FindLanguageByName("MALAY"),
+                    repository.FindLanguageByName("INDONESIAN"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                ApplicationCostPerMonth = 8.78M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = true,
+                ApplicationCostPerMonthAvailable = true,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("Adobe"),
+                AddDate = DateTime.Now,
+                TryURL = "https://creative.adobe.com/products/download/photoshop",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Corel Paintshop Pro
+
+            ca = new CloudApplication()
+            {
+                Brand = "Corel",
+                ServiceName = "Paintshop Pro",
+                CompanyURL = "https://store.paintshoppro.com/1184/purl-ATG_PID_HPbanner_PSPproX7ULT?hptrack=gb2mf1",
+                Description = "There are reason why Corel Paintshop Pro is such a hit with users globally. Corel PaintShop Pro X7 Ultimate combines the pro-quality photo-editing tools of PaintShop Pro X7 with powerful image correction technology such as Perfectly Clear, portrait beautifying tools Reallusion FaceFilter3 Standard - together with a rich collection of creative extras. It;s a dream tool for designers and retouchers worldwide.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    //repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    //repository.FindBrowserByName("FIREFOX"),
+                    //repository.FindBrowserByName("CHROME"),
+                    //repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    //repository.FindLanguageByName("FRENCH"),
+                    //repository.FindLanguageByName("GERMAN"),
+                    //repository.FindLanguageByName("JAPANESE")
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                //ApplicationCostPerMonth = 19.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+
+                SetupFee = repository.FindSetupFeeByName("54.99"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("COREL"),
+                AddDate = DateTime.Now,
+                TryURL = "https://store.paintshoppro.com/1184/purl-ATG_PID_HPbanner_PSPproX7ULT?hptrack=gb2mf1",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Corel Aftershot Pro 2
+
+            ca = new CloudApplication()
+            {
+                Brand = "Corel",
+                ServiceName = "Aftershot Pro 2",
+                CompanyURL = "http://www.aftershotpro.com/en/products/aftershot-pro/default.html",
+                Description = "Say hello to the world’s fastest RAW photo-editing software. Corel AfterShot Pro 2 is changing the way the world works with RAW, with 64-bit performance that’s 30% faster than AfterShot Pro 1 and up to 4x faster than the competition. AfterShot Pro 2 is the best way to unlock the freedom and flexibility of shooting RAW.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    //repository.FindBrowserByName("FIREFOX"),
+                    //repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    //repository.FindLanguageByName("FRENCH"),
+                    //repository.FindLanguageByName("GERMAN"),
+                    //repository.FindLanguageByName("JAPANESE")
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    //repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                //ApplicationCostPerMonth = 19.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+
+                SetupFee = repository.FindSetupFeeByName("49.99"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("COREL"),
+                AddDate = DateTime.Now,
+                TryURL = "http://www.aftershotpro.com/en/free-trials/",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Adobe Lightroom
+
+            ca = new CloudApplication()
+            {
+                Brand = "Adobe",
+                ServiceName = "Lightroom",
+                CompanyURL = "http://www.adobe.com/uk/products/photoshop-lightroom.html",
+                Description = "Adobe Photoshop Lightroom is a photo editing and management programme. Via a single user interface, it allows the viewing, management, and editing of a large numbers of digital images. Nothing makes working with digital photos smoother than Lightroom.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    repository.FindLanguageByName("RUSSIAN"),
+                    repository.FindLanguageByName("ARABIC"),
+                    repository.FindLanguageByName("PORTUGESE"),
+                    repository.FindLanguageByName("FRENCH"),
+                    repository.FindLanguageByName("GERMAN"),
+                    repository.FindLanguageByName("JAPANESE"),
+                    //repository.FindLanguageByName("MALAY"),
+                    //repository.FindLanguageByName("INDONESIAN"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    //repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                ApplicationCostPerMonth = 8.78M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = true,
+                ApplicationCostPerMonthAvailable = true,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("Adobe"),
+                AddDate = DateTime.Now,
+                TryURL = "https://creative.adobe.com/products/download/lightroom",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Corel CorelCAD
+
+            ca = new CloudApplication()
+            {
+                Brand = "Corel",
+                ServiceName = "CorelCAD",
+                CompanyURL = "http://www.coreldraw.com/us/product/cad-software/",
+                Description = "Get powerful and affordable CAD software with industry-standard features and 2D drafting and 3D design tools. Use CorelCAD to improve your design productivity and performance with the new drawing constraints functionality, In-Place text editing, and interactive layout and editing tools. Work in a familiar environment with the enhanced and customizable ribbon UI and other popular CAD features.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    //repository.FindLanguageByName("FRENCH"),
+                    //repository.FindLanguageByName("GERMAN"),
+                    //repository.FindLanguageByName("JAPANESE")
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    //repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    //repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                //ApplicationCostPerMonth = 19.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+
+                SetupFee = repository.FindSetupFeeByName("629.00"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("COREL"),
+                AddDate = DateTime.Now,
+                TryURL = "http://www.coreldraw.com/us/product/cad-software/",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Adobe Edge Animate
+
+            ca = new CloudApplication()
+            {
+                Brand = "Adobe",
+                ServiceName = "Edge Animate",
+                CompanyURL = "https://creative.adobe.com/products/animate",
+                Description = "Adobe Edge Animate lets web designers create interactive HTML animations for web, digital publishing, rich media advertising and more, reaching both desktop and mobile browsers with ease. Edge Animate allows creatives to push the creative envelope on what can be delivered and presented online.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    repository.FindLanguageByName("FRENCH"),
+                    repository.FindLanguageByName("GERMAN"),
+                    repository.FindLanguageByName("JAPANESE"),
+                    repository.FindLanguageByName("SPANISH"),
+                    //repository.FindLanguageByName("INDONESIAN"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    //repository.FindFeatureByName("Photo editing"),
+                    repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                //ApplicationCostPerMonth = 8.78M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("Adobe"),
+                AddDate = DateTime.Now,
+                TryURL = "https://creative.adobe.com/products/download/animate?version=5.0",
+            };
+
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2294,10 +1778,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("GoAnimate"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://goanimate.com/business/videoplans/?hook=header_button.site",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2396,10 +1880,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("GoAnimate"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://goanimate.com/business/videoplans/?hook=header_button.site",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2498,10 +1982,114 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("GoAnimate"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://goanimate.com/business/videoplans/?hook=header_button.site",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Adobe Muse
+
+            ca = new CloudApplication()
+            {
+                Brand = "Adobe",
+                ServiceName = "Muse",
+                CompanyURL = "http://www.adobe.com/uk/products/muse.html",
+                Description = "Adobe Muse is a web development application. The software is focused on allowing designers to create and publish dynamic websites for desktop and mobile devices that meet the latest web standards — without writing code",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    repository.FindLanguageByName("MANDARIN"),
+                    repository.FindLanguageByName("HINDI"),
+                    repository.FindLanguageByName("RUSSIAN"),
+                    repository.FindLanguageByName("ARABIC"),
+                    repository.FindLanguageByName("PORTUGESE"),
+                    repository.FindLanguageByName("FRENCH"),
+                    repository.FindLanguageByName("GERMAN"),
+                    repository.FindLanguageByName("JAPANESE"),
+                    //repository.FindLanguageByName("SPANISH"),
+                    //repository.FindLanguageByName("INDONESIAN"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    //repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    //repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    repository.FindFeatureByName("Website design"),
+                },
+                ApplicationCostPerMonth = 13.67M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = true,
+                ApplicationCostPerMonthAvailable = true,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("Adobe"),
+                AddDate = DateTime.Now,
+                TryURL = "https://creative.adobe.com/products/download/muse",
+            };
+
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2599,12 +2187,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("89.99"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
                 Category = repository.FindCategoryByName("CREATIVE"),
-                Vendor = repository.FindVendorByName("Serif#2"),
+                Vendor = repository.FindVendorByName("Serif"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.serif.com/desktop-publishing-software/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2703,10 +2291,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Moovly"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.moovly.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2805,10 +2393,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Moovly"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.moovly.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2908,10 +2496,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Magisto"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.magisto.com/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3012,10 +2600,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("WeVideo"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.wevideo.com/sign-up",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3116,10 +2704,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("WeVideo"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.wevideo.com/sign-up",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3220,10 +2808,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Animoto"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://animoto.com/personal/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3324,10 +2912,114 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Animoto"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://animoto.com/personal/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Adobe PhoneGap
+
+            ca = new CloudApplication()
+            {
+                Brand = "Adobe",
+                ServiceName = "PhoneGap",
+                CompanyURL = "https://creative.adobe.com/products/phonegap-build",
+                Description = "Adobe PhoneGap allows you to create mobile apps using the web tools you love - HTML, CSS, and JavaScript - and then easily compile them for multiple platforms in the cloud.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    repository.FindLanguageByName("FRENCH"),
+                    //repository.FindLanguageByName("GERMAN"),
+                    repository.FindLanguageByName("JAPANESE"),
+                    //repository.FindLanguageByName("SPANISH"),
+                    //repository.FindLanguageByName("INDONESIAN"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    //repository.FindFeatureByName("Animated images"),
+                    repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    //repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    //repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                ApplicationCostPerMonth = 9.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = true,
+                ApplicationCostPerMonthAvailable = true,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("Adobe"),
+                AddDate = DateTime.Now,
+                TryURL = "https://build.phonegap.com/",
+            };
+
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3428,10 +3120,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Como"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.como.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3532,10 +3224,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Como"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.como.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3636,10 +3328,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Knack"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.knackhq.com/signup/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3740,10 +3432,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Knack"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.knackhq.com/signup/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3844,10 +3536,114 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Knack"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.knackhq.com/signup/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Adobe Flash
+
+            ca = new CloudApplication()
+            {
+                Brand = "Adobe",
+                ServiceName = "Flash",
+                CompanyURL = "https://www.adobe.com/products/flash.html",
+                Description = "Adobe Flash software is a development environment for building games and applications. With the new HTML5 Canvas support in Flash Professional CC, you can create modern web content in a familiar authoring environment.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    repository.FindLanguageByName("RUSSIAN"),
+                    repository.FindLanguageByName("ARABIC"),
+                    repository.FindLanguageByName("PORTUGESE"),
+                    repository.FindLanguageByName("FRENCH"),
+                    repository.FindLanguageByName("GERMAN"),
+                    repository.FindLanguageByName("JAPANESE"),
+                    repository.FindLanguageByName("SPANISH"),
+                    //repository.FindLanguageByName("INDONESIAN"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("Animated images"),
+                    repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    //repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    //repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                ApplicationCostPerMonth = 19.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = true,
+                ApplicationCostPerMonthAvailable = true,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("Adobe"),
+                AddDate = DateTime.Now,
+                TryURL = "https://creative.adobe.com/products/download/flash",
+            };
+
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3948,10 +3744,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Mobile Roadie"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://mobileroadie.com/signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4052,10 +3848,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Mobincube"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.mobincube.com/pricing.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4156,10 +3952,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Mobincube"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.mobincube.com/pricing.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4260,10 +4056,216 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("CREATIVE"),
                 Vendor = repository.FindVendorByName("Mobincube"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.mobincube.com/pricing.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Corel Photo video suite
+
+            ca = new CloudApplication()
+            {
+                Brand = "Corel",
+                ServiceName = "Photo video suite",
+                CompanyURL = "http://www.paintshoppro.com/en/products/photo-video-suite/default.html",
+                Description = "Get everything you need to create your best photos and videos ever, together in one affordable package. Corel Photo Video Suite X7 combines the creative power of PaintShop Pro X7 and Video Studio X7 in one total package. Manage, adjust and edit your photos with the intuitive editing features and fun creative tools in PaintShop Pro X7.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    //repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    //repository.FindLanguageByName("FRENCH"),
+                    //repository.FindLanguageByName("GERMAN"),
+                    //repository.FindLanguageByName("JAPANESE")
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    repository.FindFeatureByName("Video creation"),
+                    //repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                //ApplicationCostPerMonth = 19.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+
+                SetupFee = repository.FindSetupFeeByName("61.99"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("COREL"),
+                AddDate = DateTime.Now,
+                TryURL = "http://www.paintshoppro.com/en/products/photo-video-suite/default.html",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            #region Corel Video studio ultimate
+
+            ca = new CloudApplication()
+            {
+                Brand = "Corel",
+                ServiceName = "Video studio ultimate",
+                CompanyURL = "http://www.videostudiopro.com/en/products/videostudio/ultimate/default.html?x-source=atg_pid&utm_source=ATG&utm_medium=nav&utm_campaign=VideoStudio_Ultimate_X7",
+                Description = "With a bold new 64-bit architecture, including a comprehensive 64-bit premium special effects pack, featuring 7 powerful FX applications, Corel VideoStudio Ultimate X7 is the easiest and most powerful VideoStudio ever. With faster rendering and more pro-quality video-editing tools, all within a simplified interface, VideoStudio Ultimate makes it faster to make the videos you love to create. Explore the benefits of FastFlick, an easy 3-step way to quickly make and share great-looking movies in less time.",
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(16384),
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    //repository.FindOperatingSystemByName("OSX"),
+                    //repository.FindOperatingSystemByName("WIN XP"),
+                    //repository.FindOperatingSystemByName("WIN VISTA"),
+                    //repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                    //repository.FindOperatingSystemByName("LINUX"),
+                    //repository.FindOperatingSystemByName("APPLE IOS"),
+                    //repository.FindOperatingSystemByName("WINDOWS 8 RT"),
+                    //repository.FindOperatingSystemByName("ANDROID"),
+                    //repository.FindOperatingSystemByName("BBOS"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    //repository.FindBrowserByName("IE6"),
+                    //repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("CHROME"),
+                    repository.FindBrowserByName("SAFARI"),
+                    repository.FindBrowserByName("OPERA"),
+                },
+
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                    //repository.FindLanguageByName("MANDARIN"),
+                    //repository.FindLanguageByName("HINDI"),
+                    //repository.FindLanguageByName("RUSSIAN"),
+                    //repository.FindLanguageByName("ARABIC"),
+                    //repository.FindLanguageByName("PORTUGESE"),
+                    //repository.FindLanguageByName("FRENCH"),
+                    //repository.FindLanguageByName("GERMAN"),
+                    //repository.FindLanguageByName("JAPANESE")
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("COMMUNITY/FORUM"),
+                    repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("CHAT"),
+                    repository.FindSupportTypeByName("EMAIL"),
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    repository.FindSupportTypeByName("TROUBLESHOOT")
+                },
+                SupportOffered = false,
+                //SupportHours = repository.FindSupportHoursByName("24 Hours"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                VideoTrainingSupport = false,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("Animated images"),
+                    //repository.FindFeatureByName("App design"),
+                    //repository.FindFeatureByName("Audio editing"),
+                    repository.FindFeatureByName("3D/CAD"),
+                    //repository.FindFeatureByName("Content library"),
+                    //repository.FindFeatureByName("Diagram design"),
+                    //repository.FindFeatureByName("eBook publishing"),
+                    //repository.FindFeatureByName("Graphics tools"),
+                    repository.FindFeatureByName("Photo editing"),
+                    //repository.FindFeatureByName("Interactive animation"),
+                    //repository.FindFeatureByName("Presentation creation"),
+                    //repository.FindFeatureByName("Publishing tools"),
+                    repository.FindFeatureByName("Video creation"),
+                    repository.FindFeatureByName("Video editing"),
+                    //repository.FindFeatureByName("Website design"),
+                },
+                //ApplicationCostPerMonth = 19.99M,
+                //ApplicationCostPerAnnum = 59.00M,
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = false,
+                ApplicationCostPerAnnumAvailable = false,
+                CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
+
+                SetupFee = repository.FindSetupFeeByName("46.99"),
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
+                Category = repository.FindCategoryByName("CREATIVE"),
+                Vendor = repository.FindVendorByName("COREL"),
+                AddDate = DateTime.Now,
+                TryURL = "http://www.videostudiopro.com/en/products/videostudio/ultimate/default.html?x-source=atg_pid&utm_source=ATG&utm_medium=nav&utm_campaign=VideoStudio_Ultimate_X7",
+            };
+
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 

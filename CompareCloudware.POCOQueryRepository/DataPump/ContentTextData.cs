@@ -8194,7 +8194,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H1_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 99,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8205,7 +8205,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 100,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8216,7 +8216,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 100,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8227,7 +8227,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 100,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8238,7 +8238,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 100,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8249,7 +8249,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_1_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 103,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8260,7 +8260,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8271,7 +8271,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 105,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8282,7 +8282,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_1_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_1_BODY"),
                 ContentTextData = data,
                 BodyOrder = 106,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8293,7 +8293,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_TITLE"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_TITLE"),
                 ContentTextData = data,
                 BodyOrder = 103,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8304,7 +8304,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8315,7 +8315,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8326,7 +8326,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8337,7 +8337,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8348,7 +8348,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8359,7 +8359,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8370,7 +8370,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),
@@ -8381,7 +8381,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             ct = new ContentText
             {
                 NiceName = "",
-                ContentTextType = repository.FindContentTextTypeByName("BUSINESSOPERATIONS_H2_2_BODY"),
+                ContentTextType = repository.FindContentTextTypeByName("BUSINESSANDOPERATIONS_H2_2_BODY"),
                 ContentTextData = data,
                 BodyOrder = 104,
                 ContentTextStatus = repository.FindStatusByName("LIVE"),

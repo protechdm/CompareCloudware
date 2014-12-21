@@ -40,7 +40,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #region SALES
 
-            #region Pipeline Deals#2
+            #region Pipeline Deals
 
             ca = new CloudApplication()
             {
@@ -122,12 +122,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
                 Category = repository.FindCategoryByName("SALES"),
-                Vendor = repository.FindVendorByName("Pipeline Deals#2"),
+                Vendor = repository.FindVendorByName("Pipeline Deals"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "https://www.pipelinedeals.com/",
+                BuyURL = "https://www.pipelinedeals.com/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -221,7 +222,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -310,9 +311,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
                 Category = repository.FindCategoryByName("SALES"),
-                Vendor = repository.FindVendorByName("ZOHO CRM#2"),
+                Vendor = repository.FindVendorByName("ZOHO CRM"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/crm/",
+                BuyURL = "https://www.zoho.com/crm/",
             };
 
             ca.CloudApplicationFeatures.Find(x => x.Feature.FeatureName.ToUpper().StartsWith("SOCIAL MARKETING".ToUpper())).IsOptional = true;
@@ -409,10 +411,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("Ambassador"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://mbsy.co/ambassador/12441435",
+                BuyURL = "http://mbsy.co/ambassador/12441435",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -503,10 +506,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("Pipeliner"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.pipelinersales.com/crm/free-trial/?referral=581",
+                BuyURL = "http://www.pipelinersales.com/crm/free-trial/?referral=581",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -598,7 +602,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("Salesforce Pardot"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.pardot.com/pricing/",
+                BuyURL = "http://www.pardot.com/pricing/",
             };
 
             ca.CloudApplicationFeatures.Find(x => x.Feature.FeatureName.ToUpper().StartsWith("SOCIAL MARKETING".ToUpper())).IsOptional = true;
@@ -695,7 +700,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("Call Pro"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.callprocrm.com/eur/crm-pricing.html",
+                BuyURL = "http://www.callprocrm.com/eur/crm-pricing.html",
             };
 
             ca.CloudApplicationFeatures.Find(x => x.Feature.FeatureName.ToUpper().StartsWith("SOCIAL MARKETING".ToUpper())).IsOptional = true;
@@ -792,7 +798,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("Base"),
                 AddDate = DateTime.Now,
-
+                TryURL = " http://bit.ly/1uBpSSW",
+                BuyURL = " http://bit.ly/1uBpSSW",
             };
 
             ca.CloudApplicationFeatures.Find(x => x.Feature.FeatureName.ToUpper().StartsWith("Telephone Integration".ToUpper())).IsOptional = true;
@@ -890,10 +897,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("HATCHBUCK"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.hatchbuck.com/pricing/",
+                BuyURL = "http://www.hatchbuck.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -984,10 +992,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("INSIGHTLY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.insightly.com/pricing/",
+                BuyURL = "https://www.insightly.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1078,10 +1087,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("SALES"),
                 Vendor = repository.FindVendorByName("CAPSULE CRM"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://capsulecrm.com/signup/",
+                BuyURL = "https://capsulecrm.com/signup/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 

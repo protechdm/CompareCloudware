@@ -122,9 +122,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("1&1#3"),
+                Vendor = repository.FindVendorByName("1&1"),
                 AddDate = DateTime.Now,
-                
+                TryURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
+                BuyURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -223,8 +224,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("1&1#3"),
+                Vendor = repository.FindVendorByName("1&1"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
+                BuyURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
 
             };
 
@@ -327,8 +330,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("1&1#3"),
+                Vendor = repository.FindVendorByName("1&1"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
+                BuyURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
 
             };
 
@@ -431,8 +436,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("1&1#3"),
+                Vendor = repository.FindVendorByName("1&1"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
+                BuyURL = "http://www.1and1.co.uk/website-packages?__lf=Static&linkId=hd.subnav.mywebsite-packages#top",
 
             };
 
@@ -455,7 +462,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region GoDaddy#2 Business
+            #region GoDaddy Business
 
             ca = new CloudApplication()
             {
@@ -540,9 +547,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("GoDaddy#2"),
+                Vendor = repository.FindVendorByName("GoDaddy"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://outright.com/learn-more/pricing/",
+                BuyURL = "http://outright.com/learn-more/pricing/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -562,7 +570,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region GoDaddy#2 Business Plus
+            #region GoDaddy Business Plus
 
             ca = new CloudApplication()
             {
@@ -647,8 +655,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("GoDaddy#2"),
+                Vendor = repository.FindVendorByName("GoDaddy"),
                 AddDate = DateTime.Now,
+                TryURL = "http://outright.com/learn-more/pricing/",
+                BuyURL = "http://outright.com/learn-more/pricing/",
 
             };
 
@@ -669,7 +679,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region GoDaddy#2 Online Store
+            #region GoDaddy Online Store
 
             ca = new CloudApplication()
             {
@@ -754,8 +764,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("GoDaddy#2"),
+                Vendor = repository.FindVendorByName("GoDaddy"),
                 AddDate = DateTime.Now,
+                TryURL = "http://outright.com/learn-more/pricing/",
+                BuyURL = "http://outright.com/learn-more/pricing/",
 
             };
 
@@ -776,7 +788,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region 123-Reg#2 Basic
+            #region 123-Reg Basic
 
             ca = new CloudApplication()
             {
@@ -862,9 +874,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("123-Reg#2"),
+                Vendor = repository.FindVendorByName("123-Reg"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.123-reg.co.uk/website-builder/pricing-and-features.shtml",
+                BuyURL = "https://www.123-reg.co.uk/website-builder/pricing-and-features.shtml",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -884,7 +897,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region 123-Reg#2 Premium
+            #region 123-Reg Premium
 
             ca = new CloudApplication()
             {
@@ -970,8 +983,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("123-Reg#2"),
+                Vendor = repository.FindVendorByName("123-Reg"),
                 AddDate = DateTime.Now,
+                TryURL = "https://www.123-reg.co.uk/website-builder/pricing-and-features.shtml",
+                BuyURL = "https://www.123-reg.co.uk/website-builder/pricing-and-features.shtml",
 
             };
 
@@ -992,7 +1007,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region 123-Reg#2 Online Shop
+            #region 123-Reg Online Shop
 
             ca = new CloudApplication()
             {
@@ -1078,9 +1093,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("NO"),
                 Category = repository.FindCategoryByName("WEBSITE"),
-                Vendor = repository.FindVendorByName("123-Reg#2"),
+                Vendor = repository.FindVendorByName("123-Reg"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.123-reg.co.uk/ecommerce/ecommerce-comparison.shtml",
+                BuyURL = "https://www.123-reg.co.uk/ecommerce/ecommerce-comparison.shtml",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1189,7 +1205,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("Zoho Sites"),
                 AddDate = DateTime.Now,
-
+                TryURL = "https://www.zoho.com/sites/pricing.html",
+                BuyURL = "https://www.zoho.com/sites/pricing.html",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1299,7 +1316,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("HighWire"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.highwire.com/pricing/?ref=comp1",
+                BuyURL = "http://www.highwire.com/pricing/?ref=comp1",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1409,7 +1427,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("SHOPIO"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.shopio.com/?ref=comp1",
+                BuyURL = "http://www.shopio.com/?ref=comp1",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1519,6 +1538,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("SHOPIO"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.shopio.com/?ref=comp1",
+                BuyURL = "http://www.shopio.com/?ref=comp1",
 
             };
 
@@ -1629,7 +1650,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("WEEBLY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.weebly.com",
+                BuyURL = "http://www.weebly.com",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1739,6 +1761,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("WEEBLY"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.weebly.com",
+                BuyURL = "http://www.weebly.com",
 
             };
 
@@ -1849,7 +1873,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("SERIF"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.serif.com/webplus/",
+                BuyURL = "http://www.serif.com/webplus/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1960,7 +1985,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("WIX"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.wix.com/upgrade/website",
+                BuyURL = "http://www.wix.com/upgrade/website",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -2071,6 +2097,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("WIX"),
                 AddDate = DateTime.Now,
+                TryURL = "http://www.wix.com/upgrade/website",
+                BuyURL = "http://www.wix.com/upgrade/website",
 
             };
 
@@ -2183,7 +2211,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("SHOPIFY"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.shopify.com/?ref=compare1",
+                BuyURL = "http://www.shopify.com/?ref=compare1",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -2295,7 +2324,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Category = repository.FindCategoryByName("WEBSITE"),
                 Vendor = repository.FindVendorByName("VOLUSION"),
                 AddDate = DateTime.Now,
-
+                TryURL = "http://www.volusion.co.uk/hosting-plans-pricing",
+                BuyURL = "http://www.volusion.co.uk/hosting-plans-pricing",
             };
 
             //InsertDocumentLinks(repository, ca);

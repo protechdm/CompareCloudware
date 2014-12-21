@@ -1529,18 +1529,35 @@ namespace CompareCloudware.POCOQueryRepository
         #endregion
 
         #region FindVendorByName
-        public Vendor FindVendorByName(string vendorName)
+        public Vendor FindVendorByName(string vendorName, bool exactMatch = false)
         {
-            Vendor f1 = _context.Vendors.Where(x => x.VendorName.ToUpper().StartsWith(vendorName.ToUpper())).FirstOrDefault();
-            Vendor f2 = (from cf in _context.Vendors
-                         where cf.VendorName.ToUpper().StartsWith(vendorName.ToUpper())
-                         select cf).FirstOrDefault();
-
-            if (f2 == null)
+            if (!exactMatch)
             {
-                throw new Exception("Cannot find vendor");
+                Vendor f1 = _context.Vendors.Where(x => x.VendorName.ToUpper().StartsWith(vendorName.ToUpper())).FirstOrDefault();
+                Vendor f2 = (from cf in _context.Vendors
+                             where cf.VendorName.ToUpper().StartsWith(vendorName.ToUpper())
+                             select cf).FirstOrDefault();
+
+                if (f2 == null)
+                {
+                    throw new Exception("Cannot find vendor");
+                }
+                return f2;
             }
-            return f2;
+            else
+            {
+                Vendor f1 = _context.Vendors.Where(x => x.VendorName.ToUpper() == vendorName.ToUpper()).FirstOrDefault();
+                Vendor f2 = (from cf in _context.Vendors
+                             where cf.VendorName.ToUpper() == vendorName.ToUpper()
+                             select cf).FirstOrDefault();
+
+                if (f2 == null)
+                {
+                    throw new Exception("Cannot find vendor");
+                }
+                return f2;
+            }
+
         }
         #endregion
 

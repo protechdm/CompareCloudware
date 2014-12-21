@@ -34,11 +34,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            int categoryID = repository.FindCategoryByName("BUSINESS & OPERATIONS").CategoryID;
+            int categoryID = repository.FindCategoryByName("BUSINESS AND OPERATIONS").CategoryID;
 
             #region APPLICATIONS
 
-            #region BUSINESS & OPERATIONS
+            #region BUSINESS AND OPERATIONS
 
             #region Deputy Starter
 
@@ -122,13 +122,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("Deputy"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.deputy.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -216,14 +216,14 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("Deputy"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.deputy.com/pricing/",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -311,14 +311,14 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("Deputy"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.deputy.com/pricing/",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -406,14 +406,14 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("60"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("Liveplan"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.liveplan.com/pricing",
 
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -505,13 +505,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("15"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("MEGAVENTORY"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.megaventory.com/?pricing-plans=1",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -603,13 +603,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("15"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("MEGAVENTORY"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.megaventory.com/?pricing-plans=1",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -701,13 +701,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("15"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("MEGAVENTORY"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.megaventory.com/?pricing-plans=1",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -799,13 +799,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TIMELY"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.gettimely.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -899,13 +899,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TIMELY"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.gettimely.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -999,13 +999,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TIMELY"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.gettimely.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1100,13 +1100,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("21"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
                 TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1201,13 +1201,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("21"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
                 TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1302,13 +1302,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("21"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
                 TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1403,13 +1403,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("21"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("TRADEGECKO"),
                 AddDate = DateTime.Now,
                 TryURL = "http://tradegecko.com/pricing/?_ga=1.126407949.1457280302.1413843153",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1505,13 +1505,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.workflowmax.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1607,13 +1607,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.workflowmax.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1709,13 +1709,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.workflowmax.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1811,13 +1811,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.workflowmax.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1913,23 +1913,23 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKFLOWMAX"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.workflowmax.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region BrightPearl#2 Starter
+            #region BrightPearl Starter
 
             ca = new CloudApplication()
             {
-                Brand = "BrightPearl#2",
+                Brand = "BrightPearl",
                 ServiceName = "Starter",
                 CompanyURL = "https://www.brightpearl.com/pricing",
                 Description = "Brightpearl helps retailers accelerate  growth and profits - integrating all your orders, inventory, accounting, customer data and reporting. Minimise admin time and reduce errors - with real-time automatic syncing-across orders, inventory, customer data and accounting. Get real-time visibility into your business with clear, easy to use reports that show where you're making money by SKU, channel and customer.",
@@ -2018,23 +2018,23 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
-                Vendor = repository.FindVendorByName("BRIGHTPEARL#2"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
+                Vendor = repository.FindVendorByName("BRIGHTPEARL"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.brightpearl.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region BrightPearl#2 Business
+            #region BrightPearl Business
 
             ca = new CloudApplication()
             {
-                Brand = "BrightPearl#2",
+                Brand = "BrightPearl",
                 ServiceName = "Business",
                 CompanyURL = "https://www.brightpearl.com/pricing",
                 Description = "Brightpearl Business is ideal for businesses with more users, SKUs and monthly orders. It helps retailers accelerate  growth and profits - getting all your orders, inventory, accounting, customer data and reporting together in one place. Minimise admin time and reduce errors - with real-time automatic syncing-across orders, inventory, customer data and accounting. Get real-time visibility into your business with clear, easy to use reports that show where you're making money by SKU, channel and customer.",
@@ -2123,23 +2123,23 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
-                Vendor = repository.FindVendorByName("BRIGHTPEARL#2"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
+                Vendor = repository.FindVendorByName("BRIGHTPEARL"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.brightpearl.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region BrightPearl#2 Professional
+            #region BrightPearl Professional
 
             ca = new CloudApplication()
             {
-                Brand = "BrightPearl#2",
+                Brand = "BrightPearl",
                 ServiceName = "Professional",
                 CompanyURL = "https://www.brightpearl.com/pricing",
                 Description = "Brightpearl Professional is the perfect solution for retailers with larger portfolios, staff numbers and monthly transactions. It helps retailers accelerate  growth and profits - getting all your orders, inventory, accounting, customer data and reporting together in one place. Minimise admin time and reduce errors - with real-time automatic syncing-across orders, inventory, customer data and accounting. Get real-time visibility into your business with clear, easy to use reports that show where you're making money by SKU, channel and customer.",
@@ -2228,13 +2228,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
-                Vendor = repository.FindVendorByName("BRIGHTPEARL#2"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
+                Vendor = repository.FindVendorByName("BRIGHTPEARL"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.brightpearl.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2335,13 +2335,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("DOCUSIGN"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.docusign.co.uk/products-and-pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2442,13 +2442,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("DOCUSIGN"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.docusign.co.uk/products-and-pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2549,13 +2549,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("GBP"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("DOCUSIGN"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.docusign.co.uk/products-and-pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2657,13 +2657,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
 
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("DEMO"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("OPENBRAVO"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.openbravo.com/retailers/editions-and-pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2765,13 +2765,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
 
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("DEMO"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("OPENBRAVO"),
                 AddDate = DateTime.Now,
                 TryURL = "http://www.openbravo.com/retailers/editions-and-pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2870,13 +2870,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("SIGNNOW"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.signnow.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2975,13 +2975,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("SIGNNOW"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.signnow.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3080,13 +3080,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),              
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("SIGNNOW"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.signnow.com/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3190,13 +3190,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("POA"),
 
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("DEMO"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("WORKDAY"),
                 AddDate = DateTime.Now,
                 TryURL = "https://forms.workday.com/uk/landing_page/product_preview_uk_financial_management_overview_lp.php?camp=70180000000p6X7",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3299,13 +3299,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.zendesk.com/product/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3408,13 +3408,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.zendesk.com/product/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3517,13 +3517,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.zendesk.com/product/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3626,13 +3626,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("ZENDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.zendesk.com/product/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3735,13 +3735,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "http://freshdesk.com/signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3844,13 +3844,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "http://freshdesk.com/signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3953,13 +3953,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "http://freshdesk.com/signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4062,13 +4062,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRESHDESK"),
                 AddDate = DateTime.Now,
                 TryURL = "http://freshdesk.com/signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4171,13 +4171,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("FRONTRANGE"),
                 AddDate = DateTime.Now,
                 TryURL = "http://pages.frontrange.com/Cloud-Service-Management-Trial.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4280,13 +4280,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("STRATPAD"),
                 AddDate = DateTime.Now,
                 TryURL = "https://cloud.stratpad.com/index.html#signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4389,13 +4389,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("STRATPAD"),
                 AddDate = DateTime.Now,
                 TryURL = "https://cloud.stratpad.com/index.html#signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4498,13 +4498,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("YES"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("STRATPAD"),
                 AddDate = DateTime.Now,
                 TryURL = "https://cloud.stratpad.com/index.html#signup",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4607,13 +4607,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("ADOBE"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.echosign.adobe.com/en/pricing.html?cs=mktg_topnav",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4716,13 +4716,13 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 CloudApplicationCurrency = repository.GetCurrencyByShortName("USD"),
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("14"),
-                Category = repository.FindCategoryByName("BUSINESS & OPERATIONS"),
+                Category = repository.FindCategoryByName("BUSINESS AND OPERATIONS"),
                 Vendor = repository.FindVendorByName("ADOBE"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.echosign.adobe.com/en/pricing.html?cs=mktg_topnav",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4731,7 +4731,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            Console.WriteLine("Finished BUSINESS & OPERATIONS");
+            Console.WriteLine("Finished BUSINESS AND OPERATIONS");
             return retVal;
         }
         #region InsertDocumentLinks

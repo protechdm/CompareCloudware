@@ -13,6 +13,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 {
     public static class ReferenceData
     {
+        public static string ImageLogoPath = "C:\\GITDevelopment\\CompareCloudwareTest\\CompareCloudware.Web\\Images\\Logos\\";
         public static bool TestLaptop(QueryRepository repository)
         {
             bool retVal = true;
@@ -7627,6 +7628,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
+            #region TIMEZONES
             tz = new Domain.Models.TimeZone
             {
                 TimeZoneName = "MST",
@@ -7634,9 +7636,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TimeZoneStatus = repository.FindStatusByName("LIVE")
 
             };
-
             repository.AddTimeZone(tz);
+            #endregion
 
+            #region LICENCE TYPE MAXIMUM
             ltMax = new LicenceTypeMaximum()
             {
                 LicenceTypeMaximumName = 200,
@@ -7657,7 +7660,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 LicenceTypeMaximumStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddLicenceTypeMaximum(ltMax);
+            #endregion
 
+            #region LICENCE TYPE MINIMUM
             ltMin = new LicenceTypeMinimum
             {
                 LicenceTypeMinimumName = 51,
@@ -7678,7 +7683,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 LicenceTypeMinimumStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddLicenceTypeMinimum(ltMin);
+            #endregion
 
+            #region LANGUAGE
             l = new Language
             {
                 LanguageName = "Mandarin",
@@ -7699,6 +7706,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 LanguageStatus = repository.FindStatusByName("LIVE")
             };
             repository.AddLanguage(l);
+            #endregion
 
             #region FEATURES
 
@@ -8555,7 +8563,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8565,7 +8573,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8575,7 +8583,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8585,7 +8593,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8595,7 +8603,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8605,7 +8613,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8615,7 +8623,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8625,7 +8633,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8635,7 +8643,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8645,7 +8653,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8655,7 +8663,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8665,7 +8673,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8675,7 +8683,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8685,7 +8693,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8695,7 +8703,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
 
             f = new Feature()
@@ -8706,7 +8714,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("BUSINESS & OPERATIONS"));
+            f.Categories.Add(repository.FindCategoryByName("BUSINESS AND OPERATIONS"));
             repository.AddFeature(f);
 
             #endregion
@@ -8876,7 +8884,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region Business Intelligence Reporting FEATURES
+            #region Intelligence And Reporting FEATURES
             f = new Feature()
             {
                 FeatureName = "Ad hoc analysis",
@@ -8885,7 +8893,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8895,7 +8903,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8905,7 +8913,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8915,7 +8923,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8925,7 +8933,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8935,7 +8943,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8945,7 +8953,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8955,7 +8963,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8965,7 +8973,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8975,7 +8983,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8985,7 +8993,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -8995,7 +9003,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -9005,7 +9013,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -9015,7 +9023,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
             f = new Feature()
             {
@@ -9025,7 +9033,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 FeatureType = repository.FindFeatureTypeByName("FEATURE"),
                 FeatureStatus = repository.FindStatusByName("LIVE"),
             };
-            f.Categories.Add(repository.FindCategoryByName("Business Intelligence Reporting"));
+            f.Categories.Add(repository.FindCategoryByName("Intelligence And Reporting"));
             repository.AddFeature(f);
 
             #endregion
@@ -9186,460 +9194,6 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            //#region APPLICATIONFEATURES
-
-            ////WORD PARENT
-            //f = new Feature()
-            //{
-            //    FeatureName = "Word Processor",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //parentFeature = f;
-
-            ////WORD CHILDREN
-            //f = new Feature()
-            //{
-            //    FeatureName = "Advanced Proofing & Editing",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Advanced Referencing & Editing",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Mailing Features",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //parentFeature = f;
-
-
-            ////SPREADSHEET PARENT            
-            //f = new Feature()
-            //{
-            //    FeatureName = "Spreadsheet",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-            ////SPREADSHEET CHILDREN
-            //f = new Feature()
-            //{
-            //    FeatureName = "Formula Management",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Data Management",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Advanced Charting & Tables",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-
-            ////PRESENTATION PARENT
-            //f = new Feature()
-            //{
-            //    FeatureName = "Presentation",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //parentFeature = f;
-
-            ////PRESENTATION CHILDREN
-            //f = new Feature()
-            //{
-            //    FeatureName = "Advanced Design & Animation",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Real-Time Collaboration",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Automatic Version Management",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Large Video Files >50MB",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Own Branding",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-
-            ////CONFERENCING PARENT
-            //f = new Feature()
-            //{
-            //    FeatureName = "Conferencing",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //parentFeature = f;
-
-            ////CONFERENCING CHILDREN
-            //f = new Feature()
-            //{
-            //    FeatureName = "Desktop sharing",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Instant messaging",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Desktop video conferencing",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Desktop VoIP",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Presence tools",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-
-            ////NOTES PARENT
-            //f = new Feature()
-            //{
-            //    FeatureName = "Notes",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //parentFeature = f;
-
-            ////NOTES CHILDREN
-            //f = new Feature()
-            //{
-            //    FeatureName = "Read & Edit",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Save Web Content",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Image Capture",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Automatic Sync (for use on other devices)",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-            ////WEB PUBLISHING PARENT
-            //f = new Feature()
-            //{
-            //    FeatureName = "Web publishing",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //parentFeature = f;
-
-            ////WEB PUBLISHING CHILDREN
-            //f = new Feature()
-            //{
-            //    FeatureName = "Web Publishing e.g. Blog",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Social Media Integration",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Internal Website (Intranet)",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "External Customer Website (Extranet)",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    SuppressFilterBehaviour = true,
-            //    ParentFeature = parentFeature,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-            //f = new Feature()
-            //{
-            //    FeatureName = "Email (comprehensive client)",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Email security & anti-spam",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Email storage limit per user",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    IsDataDriven = true,
-            //    //DataDrivenField = "THIS",
-            //    OutputDisplayType = "INT",
-            //    OutputDisplayDescriptor = "BYTES",
-            //    IsDataCeilingDriven = true,
-            //    HasCount = true,
-            //    HasCountSuffix = true,
-            //    CanBeBooleanAndDataDriven = true,
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Email content translation",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Contact Management",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Shared Calendar",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Project Management / Task Manager",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Document Collaboration (real-time)",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Collaborative diagramming/mapping",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-            //f = new Feature()
-            //{
-            //    FeatureName = "Document consumption analytics",
-            //    Categories = new List<Category>(),
-            //    FeatureType = repository.FindFeatureTypeByName("APPLICATIONFEATURE"),
-            //    FeatureStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //f.Categories.Add(repository.FindCategoryByName("OFFICE"));
-            //repository.AddFeature(f);
-
-            //#endregion
 
 
             #region VENDORS
@@ -9652,7 +9206,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Sage_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\Sage_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9665,7 +9219,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\PayPal_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\PayPal_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9679,7 +9233,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Skrill_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\Skrill_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9693,7 +9247,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Realex_Payments_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\Realex_Payments_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9707,7 +9261,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\eWay_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\eWay_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9721,7 +9275,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Authorize_net_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\Authorize_net_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9735,7 +9289,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\BT_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\BT_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9749,7 +9303,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\CashFlows_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\CashFlows_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9763,7 +9317,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\DigitalRiver_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\DigitalRiver_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9777,7 +9331,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Kounta_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\Kounta_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9788,33 +9342,33 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #region HOSTING VENDORS
 
-            v = new Vendor()
-            {
-                VendorName = "BT#2",
-                VendorLogoFileName = "BT_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Hosting//",
-                VendorLogo = new VendorLogo()
-                {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\BT_logo.gif"),
-                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
-                },
-                VendorStatus = repository.FindStatusByName("LIVE"),
-            };
-            repository.AddVendor(v);
+            //v = new Vendor()
+            //{
+            //    VendorName = "BT#2",
+            //    VendorLogoFileName = "BT_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Hosting//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\BT_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
 
-            v = new Vendor()
-            {
-                VendorName = "1&1#2",
-                VendorLogoFileName = "1and1_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Hosting//",
-                VendorLogo = new VendorLogo()
-                {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\1and1_logo.gif"),
-                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
-                },
-                VendorStatus = repository.FindStatusByName("LIVE"),
-            };
-            repository.AddVendor(v);
+            //v = new Vendor()
+            //{
+            //    VendorName = "1&1#2",
+            //    VendorLogoFileName = "1and1_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Hosting//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\1and1_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
 
             v = new Vendor()
             {
@@ -9823,7 +9377,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hosting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\Gradwell_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\Gradwell_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9837,7 +9391,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hosting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\GoDaddy_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\GoDaddy_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9850,7 +9404,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hosting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\123Reg_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\123Reg_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9864,7 +9418,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hosting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\Optimal_Hosting_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\Optimal_Hosting_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9878,7 +9432,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hosting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\HeartInternet_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\HeartInternet_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9892,7 +9446,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hosting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\EasySpace_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\EasySpace_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9906,7 +9460,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Payments//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Payments\\Authorize_net_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Payments\\Authorize_net_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9920,7 +9474,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//P//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hosting\\DreamHost_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hosting\\DreamHost_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -9931,33 +9485,33 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #region WEBSITE VENDORS
 
-            v = new Vendor()
-            {
-                VendorName = "1&1#3",
-                VendorLogoFileName = "1and1_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Website//",
-                VendorLogo = new VendorLogo()
-                {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\1and1_logo.gif"),
-                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
-                },
-                VendorStatus = repository.FindStatusByName("LIVE"),
-            };
-            repository.AddVendor(v);
+            //v = new Vendor()
+            //{
+            //    VendorName = "1&1#3",
+            //    VendorLogoFileName = "1and1_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Website//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes(ImageLogoPath + "Website\\1and1_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
 
-            v = new Vendor()
-            {
-                VendorName = "GoDaddy#2",
-                VendorLogoFileName = "GoDaddy_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Website//",
-                VendorLogo = new VendorLogo()
-                {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\GoDaddy_logo.gif"),
-                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
-                },
-                VendorStatus = repository.FindStatusByName("LIVE"),
-            };
-            repository.AddVendor(v);
+            //v = new Vendor()
+            //{
+            //    VendorName = "GoDaddy#2",
+            //    VendorLogoFileName = "GoDaddy_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Website//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes(ImageLogoPath + "Website\\GoDaddy_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
 
             v = new Vendor()
             {
@@ -9966,26 +9520,26 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Zoho_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Zoho_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddVendor(v);
 
-            v = new Vendor()
-            {
-                VendorName = "123-Reg#2",
-                VendorLogoFileName = "123Reg_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Website//",
-                VendorLogo = new VendorLogo()
-                {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\123Reg_logo.gif"),
-                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
-                },
-                VendorStatus = repository.FindStatusByName("LIVE"),
-            };
-            repository.AddVendor(v);
+            //v = new Vendor()
+            //{
+            //    VendorName = "123-Reg#2",
+            //    VendorLogoFileName = "123Reg_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Website//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes(ImageLogoPath + "Website\\123Reg_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
 
             v = new Vendor()
             {
@@ -9994,7 +9548,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\HighWire_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\HighWire_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10008,7 +9562,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Shopio_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Shopio_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10022,7 +9576,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Weebly_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Weebly_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10036,7 +9590,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Serif_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Serif_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10050,7 +9604,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Wix_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Wix_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10064,7 +9618,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Shopify_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Shopify_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10078,7 +9632,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Website//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Website\\Volusion_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Website\\Volusion_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10095,7 +9649,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\BreatheHR_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\BreatheHR_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10109,7 +9663,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\PeopleHR_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\PeopleHR_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10123,7 +9677,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\SMB_Partners_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\SMB_Partners_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10137,7 +9691,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\YouManage_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\YouManage_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10151,7 +9705,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Staff_Squared_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\Staff_Squared_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10165,7 +9719,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\My_HR_Toolkit_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\My_HR_Toolkit_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10179,7 +9733,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\BambooHR_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\BambooHR_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10193,7 +9747,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Cezanne_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\Cezanne_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10207,7 +9761,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Access_HR_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\Access_HR_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10221,7 +9775,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Moorepay_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\Moorepay_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10235,7 +9789,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Hr//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Hr\\Zoho_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Hr\\Zoho_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10250,12 +9804,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "Pipeline Deals#2",
+                VendorName = "Pipeline Deals",
                 VendorLogoFileName = "PipelineDeals_logo.gif",
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\PipelineDeals_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\PipelineDeals_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10269,7 +9823,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\PipeDrive_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\PipeDrive_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10278,12 +9832,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "Zoho CRM#2",
+                VendorName = "Zoho CRM",
                 VendorLogoFileName = "Zoho_logo.gif",
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Zoho_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Zoho_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10297,7 +9851,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Ambassador_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Ambassador_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10311,7 +9865,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Pipeliner_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Pipeliner_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10325,7 +9879,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Pardot_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Pardot_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10339,7 +9893,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\CallPro_CRM_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\CallPro_CRM_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10353,7 +9907,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\BaseSales_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\BaseSales_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10367,7 +9921,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Hatchbuck_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Hatchbuck_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10381,7 +9935,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Insightly_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Insightly_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10395,7 +9949,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Sales//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Sales\\Capsule_CRM_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Sales\\Capsule_CRM_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10410,10 +9964,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Deputy",
                 VendorLogoFileName = "Deputy_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Deputy_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Deputy_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10424,10 +9978,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "LivePlan",
                 VendorLogoFileName = "LivePlan_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\LivePlan_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\LivePlan_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10438,10 +9992,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Megaventory",
                 VendorLogoFileName = "Megaventory_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Megaventory_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Megaventory_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10452,10 +10006,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Timely",
                 VendorLogoFileName = "Timely_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Timely_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Timely_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10466,10 +10020,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Tradegecko",
                 VendorLogoFileName = "TradeGecko_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\TradeGecko_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\TradeGecko_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10480,10 +10034,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Workflowmax",
                 VendorLogoFileName = "Workflow_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Workflow_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Workflow_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10492,12 +10046,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "BrightPearl#2",
+                VendorName = "BrightPearl",
                 VendorLogoFileName = "brightpearl_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\brightpearl_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\brightpearl_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10508,10 +10062,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "DocuSign",
                 VendorLogoFileName = "DocuSign_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\DocuSign_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\DocuSign_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10522,10 +10076,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "OpenBravo",
                 VendorLogoFileName = "Openbravo_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Openbravo_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Openbravo_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10536,10 +10090,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "SignNow",
                 VendorLogoFileName = "SignNow_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\SignNow_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\SignNow_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10550,10 +10104,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Workday",
                 VendorLogoFileName = "Workday_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Workday_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Workday_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10564,10 +10118,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Zendesk",
                 VendorLogoFileName = "Zendesk_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Zendesk_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Zendesk_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10578,10 +10132,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Freshdesk",
                 VendorLogoFileName = "FreshDesk_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\FreshDesk_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\FreshDesk_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10592,10 +10146,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Frontrange",
                 VendorLogoFileName = "FrontRange-logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\FrontRange-logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\FrontRange-logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10606,10 +10160,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Stratpad",
                 VendorLogoFileName = "StratPad_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\StratPad_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\StratPad_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10620,10 +10174,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Adobe",
                 VendorLogoFileName = "Adobe_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+                VendorLogoFullURL = "//Images//Logos//Business and Operations//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Adobe_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Business and Operations\\Adobe_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10634,11 +10188,11 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             //{
             //    VendorName = "Unleashed",
             //    VendorLogoFileName = "Unleashed_logo.gif",
-            //    VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+            //    VendorLogoFullURL = "//Images//Logos//Business and Operations//",
             //    VendorLogo = new VendorLogo()
             //    {
             //        //NS - need logo!!
-            //        Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Unleashed_logo.gif"),
+            //        Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Operations\\Unleashed_logo.gif"),
             //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
             //    },
             //    VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10650,10 +10204,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             //    VendorName = "Jobber",
             //    //NS - need logo!!
             //    VendorLogoFileName = "Jobber_logo.gif",
-            //    VendorLogoFullURL = "//Images//Logos//Business and Opps//",
+            //    VendorLogoFullURL = "//Images//Logos//Business and Operations//",
             //    VendorLogo = new VendorLogo()
             //    {
-            //        Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Opps\\Jobber_logo.gif"),
+            //        Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business and Operations\\Jobber_logo.gif"),
             //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
             //    },
             //    VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10671,7 +10225,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\ConstantContact_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\ConstantContact_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10685,7 +10239,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\ClickWebinar_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\ClickWebinar_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10699,7 +10253,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\DotMailer_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\DotMailer_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10713,7 +10267,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\HootSuite_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\HootSuite_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10727,7 +10281,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Zoho_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Zoho_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10741,7 +10295,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\CampaignMonitor_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\CampaignMonitor_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10755,7 +10309,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\InstaPage_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\InstaPage_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10769,7 +10323,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Marketo_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Marketo_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10783,7 +10337,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\HunSpot_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\HunSpot_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10797,7 +10351,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Pardot_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Pardot_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10811,7 +10365,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Act-On_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Act-On_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10825,7 +10379,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\MarinsSoftware_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\MarinsSoftware_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10839,7 +10393,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Cvent_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Cvent_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10853,7 +10407,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\FluidSurveys_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\FluidSurveys_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10867,7 +10421,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Vocus_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Vocus_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10881,7 +10435,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\OutMarket_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\OutMarket_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10895,7 +10449,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Moz_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Moz_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10904,12 +10458,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "Adobe#2",
+                VendorName = "Adobe",
                 VendorLogoFileName = "Adobe_logo.gif",
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Adobe_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Adobe_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10923,7 +10477,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Citrix_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Citrix_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10937,7 +10491,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\Vocalcom_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\Vocalcom_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10951,7 +10505,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\VanillaSoft_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\VanillaSoft_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10965,7 +10519,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Marketing//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Marketing\\NewVoiceMedia_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Marketing\\NewVoiceMedia_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10974,16 +10528,16 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            #region BUSINESS INTELLIGENCE REPORTING VENDORS
+            #region INTELLIGENCE AND REPORTING VENDORS
 
             v = new Vendor()
             {
                 VendorName = "Bime",
                 VendorLogoFileName = "Bime_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Bime_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Bime_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -10994,10 +10548,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Zoho Reports",
                 VendorLogoFileName = "Zoho_Logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Zoho_Logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Zoho_Logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11008,10 +10562,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Qlik",
                 VendorLogoFileName = "Qlik_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Qlik_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Qlik_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11022,10 +10576,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Birst",
                 VendorLogoFileName = "Birst_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Birst_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Birst_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11036,10 +10590,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "SiSense",
                 VendorLogoFileName = "SiSense_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\SiSense_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\SiSense_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11050,10 +10604,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Tableau",
                 VendorLogoFileName = "Tableay_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Tableay_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Tableay_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11064,10 +10618,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Looker",
                 VendorLogoFileName = "Looker_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Looker_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Looker_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11078,10 +10632,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Roambi",
                 VendorLogoFileName = "Roambi_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Roambi_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Roambi_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11092,10 +10646,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "MicroStrategy",
                 VendorLogoFileName = "MicroStrategy_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\MicroStrategy_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\MicroStrategy_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11106,10 +10660,10 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             {
                 VendorName = "Adaptive Insights",
                 VendorLogoFileName = "Adaptive_Insights_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Business intelligence Reporting//",
+                VendorLogoFullURL = "//Images//Logos//Intelligence And Reporting//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Business intelligence Reporting\\Adaptive_Insights_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Intelligence And Reporting\\Adaptive_Insights_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11120,19 +10674,19 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #region CREATIVE VENDORS
 
-            v = new Vendor()
-            {
-                VendorName = "Adobe#3",
-                VendorLogoFileName = "Adobe_logo.gif",
-                VendorLogoFullURL = "//Images//Logos//Creative//",
-                VendorLogo = new VendorLogo()
-                {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Adobe_logo.gif"),
-                    VendorLogoStatus = repository.FindStatusByName("LIVE"),
-                },
-                VendorStatus = repository.FindStatusByName("LIVE"),
-            };
-            repository.AddVendor(v);
+            //v = new Vendor()
+            //{
+            //    VendorName = "Adobe#3",
+            //    VendorLogoFileName = "Adobe_logo.gif",
+            //    VendorLogoFullURL = "//Images//Logos//Creative//",
+            //    VendorLogo = new VendorLogo()
+            //    {
+            //        Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Adobe_logo.gif"),
+            //        VendorLogoStatus = repository.FindStatusByName("LIVE"),
+            //    },
+            //    VendorStatus = repository.FindStatusByName("LIVE"),
+            //};
+            //repository.AddVendor(v);
 
             v = new Vendor()
             {
@@ -11141,7 +10695,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Coral_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Coral_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11155,7 +10709,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Quark_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Quark_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11164,12 +10718,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "Gliffy#2",
+                VendorName = "Gliffy",
                 VendorLogoFileName = "Gliffy_logo.gif",
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Gliffy_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Gliffy_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11178,12 +10732,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "Creately#2",
+                VendorName = "Creately",
                 VendorLogoFileName = "Creately_logo.gif",
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Creately_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Creately_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11197,7 +10751,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\GoAnimate_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\GoAnimate_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11206,12 +10760,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             v = new Vendor()
             {
-                VendorName = "Serif#2",
+                VendorName = "Serif",
                 VendorLogoFileName = "Serif_logo.gif",
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Serif_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Serif_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11225,7 +10779,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Moovly_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Moovly_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11239,7 +10793,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Magisto_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Magisto_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11253,7 +10807,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\WeVideo_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\WeVideo_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11267,7 +10821,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Animoto_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Animoto_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11281,7 +10835,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Como_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Como_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11295,7 +10849,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Knack_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Knack_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11309,7 +10863,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Mobile_Roadie_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Mobile_Roadie_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11323,7 +10877,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 VendorLogoFullURL = "//Images//Logos//Creative//",
                 VendorLogo = new VendorLogo()
                 {
-                    Logo = File.ReadAllBytes("C:\\Development\\CompareCloudwareVideo\\CompareCloudware.Web\\Images\\Logos\\Creative\\Monincube_logo.gif"),
+                    Logo = File.ReadAllBytes(ImageLogoPath + "Creative\\Monincube_logo.gif"),
                     VendorLogoStatus = repository.FindStatusByName("LIVE"),
                 },
                 VendorStatus = repository.FindStatusByName("LIVE"),
@@ -11334,749 +10888,117 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             #endregion
 
-            //#region CONTENTTEXTTYPES
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CONFERENCING_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PROJECTMANAGEMENT_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "STORAGEANDBACKUP_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "EMAIL_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "FINANCIAL_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "OFFICE_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PHONE_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CUSTOMERMANAGEMENT_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "SECURITY_CATEGORY_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CONFERENCING_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PROJECTMANAGEMENT_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "STORAGEANDBACKUP_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "EMAIL_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "FINANCIAL_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "OFFICE_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PHONE_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CUSTOMERMANAGEMENT_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "SECURITY_CATEGORY_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CLOUDWAREEXPLAINED_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CLOUDWAREEXPLAINED_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CLOUDWAREEXPLAINED_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "10REASONSFORUSINGCLOUDWARE_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "10REASONSFORUSINGCLOUDWARE_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "10REASONSFORUSINGCLOUDWARE_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SUBTITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "WHATDOESMYBUSINESSNEEDTORUNCLOUDWARE_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "ABOUTUS_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "ABOUTUS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "ABOUTUS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "MANAGEMENTTEAM_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "MANAGEMENTTEAM_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "MANAGEMENTTEAM_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "VISION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "VISION_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "VISION_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "FAQS_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "FAQS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "FAQS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CAREERS_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CAREERS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CAREERS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PRESS_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PRESS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PRESS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CONTACTUS_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CONTACTUS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "CONTACTUS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_TOU_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_TOU_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_GENERAL_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_GENERAL_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_SERVICES_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_SERVICES_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_CONTENT_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_CONTENT_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_THIRD_PARTY_SITES_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_THIRD_PARTY_SITES_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_USER_OBLIGATIONS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_USER_OBLIGATIONS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_IPR_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_IPR_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_LIABILITY_DISCLAIMERS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_LIABILITY_DISCLAIMERS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_NO_WARRANTY_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_NO_WARRANTY_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_INDEMNITY_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_INDEMNITY_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_SITE_AVAILABILITY_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_SITE_AVAILABILITY_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_MISC_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "TOU_MISC_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-
-
-
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_PP_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_PP_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_BACKGROUND_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_BACKGROUND_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DEFINITIONS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DEFINITIONS_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DEFINITIONS_MEANINGS_SECTION_BODY_TERM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DEFINITIONS_MEANINGS_SECTION_BODY_MEANING",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_COLLECTED_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_COLLECTED_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_COLLECTED_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_COLLECTED_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_USE_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_USE_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_USE_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_THIRD_PARTY_SERVICES_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_THIRD_PARTY_SERVICES_SECTION_BODY",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COB_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COB_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COB_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COB_FOOTER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_ACCESS_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_ACCESS_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_DATA_ACCESS_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_WITHHOLD_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_WITHHOLD_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_WITHHOLD_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_OWNDATA_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_OWNDATA_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_OWNDATA_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_SECURITY_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_SECURITY_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_SECURITY_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COOKIES_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COOKIES_ITEMS_SECTION_BODY_NUMBER",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_COOKIES_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_CHANGES_SECTION_TITLE",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-            //ctt = new ContentTextType()
-            //{
-            //    ContentTextTypeName = "PP_CHANGES_ITEMS_SECTION_BODY_ITEM",
-            //    ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
-            //};
-            //repository.AddContentTextType(ctt);
-
-            //#endregion
+            #region CONTENTTEXTTYPES
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_CATEGORY_TITLE",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "MARKETING_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "WEBSITE_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "CREATIVE_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "INTELLIGENCEANDREPORTING_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HOSTING_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "HR_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "PAYMENTS_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "SALES_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            ctt = new ContentTextType()
+            {
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_CATEGORY_BODY",
+                ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
+            };
+            repository.AddContentTextType(ctt);
+            #endregion
 
             return retVal;
         }
@@ -12890,37 +11812,37 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
 
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "BUSINESSOPERATIONS_H1_TITLE",
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_H1_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "BUSINESSOPERATIONS_H1_BODY",
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_H1_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "BUSINESSOPERATIONS_H2_1_TITLE",
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_H2_1_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "BUSINESSOPERATIONS_H2_1_BODY",
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_H2_1_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "BUSINESSOPERATIONS_H2_2_TITLE",
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_H2_2_TITLE",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);
             ctt = new ContentTextType()
             {
-                ContentTextTypeName = "BUSINESSOPERATIONS_H2_2_BODY",
+                ContentTextTypeName = "BUSINESSANDOPERATIONS_H2_2_BODY",
                 ContentTextTypeStatus = repository.FindStatusByName("LIVE"),
             };
             repository.AddContentTextType(ctt);

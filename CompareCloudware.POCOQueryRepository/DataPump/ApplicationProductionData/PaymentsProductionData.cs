@@ -133,6 +133,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "https://support.sagepay.com/apply/default.aspx?PartnerID=AA1754E0-7D33-4076-80D2-1D9339D157DF",
+                BuyURL = "https://support.sagepay.com/apply/default.aspx?PartnerID=AA1754E0-7D33-4076-80D2-1D9339D157DF",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -253,6 +255,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "https://support.sagepay.com/apply/default.aspx?PartnerID=AA1754E0-7D33-4076-80D2-1D9339D157DF",
+                BuyURL = "https://support.sagepay.com/apply/default.aspx?PartnerID=AA1754E0-7D33-4076-80D2-1D9339D157DF",
+
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -373,6 +378,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "https://support.sagepay.com/apply/default.aspx?PartnerID=AA1754E0-7D33-4076-80D2-1D9339D157DF",
+                BuyURL = "https://support.sagepay.com/apply/default.aspx?PartnerID=AA1754E0-7D33-4076-80D2-1D9339D157DF",
+
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -504,6 +512,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "https://www.paypal.com/uk/webapps/mpp/how-to-use-paypal-here?bn_r=o",
+                BuyURL = "https://www.paypal.com/uk/webapps/mpp/how-to-use-paypal-here?bn_r=o",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -634,6 +644,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "https://www.skrill.com/en/business/products/wallet/",
+                BuyURL = "https://www.skrill.com/en/business/products/wallet/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -765,6 +777,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "https://www.skrill.com/en/business/products/direct-payment-processing/",
+                BuyURL = "https://www.skrill.com/en/business/products/direct-payment-processing/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -896,6 +910,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.realexpayments.com/partner-referral?id=comparecloudware",
+                BuyURL = "http://www.realexpayments.com/partner-referral?id=comparecloudware",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1027,6 +1043,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.realexpayments.com/partner-referral?id=comparecloudware",
+                BuyURL = "http://www.realexpayments.com/partner-referral?id=comparecloudware",
+
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1157,6 +1176,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.eway.co.uk/pricing/pricing-plans",
+                BuyURL = "http://www.eway.co.uk/pricing/pricing-plans",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1287,6 +1308,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.eway.co.uk/pricing/pricing-plans",
+                BuyURL = "http://www.eway.co.uk/pricing/pricing-plans",
+
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1549,6 +1573,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://business.bt.com/getting-your-business-online/bt-safepay/",
+                BuyURL = "http://business.bt.com/getting-your-business-online/bt-safepay/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1682,6 +1708,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.cashflows.com/pricing-plans.php",
+                BuyURL = "http://www.cashflows.com/pricing-plans.php",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1814,6 +1842,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.cashflows.com/pricing-plans.php",
+                BuyURL = "http://www.cashflows.com/pricing-plans.php",
+
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -1946,6 +1977,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.cashflows.com/pricing-plans.php",
+                BuyURL = "http://www.cashflows.com/pricing-plans.php",
+
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -2077,6 +2111,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://digitalriverpayments.co.uk/payment-processing/processing-cards-online/",
+                BuyURL = "http://digitalriverpayments.co.uk/payment-processing/processing-cards-online/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -2209,6 +2245,8 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.kounta.com/pricing/",
+                BuyURL = "http://www.kounta.com/pricing/",
             };
 
             //InsertDocumentLinks(repository, ca);
@@ -2345,6 +2383,9 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 //{
                 //    repository.FindSupportTerritoryByName("GLOBAL"),
                 //},
+                TryURL = "http://www.kounta.com/pricing/",
+                BuyURL = "http://www.kounta.com/pricing/",
+
             };
 
             //InsertDocumentLinks(repository, ca);

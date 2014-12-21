@@ -237,7 +237,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.constantcontact.com/online-surveys2/overview",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -338,7 +338,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.constantcontact.com/eventspot2/overview",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -439,7 +439,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.constantcontact.com/social-campaigns2/overview",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -540,7 +540,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.clickwebinar.com/pricing.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -645,7 +645,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.dotmailer.com/trial/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -750,7 +750,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://hootsuite.com/create-account?planId=2",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -855,7 +855,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://campaigns.zoho.com/signup.do?plan=sub",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -960,7 +960,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.campaignmonitor.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1065,7 +1065,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.campaignmonitor.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1173,7 +1173,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.instapage.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1281,7 +1281,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.instapage.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1389,7 +1389,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.instapage.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1497,7 +1497,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://uk.marketo.com/software/marketing-automation/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1605,7 +1605,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://uk.marketo.com/software/marketing-automation/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1713,7 +1713,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://uk.marketo.com/software/marketing-automation/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1821,7 +1821,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.hubspot.com/pricing#?currency=GBP",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -1929,7 +1929,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.hubspot.com/pricing#?currency=GBP",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2037,7 +2037,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.hubspot.com/pricing#?currency=GBP",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2145,7 +2145,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.pardot.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2253,7 +2253,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.pardot.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2361,7 +2361,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.pardot.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2470,7 +2470,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.act-on.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2579,7 +2579,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.marinsoftware.co.uk/platform/editions",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2688,7 +2688,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.marinsoftware.co.uk/platform/editions",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2797,7 +2797,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.cvent.com/uk/event-management-software/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -2906,7 +2906,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.cvent.com/uk/online-survey-software/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3019,7 +3019,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://fluidsurveys.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3132,7 +3132,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://fluidsurveys.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3245,7 +3245,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://fluidsurveys.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3358,7 +3358,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.vocus.co.uk/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3471,7 +3471,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.vocus.co.uk/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3584,7 +3584,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.outmarket.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3697,7 +3697,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.outmarket.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3810,7 +3810,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.outmarket.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -3923,7 +3923,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://www.outmarket.com/pricing/",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4031,12 +4031,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("MARKETING"),
-                Vendor = repository.FindVendorByName("MOZ"),
+                Vendor = repository.FindVendorByName("MOZ",true),
                 AddDate = DateTime.Now,
                 TryURL = "http://moz.com/products/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4143,12 +4143,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("MARKETING"),
-                Vendor = repository.FindVendorByName("MOZ"),
+                Vendor = repository.FindVendorByName("MOZ",true),
                 AddDate = DateTime.Now,
                 TryURL = "http://moz.com/products/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4255,22 +4255,22 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("MARKETING"),
-                Vendor = repository.FindVendorByName("MOZ"),
+                Vendor = repository.FindVendorByName("MOZ",true),
                 AddDate = DateTime.Now,
                 TryURL = "http://moz.com/products/pricing",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region Adobe#2 Connect For Business
+            #region Adobe Connect For Business
 
             ca = new CloudApplication()
             {
-                Brand = "Adobe#2",
+                Brand = "Adobe",
                 ServiceName = "Connect For Business",
                 CompanyURL = "http://www.adobe.com/uk/products/adobeconnect/webinars.html",                
                 Description = "Adobe Connect is a web conferencing software solution for secure web meetings, eLearning and webinars. Adobe Connect helps you deliver compelling, immersive events, maximise attendance, and measure results for optimised outcomes. Adobe Connect for eLearning provides a complete solution for rapid training and mobile learning, enabling rapid deployment of training.",
@@ -4368,22 +4368,22 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("MARKETING"),
-                Vendor = repository.FindVendorByName("ADOBE#2"),
+                Vendor = repository.FindVendorByName("ADOBE"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.adobe.com/cfusion/adobeconnect/index.cfm?event=trial",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
             #endregion
 
-            #region Adobe#2 Connect For Individuals
+            #region Adobe Connect For Individuals
 
             ca = new CloudApplication()
             {
-                Brand = "Adobe#2",
+                Brand = "Adobe",
                 ServiceName = "Connect For Individuals",
                 CompanyURL = "http://www.adobe.com/uk/products/adobeconnect/webinars.html",                
                 Description = "Adobe Connect for Web Meetings enables you to significantly improve collaboration, both inside and outside your organisation’s firewalls. You can use Adobe Connect for a full range of online meeting needs, from simple screen-sharing all the way to mission-critical, real-time collaboration and webinars. Adobe Connect allows your teams to work more efficiently and effectively, increasing productivity and helping you to reduce costs.",
@@ -4481,12 +4481,12 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 SetupFee = repository.FindSetupFeeByName("NO"),
                 FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
                 Category = repository.FindCategoryByName("MARKETING"),
-                Vendor = repository.FindVendorByName("ADOBE#2"),
+                Vendor = repository.FindVendorByName("ADOBE"),
                 AddDate = DateTime.Now,
                 TryURL = "https://www.adobe.com/cfusion/adobeconnect/index.cfm?event=trial",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4598,7 +4598,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://secure.citrixonline.com/buy?execution=e1s1",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4710,7 +4710,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://secure.citrixonline.com/buy?execution=e1s1",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4822,7 +4822,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "https://secure.citrixonline.com/buy?execution=e1s1",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -4934,7 +4934,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.vocalcom.com/en/request-a-demo",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -5046,7 +5046,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.vanillasoft.com/products",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -5158,7 +5158,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.vanillasoft.com/products",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -5270,7 +5270,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://www.vanillasoft.com/products",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -5382,7 +5382,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 TryURL = "http://pages.newvoicemedia.com/request-demonstration.html",
             };
 
-            InsertDocumentLinks(repository, ca);
+            //InsertDocumentLinks(repository, ca);
             SetLiveStatuses(ca, repository);
             repository.AddCloudApplication(ca);
 
@@ -5395,7 +5395,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             return retVal;
         }
         #region InsertDocumentLinks
-        private static void InsertDocumentLinks(QueryRepository repository, CloudApplication ca)
+        private static void xInsertDocumentLinks(QueryRepository repository, CloudApplication ca)
         {
             string PDF_TEST_WHITE_PAPER_FILEPATH = "J:\\CloudCompare\\CloudCompare.Web\\Documents\\WhitePapers\\";
             //string PDF_TEST_WHITE_PAPER_FILENAME = "grohe_bathroom_brochure.pdf";

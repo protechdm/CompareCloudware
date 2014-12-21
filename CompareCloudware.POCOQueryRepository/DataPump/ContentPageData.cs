@@ -264,7 +264,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             repository.AddContentPage(cp);
             #endregion
 
-            #region BUSINESS INTELLIGENCE REPORTING
+            #region INTELLIGENCE AND REPORTING
             cp = new ContentPage()
             {
                 Slug = "intelligence-and-reporting",
@@ -278,7 +278,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
                 Modified = DateTime.Now,
                 NoSearch = false,
                 Frequency = SiteMapFrequencyEnum.Always,
-                Route = "Business Intelligence Reporting",
+                Route = "Intelligence And Reporting",
             };
             repository.AddContentPage(cp);
             #endregion
