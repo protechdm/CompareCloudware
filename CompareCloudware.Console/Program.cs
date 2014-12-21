@@ -46,10 +46,7 @@ namespace CompareCloudware.Console
             //}
             //Logs();
             //return;
-            //LoadContextTextTypesForTabs(); //RUN ONCE!!!!!
 
-            //CONTENT TEXT MINUS H1-H2 DATA
-            //ContentTextData();
 
             LoadSkyscrapersMPUs();
             //return;
@@ -115,7 +112,10 @@ namespace CompareCloudware.Console
             LoadContentPageData();
 
             LoadContextTextTypesForH1H2(); //DONT'T NEED FOR LIVE
-            
+            LoadContextTextTypesForTabs(); //RUN ONCE!!!!!
+
+            //CONTENT TEXT MINUS H1-H2 DATA
+            ContentTextData();
             //CONTENT TEXT FOR H1-H2
             LoadContextTextDataForH1H2();
 
