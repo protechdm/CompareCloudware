@@ -4510,31 +4510,31 @@ namespace CompareCloudware.POCOQueryRepository
                         retVal = ais.NextMPUSecurityID;
                         break;
                     case CATEGORY_ID_MARKETING:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUMarketingID;
                         break;
                     case CATEGORY_ID_WEBSITE:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUWebsiteID;
                         break;
                     case CATEGORY_ID_CREATIVE:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUCreativeID;
                         break;
                     case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUBusinessIntelligenceReportingID;
                         break;
                     case CATEGORY_ID_HOSTING:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUHostingID;
                         break;
                     case CATEGORY_ID_HR:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUHRID;
                         break;
                     case CATEGORY_ID_PAYMENTS:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUPaymentsID;
                         break;
                     case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUBusinessAndOperationsID;
                         break;
                     case CATEGORY_ID_SALES:
-                        retVal = ais.NextMPUSecurityID;
+                        retVal = ais.NextMPUSalesID;
                         break;
                 }
             }
@@ -4571,31 +4571,31 @@ namespace CompareCloudware.POCOQueryRepository
                         retVal = ais.NextSkyscraperSecurityID;
                         break;
                     case CATEGORY_ID_MARKETING:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperMarketingID;
                         break;
                     case CATEGORY_ID_WEBSITE:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperWebsiteID;
                         break;
                     case CATEGORY_ID_CREATIVE:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperCreativeID;
                         break;
                     case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperBusinessIntelligenceReportingID;
                         break;
                     case CATEGORY_ID_HOSTING:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperHostingID;
                         break;
                     case CATEGORY_ID_HR:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperHRID;
                         break;
                     case CATEGORY_ID_PAYMENTS:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperPaymentsID;
                         break;
                     case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperBusinessAndOperationsID;
                         break;
                     case CATEGORY_ID_SALES:
-                        retVal = ais.NextSkyscraperSecurityID;
+                        retVal = ais.NextSkyscraperSalesID;
                         break;
                 }
             }
