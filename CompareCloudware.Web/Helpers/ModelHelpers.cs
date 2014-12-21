@@ -44,7 +44,7 @@ namespace CompareCloudware.Web.Helpers
         const int CATEGORY_ID_MARKETING = 10;
         const int CATEGORY_ID_WEBSITE = 11;
         const int CATEGORY_ID_CREATIVE = 12;
-        const int CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING = 13;
+        const int CATEGORY_ID_INTELLIGENCE_AND_REPORTING = 13;
         const int CATEGORY_ID_HOSTING = 14;
         const int CATEGORY_ID_HR = 15;
         const int CATEGORY_ID_PAYMENTS = 16;
@@ -1748,40 +1748,40 @@ namespace CompareCloudware.Web.Helpers
                     model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_MARKETING:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "MARKETING_CATEGORY_TITLE", "MARKETING_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "MARKETING_H1_TITLE", "MARKETING_H1_BODY", "MARKETING_H2_1_TITLE", "MARKETING_H2_1_BODY", "MARKETING_H2_2_TITLE", "MARKETING_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_WEBSITE:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "WEBSITE_CATEGORY_TITLE", "WEBSITE_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "WEBSITE_H1_TITLE", "WEBSITE_H1_BODY", "WEBSITE_H2_1_TITLE", "WEBSITE_H2_1_BODY", "WEBSITE_H2_2_TITLE", "WEBSITE_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_CREATIVE:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CREATIVE_CATEGORY_TITLE", "CREATIVE_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "CREATIVE_H1_TITLE", "CREATIVE_H1_BODY", "CREATIVE_H2_1_TITLE", "CREATIVE_H2_1_BODY", "CREATIVE_H2_2_TITLE", "CREATIVE_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
-                case CATEGORY_ID_BUSINESS_INTELLIGENCE_REPORTING:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                case CATEGORY_ID_INTELLIGENCE_AND_REPORTING:
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "INTELLIGENCEANDREPORTING_CATEGORY_TITLE", "INTELLIGENCEANDREPORTING_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "INTELLIGENCEANDREPORTING_H1_TITLE", "INTELLIGENCEANDREPORTING_H1_BODY", "INTELLIGENCEANDREPORTING_H2_1_TITLE", "INTELLIGENCEANDREPORTING_H2_1_BODY", "INTELLIGENCEANDREPORTING_H2_2_TITLE", "INTELLIGENCEANDREPORTING_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_HOSTING:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "HOSTING_CATEGORY_TITLE", "HOSTING_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "HOSTING_H1_TITLE", "HOSTING_H1_BODY", "HOSTING_H2_1_TITLE", "HOSTING_H2_1_BODY", "HOSTING_H2_2_TITLE", "HOSTING_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_HR:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "HR_CATEGORY_TITLE", "HR_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "HR_H1_TITLE", "HR_H1_BODY", "HR_H2_1_TITLE", "HR_H2_1_BODY", "HR_H2_2_TITLE", "HR_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_PAYMENTS:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "PAYMENTS_CATEGORY_TITLE", "PAYMENTS_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "PAYMENTS_H1_TITLE", "PAYMENTS_H1_BODY", "PAYMENTS_H2_1_TITLE", "PAYMENTS_H2_1_BODY", "PAYMENTS_H2_2_TITLE", "PAYMENTS_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_BUSINESS_AND_OPERATIONS:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "BUSINESSANDOPERATIONS_CATEGORY_TITLE", "BUSINESSANDOPERATIONS_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "BUSINESSANDOPERATIONS_H1_TITLE", "BUSINESSANDOPERATIONS_H1_BODY", "BUSINESSANDOPERATIONS_H2_1_TITLE", "BUSINESSANDOPERATIONS_H2_1_BODY", "BUSINESSANDOPERATIONS_H2_2_TITLE", "BUSINESSANDOPERATIONS_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
                 case CATEGORY_ID_SALES:
-                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_CATEGORY_TITLE", "SECURITY_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
-                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SECURITY_H1_TITLE", "SECURITY_H1_BODY", "SECURITY_H2_1_TITLE", "SECURITY_H2_1_BODY", "SECURITY_H2_2_TITLE", "SECURITY_H2_2_BODY" }), ContentDataPage.Category).ToList();
+                    model.ContentTextsModel.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SALES_CATEGORY_TITLE", "SALES_CATEGORY_BODY" }), ContentDataPage.Category).ToList();
+                    model.H1H2ContentText.ContentTexts = ModelHelpers.ConvertContentText(repository.GetContentData(new[] { "SALES_H1_TITLE", "SALES_H1_BODY", "SALES_H2_1_TITLE", "SALES_H2_1_BODY", "SALES_H2_2_TITLE", "SALES_H2_2_BODY" }), ContentDataPage.Category).ToList();
                     break;
             }
 
@@ -4635,6 +4635,10 @@ namespace CompareCloudware.Web.Helpers
             //Person person = _repository.GetPersonByEMail(eMail);
             Colleague colleague = new Colleague();
             colleague.Introducer = repository.GetPersonByEMail(eMailIntroducer);
+            if (colleague.Introducer == null)
+            {
+                colleague.Introducer = AddPerson(PersonTypeEnum.User, eMailIntroducer, false, repository);
+            }
             colleague.Introducer.PersonStatus = repository.FindStatusByName("LIVE");
             colleague.ColleagueOfIntroducer = colleaguePerson;
             colleague.ColleagueOfIntroducer.PersonStatus = repository.FindStatusByName("LIVE");
