@@ -22,7 +22,7 @@ namespace CompareCloudware.Web.Models
             OfficeText = "Just found a great deal on www.comparecloudware.com. Choose from >1000 business software and services @compcloudware #software #officetools";
             ProjectManagementText = "Just found a great deal on www.comparecloudware.com. Choose from >1000 business software and services @compcloudware #projectmanagement";
             SecurityText = "Just found a great deal on www.comparecloudware.com. Choose from >1000 business software and services @compcloudware #security #antivirus";
-            DefaultText = "Just found a great deal on www.comparecloudware.com. Choose from >1000 business software and services";
+            DefaultText = "Just found a great deal on www.comparecloudware.com. Choose from >1000 business software and services @compcloudware";
 
             switch (categoryID)
             {
