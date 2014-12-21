@@ -557,7 +557,7 @@ $(document).ready(function () {
     //fires when a checkbox filter is changed
     $('body').on('change', 'input.filterParameter', function () {
         //var serialize1 = $('#main form').serialize();
-        var serialize1 = $('#main form .search-filters-container-inner input').serialize();
+        var serialize1 = $('#main form .search-filters-container-inner input,#main form .search-filters-container-inner select').serialize();
         debugger;
         setFilteringSearchResults(true);
 
@@ -775,7 +775,8 @@ $(document).ready(function () {
             return false;
         }
         debugger;
-        var form = $(this).closest('form');
+        //var form = $(this).closest('form');
+        var form = $('form .free-trial-details input');
         if ($(form).valid()) {
             var BuyNow = 1;
             var EMail = 2;
