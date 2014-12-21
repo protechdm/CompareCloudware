@@ -7273,7 +7273,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Cold hard cash will soon be consigned to history or at least be seen as a niche as a writing a cheque. The ability to allow customers to make instant, convenient and safe payments from a PC, laptop or mobile phone will make all the difference for those wanting to run a successful business in the online world. Even in the offline world, cloud based payment systems are revolutionising the way customers receive service from restaurants using tablets to take orders (as well as ensure accurate bills) to buying the latest gadget where paper receipts are frowned upon. From buying a morning coffee with the obligatory blueberry muffin to rare white-label vinyl of a post-punk classic, the world is open for business and you can have a slice of the action for just pennies per day. So welcome to the new world of online payments, you may not be able to barter you’re way to a great deal but using Compare Cloudware you’ll certainly be able to find one that fits the bill!";
+            data = "Cold hard cash will soon be consigned to history or at least be seen as a niche as a writing a cheque. The ability to allow customers to make instant, convenient and safe payments from a PC, laptop or mobile phone will make all the difference for those wanting to run a successful business in the online world. Even in the offline world, cloud based payment systems are revolutionising the way customers receive service from restaurants using tablets to take orders (as well as ensure accurate bills) to buying the latest gadget where paper receipts are frowned upon. From buying a morning coffee with the obligatory blueberry muffin to rare white-label vinyl of a post-punk classic, the world is open for business and you can have a slice of the action for just pennies per day. So welcome to the new world of online payments, you may not be able to barter your way to a great deal but using Compare Cloudware you’ll certainly be able to find one that fits the bill!";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8223,7 +8223,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Cloudware running through all your business operations acts like a digital nervous system – connecting the vital organs of the organisation.  Management know the status of absolutely everything – from field staff utilisation, resources availability, inventory status, online operations, retail outlet figures, customer service metrics – right through to supplier risk and exposure. (OK, we are now we are sounding like a business strategy book!)";
+            data = "Cloudware running through all your business operations acts like a digital nervous system – connecting the vital organs of the organisation.  Management know the status of absolutely everything – from field staff utilisation, resources availability, inventory status, online operations, retail outlet figures, customer service metrics – right through to supplier risk and exposure. (OK, we are now sounding like a business strategy book!)";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8234,7 +8234,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Cloudware has the potential to transform any organisation to a modern business – allowing leaders and manager to know how they’re performing - at any point - and at a moment’s notice.";
+            data = "Cloudware has the potential to transform any organisation to a modern business – allowing leaders and managers to know how they’re performing - at any point - and at a moment’s notice.";
             ct = new ContentText
             {
                 NiceName = "",
