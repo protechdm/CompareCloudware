@@ -6860,7 +6860,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region HOSTING H1 etc
-            data = "Introduction to Cloud Hosting";
+            data = "Introduction to cloud hosting";
             ct = new ContentText
             {
                 NiceName = "",
@@ -6882,7 +6882,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of Hosting";
+            data = "Advantages of hosting";
             ct = new ContentText
             {
                 NiceName = "",
@@ -6959,7 +6959,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Cloud Hosting?";
+            data = "Why compare cloud hosting?";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7050,7 +7050,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region WEBSITE H1 etc
-            data = "Introduction to Website services";
+            data = "Introduction to website services";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7072,7 +7072,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantage of Website services";
+            data = "Advantage of website services";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7149,7 +7149,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Website services?";
+            data = "Why compare website services?";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7262,7 +7262,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region PAYMENTS H1 etc
-            data = "Introduction to Online Payments";
+            data = "Introduction to online payments";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7284,7 +7284,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of Payment Services";
+            data = "Advantages of payment services";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7339,7 +7339,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Payment Services?";
+            data = "Why compare payment services?";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7430,7 +7430,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region HR H1 etc
-            data = "Introduction to HR Software";
+            data = "Introduction to HR software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7452,7 +7452,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of Cloud HR";
+            data = "Advantages of cloud HR";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7507,7 +7507,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Cloud HR services? ";
+            data = "Why compare cloud HR services? ";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7598,7 +7598,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region SALES H1 etc
-            data = "Introduction to Sales software";
+            data = "Introduction to sales software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7620,7 +7620,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of Sales software";
+            data = "Advantages of sales software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7697,7 +7697,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Sales software?";
+            data = "Why compare sales software?";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7788,7 +7788,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region INTELLIGENCE & REPORTING H1 etc
-            data = "Introduction to Intelligence & Reporting";
+            data = "Introduction to intelligence & reporting";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7854,7 +7854,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of Intelligence & Reporting";
+            data = "Advantages of intelligence & reporting";
             ct = new ContentText
             {
                 NiceName = "",
@@ -7898,7 +7898,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Intelligence & Reporting? ";
+            data = "Why compare intelligence & reporting? ";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8000,7 +8000,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region MARKETING H1 etc
-            data = "Introduction to Marketing software";
+            data = "Introduction to marketing software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8055,7 +8055,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of cloud-based Marketing software";
+            data = "Advantages of cloud-based marketing software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8099,7 +8099,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why compare Marketing software?";
+            data = "Why compare marketing software?";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8190,7 +8190,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region BUSINESS OPERATIONS H1 etc
-            data = "Introduction to Business Operations";
+            data = "Introduction to business operations";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8245,7 +8245,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of cloud-based Business Operations";
+            data = "Advantages of cloud-based business operations";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8289,7 +8289,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Business Operations software";
+            data = "Why compare business operations software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8391,7 +8391,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             #endregion
 
             #region CREATIVE H1 etc
-            data = "Introduction to Creative and Design";
+            data = "Introduction to creative and design";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8435,7 +8435,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Advantages of Creative and Design cloud software";
+            data = "Advantages of creative and design cloud software";
             ct = new ContentText
             {
                 NiceName = "",
@@ -8479,7 +8479,7 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
             };
             repository.AddContentText(ct);
 
-            data = "Why Compare Creative and Design software? ";
+            data = "Why compare creative and design software? ";
             ct = new ContentText
             {
                 NiceName = "",
