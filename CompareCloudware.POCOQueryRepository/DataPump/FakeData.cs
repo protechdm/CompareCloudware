@@ -1127,5 +1127,74 @@ namespace CompareCloudware.POCOQueryRepository
         }
         #endregion
 
+        #region LoadKasperskyTotalSecurityMultiDevice
+        public CloudApplication LoadKasperskyTotalSecurityMultiDevice(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            CloudApplication ca = SecurityProductionData.PumpKasperskyTotalSecurityMultiDevice(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadKasperskyTotalSecurityMultiDeviceCategoryShopURL
+        public bool LoadKasperskyTotalSecurityMultiDeviceCategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
+        }
+        #endregion
+
+        #region LoadKasperskyInternetSecurity2015
+        public CloudApplication LoadKasperskyInternetSecurity2015(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            CloudApplication ca = SecurityProductionData.PumpKasperskyInternetSecurity2015(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadKasperskyInternetSecurity2015CategoryShopURL
+        public bool LoadKasperskyInternetSecurity2015CategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
+        }
+        #endregion
+
+        #region LoadKasperskyAntiVirus2015
+        public CloudApplication LoadKasperskyAntiVirus2015(ICompareCloudwareContext context)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            CloudApplication ca = SecurityProductionData.PumpKasperskyAntiVirus2015(repository);
+            return ca;
+        }
+        #endregion
+
+        #region LoadKasperskyAntiVirus2015CategoryShopURL
+        public bool LoadKasperskyAntiVirus2015CategoryShopURL(ICompareCloudwareContext context, CloudApplication ca)
+        {
+            this.FakeContext = context;
+
+            var repository = new QueryRepository(this.FakeContext);
+            TagData.PumpCategoryURL(repository, ca);
+            TagData.PumpShopURL(repository, ca);
+            return retVal;
+        }
+        #endregion
+
     }
 }
