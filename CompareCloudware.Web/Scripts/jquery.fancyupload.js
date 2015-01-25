@@ -48,19 +48,19 @@
 
     var test = $('#upload-cut');
     //Initialize the image area select plugin
-    var ias = preview.imgAreaSelect({
-        handles: true,
-        instance: true,
-        //parent: 'body',
-        parent: '#dialog-upload-image',
-        //parent: '#preview',
-        //parent: '#upload-cut',
-        onSelectEnd: function (s, e) {
-            var scale = preview[0].naturalWidth / preview.width();
-            var _f = Math.floor;
-            setPreview(_f(scale * e.x1), _f(scale * e.y1), _f(scale * e.width), _f(scale * e.height));
-        }
-    });
+    //var ias = preview.imgAreaSelect({
+    //    handles: true,
+    //    instance: true,
+    //    //parent: 'body',
+    //    parent: '#dialog-upload-image',
+    //    //parent: '#preview',
+    //    //parent: '#upload-cut',
+    //    onSelectEnd: function (s, e) {
+    //        var scale = preview[0].naturalWidth / preview.width();
+    //        var _f = Math.floor;
+    //        setPreview(_f(scale * e.x1), _f(scale * e.y1), _f(scale * e.width), _f(scale * e.height));
+    //    }
+    //});
 
     //Check one of the checkboxes
     var setBox = function (filter) {
