@@ -133,7 +133,7 @@
                 source: function (request, response) {
                     var term = $.ui.searchboxautocomplete.extractLast(request.term);
                     var dummyVXMode = $('.dummyVXMode');
-                    var dummyVXModeIsChecked = $(dummyVXMode).attr("checked");
+                    var dummyVXModeIsChecked = $(dummyVXMode).prop("checked");
                     var liveApplicationsOnly = dummyVXModeIsChecked == null;
                     logIt("source: extractLast(request.term): " + term);
                     //                    var data = this.options.getCachedData(term);
