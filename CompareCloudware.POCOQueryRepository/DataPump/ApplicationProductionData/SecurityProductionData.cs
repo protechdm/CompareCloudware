@@ -6585,5 +6585,391 @@ namespace CompareCloudware.POCOQueryRepository.DataPump
         }
         #endregion
 
+        #region PumpKasperskyTotalSecurityMultiDevice
+        public static CloudApplication PumpKasperskyTotalSecurityMultiDevice(QueryRepository repository)
+        {
+            bool retVal = true;
+            CloudApplication ca;
+            int categoryID = repository.FindCategoryByName("SECURITY").CategoryID;
+
+            #region KASPERSKYTOTALSECURITYMULTIDEVICE
+            ca = new CloudApplication()
+            {
+                Brand = "Kaspersky",
+                ServiceName = "Total Security Multi Device",
+                CompanyURL = "http://www.kaspersky.co.uk",
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("WIN XP"),
+                    repository.FindOperatingSystemByName("WIN VISTA"),
+                    repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    repository.FindBrowserByName("IE6"),
+                    repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                    repository.FindBrowserByName("CHROME"),
+                },
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(5),
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    //repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("EMAIL"),
+                    //repository.FindSupportTypeByName("COMMUNITY")
+                },
+                //SupportHours = repository.FindSupportHoursByName("24 HOURS"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                SupportTerritories = new List<SupportTerritory>()
+                {
+                    repository.FindSupportTerritoryByName("UK"),
+                },
+                VideoTrainingSupport = false,
+                //MaximumMeetingAttendees = 50,
+                //MaximumWebinarAttendees = 0,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("CLOUD-CENTRIC SERVICE DELIVERY"),
+                    repository.FindFeatureByName("CLOUD-BASED THREAT DETECTION/INTERCEPTION"),
+                    repository.FindFeatureByName("CLOUD-BASED UPDATES"),
+                    repository.FindFeatureByName("ANTIVIRUS PROTECTION"),
+                    repository.FindFeatureByName("MALWARE PROTECTION"),
+                    repository.FindFeatureByName("SPAM PROTECTION"),
+                    repository.FindFeatureByName("ROOTKIT PROTECTION"),
+                    repository.FindFeatureByName("SPYWARE PROTECTION"),
+                    repository.FindFeatureByName("ADDITIONAL FIREWALL SECURITY"),
+                    repository.FindFeatureByName("WEB BROWSING RESTRICTION"),
+                    repository.FindFeatureByName("WEB BROWSING CONTROL"),
+                    repository.FindFeatureByName("WEB BROWSING PROTECTION"),
+                    //repository.FindFeatureByName("USB, PORT, CD/DVD CONTROL"),
+                    //repository.FindFeatureByName("CREATE BOOTABLE RESCUE DRIVES"),
+                    repository.FindFeatureByName("CENTRAL, REMOTE ADMINISTRATION"),
+                    //repository.FindFeatureByName("ACCESS REGISTRATION TO PROTECT SENSITIVE CONTENT"),
+                    repository.FindFeatureByName("OUTBOUND EMAIL & DOCUMENT CONTROL"),
+                    repository.FindFeatureByName("OUTBOUND EMAIL ENCRYPTION"),
+                    repository.FindFeatureByName("IMAGE/ATTACHMENT CONTROL"),
+                    repository.FindFeatureByName("USER LEVEL WEB BROWSER REPORTING"),
+                    //repository.FindFeatureByName("OFFLINE END-POINT PROTECTION"),
+                    //repository.FindFeatureByName("THREAT SANDBOXING"),
+                    repository.FindFeatureByName("INTRUSION PREVENTION SYSTEM"),
+                    repository.FindFeatureByName("DEVICE LOCATION MAP"),
+                    repository.FindFeatureByName("MOBILE BLUETOOTH HACKING"),
+                    repository.FindFeatureByName("MOBILE REMOTE DATA WIPE"),
+                    repository.FindFeatureByName("QUANTANTINE MOBILE INFILTRATIONS"),
+                    repository.FindFeatureByName("SMS SPAM PROTECTION"),
+                },
+                ApplicationCostPerMonth = 0.00M,
+                ApplicationCostPerAnnumFrom = 49.99M,
+                //Options = "Email Encryption",
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = true,
+                ApplicationCostPerAnnumAvailable = true,
+                ApplicationCostPerAnnumPOA = false,
+                CloudApplicationCurrency = repository.GetCurrencyBySymbol("£"),
+                //CallsPackageCostPerMonth = 0M,
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                MinimumContract = repository.FindMinimumContractByName("12"),
+                PaymentFrequency = repository.FindPaymentFrequencyByName("MONTHLY"),
+                PaymentOptions = new List<PaymentOption>()
+                {
+                    repository.FindPaymentOptionByName("CREDIT CARD"),
+                    repository.FindPaymentOptionByName("DEBIT CARD"),
+                },
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                Vendor = repository.FindVendorByName("KASPERSKY"),
+                Description = "Protect your business. Because of increased reliance on computing and the Internet, all businesses are more vulnerable to malware and cybercrime attacks against their computers. Valuable business information, online financial transactions and sensitive data are all at risk.Smaller businesses face the same security risks as large organisations, but often don’t have the time or resources to configure and manage complex IT security solutions. Kaspersky Small Office Security delivers business-grade protection technologies that are designed to be simple to install, configure and run. The solution protects your Windows-based PCs & file servers and Android smartphones & tablets… to safeguard your online banking transactions, your business data and the information your customers entrust to you.Smaller businesses face the same security risks as large organisations, but often don’t have the time or resources to configure and manage complex IT security solutions. Kaspersky Small Office Security delivers business-grade protection technologies that are designed to be simple to install, configure and run. The solution protects your Windows-based PCs & file servers and Android smartphones & tablets… to safeguard your online banking transactions, your business data and the information your customers entrust to you.",
+                AddDate = DateTime.Now,
+                LinkedInCompanyID = 0,
+                TwitterName = "",
+                FacebookName = "",
+                BuyURL = "www.comparecloudware.com",
+                TryURL = "www.comparecloudware.com",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            return ca;
+
+        }
+        #endregion
+
+        #region PumpKasperskyInternetSecurity2015
+        public static CloudApplication PumpKasperskyInternetSecurity2015(QueryRepository repository)
+        {
+            bool retVal = true;
+            CloudApplication ca;
+            int categoryID = repository.FindCategoryByName("SECURITY").CategoryID;
+
+            #region KASPERSKYINTERNETSECURITY2015
+            ca = new CloudApplication()
+            {
+                Brand = "Kaspersky",
+                ServiceName = "Internet Security 2015",
+                CompanyURL = "http://www.kaspersky.co.uk",
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("WIN XP"),
+                    repository.FindOperatingSystemByName("WIN VISTA"),
+                    repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    repository.FindBrowserByName("IE6"),
+                    repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                    repository.FindBrowserByName("CHROME"),
+                },
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(100),
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    //repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("EMAIL"),
+                    //repository.FindSupportTypeByName("COMMUNITY")
+                },
+                //SupportHours = repository.FindSupportHoursByName("24 HOURS"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                SupportTerritories = new List<SupportTerritory>()
+                {
+                    repository.FindSupportTerritoryByName("UK"),
+                },
+                VideoTrainingSupport = false,
+                //MaximumMeetingAttendees = 50,
+                //MaximumWebinarAttendees = 0,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("CLOUD-CENTRIC SERVICE DELIVERY"),
+                    repository.FindFeatureByName("CLOUD-BASED THREAT DETECTION/INTERCEPTION"),
+                    repository.FindFeatureByName("CLOUD-BASED UPDATES"),
+                    repository.FindFeatureByName("ANTIVIRUS PROTECTION"),
+                    repository.FindFeatureByName("MALWARE PROTECTION"),
+                    repository.FindFeatureByName("SPAM PROTECTION"),
+                    repository.FindFeatureByName("ROOTKIT PROTECTION"),
+                    repository.FindFeatureByName("SPYWARE PROTECTION"),
+                    repository.FindFeatureByName("ADDITIONAL FIREWALL SECURITY"),
+                    repository.FindFeatureByName("WEB BROWSING RESTRICTION"),
+                    repository.FindFeatureByName("WEB BROWSING CONTROL"),
+                    repository.FindFeatureByName("WEB BROWSING PROTECTION"),
+                    //repository.FindFeatureByName("USB, PORT, CD/DVD CONTROL"),
+                    //repository.FindFeatureByName("CREATE BOOTABLE RESCUE DRIVES"),
+                    repository.FindFeatureByName("CENTRAL, REMOTE ADMINISTRATION"),
+                    //repository.FindFeatureByName("ACCESS REGISTRATION TO PROTECT SENSITIVE CONTENT"),
+                    repository.FindFeatureByName("OUTBOUND EMAIL & DOCUMENT CONTROL"),
+                    repository.FindFeatureByName("OUTBOUND EMAIL ENCRYPTION"),
+                    repository.FindFeatureByName("IMAGE/ATTACHMENT CONTROL"),
+                    repository.FindFeatureByName("USER LEVEL WEB BROWSER REPORTING"),
+                    //repository.FindFeatureByName("OFFLINE END-POINT PROTECTION"),
+                    //repository.FindFeatureByName("THREAT SANDBOXING"),
+                    repository.FindFeatureByName("INTRUSION PREVENTION SYSTEM"),
+                    repository.FindFeatureByName("DEVICE LOCATION MAP"),
+                    repository.FindFeatureByName("MOBILE BLUETOOTH HACKING"),
+                    repository.FindFeatureByName("MOBILE REMOTE DATA WIPE"),
+                    repository.FindFeatureByName("QUANTANTINE MOBILE INFILTRATIONS"),
+                    repository.FindFeatureByName("SMS SPAM PROTECTION"),
+                },
+                ApplicationCostPerMonth = 0.00M,
+                ApplicationCostPerAnnumFrom = 39.99M,
+                //Options = "Email Encryption",
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = true,
+                ApplicationCostPerAnnumAvailable = true,
+                ApplicationCostPerAnnumPOA = false,
+                CloudApplicationCurrency = repository.GetCurrencyBySymbol("£"),
+                //CallsPackageCostPerMonth = 0M,
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                MinimumContract = repository.FindMinimumContractByName("12"),
+                PaymentFrequency = repository.FindPaymentFrequencyByName("MONTHLY"),
+                PaymentOptions = new List<PaymentOption>()
+                {
+                    repository.FindPaymentOptionByName("CREDIT CARD"),
+                    repository.FindPaymentOptionByName("DEBIT CARD"),
+                },
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                Vendor = repository.FindVendorByName("KASPERSKY"),
+                Description = "Protect your business. Because of increased reliance on computing and the Internet, all businesses are more vulnerable to malware and cybercrime attacks against their computers. Valuable business information, online financial transactions and sensitive data are all at risk.Smaller businesses face the same security risks as large organisations, but often don’t have the time or resources to configure and manage complex IT security solutions. Kaspersky Small Office Security delivers business-grade protection technologies that are designed to be simple to install, configure and run. The solution protects your Windows-based PCs & file servers and Android smartphones & tablets… to safeguard your online banking transactions, your business data and the information your customers entrust to you.Smaller businesses face the same security risks as large organisations, but often don’t have the time or resources to configure and manage complex IT security solutions. Kaspersky Small Office Security delivers business-grade protection technologies that are designed to be simple to install, configure and run. The solution protects your Windows-based PCs & file servers and Android smartphones & tablets… to safeguard your online banking transactions, your business data and the information your customers entrust to you.",
+                AddDate = DateTime.Now,
+                LinkedInCompanyID = 0,
+                TwitterName = "",
+                FacebookName = "",
+                BuyURL = "www.comparecloudware.com",
+                TryURL = "www.comparecloudware.com",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            return ca;
+
+        }
+        #endregion
+
+        #region PumpKasperskyAntiVirus2015
+        public static CloudApplication PumpKasperskyAntiVirus2015(QueryRepository repository)
+        {
+            bool retVal = true;
+            CloudApplication ca;
+            int categoryID = repository.FindCategoryByName("SECURITY").CategoryID;
+
+            #region KASPERSKYANTIVIRUS2015
+            ca = new CloudApplication()
+            {
+                Brand = "Kaspersky",
+                ServiceName = "Anti Virus 2015",
+                CompanyURL = "http://www.kaspersky.co.uk",
+                OperatingSystems = new List<Domain.Models.OperatingSystem>()
+                {
+                    repository.FindOperatingSystemByName("WIN XP"),
+                    repository.FindOperatingSystemByName("WIN VISTA"),
+                    repository.FindOperatingSystemByName("WIN 7"),
+                    repository.FindOperatingSystemByName("WIN 8"),
+                },
+                Browsers = new List<Browser>()
+                {
+                    repository.FindBrowserByName("IE6"),
+                    repository.FindBrowserByName("IE7"),
+                    repository.FindBrowserByName("IE8"),
+                    repository.FindBrowserByName("IE9"),
+                    repository.FindBrowserByName("FIREFOX"),
+                    repository.FindBrowserByName("SAFARI"),
+                    //repository.FindBrowserByName("OPERA"),
+                    repository.FindBrowserByName("CHROME"),
+                },
+                LicenceTypeMinimum = repository.FindLicenceTypeMinimumByName(1),
+                LicenceTypeMaximum = repository.FindLicenceTypeMaximumByName(100),
+                Languages = new List<Language>()
+                {
+                    repository.FindLanguageByName("ENGLISH"),
+                },
+                SupportTypes = new List<SupportType>()
+                {
+                    repository.FindSupportTypeByName("FAQ/KNOWLEDGE BASE"),
+                    //repository.FindSupportTypeByName("TELEPHONE"),
+                    //repository.FindSupportTypeByName("EMAIL"),
+                    //repository.FindSupportTypeByName("COMMUNITY")
+                },
+                //SupportHours = repository.FindSupportHoursByName("24 HOURS"),
+                //SupportHoursTimeZone = repository.FindTimeZoneByName("GMT"),
+                //SupportDays = repository.FindSupportDaysByName("7"),
+                SupportTerritories = new List<SupportTerritory>()
+                {
+                    repository.FindSupportTerritoryByName("UK"),
+                },
+                VideoTrainingSupport = false,
+                //MaximumMeetingAttendees = 50,
+                //MaximumWebinarAttendees = 0,
+                CloudApplicationFeatures = new List<CloudApplicationFeature>()
+                {
+                    repository.FindFeatureByName("CLOUD-CENTRIC SERVICE DELIVERY"),
+                    repository.FindFeatureByName("CLOUD-BASED THREAT DETECTION/INTERCEPTION"),
+                    repository.FindFeatureByName("CLOUD-BASED UPDATES"),
+                    repository.FindFeatureByName("ANTIVIRUS PROTECTION"),
+                    repository.FindFeatureByName("MALWARE PROTECTION"),
+                    repository.FindFeatureByName("SPAM PROTECTION"),
+                    repository.FindFeatureByName("ROOTKIT PROTECTION"),
+                    repository.FindFeatureByName("SPYWARE PROTECTION"),
+                    repository.FindFeatureByName("ADDITIONAL FIREWALL SECURITY"),
+                    repository.FindFeatureByName("WEB BROWSING RESTRICTION"),
+                    repository.FindFeatureByName("WEB BROWSING CONTROL"),
+                    repository.FindFeatureByName("WEB BROWSING PROTECTION"),
+                    //repository.FindFeatureByName("USB, PORT, CD/DVD CONTROL"),
+                    //repository.FindFeatureByName("CREATE BOOTABLE RESCUE DRIVES"),
+                    repository.FindFeatureByName("CENTRAL, REMOTE ADMINISTRATION"),
+                    //repository.FindFeatureByName("ACCESS REGISTRATION TO PROTECT SENSITIVE CONTENT"),
+                    repository.FindFeatureByName("OUTBOUND EMAIL & DOCUMENT CONTROL"),
+                    repository.FindFeatureByName("OUTBOUND EMAIL ENCRYPTION"),
+                    repository.FindFeatureByName("IMAGE/ATTACHMENT CONTROL"),
+                    repository.FindFeatureByName("USER LEVEL WEB BROWSER REPORTING"),
+                    //repository.FindFeatureByName("OFFLINE END-POINT PROTECTION"),
+                    //repository.FindFeatureByName("THREAT SANDBOXING"),
+                    repository.FindFeatureByName("INTRUSION PREVENTION SYSTEM"),
+                    repository.FindFeatureByName("DEVICE LOCATION MAP"),
+                    repository.FindFeatureByName("MOBILE BLUETOOTH HACKING"),
+                    repository.FindFeatureByName("MOBILE REMOTE DATA WIPE"),
+                    repository.FindFeatureByName("QUANTANTINE MOBILE INFILTRATIONS"),
+                    repository.FindFeatureByName("SMS SPAM PROTECTION"),
+                },
+                ApplicationCostPerMonth = 0.00M,
+                ApplicationCostPerAnnumFrom = 29.99M,
+                //Options = "Email Encryption",
+                ApplicationCostPerMonthFree = false,
+                ApplicationCostPerMonthOffered = false,
+                ApplicationCostPerMonthAvailable = false,
+                ApplicationCostPerAnnumFree = false,
+                ApplicationCostPerAnnumOffered = true,
+                ApplicationCostPerAnnumAvailable = true,
+                ApplicationCostPerAnnumPOA = false,
+                CloudApplicationCurrency = repository.GetCurrencyBySymbol("£"),
+                //CallsPackageCostPerMonth = 0M,
+                SetupFee = repository.FindSetupFeeByName("NO"),
+                MinimumContract = repository.FindMinimumContractByName("12"),
+                PaymentFrequency = repository.FindPaymentFrequencyByName("MONTHLY"),
+                PaymentOptions = new List<PaymentOption>()
+                {
+                    repository.FindPaymentOptionByName("CREDIT CARD"),
+                    repository.FindPaymentOptionByName("DEBIT CARD"),
+                },
+                FreeTrialPeriod = repository.FindFreeTrialPeriodByName("30"),
+                Category = repository.FindCategoryByName("SECURITY"),
+                Vendor = repository.FindVendorByName("KASPERSKY"),
+                Description = "Protect your business. Because of increased reliance on computing and the Internet, all businesses are more vulnerable to malware and cybercrime attacks against their computers. Valuable business information, online financial transactions and sensitive data are all at risk.Smaller businesses face the same security risks as large organisations, but often don’t have the time or resources to configure and manage complex IT security solutions. Kaspersky Small Office Security delivers business-grade protection technologies that are designed to be simple to install, configure and run. The solution protects your Windows-based PCs & file servers and Android smartphones & tablets… to safeguard your online banking transactions, your business data and the information your customers entrust to you.Smaller businesses face the same security risks as large organisations, but often don’t have the time or resources to configure and manage complex IT security solutions. Kaspersky Small Office Security delivers business-grade protection technologies that are designed to be simple to install, configure and run. The solution protects your Windows-based PCs & file servers and Android smartphones & tablets… to safeguard your online banking transactions, your business data and the information your customers entrust to you.",
+                AddDate = DateTime.Now,
+                LinkedInCompanyID = 0,
+                TwitterName = "",
+                FacebookName = "",
+                BuyURL = "www.comparecloudware.com",
+                TryURL = "www.comparecloudware.com",
+            };
+
+            //InsertDocumentLinks(repository, ca);
+            SetLiveStatuses(ca, repository);
+            repository.AddCloudApplication(ca);
+
+            #endregion
+
+            return ca;
+
+        }
+        #endregion
+
+
+
     }
 }
