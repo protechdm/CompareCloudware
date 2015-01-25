@@ -507,6 +507,114 @@ namespace CompareCloudware.Web
                 );
 
             routes.MapRoute(
+                "RefreshUploadUserReview", // Route name
+                "Vendor/RefreshUploadUserReview", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "RefreshUploadUserReview"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "UploadUserReview", // Route name
+                "Vendor/UploadUserReview", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "UploadUserReview"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "RefreshUploadProductReview", // Route name
+                "Vendor/RefreshUploadProductReview", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "RefreshUploadProductReview"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "UploadProductReview", // Route name
+                "Vendor/UploadProductReview", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "UploadProductReview"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "RefreshUploadDocument", // Route name
+                "Vendor/RefreshUploadDocument", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "RefreshUploadDocument"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "UploadDocument", // Route name
+                "Vendor/UploadDocument", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "UploadDocument"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "FindDocument", // Route name
+                "Vendor/FindDocument", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "FindDocument"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "DeleteDocument", // Route name
+                "Vendor/DeleteDocument", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "DeleteDocument"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
+                "SaveSerializedFormToSession", // Route name
+                "Vendor/SaveSerializedFormToSession", // URL with parameters
+            new
+            {
+                controller = "Vendor",
+                action = "SaveSerializedFormToSession"
+                //,
+                //cloudApplicationID = UrlParameter.Optional
+            }
+            );
+
+            routes.MapRoute(
                     "ThanksForComing", // Route name
                     //"thanksforcoming/{categoryname}", // URL with parameters
                     "thanksforcoming", // URL with parameters
