@@ -14,6 +14,7 @@ $(document).ready(function () {
         userReviewsContainerContext = $('.user-reviews-container');
         $('#newUserReviewButton', userReviewsContainerContext).off("click");
         $('#newUserReviewButton', userReviewsContainerContext).click(function () {
+            debugger;
             RefreshUploadUserReview();
             dlgUploadUserReview.DoSomething();
         });
@@ -112,7 +113,8 @@ $(document).ready(function () {
                 //debugger;
                 $("#dialog-upload-video").dialog('close');
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 InitBindings();
             },
             error: function (data) {
@@ -137,7 +139,8 @@ $(document).ready(function () {
             data: serialize,
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 InitBindings();
             },
             error: function (data) {
@@ -178,7 +181,8 @@ $(document).ready(function () {
                 data: serialize1 + "&rowID=" + rowID,
                 success: function (data) {
                     $(tagToRefresh).empty();
-                    $(data).appendTo(tagToRefresh);
+                    //$(data).appendTo(tagToRefresh);
+                    $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                     InitBindings();
                 },
                 error: function (data) {
@@ -206,7 +210,8 @@ $(document).ready(function () {
             //data: serialize1,
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 InitBindings();
             },
             error: function (data) {
@@ -260,7 +265,8 @@ $(document).ready(function () {
                     debugger;
                     $("#dialog-upload-user-review").dialog('close');
                     $(tagToRefresh).empty();
-                    $(data).appendTo(tagToRefresh);
+                    //$(data).appendTo(tagToRefresh);
+                    $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                     RefreshUploadUserReview();
                     InitBindings();
                 },
@@ -285,7 +291,8 @@ $(document).ready(function () {
                 debugger;
                 //setLoading(false);
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
             },
             error: function (data) {
                 //setLoading(false);
@@ -325,7 +332,8 @@ $(document).ready(function () {
                 data: serialize1 + "&rowID=" + rowID,
                 success: function (data) {
                     $(tagToRefresh).empty();
-                    $(data).appendTo(tagToRefresh);
+                    //$(data).appendTo(tagToRefresh);
+                    $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 },
                 error: function (data) {
                     alert('Fail on uploading document');
@@ -348,7 +356,8 @@ $(document).ready(function () {
             data: serialize1 + "&rowDeleteID=" + rowID + "&cloudApplicationDeleteID=" + cloudApplicationID,
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 InitBindings();
             },
             error: function (data) {
@@ -387,7 +396,8 @@ $(document).ready(function () {
     //UPLOAD DOCUMENT BUTTON CLICK
     //$(document).on('click', '#uploadDocumentFULLButton', function () {
     $(documentContext).on('click', '#uploadDocumentFULLButton', function () {
-        var postedFile = $('#PostedFile');
+        debugger;
+        var postedFile = $('#CloudApplicationDocumentPostedFile');
         if (postedFile[0].value != "") {
             return true;
         }
@@ -460,7 +470,8 @@ $(document).ready(function () {
             data: serialize1,
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
             },
             error: function (data) {
                 alert('Fail on uploading document');
@@ -495,7 +506,8 @@ $(document).ready(function () {
                 data: serialize1 + "&rowID=" + rowID,
                 success: function (data) {
                     $(tagToRefresh).empty();
-                    $(data).appendTo(tagToRefresh);
+                    //$(data).appendTo(tagToRefresh);
+                    $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                     InitBindings();
                 },
                 error: function (data) {
@@ -521,7 +533,8 @@ $(document).ready(function () {
             data: serialize1 + "&rowDeleteID=" + rowID + "&cloudApplicationDeleteID=" + cloudApplicationID,
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                 InitBindings();
             },
             error: function (data) {
@@ -570,7 +583,8 @@ $(document).ready(function () {
                 success: function (data) {
                     $("#dialog-upload-product-review").dialog('close');
                     $(tagToRefresh).empty();
-                    $(data).appendTo(tagToRefresh);
+                    //$(data).appendTo(tagToRefresh);
+                    $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
                     RefreshUploadProductReview();
                     InitBindings();
                 },
@@ -592,7 +606,8 @@ $(document).ready(function () {
             data: serialize1,
             success: function (data) {
                 $(tagToRefresh).empty();
-                $(data).appendTo(tagToRefresh);
+                $(jQuery.parseHTML(data)).appendTo(tagToRefresh);
+                //$(data).appendTo(tagToRefresh);
             },
             error: function (data) {
                 alert('Fail on uploading product review');
