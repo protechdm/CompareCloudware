@@ -48,11 +48,11 @@ namespace CompareCloudware.Console
             //return;
 
 
-            LoadSkyscrapersMPUs();
+            //LoadSkyscrapersMPUs();
             //return;
 
             //StageData();
-            StagePhase2Data();
+            //StagePhase2Data();
             //return;
             //LoadMissingLogos();
             //LoadRatings();
@@ -104,20 +104,20 @@ namespace CompareCloudware.Console
 
             //TAGS
             //LoadURLTagTypeData();//RUN ONCE
-            LoadTagData();
-            LoadCategorytURLTagData();
-            LoadShopURLTagData();
+            //LoadTagData();
+            //LoadCategorytURLTagData();
+            //LoadShopURLTagData();
 
             //CONTENT PAGES - DEPENDS ON SHOP TAGS
-            LoadContentPageData();
+            //LoadContentPageData();
 
-            LoadContextTextTypesForH1H2(); //DONT'T NEED FOR LIVE
-            LoadContextTextTypesForTabs(); //RUN ONCE!!!!!
+            //LoadContextTextTypesForH1H2(); //DONT'T NEED FOR LIVE
+            //LoadContextTextTypesForTabs(); //RUN ONCE!!!!!
 
             //CONTENT TEXT MINUS H1-H2 DATA
-            ContentTextData();
+            //ContentTextData();
             //CONTENT TEXT FOR H1-H2
-            LoadContextTextDataForH1H2();
+            //LoadContextTextDataForH1H2();
 
             //LoadCarboniteBusinessPlus();
             //LoadSecondCategories();
@@ -128,6 +128,11 @@ namespace CompareCloudware.Console
 
             //LoadAvastEndpointProtectionSuite();
             //LoadAvastEndpointProtectionSuitePlus();
+
+            LoadKasperskyTotalSecurityMultiDevice();
+            LoadKasperskyInternetSecurity2015();
+            LoadKasperskyAntiVirus2015();
+
         }
 
         #region InsertVendor
@@ -2457,5 +2462,109 @@ namespace CompareCloudware.Console
         }
         #endregion
 
+        #region LoadKasperskyTotalSecurityMultiDevice
+        private static void LoadKasperskyTotalSecurityMultiDevice()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            CloudApplication ca = data.LoadKasperskyTotalSecurityMultiDevice(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            data.LoadKasperskyTotalSecurityMultiDeviceCategoryShopURL(context, ca);
+        }
+        #endregion
+
+        #region LoadKasperskyInternetSecurity2015
+        private static void LoadKasperskyInternetSecurity2015()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            CloudApplication ca = data.LoadKasperskyInternetSecurity2015(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            data.LoadKasperskyInternetSecurity2015CategoryShopURL(context, ca);
+        }
+        #endregion
+
+        #region LoadKasperskyAntiVirus2015
+        private static void LoadKasperskyAntiVirus2015()
+        {
+            var data = new FakeData();
+            var context = new CompareCloudwareContext();
+
+            CloudApplication ca = data.LoadKasperskyAntiVirus2015(context);
+            try
+            {
+                context.SaveChanges();
+            }
+            catch (DbEntityValidationException dbEx)
+            {
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            catch (DbUpdateException dbEx)
+            {
+                foreach (var validationErrors in dbEx.Entries)
+                {
+                    //foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        //Trace.TraceInformation("Property: {0} Error: {1}", validationError.PropertyName, validationError.ErrorMessage);
+                    }
+                }
+            }
+            data.LoadKasperskyAntiVirus2015CategoryShopURL(context, ca);
+        }
+        #endregion
     }
 }
