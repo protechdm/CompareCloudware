@@ -3485,7 +3485,7 @@ input[type="hidden"]
 /* Styles for the image uploader
 -----------------------------------------------------------*/
 #upload-choices {
-    width: 600px;
+    width: 900px;
     float: left;
 }
 
@@ -3627,12 +3627,12 @@ input[type="hidden"]
 }
 
 .editor-row-product-review div.editor-label-product-review {
-    width: 25%;
+    width: 35%;
     float:left;
 }
 
 .editor-row-product-review-multi-line div.editor-label-product-review {
-    width: 25%;
+    width: 35%;
     float:left;
 }
 
@@ -3654,7 +3654,7 @@ input[type="hidden"]
 
 .editor-row-product-review div.editor-field-product-review {
     /*width: 400px;*/
-    width:75%;
+    width:65%;
     float:left;
 }
 
@@ -4887,6 +4887,11 @@ input[type="hidden"]
     /*margin-left:10px;*/
     width:30%;
     float:left;
+}
+
+.customcheckboxlist-choices-container select
+{
+    width:100px;
 }
 
 .customcheckboxlist-other-check
