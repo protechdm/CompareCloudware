@@ -30,19 +30,19 @@ namespace CompareCloudware.Web.Models
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime CloudApplicationProductReviewDate { get; set; }
         
-        //[Display(Name = "Headline:"), MaxLength(500)]
+        [Display(Name = "Headline:"), MaxLength(500)]
         public string CloudApplicationProductReviewHeadline { get; set; }
         
-        //[Display(Name = "Publisher:"), MaxLength(500)]
+        [Display(Name = "Publisher:"), MaxLength(500)]
         public string CloudApplicationProductReviewPublisherName { get; set; }
         
-        //[Display(Name = "Review Text:"), MaxLength(1000)]
+        [Display(Name = "Review Text:"), MaxLength(1000)]
         public string CloudApplicationProductReviewText { get; set; }
         
-        //[Display(Name = "URL:"), MaxLength(500)]
+        [Display(Name = "URL:"), MaxLength(500)]
         public string CloudApplicationProductReviewURL { get; set; }
         
-        //[Display(Name = "Format:"), MaxLength(500)]
+        [Display(Name = "Format:"), MaxLength(500)]
         public string CloudApplicationProductReviewURLDocumentFormat { get; set; }
 
         [Display(Name = "Review Document Type:")]
